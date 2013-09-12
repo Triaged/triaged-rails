@@ -40,3 +40,26 @@ gem 'jbuilder', '~> 1.2'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'devise'
+gem 'figaro'
+gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
+gem 'simple_form', '>= 3.0.0.rc'
+gem 'thin'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'guard-bundler'
+  gem 'guard-rails'
+  gem 'quiet_assets'
+  gem 'rb-fchange', :require=>false
+  gem 'rb-fsevent', :require=>false
+  gem 'rb-inotify', :require=>false
+end
+
+group :test do
+  gem 'minitest-spec-rails'
+  gem 'minitest-wscolor'
+end
+
