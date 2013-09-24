@@ -1,3 +1,5 @@
+include Rails.application.routes.url_helpers
+
 class Github::CreateHooksService
 
 	attr_accessor :user, :github
@@ -30,18 +32,19 @@ class Github::CreateHooksService
 	end
 
 	def create_hooks
-		@user.company.github_repos.each do |repo|
-			begin
-				@github.repos.hooks.create repo.owner, repo.name, name:  "web", active:  true, 
-					config: { "url" => ENV["GITHUB_WEBHOOK_URL"], 
-						"events" => ["push", "issues", "issue_comment", "pull_request", "commit_comment"]}
-			rescue Github::Error::UnprocessableEntity
-				Rails.logger.info "hook already exists"
-				next
-			rescue Github::Error::NotFound
-				Rails.logger.info "repo not found"
-				next
-			end
-		end
+		Rails.logger.info (services_github_index_url(:subdomain => @user.company.slug))
+		# @user.company.github_repos.each do |repo|
+		# 	begin
+		# 		@github.repos.hooks.create repo.owner, repo.name, name:  "web", active:  true, 
+		# 			config: { "url" => ENV["GITHUB_WEBHOOK_URL"], 
+		# 				"events" => ["push", "issues", "issue_comment", "pull_request", "commit_comment"]}
+		# 	rescue Github::Error::UnprocessableEntity
+		# 		Rails.logger.info "hook already exists"
+		# 		next
+		# 	rescue Github::Error::NotFound
+		# 		Rails.logger.info "repo not found"
+		# 		next
+		# 	end
+		# end
 	end
 end
