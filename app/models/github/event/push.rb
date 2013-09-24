@@ -14,7 +14,7 @@ class Github::Event::Push < FeedItem
 
   def self.build_from_webhook event
   	push = Github::Event::Push.new(
-  		pusher: event.pusher.name
+  		pusher: event.pusher.name,
   		branch: event.ref.split("/").last,
   		external_id: event.head_commit.id
   		)
@@ -29,7 +29,7 @@ class Github::Event::Push < FeedItem
   			author_email: commit.author.email,
   			timestamp: commit.timestamp,
   			message: commit.message,
-  			url: commit.url
+  			url: commit.url,
   			push: push
   			)
   	end
