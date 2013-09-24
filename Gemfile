@@ -56,7 +56,7 @@ gem 'omniauth-stripe-connect'
 gem "omniauth-google-oauth2"
 gem 'omniauth-shopify-oauth2'
 gem "github_api"
-
+gem 'rails_12factor'
 gem 'stripe'
 
 group :development do
