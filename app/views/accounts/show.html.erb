@@ -2,5 +2,3 @@
 
 <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
 <%= link_to "Sign in with Stripe", user_omniauth_authorize_path(:stripe_connect) %>
-<%= @user.company.slug %>
-<%= link_to 'github', services_github_index_path(:subdomain => @user.company.slug) %>
