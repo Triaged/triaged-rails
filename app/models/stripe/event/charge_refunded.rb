@@ -8,7 +8,7 @@ class Stripe::Event::ChargeRefunded < FeedItem
   def self.create_from_webhook event
   	data = event.data.object
   	event = Stripe::Event::ChargeRefunded.new(
-			amount: data.amount
+			amount: data.amount,
 		 	customer_name: data.customer,
 		 	description: data.description,
 		 	customer_email: data.customer
