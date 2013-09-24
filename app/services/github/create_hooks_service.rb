@@ -1,4 +1,4 @@
-include Rails.application.routes.url_helpers
+# include Rails.application.routes.url_helpers
 
 class Github::CreateHooksService
 
@@ -32,7 +32,7 @@ class Github::CreateHooksService
 	end
 
 	def create_hooks
-		Rails.logger.info (services_github_index_url(:subdomain => @user.company.slug))
+		# Rails.logger.info (services_github_index_url(:subdomain => @user.company.slug))
 		# @user.company.github_repos.each do |repo|
 		# 	begin
 		# 		@github.repos.hooks.create repo.owner, repo.name, name:  "web", active:  true, 
