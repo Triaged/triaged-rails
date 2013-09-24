@@ -8,14 +8,14 @@ class Sentry::Event::Exception < FeedItem
   field :level, :type => String
 
   
-	def self.build_from_webhook event
+	def self.build_from_webhook data
 		event = Sentry::Event::Exception.new(
-			external_id: event.id,
-			project: event.project,
-			message: event.message,
-			culprit: event.culprit,
-			logger: event.logger,
-			level: event.level
+			external_id: data.id,
+			project: data.project,
+			message: data.message,
+			culprit: data.culprit,
+			logger: data.logger,
+			level: data.level
 		)
 	end
 

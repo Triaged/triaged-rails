@@ -5,6 +5,7 @@ class FeedItem
   embedded_in :company
 
   field :external_id
+  field :event_created_at
   
   index({ external_id: 1 }, { unique: true, background: true })
 	validates_uniqueness_of :external_id

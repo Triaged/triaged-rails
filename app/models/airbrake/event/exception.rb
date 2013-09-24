@@ -9,15 +9,15 @@ class Airbrake::Event::Exception < FeedItem
   field :line_number, :type => Integer
 
   
-	def self.build_from_webhook event
+	def self.build_from_webhook data
 		event = Sentry::Event::Exception.new(
-			external_id: event.error.id,
-			project: event.error.project.name,
-			message: event.error.message,
-			error_class: event.error.error_class,
-			line_number: event.error.line_number,
-			times_occurred: event.times_occurred,
-			environment: event.environment
+			external_id: data.error.id,
+			project: data.error.project.name,
+			message: data.error.message,
+			error_class: data.error.error_class,
+			line_number: data.error.line_number,
+			times_occurred: data.times_occurred,
+			environment: data.environment
 		)
 	end
 
