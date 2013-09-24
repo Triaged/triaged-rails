@@ -1,0 +1,10 @@
+<%= @repo.name %>
+
+<br />
+
+<% @repo.issues.each do |issue| %>
+	<%= issue.title %> - <%= issue.open %>
+	<% issue.feed_items.each do |item| %>
+		<%= item.class.name %>
+	<% end %>
+<% end %>

@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Provider.create(name: "stripe")
+Provider.create(name: "github")
+Provider.create(name: "google-analytics")
+Provider.create(name: "new-relic")
+Provider.create(name: "heroku")
+Provider.create(name: "pager-duty")
+Provider.create(name: "shopify")
+Provider.create(name: "sentry")

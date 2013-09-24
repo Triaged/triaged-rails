@@ -1,0 +1,16 @@
+class Stripe::Event::InvoiceFailed < FeedItem
+  include Mongoid::Document
+
+  field :amount, :type => Float
+  field :customer_name, :type => String
+  field :customer_email, :type => String
+
+  def self.create_from_webhook event
+  	data = event.data.object
+  	event = Stripe::Event::InvoiceFailed.new(
+  		amount: data.amount,
+			customer_name: data.customer_name, 
+			customer_email: data.customer_email
+		)
+  end
+end

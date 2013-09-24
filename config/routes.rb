@@ -1,5 +1,36 @@
 DockedRails::Application.routes.draw do
-  devise_for :users
+  resources :companies
+	
+	resource :account
+
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+                   controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
+  namespace :api do
+    namespace :v1 do
+    	devise_for :users
+    	resource :account
+    	resources :feed do
+    		collection do 
+    			get 'mock'
+    		end
+    	end
+    end
+  end
+
+
+	constraints subdomain: /.+/ do
+	  namespace :services do
+	  	resources :stripe
+	  	resources :github
+	  	resources :sentry
+	  end
+	end
+	
+	get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
+	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

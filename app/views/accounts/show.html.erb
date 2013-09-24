@@ -1,0 +1,4 @@
+<%= @user.name %> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  <br />
+
+<%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+<%= link_to "Sign in with Stripe", user_omniauth_authorize_path(:stripe_connect) %>

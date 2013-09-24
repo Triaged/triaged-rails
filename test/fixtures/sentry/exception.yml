@@ -1,0 +1,8 @@
+# {
+#     "id": "134343",
+#     "project": "project-slug",
+#     "message": "Thisisanexample",
+#     "culprit": "foo.bar.baz",
+#     "logger": "root",
+#     "level": "error"
+# }

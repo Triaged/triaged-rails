@@ -1,0 +1,20 @@
+class API::BaseController < ApplicationController
+  respond_to :json
+  protect_from_forgery with: :null_session
+  before_filter :authenticate_user_from_token!, :except => [:page_not_found]
+  before_filter :authenticate_user!
+  # rescue_from Brainstem::SearchUnavailableError, :with => :search_unavailable
+  # rescue_from ActiveRecord::RecordNotFound,
+  #             ActionController::RoutingError,
+  #             ::AbstractController::ActionNotFound, :with => :page_not_found
+
+  protected
+
+  def page_not_found
+    render :json => { :errors => ['Page not found'] }, :status => 404
+  end
+
+  def search_unavailable
+    render :json => { :errors => ['Search is currently unavailable'] }, :status => 503
+  end
+end

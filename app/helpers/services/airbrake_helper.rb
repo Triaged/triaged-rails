@@ -1,0 +1,2 @@
+module Services::AirbrakeHelper
+end

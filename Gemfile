@@ -24,8 +24,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
+gem 'active_model_serializers'#, :github => "getDocked/active_model_serializers"
 
   # bundle exec rake doc:rails generates the API under doc/api.
 
@@ -42,12 +41,27 @@ gem 'jbuilder', '~> 1.2'
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+gem 'omniauth'
+gem 'certified'
 gem 'figaro'
 gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
 gem 'simple_form', '>= 3.0.0.rc'
 gem 'thin'
+gem "bson_ext"
+gem 'pusher'
+gem 'dot_hash'
+gem 'mongoid_slug'
+gem 'omniauth-github'
+gem 'omniauth-stripe-connect'
+gem "omniauth-google-oauth2"
+gem 'omniauth-shopify-oauth2'
+gem "github_api"
+
+gem 'stripe'
 
 group :development do
+	gem 'debugger'
+	gem 'localtunnel'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'guard-bundler'
