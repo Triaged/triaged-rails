@@ -21,11 +21,14 @@ DockedRails::Application.routes.draw do
 
 	constraints subdomain: /.+/ do
 	  namespace :services do
-	  	resources :stripe
 	  	resources :github
 	  	resources :sentry
 	  end
 	end
+
+	namespace :services do
+	  	resources :stripe
+	  end
 	
 	get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'

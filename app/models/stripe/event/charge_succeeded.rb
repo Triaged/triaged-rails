@@ -6,13 +6,12 @@ class Stripe::Event::ChargeSucceeded < FeedItem
   field :customer_email, :type => String
   field :description, :type => String
 
-  def self.build_from_webhook event
-  	data = event.data.object
+  def self.build_from_webhook data
   	event = Stripe::Event::ChargeSucceeded.new(
-														amount: data.amount,
-														customer_name: data.customer,
-														description: data.description,
-														customer_email: data.customer,
+														amount: data.data.object.amount,
+														#customer_name: data.customer,
+														#description: data.data.object.description,
+														#customer_email: data.data.object.customer,
 														external_id: data.id)
 		return event
 	end
