@@ -14,20 +14,24 @@ class Github::CreateHooksService
 	end
 	
 	def initial_setup
-		# Get all repos
-		res = @github.repos.all
-		res.each_page { |page| page.each do |repo|
-			Github::Repo.create(
-				user: @user,
-				company: @user.company, 
-				external_id: repo.id, 
-				html_url: repo.html_url, 
-				url: repo.url, 
-				name: repo.name,
-				full_name: repo.full_name,
-				owner: repo.owner.login
-			)
-		end }
+		# Get all repos for the org
+		orgs = @github.orgs.all
+		orgs.each_page { |page| page.each do |org|
+			res = org.repos.all
+			res.each_page { |page| page.each do |repo|
+				Github::Repo.create(
+					user: @user,
+					company: @user.company, 
+					external_id: repo.id, 
+					html_url: repo.html_url, 
+					url: repo.url, 
+					name: repo.name,
+					full_name: repo.full_name,
+					owner: repo.owner.login
+				)
+			end }
+		}
+		
 	end
 
 	def create_hooks
