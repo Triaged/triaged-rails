@@ -5,7 +5,7 @@ class Github::WebhookService < Service
 		event_type = payload[:event_type]
 		company = Company.find(payload[:company_id])
 
-		publish(event_type, {:company_id => company.id, :event => payload})
+		publish(event_type, {:company_id => company.id, :event => event})
   # rescue StandardError, e
   # 	Rails.logger.info e.inspect  
 	end
