@@ -59,6 +59,7 @@ gem "github_api"
 gem 'rails_12factor'
 gem 'stripe'
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
+gem "airbrake"
 
 group :development do
 	gem 'debugger'
