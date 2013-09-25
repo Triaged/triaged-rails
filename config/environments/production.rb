@@ -80,7 +80,7 @@ DockedRails::Application.configure do
     }
 
   config.after_initialize do
-    Rails.application.routes.default_url_options[:host] = 'docked-rails.herokuapp.com'
+    Rails.application.routes.default_url_options[:host] = 'docked.io'
   end
    
   # Disable automatic flushing of the log to improve performance.
