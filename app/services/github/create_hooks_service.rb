@@ -1,6 +1,5 @@
-# include Rails.application.routes.url_helpers
-
 class Github::CreateHooksService
+	include Rails.application.routes.url_helpers
 
 	attr_accessor :user, :github
 
