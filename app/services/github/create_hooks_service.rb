@@ -30,7 +30,7 @@ class Github::CreateHooksService
 					owner: repo.owner.login
 				)
 			end }
-		}
+		end }
 		
 	end
 
