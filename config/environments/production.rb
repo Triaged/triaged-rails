@@ -79,9 +79,9 @@ DockedRails::Application.configure do
       :password  => ENV["MANDRILL_API_KEY"]
     }
 
-  # config.after_initialize do
-  #   Rails.application.routes.default_url_options[:host] = 'docked-rails.herokuapp.com/'
-  # end
+  config.after_initialize do
+    Rails.application.routes.default_url_options[:host] = 'docked-rails.herokuapp.com'
+  end
    
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
