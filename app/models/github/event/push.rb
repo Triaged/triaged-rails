@@ -13,6 +13,7 @@ class Github::Event::Push < FeedItem
 
 
   def self.build_from_webhook event
+  	Rails.logger.info event.inspect
   	push = Github::Event::Push.new(
   		pusher: event.pusher.name,
   		branch: event.ref.split("/").last,
