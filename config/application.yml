@@ -1,0 +1,16 @@
+# Add account credentials and API keys here.
+# See http://railsapps.github.io/rails-environment-variables.html
+# This file should be listed in .gitignore to keep your settings secret!
+# Each entry sets a local environment variable and overrides ENV variables in the Unix shell.
+# For example, setting:
+# GMAIL_USERNAME: Your_Gmail_Username
+# makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
+# Add application configuration variables here, as shown below.
+#
+
+STRIPE_API_KEY: sk_test_RiXtxB4SVHpeixXl7OFsbafe
+STRIPE_CONNECT_CLIENT_ID: ca_2YsHEpX9cpzutHuyBY0z6MOU8N7qUV3J
+
+GITHUB_CLIENT_ID: 6bd3bee053ff4168911a
+GITHUB_SECRET: e698caaf6d812c81c5ddc98a1648eb2a0698450d
+GITHUB_WEBHOOK_URL: www.test.com
