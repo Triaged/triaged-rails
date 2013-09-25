@@ -1,8 +1,7 @@
 class Github::Repo
   include Mongoid::Document
 
-  belongs_to :company
-  belongs_to :user
+  embedded_in :org, :class_name => "Github::Org"
   embeds_many :commits, :class_name => "Github::Commit"
   embeds_many :issues, :class_name => "Github::Issue"
 

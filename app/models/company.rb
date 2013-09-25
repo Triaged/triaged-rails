@@ -9,7 +9,7 @@ class Company
 
   has_many :users
   has_many :provider_credentials
-  has_many :github_repos, :class_name => "Github::Repo"
+  has_one :github_org, :class_name => "Github::Org"
 
   def add_event_to_feed event
   	feed_items << event
@@ -28,6 +28,15 @@ class Company
 
 	slug do |object|
     object.name.split(".").first.to_url
+  end
+
+  # provider scopes
+	def stripe_provider_credentials
+  	provider_credentials.where(provider: Provider.stripe).first
+  end
+
+  def github_provider_credentials
+  	provider_credentials.where(provider: Provider.github).first
   end
 
 end
