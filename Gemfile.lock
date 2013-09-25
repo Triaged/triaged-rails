@@ -8,6 +8,15 @@ GIT
       origin (~> 1.0)
       tzinfo (~> 0.3.37)
 
+GIT
+  remote: https://github.com/getsentry/raven-ruby.git
+  revision: d6b40142bd667487e84a7738b2cd2b73b918b8d4
+  specs:
+    sentry-raven (0.6.0)
+      faraday (>= 0.7.6)
+      hashie (>= 1.1.0)
+      uuidtools
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -242,6 +251,7 @@ GEM
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -281,6 +291,7 @@ DEPENDENCIES
   rb-fsevent
   rb-inotify
   sass-rails (~> 4.0.0)
+  sentry-raven!
   simple_form (>= 3.0.0.rc)
   stripe
   thin
