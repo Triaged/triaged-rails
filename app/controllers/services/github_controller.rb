@@ -10,7 +10,7 @@ class Services::GithubController < ServiceController
 
 	def create
 		event_type = request.headers['X-Github-Event']
-		event = Json.parse(params["payload"])
+		event = JSON.parse(params["payload"])
 		payload = {event: event, company_id: request.subdomain, event_type: event_type}
 		Github::WebhookService.new.instrument payload
 		head :ok
@@ -18,8 +18,8 @@ class Services::GithubController < ServiceController
 	# 	# head :unauthorized
 	end
 
-	def event_type
-		JSON.parse(request.body.string)["action"]
-	end
+	# def event_type
+	# 	JSON.parse(request.body.string)["action"]
+	# end
 	
 end
