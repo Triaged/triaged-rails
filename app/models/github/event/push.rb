@@ -21,7 +21,8 @@ class Github::Event::Push < FeedItem
   		external_id: event.head_commit.id
   		)
   	
-  	repo = Github::Repo.find_by name: event.repository.name
+  	org = Github::Org.find_by name: event.repository.organization
+  	repo = org.repos.find_by name: event.repository.name
   	# Embed the commits into the repo, since the repo holds the state.
   	# Then, attach the commit to the push, to reference in the push event
 		event.commits.each do |commit|
