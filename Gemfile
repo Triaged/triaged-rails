@@ -40,13 +40,14 @@ gem 'active_model_serializers'#, :github => "getDocked/active_model_serializers"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'foreman'
 gem 'devise'
 gem 'omniauth'
 gem 'certified'
 gem 'figaro'
 gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
 gem 'simple_form', '>= 3.0.0.rc'
-#gem 'thin'
+gem 'thin'
 gem "bson_ext"
 gem 'pusher'
 gem 'dot_hash'
