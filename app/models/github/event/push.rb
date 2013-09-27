@@ -10,6 +10,7 @@ class Github::Event::Push < FeedItem
   
   def self.build_from_webhook event
   	Rails.logger.info "------------"
+  	Rails.logger.info event.inspect
   	org = Github::Org.find_by name: event.repository.organization
   	repo = org.repos.find_by name: event.repository.name
 
