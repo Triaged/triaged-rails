@@ -14,7 +14,6 @@ class Github::Event::Push < FeedItem
 
   def self.build_from_webhook event
   	Rails.logger.info "------------"
-  	Rails.logger.info event.inspect
   	push = Github::Event::Push.new(
   		pusher: event.pusher.name,
   		branch: event.ref.split("/").last,
@@ -26,6 +25,7 @@ class Github::Event::Push < FeedItem
   	# Embed the commits into the repo, since the repo holds the state.
   	# Then, attach the commit to the push, to reference in the push event
 		event.commits.each do |commit|
+			Rails.logger.info commit.inspect
   		repo.create(
   			external_id: commit.id,
   			author: commit.author.username,
