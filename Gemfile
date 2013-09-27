@@ -60,6 +60,8 @@ gem 'rails_12factor'
 gem 'stripe'
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 gem "airbrake"
+gem 'legato'
+gem 'rest-client'
 
 group :development do
 	gem 'debugger'

@@ -8,10 +8,10 @@
 
 Provider.create(name: "stripe")
 Provider.create(name: "github")
-Provider.create(name: "google-analytics")
-Provider.create(name: "new-relic")
+Provider.create(name: "google_analytics")
+Provider.create(name: "new_relic")
 Provider.create(name: "heroku")
-Provider.create(name: "pager-duty")
+Provider.create(name: "pager_duty")
 Provider.create(name: "shopify")
 Provider.create(name: "sentry")
 Provider.create(name: "airbrake")

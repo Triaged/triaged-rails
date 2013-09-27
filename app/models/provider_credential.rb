@@ -8,6 +8,7 @@ class ProviderCredential
 
   field :uid, :type => String
   field :access_token, :type => String
+  field :refresh_token, :type => String
   field :shared, :type => Boolean, :default => false
 
   after_create :provider_created

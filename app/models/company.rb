@@ -1,6 +1,7 @@
 class Company
   include Mongoid::Document
   include Mongoid::Slug
+  include Providable
 
   field :name, :type => String
   
@@ -30,13 +31,6 @@ class Company
     object.name.split(".").first.to_url
   end
 
-  # provider scopes
-	def stripe_provider_credentials
-  	provider_credentials.where(provider: Provider.stripe).first
-  end
-
-  def github_provider_credentials
-  	provider_credentials.where(provider: Provider.github).first
-  end
+  
 
 end

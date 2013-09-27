@@ -20,6 +20,12 @@ module Follower
   end
 
 
+	def can_follow_provider? provider
+		#credentials = credentials_for_provider provider
+		#credentials ? true : false
+		true # Can always follow a provider, for now... later, we might enfore individual oAuth
+	end
+
 	# know if self is already following model
   #
   # Example:

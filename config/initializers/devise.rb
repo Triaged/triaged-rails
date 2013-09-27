@@ -233,7 +233,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   config.omniauth :github, ENV['GITHUB_CLIENT_ID'], ENV['GITHUB_SECRET'], scope: "user,repo"
   config.omniauth :stripe_connect, ENV['STRIPE_CONNECT_CLIENT_ID'], ENV['STRIPE_API_KEY'], :scope => 'read_only', :stripe_landing => 'login'
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_SECRET']
+  config.omniauth :google_oauth2, ENV['GA_CLIENT_ID'], ENV['GA_SECRET'], prompt: 'select_account consent', :scope => 'https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/userinfo.profile, https://www.googleapis.com/auth/analytics.readonly'
   config.omniauth :shopify, ENV['SHOPIFY_CLIENT_ID'], ENV['SHOPIFY_SECRET']
 
   # ==> Warden configuration

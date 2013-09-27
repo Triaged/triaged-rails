@@ -3,22 +3,10 @@ class Provider
   
 
   field :name, :type => String
-
   
-  def self.stripe
-  	Provider.where(name: "stripe").first
+  def self.named name
+  	Provider.where(name: name).first
   end
-
-  def self.github
-  	Provider.where(name: "github").first
-  end
-
-  def self.sentry
-  	Provider.where(name: "sentry").first
-  end
-
-  def self.google_analytics
-  	Provider.where(name: "google_analytics").first
-  end
+ 
 
 end
