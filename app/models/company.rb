@@ -14,13 +14,14 @@ class Company
 
   def add_event_to_feed event
   	feed_items << event
+  	Rails.logger.info "added #{event.id} event to feed"
   	event
   end
 
   def push_event_to_followers event
   	provider = event.provider
-  	Rails.logger.info "Provider: #{provider.name}"
   	followers_of(provider).each { |follower| follower.add_event_to_feed event }
+		Rails.logger.info "Pushed #{provider.name} event to followers"
 	end
 
 	def followers_of provider
