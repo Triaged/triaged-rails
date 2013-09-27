@@ -6,8 +6,8 @@ module Feedable
 	end
 
 	def feed
-  	feed_item_ids = user_feed_items.collect {|user_item| user_item.feed_item_id }
-  	company.feed_items.find feed_item_ids
+  	feed_item_ids = user_feed_items.desc(:created_at).collect {|user_item| user_item.feed_item_id }
+  	company.feed_items.find(feed_item_ids)
   end
 
   def add_event_to_feed event
