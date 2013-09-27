@@ -25,8 +25,8 @@ class Github::Event::Push < FeedItem
   	# Embed the commits into the repo, since the repo holds the state.
   	# Then, attach the commit to the push, to reference in the push event
 		event.commits.each do |commit|
-			Rails.logger.info commit.inspect
-  		repo.create(
+			commit = commit.to_properties
+			repo.create(
   			external_id: commit.id,
   			author: commit.author.username,
   			author_email: commit.author.email,
