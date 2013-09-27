@@ -46,7 +46,7 @@ gem 'certified'
 gem 'figaro'
 gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
 gem 'simple_form', '>= 3.0.0.rc'
-gem 'thin'
+#gem 'thin'
 gem "bson_ext"
 gem 'pusher'
 gem 'dot_hash'
@@ -56,7 +56,6 @@ gem 'omniauth-stripe-connect'
 gem "omniauth-google-oauth2"
 gem 'omniauth-shopify-oauth2'
 gem "github_api"
-gem 'rails_12factor'
 gem 'stripe'
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 gem "airbrake"
@@ -79,5 +78,9 @@ end
 group :test do
   gem 'minitest-spec-rails'
   gem 'minitest-wscolor'
+end
+
+group :production do
+	gem 'rails_12factor'
 end
 
