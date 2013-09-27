@@ -10,7 +10,7 @@ class Services::GithubController < ServiceController
 
 	def create
 		event_type = request.headers['X-Github-Event']
-		payload = {event: params, company_id: request.subdomain, event_type: event_type}
+		payload = {event: params["payload"], company_id: request.subdomain, event_type: event_type}
 		Github::WebhookService.new.instrument payload
 		head :ok
 	# rescue StandardError
