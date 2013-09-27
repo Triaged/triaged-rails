@@ -22,7 +22,7 @@ class Github::Event::Push < FeedItem
   	
   	event.commits.each do |commit|
 			commit = commit.to_properties
-			push.commits.create(
+			push.commits.build(
   			external_id: commit.id,
   			author: commit.author.username,
   			author_email: commit.author.email,
