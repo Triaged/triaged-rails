@@ -9,7 +9,7 @@ class Github::CreateHooksService
 	end
 
 	def create!
-		set_default_org
+		set_default_org unless @company.github_org
 		save_repos
 		create_repo_hooks
 	end
