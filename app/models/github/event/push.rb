@@ -3,9 +3,14 @@ class Github::Event::Push < FeedItem
 
   field :pusher, :type => String
   field :branch, :type => String
+  field :repo_id, :type => Integer
 
-  belongs_to :repo, :class_name => "Github::Repo"
+  belongs_to :org, :class_name => "Github::Org"
   embeds_many :commits, :class_name => "Github::Event::Commit"
+
+  def repo
+  	org.repos.find(repo_id)
+  end
 
   
   def self.build_from_webhook event
@@ -16,7 +21,8 @@ class Github::Event::Push < FeedItem
   		pusher: event.pusher.name,
   		branch: event.ref.split("/").last,
   		external_id: event.head_commit.id,
-  		repo: repo
+  		org: org,
+  		repo_id: repo.id
   	)
   	
   	event.commits.each do |commit|
