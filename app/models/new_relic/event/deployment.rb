@@ -13,7 +13,7 @@ class NewRelic::Event::Deployment < FeedItem
 	def self.build_from_webhook data
 		event = NewRelic::Event::Deployment.new(
 			external_id: data.id,
-			event_created_at: data.created_at,
+			timestamp: data.created_at,
 			application_name: data.application_name,
 			account_name: data.application_name,
 			changelog: data.changelog,

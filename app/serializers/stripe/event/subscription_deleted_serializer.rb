@@ -1,3 +1,3 @@
-class Stripe::Event::SubscriptionDeletedSerializer < ActiveModel::Serializer
+class Stripe::Event::SubscriptionDeletedSerializer < EventSerializer
   attributes :id
 end

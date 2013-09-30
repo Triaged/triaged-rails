@@ -62,6 +62,7 @@ gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 gem "airbrake"
 gem 'legato'
 gem 'rest-client'
+gem 'grocer'
 
 group :development do
 	gem 'debugger'

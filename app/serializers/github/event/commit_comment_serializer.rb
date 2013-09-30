@@ -1,3 +1,3 @@
-class Github::Event::CommitCommentSerializer < ActiveModel::Serializer
+class Github::Event::CommitCommentSerializer < EventSerializer
   attributes :id
 end

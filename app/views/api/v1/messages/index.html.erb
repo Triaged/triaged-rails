@@ -1,0 +1,25 @@
+<h1>Listing api_v1_messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @api_v1_messages.each do |api_v1_message| %>
+      <tr>
+        <td><%= link_to 'Show', api_v1_message %></td>
+        <td><%= link_to 'Edit', edit_api_v1_message_path(api_v1_message) %></td>
+        <td><%= link_to 'Destroy', api_v1_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_api_v1_message_path %>

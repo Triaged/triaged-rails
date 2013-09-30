@@ -1,3 +1,3 @@
-class Stripe::Event::ChargeRefundedSerializer < ActiveModel::Serializer
+class Stripe::Event::ChargeRefundedSerializer < EventSerializer
   attributes :id
 end

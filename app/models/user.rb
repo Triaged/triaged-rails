@@ -8,6 +8,8 @@ class User
 
 
   belongs_to :company
+  embeds_many :push_tokens
+
   has_many :repos, :class_name => "Github::Repo"
   
   before_create :assign_to_company

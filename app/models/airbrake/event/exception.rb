@@ -21,4 +21,6 @@ class Airbrake::Event::Exception < FeedItem
 		)
 	end
 
+
+
 end

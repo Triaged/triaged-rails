@@ -1,3 +1,3 @@
-class Stripe::Event::InvoiceFailedSerializer < ActiveModel::Serializer
+class Stripe::Event::InvoiceFailedSerializer < EventSerializer
   attributes :id
 end

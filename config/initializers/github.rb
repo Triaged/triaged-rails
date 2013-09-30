@@ -3,13 +3,10 @@ ActiveSupport::Notifications.subscribe "github.provider.created" do |name, start
 end
 
 ActiveSupport::Notifications.subscribe "github.push" do |name, start, finish, id, payload|
-	Rails.logger.info("recieving hook")
 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::Push, payload)
 end
 
 ActiveSupport::Notifications.subscribe "github.issues" do |name, start, finish, id, payload|
-	Rails.logger.info("received github.issues")
-	Rails.logger.info payload[:event][:event_action]
 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueOpened, payload) if payload[:event][:event_action] == "opened"
 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueReopened, payload) if payload[:event][:event_action] == "reopened"
 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueClosed, payload) if payload[:event][:event_action] == "closed"

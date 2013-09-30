@@ -1,13 +1,8 @@
-class Github::Event::PushSerializer < ActiveModel::Serializer
-	attributes :provider, :event, :id, :pusher, :branch
-
+class Github::Event::PushSerializer < EventSerializer
+	attributes :pusher, :branch, :url
 	has_many :commits
 
-	def provider
-		"github"
-	end
-
-	def event
-		"push"
+	def url
+		object.repo.html_url
 	end
 end

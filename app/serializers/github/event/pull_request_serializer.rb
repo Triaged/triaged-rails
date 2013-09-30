@@ -1,3 +1,3 @@
-class Github::Event::PullRequestSerializer < ActiveModel::Serializer
+class Github::Event::PullRequestSerializer < EventSerializer
   attributes :id
 end

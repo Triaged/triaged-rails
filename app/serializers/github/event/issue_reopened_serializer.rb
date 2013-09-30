@@ -1,3 +1,3 @@
-class Github::Event::IssueReopenedSerializer < ActiveModel::Serializer
+class Github::Event::IssueReopenedSerializer < EventSerializer
   attributes :id
 end

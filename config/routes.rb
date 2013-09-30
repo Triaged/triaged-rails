@@ -11,6 +11,7 @@ DockedRails::Application.routes.draw do
     	devise_for :users
     	resource :account
     	resources :feed do
+    		resources :messages
     		collection do 
     			get 'mock'
     		end

@@ -18,8 +18,4 @@ class Services::GithubController < ServiceController
 	# 	# head :unauthorized
 	end
 
-	# def event_type
-	# 	JSON.parse(request.body.string)["action"]
-	# end
-	
 end

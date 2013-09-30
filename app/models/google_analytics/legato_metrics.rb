@@ -22,7 +22,7 @@ class GoogleAnalytics::LegatoMetrics
 			visitors_sum: metrics.totals_for_all_results["visitors"],
 			pageviews_sum: metrics.totals_for_all_results["pageviews"],
 			daily_details: daily_details,
-			event_created_at: DateTime.now
+			timestamp: DateTime.now
 		)
 	end
 end
