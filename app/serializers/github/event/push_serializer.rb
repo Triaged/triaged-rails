@@ -1,8 +1,5 @@
 class Github::Event::PushSerializer < EventSerializer
-	attributes :pusher, :branch, :url
+	attributes :pusher, :branch
 	has_many :commits
-
-	def url
-		object.repo.html_url
-	end
+	has_one :repo
 end
