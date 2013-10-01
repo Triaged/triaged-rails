@@ -17,7 +17,7 @@ class Api::V1::MessagesController < API::BaseController
   # POST /api/v1/messages
   def create
     @message = Common::MessageService.new_message(@feed_item, message_params)
-    respond_with @message, :location => api_v1_feed_message_path(@feed_item, @vendor)
+    respond_with @message, :location => api_v1_feed_message_path(@feed_item, @message)
   end
 
   # PATCH/PUT /api/v1/messages/1
