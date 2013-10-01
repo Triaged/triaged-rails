@@ -12,7 +12,7 @@ class API::BaseController < ApplicationController
   protected
 
   def current_company
-  	current_user.company
+  	current_user.company if current_user
   end
 
   def page_not_found

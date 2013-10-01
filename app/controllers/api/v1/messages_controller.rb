@@ -17,7 +17,7 @@ class Api::V1::MessagesController < API::BaseController
   # POST /api/v1/messages
   def create
     @message = Common::MessageService.new_message(@feed_item, message_params)
-    respond_with @message
+    respond_with @message, :location => api_v1_feed_message_path(@feed_item, @vendor)
   end
 
   # PATCH/PUT /api/v1/messages/1
@@ -43,6 +43,6 @@ class Api::V1::MessagesController < API::BaseController
 
     # Only allow a trusted parameter "white list" through.
     def message_params
-      params[:message].permit(:author, :body, :notify)
+      params[:message].permit(:author_id, :body, :notify)
     end
 end

@@ -3,10 +3,17 @@ class Messages::Message
   include Mongoid::Timestamps
 
   embedded_in :feed_item
+  belongs_to :author, class_name: "User"
 
-	field :author, type: String
+	field :author_name, type: String
   field :body, type: String
   field :notify, type: Array
+
+  after_create :set_author_name
+
+  def set_author_name
+  	author_name = author.name
+  end
 
 
 
