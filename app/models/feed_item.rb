@@ -5,7 +5,7 @@ class FeedItem
   embedded_in :company
   embeds_many :messages, class_name: "Messages::Message"
 
-  field :external_id, type: Integer
+  field :external_id, type: String
   field :timestamp, type: DateTime
 
   index({ external_id: 1 }, { unique: true, background: true })
