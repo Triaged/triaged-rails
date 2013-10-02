@@ -13,10 +13,10 @@ class ProviderCredential
 
   after_create :provider_created
 
-  def provider_created
-  	payload = {:user_id => user.id}
-  	ActiveSupport::Notifications.instrument("#{provider.name}.provider_credentials.created", payload)
-  end
+  # def provider_created
+  # 	payload = {:user_id => user.id}
+  # 	ActiveSupport::Notifications.instrument("#{provider.name}.provider_credentials.created", payload)
+  # end
 
   def shared_credential
   	user.company.shared_credentials.where(provider_credential_id: self.id)
