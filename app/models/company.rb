@@ -14,7 +14,7 @@ class Company
 
   def add_event_to_feed event
   	feed_items << event
-  	Rails.logger.info "added #{event.id} event to feed"
+  	Rails.logger.info "added #{event.inspect}"
   	event
   end
 
