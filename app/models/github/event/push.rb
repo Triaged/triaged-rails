@@ -18,6 +18,9 @@ class Github::Event::Push < FeedItem
   	repo = org.repos.find_by name: event.repository.name
 
   	Rails.logger.info event.head_commit.inspect
+  	Rails.logger.info event.head_commit.id
+  	Rails.logger.info event.head_commit["id"]
+  	Rails.logger.info event.head_commit.distinct.inspect
 
   	push = Github::Event::Push.new(
   		pusher: event.pusher.name,
