@@ -16,7 +16,7 @@ class GoogleAnalytics::LegatoMetrics
 		end
 		
 		item = GoogleAnalytics::Status::Daily.new(
-			external_id: metrics.end_date.to_date,
+			external_id: metrics.end_date.to_i,
 			date: metrics.end_date,
 			visits_sum: metrics.totals_for_all_results["visits"],
 			visitors_sum: metrics.totals_for_all_results["visitors"],
