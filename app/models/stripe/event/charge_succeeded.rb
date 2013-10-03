@@ -12,7 +12,7 @@ class Stripe::Event::ChargeSucceeded < Stripe::BaseEvent
 														customer_description: data.customer_description,
 														description: data.data.object.description,
 														customer_email: data.customer_email,
-														object_id: data.data.object.id
+														object_id: data.data.object.id,
 														external_id: data.id)
 		return event
 	end
