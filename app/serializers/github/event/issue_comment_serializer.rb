@@ -1,3 +1,3 @@
-class Github::Event::IssueCommentSerializer < EventSerializer
+class Github::Event::IssueCommentSerializer < FeedItemSerializer
   attributes :id
 end

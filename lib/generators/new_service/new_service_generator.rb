@@ -23,7 +23,7 @@ class NewServiceGenerator < Rails::Generators::Base
 
   def create_serializer_stubs
   	events.each do |event|
-  		create_file "app/serializers/#{service_name}/event/#{event}_serializer.rb", "class #{service_name.camelize}::Event::#{event.camelize}Serializer < EventSerializer end"
+  		create_file "app/serializers/#{service_name}/event/#{event}_serializer.rb", "class #{service_name.camelize}::Event::#{event.camelize}Serializer < FeedItemSerializer end"
   	end
   end
 

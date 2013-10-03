@@ -21,6 +21,7 @@ class Github::Event::Push < FeedItem
   		pusher: event.pusher.name,
   		branch: event.ref.split("/").last,
   		external_id: event.head_commit.id,
+  		html_url: event.head_commit.url,
   		org: org,
   		repo_id: repo.id
   	)

@@ -1,3 +1,3 @@
-class Stripe::Event::DisputeCreatedSerializer < EventSerializer
+class Stripe::Event::DisputeCreatedSerializer < FeedItemSerializer
   attributes :id
 end

@@ -1,4 +1,4 @@
-class Sentry::Event::ExceptionSerializer < EventSerializer
+class Sentry::Event::ExceptionSerializer < FeedItemSerializer
 	attributes :project, :message, :culprit, :logger, :level
 
 end

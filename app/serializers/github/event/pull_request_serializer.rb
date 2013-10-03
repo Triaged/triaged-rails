@@ -1,3 +1,3 @@
-class Github::Event::PullRequestSerializer < EventSerializer
+class Github::Event::PullRequestSerializer < FeedItemSerializer
   attributes :id
 end

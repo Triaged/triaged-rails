@@ -1,3 +1,3 @@
-class Messages::MessageFeedItemSerializer < EventSerializer
+class Messages::MessageFeedItemSerializer < FeedItemSerializer
   attributes :author, :body, :feed_item_id
 end

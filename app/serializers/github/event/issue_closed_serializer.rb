@@ -1,3 +1,3 @@
-class Github::Event::IssueClosedSerializer < EventSerializer
+class Github::Event::IssueClosedSerializer < FeedItemSerializer
   attributes :id
 end

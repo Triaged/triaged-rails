@@ -7,9 +7,12 @@ class FeedItem
 
   field :external_id, type: String
   field :timestamp, type: DateTime
+  field :html_url, :type => String
 
   index({ external_id: 1 }, { unique: true, background: true })
 	validates_uniqueness_of :external_id
+
+	before_create :build_html_url
 
 	def provider
 		Provider.find_by name: provider_name
@@ -21,6 +24,10 @@ class FeedItem
 
 	def event_name
 		self.class.name.split("::").last.underscore
+	end
+
+	def build_html_url
+		# placehold to be overridden in subclasses
 	end
 
 
