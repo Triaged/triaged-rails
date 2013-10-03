@@ -10,7 +10,7 @@ class Stripe::Event::ChargeSucceeded < FeedItem
   	event = Stripe::Event::ChargeSucceeded.new(
 														amount: data.data.object.amount,
 														#customer_name: data.customer,
-														#description: data.data.object.description,
+														description: data.data.object.description,
 														#customer_email: data.data.object.customer,
 														external_id: data.id)
 		return event
