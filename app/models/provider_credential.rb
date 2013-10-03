@@ -11,7 +11,7 @@ class ProviderCredential
   field :refresh_token, :type => String
   field :shared, :type => Boolean, :default => false
 
-  after_create :provider_created
+  #after_create :provider_created
 
   # def provider_created
   # 	payload = {:user_id => user.id}
