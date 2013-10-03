@@ -12,12 +12,13 @@ class Stripe::Event::ChargeSucceeded < Stripe::BaseEvent
 														customer_description: data.customer_description,
 														description: data.data.object.description,
 														customer_email: data.customer_email,
+														object_id: data.data.object.id
 														external_id: data.id)
 		return event
 	end
 
 	def build_html_url
-		self.html_url = base_url_path + env_path + "/payments/#{external_id}"
+		self.html_url = base_url_path + env_path + "/payments/#{object_id}"
 	end
 
 end

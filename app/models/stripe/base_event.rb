@@ -2,6 +2,7 @@ class Stripe::BaseEvent < FeedItem
 	include Mongoid::Document
 
 	field :amount, :type => Float
+	field :object_id, :type => String
 	field :description, :type => String
 	field :livemode, :type => Boolean
 
