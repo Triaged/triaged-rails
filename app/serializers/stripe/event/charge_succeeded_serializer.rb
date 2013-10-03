@@ -1,5 +1,5 @@
 class	Stripe::Event::ChargeSucceededSerializer < EventSerializer
-	attributes :amount
+	attributes :amount, :description
 
 	 
 end

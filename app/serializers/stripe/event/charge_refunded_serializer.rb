@@ -1,3 +1,3 @@
 class Stripe::Event::ChargeRefundedSerializer < EventSerializer
-  attributes :id
+  attributes :amount, :description
 end
