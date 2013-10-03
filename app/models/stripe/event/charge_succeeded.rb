@@ -1,4 +1,4 @@
-class Stripe::Event::ChargeSucceeded < Stripe::Event
+class Stripe::Event::ChargeSucceeded < Stripe::BaseEvent
   include Mongoid::Document
 
   field :customer_id, :type => String
