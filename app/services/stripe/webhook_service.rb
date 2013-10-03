@@ -1,7 +1,7 @@
 class Stripe::WebhookService < Service
 	
 	def instrument payload
-		stripe_user = ProviderCredential.where(provider: Provider.stripe, uid: payload[:user_id]).first.user
+		stripe_user = ProviderCredential.where(provider: Provider.named("stripe"), uid: payload[:user_id]).first.user
 		event = Stripe::Event.retrieve(payload[:id], stripe_user.stripe_provider_credentials.access_token)
 		publish({:company_id => stripe_user.company.id, :event => payload})
   # rescue StandardError, e
