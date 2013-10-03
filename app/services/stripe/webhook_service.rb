@@ -17,7 +17,7 @@ class Stripe::WebhookService < Service
  	end
 
  	def retrieve_customer_details event
- 		customer = Stripe::Customer.retrieve(event[:customer])
+ 		customer = Stripe::Customer.retrieve(event[:data][:object][:card][:customer])
 		event[:customer_email] = customer[:email]
 		event[:customer_description] = customer[:description]
 		event
