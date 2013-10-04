@@ -6,13 +6,9 @@ class User
 	include Feedable
 	include Follower
 
-
-  belongs_to :company
+	belongs_to :company
   embeds_many :push_tokens
-
-  has_many :repos, :class_name => "Github::Repo"
-  
-  before_create :assign_to_company
+	before_create :assign_to_company
 
   def save_omniauth(provider, uid, access_token, refresh_token=nil)
 	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.find_by(name: provider), uid: uid)

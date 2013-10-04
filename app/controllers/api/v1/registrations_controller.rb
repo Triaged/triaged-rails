@@ -1,4 +1,6 @@
 class Api::V1::RegistrationsController < API::BaseController
+
+	skip_before_filter :authenticate_user!
 	
 	def create
 	 user = User.new(registration_params)
