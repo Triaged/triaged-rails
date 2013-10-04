@@ -4,9 +4,9 @@ module Common::MessageService
 		company = feed_item.company
 		message = feed_item.messages.create(message_params)
 		# Add an item to the feed
-		message_feed_item = Messages::MessageFeedItem.build_from_message message
-		Rails.logger.info message_feed_item.inspect
-		Common::FeedService.add_to_feed(message_feed_item, company)
+		#message_feed_item = Messages::MessageFeedItem.build_from_message message
+		#Rails.logger.info message_feed_item.inspect
+		#Common::FeedService.add_to_feed(message_feed_item, company)
 
 		# # Send notifications
 		# message.emails_to_notify.each do |email|
