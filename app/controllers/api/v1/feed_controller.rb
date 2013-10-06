@@ -17,36 +17,46 @@ class Api::V1::FeedController < API::BaseController
 	end
 
 	def mock_json
-		{
-		  "feed" => [
-		    {
-		      "provider" => "github",
-		      "event" => "issue_opened",
-		      "id" => "523a486b43c9eaf40d00000d",
-		      "title" => "hotstuff",
-		      "opened_by_name" => "CharlieWhite",
-		      "assigned_to_name" => "CharlieWhite",
-		      "body" => "Blah Blah Blah",
-		      "html_url" => "https:\/\/github.com\/CharlieWhite\/bluenote-rails\/issues\/6"
-		    },
-		    {
-		      "provider" => "sentry",
-		      "event" => "exception",
-		      "id" => "523a66be43c9ea68b5000003",
-		      "project" => "project-slug",
-		      "message" => "Thisisanexample",
-		      "culprit" => "foo.bar.baz",
-		      "logger" => "root",
-		      "level" => "error"
-		    },
-		    {
-		      "provider" => "stripe",
-		      "event" => "charge_succeeded",
-		      "id" => "52423acc43c9ea9df0000001",
-		      "amount" => 2000
-		    }
-		  ]
-		}
+		[
+			{
+				"id" => "523a486b43c9eaf40d00000d",
+				"html_url" => "www.test.com"
+			},
+			{
+				"id" => "523a486b43c9eaf40d000001",
+				"html_url" => "www.google.com"
+			}
+		]
+		# {
+		#   "feed" => [
+		#     {
+		#       "provider" => "github",
+		#       "event" => "issue_opened",
+		#       "id" => "523a486b43c9eaf40d00000d",
+		#       "title" => "hotstuff",
+		#       "opened_by_name" => "CharlieWhite",
+		#       "assigned_to_name" => "CharlieWhite",
+		#       "body" => "Blah Blah Blah",
+		#       "html_url" => "https:\/\/github.com\/CharlieWhite\/bluenote-rails\/issues\/6"
+		#     },
+		#     {
+		#       "provider" => "sentry",
+		#       "event" => "exception",
+		#       "id" => "523a66be43c9ea68b5000003",
+		#       "project" => "project-slug",
+		#       "message" => "Thisisanexample",
+		#       "culprit" => "foo.bar.baz",
+		#       "logger" => "root",
+		#       "level" => "error"
+		#     },
+		#     {
+		#       "provider" => "stripe",
+		#       "event" => "charge_succeeded",
+		#       "id" => "52423acc43c9ea9df0000001",
+		#       "amount" => 2000
+		#     }
+		#   ]
+		# }
 	end
 
 end

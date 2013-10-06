@@ -3,7 +3,7 @@ class FeedItem
   include Mongoid::Timestamps
 
   embedded_in :company
-  embeds_many :messages, class_name: "Messages::Message"
+  embeds_many :messages, class_name: "Messages::Message", order: "id DESC"
 
   field :external_id, type: String
   field :timestamp, type: DateTime
