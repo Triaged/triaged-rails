@@ -20,7 +20,6 @@ class NewRelic::WebhookService < Service
 
  	def alert_type alert
  		alert = JSON.parse(alert)
- 		Rails.logger.info alert.inspect
  		return "downtime" if (alert["severity"] == "downtime" && alert["short_descripton"].include?("opened"))
 		return "downtime_ended" if (alert["severity"] == "downtime" && alert["short_descripton"].include?("ended"))
 		return "error_threshold" if (alert["message"].include?("Error rate") && alert["short_description"].include?("opened"))
@@ -30,6 +29,8 @@ class NewRelic::WebhookService < Service
  	end
 
  	def event_data payload
+ 		Rails.logger.info payload.inspect
+ 		Rails.logger.info payload[:external_id]
  		# remove the root element
  		root = payload[:event].keys.first
  		data = JSON.parse(payload[:event][root])
