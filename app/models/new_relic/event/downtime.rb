@@ -26,4 +26,8 @@ class NewRelic::Event::Downtime < FeedItem
 		true
 	end
 
+	def push_message
+		message
+	end
+
 end

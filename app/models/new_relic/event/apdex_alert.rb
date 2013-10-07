@@ -28,4 +28,8 @@ class NewRelic::Event::ApdexAlert < FeedItem
 		true
 	end
 
+	def push_message
+		message
+	end
+
 end

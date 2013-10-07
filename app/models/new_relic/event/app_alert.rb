@@ -27,4 +27,8 @@ class NewRelic::Event::AppAlert < FeedItem
 		true
 	end
 
+	def push_message
+		message
+	end
+
 end

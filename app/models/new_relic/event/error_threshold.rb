@@ -22,4 +22,12 @@ class NewRelic::Event::ErrorThreshold < FeedItem
 		)
 	end
 
+	def should_push?
+		true
+	end
+
+	def push_message
+		message
+	end
+
 end
