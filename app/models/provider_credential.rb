@@ -9,7 +9,7 @@ class ProviderCredential
   field :access_token, :type => String
   field :refresh_token, :type => String
 
-  validates :company, uniqueness: true, scope: :provider
+  validates :company, :uniqueness => { :scope => :provider }
   
 
   #after_create :provider_created
