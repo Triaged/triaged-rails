@@ -23,4 +23,8 @@ class Sentry::Event::Exception < FeedItem
 		"https://app.getsentry.com/"
 	end
 
+	def should_push?
+		true
+	end
+
 end

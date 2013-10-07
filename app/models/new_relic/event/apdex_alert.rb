@@ -25,4 +25,8 @@ class NewRelic::Event::ApdexAlert < FeedItem
 		)
 	end
 
+	def should_push?
+		true
+	end
+
 end

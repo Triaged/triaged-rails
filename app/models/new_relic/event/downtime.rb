@@ -24,4 +24,8 @@ class NewRelic::Event::Downtime < FeedItem
 		)
 	end
 
+	def should_push?
+		true
+	end
+
 end

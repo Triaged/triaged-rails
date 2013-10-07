@@ -19,7 +19,7 @@ class FeedItem
 	end
 
 	def provider_name
-		self.class.name.split("::").first.downcase
+		self.class.name.split("::").first.underscore
 	end
 
 	def event_name
@@ -28,6 +28,10 @@ class FeedItem
 
 	def build_html_url
 		# placehold to be overridden in subclasses
+	end
+
+	def should_push?
+		false
 	end
 
 

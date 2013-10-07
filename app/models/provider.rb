@@ -3,6 +3,8 @@ class Provider
   
 
   field :name, :type => String
+
+  validates :name, uniqueness: true
   
   def self.named name
   	Provider.where(name: name).first
