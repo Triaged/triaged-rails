@@ -29,13 +29,11 @@ class NewRelic::WebhookService < Service
  	end
 
  	def event_data payload
- 		Rails.logger.info payload.inspect
- 		Rails.logger.info payload[:external_id]
  		# remove the root element
  		root = payload[:event].keys.first
  		data = JSON.parse(payload[:event][root])
  		# merge the external id
- 		data.merge(external_id: payload[:external_id])
+ 		data.merge!(external_id: payload[:external_id])
  		return data
  	end
 
