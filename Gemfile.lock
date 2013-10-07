@@ -157,6 +157,7 @@ GEM
     net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    newrelic_rpm (3.6.7.159)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     oauth2 (0.8.1)
@@ -292,6 +293,7 @@ DEPENDENCIES
   minitest-wscolor
   mongoid (~> 4)!
   mongoid_slug
+  newrelic_rpm
   omniauth
   omniauth-github
   omniauth-google-oauth2

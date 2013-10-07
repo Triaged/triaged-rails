@@ -7,8 +7,6 @@ class NewRelic::Event::Downtime < FeedItem
   field :message, :type => String
   field :short_description, :type => String
   field :long_description, :type => String
-  field :alert_url, :type => String
-  
   
 	def self.build_from_webhook data
 		event = NewRelic::Event::Downtime.new(
@@ -20,7 +18,7 @@ class NewRelic::Event::Downtime < FeedItem
 			message: data.message,
 			short_description: data.short_description,
 			long_description: data.long_description,
-			alert_url: data.alert_url
+			html_url: data.alert_url
 		)
 	end
 

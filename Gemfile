@@ -63,6 +63,7 @@ gem "airbrake"
 gem 'legato'
 gem 'rest-client'
 gem 'grocer'
+gem 'newrelic_rpm'
 
 group :development do
 	gem 'debugger'

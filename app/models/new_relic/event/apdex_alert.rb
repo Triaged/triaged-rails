@@ -7,7 +7,6 @@ class NewRelic::Event::ApdexAlert < FeedItem
   field :message, :type => String
   field :short_description, :type => String
   field :long_description, :type => String
-  field :alert_url, :type => String
   
 
   
@@ -21,7 +20,7 @@ class NewRelic::Event::ApdexAlert < FeedItem
 			message: data.message,
 			short_description: data.short_description,
 			long_description: data.long_description,
-			alert_url: data.alert_url
+			html_url: data.alert_url
 		)
 	end
 
