@@ -3,7 +3,7 @@ class NewRelic::WebhookService < Service
 	@@provider = :new_relic
 	
 	def instrument payload
-		publish(@@provider, event_type(payload) {
+		publish(@@provider, event_type(payload), {
 			:company_id => payload[:company_id],
 			:event => event_data(payload) 
 		})
