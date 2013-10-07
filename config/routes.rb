@@ -24,6 +24,9 @@ DockedRails::Application.routes.draw do
 	  namespace :services do
 	  	resources :github
 	  	resources :sentry
+	  	resources :new_relic
+	  	resources :kiln
+	  	resources :airbrake
 	  end
 	end
 
