@@ -50,8 +50,8 @@ class Github::CreateHooksService
 		@company.github_org.repos.each do |repo|
 			begin
 				@github.repos.hooks.create repo.owner, repo.name, name:  "web", active:  true, 
-					config: { "url" => services_github_index_url(subdomain: @company.slug), 
-						"events" => ["push", "issues", "issue_comment", "pull_request", "commit_comment"]}
+					config: { "url" => services_github_index_url(subdomain: @company.slug)}, 
+					events: => ["push", "issues", "issue_comment", "pull_request", "commit_comment"]
 			rescue Github::Error::UnprocessableEntity
 				Rails.logger.info "hook already exists"
 				next
