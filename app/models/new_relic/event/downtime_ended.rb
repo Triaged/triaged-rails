@@ -8,7 +8,6 @@ class NewRelic::Event::DowntimeEnded < FeedItem
   field :short_description, :type => String
   field :long_description, :type => String
   field :alert_url, :type => String
-  field :version, :type => String
 
   
 	def self.build_from_webhook data
@@ -21,8 +20,7 @@ class NewRelic::Event::DowntimeEnded < FeedItem
 			message: data.message,
 			short_description: data.short_description,
 			long_description: data.long_description,
-			alert_url: data.alert_url,
-			version: data.version
+			alert_url: data.alert_url
 		)
 	end
 
