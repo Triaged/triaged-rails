@@ -9,7 +9,7 @@ module Common::NotificationService
 		if push_token
 			Rails.logger.info "PUSHING TO APNS TOKEN: #{push_token.token}"
 			notification = Grocer::Notification.new(
-			  device_token:      push_token.token
+			  device_token:      push_token.token,
 			  alert:             notification,
 			  badge:             1,
 			  expiry:            Time.now + 60*60,     # optional; 0 is default, meaning the message is not stored
