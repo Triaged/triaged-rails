@@ -34,5 +34,9 @@ class FeedItem
 		false
 	end
 
+	def push_message
+		"This should be really set"
+	end
+
 
 end

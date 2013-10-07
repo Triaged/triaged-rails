@@ -7,7 +7,6 @@ class NewRelic::Event::Deployment < FeedItem
   field :description, :type => String
   field :revision, :type => String
   field :deployed_by, :type => String
-  field :version, :type => String
 
   
 	def self.build_from_webhook data
@@ -19,8 +18,7 @@ class NewRelic::Event::Deployment < FeedItem
 			changelog: data.changelog,
 			description: data.description,
 			revision: data.revision,
-			deployed_by: data.deployed_by,
-			version: data.version
+			deployed_by: data.deployed_by
 		)
 	end
 
