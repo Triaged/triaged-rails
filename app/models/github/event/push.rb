@@ -23,7 +23,8 @@ class Github::Event::Push < FeedItem
   		external_id: event.head_commit.id,
   		html_url: event.head_commit.url,
   		org: org,
-  		repo_id: repo.id
+  		repo_id: repo.id,
+  		timestamp: DateTime.now
   	)
   	
   	event.commits.each do |commit|
