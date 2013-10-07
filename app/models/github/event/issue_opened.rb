@@ -25,7 +25,7 @@ class Github::Event::IssueOpened < FeedItem
   		title: event.issue.title,
   		opened_by_name: event.issue.user.login,
   		assigned_to_name: assigned_to_name,
-  		body: event.body,
+  		body: event.issue.body,
   		open: open,
   		html_url: event.issue.html_url,
   		external_id: event.issue.id,
