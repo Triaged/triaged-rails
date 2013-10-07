@@ -28,7 +28,7 @@ class Github::Event::IssueOpened < FeedItem
   		body: event.body,
   		open: open,
   		html_url: event.issue.html_url,
-  		external_id: event.issue.id,,
+  		external_id: event.issue.id,
   		org: org,
   		repo_id: repo.id,
   		timestamp: DateTime.now
