@@ -6,10 +6,10 @@ module Feedable
 	end
 
 	def feed(min_id = nil)
-  	feed_item_ids = user_feed_items.only(:id) 
-  	feed_item_ids.gt(id: min_id) if min_id
+  	feed_items = user_feed_items.only(:id) 
+  	feed_items.gt(id: min_id) if min_id
 
-  	company.feed_items.desc(:created_at).find(feed_item_ids)
+  	company.feed_items.desc(:created_at).find(feed_items.collect {|item| item.id })
   end
 
   def add_event_to_feed event
