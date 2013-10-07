@@ -30,7 +30,7 @@ class NewRelic::WebhookService < Service
  	def event_data payload
  		# remove the root element
  		root = payload[:event].keys.first
- 		data = payload[:event][root]
+ 		data = JSON.parse(payload[:event][root])
  		# merge the external id
  		data.merge(external_id: payload[:external_id])
  		return data
