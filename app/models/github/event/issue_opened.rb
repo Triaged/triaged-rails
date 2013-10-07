@@ -15,7 +15,7 @@ class Github::Event::IssueOpened < FeedItem
   end
 
   def self.build_from_webhook event
-  	org = Github::Org.find_by name: event.repository.organization
+  	org = Github::Org.find_by name: event.repository.owner.login
   	repo = org.repos.find_by name: event.repository.name
 
   	assigned_to_name = (event.issue.assignee != nil) ? event.issue.assignee.login : nil
