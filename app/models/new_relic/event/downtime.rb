@@ -13,7 +13,7 @@ class NewRelic::Event::Downtime < FeedItem
   
 	def self.build_from_webhook data
 		event = NewRelic::Event::Downtime.new(
-			external_id: data.id,
+			external_id: data.external_id,
 			timestamp: data.created_at,
 			application_name: data.application_name,
 			account_name: data.application_name,

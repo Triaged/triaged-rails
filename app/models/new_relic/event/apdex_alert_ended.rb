@@ -13,7 +13,7 @@ class NewRelic::Event::ApdexAlertEnded < FeedItem
   
 	def self.build_from_webhook data
 		event = NewRelic::Event::ApdexAlertEnded.new(
-			external_id: data.id,
+			external_id: data.external_id,
 			timestamp: data.created_at,
 			application_name: data.application_name,
 			account_name: data.application_name,

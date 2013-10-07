@@ -12,8 +12,9 @@ class NewRelic::Event::ApdexAlert < FeedItem
 
   
 	def self.build_from_webhook data
+		Rails.logger.info data.inspect
 		event = NewRelic::Event::ApdexAlert.new(
-			external_id: data.id,
+			external_id: data.external_id,
 			timestamp: data.created_at,
 			application_name: data.application_name,
 			account_name: data.application_name,
