@@ -7,6 +7,7 @@ ActiveSupport::Notifications.subscribe "event.github.push" do |name, start, fini
 end
 
 ActiveSupport::Notifications.subscribe "event.github.issues" do |name, start, finish, id, payload|
+	Rails.logger.info payload[:event][:event_action]
 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueOpened, payload) if payload[:event][:event_action] == "opened"
 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueReopened, payload) if payload[:event][:event_action] == "reopened"
 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueClosed, payload) if payload[:event][:event_action] == "closed"

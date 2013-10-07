@@ -5,6 +5,7 @@ module Common::WebhookService
 	# sending the event for feed processing
 
 	def self.build_event_and_add_to_feeds event_class, payload
+		Rails.logger.info "Building event for #{event_class}"
 		company = Company.find(payload[:company_id])
 		event = event_class.build_from_webhook payload[:event].to_properties
 
