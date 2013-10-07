@@ -13,9 +13,9 @@ class NewRelic::WebhookService < Service
 
 	
  	def event_type payload
- 		return "deployment" if payload.key? "deployment"
- 		return "app_alert" if payload.key? "app_alert" # @TODO: Find key
- 		return alert_type(payload["alert"]) if payload.key? "alert"
+ 		return "deployment" if payload[:event].key? "deployment"
+ 		return "app_alert" if payload[:event].key? "app_alert" # @TODO: Find key
+ 		return alert_type(payload[:event]["alert"]) if payload[:event].key? "alert"
  	end
 
  	def alert_type alert
