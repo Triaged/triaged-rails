@@ -2,27 +2,37 @@ class Github::Event::IssueOpened < FeedItem
   include Mongoid::Document
 
 	field :title, type: String
+	field :open, type: Boolean, default: true
   field :opened_by_name, type: String
   field :assigned_to_name, type: String
   field :body, type: String
+  field :repo_id, :type => Integer
 
-  belongs_to :issue, class_name: "Github::Issue"
+  belongs_to :org, :class_name => "Github::Org"
+
+   def repo
+  	org.repos.find(repo_id)
+  end
 
   def self.build_from_webhook event
-  	issue = Github::Issue.create_issue_from_webhook event
-		issue_opened_event = self.build_event_from_issue issue
-		return issue_opened_event
-  end
+  	org = Github::Org.find_by name: event.repository.organization
+  	repo = org.repos.find_by name: event.repository.name
 
-  def self.build_event_from_issue issue
+  	assigned_to_name = (event.issue.assignee != nil) ? event.issue.assignee.login : nil
+  	open = event.issue.state == "open" ? true : false
+
   	issue_opened_event = Github::Event::IssueOpened.new(
-  		title: issue.title,
-  		opened_by_name: issue.opened_by_name,
-  		assigned_to_name: issue.assigned_to_name,
-  		body: issue.body,
-  		html_url: issue.html_url,
-  		issue: issue
+  		title: event.issue.title,
+  		opened_by_name: event.issue.user.login,
+  		assigned_to_name: assigned_to_name,
+  		body: event.body,
+  		open: open,
+  		html_url: event.issue.html_url,
+  		external_id: event.issue.id,,
+  		org: org,
+  		repo_id: repo.id,
+  		timestamp: DateTime.now
   		)
   	return issue_opened_event
-  end
+	end
 end
