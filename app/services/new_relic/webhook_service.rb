@@ -23,10 +23,10 @@ class NewRelic::WebhookService < Service
  		Rails.logger.info alert.inspect
  		return "downtime" if (alert["severity"] == "downtime" && alert["short_descripton"].include?("opened"))
 		return "downtime_ended" if (alert["severity"] == "downtime" && alert["short_descripton"].include?("ended"))
-		return "error_threshold" if (alert["message"].include? "Error rate" && alert["short_descripton"].include?("opened"))
-		return "error_threshold_ended" if (alert["message"].include? "Error rate" && alert["short_descripton"].include?("ended"))
-		return "apdex_alert" if (alert["message"].include? "Apdex score" && alert["short_descripton"].include?("opened"))
-		return "apdex_alert_ended" if (alert["message"].include? "Apdex score" && alert["short_descripton"].include?("ended"))
+		return "error_threshold" if (alert["message"].include? "Error rate" && alert["short_description"].include?("opened"))
+		return "error_threshold_ended" if (alert["message"].include? "Error rate" && alert["short_description"].include?("ended"))
+		return "apdex_alert" if (alert["message"].include? "Apdex score" && alert["short_description"].include?("opened"))
+		return "apdex_alert_ended" if (alert["message"].include? "Apdex score" && alert["short_description"].include?("ended"))
  	end
 
  	def event_data payload
