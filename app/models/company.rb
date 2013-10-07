@@ -7,6 +7,7 @@ class Company
   
 
   embeds_many :feed_items
+  embeds_many :connected_providers
 
   has_many :users
   has_many :provider_credentials
@@ -15,6 +16,8 @@ class Company
   def add_event_to_feed event
   	feed_items << event
   	Rails.logger.info "added #{event.inspect}"
+		# This will fail if duplicate item exists in company feed
+  	company.push_event_to_followers event if  event.persisted?
   	event
   end
 
@@ -26,6 +29,10 @@ class Company
 
 	def followers_of provider
 		followers = users.select { |user| user.follows? provider }
+	end
+
+	def provider_connected? provider
+		[connected_providers.collect { |connected| connected.provider }].include? provider
 	end
 
 	slug do |object|

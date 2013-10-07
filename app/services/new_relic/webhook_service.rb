@@ -1,18 +1,17 @@
 class NewRelic::WebhookService < Service
+
+	@@provider = :new_relic
 	
 	def instrument payload
-		event_type = event_type(payload)
-		publish({:company_id => payload[:company_id], :event => event_data(payload) })
+		publish(@@provider, event_type(payload) {
+			:company_id => payload[:company_id],
+			:event => event_data(payload) 
+		})
   # rescue StandardError, e
   # 	Rails.logger.info e.inspect  
 	end
 
-	def publish(payload)
-		Rails.logger.info "new_relic.exception"
-		ActiveSupport::Notifications.instrument("sentry.exception", payload)
-		Rails.logger.info "Published"
- 	end
-
+	
  	def event_type payload
  		return "deployment" if payload.key? "deployment"
  		return "app_alert" if payload.key? "app_alert" # @TODO: Find key

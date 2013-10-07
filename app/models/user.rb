@@ -29,4 +29,17 @@ class User
 		company.provider_credentials
 	end
 
+	def provider_settings
+		provider_settings = {}
+		Provider.all.each do |provider|
+			connected = company.provider_connected? provider
+			follows = followed_providers.include? provider
+			provider_settings[provider.name] = {
+				id: provider.id,
+				connected: connected,
+				follows: follows
+			}
+		end
+		return provider_settings
+	end
 end

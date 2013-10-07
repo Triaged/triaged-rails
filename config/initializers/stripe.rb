@@ -1,20 +1,20 @@
-ActiveSupport::Notifications.subscribe "stripe.charge.succeeded" do |name, start, finish, id, payload|
+ActiveSupport::Notifications.subscribe "event.stripe.charge.succeeded" do |name, start, finish, id, payload|
 	Common::WebhookService.build_event_and_add_to_feeds(Stripe::Event::ChargeSucceeded, payload)
 end
 
-ActiveSupport::Notifications.subscribe "stripe.charge.refunded" do |name, start, finish, id, payload|
+ActiveSupport::Notifications.subscribe "event.stripe.charge.refunded" do |name, start, finish, id, payload|
   Common::WebhookService.build_event_and_add_to_feeds(Stripe::Event::ChargeRefunded, payload)
 end
 
-ActiveSupport::Notifications.subscribe "stripe.dispute.created" do |name, start, finish, id, payload|
+ActiveSupport::Notifications.subscribe "event.stripe.dispute.created" do |name, start, finish, id, payload|
   Common::WebhookService.build_event_and_add_to_feeds(Stripe::Event::DisputeCreated, payload)
 end
 
-ActiveSupport::Notifications.subscribe "stripe.invoice.failed" do |name, start, finish, id, payload|
+ActiveSupport::Notifications.subscribe "event.stripe.invoice.failed" do |name, start, finish, id, payload|
   Common::WebhookService.build_event_and_add_to_feeds(Stripe::Event::InvoiceFailed, payload)
 end
 
-ActiveSupport::Notifications.subscribe "stripe.subscription.deleted" do |name, start, finish, id, payload|
+ActiveSupport::Notifications.subscribe "event.stripe.subscription.deleted" do |name, start, finish, id, payload|
   Common::WebhookService.build_event_and_add_to_feeds( Stripe::Event::SubscriptionDeleted, payload)
 end
 

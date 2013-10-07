@@ -5,7 +5,6 @@ class Github::Event::IssueClosed < FeedItem
   field :closed_by_name, type: String
   field :assigned_to_name, type: String
   field :body, type: String
-  field :html_url, type: String
 
   belongs_to :issue, class_name: "Github::Issue"
 
