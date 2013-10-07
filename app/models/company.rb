@@ -17,7 +17,7 @@ class Company
   	feed_items << event
   	Rails.logger.info "added #{event.inspect}"
 		# This will fail if duplicate item exists in company feed
-  	company.push_event_to_followers event if  event.persisted?
+  	push_event_to_followers event if  event.persisted?
   	event
   end
 
