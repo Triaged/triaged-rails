@@ -5,8 +5,10 @@ module Feedable
 		embeds_many :user_feed_items
 	end
 
-	def feed
-  	feed_item_ids = user_feed_items.collect {|user_item| user_item.feed_item_id }
+	def feed(min_id = nil)
+  	feed_item_ids = user_feed_items.only(:id) 
+  	feed_item_ids.gt(id: min_id) if min_id
+
   	company.feed_items.desc(:created_at).find(feed_item_ids)
   end
 
