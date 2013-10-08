@@ -18,7 +18,7 @@ private
 	end
 
 	def user_params
-      params[:user].permit(:name)
-    end
+    params[:user].permit(:name)
+  end
 
 end

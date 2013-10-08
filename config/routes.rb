@@ -14,6 +14,7 @@ DockedRails::Application.routes.draw do
     		resources :messages
     		collection do 
     			get 'mock'
+    			get 'view'
     		end
     	end
     end

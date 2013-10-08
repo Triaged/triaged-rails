@@ -16,6 +16,11 @@ class Api::V1::FeedController < API::BaseController
 		respond_with @item
 	end
 
+	def view
+		@item = current_user.company.feed_items.find(params[:id])
+		redirect_to @item.html_url
+	end
+
 	def mock_json
 		[
 			{

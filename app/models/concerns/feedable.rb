@@ -3,14 +3,12 @@ module Feedable
 
 	included do 
 		embeds_many :user_feed_items
+		index "user_feed_items.feed_item_i" => 1
 	end
 
 	def feed(min_id = nil, max_id = nil)
-  	feed_items = user_feed_items.only(:id) 
-
-  	# Filter on min or max
-  	feed_items.gt(id: min_id) if min_id
-  	feed_items.lt(id: max_id) if max_id
+  	feed_items = user_feed_items.where(:feed_item_id.gt => min_id).only(:id) if min_id
+  	feed_items = user_feed_items.where(:feed_item_id.lt => max_id).only(:id) if max_id
 
   	company.feed_items.desc(:created_at).find(feed_items.collect {|item| item.id })
   end
