@@ -3,7 +3,7 @@ class Stripe::WebhookService < Service
 	@@provider = :stripe
 	
 	def instrument payload
-		event_type = payload[:event][:type]
+		event_type = payload[:type]
 		company = get_company payload
 		
 		# Validate event and fill customer data
