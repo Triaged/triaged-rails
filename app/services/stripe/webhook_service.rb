@@ -15,7 +15,7 @@ class Stripe::WebhookService < Service
   # 	Rails.logger.info e.inspect  
 	end
 
-	def get_company
+	def get_company payload
  		ProviderCredential.where(provider: Provider.named("stripe"), uid: payload[:user_id]).first.company
  	end
 
