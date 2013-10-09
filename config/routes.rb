@@ -9,7 +9,9 @@ DockedRails::Application.routes.draw do
   namespace :api do
     namespace :v1 do
     	devise_for :users
-    	resource :account
+    	resource :account do
+    		resources :push_tokens
+    	end
     	resources :feed do
     		resources :messages
     		collection do 
