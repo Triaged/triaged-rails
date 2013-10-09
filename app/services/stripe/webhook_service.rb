@@ -5,6 +5,7 @@ class Stripe::WebhookService < Service
 	def instrument payload
 		event_type = payload[:type]
 		company = get_company payload
+		Rails.logger.info company.inspect
 		
 		# Validate event and fill customer data
 		event = Stripe::Event.retrieve(payload[:id], company.stripe_provider_credentials.access_token)
@@ -16,7 +17,8 @@ class Stripe::WebhookService < Service
 	end
 
 	def get_company payload
- 		ProviderCredential.where(provider: Provider.named("stripe"), uid: payload[:user_id]).first.company
+ 		company = ProviderCredential.where(provider: Provider.named("stripe"), uid: payload[:user_id]).first.company
+ 		company
  	end
 
  	def retrieve_customer_details event, access_token
