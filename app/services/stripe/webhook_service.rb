@@ -13,8 +13,8 @@ class Stripe::WebhookService < Service
 		payload = retrieve_customer_details payload, access_token
 		
 		publish(@@provider, event_type, {:company_id => company.id, :event => payload})
-  # rescue StandardError, e
-  # 	Rails.logger.info e.inspect  
+  rescue StandardError, e
+  	Rails.logger.info e.inspect  
 	end
 
 	def get_company payload
