@@ -4,11 +4,6 @@ module Common::NotificationService
 		return true
 	end
 
-	
-
-		return true
-	end
-
 	def self.push_message user, message
 		alert = "#{message.author_name} added a message"
 		Common::NotificationService.push(user, message.feed_item.id, alert)
