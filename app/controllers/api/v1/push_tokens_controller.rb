@@ -7,12 +7,7 @@ class Api::V1::PushTokensController < API::BaseController
 
 	def reset_count
 		push_tokens = current_user.push_tokens.where(service: push_params[:service])
-		Rails.logger.info current_user.inspect
-		push_tokens.each do |push_token| 
-			push_token.update_attribute(:count, 0)
-			Rails.logger.info push_token.inspect
-		end
-		Rails.logger.info push_tokens.inspect
+		push_tokens.each {|push_token| push_token.update_attribute(:count, 0)}
 		render :json => 'ok', :status => 201
 	end
 
