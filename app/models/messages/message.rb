@@ -8,6 +8,7 @@ class Messages::Message
 	field :author_name, type: String
   field :body, type: String
   field :notify, type: Array
+  field :timestamp, type: Datetime
 
   after_create :set_author_name
 
