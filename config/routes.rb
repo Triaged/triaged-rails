@@ -14,6 +14,7 @@ DockedRails::Application.routes.draw do
     			collection do
     				post 'reset_count'
     			end
+    		end
     	end
     	resources :feed do
     		resources :messages
