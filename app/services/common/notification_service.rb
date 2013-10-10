@@ -17,8 +17,8 @@ module Common::NotificationService
 			  alert:             event.push_message,
 			  badge:             push_token.count,
 			  expiry:            Time.now + 60*60,     # optional; 0 is default, meaning the message is not stored
-			  identifier:        event.id,                 # optional
-			  content_available: true                  # optional; any truthy value will set 'content-available' to 1
+			  content_available: true,                  # optional; any truthy value will set 'content-available' to 1
+				custom: {"external_id" : event.id}
 			)
 
 			GROCER.push(notification)
