@@ -34,5 +34,6 @@ module Common::NotificationService
 
 			GROCER.push(notification)
 		end
+	end
 
 end
