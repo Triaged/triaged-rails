@@ -64,6 +64,8 @@ gem 'legato'
 gem 'rest-client'
 gem 'grocer'
 gem 'newrelic_rpm'
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 group :development do
 	gem 'debugger'

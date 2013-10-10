@@ -21,7 +21,7 @@ module Feedable
   	# Check if we settings are active
   	logger.info "adding user feed"
   	user_feed_items.create(feed_item: event)
-  	# NotificationService.push event if user.settings.should_push_notification
+  	Common::NotificationService.push(self, event) if event.should_push?
   end
 
 end
