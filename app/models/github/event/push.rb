@@ -15,8 +15,9 @@ class Github::Event::Push < FeedItem
   
   def self.build_from_webhook event
   	org = Github::Org.find_by name: event.repository.organization
+  	Rails.logger.info event.repository.name
   	repo = org.repos.find_by name: event.repository.name
-
+  	Rails.logger.info repo.inspect
   	push = Github::Event::Push.new(
   		pusher: event.pusher.name,
   		branch: event.ref.split("/").last,
