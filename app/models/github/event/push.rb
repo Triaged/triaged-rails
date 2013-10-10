@@ -3,7 +3,7 @@ class Github::Event::Push < FeedItem
 
   field :pusher, :type => String
   field :branch, :type => String
-  field :repo_id, :type => Integer
+  field :repo_id, :type => String
 
   belongs_to :org, :class_name => "Github::Org"
   embeds_many :commits, :class_name => "Github::Event::Commit"
