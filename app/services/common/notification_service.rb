@@ -7,10 +7,10 @@ module Common::NotificationService
 	def self.push user, event
 		push_token = user.push_tokens.where(service: "apns").first
 
-		# increment push count
-		push_token.inc(:count, 1)
-
 		if push_token
+			# increment push count
+			push_token.inc(count: 1)
+
 			Rails.logger.info "PUSHING TO APNS TOKEN: #{push_token.token}"
 			notification = Grocer::Notification.new(
 			  device_token:      push_token.token,

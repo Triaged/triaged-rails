@@ -5,7 +5,7 @@ class PushToken
 
   field :service, type: String
   field :token, type: String
-  field :count, type: Integer
+  field :count, type: Integer, default: 0
 
   before_create :strip_spaces
 
