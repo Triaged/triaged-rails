@@ -36,6 +36,7 @@ class User
 			follows = followed_providers.include? provider
 			provider_settings[provider.name] = {
 				id: provider.id,
+				name: provider.name,
 				connected: connected,
 				follows: follows
 			}

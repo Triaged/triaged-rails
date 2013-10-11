@@ -23,6 +23,12 @@ DockedRails::Application.routes.draw do
     			get 'view'
     		end
     	end
+    	resources :providers do
+    		member do
+    			post 'follow'
+    			post 'unfollow'
+    		end
+    	end
     end
   end
 
