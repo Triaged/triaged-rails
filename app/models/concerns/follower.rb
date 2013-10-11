@@ -2,7 +2,7 @@ module Follower
 	extend ActiveSupport::Concern
 
 	included do |base|
-		base.has_and_belongs_to_many :followed_providers, :inverse_of => :nil, :class_name => 'Provider', :dependent => :destroy
+		base.has_and_belongs_to_many :followed_providers, :inverse_of => :nil, :class_name => 'Provider'
 	end
 
 	def follow(model)
