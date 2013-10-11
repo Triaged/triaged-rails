@@ -3,12 +3,12 @@ class Api::V1::ProvidersController < API::BaseController
 	
 	def follow
 		current_user.follow @provider
-		render :json => 'ok', :status => 201
+		render json: current_user, serializer: AccountSerializer
 	end
 
 	def unfollow
 		current_user.unfollow @provider
-		render :json => 'ok', :status => 201
+		render json: current_user, serializer: AccountSerializer
 	end
 
 private
