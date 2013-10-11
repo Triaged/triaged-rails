@@ -19,6 +19,20 @@ module Follower
     end
   end
 
+  def unfollow(model)
+		if self.follows?(model)
+    	return false unless model.before_unfollowed(self) if model.respond_to?('before_unfollowed')
+     	return false unless self.before_unfollow(model) if self.respond_to?('before_unfollow')
+       
+      self.followed_providers.delete(model)
+      self.after_unfollow(model) if self.respond_to?('after_unfollow')
+
+      return true
+    else
+      return false
+    end
+  end
+
 
 	def can_follow_provider? provider
 		#credentials = credentials_for_provider provider
