@@ -1,4 +1,4 @@
-class Api::V1::ProvidersController < ApplicationController
+class Api::V1::ProvidersController < API::BaseController
 	before_action :set_provider
 	
 	def follow
