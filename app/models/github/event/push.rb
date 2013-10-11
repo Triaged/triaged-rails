@@ -43,4 +43,13 @@ class Github::Event::Push < FeedItem
   	return push
   end
 
+  def should_push?
+		true
+	end
+
+	def push_message
+		"#{pusher} pushed to #{repo.name}"
+	end
+
+
 end
