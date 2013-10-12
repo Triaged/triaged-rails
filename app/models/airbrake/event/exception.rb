@@ -13,7 +13,7 @@ class Airbrake::Event::Exception < FeedItem
 		event = Sentry::Event::Exception.new(
 			external_id: data.error.id,
 			project: data.error.project.name,
-			message: data.error.message,
+			message: data.error.error_message,
 			error_class: data.error.error_class,
 			line_number: data.error.line_number,
 			times_occurred: data.times_occurred,
