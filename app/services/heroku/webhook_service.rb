@@ -1,7 +1,7 @@
 class Heroku::WebhookService < Service 
 
 	@@provider = :heroku
-	@@event_type = :release
+	@@event_type = :deploy
 	
 	def instrument payload
 		publish(@@provider, @@event_type,  {
