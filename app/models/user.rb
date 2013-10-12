@@ -7,6 +7,8 @@ class User
 	include Follower
 
 	belongs_to :company
+	index({ company_id: 1 }
+
   embeds_many :push_tokens
 	before_create :assign_to_company
 
@@ -23,6 +25,10 @@ class User
 
   def assign_to_company
 		self.company = Company.find_or_create_by name: email_host
+	end
+
+	def teammates
+		self.company.teammates_of self
 	end
 
 	def provider_credentials

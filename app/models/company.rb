@@ -10,6 +10,7 @@ class Company
   embeds_many :connected_providers
 
   has_many :users
+  
   has_many :provider_credentials
   has_one :github_org, :class_name => "Github::Org"
 
@@ -33,6 +34,10 @@ class Company
 
 	def provider_connected? provider
 		[connected_providers.collect { |connected| connected.provider }].include? provider
+	end
+
+	def teammates_of user
+		users.not_in(:id => user.id)
 	end
 
 	slug do |object|

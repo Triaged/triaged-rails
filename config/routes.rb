@@ -10,6 +10,9 @@ DockedRails::Application.routes.draw do
     namespace :v1 do
     	devise_for :users
     	resource :account do
+    		member do
+    			get 'team'
+    		end
     		resources :push_tokens do
     			collection do
     				post 'reset_count'

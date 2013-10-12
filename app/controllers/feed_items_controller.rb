@@ -1,2 +1,3 @@
 class FeedItemsController < ApplicationController
+
 end
