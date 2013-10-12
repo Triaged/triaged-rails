@@ -43,6 +43,7 @@ DockedRails::Application.routes.draw do
 	  	resources :new_relic
 	  	resources :kiln
 	  	resources :airbrake
+	  	resources :heroku
 	  end
 	end
 
