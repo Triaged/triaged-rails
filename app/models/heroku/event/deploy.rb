@@ -1,4 +1,4 @@
-class Heroku::Event::Deploy
+class Heroku::Event::Deploy < FeedItem
   include Mongoid::Document
 
   field :app, :type => String
