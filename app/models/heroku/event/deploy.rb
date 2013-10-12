@@ -3,7 +3,6 @@ class Heroku::Event::Deploy < FeedItem
 
   field :app, :type => String
   field :user, :type => String
-  field :url, :type => String
   field :git_log, :type => String
   field :head_long, :type => String
   field :head, :type => String
@@ -14,11 +13,11 @@ class Heroku::Event::Deploy < FeedItem
 			external_id: data.head_long,
 			app: data.app,
 			user: data.user,
-			url: data.url,
+			html_url: data.url,
 			git_log: data.git_log,
 			head_long: data.head_long,
 			head: data.head,
-			#prev_head: data.prev_head,
+			prev_head: data.prev_head,
 			timestamp: DateTime.now
 		)
 	end
