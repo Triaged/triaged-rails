@@ -7,7 +7,7 @@ class User
 	include Follower
 
 	belongs_to :company
-	index({ company_id: 1 }
+	index({ company_id: 1 })
 
   embeds_many :push_tokens
 	before_create :assign_to_company
