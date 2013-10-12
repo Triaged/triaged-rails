@@ -18,7 +18,7 @@ class Heroku::Event::Deploy < FeedItem
 			git_log: data.git_log,
 			head_long: data.head_long,
 			head: data.head,
-			prev_head: data.prev_head,
+			#prev_head: data.prev_head,
 			timestamp: DateTime.now
 		)
 	end
