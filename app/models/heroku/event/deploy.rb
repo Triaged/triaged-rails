@@ -11,7 +11,7 @@ class Heroku::Event::Deploy
 
   def self.build_from_webhook data
 		event = Heroku::Event::Deploy.new(
-			external_id: data.head_long
+			external_id: data.head_long,
 			app: data.app,
 			user: data.user,
 			url: data.url,
@@ -22,4 +22,5 @@ class Heroku::Event::Deploy
 			timestamp: DateTime.now
 		)
 	end
+
 end
