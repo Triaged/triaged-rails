@@ -1,0 +1,1 @@
+class Heroku::WebhookService < Service end
