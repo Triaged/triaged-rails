@@ -16,8 +16,8 @@ class Airbrake::Event::Exception < FeedItem
 			message: data.error.error_message,
 			error_class: data.error.error_class,
 			line_number: data.error.line_number,
-			#times_occurred: data.times_occurred,
-			environment: data.environment
+			times_occurred: data.error.times_occurred,
+			environment: data.error.environment
 		)
 	end
 
