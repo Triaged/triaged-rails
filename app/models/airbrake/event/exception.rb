@@ -10,7 +10,7 @@ class Airbrake::Event::Exception < FeedItem
 
   
 	def self.build_from_webhook data
-		event = Sentry::Event::Exception.new(
+		event = Airbrake::Event::Exception.new(
 			external_id: data.error.id,
 			project: data.error.project.name,
 			message: data.error.error_message,

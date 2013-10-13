@@ -4,6 +4,7 @@ class Kiln::Event::Push < FeedItem
   field :repo_name, :type => String
   field :repo_url, :type => String
   field :pusher, :type => String
+  field :branch, :type => String
   
 
   embeds_many :commits, :class_name => "Kiln::Event::Commit"
@@ -14,7 +15,6 @@ class Kiln::Event::Push < FeedItem
   		pusher: event.pusher.fullName,
   		repo_name: event.repository.name,
   		repo_url: event.repository.url,
-  		external_id: event.commits.first.id,
   		timestamp: DateTime.now
   	)
   	
@@ -29,6 +29,9 @@ class Kiln::Event::Push < FeedItem
   			url: commit.url,
   			)
   	end
+
+  	push.external_id = push.commits.first.external_id
+  	push.branch = 	push.commits.first.branch
 
   	return push
   end
