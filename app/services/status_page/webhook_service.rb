@@ -1,4 +1,4 @@
-class Kiln::WebhookService < Service
+class StatusPage::WebhookService < Service
 
 	def instrument payload
 		event = payload[:event]
@@ -9,11 +9,4 @@ class Kiln::WebhookService < Service
   # rescue StandardError, e
   # 	Rails.logger.info e.inspect  
 	end
-
-	def publish(event_type, service, payload)
-		key =  "status_page.#{event_type}"
-		Rails.logger.info key
-		ActiveSupport::Notifications.instrument(key, payload)
-	end
-
 end
