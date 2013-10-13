@@ -9,7 +9,7 @@ class Stripe::WebhookService < Service
 		Rails.logger.info company.inspect
 		
 		# Validate event and fill customer data
-		event = Stripe::Event.retrieve(payload[:id], access_token)
+		# event = Stripe::Event.retrieve(payload[:id], access_token)
 		payload = retrieve_customer_details payload, access_token
 		
 		publish(@@provider, event_type, {:company_id => company.id, :event => payload})
