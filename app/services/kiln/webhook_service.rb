@@ -1,9 +1,10 @@
 class Kiln::WebhookService < Service
 
 	@@provider = :kiln
+	@@event_type = :push
 
 	def instrument payload
-		publish(@@provider, payload[:event_type], {
+		publish(@@provider, @@event_type, {
 			:company_id => payload[:company_id], 
 			:event => payload[:event]
 		})

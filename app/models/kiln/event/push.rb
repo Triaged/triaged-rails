@@ -14,7 +14,8 @@ class Kiln::Event::Push < FeedItem
   		pusher: event.pusher.fullName,
   		repo_name: event.repository.name,
   		repo_url: event.repository.url,
-  		external_id: event.commits.first.id
+  		external_id: event.commits.first.id,
+  		timestamp: DateTime.now
   	)
   	
   	event.commits.each do |commit|

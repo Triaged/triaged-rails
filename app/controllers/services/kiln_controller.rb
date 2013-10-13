@@ -1,8 +1,8 @@
 class Services::KilnController < ServiceController
 
 	def create
-		event_type = "push"
-		payload = {event: params, company_id: request.subdomain, event_type: event_type}
+		event = JSON.parse(params["payload"])
+		payload = {event: params, company_id: request.subdomain}
 		Kiln::WebhookService.new.instrument payload
 		head :ok
 	# rescue StandardError
