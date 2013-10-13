@@ -10,7 +10,6 @@ class Kiln::Event::Push < FeedItem
 
   
   def self.build_from_webhook event
-  	Rails.logger.info event.inspect
   	push = Kiln::Event::Push.new(
   		pusher: event.pusher.fullName,
   		repo_name: event.repository.name,
