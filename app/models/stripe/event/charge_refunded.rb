@@ -1,4 +1,4 @@
-class Stripe::Event::ChargeRefunded < FeedItem
+class Stripe::Event::ChargeRefunded < Stripe::BaseEvent
   include Mongoid::Document
 
   field :customer_id, :type => String

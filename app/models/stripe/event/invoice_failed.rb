@@ -1,7 +1,6 @@
-class Stripe::Event::InvoiceFailed < FeedItem
+class Stripe::Event::InvoiceFailed < Stripe::BaseEvent
   include Mongoid::Document
 
-  field :amount, :type => Float
   field :customer_name, :type => String
   field :customer_email, :type => String
 

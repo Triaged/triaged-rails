@@ -1,4 +1,4 @@
-class Stripe::Event::SubscriptionDeleted < FeedItem
+class Stripe::Event::SubscriptionDeleted < Stripe::BaseEvent
   include Mongoid::Document
 
   field :amount, :type => Float

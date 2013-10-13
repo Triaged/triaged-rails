@@ -1,7 +1,6 @@
-class Stripe::Event::DisputeCreated < FeedItem
+class Stripe::Event::DisputeCreated < Stripe::BaseEvent
   include Mongoid::Document
 
-  field :amount, :type => Float
   field :status, :type => String
   field :reason, :type => String
   field :evidence_due_by, :type => DateTime
