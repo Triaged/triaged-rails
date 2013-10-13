@@ -9,7 +9,9 @@ class Stripe::Event::InvoiceFailed < Stripe::BaseEvent
   	event = Stripe::Event::InvoiceFailed.new(
   		amount: data.amount,
 			customer_name: data.customer_name, 
-			customer_email: data.customer_email
+			customer_email: data.customer_email,
+			external_id: data.id,
+			timestamp: DateTime.parse(data.created)
 		)
   end
 end

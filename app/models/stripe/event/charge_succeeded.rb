@@ -13,7 +13,9 @@ class Stripe::Event::ChargeSucceeded < Stripe::BaseEvent
 														description: data.data.object.description,
 														customer_email: data.customer_email,
 														object_id: data.data.object.id,
-														external_id: data.id)
+														external_id: data.id,
+														timestamp: DateTime.parse(data.created)
+														)
 		return event
 	end
 

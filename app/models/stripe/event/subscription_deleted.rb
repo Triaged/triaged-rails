@@ -14,7 +14,9 @@ class Stripe::Event::SubscriptionDeleted < Stripe::BaseEvent
 			plan_name: event.plan.name, 
 			ended_at: event.ended_at,
 		 	customer_name: event.customer_name,
-		 	customer_email: event.customer_email
+		 	customer_email: event.customer_email,
+		 	external_id: data.id,
+		 	timestamp: DateTime.parse(data.created)
 		)
   end
 end

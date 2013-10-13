@@ -15,7 +15,9 @@ class Stripe::Event::DisputeCreated < Stripe::BaseEvent
 			reason: data.reason,
 			evidence_due_by: data.evidence_due_by,
 		 	customer_name: data.customer_name,
-		 	customer_email: data.customer_email
+		 	customer_email: data.customer_email,
+		 	external_id: data.id,
+		 	timestamp: DateTime.parse(data.created)
 		)
   end
 

@@ -12,7 +12,9 @@ class Stripe::Event::ChargeRefunded < Stripe::BaseEvent
 														customer_description: data.customer_description,
 														description: data.data.object.description,
 														customer_email: data.customer_email,
-														external_id: data.id)
+														external_id: data.id,
+														timestamp: DateTime.parse(data.created)
+													)
 		return event
 	end
 
