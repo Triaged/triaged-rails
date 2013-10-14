@@ -26,7 +26,7 @@ class FeedItem
 		self.class.name.split("::").last.underscore
 	end
 
-	def after_build_hook
+	def after_build_hook company
 		# placehold to be overridden in subclasses
 	end
 
@@ -39,7 +39,7 @@ class FeedItem
 	end
 
 	def push_message
-		"This should be really set"
+		"This should really be set by a subclass"
 	end
 
 
