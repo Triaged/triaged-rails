@@ -9,7 +9,6 @@ class Stripe::BaseEvent < FeedItem
 	field :customer_name, :type => String
   field :customer_email, :type => String
 
-  after_initialize :retrieve_customer_details
   
 	def base_url_path
 		"https://manage.stripe.com"
@@ -19,7 +18,7 @@ class Stripe::BaseEvent < FeedItem
 		livemode ? "" : "/test"
 	end
 
-	def retrieve_customer_details
+	def after_build_hook company
 		customer = Stripe::Customer.retrieve(customer_id,  company.stripe_provider_credentials.access_token)
 		customer_email = customer[:email]
 		customer_name = customer[:description]

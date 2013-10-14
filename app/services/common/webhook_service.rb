@@ -9,6 +9,9 @@ module Common::WebhookService
 		company = Company.find(payload[:company_id])
 		event = event_class.build_from_webhook payload[:event].to_properties
 
+		# generic after init hook
+		event.after_build_hook company
+
 		# ensure the company knows this provider is connected
 		Common::ProviderConnection.ensure_connected(company, event.provider)
 	
