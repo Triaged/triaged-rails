@@ -1,15 +1,11 @@
 class Stripe::Event::InvoicePaymentSuceeded< Stripe::BaseEvent
   include Mongoid::Document
 
-  field :customer_name, :type => String
-  field :customer_email, :type => String
-
   def self.create_from_webhook event
   	data = event.data.object
   	event = Stripe::Event::InvoicePaymentSuceeded.new(
   		amount: data.data.object.total,
-			#customer_name: data.customer_name, 
-			#customer_email: data.customer_email,
+  		customer_id: data.data.object.card.customer,
 			external_id: data.id,
 			timestamp: DateTime.strptime(data.created,'%s')
 		)

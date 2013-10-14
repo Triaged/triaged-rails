@@ -4,8 +4,6 @@ class Stripe::Event::SubscriptionTrialWillEnd < Stripe::BaseEvent
   field :plan_name, :type => String
   field :interval, :type => String
   field :plan_id, :type => DateTime
-  field :customer_name, :type => String
-  field :customer_email, :type => String
   
 
   def self.create_from_webhook event
@@ -15,9 +13,6 @@ class Stripe::Event::SubscriptionTrialWillEnd < Stripe::BaseEvent
   		plan_name: data.data.object.plan.name,
 			interval: data.data.object.plan.interval,
 			plan_id: data.data.object.plan.id,
-			
-		 	#customer_name: data.customer_name,
-		 	#customer_email: data.customer_email,
 		 	external_id: data.id,
 		 	customer_id: data.data.object.customer,
 		 	timestamp: DateTime.strptime(data.created,'%s')

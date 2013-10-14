@@ -10,7 +10,6 @@ class Stripe::WebhookService < Service
 		
 		# Validate event and fill customer data
 		# event = Stripe::Event.retrieve(payload[:id], access_token)
-		payload = retrieve_customer_details payload, access_token
 		
 		publish(@@provider, event_type, {:company_id => company.id, :event => payload})
   # rescue StandardError, e
@@ -22,11 +21,6 @@ class Stripe::WebhookService < Service
  		company
  	end
 
- 	def retrieve_customer_details event, access_token
- 		customer = Stripe::Customer.retrieve(event[:data][:object][:card][:customer], access_token)
-		event[:customer_email] = customer[:email]
-		event[:customer_description] = customer[:description]
-		event
-	end
+ 	
 
 end
