@@ -15,7 +15,7 @@ class Stripe::Event::SubscriptionTrialWillEnd < Stripe::BaseEvent
 			plan_id: data.data.object.plan.id,
 		 	external_id: data.id,
 		 	customer_id: data.data.object.customer,
-		 	timestamp: DateTime.strptime(data.created,'%s')
+		 	timestamp: DateTime.strptime(data.created.to_s,'%s')
 		)
   end
 

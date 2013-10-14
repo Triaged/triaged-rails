@@ -7,7 +7,7 @@ class Stripe::Event::InvoicePaymentSuceeded< Stripe::BaseEvent
   		amount: data.data.object.total,
   		customer_id: data.data.object.card.customer,
 			external_id: data.id,
-			timestamp: DateTime.strptime(data.created,'%s')
+			timestamp: DateTime.strptime(data.created.to_s,'%s')
 		)
   end
 

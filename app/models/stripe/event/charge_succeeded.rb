@@ -8,7 +8,7 @@ class Stripe::Event::ChargeSucceeded < Stripe::BaseEvent
 			description: data.data.object.description,
 			object_id: data.data.object.id,
 			external_id: data.id,
-			timestamp: DateTime.strptime(data.created,'%s')
+			timestamp: DateTime.strptime(data.created.to_s,'%s')
 		)
 		return event
 	end
