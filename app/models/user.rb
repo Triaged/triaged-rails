@@ -6,6 +6,8 @@ class User
 	include Feedable
 	include Follower
 
+	mount_uploader :avatar, AvatarUploader
+
 	belongs_to :company
 	index({ company_id: 1 })
 

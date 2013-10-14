@@ -3,3 +3,14 @@
 <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
 <%= link_to "Sign in with Stripe", user_omniauth_authorize_path(:stripe_connect) %>
 <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
+
+
+<%= image_tag @user.avatar.url, :width => 200 %>
+
+
+<%= simple_form_for @user, :url => account_path do |f| %>
+	
+	<%= f.input :avatar %>
+	<%= f.submit %>
+
+<% end %>

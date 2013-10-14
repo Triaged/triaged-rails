@@ -10,7 +10,7 @@ class FeedItem
   field :html_url, :type => String
 
   index({ external_id: 1 }, { unique: true, background: true })
-	validates_uniqueness_of :external_id
+	#validates_uniqueness_of :external_id
 
 	before_create :build_html_url
 

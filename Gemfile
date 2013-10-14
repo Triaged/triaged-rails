@@ -66,6 +66,7 @@ gem 'grocer'
 gem 'newrelic_rpm'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'fog'
 
 group :development do
 	gem 'debugger'
