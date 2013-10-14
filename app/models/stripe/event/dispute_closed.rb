@@ -1,4 +1,4 @@
-class Stripe::Event::DisputeCreated < Stripe::BaseEvent
+class Stripe::Event::DisputeClosed < Stripe::BaseEvent
   include Mongoid::Document
 
   field :status, :type => String
@@ -11,7 +11,7 @@ class Stripe::Event::DisputeCreated < Stripe::BaseEvent
 
   def self.create_from_webhook event
   	data = event.data.object
-  	event = Stripe::Event::DisputeCreated.new(
+  	event = Stripe::Event::DisputeClosed.new(
   		amount: data.data.object.amount,
 			status: data.data.object.status,
 			reason: data.data.object.reason,

@@ -7,15 +7,15 @@ class Stripe::Event::ChargeSucceeded < Stripe::BaseEvent
   
 	def self.build_from_webhook data
   	event = Stripe::Event::ChargeSucceeded.new(
-														amount: data.data.object.amount,
-														customer_id: data.data.object.card.customer,
-														customer_description: data.customer_description,
-														description: data.data.object.description,
-														customer_email: data.customer_email,
-														object_id: data.data.object.id,
-														external_id: data.id,
-														timestamp: DateTime.parse(data.created)
-														)
+			amount: data.data.object.amount,
+			customer_id: data.data.object.card.customer,
+			customer_description: data.customer_description,
+			description: data.data.object.description,
+			customer_email: data.customer_email,
+			object_id: data.data.object.id,
+			external_id: data.id,
+			timestamp: DateTime.strptime(data.created,'%s')
+		)
 		return event
 	end
 

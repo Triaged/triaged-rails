@@ -1,4 +1,4 @@
-class Stripe::Event::SubscriptionDeleted< Stripe::BaseEvent
+class Stripe::Event::SubscriptionTrialWillEnd < Stripe::BaseEvent
   include Mongoid::Document
 
   field :plan_name, :type => String
@@ -10,7 +10,7 @@ class Stripe::Event::SubscriptionDeleted< Stripe::BaseEvent
 
   def self.create_from_webhook event
   	data = event.data.object
-  	event = Stripe::Event::SubscriptionDeleted.new(
+  	event = Stripe::Event::SubscriptionTrialWillEnd.new(
   		amount: data.data.object.plan.amount,
   		plan_name: data.data.object.plan.name,
 			interval: data.data.object.plan.interval,

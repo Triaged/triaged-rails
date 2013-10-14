@@ -23,30 +23,30 @@ TYPE_LIST = Set[
     'account.updated',
     'account.application.deauthorized',
     'balance.available',
-    'charge.succeeded',
-    'charge.failed',
-    'charge.refunded',
+    'charge.succeeded', #Done
+    'charge.failed', 
+    'charge.refunded', #Done
     'charge.captured',
-    'charge.dispute.created',
-    'charge.dispute.updated',
-    'charge.dispute.closed',
-    'customer.created',
+    'charge.dispute.created', #DO
+    'charge.dispute.updated', #DO
+    'charge.dispute.closed', #DO
+    'customer.created', 
     'customer.updated',
     'customer.deleted',
     'customer.card.created',
     'customer.card.updated',
     'customer.card.deleted',
-    'customer.subscription.created',
+    'customer.subscription.created', #DO
     'customer.subscription.updated',
-    'customer.subscription.deleted',
-    'customer.subscription.trial_will_end',
+    'customer.subscription.deleted', #DO
+    'customer.subscription.trial_will_end', #DO
     'customer.discount.created',
     'customer.discount.updated',
     'customer.discount.deleted',
     'invoice.created',
     'invoice.updated',
     'invoice.payment_succeeded',
-    'invoice.payment_failed',
+    'invoice.payment_failed', #DO
     'invoiceitem.created',
     'invoiceitem.updated',
     'invoiceitem.deleted',
@@ -57,7 +57,7 @@ TYPE_LIST = Set[
     'coupon.deleted',
     'transfer.created',
     'transfer.updated',
-    'transfer.paid',
-    'transfer.failed',
+    'transfer.paid', #DO
+    'transfer.failed', #DO
     'ping'
   ].freeze
