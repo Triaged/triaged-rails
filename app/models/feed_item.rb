@@ -26,6 +26,10 @@ class FeedItem
 		self.class.name.split("::").last.underscore
 	end
 
+	def after_build_hook
+		# placehold to be overridden in subclasses
+	end
+
 	def build_html_url
 		# placehold to be overridden in subclasses
 	end
