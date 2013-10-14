@@ -4,8 +4,6 @@ class Stripe::Event::SubscriptionDeleted< Stripe::BaseEvent
   field :plan_name, :type => String
   field :interval, :type => String
   field :plan_id, :type => DateTime
-  field :customer_name, :type => String
-  field :customer_email, :type => String
   
 
   def self.create_from_webhook event
