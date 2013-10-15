@@ -6,11 +6,11 @@ module Feedable
 		index "user_feed_items.feed_item_i" => 1
 	end
 
-	def feed(min_id = nil, max_id = nil)
+	def feed(min_updated_at = nil, max_updated_at = nil)
 		feed_items = user_feed_items.only(:feed_item_id)
 
-  	feed_items = feed_items.where(:feed_item_id.gt => min_id) if min_id
-  	feed_items = feed_items.where(:feed_item_id.lt => max_id) if max_id
+  	feed_items = feed_items.where(:updated_at.gt => min_updated_at) if min_updated_at
+  	feed_items = feed_items.where(:updated_at.lt => max_updated_at) if max_updated_at
 
   	company.feed_items.desc(:created_at).find(feed_items.collect {|item| item.feed_item_id })
   end

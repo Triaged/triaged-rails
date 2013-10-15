@@ -1,7 +1,7 @@
 class Api::V1::FeedController < API::BaseController
 
 	def index
-		@feed = current_user.feed(params[:min_id], params[:max_id])
+		@feed = current_user.feed(params[:min_updated_at], params[:max_updated_at])
 		respond_with @feed
 	end
 
