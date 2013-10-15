@@ -5,8 +5,9 @@ class Messages::Message
   embedded_in :feed_item
   belongs_to :author, class_name: "User"
 
+	field :uuid, type: String
 	field :author_name, type: String
-  field :body, type: String
+	field :body, type: String
   field :notify, type: Array
   field :timestamp, type: DateTime
 
