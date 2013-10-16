@@ -43,6 +43,6 @@ class Api::V1::MessagesController < API::BaseController
 
     # Only allow a trusted parameter "white list" through.
     def message_params
-      params[:message].permit(:author_id, :body, :notify, :uuid)
+      params[:message].permit(:author_id, :body, :notify, :uuid, :timestamp)
     end
 end
