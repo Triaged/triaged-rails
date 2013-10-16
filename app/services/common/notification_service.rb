@@ -5,7 +5,7 @@ module Common::NotificationService
 	end
 
 	def self.push_message user, message
-		alert = "#{message.author_name} is talking about a #{message.feed_item.provider_name.humanize} #{message.feed_item.event_name.humanize}"
+		alert = "#{message.author.name} is talking about a #{message.feed_item.provider_name.humanize} #{message.feed_item.event_name.humanize}"
 		Common::NotificationService.push(user, message.feed_item.id, alert)
 	end
 
