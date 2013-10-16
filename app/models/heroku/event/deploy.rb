@@ -15,7 +15,7 @@ class Heroku::Event::Deploy < FeedItem
 			app: data.app,
 			user: data.user,
 			html_url: data.url,
-			git_log: data.git_log,
+			git_log: data.git_log.delete("* "),
 			head_long: data.head_long,
 			head: data.head,
 			previous_head: data.prev_head,
