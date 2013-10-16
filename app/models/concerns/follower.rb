@@ -49,4 +49,8 @@ module Follower
     0 < self.followed_providers.where(id: model.id).limit(1).count
   end
 
+  def followed_provider_count
+  	self.followed_providers.count
+  end
+
 end
