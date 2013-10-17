@@ -1,6 +1,6 @@
 class Services::GithubController < ServiceController
-	before_action :set_company
 	before_action :authenticate_user!, :except => :create
+	before_action :set_company
 	
 
 	def index
@@ -12,8 +12,9 @@ class Services::GithubController < ServiceController
 	end
 
 	def org_list
-		@organizations = Github::Service.new(@company.id).fetch_remote_organizations
+		Github::Service.new(@company.id).fetch_remote_organizations
 
+		@organizations = @company.github_organizations
 		redirect_to(oauth_failure_path(error: "No Github Organization Found")) if (@organizations.count == 0)
 		redirect_to(oauth_complete_path) if (@organizations.count == 1)
 	end
@@ -26,7 +27,7 @@ class Services::GithubController < ServiceController
 	def create
 		event_type = request.headers['X-Github-Event']
 		event = JSON.parse(params["payload"])
-		payload = {event: event, company_id: @company.id, event_type: event_type}
+		payload = {event: event, company_id: request.subdomain, event_type: event_type}
 		Github::WebhookService.new.instrument payload
 		head :ok
 	# rescue StandardError
@@ -36,7 +37,7 @@ class Services::GithubController < ServiceController
 private
 	
 	def set_company
-		@company = Company.find(request.subdomain)
+		@company = current_user.company
 	end
 
 end
