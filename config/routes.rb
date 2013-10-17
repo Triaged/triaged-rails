@@ -39,7 +39,7 @@ DockedRails::Application.routes.draw do
 	constraints subdomain: /.+/ do
 	  namespace :services do
 	  	resources :github do
-	  		member do
+	  		collection do
 	  			get 'org_list'
 	  			post 'set_default_org'
 	  		end
