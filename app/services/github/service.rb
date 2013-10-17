@@ -11,6 +11,7 @@ class Github::Service
 	def fetch_remote_organizations
 		Rails.logger.info "fetching remote"
 		organizations = @github.orgs.all.to_a
+		Rails.logger.info organizations
 		organizations.each do |org|
 			org = Github::Org.create(
 				external_id: org.id,
