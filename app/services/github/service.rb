@@ -19,8 +19,10 @@ class Github::Service
 		end
 
 		Rails.logger.info @company.github_organizations.inspect
+
+		Rails.logger.info @company.github_organizations.count
 		
-		@company.github_organizations.first.default = true if  (@company.github_organizations.count == 1)
+		@company.github_organizations.first.default = true if (@company.github_organizations.count == 1)
 		return @company.github_organizations
 	end
 

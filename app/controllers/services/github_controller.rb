@@ -1,6 +1,6 @@
 class Services::GithubController < ServiceController
 	before_action :authenticate_user!, :except => :create
-	before_action :set_company
+	before_action :set_company, :except => :create
 	
 
 	def index
@@ -20,8 +20,8 @@ class Services::GithubController < ServiceController
 	end
 
 	def set_default_org
-		@company.default_github_org = @company.github_organizations.find(params[:id])
-		@company.save
+		org = @company.github_organizations.find(params[:id])
+		org.update_attribute(:default, true)
 	end
 
 	def create

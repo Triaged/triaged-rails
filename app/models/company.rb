@@ -46,6 +46,10 @@ class Company
 		users.not_in(:id => user.id)
 	end
 
+	def default_github_org
+		github_organizations.where(default: true).first
+	end
+
 	slug do |object|
     object.name.split(".").first.to_url
   end
