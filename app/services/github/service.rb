@@ -10,12 +10,14 @@ class Github::Service
 
 	def fetch_remote_organizations
 		organizations = @github.orgs.all.to_a
+		Rails.logger.info organizations
 		organizations.each do |org|
-			@company.github_organizations.create(
+			org = @company.github_organizations.create(
 				external_id: org.id,
 				name: org.login,
 				url: org.url,
 			)
+			Rails.logger.info org.errors.inspect
 		end
 		
 		@company.default_github_org = @company.github_organizations.first if  (@company.github_organizations.count == 1)
