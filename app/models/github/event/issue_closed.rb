@@ -6,34 +6,33 @@ class Github::Event::IssueClosed < FeedItem
   field :assigned_to_name, type: String
   field :body, type: String
 
-  belongs_to :issue, class_name: "Github::Issue"
+  belongs_to :org, :class_name => "Github::Org"
 
+   def repo
+  	org.repos.find(repo_id)
+  end
 
   def self.build_from_webhook event
-  	repo = Github::Repo.find_by name: event.repository.name
-		issue = repo.issues.find_by external_id: event.issue.id
+  	org = Github::Org.find_by name: event.repository.owner.login
+  	repo = org.repos.find_by name: event.repository.name
 
-  	issue.update_attributes(
-  		open: false,
-  		closed_by_name: event.issue.user.login
+  	assigned_to_name = (event.issue.assignee != nil) ? event.issue.assignee.login : nil
+  	open = event.issue.state == "open" ? true : false
+
+  	issue_opened_event = Github::Event::IssueClosed.new(
+  		title: event.issue.title,
+  		opened_by_name: event.issue.user.login,
+  		assigned_to_name: assigned_to_name,
+  		body: event.issue.body,
+  		open: open,
+  		html_url: event.issue.html_url,
+  		external_id: event.issue.id,
+  		org: org,
+  		repo_id: repo.id,
+  		timestamp: DateTime.now
   		)
-  	
-
-		issue_closed_event = self.build_event_from_issue issue
-		return issue_closed_event
-  end
-
-  def self.build_event_from_issue issue
-  	issue_closed_event = Github::Event::IssueClosed.new(
-  		title: issue.title,
-  		closed_by_name: issue.closed_by_name,
-  		assigned_to_name: issue.assigned_to_name,
-  		body: issue.body,
-  		html_url: issue.html_url,
-  		issue: issue
-  		)
-  	return issue_closed_event
-  end
+  	return issue_opened_event
+	end
 
 
 end

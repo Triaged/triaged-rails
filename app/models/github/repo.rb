@@ -3,8 +3,7 @@ class Github::Repo
 
   embedded_in :org, :class_name => "Github::Org"
   embeds_many :commits, :class_name => "Github::Commit"
-  embeds_many :issues, :class_name => "Github::Issue"
-
+  
   field :external_id, type: Integer
   field :name, type: String
   field :full_name, type: String
