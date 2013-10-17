@@ -37,7 +37,7 @@ class Company
 	end
 
 	def connect_provider provider
-		connect_providers.create provider: provider
+		connected_providers.create provider: provider
 	end
 
 	def teammates_of user
