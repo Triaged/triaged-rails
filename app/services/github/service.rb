@@ -10,15 +10,11 @@ class Github::Service
 
 	def fetch_remote_organizations
 		Rails.logger.info "fetching remote"
+		Rails.logger.info @company
 		organizations = @github.orgs.all.to_a
 		Rails.logger.info organizations
 		organizations.each do |org|
-			org = Github::Org.create(
-				external_id: org.id,
-				name: org.login,
-				url: org.url,
-			)
-			org.company_id = @company.id
+			org = Github::Org.create(external_id: org.id, name: org.login, url: org.url, company: @company)
 			Rails.logger.info org.inspect
 		end
 
