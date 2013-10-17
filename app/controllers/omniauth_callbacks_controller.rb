@@ -17,7 +17,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	def github
 		params = request.env["omniauth.auth"]
 		user = current_user.save_omniauth("github", params['uid'], params['credentials']['token'])
-    redirect_to oauth_complete_path
+    redirect_to org_list_services_github(:subdomain => user.company)
   end
 
 	def stripe_connect
