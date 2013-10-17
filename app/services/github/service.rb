@@ -19,7 +19,7 @@ class Github::Service
 				url: org.url,
 			)
 			Rails.logger.info org.errors.inspect
-			Rails.logger.info company.github_organizations
+			Rails.logger.info company.github_organizations.inspect
 			Rails.logger.info company.errors.inspect
 		end
 		
