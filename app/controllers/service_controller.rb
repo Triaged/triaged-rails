@@ -13,12 +13,12 @@ class ServiceController < ApplicationController
   end
 
   def oauth_complete
-  	render :json => { "success" : "true" }
+  	render :json => { "success" => "true" }
   end
 
   def oauth_failure
   	error = params[:error] || "oAuth Failed"
-  	render :json => { "success" : "false", "error" : error }
+  	render :json => { "success" => "false", "error" => error }
   end
 	
 end
