@@ -17,8 +17,8 @@ class Github::Service
 				external_id: org.id,
 				name: org.login,
 				url: org.url,
-				company: @company
 			)
+			org.company_id = @company.id
 			Rails.logger.info org.inspect
 		end
 
