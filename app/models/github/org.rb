@@ -1,8 +1,9 @@
 class Github::Org
   include Mongoid::Document
 
-  belongs_to :company
+  belongs_to :company, :class_name => "Company", :inverse_of => :github_organizations
   belongs_to :user
+
   embeds_many :repos, :class_name => "Github::Repo"
   
   field :external_id, type: Integer

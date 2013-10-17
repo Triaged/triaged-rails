@@ -19,6 +19,8 @@ class Github::Service
 				url: org.url,
 			)
 			Rails.logger.info org.errors.inspect
+			Rails.logger.info company.github_organizations
+			Rails.logger.info company.errors.inspect
 		end
 		
 		@company.default_github_org = @company.github_organizations.first if  (@company.github_organizations.count == 1)
