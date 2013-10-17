@@ -12,7 +12,8 @@ class Company
   has_many :users
   
   has_many :provider_credentials
-  has_one :github_org, :class_name => "Github::Org"
+  has_many :github_organizations, :class_name => "Github::Org"
+  has_one :default_github_org, :class_name => "Github::Org"
 
   def add_event_to_feed event
   	feed_items << event

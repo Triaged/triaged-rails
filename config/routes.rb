@@ -38,7 +38,12 @@ DockedRails::Application.routes.draw do
 
 	constraints subdomain: /.+/ do
 	  namespace :services do
-	  	resources :github
+	  	resources :github do
+	  		member do
+	  			get 'org_list'
+	  			post 'set_default_org'
+	  		end
+	  	end
 	  	resources :sentry
 	  	resources :new_relic
 	  	resources :kiln
@@ -53,6 +58,7 @@ DockedRails::Application.routes.draw do
 	
 	get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'
+	get '/services/oauth_failure/:error' => 'service#oauth_failure', as: 'oauth_failure'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

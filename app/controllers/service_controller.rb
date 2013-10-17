@@ -8,13 +8,17 @@ class ServiceController < ApplicationController
 	
 
 	def authenticate_for_oauth
-		logger.info current_user.inspect
-  	provider = params[:provider]
+		provider = params[:provider]
   	redirect_to user_omniauth_authorize_path(provider)
   end
 
   def oauth_complete
-  	render :json => nil
+  	render :json => { "success" : "true" }
+  end
+
+  def oauth_failure
+  	error = params[:error] || "oAuth Failed"
+  	render :json => { "success" : "false", "error" : error }
   end
 	
 end
