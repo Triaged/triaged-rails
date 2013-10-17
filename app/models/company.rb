@@ -33,7 +33,7 @@ class Company
 	end
 
 	def provider_connected? provider
-		[connected_providers.collect { |connected| connected.provider }].include? provider
+		[connected_providers.collect { |connected| connected.provider }].flatten.include? provider
 	end
 
 	def connect_provider provider
