@@ -36,6 +36,10 @@ class Company
 		[connected_providers.collect { |connected| connected.provider }].include? provider
 	end
 
+	def connect_provider provider
+		connect_providers.create provider: provider
+	end
+
 	def teammates_of user
 		users.not_in(:id => user.id)
 	end

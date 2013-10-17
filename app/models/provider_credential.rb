@@ -11,12 +11,11 @@ class ProviderCredential
 
   validates :company, :uniqueness => { :scope => :provider }
   
-
-  #after_create :provider_created
+  after_create :provider_created
 
   def provider_created
-  	payload = {:company_id => company.id}
-  	ActiveSupport::Notifications.instrument("provider_credentials.created.#{provider.name}", payload)
+  	# setup connection
+  	company.connect_provider provider
   end
 
 end
