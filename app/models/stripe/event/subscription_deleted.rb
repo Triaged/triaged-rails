@@ -9,7 +9,7 @@ class Stripe::Event::SubscriptionDeleted< Stripe::BaseEvent
   def self.create_from_webhook event
   	data = event.data.object
   	event = Stripe::Event::SubscriptionDeleted.new(
-  		amount: data.data.object.plan.amount,
+  		amount: (data.data.object.plan.amount / 100),
   		plan_name: data.data.object.plan.name,
 			interval: data.data.object.plan.interval,
 			plan_id: data.data.object.plan.id,

@@ -15,4 +15,13 @@ class Stripe::Event::InvoicePaymentFailed < Stripe::BaseEvent
 		self.html_url = base_url_path + env_path + "/invoices/#{external_id}"
 	end
 
+	def should_push?
+		true
+	end
+
+	def push_message
+		""
+	end
+
+
 end

@@ -23,4 +23,13 @@ class Heroku::Event::Deploy < FeedItem
 		)
 	end
 
+	def should_push?
+		true
+	end
+
+	def push_message
+		"#{user} deployed #{app}"
+	end
+
+
 end

@@ -26,4 +26,12 @@ class Stripe::Event::DisputeCreated < Stripe::BaseEvent
 		self.html_url = base_url_path + env_path + "/payments/#{charge_id}"
 	end
 
+	def should_push?
+		true
+	end
+
+	def push_message
+		reason
+	end
+
 end

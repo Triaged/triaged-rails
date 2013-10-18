@@ -29,7 +29,7 @@ class Sentry::Event::Exception < FeedItem
 	end
 
 	def push_message
-		"#{provider_name}: #{message}"
+		"#{message}"
 	end
 
 end

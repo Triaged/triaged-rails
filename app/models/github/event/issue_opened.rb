@@ -35,4 +35,12 @@ class Github::Event::IssueOpened < FeedItem
   		)
   	return issue_opened_event
 	end
+
+	def should_push?
+		true
+	end
+
+	def push_message
+		title
+	end
 end
