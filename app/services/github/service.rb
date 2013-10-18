@@ -22,7 +22,7 @@ class Github::Service
 
 		Rails.logger.info @company.github_organizations.count
 		
-		@company.github_organizations.first.updated_attribute(:default, true) #if (@company.github_organizations.count == 1)
+		@company.github_organizations.first.update_attribute(:default, true) #if (@company.github_organizations.count == 1)
 
 		create_hooks!
 
