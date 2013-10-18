@@ -34,4 +34,6 @@ DockedRails::Application.configure do
   # Send email in development mode.
   config.action_mailer.perform_deliveries = true
 
+  Rails.application.routes.default_url_options[:host] = "localhost:3000"
+
 end

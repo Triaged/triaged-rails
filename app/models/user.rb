@@ -46,7 +46,8 @@ class User
 				id: provider.id,
 				name: provider.name,
 				connected: connected,
-				follows: follows
+				follows: follows,
+				service_url: provider.service_url_for_company(company)
 			}
 		end
 		return provider_settings
