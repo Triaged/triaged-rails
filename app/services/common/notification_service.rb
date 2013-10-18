@@ -11,8 +11,7 @@ module Common::NotificationService
 
 	def self.push_feed_item user, item
 		alert = "#{item.provider_name.humanize} #{item.event_name.humanize}: #{item.push_message}"
-
-		Common::NotificationService.push(user, item.id, item.push_message)
+		Common::NotificationService.push(user, item.id, alert)
 	end
 
 	def self.push user, external_id, alert
