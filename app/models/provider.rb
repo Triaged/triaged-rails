@@ -4,6 +4,7 @@ class Provider
   
 
   field :name, :type => String
+  field :webhooks_enabled, :type => Boolean
 
   validates :name, uniqueness: true
   

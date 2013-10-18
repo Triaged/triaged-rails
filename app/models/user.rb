@@ -47,7 +47,7 @@ class User
 				name: provider.name,
 				connected: connected,
 				follows: follows,
-				service_url: provider.service_url_for_company(company)
+				webhook_url: provider.service_url_for_company(company) if provider.webhooks_enabled
 			}
 		end
 		return provider_settings
