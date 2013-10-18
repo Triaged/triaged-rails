@@ -1,6 +1,6 @@
-ActiveSupport::Notifications.subscribe "provider_credentials.created.github" do |name, start, finish, id, payload|
-  Github::CreateHooksService.new(payload[:company_id]).create!
-end
+# ActiveSupport::Notifications.subscribe "provider_credentials.created.github" do |name, start, finish, id, payload|
+#   Github::CreateHooksService.new(payload[:company_id]).create!
+# end
 
 ActiveSupport::Notifications.subscribe "event.github.push" do |name, start, finish, id, payload|
 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::Push, payload)
