@@ -42,13 +42,15 @@ class User
 		Provider.all.each do |provider|
 			connected = company.provider_connected? provider
 			follows = followed_providers.include? provider
-			provider_settings[provider.name] = {
+			 attrs = {
 				id: provider.id,
 				name: provider.name,
 				connected: connected,
 				follows: follows,
-				webhook_url: provider.service_url_for_company(company) if provider.webhooks_enabled
 			}
+			attrs[:webhook_url] = provider.service_url_for_company(company) if provider.webhooks_enabled
+			
+			provider_settings[provider.name] = attrs
 		end
 		return provider_settings
 	end
