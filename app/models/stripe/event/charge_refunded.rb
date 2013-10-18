@@ -4,7 +4,7 @@ class Stripe::Event::ChargeRefunded < Stripe::BaseEvent
   
 	def self.build_from_webhook data
   	event = Stripe::Event::ChargeRefunded.new(
-			amount: data.data.object.amount,
+			amount: (data.data.object.amount / 100),
 			customer_id: data.data.object.card.customer,
 			description: data.data.object.description,
 			external_id: data.id,

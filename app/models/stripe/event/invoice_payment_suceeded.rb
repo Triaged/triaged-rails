@@ -4,7 +4,7 @@ class Stripe::Event::InvoicePaymentSuceeded< Stripe::BaseEvent
   def self.create_from_webhook event
   	data = event.data.object
   	event = Stripe::Event::InvoicePaymentSuceeded.new(
-  		amount: data.data.object.total,
+  		amount: (data.data.object.total / 100),
   		customer_id: data.data.object.card.customer,
 			external_id: data.id,
 			timestamp: DateTime.strptime(data.created.to_s,'%s')

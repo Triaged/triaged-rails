@@ -10,7 +10,7 @@ class Stripe::Event::DisputeCreated < Stripe::BaseEvent
   def self.create_from_webhook event
   	data = event.data.object
   	event = Stripe::Event::DisputeCreated.new(
-  		amount: data.data.object.amount,
+  		amount: (data.data.object.amount / 100),
 			status: data.data.object.status,
 			reason: data.data.object.reason,
 			evidence_due_by: data.data.object.evidence_due_by,
