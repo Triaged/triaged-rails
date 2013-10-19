@@ -18,9 +18,10 @@ class Heroku::Event::Deploy < FeedItem
 			git_log: data.git_log.delete("*").strip,
 			head_long: data.head_long,
 			head: data.head,
-			previous_head: data.prev_head,
 			timestamp: DateTime.now
 		)
+
+		event.previous_head = data.prev_head if data.prev_head
 	end
 
 end
