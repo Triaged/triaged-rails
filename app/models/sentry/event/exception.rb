@@ -21,7 +21,7 @@ class Sentry::Event::Exception < FeedItem
 	end
 
 	def build_html_url
-		"https://app.getsentry.com/"
+		self.html_url = "https://app.getsentry.com/"
 	end
 
 	def should_push?
