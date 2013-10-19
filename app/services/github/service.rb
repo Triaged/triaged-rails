@@ -59,7 +59,7 @@ class Github::Service
 		Rails.logger.info (services_github_index_url(:subdomain => @company.slug))
 		@company.default_github_org.repos.each do |repo|
 			begin
-				@github.repos.hooks.create repo.owner, repo.name, name:  "triage", active:  true, 
+				@github.repos.hooks.create repo.owner, repo.name, name:  "triaged", active:  true, 
 					config: { "url" => services_github_index_url(subdomain: @company.slug)}, 
 					events: ["push", "issues", "issue_comment", "pull_request", "commit_comment"]
 			rescue Github::Error::UnprocessableEntity
