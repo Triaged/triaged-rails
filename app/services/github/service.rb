@@ -63,7 +63,7 @@ class Github::Service
 				@github.repos.hooks.create repo.owner, repo.name, name:  "triage-hook", active:  true, 
 					config: { "url" => services_github_index_url(subdomain: @company.slug)}, 
 					events: ["push", "issues", "issue_comment", "pull_request", "commit_comment"]
-			rescue Github::Error::UnprocessableEntity, e
+			rescue Github::Error::UnprocessableEntity => e
 				Rails.logger.info e
 				next
 			rescue Github::Error::NotFound
