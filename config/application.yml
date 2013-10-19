@@ -45,8 +45,8 @@ production:
   GITHUB_CLIENT_ID: 70b17178292d17ac3e8e
   GITHUB_SECRET: 56203095aa7fdc46e25b2aec5319592226e8fa2b
 
-  GA_CLIENT_ID: 56189778933.apps.googleusercontent.com
-  GA_SECRET: PQA1lyYnSiTcAd9UqFCWqZTz
+  GA_CLIENT_ID: 1021571725941.apps.googleusercontent.com
+  GA_SECRET: K22QsPPzygwYYoHtV15mbvHr
 
   FOG_DIRECTORY: triage-production
   NEW_RELIC: 0f320e1ad885d0b00878e655820ae5257120d0bf
