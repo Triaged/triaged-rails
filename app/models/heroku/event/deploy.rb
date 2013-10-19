@@ -22,6 +22,8 @@ class Heroku::Event::Deploy < FeedItem
 		)
 
 		event.previous_head = data.prev_head if data.prev_head
+
+		return event
 	end
 
 end
