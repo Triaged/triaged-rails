@@ -11,4 +11,8 @@ class GoogleAnalytics::Status::Daily < FeedItem
   def provider_name
   	"google_analytics"
   end
+
+  def build_html_url
+		self.html_url = "http://www.google.com/analytics/"
+	end
 end
