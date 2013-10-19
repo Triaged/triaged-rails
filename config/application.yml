@@ -7,48 +7,47 @@
 # makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
 # Add application configuration variables here, as shown below.
 #
-
 AWS_ACCESS_KEY_ID: AKIAJHBY3QOXLZUGABCQ
 AWS_SECRET_ACCESS_KEY: d8//FhJ1odd5SUHN4TVnslFf8B2wt6rxl0sxxs2s
 FOG_PROVIDER: AWS
 
 development:
-	STRIPE_API_KEY: sk_test_RiXtxB4SVHpeixXl7OFsbafe
-	STRIPE_CONNECT_CLIENT_ID: ca_2YsHEpX9cpzutHuyBY0z6MOU8N7qUV3J
+  STRIPE_API_KEY: sk_test_RiXtxB4SVHpeixXl7OFsbafe
+  STRIPE_CONNECT_CLIENT_ID: ca_2YsHEpX9cpzutHuyBY0z6MOU8N7qUV3J
 
-	GITHUB_CLIENT_ID: 6bd3bee053ff4168911a
-	GITHUB_SECRET: e698caaf6d812c81c5ddc98a1648eb2a0698450d
-	GITHUB_WEBHOOK_URL: www.test.com
+  GITHUB_CLIENT_ID: 6bd3bee053ff4168911a
+  GITHUB_SECRET: e698caaf6d812c81c5ddc98a1648eb2a0698450d
+  GITHUB_WEBHOOK_URL: www.test.com
 
-	GA_CLIENT_ID: 56189778933.apps.googleusercontent.com
-	GA_SECRET: PQA1lyYnSiTcAd9UqFCWqZTz
+  GA_CLIENT_ID: 56189778933.apps.googleusercontent.com
+  GA_SECRET: PQA1lyYnSiTcAd9UqFCWqZTz
 
-	FOG_DIRECTORY: triaged-staging
+  FOG_DIRECTORY: triaged-staging
 
 staging:
-	STRIPE_API_KEY: sk_test_RiXtxB4SVHpeixXl7OFsbafe
-	STRIPE_CONNECT_CLIENT_ID: ca_2YsHEpX9cpzutHuyBY0z6MOU8N7qUV3J
+  STRIPE_API_KEY: sk_test_RiXtxB4SVHpeixXl7OFsbafe
+  STRIPE_CONNECT_CLIENT_ID: ca_2YsHEpX9cpzutHuyBY0z6MOU8N7qUV3J
 
-	GITHUB_CLIENT_ID: 6bd3bee053ff4168911a
-	GITHUB_SECRET: e698caaf6d812c81c5ddc98a1648eb2a0698450d
-	GITHUB_WEBHOOK_URL: www.test.com
+  GITHUB_CLIENT_ID: 6bd3bee053ff4168911a
+  GITHUB_SECRET: e698caaf6d812c81c5ddc98a1648eb2a0698450d
+  GITHUB_WEBHOOK_URL: www.test.com
 
-	GA_CLIENT_ID: 56189778933.apps.googleusercontent.com
-	GA_SECRET: PQA1lyYnSiTcAd9UqFCWqZTz
+  GA_CLIENT_ID: 56189778933.apps.googleusercontent.com
+  GA_SECRET: PQA1lyYnSiTcAd9UqFCWqZTz
 
-	FOG_DIRECTORY: triaged-staging
+  FOG_DIRECTORY: triaged-staging
 
 production:
-		STRIPE_API_KEY: sk_test_RiXtxB4SVHpeixXl7OFsbafe
-		STRIPE_CONNECT_CLIENT_ID: ca_2YsHEpX9cpzutHuyBY0z6MOU8N7qUV3J
+  STRIPE_API_KEY: sk_live_9mnrTPayeyPXHnd8kIPjuTue
+  STRIPE_CONNECT_CLIENT_ID: ca_2YsHMk5sAtkAp33y7mBpVBkGdW53UKdv
 
-		GITHUB_CLIENT_ID: 6bd3bee053ff4168911a
-		GITHUB_SECRET: e698caaf6d812c81c5ddc98a1648eb2a0698450d
-		GITHUB_WEBHOOK_URL: www.test.com
+  GITHUB_CLIENT_ID: 6bd3bee053ff4168911a
+  GITHUB_SECRET: e698caaf6d812c81c5ddc98a1648eb2a0698450d
+  GITHUB_WEBHOOK_URL: www.test.com
 
-		GA_CLIENT_ID: 56189778933.apps.googleusercontent.com
-		GA_SECRET: PQA1lyYnSiTcAd9UqFCWqZTz
+  GA_CLIENT_ID: 56189778933.apps.googleusercontent.com
+  GA_SECRET: PQA1lyYnSiTcAd9UqFCWqZTz
 
-		FOG_DIRECTORY: triage-production
+  FOG_DIRECTORY: triage-production
 
 
