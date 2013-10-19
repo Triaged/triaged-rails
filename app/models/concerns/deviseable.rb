@@ -49,6 +49,8 @@ module Deviseable
 	  index({ email: 1 }, { unique: true, background: true })
 	  field :name, :type => String
 	  validates_presence_of :name
+
+	  validates :email, :presence => true, :email => true
 	end
 
   def ensure_authentication_token!

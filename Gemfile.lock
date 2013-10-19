@@ -310,6 +310,7 @@ DEPENDENCIES
   jquery-rails
   legato
   localtunnel
+  mail
   minitest-spec-rails
   minitest-wscolor
   mongoid (~> 4)!

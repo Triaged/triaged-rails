@@ -67,6 +67,7 @@ gem 'newrelic_rpm'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'fog'
+gem 'mail'
 
 group :development do
 	gem 'debugger'
