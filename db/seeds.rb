@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Provider.create(name: "stripe", webhooks_enabled: true)
+Provider.create(name: "stripe", webhooks_enabled: false) # This is odd, because stripe does use a webhook, but because of setup, we turn off.
 Provider.create(name: "github", webhooks_enabled: true)
 Provider.create(name: "google_analytics", webhooks_enabled: false)
 Provider.create(name: "new_relic", webhooks_enabled: true)
