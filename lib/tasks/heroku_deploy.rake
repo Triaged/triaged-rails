@@ -1,7 +1,7 @@
 # List of environments and their heroku git remotes
 ENVIRONMENTS = {
-  :staging => 'triaged-staging',
-  :production => 'triaged'
+  :staging => 'staging',
+  :production => 'production'
 }
  
 namespace :deploy do
