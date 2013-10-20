@@ -12,9 +12,9 @@ class Provider
   	Provider.where(name: name).first
   end
 
-  def service_url_for_company company
-  	service_url = "services_#{name}_index_url"
-  	send(service_url, :subdomain => company.slug)
+  def webhook_url_for_company company
+  	webhook_url = "webhook_#{name}"
+  	send(webhook_url, :id => company.slug)
   end
  
 end

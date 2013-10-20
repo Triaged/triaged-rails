@@ -1,8 +1,8 @@
 class Services::HerokuController < ServiceController
 
-	def create
-		payload = {event: params, company_id: request.subdomain}
-		Rails.logger.info payload.inspect
+	def webhook
+		company = Company.find(params[:id])
+		payload = {event: params, company_id: company.id}
 		Heroku::WebhookService.new.instrument(payload)
 		head :ok
 	# rescue StandardError

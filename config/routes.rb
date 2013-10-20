@@ -1,11 +1,11 @@
 DockedRails::Application.routes.draw do
-  resources :companies
-	
+  
+	# To be removed
 	resource :account
-
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+	devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
                    controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
+  # API Routes
   namespace :api do
     namespace :v1 do
     	devise_for :users
@@ -35,84 +35,26 @@ DockedRails::Application.routes.draw do
     end
   end
 
-
-	constraints subdomain: /.+/ do
-	  namespace :services do
-	  	resources :github do
-	  		collection do
-	  			get 'org_list'
-	  			post 'set_default_org'
-	  		end
-	  	end
-	  	resources :sentry
-	  	resources :new_relic
-	  	resources :kiln
-	  	resources :airbrake
-	  	resources :heroku
-	  end
-	end
-
-	namespace :services do
-	  	resources :stripe
-	  end
+  # Webhooks
+	scope module: 'services' do
+		[:sentry, :new_relic, :kiln, :airbrake, :heroku].each do |resource|
+  		resources resource do
+  			member do
+    			post '' => "#{resource}#webhook", as: 'webhook'
+    		end
+  		end
+		end
+  	resources :github do
+  		member do
+  			post '' => "github#webhook", as: 'webhook'
+  			get 'org_list'
+  			post 'set_default_org'
+  		end
+  	end
+  	resources :stripe
+  end
 	
 	get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'
 	get '/services/oauth_failure/:error' => 'service#oauth_failure', as: 'oauth_failure'
-
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-  
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

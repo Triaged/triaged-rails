@@ -48,7 +48,7 @@ class User
 				connected: connected,
 				follows: follows,
 			}
-			attrs[:webhook_url] = provider.service_url_for_company(company) if provider.webhooks_enabled
+			attrs[:webhook_url] = provider.webhook_url_for_company(company) if provider.webhooks_enabled
 			
 			provider_settings[provider.name] = attrs
 		end

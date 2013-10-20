@@ -12,7 +12,7 @@ class Services::GithubController < ServiceController
 	end
 
 	def org_list
-		Github::Service.new(@company.id).fetch_remote_organizations
+		Github::SetupService.new(@company.id).fetch_remote_organizations
 
 		@organizations = @company.github_organizations
 		redirect_to(oauth_failure_path(error: "No Github Organization Found")) if (@organizations.count == 0)
@@ -24,10 +24,11 @@ class Services::GithubController < ServiceController
 		org.update_attribute(:default, true)
 	end
 
-	def create
+	def webhook
+		company = Company.find(params[:id])
 		event_type = request.headers['X-Github-Event']
 		event = JSON.parse(params["payload"])
-		payload = {event: event, company_id: request.subdomain, event_type: event_type}
+		payload = {event: event, company_id: company.id, event_type: event_type}
 		Github::WebhookService.new.instrument payload
 		head :ok
 	# rescue StandardError
