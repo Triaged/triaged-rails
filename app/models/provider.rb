@@ -13,7 +13,7 @@ class Provider
   end
 
   def webhook_url_for_company company
-  	webhook_url = "webhook_#{name}"
+  	webhook_url = "webhook_#{name}_url"
   	send(webhook_url, :id => company.slug)
   end
  
