@@ -70,7 +70,7 @@ gem 'fog'
 gem 'mail'
 
 group :development do
-	gem 'heroku_san'
+	#gem 'heroku_san'
 	gem 'debugger'
 	gem 'localtunnel'
   gem 'better_errors'
