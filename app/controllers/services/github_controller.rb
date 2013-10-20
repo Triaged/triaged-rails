@@ -1,6 +1,6 @@
 class Services::GithubController < ServiceController
-	before_action :authenticate_user!, :except => :create
-	before_action :set_company, :except => :create
+	before_action :authenticate_user!, :except => :webhook
+	before_action :set_company, :except => :webhook
 	
 
 	def index
