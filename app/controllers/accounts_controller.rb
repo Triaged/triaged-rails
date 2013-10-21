@@ -7,9 +7,6 @@ class AccountsController < ApplicationController
 	end
 
 	def update
-		Rails.logger.info @user.inspect
-		@user.save
-		Rails.logger.info @user.errors
     @user.update(user_params)
     redirect_to account_path
   end

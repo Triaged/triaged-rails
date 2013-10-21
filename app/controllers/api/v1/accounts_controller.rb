@@ -23,7 +23,7 @@ private
 	end
 
 	def user_params
-    params[:user].permit(:name)
+    params[:user].permit(:name, :avatar)
   end
 
 end
