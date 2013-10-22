@@ -18,7 +18,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   version :face do
   	eager
     cloudinary_transformation :effect => :improve, :radius => :max,
-        :width => 60, :height => 60, :crop => :thumb, :gravity => :face
+        :width => 120, :height => 120, :crop => :thumb, :gravity => :face
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
