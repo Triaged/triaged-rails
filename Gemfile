@@ -47,7 +47,8 @@ gem 'certified'
 gem 'figaro'
 gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
 gem 'simple_form', '>= 3.0.0.rc'
-gem 'puma'
+#gem 'puma'
+gem 'thin'
 gem "bson_ext"
 gem 'pusher'
 gem 'dot_hash'
