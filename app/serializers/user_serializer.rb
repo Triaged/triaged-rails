@@ -4,4 +4,5 @@ class UserSerializer < ActiveModel::Serializer
   def avatar_url
   	object.avatar.face.url
   end
+
 end

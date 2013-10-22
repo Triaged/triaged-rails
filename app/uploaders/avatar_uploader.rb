@@ -17,7 +17,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   version :face do
   	eager
-    cloudinary_transformation :effect => "brightness:20", :radius => :max,
+    cloudinary_transformation :effect => :improve, :radius => :max,
         :width => 60, :height => 60, :crop => :thumb, :gravity => :face
   end
 
