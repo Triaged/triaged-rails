@@ -1,5 +1,5 @@
 class Api::V1::AccountsController < API::BaseController
-	before_action :set_user, only: [:show, :update, :destroy]
+	before_action :set_user, only: [:show, :update, :destroy, :profile_picture]
 
 
 	def show
@@ -14,6 +14,12 @@ class Api::V1::AccountsController < API::BaseController
 	def update
     @user.update(user_params)
     respond_with @user
+  end
+
+  def profile_picture
+  	@user.avatar = params
+  	@user.save
+  	respond_with @user
   end
 
 private

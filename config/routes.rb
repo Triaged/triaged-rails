@@ -12,6 +12,7 @@ DockedRails::Application.routes.draw do
     	resource :account do
     		member do
     			get 'team'
+    			post 'profile_picture'
     		end
     		resources :push_tokens do
     			collection do
