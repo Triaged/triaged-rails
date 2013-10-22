@@ -1,7 +1,5 @@
 class Messages::MessageSerializer < ActiveModel::Serializer
-  attributes :id, :author_name, :body, :timestamp, :uuid
+  attributes :id, :body, :timestamp, :uuid
 
-  def author_name
-  	object.author.name
-  end
+  has_one :author
 end
