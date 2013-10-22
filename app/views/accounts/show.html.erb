@@ -5,7 +5,7 @@
 <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
 
 
-<%= image_tag @user.avatar.url, :width => 200 %>
+<%= image_tag @user.avatar.face.url, :width => 60 %>
 
 
 <%= simple_form_for @user, :url => account_path do |f| %>

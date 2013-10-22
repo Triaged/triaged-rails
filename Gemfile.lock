@@ -52,6 +52,7 @@ GEM
       json
     arel (4.0.0)
     atomic (1.1.14)
+    aws_cf_signer (0.1.2)
     bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
@@ -70,6 +71,9 @@ GEM
       carrierwave
       mongoid
     certified (0.1.1)
+    cloudinary (1.0.64)
+      aws_cf_signer
+      rest-client
     coderay (1.1.0)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -300,6 +304,7 @@ DEPENDENCIES
   carrierwave
   carrierwave-mongoid
   certified
+  cloudinary
   coffee-rails (~> 4.0.0)
   debugger
   devise
