@@ -16,7 +16,7 @@ class Api::V1::AccountsController < API::BaseController
     respond_with @user
   end
 
-  def profile_picture
+  def avatar
   	@user.avatar = params
   	@user.save
   	respond_with @user
