@@ -1,1 +1,1 @@
-web: thin start -p 3000 -R config.ru -D -V
+web: bundle exec thin start -p $PORT -D -V
