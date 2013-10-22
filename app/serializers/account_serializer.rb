@@ -8,4 +8,8 @@ class AccountSerializer < ActiveModel::Serializer
   	object.company.name
   end
 
+  def avatar_url
+  	object.avatar.face.url
+  end
+
 end
