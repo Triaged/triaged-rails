@@ -1,4 +1,3 @@
-require 'sidekiq/web'
 DockedRails::Application.routes.draw do
   
 	# To be removed
@@ -64,6 +63,6 @@ DockedRails::Application.routes.draw do
 	
 
 	
-	mount Sidekiq::Web, at: "/sidekiq"
+	mount Resque::Server, :at => "/resque"
 	
 end

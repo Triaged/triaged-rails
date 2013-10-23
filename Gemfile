@@ -70,10 +70,7 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'fog'
 gem 'mail'
 gem 'cloudinary'
-gem 'sidekiq'
-gem "kiqstand", :github=> "mongoid/kiqstand"
-gem 'sinatra', require: false
-gem 'slim'
+gem 'resque', :require => "resque/server"
 
 group :development do
 	#gem 'heroku_san'

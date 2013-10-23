@@ -1,5 +1,5 @@
 class WebhookService
-	include Sidekiq::Worker
+	@queue = :event_queue
 
 	def perform event_class, payload
 		Rails.logger.info "Building event for #{event_class}"
