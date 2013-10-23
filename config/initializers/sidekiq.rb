@@ -1,5 +1,3 @@
-require "active_record/relation"
-
 Sidekiq.configure_server do |config|
   config.server_middleware do |chain|
     chain.add Kiqstand::Middleware
