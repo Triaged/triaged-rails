@@ -1,4 +1,5 @@
 class Common::WebhookService
+	 include Sidekiq::Worker
 
 	# Responsible for receiving webhook data, 
 	# packaging it into an internal event, 
