@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 DockedRails::Application.routes.draw do
   
 	# To be removed
@@ -59,4 +60,10 @@ DockedRails::Application.routes.draw do
 	get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'
 	get '/services/oauth_failure/:error' => 'service#oauth_failure', as: 'oauth_failure'
+
+	
+
+	
+	mount Sidekiq::Web, at: "/sidekiq"
+	
 end

@@ -71,6 +71,9 @@ gem 'fog'
 gem 'mail'
 gem 'cloudinary'
 gem 'sidekiq'
+gem "kiqstand", :github=> "mongoid/kiqstand"
+gem 'sinatra', require: false
+gem 'slim'
 
 group :development do
 	#gem 'heroku_san'
