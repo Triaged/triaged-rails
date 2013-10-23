@@ -6,6 +6,7 @@ class Common::WebhookService
 	# sending the event for feed processing
 
 	def self.build_event_and_add_to_feeds event_class, payload
-		Resque.enqueue(WebhookService, event_class, payload)
+		# Resque.enqueue(WebhookService, event_class, payload)
+		 WebhookService.perform event_class, payload
 	end
 end
