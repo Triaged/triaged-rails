@@ -3,23 +3,23 @@
 # end
 
 ActiveSupport::Notifications.subscribe "event.github.push" do |name, start, finish, id, payload|
-	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::Push, payload)
+	Common::WebhookService.perform_async(Github::Event::Push, payload)
 end
 
 ActiveSupport::Notifications.subscribe "event.github.issues" do |name, start, finish, id, payload|
-	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueOpened, payload) if payload[:event]["action"] == "opened"
-	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueReopened, payload) if payload[:event]["action"] == "reopened"
-	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueClosed, payload) if payload[:event]["action"] == "closed"
+	Common::WebhookService.perform_async(Github::Event::IssueOpened, payload) if payload[:event]["action"] == "opened"
+	Common::WebhookService.perform_async(Github::Event::IssueReopened, payload) if payload[:event]["action"] == "reopened"
+	Common::WebhookService.perform_async(Github::Event::IssueClosed, payload) if payload[:event]["action"] == "closed"
 end
 
 ActiveSupport::Notifications.subscribe "event.github.issue_comment" do |name, start, finish, id, payload|
-	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueComment, payload)
+	Common::WebhookService.perform_async(Github::Event::IssueComment, payload)
 end
 
 ActiveSupport::Notifications.subscribe "event.github.pull_request" do |name, start, finish, id, payload|
-	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::PullRequest, payload)
+	Common::WebhookService.perform_async(Github::Event::PullRequest, payload)
 end
 
 ActiveSupport::Notifications.subscribe "event.github.commit_comment" do |name, start, finish, id, payload|
-	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::CommitComment, payload)
+	Common::WebhookService.perform_async(Github::Event::CommitComment, payload)
 end

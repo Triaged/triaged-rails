@@ -70,6 +70,7 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'fog'
 gem 'mail'
 gem 'cloudinary'
+gem 'sidekiq'
 
 group :development do
 	#gem 'heroku_san'

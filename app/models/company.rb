@@ -26,7 +26,8 @@ class Company
 
   def push_event_to_followers event
   	provider = event.provider
-  	followers_of(provider).each { |follower| follower.add_event_to_feed event }
+  	# Push event to all employees
+  	users.each { |follower| follower.add_event_to_feed event }
   	Rails.logger.info "Pushed #{provider.name} event to followers"
 	end
 

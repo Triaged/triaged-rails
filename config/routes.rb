@@ -21,6 +21,7 @@ DockedRails::Application.routes.draw do
     		end
     	end
     	resources :feed do
+    		resources :share
     		resources :messages
     		collection do 
     			get 'mock'

@@ -4,7 +4,7 @@ class User
 	include Deviseable
 	include Providable
 	include Feedable
-	include Follower
+	#include Follower
 
 	mount_uploader :avatar, AvatarUploader
 
@@ -41,12 +41,10 @@ class User
 		provider_settings = {}
 		Provider.all.each do |provider|
 			connected = company.provider_connected? provider
-			follows = followed_providers.include? provider
 			 attrs = {
 				id: provider.id,
 				name: provider.name,
-				connected: connected,
-				follows: follows,
+				connected: connected
 			}
 			attrs[:webhook_url] = provider.webhook_url_for_company(company) if provider.webhooks_enabled
 			

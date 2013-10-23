@@ -3,5 +3,5 @@ Airbrake.configure do |config|
 end
 
 ActiveSupport::Notifications.subscribe "event.airbrake.exception" do |name, start, finish, id, payload|
-  Common::WebhookService.build_event_and_add_to_feeds(Airbrake::Event::Exception, payload)
+  Common::WebhookService.perform_async(Airbrake::Event::Exception, payload)
 end

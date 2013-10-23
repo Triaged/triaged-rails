@@ -4,6 +4,7 @@ class FeedItem
 
   embedded_in :company
   embeds_many :messages, class_name: "Messages::Message", order: "id DESC"
+  embeds_many :shares
 
   field :external_id, type: String
   field :timestamp, type: DateTime
