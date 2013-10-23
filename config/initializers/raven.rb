@@ -5,5 +5,5 @@ Raven.configure do |config|
 end
 
 ActiveSupport::Notifications.subscribe "event.sentry.exception" do |name, start, finish, id, payload|
-  Common::WebhookService.perform_async(Sentry::Event::Exception, payload)
+  Common::WebhookService.build_event_and_add_to_feeds(Sentry::Event::Exception, payload)
 end
