@@ -6,7 +6,7 @@ module Common::MessageService
 		# ensure feed_item.updated_at is fired
 		feed_item.save!
 
-		company.followers_of(message.feed_item.provider).each do |follower|
+		company.users.each do |follower|
 			Common::NotificationService.push_message follower, message
 		end
 
