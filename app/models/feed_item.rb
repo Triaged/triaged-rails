@@ -43,11 +43,7 @@ class FeedItem
 	end
 
 	def follower_feed_items
-		followers.collect {|follower| follower.user_feed_items.where(feed_item_id: self.id).entries }.flatten
-	end
-
-	def followers
-		company.users.select {|user| user.follows? provider }
+		company.users.collect {|follower| follower.user_feed_items.where(feed_item_id: self.id).entries }.flatten
 	end
 
 	#
