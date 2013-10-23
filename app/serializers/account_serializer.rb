@@ -1,6 +1,6 @@
 class AccountSerializer < ActiveModel::Serializer
   attributes :id, :name, :email, :avatar_url
-  attributes :followed_provider_count, :company_name
+  attributes :company_name
 	attribute :provider_settings, key: :providers
   has_many :teammates
 
