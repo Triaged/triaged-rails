@@ -8,6 +8,6 @@ class GoogleAnalytics::Status::DailySerializer < GraphItemSerializer
   end
 
   def action
-  	date.to_s
+  	object.date.to_s
   end
 end
