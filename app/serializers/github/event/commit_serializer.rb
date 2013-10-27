@@ -1,3 +1,10 @@
-class Github::Event::CommitSerializer < ActiveModel::Serializer
-  attributes :id, :author, :author_email, :timestamp, :message, :url
+class Github::Event::CommitSerializer < TextItemSerializer
+  #attributes :id, :author, :author_email, :timestamp, :message, :url
+  def property
+		"@todo"
+	end
+
+	def body
+		"@todo"
+	end
 end

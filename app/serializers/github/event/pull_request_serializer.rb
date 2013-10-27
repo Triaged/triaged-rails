@@ -1,3 +1,10 @@
-class Github::Event::PullRequestSerializer < FeedItemSerializer
-  attributes :id
+class Github::Event::PullRequestSerializer < TextItemSerializer
+ 
+ def property
+		"@todo"
+	end
+
+	def body
+		"@todo"
+	end
 end

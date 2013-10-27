@@ -1,3 +1,10 @@
-class Github::Event::IssueCommentSerializer < FeedItemSerializer
-  attributes :id
+class Github::Event::IssueCommentSerializer < TextItemSerializer
+  #attributes :id
+  def property
+		"@todo"
+	end
+
+	def body
+		"@todo"
+	end
 end

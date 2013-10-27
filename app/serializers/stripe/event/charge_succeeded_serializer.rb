@@ -1,5 +1,13 @@
-class	Stripe::Event::ChargeSucceededSerializer < FeedItemSerializer
-	attributes :amount, :description, :customer_email, :customer_name
+class	Stripe::Event::ChargeSucceededSerializer < TextItemSerializer
+	#attributes :amount, :description, :customer_email, :customer_name
+
+	def property
+		"@todo"
+	end
+
+	def body
+		"@todo"
+	end
 
 	 
 end
