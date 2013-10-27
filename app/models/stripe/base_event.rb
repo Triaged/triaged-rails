@@ -9,8 +9,7 @@ class Stripe::BaseEvent < FeedItem
 	field :customer_name, :type => String
   field :customer_email, :type => String
 
-  
-	def base_url_path
+  def base_url_path
 		"https://manage.stripe.com"
 	end
 

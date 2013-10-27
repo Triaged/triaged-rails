@@ -6,9 +6,11 @@ class FeedItem
   embeds_many :messages, class_name: "Messages::Message", order: "id DESC"
   embeds_many :shares
 
+  
   field :external_id, type: String
   field :timestamp, type: DateTime
   field :html_url, :type => String
+
 
   index({ external_id: 1 }, { unique: true, background: true })
   index({ updated_at: 1})
@@ -74,5 +76,8 @@ class FeedItem
 		self.class.name.split("::").last.underscore
 	end
 
+	def human_event_name
+		event_name.humanize
+	end
 
 end
