@@ -6,7 +6,7 @@ class Sentry::Event::ExceptionSerializer < TextItemSerializer
 	end
 
 	def action
-		"#{object.level.uppercase} Exception"
+		"#{object.level.capitalize} Exception"
 	end
 
 	def body
