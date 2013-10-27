@@ -5,6 +5,10 @@ class Stripe::Event::ChargeRefundedSerializer < TextItemSerializer
 		"@todo"
 	end
 
+	def action
+		"Charge Refunded"
+	end
+
 	def body
 		"@todo"
 	end

@@ -6,4 +6,8 @@ class GoogleAnalytics::Status::DailySerializer < GraphItemSerializer
   def property
   	"@todo"
   end
+
+  def action
+  	date.to_s
+  end
 end

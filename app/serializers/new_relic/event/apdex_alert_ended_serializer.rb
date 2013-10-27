@@ -5,6 +5,10 @@ class NewRelic::Event::ApdexAlertEndedSerializer < TextItemSerializer
 		object.application_name
 	end
 
+	def action
+		"Apdex Alert Ended"
+	end
+
 	def body
 		object.message
 	end

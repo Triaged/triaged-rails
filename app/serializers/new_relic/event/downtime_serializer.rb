@@ -5,6 +5,10 @@ class NewRelic::Event::DowntimeSerializer < TextItemSerializer
 		object.application_name
 	end
 
+	def action
+		"Downtime"
+	end
+
 	def body
 		object.message
 	end

@@ -5,6 +5,10 @@ class NewRelic::Event::ErrorThresholdEndedSerializer < TextItemSerializer
 		object.application_name
 	end
 
+	def action
+		"Error Threshold Ended"
+	end
+
 	def body
 		object.message
 	end

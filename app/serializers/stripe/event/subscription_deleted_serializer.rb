@@ -5,7 +5,12 @@ class Stripe::Event::SubscriptionDeletedSerializer < TextItemSerializer
 		"@todo"
 	end
 
+	def action
+		"Subscription Deleted"
+	end
+
 	def body
 		"@todo"
 	end
+
 end

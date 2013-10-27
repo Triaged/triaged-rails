@@ -5,6 +5,10 @@ class	Stripe::Event::ChargeSucceededSerializer < TextItemSerializer
 		"@todo"
 	end
 
+	def action
+		"Charge Succeeded"
+	end
+
 	def body
 		"@todo"
 	end

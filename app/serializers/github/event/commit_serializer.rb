@@ -4,6 +4,10 @@ class Github::Event::CommitSerializer < TextItemSerializer
 		"@todo"
 	end
 
+	def action
+		"@todo"
+	end
+
 	def body
 		"@todo"
 	end

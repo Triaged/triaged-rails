@@ -4,6 +4,10 @@ class Github::Event::IssueReopenedSerializer < TextItemSerializer
 		"@todo"
 	end
 
+	def action
+		"@todo"
+	end
+
 	def body
 		"@todo"
 	end

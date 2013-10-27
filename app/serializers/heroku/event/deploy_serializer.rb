@@ -5,6 +5,10 @@ class Heroku::Event::DeploySerializer < TextItemSerializer
 		object.app
 	end
 
+	def action
+		"Deploy"
+	end
+
 	def body
 		object.git_log
 	end

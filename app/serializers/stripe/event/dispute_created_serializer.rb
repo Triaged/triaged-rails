@@ -5,6 +5,10 @@ class Stripe::Event::DisputeCreatedSerializer < TextItemSerializer
 		"@todo"
 	end
 
+	def action
+		"Dispute Created"
+	end
+
 	def body
 		"@todo"
 	end

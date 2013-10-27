@@ -5,6 +5,10 @@ class Github::Event::IssueOpenedSerializer < TextItemSerializer
 		object.repo.name
 	end
 
+	def action
+		"@todo"
+	end
+
 	def body
 		[object.title, object.body]
 	end

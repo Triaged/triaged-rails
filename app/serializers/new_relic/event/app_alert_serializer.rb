@@ -5,6 +5,10 @@ class NewRelic::Event::AppAlertSerializer < TextItemSerializer
 		object.application_name
 	end
 
+	def action
+		"App Alert"
+	end
+
 	def body
 		object.message
 	end

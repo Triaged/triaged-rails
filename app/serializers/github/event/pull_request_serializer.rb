@@ -1,6 +1,10 @@
 class Github::Event::PullRequestSerializer < TextItemSerializer
  
- def property
+ 	def property
+		"@todo"
+	end
+
+	def action
 		"@todo"
 	end
 

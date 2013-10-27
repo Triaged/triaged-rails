@@ -6,6 +6,10 @@ class Beanstalk::Event::PushSerializer < TextItemSerializer
 		object.repo_name
 	end
 
+	def action
+		"push to #{object.branch}"
+	end
+
 	def body
 		object.commits.select {|commit| commit.message }
 	end

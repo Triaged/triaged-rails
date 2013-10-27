@@ -5,6 +5,10 @@ class Airbrake::Event::ExceptionSerializer < TextItemSerializer
   	object.project
   end
 
+  def action
+  	"#{object.error_class.uppercase} Exception"
+  end
+
   def body
   	object.message
   end

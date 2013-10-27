@@ -5,6 +5,10 @@ class NewRelic::Event::DeploymentSerializer < TextItemSerializer
 		object.application_name
 	end
 
+	def action
+		"Deployment"
+	end
+
 	def body
 		object.description
 	end
