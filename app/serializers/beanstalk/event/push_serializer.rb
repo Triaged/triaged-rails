@@ -3,14 +3,14 @@ class Beanstalk::Event::PushSerializer < TextItemSerializer
 	# has_many :commits
 
 	def property
-		object.repo_name
+		object.repo_name.capitalize
 	end
 
 	def action
-		"push to #{object.branch}"
+		"Push to #{object.branch}"
 	end
 
 	def body
-		"body" #object.commits.select {|commit| commit.message }
+		object.commits.collect {|commit| commit.message }.join("\n")
 	end
 end

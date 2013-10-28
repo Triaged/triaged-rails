@@ -5,15 +5,15 @@ class Github::Event::PushSerializer < TextItemSerializer
 
 	
 	def property
-		object.repo.name
+		object.repo.name.capitalize
 	end
 
 	def action
-		"#{object.pusher} pushed to #{object.branch}"
+		"#{object.pusher.humanize} pushed to #{object.branch}"
 	end
 
 	def body
-		"commits" #object.commits.select {|commit| commit.message }
+		 object.commits.collect {|commit| commit.message }.join("\n")
 	end
 
 end
