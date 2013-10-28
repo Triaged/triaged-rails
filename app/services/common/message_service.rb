@@ -4,13 +4,29 @@ module Common::MessageService
 		company = feed_item.company
 		message = feed_item.messages.build(message_params)
 		# ensure feed_item.updated_at is fired
+		self.parse_mentions(company, message)
+
 		feed_item.save!
 
-		company.users.each do |follower|
+		company.followers_of(feed_item.provider).each do |follower|
 			Common::NotificationService.push_message follower, message
 		end
 
 		return message
 	end 
+
+	def self.parse_mentions(company, message)
+		body = message.body
+		words = body.split
+		words.select {|word| word.starts_with? "@"}.each do |word|
+			begin
+				slug = word[1..-1]
+				user = company.users.find(slug)
+				message.user_mentions << user
+			rescue  Mongoid::Errors::DocumentNotFound
+				next
+			end
+		end
+	end
 
 end
