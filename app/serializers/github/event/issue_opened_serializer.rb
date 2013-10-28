@@ -10,6 +10,6 @@ class Github::Event::IssueOpenedSerializer < TextItemSerializer
 	end
 
 	def body
-		[object.title, object.body]
+		"body" #[object.title, object.body]
 	end
 end

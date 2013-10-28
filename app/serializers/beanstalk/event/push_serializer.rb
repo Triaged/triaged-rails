@@ -11,6 +11,6 @@ class Beanstalk::Event::PushSerializer < TextItemSerializer
 	end
 
 	def body
-		object.commits.select {|commit| commit.message }
+		"body" #object.commits.select {|commit| commit.message }
 	end
 end
