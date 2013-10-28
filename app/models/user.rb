@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Slug
 	include Deviseable
 	include Providable
 	include Feedable
@@ -52,4 +53,8 @@ class User
 		end
 		return provider_settings
 	end
+
+	slug do |object|
+    object.name.delete(' ')
+  end
 end
