@@ -5,4 +5,8 @@ class UserSerializer < ActiveModel::Serializer
   	object.avatar.face.url
   end
 
+  def mention_name
+  	object.name.delete(' ')
+  end
+
 end
