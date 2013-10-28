@@ -11,6 +11,6 @@ class Kiln::Event::PushSerializer < TextItemSerializer
 	end
 
 	def body
-		object.commits.select {|commit| commit.message }
+		"commits" #object.commits.select {|commit| commit.message }
 	end
 end
