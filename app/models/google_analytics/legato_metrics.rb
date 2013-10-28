@@ -29,9 +29,9 @@ class GoogleAnalytics::LegatoMetrics
 		# Details
 		metrics.collection.each do |daily_detail|
 			day_of_week = DateTime.parse(daily_detail.date).wday
-			visits_data_set.push(details: {day_of_week => daily_detail.visits.to_f})
-			visitors_data_set.push(details: {day_of_week => daily_detail.visitors.to_f})
-			pageviews_data_set.push(details: {day_of_week => daily_detail.pageviews.to_f})
+			visits_data_set.push(details: 		{:x => day_of_week.to_f, 	:y => daily_detail.visits.to_f})
+			visitors_data_set.push(details: 	{:x => day_of_week.to_f, 	:y => daily_detail.visitors.to_f})
+			pageviews_data_set.push(details: 	{:x => day_of_week.to_f, 	:y => daily_detail.pageviews.to_f})
 		end
 
 		return item
