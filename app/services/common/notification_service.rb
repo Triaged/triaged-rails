@@ -35,6 +35,10 @@ module Common::NotificationService
 			)
 
 			GROCER.push(notification)
+
+			GROCER_FEEDBACK.each do |attempt|
+  			puts attempt.inspect
+			end
 		end
 	end
 
