@@ -5,24 +5,35 @@ class GoogleAnalytics::LegatoMetrics
 	dimensions :date
 
 	def self.build_daily_summary metrics
-		daily_details = []
-		metrics.collection.each do |daily_detail|
-			daily_details << GoogleAnalytics::Status::DailyDetail.new(
-				date: Date.parse(daily_detail.date),
-				visits_count: daily_detail.visits,
-				visitors_count: daily_detail.visitors,
-				pageviews_count: daily_detail.pageviews
-			)
-		end
-		
 		item = GoogleAnalytics::Status::Daily.new(
 			external_id: metrics.end_date.to_i,
 			date: metrics.end_date,
-			visits_sum: metrics.totals_for_all_results["visits"],
-			visitors_sum: metrics.totals_for_all_results["visitors"],
-			pageviews_sum: metrics.totals_for_all_results["pageviews"],
-			daily_details: daily_details,
 			timestamp: DateTime.now
 		)
+
+		# Visits
+		visits_data_set = item.data_sets.build(
+												label: "visits",
+												total_count: metrics.totals_for_all_results["visits"]
+											)
+		# Visitors
+		visitors_data_set = item.data_sets.build(
+												label: "visitors",
+												total_count: metrics.totals_for_all_results["visitors"]
+											)
+		# Page views
+		pageviews_data_set = item.data_sets.build(
+												label: "page views",
+												total_count: metrics.totals_for_all_results["pageviews"]
+											)
+		# Details
+		metrics.collection.each do |daily_detail|
+			day_of_week = DateTime.parse(daily_detail.date).wday
+			visits_data_set.push(details: {day_of_week => daily_detail.visits.to_f})
+			visitors_data_set.push(details: {day_of_week => daily_detail.visitors.to_f})
+			pageviews_data_set.push(details: {day_of_week => daily_detail.pageviews.to_f})
+		end
+
+		return item
 	end
 end
