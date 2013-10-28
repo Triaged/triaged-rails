@@ -22,7 +22,7 @@ module Common::MessageService
 			begin
 				slug = word[1..-1]
 				user = company.users.find(slug)
-				message.user_mentions << user
+				message.push(user_mentions: user.id)
 			rescue  Mongoid::Errors::DocumentNotFound
 				next
 			end
