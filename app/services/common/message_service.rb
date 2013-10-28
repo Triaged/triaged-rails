@@ -5,7 +5,6 @@ module Common::MessageService
 		message = feed_item.messages.build(message_params)
 		# ensure feed_item.updated_at is fired
 		self.parse_mentions(company, message)
-
 		feed_item.save!
 
 		company.followers_of(feed_item.provider).each do |follower|

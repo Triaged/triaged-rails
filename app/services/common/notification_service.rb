@@ -18,7 +18,6 @@ module Common::NotificationService
 		push_token = user.push_tokens.where(service: "apns").first
 		
 		if push_token
-			Rails.logger.info "Pushing to token: #{push_token.token}"
 			# increment push count
 			push_token.inc(count: 1)
 
