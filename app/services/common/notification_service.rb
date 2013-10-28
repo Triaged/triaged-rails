@@ -5,7 +5,7 @@ module Common::NotificationService
 	end
 
 	def self.push_message user, message
-		alert = "#{message.author.name} is talking about a #{message.feed_item.provider_name.humanize} #{message.feed_item.event_name.humanize}"
+		alert = "#{message.author.name} is discussing a #{message.feed_item.provider_name.humanize} #{message.feed_item.event_name.humanize}"
 		Common::NotificationService.push(user, message.feed_item.id, alert)
 	end
 
@@ -25,6 +25,7 @@ module Common::NotificationService
 			notification = Grocer::Notification.new(
 			  device_token:      push_token.token,
 			  alert:             alert,
+			  sound: 						 'default',
 			  badge:             push_token.count,
 			  expiry:            Time.now + 60*60,     # optional; 0 is default, meaning the message is not stored
 			  content_available: true,                  # optional; any truthy value will set 'content-available' to 1
