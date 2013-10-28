@@ -54,7 +54,7 @@ class User
 		return provider_settings
 	end
 
-	slug do |object|
+	slug :name, :scope => :company do |object|
     object.name.delete(' ')
   end
 end
