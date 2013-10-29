@@ -32,7 +32,7 @@ class Kiln::Event::Push < FeedItem
 
   	push.external_id = push.commits.first.external_id
   	push.branch = 	push.commits.first.branch
-  	push.html_url = push.commits.repo_url
+  	push.html_url = push.repo_url
 
   	return push
   end

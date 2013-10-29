@@ -7,7 +7,7 @@ class Beanstalk::Event::PushSerializer < TextItemSerializer
 	end
 
 	def action
-		"Pushed #{object.commits.count} commits to #{object.branch}"
+		"Pushed to #{object.branch}"
 	end
 
 	def body
