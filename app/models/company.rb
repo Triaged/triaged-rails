@@ -32,7 +32,7 @@ class Company
 	end
 
 	def followers_of provider
-		followers = users.select { |user| user.follows? provider }
+		followers = users.select { |user| !user.ignores? provider }
 	end
 
 	def provider_connected? provider

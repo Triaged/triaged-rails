@@ -5,7 +5,7 @@ class User
 	include Deviseable
 	include Providable
 	include Feedable
-	include Follower
+	include Ignorable
 
 	mount_uploader :avatar, AvatarUploader
 

@@ -30,8 +30,8 @@ DockedRails::Application.routes.draw do
     	end
     	resources :providers do
     		member do
+    			post 'ignore'
     			post 'follow'
-    			post 'unfollow'
     		end
     	end
     end
