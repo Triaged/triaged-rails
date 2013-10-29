@@ -27,11 +27,11 @@ class GoogleAnalytics::LegatoMetrics
 												total_count: metrics.totals_for_all_results["pageviews"]
 											)
 		# Details
-		metrics.collection.each do |daily_detail|
+		metrics.collection.each_with_index do |daily_detail, index|
 			day_of_week = DateTime.parse(daily_detail.date).wday
-			visits_data_set.push(details: 		{:x => day_of_week.to_f, 	:y => daily_detail.visits.to_f})
-			visitors_data_set.push(details: 	{:x => day_of_week.to_f, 	:y => daily_detail.visitors.to_f})
-			pageviews_data_set.push(details: 	{:x => day_of_week.to_f, 	:y => daily_detail.pageviews.to_f})
+			visits_data_set.push(details: 		{:x => day_of_week.to_f, 	:y => daily_detail.visits.to_f, :index => index})
+			visitors_data_set.push(details: 	{:x => day_of_week.to_f, 	:y => daily_detail.visitors.to_f, :index => index})
+			pageviews_data_set.push(details: 	{:x => day_of_week.to_f, 	:y => daily_detail.pageviews.to_f, :index => index})
 		end
 
 		return item
