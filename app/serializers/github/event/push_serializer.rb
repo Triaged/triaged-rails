@@ -9,7 +9,7 @@ class Github::Event::PushSerializer < TextItemSerializer
 	end
 
 	def action
-		"#{object.pusher.underscore.humanize} pushed to #{object.branch}"
+		"#{object.pusher.underscore.humanize} pushed #{object.commits.count} commits to #{object.branch}"
 	end
 
 	def body
