@@ -5,7 +5,6 @@ class GoogleAnalytics::Status::DailySerializer < GraphItemSerializer
   end
 
   def action
-  	Rails.logger.info object.date.to_s
-  	object.date.strftime('%A, %b %d')
+  	"#{object.date.strftime('%A, %b')} #{object.date.day.ordinalize}"
   end
 end
