@@ -6,6 +6,6 @@ class GoogleAnalytics::Status::DailySerializer < GraphItemSerializer
   end
 
   def action
-  	Date.strptime(object.date, '%A %b %d, %Y')
+  	Date.strptime(object.date.to_s, '%A %b %d, %Y')
   end
 end
