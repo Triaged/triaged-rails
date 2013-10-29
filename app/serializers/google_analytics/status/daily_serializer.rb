@@ -5,6 +5,7 @@ class GoogleAnalytics::Status::DailySerializer < GraphItemSerializer
   end
 
   def action
-  	"#{Date.strptime(object.date.to_s, '%Y-%M-%D')}"
+  	Rails.logger.info object.date.to_s
+  	Date.strptime(object.date.to_s, '%A, %b %d')
   end
 end
