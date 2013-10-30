@@ -14,6 +14,10 @@ module Common::NotificationService
 		Common::NotificationService.push(user, item.id, alert)
 	end
 
+	def self.push_test user, alert
+		Common::NotificationService.push(user, 0, alert)
+	end
+
 	def self.push user, external_id, alert
 		push_token = user.push_tokens.where(service: "apns").first
 		
