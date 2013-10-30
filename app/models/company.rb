@@ -1,7 +1,6 @@
 class Company
   include Mongoid::Document
   include Mongoid::Slug
-  include Providable
 
   field :name, :type => String
   
@@ -53,6 +52,21 @@ class Company
     object.name.split(".").first.to_url
   end
 
-  
+  # provider scopes
+	def default_stripe_provider_credentials
+  	users_provider_credentials.where(provider: Provider.named("stripe")).first
+  end
+
+  def default_github_provider_credentials
+  	users_provider_credentials.where(provider: Provider.named("github")).first
+  end
+
+  def default_google_analytics_provider_credentials
+  	users_provider_credentials.where(provider: Provider.named("google_analytics")).first
+  end
+
+	def users_provider_credentials
+		ProviderCredentials.where(:user.in => users)
+	end  
 
 end

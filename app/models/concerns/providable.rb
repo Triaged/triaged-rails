@@ -5,7 +5,7 @@ module Providable
 		# First check this user directly
 		# credentials = ProviderCredential.where(user: self, provider: provider).first
 		# Then check for shared credentials within the company
-		credentials = self.provider_credentials.where(provider: provider).first unless credentials
+		credentials = self.provider_credentials.where(provider: provider).first
 	end
 
 
