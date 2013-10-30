@@ -3,7 +3,7 @@ class GoogleAnalytics::Property
   
   embedded_in :account, :class_name => "GoogleAnalytics::Account"
 
-  field :external_id, type: Integer
+  field :external_id, type: String
   field :name, type: String
   field :active, type: String
 end
