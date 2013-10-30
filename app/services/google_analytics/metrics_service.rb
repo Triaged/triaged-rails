@@ -13,7 +13,7 @@ class GoogleAnalytics::MetricsService < GoogleAnalytics::BaseService
 
 		legato_profiles(user).each do |profile|
 			metrics = fetch_metrics(profile, start_date, end_date)
-			add_to_feed metrics
+			add_to_feed metrics, profile
 		end
 	end
 
@@ -21,8 +21,8 @@ class GoogleAnalytics::MetricsService < GoogleAnalytics::BaseService
 		@metrics_class.results(profile, :start_date => start_date, :end_date => end_date) # kicks off fetch
 	end
 
-	def add_to_feed metrics
-		item = build_item_from_metrics metrics
+	def add_to_feed metrics, profile
+		item = build_item_from_metrics metrics, profile
 		Common::FeedService.add_to_feed item, @company
 	end
 
@@ -32,8 +32,8 @@ class GoogleAnalytics::MetricsService < GoogleAnalytics::BaseService
 
 private
 
-	def build_item_from_metrics metrics
-		item = @metrics_class.build_daily_summary metrics
+	def build_item_from_metrics metrics, profile
+		item = @metrics_class.build_daily_summary metrics, profile
 	end
 
 	def get_legato_properties user, account
