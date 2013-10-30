@@ -35,10 +35,6 @@ class User
 		self.company.teammates_of self
 	end
 
-	def provider_credentials
-		company.provider_credentials
-	end
-
 	def provider_settings
 		provider_settings = {}
 		Provider.all.each do |provider|
