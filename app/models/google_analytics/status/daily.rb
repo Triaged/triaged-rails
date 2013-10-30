@@ -3,6 +3,8 @@ class GoogleAnalytics::Status::Daily < FeedItem
 
   field :date, type: Date
 
+  belongs_to :property, :class_name => "GoogleAnalytics::Property"
+
   #embeds_many :daily_details, :class_name => "GoogleAnalytics::Status::DailyDetail"
   embeds_many :data_sets, :class_name => "GoogleAnalytics::Status::DataSet", cascade_callbacks: true
 

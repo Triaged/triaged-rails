@@ -1,6 +1,6 @@
-class GoogleAnalytics::MetricsService
+class GoogleAnalytics::MetricsService < GoogleAnalytics::BaseService
 
-	attr_accessor :company, :metrics_class
+	attr_accessor :metrics_class
 
 	def initialize metrics_class, company_id
 		@metrics_class = metrics_class
@@ -8,15 +8,28 @@ class GoogleAnalytics::MetricsService
 	end
 
 	def fetch_and_add_to_feed(start_date, end_date)
-		metrics = fetch_metrics(start_date, end_date)
-		item = build_item_from_metrics metrics
-		Common::FeedService.add_to_feed item, @company
+		user = Legato::User.new(access_token)
+		account = @company.default_google_analytics_account
+
+		legato_account = get_legato_properties(user, account)
+
+		puts legato_account.inspect
+		puts "----------"
+		legato_account.web_properties.each do |property|
+			puts property.inspect
+			profile = Legato::Management::Profile.for_web_property(property)
+			metrics = fetch_metrics(profile, start_date, end_date)
+			add_to_feed metrics
+		end
 	end
 
-	def fetch_metrics(start_date, end_date)
-		user = Legato::User.new(access_token)
-		profile = user.profiles.last # todo, configure this
-		metrics = @metrics_class.results(profile, :start_date => start_date, :end_date => end_date) # kicks off fetch
+	def fetch_metrics(profile, start_date, end_date)
+		@metrics_class.results(profile, :start_date => start_date, :end_date => end_date) # kicks off fetch
+	end
+
+	def add_to_feed metrics
+		item = build_item_from_metrics metrics
+		Common::FeedService.add_to_feed item, @company
 	end
 
 	def daily_fetch_and_add_to_feed
@@ -29,31 +42,11 @@ private
 		item = @metrics_class.build_daily_summary metrics
 	end
 
-	def access_token
-		token = refresh_token
-		client = OAuth2::Client.new(ENV['GA_CLIENT_ID'], ENV['GA_SECRET'], {
-		  :authorize_url => 'https://accounts.google.com/o/oauth2/auth',
-		  :token_url => 'https://accounts.google.com/o/oauth2/token'
-		})
-		access_token = OAuth2::AccessToken.from_hash client, {:access_token => token}
+	def get_legato_properties user, account
+		Legato::Management::Account.all(user).each do |legato_account|
+			return legato_account if (legato_account.id == account.external_id)
+		end
+		return nil
 	end
 
-	def refresh_token
-	  data = {
-	    :client_id => ENV['GA_CLIENT_ID'],
-	    :client_secret => ENV['GA_SECRET'],
-	    :refresh_token => @company.default_google_analytics_provider_credentials.refresh_token,
-	    :grant_type => "refresh_token"
-	  }
-	  @response = ActiveSupport::JSON.decode(RestClient.post "https://accounts.google.com/o/oauth2/token", data)
-	  if @response["access_token"].present?
-	  	token = @response["access_token"]
-	  	@company.default_google_analytics_provider_credentials.update_attribute(:access_token, token)
-	  	return token
-	  else
-	    raise StandardError
-	  end
-	rescue RestClient::BadRequest => e
-	  # Bad request
-	end
 end

@@ -1,4 +1,4 @@
-module Feedable
+module UserFeedable
 	extend ActiveSupport::Concern
 
 	included do 

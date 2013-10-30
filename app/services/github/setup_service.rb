@@ -5,7 +5,7 @@ class Github::SetupService
 
 	def initialize company_id
 		@company = Company.find(company_id)
-		@github = Github.new oauth_token: @company.default_github_provider_credentials.access_token
+		@github = Github.new oauth_token: @company.github_provider_credentials.access_token
 	end
 
 	def fetch_remote_organizations
@@ -30,7 +30,7 @@ class Github::SetupService
 	end
 
 	def set_default_org id
-		@company.default_github_org = @company.github_organizations.find(id)
+		@company.github_organizations.find(id).update_attribute(:default, true)
 	end
 
 	def create_hooks!

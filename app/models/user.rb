@@ -4,7 +4,7 @@ class User
   include Mongoid::Slug
 	include Deviseable
 	include Providable
-	include Feedable
+	include UserFeedable
 	include Ignorable
 	include Providable
 
@@ -13,8 +13,7 @@ class User
 	belongs_to :company
 	index({ company_id: 1 })
 
-	has_many :provider_credentials
-  embeds_many :push_tokens
+	embeds_many :push_tokens
   before_create :assign_to_company
 
   def save_omniauth(provider, uid, access_token, refresh_token=nil)

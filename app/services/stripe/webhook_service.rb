@@ -5,7 +5,7 @@ class Stripe::WebhookService < Service
 	def instrument payload
 		event_type = payload[:type]
 		company = get_company payload
-		access_token = company.default_stripe_provider_credentials.access_token
+		access_token = company.stripe_provider_credentials.access_token
 		Rails.logger.info company.inspect
 		
 		# Validate event and fill customer data
