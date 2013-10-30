@@ -11,7 +11,6 @@ class GoogleAnalytics::LegatoMetrics
 			timestamp: DateTime.now,
 			account: GoogleAnalytics::Account.find_by(external_id: profile.account_id),
 			property_exernal_id: profile.web_property_id
-			)
 		)
 
 		# Visits
