@@ -11,13 +11,7 @@ class GoogleAnalytics::MetricsService < GoogleAnalytics::BaseService
 		user = Legato::User.new(access_token)
 		account = @company.default_google_analytics_account
 
-		legato_account = get_legato_properties(user, account)
-
-		puts legato_account.inspect
-		puts "----------"
-		legato_account.web_properties.each do |property|
-			puts property.inspect
-			profile = Legato::Management::Profile.for_web_property(property)
+		legato_profiles(user).each do |profile|
 			metrics = fetch_metrics(profile, start_date, end_date)
 			add_to_feed metrics
 		end
@@ -47,6 +41,10 @@ private
 			return legato_account if (legato_account.id == account.external_id)
 		end
 		return nil
+	end
+
+	def legato_profiles user
+		Legato::Management::Profile.all(user).select {|profile| profile.name == "All Web Site Data"}
 	end
 
 end
