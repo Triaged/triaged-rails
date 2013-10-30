@@ -38,7 +38,7 @@ DockedRails::Application.routes.draw do
   end
 
   # Webhooks
-	scope module: 'services' do
+	scope module: 'services', :constraints => { :protocol => "https" } do
 		[:sentry, :new_relic, :kiln, :airbrake, :heroku].each do |resource|
   		resources resource do
   			member do
