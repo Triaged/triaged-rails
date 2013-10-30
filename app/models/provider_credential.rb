@@ -23,6 +23,7 @@ class ProviderCredential
   def provider_created
   	# setup company connection
   	company.connect_provider provider
+  	provider.credentials_created company
   end
 
 

@@ -10,7 +10,7 @@ class Sentry::Event::ExceptionSerializer < TextItemSerializer
 	end
 
 	def body
-		"#{object.message}\n\nCulprit\n#{object.culprit}"
+		"#{object.message}\n\n#{object.culprit}"
 	end
 
 end

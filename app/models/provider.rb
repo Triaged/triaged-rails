@@ -16,5 +16,14 @@ class Provider
   	webhook_url = "webhook_#{name}_url"
   	send(webhook_url, :id => company.slug)
   end
+
+  def credentials_created company
+  	send("#{self.name}_credentials_created", company)
+  end
+
+  def google_analytics_credentials_created company
+  	setup_service = GoogleAnalytics::SetupService.new(company.id)
+  	setup_service.fetch_remote_profiles
+  end
  
 end
