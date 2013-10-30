@@ -42,13 +42,13 @@ private
 	  data = {
 	    :client_id => ENV['GA_CLIENT_ID'],
 	    :client_secret => ENV['GA_SECRET'],
-	    :refresh_token => @company.google_analytics_provider_credentials.refresh_token,
+	    :refresh_token => @company.default_google_analytics_provider_credentials.refresh_token,
 	    :grant_type => "refresh_token"
 	  }
 	  @response = ActiveSupport::JSON.decode(RestClient.post "https://accounts.google.com/o/oauth2/token", data)
 	  if @response["access_token"].present?
 	  	token = @response["access_token"]
-	  	@company.google_analytics_provider_credentials.update_attribute(:access_token, token)
+	  	@company.default_google_analytics_provider_credentials.update_attribute(:access_token, token)
 	  	return token
 	  else
 	    raise StandardError

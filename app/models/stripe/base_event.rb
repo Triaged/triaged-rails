@@ -18,7 +18,7 @@ class Stripe::BaseEvent < FeedItem
 	end
 
 	def after_build_hook company
-		customer = Stripe::Customer.retrieve(customer_id,  company.stripe_provider_credentials.access_token)
+		customer = Stripe::Customer.retrieve(customer_id,  company.default_stripe_provider_credentials.access_token)
 		customer_email = customer[:email]
 		customer_name = customer[:description]
 	end

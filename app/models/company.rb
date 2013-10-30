@@ -66,7 +66,7 @@ class Company
   end
 
 	def users_provider_credentials
-		ProviderCredentials.where(:user.in => users)
+		ProviderCredential.where(:user.in => users)
 	end  
 
 end
