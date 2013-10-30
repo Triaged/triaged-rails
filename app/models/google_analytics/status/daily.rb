@@ -15,7 +15,7 @@ class GoogleAnalytics::Status::Daily < FeedItem
 		self.html_url = "http://www.google.com/analytics/"
 	end
 
-	def property
+	def ga_property
 		company.default_google_analytics_account.properties.find_by external_id: property_exernal_id
 	end
 end

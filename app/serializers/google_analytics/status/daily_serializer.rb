@@ -1,7 +1,7 @@
 class GoogleAnalytics::Status::DailySerializer < GraphItemSerializer
   
 	def property
-  	object.property.name
+  	object.ga_property.name
   end
 
   def action
