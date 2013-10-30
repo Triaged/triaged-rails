@@ -1,7 +1,7 @@
 class ProviderCredential
   include Mongoid::Document
 
-	belongs_to :company
+	belongs_to :user
   belongs_to :provider
 
   # Oauth Providers require credentials

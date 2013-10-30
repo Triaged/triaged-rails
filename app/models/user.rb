@@ -6,14 +6,16 @@ class User
 	include Providable
 	include Feedable
 	include Ignorable
+	include Providable
 
 	mount_uploader :avatar, AvatarUploader
 
 	belongs_to :company
 	index({ company_id: 1 })
 
+	has_many :provider_credentials
   embeds_many :push_tokens
-	before_create :assign_to_company
+  before_create :assign_to_company
 
   def save_omniauth(provider, uid, access_token, refresh_token=nil)
 	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.find_by(name: provider), uid: uid)

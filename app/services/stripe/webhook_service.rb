@@ -17,7 +17,7 @@ class Stripe::WebhookService < Service
 	end
 
 	def get_company payload
- 		company = ProviderCredential.where(provider: Provider.named("stripe"), uid: payload[:user_id]).first.company
+ 		company = ProviderCredential.where(provider: Provider.named("stripe"), uid: payload[:user_id]).first.user.company
  		company
  	end
 

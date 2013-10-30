@@ -11,8 +11,6 @@ class Company
 
   has_many :users
   
-  has_many :provider_credentials
-
   has_many :github_organizations, :class_name => "Github::Org"
   
 
