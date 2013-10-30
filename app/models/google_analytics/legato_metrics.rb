@@ -10,7 +10,7 @@ class GoogleAnalytics::LegatoMetrics
 			external_id: metrics.end_date.to_i,
 			date: metrics.end_date,
 			timestamp: DateTime.now,
-			property_exernal_id: profile.web_property_id
+			property_external_id: profile.web_property_id
 		)
 
 		# Visits
