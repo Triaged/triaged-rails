@@ -5,6 +5,7 @@ class GoogleAnalytics::LegatoMetrics
 	dimensions :date
 
 	def self.build_daily_summary metrics, profile
+		Rails.logger.info profile.inspect
 		item = GoogleAnalytics::Status::Daily.new(
 			external_id: metrics.end_date.to_i,
 			date: metrics.end_date,
