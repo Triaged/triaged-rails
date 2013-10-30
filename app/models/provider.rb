@@ -14,7 +14,7 @@ class Provider
 
   def webhook_url_for_company company
   	webhook_url = "webhook_#{name}_url"
-  	send(webhook_url, :id => company.slug)
+  	send(webhook_url, :id => company.slug, :protocol => "https")
   end
 
   def credentials_created company
