@@ -3,16 +3,27 @@ module Common::MessageService
 	def self.new_message(feed_item, message_params)
 		company = feed_item.company
 		message = feed_item.messages.build(message_params)
-		# ensure feed_item.updated_at is fired
 		self.parse_mentions(company, message)
+		
+		# ensure feed_item.updated_at is fired
 		feed_item.save!
 
-		company.followers_of(feed_item.provider).each do |follower|
-			Common::NotificationService.push_message follower, message
-		end
+		message.user_mentions ? push_to_mentions(message) : push_to_followers(message, feed_item.provider)
 
 		return message
 	end 
+
+	def push_to_followers message, provider
+		company.followers_of(provider).each do |follower|
+			Common::NotificationService.push_message follower, message
+		end
+	end
+
+	def push_to_mentions message
+		User.find(message.user_mentions).each do |user|
+			Common::NotificationService.push_message user, message
+		end
+	end
 
 	def self.parse_mentions(company, message)
 		body = message.body

@@ -11,7 +11,6 @@ class ProviderCredential
   field :refresh_token, :type => String
 
   validates :user, :uniqueness => { :scope => :provider }
-  validates :company, :uniqueness => { :scope => :provider }
   
   before_create :before_create
   after_create :provider_created
