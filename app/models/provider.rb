@@ -18,7 +18,8 @@ class Provider
   end
 
   def credentials_created company
-  	send("#{self.name}_credentials_created", company)
+  	created_method = "#{self.name}_credentials_created"
+  	send(created_method, company) if self.respond_to? created_method
   end
 
   def google_analytics_credentials_created company
