@@ -43,7 +43,8 @@ class User
 			 attrs = {
 				id: provider.id,
 				name: provider.name,
-				connected: connected
+				connected: connected,
+				account_settings: provider.account_settings(company),
 			}
 			attrs[:webhook_url] = provider.webhook_url_for_company(company) if provider.webhooks_enabled
 			

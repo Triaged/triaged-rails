@@ -26,5 +26,27 @@ class Provider
   	setup_service = GoogleAnalytics::SetupService.new(company.id)
   	setup_service.fetch_remote_profiles
   end
+
+
+  def account_settings company
+  	created_method = "#{self.name}_account_settings"
+  	account_settings = send(created_method, company) if (self.respond_to? created_method)
+  	account_settings ? account_settings : {}
+	end
+
+  def github_account_settings company
+		{
+  		:organization => company.default_github_org.name,
+  		:repos => company.default_github_org.repos.collect {|repo| repo.name}
+  	} if company.default_github_org
+	end
+
+  def google_analytics_account_settings company
+  	{
+  		:account => company.default_google_analytics_account.name,
+  		:properties => company.default_google_analytics_account.properties.collect {|property| property.name}
+  	} if company.default_google_analytics_account
+  end
+
  
 end
