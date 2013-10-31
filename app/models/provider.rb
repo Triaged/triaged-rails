@@ -17,15 +17,18 @@ class Provider
   	send(webhook_url, :id => company.slug, :protocol => "https")
   end
 
-  def credentials_created company
-  	created_method = "#{self.name}_credentials_created"
-  	send(created_method, company) if self.respond_to? created_method
-  end
+  def settings_for company
+		attrs = {
+			id: id,
+			name: name,
+			account_settings: account_settings(company),
+		}
 
-  def google_analytics_credentials_created company
-  	setup_service = GoogleAnalytics::SetupService.new(company.id)
-  	setup_service.fetch_remote_profiles
-  end
+		attrs[:webhook_url] = webhook_url_for_company(company) if webhooks_enabled
+		attrs[:connected] = company.provider_connected? self
+		
+		attrs
+	end
 
 
   def account_settings company

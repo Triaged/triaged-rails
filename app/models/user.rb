@@ -39,17 +39,9 @@ class User
 	def provider_settings
 		provider_settings = {}
 		Provider.all.each do |provider|
-			connected = company.provider_connected? provider
-			 attrs = {
-				id: provider.id,
-				name: provider.name,
-				connected: connected,
-				account_settings: provider.account_settings(company),
-			}
-			attrs[:webhook_url] = provider.webhook_url_for_company(company) if provider.webhooks_enabled
-			
-			provider_settings[provider.name] = attrs
+			provider_settings[provider.name] = provider.settings_for(company)
 		end
+
 		return provider_settings
 	end
 

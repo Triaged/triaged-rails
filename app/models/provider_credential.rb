@@ -22,9 +22,17 @@ class ProviderCredential
   def provider_created
   	# setup company connection
   	company.connect_provider provider
-  	provider.credentials_created company
+  	credentials_created
   end
 
+  def credentials_created
+  	created_method = "#{self.name}_credentials_created"
+  	send(created_method) if self.respond_to? created_method
+  end
 
+  def google_analytics_credentials_created
+  	setup_service = GoogleAnalytics::SetupService.new(company.id)
+  	setup_service.fetch_remote_profiles
+  end
 
 end
