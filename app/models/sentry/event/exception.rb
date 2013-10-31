@@ -16,12 +16,9 @@ class Sentry::Event::Exception < FeedItem
 			culprit: data.culprit,
 			logger: data.logger,
 			level: data.level,
-			timestamp: DateTime.now
+			timestamp: DateTime.now,
+			html_url: data.url
 		)
-	end
-
-	def build_html_url
-		self.html_url = "https://app.getsentry.com/#{project}/group/#{external_id}"
 	end
 
 	def should_push?
