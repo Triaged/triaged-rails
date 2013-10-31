@@ -5,5 +5,5 @@ class GoogleAnalytics::Property
 
   field :external_id, type: String
   field :name, type: String
-  field :active, type: String
+  field :active, type: String, default: true
 end

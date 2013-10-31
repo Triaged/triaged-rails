@@ -10,16 +10,15 @@ class GoogleAnalytics::SetupService < GoogleAnalytics::BaseService
 
 	def fetch_remote_profiles
 		@user.accounts.each do |account|
-			ga_account = @company.google_analytics_accounts.create(
+			ga_account = @company.google_analytics_accounts.find_or_create_by(
 					name: account.name,
 					external_id: account.id,
 				)
 
 			account.web_properties.each do |property|
-				ga_account.properties.create(
+				ga_account.properties.find_or_create_by(
 					name: property.name,
 					external_id: property.id,
-					active: true
 				)
 			end
 		end
