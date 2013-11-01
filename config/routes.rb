@@ -39,7 +39,7 @@ DockedRails::Application.routes.draw do
 
   # Webhooks
 	scope module: 'services' do
-		[:sentry, :new_relic, :kiln, :airbrake, :heroku].each do |resource|
+		[:sentry, :new_relic, :kiln, :airbrake, :heroku, :hockey_app].each do |resource|
   		resources resource do
   			member do
     			post '' => "#{resource}#webhook", as: 'webhook'
