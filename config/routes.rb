@@ -32,6 +32,7 @@ DockedRails::Application.routes.draw do
     		member do
     			post 'ignore'
     			post 'follow'
+    			post 'email_connect_instructions'
     		end
     	end
     end

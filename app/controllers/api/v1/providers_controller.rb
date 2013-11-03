@@ -11,6 +11,10 @@ class Api::V1::ProvidersController < API::BaseController
 		render json: current_user, serializer: AccountSerializer
 	end
 
+	def email_connect_instructions
+		# Send webhook instructions to current user
+	end
+
 private
   def set_provider
   	@provider = Provider.find(params[:id])
