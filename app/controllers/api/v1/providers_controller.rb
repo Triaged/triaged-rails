@@ -13,6 +13,7 @@ class Api::V1::ProvidersController < API::BaseController
 
 	def email_connect_instructions
 		# Send webhook instructions to current user
+		render :json => 'ok', :status => 201
 	end
 
 private

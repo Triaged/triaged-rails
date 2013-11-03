@@ -29,7 +29,19 @@ class User
 	end
 
   def assign_to_company
-		self.company = Company.find_or_create_by name: email_host
+  	email_address = Mail::Address.new(email)
+
+  	self.company = is_email_personal(email_address) 
+  									? Company.create_placeholder_company(email_address.local) 
+  									: Company.find_or_create_by(name: email_host)
+	end
+
+	def is_email_personal email_address
+		text=File.open("#{Rails.root}/emails.txt").read
+		text.each_line do |line|
+			return true if (email_address.domain == line.strip)
+		end
+		false
 	end
 
 	def teammates

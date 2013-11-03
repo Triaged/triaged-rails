@@ -6,6 +6,7 @@ class Company
   include CompanyFeedable
 
   field :name, :type => String
+  field :personal, :type => Boolean, :default => false
   
 	has_many :users
 	embeds_many :connected_providers
@@ -28,6 +29,11 @@ class Company
 
 	slug do |object|
     object.name.split(".").first.to_url
+  end
+
+
+  def self.create_placeholder_company name
+  	Company.create name: name, personal: true
   end
 
 end
