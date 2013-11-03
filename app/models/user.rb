@@ -30,10 +30,7 @@ class User
 
   def assign_to_company
   	email_address = Mail::Address.new(email)
-
-  	self.company = is_email_personal(email_address) 
-  									? Company.create_placeholder_company(email_address.local) 
-  									: Company.find_or_create_by(name: email_host)
+		self.company = is_email_personal(email_address) ? Company.create_placeholder_company(email_address.local) : Company.find_or_create_by(name: email_host)
 	end
 
 	def is_email_personal email_address

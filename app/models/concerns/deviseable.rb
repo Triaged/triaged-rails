@@ -48,7 +48,7 @@ module Deviseable
 	  
 	  validates_presence_of :name
 	  validates_presence_of :encrypted_password
-		validates :email, :presence => true, :email => true
+		validates :email, :presence => true
 	end
 
   def ensure_authentication_token!
