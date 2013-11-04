@@ -14,12 +14,14 @@ module Common::MessageService
 	end 
 
 	def push_to_followers message, provider
+		Rails.logger.info "pushing to followers"
 		company.followers_of(provider).each do |follower|
 			Common::NotificationService.push_message follower, message
 		end
 	end
 
 	def push_to_mentions message
+		Rails.logger.info "pushing to mentions"
 		User.find(message.user_mentions).each do |user|
 			Common::NotificationService.push_message user, message
 		end
