@@ -10,6 +10,6 @@ class Heroku::Event::DeploySerializer < TextItemSerializer
 	end
 
 	def body
-		object.git_log
+		object.git_log.split("-").join("\n")
 	end
 end
