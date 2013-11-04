@@ -16,6 +16,11 @@ class Api::V1::AccountsController < API::BaseController
     respond_with @user
   end
 
+  def create
+    @user.update(user_params)
+    respond_with @user
+  end
+
 private
 
 	def set_user
