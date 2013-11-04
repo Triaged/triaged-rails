@@ -6,7 +6,7 @@ class Heroku::Event::DeploySerializer < TextItemSerializer
 	end
 
 	def action
-		"#{object.user} deployed"
+		"Deploy by #{object.user}"
 	end
 
 	def body
