@@ -13,12 +13,12 @@ class Api::V1::AccountsController < API::BaseController
 
 	def update
     @user.update(user_params)
-    respond_with @user
+    render json: @user, serializer: AccountSerializer
   end
 
   def create
     @user.update(user_params)
-    respond_with @user
+    render json: @user, serializer: AccountSerializer
   end
 
 private
