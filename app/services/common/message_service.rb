@@ -8,19 +8,19 @@ module Common::MessageService
 		# ensure feed_item.updated_at is fired
 		feed_item.save!
 
-		message.user_mentions ? push_to_mentions(message) : push_to_followers(message, feed_item.provider)
+		message.user_mentions ? self.push_to_mentions(message) : self.push_to_followers(message, feed_item.provider)
 
 		return message
 	end 
 
-	def push_to_followers message, provider
+	def self.push_to_followers message, provider
 		Rails.logger.info "pushing to followers"
 		company.followers_of(provider).each do |follower|
 			Common::NotificationService.push_message follower, message
 		end
 	end
 
-	def push_to_mentions message
+	def self.push_to_mentions message
 		Rails.logger.info "pushing to mentions"
 		User.find(message.user_mentions).each do |user|
 			Common::NotificationService.push_message user, message
