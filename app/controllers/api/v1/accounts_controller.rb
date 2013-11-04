@@ -1,5 +1,5 @@
 class Api::V1::AccountsController < API::BaseController
-	before_action :set_user, only: [:show, :update, :destroy, :profile_picture]
+	before_action :set_user
 
 
 	def show
@@ -7,7 +7,7 @@ class Api::V1::AccountsController < API::BaseController
 	end
 
 	def team
-		@teammates = current_user.teammates
+		@teammates = @user.teammates
 		respond_with @teammates
 	end
 
