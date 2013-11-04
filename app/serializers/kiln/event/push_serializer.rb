@@ -11,6 +11,11 @@ class Kiln::Event::PushSerializer < TextItemSerializer
 	end
 
 	def body
-		object.commits.collect {|commit| commit.message.capitalize }.join("\n")
+		commits_formatter(object.commits)
+	end
+
+	def commits_formatter commits
+		body = commits.take(5).collect {|commit| commit.message.capitalize }.join("\n")
+		body += "\nAnd #{commits.count - 5} more" if commits.count > 5
 	end
 end
