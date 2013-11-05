@@ -3,7 +3,7 @@ class Heroku::Event::Deploy < FeedItem
 
   field :app, :type => String
   field :user, :type => String
-  field :git_log, :type => String
+  field :git_log, :type => Array
   field :head_long, :type => String
   field :previous_head, :type => String
   field :head, :type => String
@@ -15,7 +15,7 @@ class Heroku::Event::Deploy < FeedItem
 			app: data.app,
 			user: data.user,
 			html_url: data.url,
-			git_log: data.git_log.gsub("*", "-").strip,
+			git_log: data.git_log.split("\n ").collect{ |git| git.gsub("*", "").strip}
 			head_long: data.head_long,
 			head: data.head,
 			timestamp: DateTime.now
