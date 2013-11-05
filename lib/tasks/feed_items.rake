@@ -17,8 +17,12 @@ namespace :feed_items do
   	company = Company.find args[:company]
   	company.users.each do |user|
   		user.user_feed_items.each do |user_feed_item|
-  			Rails.logger.info "#{user_feed_item.feed_item}"
-  			user_feed_item.destroy unless user_feed_item.feed_item
+  			begin
+  				company.feed_items.find(user_feed_item.feed_item_id)
+  			rescue
+  				Rails.logger.info "Not found"
+  				user_feed_item.destroy
+  			end
   		end
   	end
   	
