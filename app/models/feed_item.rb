@@ -14,7 +14,7 @@ class FeedItem
 
   index({ external_id: 1 }, { unique: true, background: true })
   index({ updated_at: 1})
-	#validates_uniqueness_of :external_id
+	validates_uniqueness_of :external_id
 
 	before_create :before_create
 	after_save :after_save
