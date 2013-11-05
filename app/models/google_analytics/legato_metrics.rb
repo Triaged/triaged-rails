@@ -38,6 +38,6 @@ class GoogleAnalytics::LegatoMetrics
 			pageviews_data_set.push(details: 	{:x => day_of_week.to_f, 	:y => daily_detail.pageviews.to_f, :index => index}) if pageviews_data_set
 		end
 
-		(item.data_sets.count > 0) ? return item : return nil
+		return (item.data_sets.count > 0) ? item : nil
 	end
 end
