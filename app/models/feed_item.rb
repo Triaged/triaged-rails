@@ -11,7 +11,7 @@ class FeedItem
   field :timestamp, type: DateTime
   field :html_url, :type => String
 
-	validates_uniqueness_of :external_id
+	#validates_uniqueness_of :external_id
 
 	before_create :before_create
 	after_save :after_save
