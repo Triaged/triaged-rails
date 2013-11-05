@@ -20,8 +20,8 @@ namespace :feed_items do
   			begin
   				company.feed_items.find(user_feed_item.feed_item_id)
   			rescue
-  				Rails.logger.info "Not found"
-  				user_feed_item.destroy
+  				Rails.logger.info "Not found: #{user_feed_item.feed_item_id}"
+  				user_feed_item.delete
   			end
   		end
   	end
