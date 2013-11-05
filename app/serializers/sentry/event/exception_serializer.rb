@@ -10,7 +10,7 @@ class Sentry::Event::ExceptionSerializer < TextItemSerializer
 	end
 
 	def body
-		"#{object.message.truncate(320)}\n\n#{object.culprit}"
+		"#{object.message.truncate(320)}\n\nAt #{object.culprit}"
 	end
 
 end
