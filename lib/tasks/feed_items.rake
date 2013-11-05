@@ -17,8 +17,8 @@ namespace :feed_items do
   	company = Company.find args[:company]
   	company.users.each do |user|
   		user.user_feed_items.each do |user_feed_item|
-  			Rails.logger.info "#{user_feed_item.feed_items.exists?}"
-  			user_feed_item.destroy unless user_feed_item.feed_items.exists?
+  			Rails.logger.info "#{user_feed_item.feed_item.exists?}"
+  			user_feed_item.destroy unless user_feed_item.feed_item.exists?
   		end
   	end
   	
