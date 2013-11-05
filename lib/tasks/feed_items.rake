@@ -11,6 +11,21 @@ namespace :feed_items do
   	Rails.logger.info "Rake Task: feed_items:destroy_in_company to #{args[:type]} complete"
   end
 
+  task :destroy_company_feed, [:company] => :environment do |t, args|
+  	Rails.logger.info "Rake Task: feed_items:destroy_in_company to #{args[:type]} started"
+  	
+  	company = Company.find args[:company]
+  	company.feed_items.destroy
+
+  	company.users.each do |user|
+  		user.user_feed_items.destroy
+  	end
+  	
+  	Rails.logger.info "Rake Task: feed_items:destroy_in_company to #{args[:type]} complete"
+  end
+
+
+
   task :clean_missing_user_feed_items, [:company] => :environment do |t, args|
   	Rails.logger.info "Rake Task: feed_items:clean_missing_user_feed_items to #{args[:company]} started"
   	
