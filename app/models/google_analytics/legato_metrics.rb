@@ -5,7 +5,6 @@ class GoogleAnalytics::LegatoMetrics
 	dimensions :date
 
 	def self.build_daily_summary metrics, profile
-		Rails.logger.info profile.inspect
 		item = GoogleAnalytics::Status::Daily.new(
 			external_id: "#{profile.web_property_id}#{metrics.end_date.to_i}",
 			date: metrics.end_date,
@@ -18,19 +17,19 @@ class GoogleAnalytics::LegatoMetrics
 		visits_data_set = item.data_sets.build(
 												label: "visits",
 												total_count: visits_total_count
-											) if visits_total_count
+											) if (visits_total_count > 0)
 		# Visitors
 		visitors_total_count = metrics.totals_for_all_results["visitors"]
 		visitors_data_set = item.data_sets.build(
 												label: "visitors",
 												total_count: visitors_total_count
-											) if visitors_total_count
+											) if (visitors_total_count > 0)
 		# Page views
 		pageviews_total_count = metrics.totals_for_all_results["pageviews"]
 		pageviews_data_set = item.data_sets.build(
 												label: "page views",
 												total_count: pageviews_total_count
-											) if pageviews_total_count
+											) if (pageviews_total_count > 0)
 		# Details
 		metrics.collection.each_with_index do |daily_detail, index|
 			day_of_week = DateTime.parse(daily_detail.date).wday
