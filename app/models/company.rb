@@ -11,6 +11,9 @@ class Company
 	has_many :users
 	embeds_many :connected_providers
 
+	index({ "feed_item.external_id" => 1 }, { unique: true, background: true })
+  index({ "feed_item.updated_at" => 1 })
+
   def followers_of provider
 		users.select { |user| !user.ignores? provider }
 	end

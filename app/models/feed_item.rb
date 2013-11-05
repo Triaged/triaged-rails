@@ -11,9 +11,6 @@ class FeedItem
   field :timestamp, type: DateTime
   field :html_url, :type => String
 
-
-  index({ external_id: 1 }, { unique: true, background: true })
-  index({ updated_at: 1})
 	validates_uniqueness_of :external_id
 
 	before_create :before_create
