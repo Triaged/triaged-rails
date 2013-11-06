@@ -10,6 +10,8 @@ class User
 
 	mount_uploader :avatar, AvatarUploader
 	field :push_enabled, type: Boolean, default: true
+	field :validated_belongs_to_company, type: Boolean, default: false
+	field :company_validation_token, type: String
 
 	belongs_to :company
 	index({ company_id: 1 })
@@ -30,7 +32,13 @@ class User
 
   def assign_to_company
   	email_address = Mail::Address.new(email)
-		self.company = is_email_personal(email_address) ? Company.create_placeholder_company : Company.find_or_create_by(name: email_host)
+
+		if is_email_personal(email_address)
+			self.company = Company.create_placeholder_company
+		else 
+			self.company = Company.find_or_create_by(name: email_host)
+			company_validation_token = Tokenizer.unique_token(4)
+		end
 	end
 
 	def is_email_personal email_address
@@ -48,7 +56,7 @@ class User
 	def provider_settings
 		provider_settings = {}
 		Provider.all.each do |provider|
-			provider_settings[provider.name] = provider.settings_for(company)
+			provider_settings[provider.name] = provider.settings_for(company).merge(:follows => !self.ignores?(provider))
 		end
 
 		return provider_settings

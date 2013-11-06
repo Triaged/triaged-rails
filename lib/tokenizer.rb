@@ -21,9 +21,9 @@ module Tokenizer
     CHARSETS[charset]
   end
 
-  def self.unique_token
+  def self.unique_token(char_count = self.unique_key_length)
   	charset = self.key_chars
-    (0...self.unique_key_length).map{ charset[rand(charset.size)] }.join
+    (0...char_count).map{ charset[rand(charset.size)] }.join
   end
   
 end

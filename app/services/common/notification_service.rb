@@ -21,7 +21,7 @@ module Common::NotificationService
 	def self.push user, external_id, alert
 		push_token = user.push_tokens.where(service: "apns").first
 		
-		if push_token
+		if push_token and user.push_enabled
 			# increment push count
 			push_token.inc(count: 1)
 
