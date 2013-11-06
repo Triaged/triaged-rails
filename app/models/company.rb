@@ -14,6 +14,10 @@ class Company
 	index({ "feed_item.external_id" => 1 })
   index({ "feed_item.updated_at" => 1 })
 
+  slug do |object|
+    object.name.split(".").first.to_url
+  end
+
   def followers_of provider
 		users.select { |user| !user.ignores? provider }
 	end
@@ -30,21 +34,12 @@ class Company
 		[connected_providers.collect { |connected| connected.provider }].flatten.include? provider
 	end
 
-	slug do |object|
-    object.name.split(".").first.to_url
-  end
+	#
+	# Class Methods
+	#
 
-
-  def self.create_placeholder_company
-		Company.create name: unique_slug, personal: true
-  end
-
-private 
-
-  def unique_slug
-    # not doing uppercase as url is case insensitive
-    charset = Tokenizer.key_chars
-    (0...Tokenizer.unique_key_length).map{ charset[rand(charset.size)] }.join
+	def self.create_placeholder_company
+		Company.create name: Tokenizer.unique_slug, personal: true
   end
 
 end
