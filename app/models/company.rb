@@ -39,7 +39,7 @@ class Company
 	#
 
 	def self.create_placeholder_company
-		Company.create name: Tokenizer.unique_slug, personal: true
+		Company.create name: Tokenizer.unique_token, personal: true
   end
 
 end
