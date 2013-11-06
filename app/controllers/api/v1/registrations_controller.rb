@@ -5,7 +5,7 @@ class Api::V1::RegistrationsController < API::BaseController
 	def create
 	 user = User.new(registration_params)
 		if user.save
-			render :json=> {:success=>true, :auth_token=>user.authentication_token, :email=>user.email}, :status=>201
+			render json: @user, serializer: AccountSerializer
 			return
 		else
 			warden.custom_failure!
