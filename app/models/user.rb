@@ -9,7 +9,7 @@ class User
 	include Providable
 
 	mount_uploader :avatar, AvatarUploader
-	field :push_enabled, type: String, default: true
+	field :push_enabled, type: Boolean, default: true
 
 	belongs_to :company
 	index({ company_id: 1 })
