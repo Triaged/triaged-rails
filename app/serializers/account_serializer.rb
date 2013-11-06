@@ -1,7 +1,7 @@
 class AccountSerializer < ActiveModel::Serializer
   attributes :id, :name, :email, :avatar_url
-  attribute :push_enabled
-  attributes :company_name
+  attributes :push_enabled, :company_name, :validated_belongs_to_company
+  attribute :personal_account
 	attribute :provider_settings, key: :providers
   has_many :teammates
 
@@ -11,6 +11,10 @@ class AccountSerializer < ActiveModel::Serializer
 
   def avatar_url
   	object.avatar.face.url
+  end
+
+  def personal_account
+  	object.company.personal
   end
 
 end
