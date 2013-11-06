@@ -1,5 +1,5 @@
 class AccountSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :avatar_url
+  attributes :id, :name, :email, :avatar_url, :push_enabled
   attributes :company_name
 	attribute :provider_settings, key: :providers
   has_many :teammates
