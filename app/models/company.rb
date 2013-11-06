@@ -35,8 +35,16 @@ class Company
   end
 
 
-  def self.create_placeholder_company name
-  	Company.create name: name, personal: true
+  def self.create_placeholder_company
+		Company.create name: unique_slug, personal: true
+  end
+
+private 
+
+  def unique_slug
+    # not doing uppercase as url is case insensitive
+    charset = Tokenizer.key_chars
+    (0...Tokenizer.unique_key_length).map{ charset[rand(charset.size)] }.join
   end
 
 end
