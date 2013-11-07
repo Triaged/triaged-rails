@@ -19,7 +19,7 @@ module UserFeedable
   	# Get user settings for this event
   	# settings = blah.blah
   	# Check if we settings are active
-  	logger.info "adding user feed"
+  	logger.info "adding #{event.provider_name}:#{event.event_name} user feed: #{user.email}"
   	user_feed_items.create(feed_item: event)
   	Common::NotificationService.push_feed_item(self, event) if event.should_push?
   end
