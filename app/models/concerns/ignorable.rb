@@ -2,7 +2,8 @@ module Ignorable
 	extend ActiveSupport::Concern
 
 	included do |base|
-		base.has_and_belongs_to_many :ignored_providers, :inverse_of => :nil, :class_name => 'Provider'
+		base.has_many :ignores, :class_name => 'Ignore', :as => :ignoreee, :dependent => :destroy
+		#base.has_and_belongs_to_many :ignored_providers, :inverse_of => :nil, :class_name => 'Provider'
 	end
 
 	def ignore(model)
@@ -10,7 +11,7 @@ module Ignorable
     	return false unless model.before_ignored(self) if model.respond_to?('before_ignored')
      	return false unless self.before_ignore(model) if self.respond_to?('before_ignore')
        
-      self.ignored_providers << model
+      self.ignores << model
       self.after_ignore(model) if self.respond_to?('after_ignore')
 
       return true
@@ -24,7 +25,7 @@ module Ignorable
     	#return false unless model.before_unfollowed(self) if model.respond_to?('before_unfollowed')
      	#return false unless self.before_unfollow(model) if self.respond_to?('before_unfollow')
        
-      self.ignored_providers.delete(model)
+      self.ignores.delete(model)
       #self.after_unfollow(model) if self.respond_to?('after_unfollow')
 
       return true
@@ -46,11 +47,11 @@ module Ignorable
   # => @bonnie.follows?(@clyde)
   # => true
   def ignores?(model)
-    0 < self.ignored_providers.where(id: model.id).limit(1).count
+    0 < self.ignores.where(id: model.id).limit(1).count
   end
 
   def ignored_provider_count
-  	self.ignored_providers.count
+  	self.ignores.count
   end
 
 end

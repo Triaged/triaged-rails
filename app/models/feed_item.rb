@@ -36,6 +36,19 @@ class FeedItem
 		# placehold to be overridden in subclasses
 	end
 
+	#
+	# Feed Items
+	#
+
+
+	#
+	# Allows us to setup custom objects that a user can ignore
+	#
+	def ignorable_objects
+		[]
+	end
+
+	
 	
 	def update_follower_feeds
 		follower_feed_items.each {|item| item.update_attribute(:updated_at, self.updated_at)}
