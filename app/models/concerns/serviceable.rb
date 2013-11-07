@@ -6,11 +6,11 @@ module Serviceable
 	end
 
 	def default_github_org
-		provider_accounts.where(provider: Provider.named "github", default: true).first
+		provider_accounts.where(provider: Provider.named("github"), default: true).first
 	end
 
 	def default_google_analytics_account
-		provider_accounts.where(provider: Provider.named "google_analytics", default: true).first
+		provider_accounts.where(provider: Provider.named("google_analytics"), default: true).first
 	end
 
 end
