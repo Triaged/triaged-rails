@@ -19,8 +19,14 @@ class ProviderAccount
 		self.update_attribute(:default, true)
 	end
 
+	def set_user_follows user
+		provider_properties.each {|property| property.follows = !user.ignores?(property) }
+	end
+
 	def self.provided_by provider
   	ProviderAccount.where(provider: provider)
   end
+
+
 
 end

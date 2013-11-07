@@ -1,3 +1,3 @@
 class ProviderPropertySerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :follows
 end
