@@ -16,7 +16,7 @@ class Github::SetupService
 			@company.provider_accounts.find_or_create_by(
 				external_id: org.id, 
 				name: org.login, 
-				url: org.url
+				url: org.url,
 				provider: Provider.named("github")
 			)
 			Rails.logger.info org.inspect
