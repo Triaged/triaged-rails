@@ -17,7 +17,7 @@ class GoogleAnalytics::SetupService < GoogleAnalytics::BaseService
 				)
 
 			account.web_properties.each do |property|
-				ga_account.provider_properties << GoogleAnalytics::Property.find_or_create_by(
+				ga_account.provider_properties << GoogleAnalytics::Property.find_or_initialize_by(
 					name: property.name,
 					external_id: property.id,
 				)

@@ -41,7 +41,7 @@ class Github::SetupService
 		org = @company.default_github_org
 		res = @github.repos.list org: org.name
 		res.each_page { |page| page.each do |repo|
-			org.provider_properties << Github::Repo.create(
+			org.provider_properties << Github::Repo.build(
 				external_id: repo.id, 
 				html_url: repo.html_url, 
 				url: repo.url, 
