@@ -2,7 +2,7 @@ module Ignorable
 	extend ActiveSupport::Concern
 
 	included do |base|
-		base.has_many :ignored_objects, :class_name => 'Ignore', :inverse_of => :nil,  :dependent => :destroy
+		base.has_many :ignored_objects, :class_name => 'Ignore', :inverse_of => nil,  :dependent => :destroy
 		#base.has_and_belongs_to_many :ignored_providers, :inverse_of => :nil, :class_name => 'Provider'
 	end
 
