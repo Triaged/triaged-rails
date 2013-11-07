@@ -15,7 +15,7 @@ class GoogleAnalytics::LegatoMetrics
 		# Visits
 		visits_total_count = metrics.totals_for_all_results["visits"]
 		Rails.logger.info visits_total_count
-		
+
 		visits_data_set = item.data_sets.build(
 												label: "visits",
 												total_count: visits_total_count
@@ -36,6 +36,8 @@ class GoogleAnalytics::LegatoMetrics
 												label: "page views",
 												total_count: pageviews_total_count
 											) if (pageviews_total_count > 0)
+		
+
 		# Details
 		metrics.collection.each_with_index do |daily_detail, index|
 			day_of_week = DateTime.parse(daily_detail.date).wday
@@ -45,7 +47,9 @@ class GoogleAnalytics::LegatoMetrics
 		end
 
 		Rails.logger.info item.inspect
+		Rails.logger.info item.data_sets.inspect
 
 		return (item.data_sets.count > 0) ? item : nil
 	end
+
 end
