@@ -71,6 +71,7 @@ gem 'fog'
 gem 'mail'
 gem 'cloudinary'
 gem 'resque', :require => "resque/server"
+gem 'mandrill-api'
 
 group :development do
 	#gem 'heroku_san'
