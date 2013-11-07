@@ -10,13 +10,14 @@ class GoogleAnalytics::SetupService < GoogleAnalytics::BaseService
 
 	def fetch_remote_profiles
 		@user.accounts.each do |account|
-			ga_account = @company.google_analytics_accounts.find_or_create_by(
+			ga_account = @company.provider_accounts.find_or_create_by(
 					name: account.name,
 					external_id: account.id,
+					provider: Provider.named "google_analytics"
 				)
 
 			account.web_properties.each do |property|
-				ga_account.properties.find_or_create_by(
+				ga_account.provider_properties << GoogleAnalytics::Property.find_or_create_by(
 					name: property.name,
 					external_id: property.id,
 				)
@@ -24,11 +25,7 @@ class GoogleAnalytics::SetupService < GoogleAnalytics::BaseService
 		end
 
 		# Set account to default if only 1 exists
-		set_default_account(@company.google_analytics_accounts.first.id) if (@company.google_analytics_accounts.count == 1)
+		ga_accounts = @company.provider_accounts.provided_by(Provider.named "google_analytics")
+		ga_accounts.first.set_default_account! if (ga_accounts.count == 1)
 	end
-
-	def set_default_account id
-		@company.google_analytics_accounts.find(id).update_attribute(:default, true)
-	end
-
 end

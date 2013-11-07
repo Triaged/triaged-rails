@@ -18,19 +18,13 @@ class Github::SetupService
 			Rails.logger.info org.inspect
 		end
 
-		Rails.logger.info @company.github_organizations.inspect
-
-		Rails.logger.info @company.github_organizations.count
-		
-		@company.github_organizations.first.update_attribute(:default, true) #if (@company.github_organizations.count == 1)
+				# Set account to default if only 1 exists
+		github_accounts = @company.provider_accounts.provided_by(Provider.named "github")
+		github_accounts.first.set_default_account! if (ga_accounts.count == 1)
 
 		create_hooks!
 
-		return @company.github_organizations
-	end
-
-	def set_default_org id
-		@company.github_organizations.find(id).update_attribute(:default, true)
+		return github_accounts
 	end
 
 	def create_hooks!
