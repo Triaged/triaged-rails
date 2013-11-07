@@ -9,22 +9,26 @@ class Github::SetupService
 	end
 
 	def fetch_remote_organizations
-		Rails.logger.info "fetching remote"
-		Rails.logger.info @company
 		organizations = @github.orgs.all.to_a
 		Rails.logger.info organizations
+		
 		organizations.each do |org|
-			org = Github::Org.create(external_id: org.id, name: org.login, url: org.url, company: @company)
+			@company.provider_accounts.find_or_create_by(
+				external_id: org.id, 
+				name: org.login, 
+				url: org.url
+				provider: Provider.named("github")
+			)
 			Rails.logger.info org.inspect
 		end
 
 				# Set account to default if only 1 exists
-		github_accounts = @company.provider_accounts.provided_by(Provider.named "github")
-		github_accounts.first.set_default_account! if (ga_accounts.count == 1)
+		github_orgs = @company.provider_accounts.provided_by(Provider.named "github")
+		github_orgs.first.set_default_account! if (github_orgs.count == 1)
 
 		create_hooks!
 
-		return github_accounts
+		return github_orgs
 	end
 
 	def create_hooks!
@@ -37,8 +41,7 @@ class Github::SetupService
 		org = @company.default_github_org
 		res = @github.repos.list org: org.name
 		res.each_page { |page| page.each do |repo|
-			Github::Repo.create(
-				org: org, 
+			org.provider_properties << Github::Repo.create(
 				external_id: repo.id, 
 				html_url: repo.html_url, 
 				url: repo.url, 
@@ -51,7 +54,7 @@ class Github::SetupService
 
 	def create_repo_hooks
 		Rails.logger.info (services_github_index_url(:subdomain => @company.slug))
-		@company.default_github_org.repos.each do |repo|
+		@company.default_github_org.provider_properties.each do |repo|
 			begin
 				Rails.logger.info repo.name
 				@github.repos.hooks.create repo.owner, repo.name, name: "web", active:  true, 
