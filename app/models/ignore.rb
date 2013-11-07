@@ -5,5 +5,5 @@ class Ignore
   field :ff_id
 
   belongs_to :ignorer, :polymorphic => true
-  belongs_to :ignoree, :polymorphic => true
+  #belongs_to :ignoree, :polymorphic => true
 end
