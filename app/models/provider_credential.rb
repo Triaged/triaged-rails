@@ -26,7 +26,7 @@ class ProviderCredential
   end
 
   def credentials_created
-  	created_method = "#{self.name}_credentials_created"
+  	created_method = "#{provider.name}_credentials_created"
   	send(created_method) if self.respond_to? created_method
   end
 
