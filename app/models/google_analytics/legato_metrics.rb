@@ -14,24 +14,18 @@ class GoogleAnalytics::LegatoMetrics
 
 		# Visits
 		visits_total_count = metrics.totals_for_all_results["visits"]
-		Rails.logger.info visits_total_count
-
 		visits_data_set = item.data_sets.build(
 												label: "visits",
 												total_count: visits_total_count
 											) if (visits_total_count > 0)
 		# Visitors
 		visitors_total_count = metrics.totals_for_all_results["visitors"]
-		Rails.logger.info visitors_total_count
-
 		visitors_data_set = item.data_sets.build(
 												label: "visitors",
 												total_count: visitors_total_count
 											) if (visitors_total_count > 0)
 		# Page views
 		pageviews_total_count = metrics.totals_for_all_results["pageviews"]
-		Rails.logger.info pageviews_total_count
-
 		pageviews_data_set = item.data_sets.build(
 												label: "page views",
 												total_count: pageviews_total_count
@@ -46,10 +40,7 @@ class GoogleAnalytics::LegatoMetrics
 			pageviews_data_set.push(details: 	{:x => day_of_week.to_f, 	:y => daily_detail.pageviews.to_f, :index => index}) if pageviews_data_set
 		end
 
-		Rails.logger.info item.inspect
-		Rails.logger.info item.data_sets.inspect
-
-		return (item.data_sets.count > 0) ? item : nil
+		return item.data_sets ? item : nil
 	end
 
 end
