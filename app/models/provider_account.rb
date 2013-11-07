@@ -10,14 +10,16 @@ class ProviderAccount
   field :url, type: String
   field :default, type: Boolean, default: false
 
-  validates_uniqueness_of :external_id
+  delegate :account_label, :to => :provider
+  delegate :property_label, :to => :provider
+
+	validates_uniqueness_of :external_id
 
   def set_default_account!
 		self.update_attribute(:default, true)
 	end
 
-
-  def self.provided_by provider
+	def self.provided_by provider
   	ProviderAccount.where(provider: provider)
   end
 

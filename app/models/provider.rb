@@ -23,7 +23,7 @@ class Provider
 		attrs = {
 			id: id,
 			name: name,
-			account_settings: account_settings(company),
+			account_settings: company.provider_accounts.where(provider: self, default: true).first,
 		}
 
 		attrs[:webhook_url] = webhook_url_for_company(company) if webhooks_enabled
