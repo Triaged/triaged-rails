@@ -16,7 +16,7 @@ class GoogleAnalytics::Status::Daily < FeedItem
 	end
 
 	def ga_property
-		company.default_google_analytics_account.properties.where(external_id: self.property_external_id).first
+		company.default_google_analytics_account.provider_properties.where(external_id: self.property_external_id).first
 	end
 
 	def ga_property_name
