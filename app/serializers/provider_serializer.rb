@@ -1,5 +1,5 @@
 class ProviderSerializer < ActiveModel::Serializer
-  attributes :id, :name, :webhook_url, :connected
+  attributes :id, :name, :webhook_url, :connected, :follows
   has_one :account, serializer: ProviderAccountSerializer
 
   def account
@@ -14,5 +14,7 @@ class ProviderSerializer < ActiveModel::Serializer
   	current_user.company.provider_connected? object
   end
 
-  
+  def follows
+  	!current_user.ignores? object
+  end
 end

@@ -53,15 +53,6 @@ class User
 		self.company.teammates_of self
 	end
 
-	def provider_settings
-		provider_settings = {}
-		Provider.all.each do |provider|
-			provider_settings[provider.name] = provider.settings_for(company).merge(:follows => !self.ignores?(provider))
-		end
-
-		return provider_settings
-	end
-
 	slug :name, :scope => :company do |object|
     object.name.delete(' ')
   end
