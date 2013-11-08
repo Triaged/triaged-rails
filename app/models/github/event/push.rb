@@ -1,30 +1,19 @@
-class Github::Event::Push < FeedItem
+class Github::Event::Push < Github::BaseEvent
   include Mongoid::Document
 
   field :pusher, :type => String
   field :branch, :type => String
-  field :repo_id, :type => String
-
-  belongs_to :org, :class_name => "Github::Org"
+  
   embeds_many :commits, :class_name => "Github::Event::Commit"
 
-  def repo
-  	org.repos.find(repo_id)
-  end
-
-  
   def self.build_from_webhook event
-  	org = Github::Org.find_by name: event.repository.organization
-  	Rails.logger.info event.repository.name
-  	repo = org.repos.find_by name: event.repository.name
-  	Rails.logger.info repo.inspect
   	push = Github::Event::Push.new(
   		pusher: event.pusher.name,
   		branch: event.ref.split("/").last,
   		external_id: event.head_commit.id,
   		html_url: event.head_commit.url,
-  		org: org,
-  		repo_id: repo.id,
+  		org_name: event.repository.organization,
+  		repo_name: event.repository.name
   		timestamp: DateTime.now
   	)
   	
@@ -48,7 +37,7 @@ class Github::Event::Push < FeedItem
 	end
 
 	def push_message
-		"#{pusher} pushed to #{repo.name}"
+		"#{pusher} pushed to #{repo_name}"
 	end
 
 

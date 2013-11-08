@@ -31,8 +31,7 @@ class Provider
 		attrs
 	end
 
-
-  def account_settings company
+	def account_settings company
   	created_method = "#{self.name}_account_settings"
   	account_settings = send(created_method, company) if (self.respond_to? created_method)
   	account_settings ? account_settings : {}
