@@ -3,11 +3,11 @@ class AccountSerializer < ActiveModel::Serializer
   attributes :push_enabled, :company_name, :validated_belongs_to_company, :authentication_token
   attribute :personal_account
 	#has_one :provider_settings, serializer: ProviderSettingsSerializer
-  attribute :provider_settings, key: :provider
+  attribute :provider_settings
   has_many :teammates
+  has_many :providers
 
   def company_name
-  	Rails.logger.info object
   	object.company.name
   end
 
@@ -17,6 +17,10 @@ class AccountSerializer < ActiveModel::Serializer
 
   def personal_account
   	object.company.personal
+  end
+
+  def providers
+  	Provider.all
   end
 
 end
