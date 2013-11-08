@@ -7,7 +7,7 @@ class ProviderSerializer < ActiveModel::Serializer
   end
 
   def webhook_url
-  	webhook_url_for_company(current_user.company) if object.webhooks_enabled
+  	object.webhook_url_for_company(current_user.company) if object.webhooks_enabled
   end
 
   def connected
