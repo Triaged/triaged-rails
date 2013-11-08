@@ -13,7 +13,7 @@ class Github::Event::Push < Github::BaseEvent
   		external_id: event.head_commit.id,
   		html_url: event.head_commit.url,
   		org_name: event.repository.organization,
-  		repo_name: event.repository.name
+  		repo_name: event.repository.name,
   		timestamp: DateTime.now
   	)
   	
