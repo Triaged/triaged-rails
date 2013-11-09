@@ -10,6 +10,8 @@ class GoogleAnalytics::Status::DataSet
 
 
   def calculate_max_y_count
+  	Rails.logger.info label
+  	Rails.logger.info details.inspect
   	max_count = 0
   	details.each do |detail|
   		key, value = detail.first
