@@ -34,10 +34,10 @@ class GoogleAnalytics::LegatoMetrics
 
 		# Details
 		metrics.collection.each_with_index do |daily_detail, index|
-			date = DateTime.parse(daily_detail.date)
-			visits_data_set.push(details: 		{:x => date, 	:y => daily_detail.visits.to_f, :index => index}) if visits_data_set
-			visitors_data_set.push(details: 	{:x => date, 	:y => daily_detail.visitors.to_f, :index => index}) if visitors_data_set
-			pageviews_data_set.push(details: 	{:x => date, 	:y => daily_detail.pageviews.to_f, :index => index}) if pageviews_data_set
+			#date = DateTime.parse()
+			visits_data_set.push(details: 		{:x => daily_detail.date, 	:y => daily_detail.visits.to_f, :index => index}) if visits_data_set
+			visitors_data_set.push(details: 	{:x => daily_detail.date, 	:y => daily_detail.visitors.to_f, :index => index}) if visitors_data_set
+			pageviews_data_set.push(details: 	{:x => daily_detail.date, 	:y => daily_detail.pageviews.to_f, :index => index}) if pageviews_data_set
 		end
 
 		return item.data_sets ? item : nil
