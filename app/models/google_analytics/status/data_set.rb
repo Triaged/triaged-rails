@@ -10,11 +10,12 @@ class GoogleAnalytics::Status::DataSet
 
 
   def calculate_max_y_count
-  	Rails.logger.info
   	max_count = 0
   	details.each do |detail|
   		key, value = detail.first
+  		Rails.logger.info value
   		max_count = value if (value > max_count)
+  		Rails.logger.info "Max Count: #{max_count}"
   	end
   	self.max_y_count = max_count
   end
