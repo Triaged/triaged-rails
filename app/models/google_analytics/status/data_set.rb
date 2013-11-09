@@ -14,9 +14,8 @@ class GoogleAnalytics::Status::DataSet
   	Rails.logger.info details.inspect
   	max_count = 0
   	details.each do |detail|
-  		key, value = detail.first
-  		Rails.logger.info value
-  		max_count = value[:y] if (value[:y] > max_count)
+  		Rails.logger.info detail
+  		max_count = detail[:y] if (detail[:y] > max_count)
   		Rails.logger.info "Max Count: #{max_count}"
   	end
   	self.max_y_count = max_count
