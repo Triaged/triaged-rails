@@ -53,12 +53,12 @@ class Github::SetupService
 	end
 
 	def create_repo_hooks
-		Rails.logger.info (services_github_index_url(:subdomain => @company.slug))
+		Rails.logger.info webhook_github_url(:id => @company.slug, :protocol => "https")
 		@company.default_github_org.provider_properties.each do |repo|
 			begin
 				Rails.logger.info repo.name
 				@github.repos.hooks.create repo.owner, repo.name, name: "web", active:  true, 
-					config: { "url" => services_github_index_url(subdomain: @company.slug)}, 
+					config: { "url" => webhook_github_url(:id => @company.slug, :protocol => "https")}, 
 					events: ["push", "issues", "issue_comment", "pull_request", "commit_comment"]
 			rescue Github::Error::UnprocessableEntity => e
 				Rails.logger.info e
