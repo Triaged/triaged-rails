@@ -5,7 +5,7 @@ class Github::Event::PushSerializer < TextItemSerializer
 
 	
 	def property
-		object.repo.name.capitalize
+		object.repo_name.capitalize
 	end
 
 	def action
