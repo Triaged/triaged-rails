@@ -9,12 +9,16 @@ class Api::V1::RegistrationsController < API::BaseController
 			return
 		else
 			warden.custom_failure!
-			render :json=> user.errors.first, :status=>422
+			render :json=> error_message(user.errors.first), :status=>422
 		end
 	end
 
 private
 	def registration_params
     params[:registration].permit(:email, :password, :password_confirmation, :name)
+  end
+
+  def error_message message_hash
+  	Rails.logger.info message_hash
   end
 end
