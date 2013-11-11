@@ -29,10 +29,10 @@ class Api::V1::SessionsController < API::BaseController
 
 	def ensure_params_exist
 		return unless params[:user_login].blank?
-		render :json=>{:success=>false, :message=>"missing email address"}, :status=>422
+		render :json=> "Missing email address", :status=>422
 	end
  
 	def invalid_login_attempt
-		render :json=> {:success=>false, :message=>"Error with your email or password"}, :status=>401
+		render :json=> "Error with your email or password", :status=>401
 	end
 end
