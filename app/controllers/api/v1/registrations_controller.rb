@@ -19,6 +19,6 @@ private
   end
 
   def error_message message_hash
-  	Rails.logger.info message_hash
+  	message_hash.join
   end
 end
