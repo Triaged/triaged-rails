@@ -14,7 +14,7 @@ class GoogleAnalytics::LegatoMetrics
 
 		# Visits
 		visits_total_count = metrics.totals_for_all_results["visits"]
-		if (visits_total_count > 0) {
+		if (visits_total_count > 0)
 			visits_data_set = item.data_sets.build(label: "visits") 
 
 			metrics.collection.each_with_index do |daily_detail, index|
@@ -22,11 +22,11 @@ class GoogleAnalytics::LegatoMetrics
 			end
 
 			visits_data_set.total_count = visits_data_set.details.last[:y]
-		}
+		end
 		
 		# Visitors
 		visitors_total_count = metrics.totals_for_all_results["visitors"]
-		if (visitors_total_count > 0) {
+		if (visitors_total_count > 0)
 			visitors_data_set = item.data_sets.build(label: "visitors")
 
 			metrics.collection.each_with_index do |daily_detail, index|
@@ -34,11 +34,11 @@ class GoogleAnalytics::LegatoMetrics
 			end
 
 			visitors_data_set.total_count = visitors_data_set.details.last[:y]
-		}
+		end
 		
 		# Page views
 		pageviews_total_count = metrics.totals_for_all_results["pageviews"]
-		if (pageviews_total_count > 0) {
+		if (pageviews_total_count > 0)
 			pageviews_data_set = item.data_sets.build(label: "page views")
 
 			metrics.collection.each_with_index do |daily_detail, index|
@@ -46,7 +46,7 @@ class GoogleAnalytics::LegatoMetrics
 			end
 
 			pageviews_data_set.total_count = pageviews_data_set.details.last[:y]
-		}
+		end
 		
 		# # Details
 		# metrics.collection.each_with_index do |daily_detail, index|
