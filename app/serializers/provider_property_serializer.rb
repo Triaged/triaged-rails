@@ -4,8 +4,4 @@ class ProviderPropertySerializer < ActiveModel::Serializer
   def follows
   	!current_user.ignores? object
   end
-
-  def name
-  	object.name.pluralize
-  end
 end
