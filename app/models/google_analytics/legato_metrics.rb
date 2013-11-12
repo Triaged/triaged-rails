@@ -14,35 +14,50 @@ class GoogleAnalytics::LegatoMetrics
 
 		# Visits
 		visits_total_count = metrics.totals_for_all_results["visits"]
-		visits_data_set = item.data_sets.build(
-												label: "visits",
-												total_count: visits_total_count
-											) if (visits_total_count > 0)
+		if (visits_total_count > 0) {
+			visits_data_set = item.data_sets.build(label: "visits") 
+
+			metrics.collection.each_with_index do |daily_detail, index|
+				visits_data_set.push(details: 		{:x => daily_detail.date.to_i, 	:y => daily_detail.visits.to_f, :index => index})
+			end
+
+			visits_data_set.total_count = visits_data_set.details.last[:y]
+		}
+		
 		# Visitors
 		visitors_total_count = metrics.totals_for_all_results["visitors"]
-		visitors_data_set = item.data_sets.build(
-												label: "visitors",
-												total_count: visitors_total_count
-											) if (visitors_total_count > 0)
+		if (visitors_total_count > 0) {
+			visitors_data_set = item.data_sets.build(label: "visitors")
+
+			metrics.collection.each_with_index do |daily_detail, index|
+				visitors_data_set.push(details: 	{:x => daily_detail.date.to_i, 	:y => daily_detail.visitors.to_f, :index => index})
+			end
+
+			visitors_data_set.total_count = visitors_data_set.details.last[:y]
+		}
+		
 		# Page views
 		pageviews_total_count = metrics.totals_for_all_results["pageviews"]
-		pageviews_data_set = item.data_sets.build(
-												label: "page views",
-												total_count: pageviews_total_count
-											) if (pageviews_total_count > 0)
+		if (pageviews_total_count > 0) {
+			pageviews_data_set = item.data_sets.build(label: "page views")
+
+			metrics.collection.each_with_index do |daily_detail, index|
+				pageviews_data_set.push(details: 	{:x => daily_detail.date.to_i, 	:y => daily_detail.pageviews.to_f, :index => index})
+			end
+
+			pageviews_data_set.total_count = pageviews_data_set.details.last[:y]
+		}
 		
+		# # Details
+		# metrics.collection.each_with_index do |daily_detail, index|
+		# 	#date = DateTime.parse()
+		# 	visits_data_set.push(details: 		{:x => daily_detail.date.to_i, 	:y => daily_detail.visits.to_f, :index => index}) if (visits_total_count > 0)
+		# 	visitors_data_set.push(details: 	{:x => daily_detail.date.to_i, 	:y => daily_detail.visitors.to_f, :index => index}) if (visitors_total_count > 0)
+		# 	pageviews_data_set.push(details: 	{:x => daily_detail.date.to_i, 	:y => daily_detail.pageviews.to_f, :index => index}) if (pageviews_total_count > 0)
+		# end
 
-		# Details
-		metrics.collection.each_with_index do |daily_detail, index|
-			#date = DateTime.parse()
-			visits_data_set.push(details: 		{:x => daily_detail.date.to_i, 	:y => daily_detail.visits.to_f, :index => index}) if visits_data_set
-			visitors_data_set.push(details: 	{:x => daily_detail.date.to_i, 	:y => daily_detail.visitors.to_f, :index => index}) if visitors_data_set
-			pageviews_data_set.push(details: 	{:x => daily_detail.date.to_i, 	:y => daily_detail.pageviews.to_f, :index => index}) if pageviews_data_set
-		end
+		# visits_data_set.total_count = 
 
-		Rails.logger.info item.data_sets.inspect
-		Rails.logger.info "DataSet Count: #{item.data_sets.count}"
-		Rails.logger.info "DataSet empty: #{item.data_sets.empty?}"
 		return item.data_sets.empty? ? nil : item
 	end
 
