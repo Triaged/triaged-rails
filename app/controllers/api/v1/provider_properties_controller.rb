@@ -13,6 +13,7 @@ class Api::V1::ProviderPropertiesController < API::BaseController
 private
   def set_provider_property
   	@provider_property = current_user.company.provider_accounts.find(params[:provider_account_id]).provider_properties.find(params[:id])
+  	Rails.logger.info @provider_property
   end
 
 

@@ -34,15 +34,15 @@ DockedRails::Application.routes.draw do
     			post 'follow'
     			post 'email_connect_instructions'
     		end
-    		resources :provider_accounts do
-    			resources :provider_properties do
-    				member do
-    					post 'ignore'
-    					post 'follow'
-    				end
-    			end
-    		end
     	end
+    	resources :provider_accounts do
+  			resources :provider_properties do
+  				member do
+  					post 'ignore'
+  					post 'follow'
+  				end
+  			end
+  		end
     end
   end
 
