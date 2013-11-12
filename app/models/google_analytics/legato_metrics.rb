@@ -12,18 +12,6 @@ class GoogleAnalytics::LegatoMetrics
 			property_external_id: profile.web_property_id
 		)
 
-		# Visits
-		visits_total_count = metrics.totals_for_all_results["visits"]
-		if (visits_total_count > 0)
-			visits_data_set = item.data_sets.build(label: "visits") 
-
-			metrics.collection.each_with_index do |daily_detail, index|
-				visits_data_set.push(details: 		{:x => daily_detail.date.to_i, 	:y => daily_detail.visits.to_f, :index => index})
-			end
-
-			visits_data_set.total_count = visits_data_set.details.last[:y]
-		end
-		
 		# Visitors
 		visitors_total_count = metrics.totals_for_all_results["visitors"]
 		if (visitors_total_count > 0)
@@ -34,6 +22,18 @@ class GoogleAnalytics::LegatoMetrics
 			end
 
 			visitors_data_set.total_count = visitors_data_set.details.last[:y]
+		end
+
+		# Visits
+		visits_total_count = metrics.totals_for_all_results["visits"]
+		if (visits_total_count > 0)
+			visits_data_set = item.data_sets.build(label: "visits") 
+
+			metrics.collection.each_with_index do |daily_detail, index|
+				visits_data_set.push(details: 		{:x => daily_detail.date.to_i, 	:y => daily_detail.visits.to_f, :index => index})
+			end
+
+			visits_data_set.total_count = visits_data_set.details.last[:y]
 		end
 		
 		# Page views
