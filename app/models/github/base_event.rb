@@ -16,7 +16,7 @@ class Github::BaseEvent < FeedItem
 	end
 
 	def ignorable_objects
-		repo
+		[repo]
 	end
 
 end
