@@ -41,9 +41,9 @@ class GoogleAnalytics::LegatoMetrics
 		end
 
 		Rails.logger.info item.data_sets.inspect
-
 		Rails.logger.info "DataSet Count: #{item.data_sets.count}"
-		return (item.data_sets.count > 0) ? item : nil
+		Rails.logger.info "DataSet empty: #{item.data_sets.empty?}"
+		return item.data_sets.empty? ? nil : item
 	end
 
 end
