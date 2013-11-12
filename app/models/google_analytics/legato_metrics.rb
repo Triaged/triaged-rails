@@ -40,6 +40,8 @@ class GoogleAnalytics::LegatoMetrics
 			pageviews_data_set.push(details: 	{:x => daily_detail.date.to_i, 	:y => daily_detail.pageviews.to_f, :index => index}) if pageviews_data_set
 		end
 
+		Rails.logger.info item.inspect
+
 		Rails.logger.info "DataSet Count: #{item.data_sets.count}"
 		return (item.data_sets.count > 0) ? item : nil
 	end
