@@ -10,7 +10,8 @@ class Github::BaseEvent < FeedItem
   end
 
 	def after_build_hook company
-		provider_account = company.provider_accounts.find_by(provider: Provider.named("github"), name: org_name, default: true)
+		self.provider_account = company.provider_accounts.find_by(provider: Provider.named("github"), name: org_name, default: true)
+		self.save
 	end
 
 	def ignorable_objects
