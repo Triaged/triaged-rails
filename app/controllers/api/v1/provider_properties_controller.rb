@@ -1,4 +1,5 @@
 class Api::V1::ProviderPropertiesController < API::BaseController
+	before_action :set_provider_property
 
 	def ignore
 		current_user.ignore @provider_property
@@ -13,9 +14,7 @@ class Api::V1::ProviderPropertiesController < API::BaseController
 private
   def set_provider_property
   	@provider_account = ProviderAccount.find(params[:provider_account_id])
-  	Rails.logger.info @provider_account
   	@provider_property = @provider_account.provider_properties.find(params[:id])
-  	Rails.logger.info @provider_property
   end
 
 
