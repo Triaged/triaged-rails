@@ -10,7 +10,7 @@ class Heroku::Event::DeploySerializer < TextItemSerializer
 	end
 
 	def body
-		body = object.git_log.take(5).collect {|commit| "\u2022 #{commit.capitalize}" }.join("\n")
+		body = object.git_log.take(5).collect {|commit| "- #{commit.capitalize}" }.join("\n")
 		body += "\nand #{object.git_log.count - 5} more" if object.git_log.count > 5
 		return body
 	end
