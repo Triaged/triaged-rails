@@ -5,6 +5,7 @@ class Api::V1::RegistrationsController < API::BaseController
 	def create
 	 user = User.new(registration_params)
 		if user.save
+			sign_in(:user, user)
 			render json: user, serializer: AccountSerializer
 			return
 		else
