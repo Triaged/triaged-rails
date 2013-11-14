@@ -1,4 +1,4 @@
-class WebhookService
+class AsyncWebhookService
 	include Sidekiq::Worker
 
 	def perform event_class, payload
