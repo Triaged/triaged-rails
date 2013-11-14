@@ -1,7 +1,7 @@
 class WebhookService
-	@queue = :event_queue
+	include Sidekiq::Worker
 
-	def self.perform event_class, payload
+	def perform event_class, payload
 		Rails.logger.info "Building event for #{event_class}"
 		company = Company.find(payload[:company_id])
 		event = event_class.build_from_webhook payload[:event].to_properties

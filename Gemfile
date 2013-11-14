@@ -70,7 +70,7 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'fog'
 gem 'mail'
 gem 'cloudinary'
-gem 'resque', :require => "resque/server"
+gem 'sidekiq'
 gem 'mandrill-api'
 
 group :development do
