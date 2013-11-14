@@ -1,10 +1,10 @@
 class AsyncWebhookService
 	include Sidekiq::Worker
 
-	def perform event_class, payload
+	def perform event_class_str, payload
 		Rails.logger.info "Building event for #{event_class}"
 		company = Company.find(payload[:company_id])
-		event = event_class.build_from_webhook payload[:event].to_properties
+		event = event_class_str.constantize.build_from_webhook payload[:event].to_properties
 
 		if event # event will be nil if validation failed
 			# generic after init hook
