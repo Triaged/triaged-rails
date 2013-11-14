@@ -72,6 +72,6 @@ DockedRails::Application.routes.draw do
 	
 
 	
-	mount Resque::Server, :at => "/resque"
+	#mount Resque::Server, :at => "/resque"
 	
 end
