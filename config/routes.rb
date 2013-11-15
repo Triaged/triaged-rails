@@ -3,6 +3,8 @@ DockedRails::Application.routes.draw do
   
 	# To be removed
 	resource :account
+
+
 	devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
                    controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
@@ -14,6 +16,7 @@ DockedRails::Application.routes.draw do
     		member do
     			get 'team'
     			post 'avatar'
+    			post 'resend_verify_email'
     		end
     		resources :push_tokens do
     			collection do
@@ -69,6 +72,11 @@ DockedRails::Application.routes.draw do
 	get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'
 	get '/services/oauth_failure/:error' => 'service#oauth_failure', as: 'oauth_failure'
+
+	# Verification link
+	get '/verify/:id/:token' => 'verify#show', as: 'verify_email'
+
+	root :to => 'welcome#index'
 
 	
 

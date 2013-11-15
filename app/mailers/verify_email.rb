@@ -1,6 +1,6 @@
-class Welcome < MandrillClient
-	
-	def initialize(user_id)
+class VerifyEmail < MandrillClient
+  
+def initialize(user_id)
 		@user = User.find(user_id)
 		@recipient_email, @recipient_name = @user.email, @user.name
 	end
@@ -17,7 +17,8 @@ class Welcome < MandrillClient
 	end
 
 	def template
-		:welcome
+		:verify
 	end
+
 
 end

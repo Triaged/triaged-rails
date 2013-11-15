@@ -1,0 +1,17 @@
+<h1> Great, you verified your email. </h1>
+
+<p>Open the app and you're free to go!</p>
+
+
+<script type="text/javascript">
+  var userAgent = window.navigator.userAgent;
+  if (userAgent.match(/iPhone/i)) {
+    window.launchsockPicker = function() {
+	       setTimeout(function() {
+	        window.location = 'https://www.triaged.co'
+	       }, 500);
+
+	       window.location = 'triage://';
+	   };
+  }
+</script>

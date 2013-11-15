@@ -21,6 +21,10 @@ class Api::V1::AccountsController < API::BaseController
     render json: @user, serializer: AccountSerializer
   end
 
+  def resend_verify_email
+  	VerifyEmail.new(@user.id).deliver!
+  end
+
 private
 
 	def set_user

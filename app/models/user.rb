@@ -35,9 +35,10 @@ class User
 
 		if is_email_personal(email_address)
 			self.company = Company.create_placeholder_company
+			self.validated_belongs_to_company = true
 		else 
 			self.company = Company.find_or_create_by(name: email_host)
-			company_validation_token = Tokenizer.unique_token(4)
+			company_validation_token = Tokenizer.unique_token(6)
 		end
 	end
 

@@ -17,4 +17,8 @@ class WebhookInstructions < MandrillClient
 			:content => @user.id
 		}]
 	end
+
+	def template
+		:webhook
+	end
 end
