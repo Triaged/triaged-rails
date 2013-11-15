@@ -4,7 +4,6 @@
 # Options here can still be overridden by cmd line args.
 ---
 :verbose: false
-:namespace: sidekiq
 :concurrency: 25
 :queues:
   - [often, 7]
