@@ -7,7 +7,7 @@ class AsyncWebhookService
 		Rails.logger.info payload.company_id
 		Rails.logger.info payload.inspect
 		company = Company.find(payload.company_id)
-		event = event_class.build_from_webhook payload.event
+		event = event_class.constantize.build_from_webhook payload.event
 
 		if event # event will be nil if validation failed
 			# generic after init hook

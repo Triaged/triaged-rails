@@ -11,6 +11,6 @@ class Common::WebhookService
 		# Hack to fix dump moped id
 		payload[:company_id] = payload[:company_id].to_s
 		
-		AsyncWebhookService.perform_async(event_class, payload)
+		AsyncWebhookService.perform_async(event_class.to_s, payload)
 	end
 end
