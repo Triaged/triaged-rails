@@ -3,10 +3,11 @@ class AsyncWebhookService
 
 	def perform event_class, payload
 		Rails.logger.info "Building event for #{event_class}"
-		Rails.logger.info payload["company_id"]
+		payload = payload.to_properties
+		Rails.logger.info payload.company_id
 		Rails.logger.info payload.inspect
-		company = Company.find(payload["company_id"])
-		event = event_class.build_from_webhook payload["event"].to_properties
+		company = Company.find(payload.company_id)
+		event = event_class.build_from_webhook payload.event
 
 		if event # event will be nil if validation failed
 			# generic after init hook
