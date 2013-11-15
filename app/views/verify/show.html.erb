@@ -5,16 +5,15 @@
 
 <script type="text/javascript">
   var userAgent = window.navigator.userAgent;
-  window.location = 'triage://';
   if (userAgent.match(/iPhone/i)) {
-  		window.location = 'triage://';
+  	launchsockPicker = function() {
+	       setTimeout(function() {
+	        window.location = 'https://www.triaged.co'
+	       }, 500);
 
-    // window.launchsockPicker = function() {
-	   //     setTimeout(function() {
-	   //      window.location = 'https://www.triaged.co'
-	   //     }, 500);
+	       window.location = 'triage://<%=@token%>';
+	   };
 
-	       //window.location = 'triage://';
-	   // };
+	   launchsockPicker();
   }
 </script>
