@@ -14,13 +14,7 @@ class Github::Event::PushSerializer < TextItemSerializer
 
 	def body
 		body = object.commits.take(5).collect {|commit| "- #{commit.message.capitalize}" }.join("\n")
-		body += "\nand #{object.commits.count - 5} more" if object.commits.count > 5
+		body += "\n\nand #{object.commits.count - 5} more" if object.commits.count > 5
 		return body
 	end
-
-	def commits_formatter commits
-		body = commits.take(5).collect {|commit| commit.message.capitalize }.join("\n")
-		body += "\nAnd #{commits.count - 5} more" if commits.count > 5
-	end
-
 end
