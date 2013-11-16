@@ -1,3 +1,5 @@
+require 'mandrill'
+
 class MandrillClient
 	class_attribute :template
 
@@ -7,7 +9,8 @@ class MandrillClient
 		# raise StandardError "Template Required" unless template
 		# raise StandardError "Template Content Required" unless template_content
 		# raise StandardError "Recipient Email Required" unless recipient_email
-		response = MANDRILL.messages.send_template template, template_content, message
+		mandrill = Mandrill::API.new ENV['MANDRILL_API_KEY']
+		response = mandrill.messages.send_template template, template_content, message
 	end
 
 	def template_content
