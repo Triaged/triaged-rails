@@ -1,5 +1,5 @@
 class WebhookInstructions < MandrillClient
-	self.template = "welcome"
+
 
 	def initialize(user_id, provider_id)
 		@user = User.find(user_id)
@@ -9,16 +9,12 @@ class WebhookInstructions < MandrillClient
 
 	def merge_vars
 		[{
-			:name => 'user_name',
-			:content => @user.name
-		},
-		{
-			:name => 'user_id',
-			:content => @user.id
+			:name => 'WEBHOOK',
+			:content => @provider.webhook_url_for_company(@user.company)
 		}]
 	end
 
 	def template
-		:webhook
+		"#{@provider.name}-connect"	
 	end
 end

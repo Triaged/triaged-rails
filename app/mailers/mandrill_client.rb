@@ -8,7 +8,6 @@ class MandrillClient
 		# raise StandardError "Template Content Required" unless template_content
 		# raise StandardError "Recipient Email Required" unless recipient_email
 		response = MANDRILL.messages.send_template template, template_content, message
-		Rails.logger.info(response)
 	end
 
 	def template_content

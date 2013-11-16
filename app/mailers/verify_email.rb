@@ -21,5 +21,6 @@ def initialize(user_id)
 		:verify
 	end
 
+	
 
 end
