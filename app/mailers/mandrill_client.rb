@@ -21,7 +21,13 @@ class MandrillClient
 			:from_name => from_name,
 			:to => [
 				{:email=> @recipient_email, :name => @recipient_name }
-			]
+			],
+			:merge_vars => [
+         	{
+         		:vars => merge_vars,
+          	:rcpt => @recipient_email
+        	}
+        ]
 		}
 	end
 

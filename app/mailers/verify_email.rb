@@ -6,8 +6,7 @@ def initialize(user_id)
 		@recipient_email, @recipient_name = @user.email, @user.name
 	end
 
-	def template_content
-		Rails.logger.info verify_email_url(:id => @user.id, :token => @user.company_validation_token)
+	def merge_vars
 		[{
 			:name => 'FNAME',
 			:content => @user.name.split.first

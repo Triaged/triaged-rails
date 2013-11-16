@@ -5,7 +5,7 @@ class Welcome < MandrillClient
 		@recipient_email, @recipient_name = @user.email, @user.name
 	end
 
-	def template_content
+	def merge_vars
 		[{
 			:name => 'user_name',
 			:content => @user.name
