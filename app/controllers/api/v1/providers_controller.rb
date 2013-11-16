@@ -12,7 +12,7 @@ class Api::V1::ProvidersController < API::BaseController
 	end
 
 	def email_connect_instructions
-		# Send webhook instructions to current user
+		WebhookInstructions.new(current_user.id, @provider.id).deliver!
 		render :json => 'ok', :status => 201
 	end
 
