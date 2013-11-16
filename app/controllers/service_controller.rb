@@ -5,6 +5,11 @@ class ServiceController < ApplicationController
 
 	before_action :authenticate_user_from_token!, :only => :authenticate_for_oauth
 	before_action :authenticate_user!, :only => :authenticate_for_oauth
+
+	# Handle users clicking on webhook urls from the browser
+	def redirect_to_root
+		redirect_to root_path
+	end
 	
 
 	def authenticate_for_oauth
