@@ -30,7 +30,7 @@ class MandrillClient
 	end
 
 	def from_name
-		"Triage Team"
+		"Triage"
 	end
 
 end

@@ -1,4 +1,5 @@
 class VerifyEmail < MandrillClient
+	include Rails.application.routes.url_helpers
   
 def initialize(user_id)
 		@user = User.find(user_id)
@@ -7,12 +8,12 @@ def initialize(user_id)
 
 	def template_content
 		[{
-			:name => 'user_name',
-			:content => @user.name
+			:name => 'fname',
+			:content => @user.name.split.first
 		},
 		{
-			:name => 'user_id',
-			:content => @user.id
+			:name => 'vlink',
+			:content => verify_email_url(:id => @user.id, :token => @user.company_validation_token)
 		}]
 	end
 

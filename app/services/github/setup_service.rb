@@ -53,7 +53,6 @@ class Github::SetupService
 	end
 
 	def create_repo_hooks
-		Rails.logger.info webhook_github_url(:id => @company.slug, :protocol => "https")
 		@company.default_github_org.provider_properties.each do |repo|
 			begin
 				Rails.logger.info repo.name
