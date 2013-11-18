@@ -1,2 +1,2 @@
-web: bundle exec passenger start -p $PORT --max-pool-size 3
+web: bundle exec puma -t ${PUMA_MIN_THREADS:-8}:${PUMA_MAX_THREADS:-12} -w ${PUMA_WORKERS:-2} -p $PORT -e ${RACK_ENV:-development}
 worker: bundle exec sidekiq -e $RACK_ENV -C config/sidekiq.yml

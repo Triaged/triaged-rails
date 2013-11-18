@@ -72,7 +72,7 @@ gem 'cloudinary'
 gem 'sidekiq'
 gem 'mandrill-api'
 gem 'sinatra', '>= 1.3.0', :require => nil
-gem "passenger"
+gem 'puma'
 
 group :development do
 	#gem 'heroku_san'
