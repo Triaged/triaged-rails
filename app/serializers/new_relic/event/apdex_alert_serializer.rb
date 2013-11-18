@@ -10,6 +10,6 @@ class NewRelic::Event::ApdexAlertSerializer < TextItemSerializer
 	end
 
 	def body
-		object.message
+		object.long_description
 	end
 end

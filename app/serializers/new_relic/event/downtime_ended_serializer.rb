@@ -10,6 +10,6 @@ class NewRelic::Event::DowntimeEndedSerializer < TextItemSerializer
 	end
 
 	def body
-		object.message
+		object.long_description
 	end
 end
