@@ -1,9 +1,11 @@
 class Api::V1::FeedController < API::BaseController
+	include NewRelic::Agent::Instrumentation::ControllerInstrumentation
 
 	def index
 		@feed = current_user.feed(params[:min_updated_at], params[:max_updated_at])
 		respond_with @feed
 	end
+	add_transaction_tracer :index
 
 	def mock
 		#@response = { "feed" => [{"feed_item" => {"title" => "This is a title1", "body" => "this is a body1" }}, {"feed_item" => {"title" => "This is a title2", "body" => "this is a body2" }}]}
