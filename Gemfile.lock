@@ -83,6 +83,7 @@ GEM
     coffee-script-source (1.6.3)
     columnize (0.3.6)
     connection_pool (1.1.0)
+    dalli (2.6.4)
     debug_inspector (0.0.2)
     debugger (1.6.1)
       columnize (>= 0.3.1)
@@ -164,6 +165,7 @@ GEM
     mandrill-api (1.0.49)
       excon (>= 0.16.0, < 1.0)
       json (>= 1.7.7, < 2.0)
+    memcachier (0.0.2)
     mime-types (1.25)
     mini_portile (0.5.1)
     minitest (4.7.5)
@@ -320,6 +322,7 @@ DEPENDENCIES
   certified
   cloudinary
   coffee-rails (~> 4.0.0)
+  dalli
   debugger
   devise
   dot_hash
@@ -335,6 +338,7 @@ DEPENDENCIES
   localtunnel
   mail
   mandrill-api
+  memcachier
   minitest-spec-rails
   minitest-wscolor
   mongoid (~> 4)!
