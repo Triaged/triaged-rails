@@ -63,7 +63,7 @@ gem "airbrake"
 gem 'legato'
 gem 'rest-client'
 gem 'grocer'
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', "~> 3.6.9.171"
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'fog'
