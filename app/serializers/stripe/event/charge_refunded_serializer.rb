@@ -6,7 +6,7 @@ class Stripe::Event::ChargeRefundedSerializer < TextItemSerializer
 	end
 
 	def action
-		"$#{object.amount_refunded} Charge Refunded"
+		"$#{number_with_precision(object.amount, :precision => 2)} Charge Refunded"
 	end
 
 	def body
