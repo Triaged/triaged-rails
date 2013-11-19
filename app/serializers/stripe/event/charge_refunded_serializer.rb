@@ -6,7 +6,7 @@ class Stripe::Event::ChargeRefundedSerializer < TextItemSerializer
 	end
 
 	def action
-		"$#{ActionView::Base.new.number_to_currency(object.amount)} Charge Refunded"
+		"#{ActionView::Base.new.number_to_currency(object.amount)} Charge Refunded"
 	end
 
 	def body
