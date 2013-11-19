@@ -9,6 +9,21 @@ class Github::SetupService
 	end
 
 	def fetch_remote_organizations
+		setup_personal_account
+		setup_organizations
+
+		github_orgs = @company.provider_accounts.provided_by(Provider.named "github")
+
+		# Set account to default if only 1 exists
+		if (github_orgs.count == 1)
+			github_orgs.first.set_default_account!
+			create_hooks!
+		end
+
+		return github_orgs
+	end
+
+	def setup_organizations
 		organizations = @github.orgs.all.to_a
 		Rails.logger.info organizations
 		
@@ -19,17 +34,14 @@ class Github::SetupService
 				url: org.url,
 				provider: Provider.named("github")
 			)
-			Rails.logger.info org.inspect
 		end
-
-				# Set account to default if only 1 exists
-		github_orgs = @company.provider_accounts.provided_by(Provider.named "github")
-		github_orgs.first.set_default_account! if (github_orgs.count == 1)
-
-		create_hooks!
-
-		return github_orgs
 	end
+
+	def setup_personal_account
+		
+	end
+
+	def 
 
 	def create_hooks!
 		save_repos

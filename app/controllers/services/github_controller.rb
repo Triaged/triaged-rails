@@ -12,9 +12,9 @@ class Services::GithubController < ServiceController
 	end
 
 	def org_list
-		Github::SetupService.new(@company.id).fetch_remote_organizations
+		@organizations = Github::SetupService.new(@company.id).fetch_remote_organizations
 
-		@organizations = @company.provider_accounts.provided_by(Provider.named "github")
+		#@organizations = @company.provider_accounts.provided_by(Provider.named "github")
 		redirect_to(oauth_failure_path(error: "No Github Organization Found")) if (@organizations.count == 0)
 		redirect_to(oauth_complete_path) if (@organizations.count == 1)
 	end
@@ -22,6 +22,9 @@ class Services::GithubController < ServiceController
 	def set_default_org
 		org = @company.provider_accounts.find(params[:id])
 		org.set_default_account!
+		Github::SetupService.new(@company.id).create_hooks!
+		
+		redirect_to(oauth_complete_path)
 	end
 
 	def webhook

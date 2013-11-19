@@ -33,6 +33,10 @@ class Company
 		[connected_providers.collect { |connected| connected.provider }].flatten.include? provider
 	end
 
+	def personal?
+		users.first.personal
+	end
+
 	#
 	# Class Methods
 	#
