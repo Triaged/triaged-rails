@@ -38,10 +38,8 @@ class Github::SetupService
 	end
 
 	def setup_personal_account
-		
+		return true
 	end
-
-	def 
 
 	def create_hooks!
 		save_repos
