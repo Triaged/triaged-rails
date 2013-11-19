@@ -6,7 +6,7 @@ class	Stripe::Event::ChargeSucceededSerializer < TextItemSerializer
 	end
 
 	def action
-		"$#{number_to_currency(object.amount)} Charge Succeeded"
+		"$#{ActionView::Base.new.number_to_currency(object.amount)} Charge Succeeded"
 	end
 
 	def body
