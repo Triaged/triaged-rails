@@ -64,6 +64,8 @@ DockedRails::Application.routes.draw do
   		member do
   			post '' => "github#webhook", as: 'webhook'
   			get '' => "#{resource}#redirect_to_root"
+  		end
+  		collection do
   			get 'org_list'
   			post 'set_default_org'
   		end
