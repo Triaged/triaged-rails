@@ -2,11 +2,11 @@ class Stripe::Event::ChargeRefundedSerializer < TextItemSerializer
   #attributes :amount, :description
 
   def property
-		""
+		"Live"
 	end
 
 	def action
-		"$#{object.amount} Charge Refunded"
+		"$#{object.amount_refunded} Charge Refunded"
 	end
 
 	def body
