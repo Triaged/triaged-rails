@@ -38,7 +38,13 @@ class Github::SetupService
 	end
 
 	def setup_personal_account
-		return true
+		user_account = @github.users.get
+		@company.provider_accounts.find_or_create_by(
+			external_id: user_account.id, 
+			name: user_account.login, 
+			url: user_account.html_url,
+			provider: Provider.named("github")
+		)
 	end
 
 	def create_hooks!
