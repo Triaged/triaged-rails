@@ -2,7 +2,7 @@ class Stripe::Event::ChargeRefundedSerializer < TextItemSerializer
   #attributes :amount, :description
 
   def property
-		"@todo"
+		"Live"
 	end
 
 	def action
@@ -10,6 +10,6 @@ class Stripe::Event::ChargeRefundedSerializer < TextItemSerializer
 	end
 
 	def body
-		"@todo"
+		"#{object.amount}\n#{object.description}"
 	end
 end

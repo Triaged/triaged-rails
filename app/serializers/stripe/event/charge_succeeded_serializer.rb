@@ -10,7 +10,7 @@ class	Stripe::Event::ChargeSucceededSerializer < TextItemSerializer
 	end
 
 	def body
-		"@todo"
+		"#{object.amount}\n#{object.description}"
 	end
 
 	 
