@@ -41,7 +41,7 @@ class User
 			self.personal = true
 		else 
 			self.company = Company.find_or_create_by(name: email_host)
-			company_validation_token = Tokenizer.unique_token(6)
+			self.company_validation_token = Tokenizer.unique_token(6)
 		end
 	end
 
