@@ -3,14 +3,6 @@ class Services::GithubController < ServiceController
 	before_action :set_company, :except => :webhook
 	
 
-	def index
-		@repos = Company.first.github_repos
-	end
-
-	def show
-		@repo = Company.first.github_repos.find(params[:id])
-	end
-
 	def org_list
 		@organizations = Github::SetupService.new(@company.id).fetch_remote_organizations
 
@@ -23,7 +15,7 @@ class Services::GithubController < ServiceController
 		org = @company.provider_accounts.find(params[:id])
 		org.set_default_account!
 		Github::SetupService.new(@company.id).create_hooks!
-		
+
 		redirect_to(oauth_complete_path)
 	end
 

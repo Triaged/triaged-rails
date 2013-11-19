@@ -56,14 +56,12 @@ DockedRails::Application.routes.draw do
   		resources resource do
   			member do
     			post '' => "#{resource}#webhook", as: 'webhook'
-    			get '' => "#{resource}#redirect_to_root"
     		end
   		end
 		end
   	resources :github do
   		member do
   			post '' => "github#webhook", as: 'webhook'
-  			get '' => "#{resource}#redirect_to_root"
   		end
   		collection do
   			get 'org_list'
@@ -72,6 +70,8 @@ DockedRails::Application.routes.draw do
   	end
   	resources :stripe
   end
+
+  
 	
 	get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'
