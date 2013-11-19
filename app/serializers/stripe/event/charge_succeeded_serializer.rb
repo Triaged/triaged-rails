@@ -6,11 +6,11 @@ class	Stripe::Event::ChargeSucceededSerializer < TextItemSerializer
 	end
 
 	def action
-		"Charge Succeeded"
+		"#{object.amount}$ Charge Succeeded"
 	end
 
 	def body
-		"#{object.amount}\n#{object.description}"
+		object.description
 	end
 
 	 
