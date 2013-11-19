@@ -6,7 +6,7 @@ class	Stripe::Event::ChargeSucceededSerializer < TextItemSerializer
 	end
 
 	def action
-		"$#{number_with_precision(object.amount, :precision => 2)} Charge Succeeded"
+		"$#{number_to_currency(object.amount)} Charge Succeeded"
 	end
 
 	def body
