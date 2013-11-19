@@ -75,6 +75,7 @@ gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'puma'
 gem "dalli"
 gem "memcachier"
+gem 'autoscaler'
 
 group :development do
 	#gem 'heroku_san'
