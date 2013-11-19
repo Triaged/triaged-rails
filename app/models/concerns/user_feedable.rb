@@ -8,8 +8,8 @@ module UserFeedable
 
 	def feed(min_updated_at = nil, max_updated_at = nil)
 		feed_items = user_feed_items.only(:feed_item_id)
-		feed_items = feed_items.where(:updated_at.gt => min_updated_at) if min_updated_at
-  	feed_items = feed_items.where(:updated_at.lt => max_updated_at) if max_updated_at
+		feed_items = feed_items.gt(updated_at: min_updated_at) if min_updated_at  #where(:updated_at.gt => min_updated_at) if min_updated_at
+  	#feed_items = feed_items.where(:updated_at.lt => max_updated_at) if max_updated_at
 
   	company.feed_items.desc(:created_at).find(feed_items.collect {|item| item.feed_item_id })
   end
