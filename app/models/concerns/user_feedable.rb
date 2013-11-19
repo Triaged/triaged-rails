@@ -3,7 +3,7 @@ module UserFeedable
 
 	included do 
 		embeds_many :user_feed_items
-		index "user_feed_items.feed_item_i" => 1
+		#index({ "user_feed_items.feed_item_id" => 1 }, { unique: true, drop_dups: true })
 	end
 
 	def feed(min_updated_at = nil, max_updated_at = nil)

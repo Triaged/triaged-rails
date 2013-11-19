@@ -6,7 +6,6 @@ class Company
   include CompanyFeedable
 
   field :name, :type => String
-  field :personal, :type => Boolean, :default => false
   
 	has_many :users
 	embeds_many :connected_providers
@@ -39,7 +38,7 @@ class Company
 	#
 
 	def self.create_placeholder_company
-		Company.create name: Tokenizer.unique_token, personal: true
+		Company.create name: Tokenizer.unique_token
   end
 
 end

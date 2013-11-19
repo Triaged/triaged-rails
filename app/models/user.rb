@@ -12,12 +12,14 @@ class User
 	field :push_enabled, type: Boolean, default: true
 	field :validated_belongs_to_company, type: Boolean, default: false
 	field :company_validation_token, type: String
+	field :personal, :type => Boolean, :default => false
 
 	belongs_to :company
 	index({ company_id: 1 })
 
 	embeds_many :push_tokens
   before_create :assign_to_company
+  after_create :send_verify_email
 
   def save_omniauth(provider, uid, access_token, refresh_token=nil)
 	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.find_by(name: provider), uid: uid)
@@ -36,10 +38,15 @@ class User
 		if is_email_personal(email_address)
 			self.company = Company.create_placeholder_company
 			self.validated_belongs_to_company = true
+			self.personal = true
 		else 
 			self.company = Company.find_or_create_by(name: email_host)
 			company_validation_token = Tokenizer.unique_token(6)
 		end
+	end
+
+	def send_verify_email
+		VerifyEmail.new(self.id).deliver! unless self.personal
 	end
 
 	def is_email_personal email_address

@@ -14,7 +14,7 @@ class AccountSerializer < ActiveModel::Serializer
   end
 
   def personal_account
-  	object.company.personal
+  	object.personal
   end
 
   def providers
