@@ -11,7 +11,7 @@ class Company
 	has_many :users
 	embeds_many :connected_providers
 
-	index({ "feed_item.external_id" => 1 }, { unique: true, dropDups: true })
+	index({ "feed_item.external_id" => 1 }, { unique: true, drop_dups: true })
   index({ "feed_item.updated_at" => 1 })
 
   slug do |object|
