@@ -2,7 +2,7 @@ class	Stripe::Event::ChargeSucceededSerializer < TextItemSerializer
 	#attributes :amount, :description, :customer_email, :customer_name
 
 	def property
-		"@todo"
+		"Live"
 	end
 
 	def action
