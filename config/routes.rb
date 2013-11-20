@@ -60,12 +60,12 @@ TriageRails::Application.routes.draw do
   		end
 		end
   	resources :github do
-  		member do
-  			post '' => "github#webhook", as: 'webhook'
-  		end
   		collection do
   			get 'org_list'
   			post 'set_default_org'
+  		end
+  		member do
+  			post '' => "github#webhook", as: 'webhook'
   		end
   	end
   	resources :stripe

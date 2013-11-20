@@ -2,21 +2,24 @@
 			<!-- Logo Row -->
 			<br />
 			<div class="row center-block">
-				<h1 class="text-center">Which Organization does your company use?</h1>
+				<h2 class="text-center">Which Organization does your company use?</h2>
 			</div>
 			<!-- Title Row -->
 			<div class="row center-block" id="welcome-title">
 				<% @organizations.each do |org| %>
 
-						<div class="github-org" id="<%= org.id %>">
-							<p><%= org.name %></p>
+						<div class="provider-account" id="<%= org.id %>">
+							<h3><%= org.name %></h3>
 						</div>
 
 				<% end %>
 			</div>
 
 			<div class="row">
-				<%= button_to 'SELECT', "/", 	:class => "btn btn-custom" %>
+				<%= simple_form_for :org, :url => set_default_org_github_index_path, :method => :post do |f| %>
+					  <%= f.input :id, :as => :hidden %>
+  					<%= f.button :submit, 'SELECT', :class => "btn-custom", :disabled => true %>
+				<% end %>
 			</div>
 			
 
