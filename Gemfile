@@ -78,6 +78,7 @@ gem "memcachier"
 gem 'autoscaler'
 gem 'bootstrap-sass', '>= 3.0.0.0'
 gem 'twilio-ruby'
+gem 'asset_sync'
 
 group :development do
 	#gem 'heroku_san'

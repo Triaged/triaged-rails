@@ -6,6 +6,10 @@
 	vertical-align: bottom;
 }
 
+#iphone {
+	width: 360px;
+}
+
 #welcome-title {
 	margin-top: 40px;
 }
@@ -68,4 +72,28 @@ list-style-type: none;
 padding-right: 44px;
 font-size: 16px;
 color: #808695;
+}
+
+@media (max-width: 767px) {
+	h2 {
+		text-align: center;
+	}
+
+	#iphone {
+		width: 100%;
+	}
+
+	#phone_number {
+		width: 100%;
+	}
+
+	#input-line {
+		width: 100%;
+	}
+
+	#footer-list {
+		width: 53%;
+		display: block;
+		margin: 0 auto;
+}
 }

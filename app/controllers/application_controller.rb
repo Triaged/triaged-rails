@@ -14,6 +14,20 @@ class ApplicationController < ActionController::Base
   	# find_by fails with an invalid token
   end
 
+  def check_for_mobile
+    prepare_for_mobile if mobile_device?
+  end
+
+  def prepare_for_mobile
+    prepend_view_path Rails.root + 'app' + 'views_mobile'
+  end
+
+  def mobile_device?
+      # Season this regexp to taste. I prefer to treat iPad as non-mobile.
+       (request.user_agent =~ /Mobile|webOS/) && (request.user_agent !~ /iPad/)
+  end
+  helper_method :mobile_device?
+
   protected
 
   def configure_permitted_parameters

@@ -17,25 +17,19 @@
 			</div>
 			<!-- CTA Row -->
 			<div class="row" id="welcome-cta">
-				<%= button_to 'DOWNLOAD TRIAGE', "http://appstore.com/triage-everything-thats-happening", 	:class => "btn btn-custom" %>
+				<%#= button_to 'DOWNLOAD TRIAGE', "http://appstore.com/triage-everything-thats-happening", 	:class => "btn btn-custom" %>
+		<%= simple_form_for :sms_delivery, :url => deliver_sms_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form', :class => 'form-inline'} do |f| %>
+					  <%= f.input_field :phone_number, :id => "phone_number", :placeholder => 'Get notified of launch', :autocomplete => "off"%>
+  					<%= f.submit 'SEND', :class => "text-btn" %>
+				<% end %>
+				<%= image_tag("input-line.png", :id => "input-line") %>
+				<p id="response" style="visibility:hidden;">abc</p>
 			</div>
-			<!-- Badge Row -->
-			<div class="row" id="welcome-badge">
-				<%#= link_to image_tag("appstore-badge.png"), "/" %>
-			</div>
-			<!-- Footer Row -->
-			<div class="row" id="welcome-footer">
-				<ul id="footer-list">
-					<li> <%= link_to image_tag("available.png"), "http://appstore.com/triage-everything-thats-happening" %> </li>
-					<li> FAQ </li>
-					<li> Support </li>
-
-				</ul>
-			</div>
+			
 
 		</div>
 		<div class="col-lg-5 col-lg-offset-2">
-			<br /><br />
+			<br />
 			<%= image_tag "iphone.png", :width => "360" %>
 		</div>
 

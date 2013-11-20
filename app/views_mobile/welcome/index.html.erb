@@ -1,0 +1,38 @@
+<div class="col-xs-12">
+			<!-- Logo Row -->
+			<br />
+			<div class="row center-block">
+				<%= image_tag "logotriage.png", :class => "center-block" %><h2><span id="logo" class="text-center">Triage</span</h2>
+			</div>
+			<!-- Title Row -->
+			<div class="row center-block" id="welcome-title">
+				<h1 class="text-center">Everything that's<br /> happening at work, <br/ > in one place.</h1>
+			</div>
+			<!-- Description Row -->
+			<div class="row center-block" id="welcome-description">
+				<p class="text-center"> Triage monitors the services you already use, and<br /> pulls everything important into one mobile feed. </p> <br />
+				<%= image_tag "providers-mobile1.png", :id => "providers", :class => "center-block" %> <br />
+				<%= image_tag "providers-mobile2.png", :id => "providers", :class => "center-block" %>
+			</div>
+			<!-- CTA Row -->
+			<div class="row center-block" id="welcome-cta">
+				<%#= button_to 'DOWNLOAD TRIAGE', "http://appstore.com/triage-everything-thats-happening", 	:class => "btn btn-custom" %>
+		<%= simple_form_for :sms_delivery, :url => deliver_sms_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form', :class => 'form-inline'} do |f| %>
+					  <%= f.input_field :phone_number, :id => "phone_number", :class => "text-center", :placeholder => 'Get notified of launch', :autocomplete => "off"%>
+  					<%= image_tag("input-line.png", :id => "input-line") %>
+  					<%= f.submit 'SEND', :class => "text-btn center-block" %>
+				<% end %>
+				
+				<p id="response" style="visibility:hidden;">abc</p>
+			</div>
+			
+
+		</div>
+		<div class="row center-block">
+			<br />
+			<%= image_tag "iphone.png", :id => "iphone" %>
+		</div>
+
+		<br /><br />
+</div>
+
