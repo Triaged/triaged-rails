@@ -36,7 +36,7 @@ class Github::CreateHooks
 			begin
 				Rails.logger.info repo.name
 				@github.repos.hooks.create repo.owner, repo.name, name: "web", active:  true, 
-					config: { "url" => webhook_github_index_url(:id => @company.slug, :protocol => "https")}, 
+					config: { "url" => webhook_github_index_url(:company_id => @company.slug, :protocol => "https")}, 
 					events: ["push", "issues", "issue_comment", "pull_request", "commit_comment"]
 			rescue Github::Error::UnprocessableEntity => e
 				Rails.logger.info e
