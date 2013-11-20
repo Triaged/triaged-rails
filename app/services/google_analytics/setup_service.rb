@@ -1,6 +1,4 @@
 class GoogleAnalytics::SetupService < GoogleAnalytics::BaseService
-	include Rails.application.routes.url_helpers
-
 	attr_accessor :user
 
 	def initialize company_id
