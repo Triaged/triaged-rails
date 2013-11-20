@@ -4,7 +4,9 @@
 		<div class="col-lg-6 col-lg-offset-3">
 			<!-- Logo Row -->
 			<div class="row">
-				<h2><%= image_tag "logotriage.png" %><span id="logo">Triage</span</h2>
+				<%= link_to('/') do %>
+					<h2><%= image_tag "logotriage.png" %><% end %><span id="logo">Triage</span</h2>
+				
 			</div>
 			<!-- Title Row -->
 			<div class="row" id="welcome-title">
@@ -12,7 +14,9 @@
 			</div>
 			<!-- Description Row -->
 			<div class="row" id="welcome-description">
-				<p> Coming Soon.</p>
+				<p> Please email us at <%= mail_to "team@triaged.co" %> or join us in a chat room <%= link_to 'here', "/"%> </p>
+				<p> We'd love to hear from you, </p>
+				<p> The Triage Team </p>
 			</div>
 
 		</div>

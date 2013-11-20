@@ -19,7 +19,7 @@
 			<div class="row" id="welcome-cta">
 				<%#= button_to 'DOWNLOAD TRIAGE', "http://appstore.com/triage-everything-thats-happening", 	:class => "btn btn-custom" %>
 		<%= simple_form_for :email_capture, :url => capture_email_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form', :class => 'form-inline'} do |f| %>
-					  <%= f.input_field :email, :id => "phone_number", :placeholder => 'Get notified of launch', :autocomplete => "off"%>
+					  <%= f.input_field :email, :id => "phone_number", :placeholder => 'Notify me of launch', :autocomplete => "off"%>
   					<%= f.submit 'SEND', :class => "text-btn" %>
 				<% end %>
 				<%= image_tag("input-line.png", :id => "input-line") %>
