@@ -72,8 +72,16 @@
 }
 
 @media (max-width: 767px) {
+	h1 {
+		font-size: 30px;
+		line-height: 40px;
+	}
 	h2 {
 		text-align: center;
+	}
+
+	#welcome-title {
+		margin-top: 30px;
 	}
 
 	#iphone {
