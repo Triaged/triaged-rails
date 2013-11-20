@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   background-color: #f3f3f8;
+  -webkit-font-smoothing:antialiased;
 }
 
 /* Wrapper for page content to push down footer */
@@ -21,8 +22,8 @@ body {
 
 
 h1 {
-	font-size: 36px;
-	line-height: 44px;
+	font-size: 40px;
+	line-height: 50px;
 	color: #40454f;
 	font-weight: normal;
 }

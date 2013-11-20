@@ -1,5 +1,5 @@
 .spacer {
-	padding-top:44px;
+	padding-top:0px;
 }
 
 #logo {
@@ -15,7 +15,7 @@
 }
 
 #welcome-description {
-	margin-top: 14px;
+	margin-top: 20px;
 }
 
 #providers {
@@ -23,15 +23,15 @@
 }
 
 #welcome-cta {
-	margin-top: 85px;
+	margin-top: 100px;
 }
 
 #phone_number {
-	width: 320px;
+	width: 330px;
 	border: none;
 	background-color:  #f3f3f8;
-	height: 36px;
-	font-size: 24px;
+	height: 30px;
+	font-size: 20px;
 	font-weight: lighter;
 	font-color: #ADB1BC;
 	outline: none;
@@ -39,7 +39,7 @@
 
 .text-btn {
 	background: #f3f3f8;
-	font-size: 18px;
+	font-size: 16px;
 	color: #8494C0;
 	border:0 none;
 }
@@ -53,13 +53,7 @@
 	vertical-align: top;
 }
 
-#welcome-badge {
-	margin-top: 50px;
-}
 
-#welcome-footer {
-	margin-top: 60px;
-}
 
 #footer-list {
 	-webkit-padding-start: 2px;
