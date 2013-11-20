@@ -22,7 +22,7 @@ class User
   after_create :send_verify_email
 
   def save_omniauth(provider, uid, access_token, refresh_token=nil)
-	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.find_by(name: provider), uid: uid)
+	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.named(provider), uid: uid)
 	  Rails.logger.info credentials.inspect
 	  credentials.access_token = access_token
 	  credentials.refresh_token = refresh_token
