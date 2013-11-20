@@ -1,7 +1,22 @@
-<% @organizations.each do |org| %>
+<div class="col-xs-12">
+			<!-- Logo Row -->
+			<br />
+			<div class="row center-block">
+				<h1 class="text-center">Which Organization does your company use?</h1>
+			</div>
+			<!-- Title Row -->
+			<div class="row center-block" id="welcome-title">
+				<% @organizations.each do |org| %>
 
-	<div class="github-org" id="<%= org.id %>">
-		<%= org.name %>
-	</div>
+						<div class="github-org" id="<%= org.id %>">
+							<p><%= org.name %></p>
+						</div>
 
-<% end %>
+				<% end %>
+			</div>
+			
+
+		<br /><br />
+</div>
+
+
