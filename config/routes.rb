@@ -69,6 +69,12 @@ TriageRails::Application.routes.draw do
   		end
   	end
   	resources :stripe
+  	resources :google_analytics do
+  		collection do
+  			get 'account_list'
+  			post 'set_default_account'
+  		end
+  	end
   end
 
   

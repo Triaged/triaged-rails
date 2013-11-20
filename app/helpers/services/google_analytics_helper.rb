@@ -1,0 +1,2 @@
+module Services::GoogleAnalyticsHelper
+end
