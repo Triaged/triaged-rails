@@ -8,6 +8,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
 		params = request.env["omniauth.auth"]
+		Rails.logger.info params
 		result = current_user.save_omniauth("google_analytics", params['uid'], params['credentials']['token'], params['credentials']['refresh_token'])
     redirect_to oauth_complete_path
   end
