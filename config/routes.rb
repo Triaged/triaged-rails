@@ -54,8 +54,8 @@ TriageRails::Application.routes.draw do
 	scope module: 'services' do
 		[:sentry, :new_relic, :kiln, :airbrake, :heroku, :hockey_app].each do |resource|
   		resources resource do
-  			member do
-    			post '' => "#{resource}#webhook", as: 'webhook'
+  			collection do
+    			post ':company_id' => "#{resource}#webhook", as: 'webhook'
     		end
   		end
 		end
@@ -63,9 +63,7 @@ TriageRails::Application.routes.draw do
   		collection do
   			get 'org_list'
   			post 'set_default_org'
-  		end
-  		member do
-  			post '' => "github#webhook", as: 'webhook'
+  			post ':company_id' => "github#webhook", as: 'webhook'
   		end
   	end
   	resources :stripe

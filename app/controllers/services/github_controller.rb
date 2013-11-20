@@ -18,10 +18,9 @@ class Services::GithubController < ServiceController
 	end
 
 	def webhook
-		company = Company.find(params[:id])
 		event_type = request.headers['X-Github-Event']
 		event = JSON.parse(params["payload"])
-		payload = {event: event, company_id: company.id, event_type: event_type}
+		payload = {event: event, company_id: params[:company_id], event_type: event_type}
 		Github::WebhookService.new.instrument payload
 		head :ok
 	# rescue StandardError
