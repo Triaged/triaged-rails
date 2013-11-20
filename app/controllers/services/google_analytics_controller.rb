@@ -5,6 +5,7 @@ class Services::GoogleAnalyticsController < ServiceController
 	def account_list
 		@accounts = GoogleAnalytics::SetupService.new(@company.id).fetch_remote_profiles
 		redirect_to(oauth_complete_path) if (@accounts.count == 1)
+		@skip_footer = true
 	end
 
 	def set_default_account

@@ -43,13 +43,17 @@ p {
 .btn-custom {
   background-color: #8393bf;
   border-color: #8393bf;
-  width: 380px;
-  height: 60px;
+  width: 100%;
   font-size: 20px;
   color: #ffffff;
   font-family: "proxima-nova";
   font-weight: lighter;
 }
+.btn-custom.big {
+	width: 380px;
+  height: 60px;
+}
+
 .btn-custom:hover,
 .btn-custom:focus,
 .btn-custom:active,

@@ -1,7 +1,14 @@
 .provider-account {
+	height: 50px;
+	border: 1px solid #e1e1e9;
+	margin-bottom: 15px;
+}
 
+.provider-account h3 {
+	margin-top: 12px;
 }
 
 .provider-account.active {
-	background-color: #AAAAAA;
+	background-color: #7284b6;
+	color: #ffffff;
 }
