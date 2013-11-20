@@ -5,5 +5,5 @@ $ ->
 		console.log this.id
 		$(".provider-account").removeClass("active")
 		$(this).addClass("active")
-		$(".hidden-id").val(this.id)
+		$(".hidden").val(this.id)
 		$(".btn-custom").prop('disabled', false)
