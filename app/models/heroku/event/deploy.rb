@@ -11,7 +11,7 @@ class Heroku::Event::Deploy < FeedItem
 
   def self.build_from_webhook data
 		event = Heroku::Event::Deploy.new(
-			external_id: data.head_long,
+			external_id: "h-#{data.head_long}",
 			app: data.app,
 			user: data.user,
 			html_url: data.url,
