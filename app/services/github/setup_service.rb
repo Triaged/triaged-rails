@@ -14,7 +14,7 @@ class Github::SetupService
 
 		github_orgs = @company.provider_accounts.provided_by(Provider.named "github")
 
-		# Set account to default if only 1 exists
+		# Set account to default if only 1 exists, this will only be a personal account
 		if (github_orgs.count == 1)
 			github_orgs.first.set_default_account!
 			create_hooks!

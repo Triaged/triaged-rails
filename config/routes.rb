@@ -1,5 +1,5 @@
 require 'sidekiq/web'
-DockedRails::Application.routes.draw do
+TriageRails::Application.routes.draw do
   
 	# To be removed
 	resource :account
@@ -76,12 +76,13 @@ DockedRails::Application.routes.draw do
 	get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'
 	get '/services/oauth_failure/:error' => 'service#oauth_failure', as: 'oauth_failure'
-
 	# Verification link
 	get '/verify/:id/:token' => 'verify#show', as: 'verify_email'
 
-	root :to => 'welcome#index'
 
+
+	root :to => 'welcome#index'
+	post '/deliver_sms' => 'welcome#deliver_sms', as: 'deliver_sms'
 	
 
 	mount Sidekiq::Web => '/sidekiq'

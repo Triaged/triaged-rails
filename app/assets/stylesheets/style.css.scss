@@ -1,0 +1,58 @@
+html,
+body {
+  height: 100%;
+  background-color: #f3f3f8;
+}
+
+h1 {
+	font-size: 36px;
+	line-height: 44px;
+	color: #40454f;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 32px;
+	color: #8494C0;
+	font-weight: lighter;
+}
+
+p {
+	font-size: 18px;
+	line-height: 24px;
+	color: #808695;
+}
+
+.btn-custom {
+  background-color: #8393bf;
+  border-color: #8393bf;
+  width: 380px;
+  height: 60px;
+  font-size: 20px;
+  color: #ffffff;
+  font-family: "proxima-nova";
+  font-weight: lighter;
+}
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active {
+  background-color: #7284b6;
+  border-color: #6176ae;
+  color: #ffffff;
+}
+.btn-custom.disabled:hover,
+.btn-custom.disabled:focus,
+.btn-custom.disabled:active,
+.btn-custom.disabled.active,
+.btn-custom[disabled]:hover,
+.btn-custom[disabled]:focus,
+.btn-custom[disabled]:active,
+.btn-custom[disabled].active,
+fieldset[disabled] .btn-custom:hover,
+fieldset[disabled] .btn-custom:focus,
+fieldset[disabled] .btn-custom:active,
+fieldset[disabled] .btn-custom.active {
+  background-color: #8393bf;
+  border-color: #8393bf;
+}

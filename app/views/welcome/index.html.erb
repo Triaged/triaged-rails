@@ -1,1 +1,44 @@
-Welcome!
+<div class="col-lg-12">
+	<div class="spacer"></div>
+	<div class="row">
+		<div class="col-lg-5">
+			<!-- Logo Row -->
+			<div class="row">
+				<h2><%= image_tag "logotriage.png" %><span id="logo">Triage</span</h2>
+			</div>
+			<!-- Title Row -->
+			<div class="row" id="welcome-title">
+				<h1>Everything that's<br /> happening at work, <br/ > in one place.</h1>
+			</div>
+			<!-- Description Row -->
+			<div class="row" id="welcome-description">
+				<p> Triage monitors the services you already use, and<br /> pulls everything important into one mobile feed. </p>
+				<%= image_tag "providers.png", :id => "providers" %>
+			</div>
+			<!-- CTA Row -->
+			<div class="row" id="welcome-cta">
+				<%= button_to 'DOWNLOAD TRIAGE', "http://appstore.com/triage-everything-thats-happening", 	:class => "btn btn-custom" %>
+			</div>
+			<!-- Badge Row -->
+			<div class="row" id="welcome-badge">
+				<%#= link_to image_tag("appstore-badge.png"), "/" %>
+			</div>
+			<!-- Footer Row -->
+			<div class="row" id="welcome-footer">
+				<ul id="footer-list">
+					<li> <%= link_to image_tag("available.png"), "http://appstore.com/triage-everything-thats-happening" %> </li>
+					<li> FAQ </li>
+					<li> Support </li>
+
+				</ul>
+			</div>
+
+		</div>
+		<div class="col-lg-5 col-lg-offset-2">
+			<br /><br />
+			<%= image_tag "iphone.png", :width => "360" %>
+		</div>
+
+	</div>
+</div>
+

@@ -1,3 +1,71 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.spacer {
+	padding-top:44px;
+}
+
+#logo {
+	vertical-align: bottom;
+}
+
+#welcome-title {
+	margin-top: 40px;
+}
+
+#welcome-description {
+	margin-top: 14px;
+}
+
+#providers {
+	margin-top: 10px;
+}
+
+#welcome-cta {
+	margin-top: 85px;
+}
+
+#phone_number {
+	width: 320px;
+	border: none;
+	background-color:  #f3f3f8;
+	height: 36px;
+	font-size: 24px;
+	font-weight: lighter;
+	font-color: #ADB1BC;
+	outline: none;
+}
+
+.text-btn {
+	background: #f3f3f8;
+	font-size: 18px;
+	color: #8494C0;
+	border:0 none;
+}
+
+.text-btn:focus, .text-btn:active {
+  border:0 none;
+}
+
+#input-line {
+	padding-top: 5px;
+	vertical-align: top;
+}
+
+#welcome-badge {
+	margin-top: 50px;
+}
+
+#welcome-footer {
+	margin-top: 60px;
+}
+
+#footer-list {
+	-webkit-padding-start: 2px;
+}
+
+#footer-list li
+{
+display: inline;
+list-style-type: none;
+padding-right: 44px;
+font-size: 16px;
+color: #808695;
+}

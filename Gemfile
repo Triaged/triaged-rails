@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'active_model_serializers'#, :github => "getDocked/active_model_serializers"
+gem 'active_model_serializers'
 
   # bundle exec rake doc:rails generates the API under doc/api.
 
@@ -76,6 +76,8 @@ gem 'puma'
 gem "dalli"
 gem "memcachier"
 gem 'autoscaler'
+gem 'bootstrap-sass', '>= 3.0.0.0'
+gem 'twilio-ruby'
 
 group :development do
 	#gem 'heroku_san'

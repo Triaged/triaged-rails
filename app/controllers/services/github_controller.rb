@@ -5,9 +5,6 @@ class Services::GithubController < ServiceController
 
 	def org_list
 		@organizations = Github::SetupService.new(@company.id).fetch_remote_organizations
-
-		#@organizations = @company.provider_accounts.provided_by(Provider.named "github")
-		redirect_to(oauth_failure_path(error: "No Github Organization Found")) if (@organizations.count == 0)
 		redirect_to(oauth_complete_path) if (@organizations.count == 1)
 	end
 

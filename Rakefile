@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-DockedRails::Application.load_tasks
+TriageRails::Application.load_tasks

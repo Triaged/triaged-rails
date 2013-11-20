@@ -1,4 +1,4 @@
-Docked::Application.configure do
+TriageRails::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -84,6 +84,6 @@ Docked::Application.configure do
   ActionMailer::Base.delivery_method = :smtp
 
   Rails.application.routes.default_url_options[:host] = "docked.io"
-  Docked::Application.config.session_store :cookie_store, key: '_Triaged_session', :domain => ".docked.io"
+  TriageRails::Application.config.session_store :cookie_store, key: '_Triaged_session', :domain => ".docked.io"
 
 end
