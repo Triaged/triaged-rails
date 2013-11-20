@@ -67,11 +67,14 @@
 
 #footer-list li
 {
-display: inline;
-list-style-type: none;
-padding-right: 44px;
-font-size: 16px;
-color: #808695;
+	display: inline;
+	list-style-type: none;
+	padding-right: 44px;
+}
+
+#footer-list li a {
+	font-size: 16px;
+	color: #808695;
 }
 
 @media (max-width: 767px) {

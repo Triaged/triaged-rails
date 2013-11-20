@@ -82,7 +82,10 @@ TriageRails::Application.routes.draw do
 
 
 	root :to => 'welcome#index'
+	get '/faq' => 'welcome#faq', as: 'faq'
+	get '/support' => 'welcome#support', as: 'support'
 	post '/deliver_sms' => 'welcome#deliver_sms', as: 'deliver_sms'
+	post '/capture_email' => 'welcome#capture_email', as: 'capture_email'
 	
 
 	mount Sidekiq::Web => '/sidekiq'
