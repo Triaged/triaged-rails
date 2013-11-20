@@ -80,6 +80,7 @@ gem 'bootstrap-sass', '>= 3.0.0.0'
 gem 'twilio-ruby'
 gem 'asset_sync'
 gem "mailchimp"
+gem 'connection_pool'
 
 group :development do
 	#gem 'heroku_san'

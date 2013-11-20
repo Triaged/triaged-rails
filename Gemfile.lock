@@ -345,6 +345,7 @@ DEPENDENCIES
   certified
   cloudinary
   coffee-rails (~> 4.0.0)
+  connection_pool
   dalli
   debugger
   devise
