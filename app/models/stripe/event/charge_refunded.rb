@@ -8,7 +8,7 @@ class Stripe::Event::ChargeRefunded < Stripe::BaseEvent
   	event = Stripe::Event::ChargeRefunded.new(
 			amount: (data.data.object.amount / 100),
 			amount_refunded: (data.data.object.amount_refunded / 100),
-			customer_id: data.data.object.card.customer,
+			customer_id: data.data.object.customer,
 			description: data.data.object.description,
 			external_id: data.id,
 			timestamp: DateTime.strptime(data.created.to_s,'%s')

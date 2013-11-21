@@ -5,7 +5,7 @@ class Stripe::Event::InvoicePaymentSuceeded< Stripe::BaseEvent
   	data = event.data.object
   	event = Stripe::Event::InvoicePaymentSuceeded.new(
   		amount: (data.data.object.total / 100),
-  		customer_id: data.data.object.card.customer,
+  		customer_id: data.data.object.customer,
 			external_id: data.id,
 			timestamp: DateTime.strptime(data.created.to_s,'%s')
 		)

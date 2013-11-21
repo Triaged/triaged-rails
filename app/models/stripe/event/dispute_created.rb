@@ -16,7 +16,7 @@ class Stripe::Event::DisputeCreated < Stripe::BaseEvent
 			evidence_due_by: data.data.object.evidence_due_by,
 			evidence: data.data.object.evidence,
 			charge_id: data.data.object.charge,
-		 	customer_id: data.data.object.card.customer,
+		 	customer_id: data.data.object.customer,
 		 	external_id: data.id,
 		 	timestamp: DateTime.strptime(data.created.to_s,'%s')
 		)

@@ -16,7 +16,7 @@ module Common::MessageService
 	def self.push_to_followers message, company, provider
 		Rails.logger.info "pushing to followers"
 		company.followers_of(provider).each do |follower|
-			Common::NotificationService.push_message follower, message
+			Common::NotificationService.push_message(follower, message) unless (follower == message.author)
 		end
 	end
 
