@@ -18,6 +18,7 @@ TriageRails::Application.routes.draw do
     			get 'team'
     			post 'avatar'
     			post 'resend_verify_email'
+    			post 'welcome_complete'
     		end
     		resources :push_tokens do
     			collection do

@@ -18,7 +18,8 @@ class ServiceController < ApplicationController
   end
 
   def oauth_complete
-  	render :json => { "success" => "true" }
+  	#render :json => { "success" => "true" }
+  	@skip_footer = true
   end
 
   def oauth_failure

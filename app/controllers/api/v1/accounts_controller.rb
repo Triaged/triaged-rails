@@ -25,6 +25,10 @@ class Api::V1::AccountsController < API::BaseController
   	VerifyEmail.new(@user.id).deliver!
   end
 
+  def welcome_complete
+  	render :json => 'ok', :status => 200
+  end
+
 private
 
 	def set_user
