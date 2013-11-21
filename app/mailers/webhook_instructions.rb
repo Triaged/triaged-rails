@@ -15,6 +15,6 @@ class WebhookInstructions < MandrillClient
 	end
 
 	def template
-		"#{@provider.name}-connect"	
+		"#{@provider.name.gsub("_", "-")}-connect"	
 	end
 end
