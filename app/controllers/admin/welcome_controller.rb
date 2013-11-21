@@ -4,7 +4,7 @@ class Admin::WelcomeController < ApplicationController
 	def index
 		@user_count = User.count
 		@company_count = Company.count
-		@feed_item_count = Company.sum(:feed_items)
+		@feed_item_count = Company.all.sum {|company| company.feed_items.count}
 	end
 
 end
