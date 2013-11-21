@@ -17,7 +17,7 @@ class Github::SetupService
 		# Set account to default if only 1 exists, this will only be a personal account
 		if (github_orgs.count == 1)
 			github_orgs.first.set_default_account!
-			create_hooks!
+			Github::CreateHooks.perform_async(@company.id.to_s)
 		end
 
 		return github_orgs
