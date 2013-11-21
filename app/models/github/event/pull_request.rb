@@ -1,4 +1,4 @@
-class Github::Event::PullRequest < FeedItem
+class Github::Event::PullRequest < Github::BaseEvent
   include Mongoid::Document
 
   field :action, type: String
