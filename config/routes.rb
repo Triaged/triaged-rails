@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 TriageRails::Application.routes.draw do
   
+  
 	# To be removed
 	resource :account
 
@@ -92,7 +93,15 @@ TriageRails::Application.routes.draw do
 	post '/capture_email' => 'welcome#capture_email', as: 'capture_email'
 	
 
-	mount Sidekiq::Web => '/sidekiq'
+	devise_for :admins
+	authenticated :admin do
+		namespace :admin do
+			resources :welcome
+			mount Sidekiq::Web => '/sidekiq'
+		end
+	end
+
+	
 	#mount Resque::Server, :at => "/resque"
 	
 end
