@@ -14,8 +14,8 @@ class Github::Event::PullRequest < FeedItem
   		body: event.pull_request.body,
   		html_url: event.pull_request.html_url,
   		external_id: "#{event.action}-#{event.number}",
-  		org_name: event.repo.owner.login,
-  		repo_name: event.repo.name,
+  		org_name: event.repository.owner.login,
+  		repo_name: event.repository.name,
   		timestamp: DateTime.now
   		)
   	return issue_opened_event
