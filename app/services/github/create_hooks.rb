@@ -29,6 +29,19 @@ class Github::CreateHooks
 				owner: repo.owner.login
 			)
 		end }
+	rescue Github::Error::NotFound # Ned to fix this soon, handles personal accounts
+		org = @company.default_github_org
+		res = @github.repos.list
+		res.each_page { |page| page.each do |repo|
+			org.provider_properties << Github::Repo.new(
+				external_id: repo.id, 
+				html_url: repo.html_url, 
+				url: repo.url, 
+				name: repo.name,
+				full_name: repo.full_name,
+				owner: repo.owner.login
+			)
+		end }
 	end
 
 	def create_repo_hooks
