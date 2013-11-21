@@ -22,7 +22,7 @@ class MandrillClient
 			:from_email => from_email,
 			:from_name => from_name,
 			:to => [
-				{:email=> @recipient_email, :name => @recipient_name }
+				{:email=> @recipient_email, :name => @recipient_name.titleize}
 			],
 			:merge_vars => [
          	{
