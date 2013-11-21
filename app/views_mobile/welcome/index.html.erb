@@ -16,20 +16,13 @@
 			</div>
 			<!-- CTA Row -->
 			<div class="row center-block" id="welcome-cta">
-				<%#= button_to 'DOWNLOAD TRIAGE', "http://appstore.com/triage-everything-thats-happening", 	:class => "btn btn-custom" %>
-		<%= simple_form_for :email_capture, :url => capture_email_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form', :class => 'form-inline'} do |f| %>
-					  <%= f.input_field :email, :id => "phone_number", :class => "text-center", :placeholder => 'Notify me of launch', :autocomplete => "off"%>
-  					<%= image_tag("input-line.png", :id => "input-line") %>
-  					<%= f.submit 'SEND', :class => "text-btn center-block" %>
-				<% end %>
-				
-				<p id="response" style="visibility:hidden;">abc</p>
+				<%= button_to 'DOWNLOAD TRIAGE', "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8", 	:class => "btn btn-custom" %>
 			</div>
 			
 
 		</div>
 		<div class="row center-block">
-			<br />
+			<br /> <br />
 			<%= image_tag "iphone.png", :id => "iphone" %>
 		</div>
 
