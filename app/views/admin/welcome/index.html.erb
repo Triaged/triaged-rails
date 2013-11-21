@@ -1,3 +1,7 @@
+<%= @admin.name %> <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>  <br />
+
+<br /><br /><br />
+
 <h2> Users: <%= @user_count %> </h2>
 <h2> Companies: <%= @company_count %> </h2>
 <h2> Feed Items: <%= @feed_item_count %> </h2>

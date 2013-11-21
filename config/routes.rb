@@ -93,7 +93,7 @@ TriageRails::Application.routes.draw do
 	post '/capture_email' => 'welcome#capture_email', as: 'capture_email'
 	
 
-	devise_for :admins
+	devise_for :admins, :controllers => { :registrations => "admin_registrations" }
 	authenticated :admin do
 		namespace :admin do
 			resources :welcome
