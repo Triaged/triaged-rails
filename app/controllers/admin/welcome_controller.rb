@@ -4,6 +4,7 @@ class Admin::WelcomeController < ApplicationController
 
 	def index
 		@user_count = User.count
+		@unvalidated_users = User.where(validated_belongs_to_company: false).count
 		@company_count = Company.count
 		@feed_item_count = Company.all.sum {|company| company.feed_items.count}
 		@connected_count = Company.all.sum {|company| company.connected_providers.count}
