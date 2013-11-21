@@ -9,6 +9,7 @@ class ProviderAccount
   field :name, type: String
   field :url, type: String
   field :default, type: Boolean, default: false
+  field :personal, type: Boolean, default: false
 
   delegate :account_label, :to => :provider
   delegate :property_label, :to => :provider

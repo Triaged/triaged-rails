@@ -43,6 +43,7 @@ class Github::SetupService
 			external_id: user_account.id, 
 			name: user_account.login, 
 			url: user_account.html_url,
+			personal: true,
 			provider: Provider.named("github")
 		)
 	end
