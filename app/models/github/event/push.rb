@@ -33,7 +33,7 @@ class Github::Event::Push < Github::BaseEvent
   end
 
   def should_push?
-		true
+		false
 	end
 
 	def push_message
