@@ -10,8 +10,8 @@ class Stripe::WebhookService < Service
 		
 		# Validate event and fill customer data
 		# event = Stripe::Event.retrieve(payload[:id], access_token)
-		
-		publish(@@provider, event_type, {:company_id => company.id, :event => payload})
+
+		publish(@@provider, event_type, {:company_id => company.id, :event => payload}) if payload["livemode"]
   # rescue StandardError, e
   # 	Rails.logger.info e.inspect  
 	end
