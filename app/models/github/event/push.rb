@@ -9,7 +9,7 @@ class Github::Event::Push < Github::BaseEvent
   def self.build_from_webhook event
   	return nil if event.deleted == true
 
-  	org_name = event.repository.respond_to?(:organization) ? event.repository.organization : event.repository.owner.login
+  	org_name = event.repository.respond_to?(:organization) ? event.repository.organization : event.repository.owner.name
 
   	push = Github::Event::Push.new(
   		pusher: event.pusher.name,
