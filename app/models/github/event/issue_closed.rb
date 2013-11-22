@@ -8,7 +8,7 @@ class Github::Event::IssueClosed < FeedItem
   field :body, type: String
   
   def self.build_from_webhook event
-  	assigned_to_name = event.issue.responds_to?(:assignee) ? event.issue.assignee.login : nil
+  	assigned_to_name = event.issue.respond_to?(:assignee) ? event.issue.assignee.login : nil
   	open = event.issue.state == "open" ? true : false
 
   	issue_closed_event = Github::Event::IssueClosed.new(

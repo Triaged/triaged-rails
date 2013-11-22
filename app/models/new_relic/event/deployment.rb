@@ -11,7 +11,7 @@ class NewRelic::Event::Deployment < FeedItem
   
 	def self.build_from_webhook data
 
-		changelog =  data.respond_to?(:changelog) ? data.changelog : nil
+		changelog =  (data.respond_to?(:changelog) && data.changelog) ? data.changelog : nil
 
 		event = NewRelic::Event::Deployment.new(
 			external_id: data.external_id,
