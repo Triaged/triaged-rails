@@ -7,6 +7,8 @@ class Github::Event::Push < Github::BaseEvent
   embeds_many :commits, :class_name => "Github::Event::Commit"
 
   def self.build_from_webhook event
+  	return nil if event.deleted == true
+
   	push = Github::Event::Push.new(
   		pusher: event.pusher.name,
   		branch: event.ref.split("/").last,
