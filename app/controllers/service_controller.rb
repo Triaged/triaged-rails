@@ -7,7 +7,7 @@ class ServiceController < ApplicationController
 	before_action :authenticate_user!, :only => :authenticate_for_oauth
 
 	# Handle users clicking on webhook urls from the browser
-	def index
+	def show
 		redirect_to root_path
 	end
 	
