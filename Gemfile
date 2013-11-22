@@ -51,6 +51,7 @@ gem 'simple_form', '>= 3.0.0.rc'
 
 gem 'pusher'
 gem 'dot_hash'
+gem 'recursive-open-struct'
 gem 'mongoid_slug'
 gem 'omniauth-github'
 gem 'omniauth-stripe-connect'

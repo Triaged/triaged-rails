@@ -3,7 +3,7 @@ class AsyncWebhookService
 
 	def perform event_class, payload
 		Rails.logger.info "Building event for #{event_class}"
-		payload = payload.to_properties
+		payload = RecursiveOpenStruct.new(payload)
 		Rails.logger.info payload.company_id
 		Rails.logger.info payload.inspect
 		company = Company.find(payload.company_id)
