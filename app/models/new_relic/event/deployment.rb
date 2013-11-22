@@ -10,12 +10,15 @@ class NewRelic::Event::Deployment < FeedItem
 
   
 	def self.build_from_webhook data
+
+		changelog =  data.changelog.exists? ? data.changelog : nil
+
 		event = NewRelic::Event::Deployment.new(
 			external_id: data.external_id,
 			timestamp: data.created_at,
 			application_name: data.application_name,
 			account_name: data.application_name,
-			changelog: data.changelog,
+			changelog: changelog,
 			description: data.description,
 			revision: data.revision,
 			deployed_by: data.deployed_by
