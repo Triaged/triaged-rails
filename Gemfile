@@ -50,7 +50,6 @@ gem 'simple_form', '>= 3.0.0.rc'
 #gem 'puma'
 
 gem 'pusher'
-gem 'dot_hash'
 gem 'recursive-open-struct'
 gem 'mongoid_slug'
 gem 'omniauth-github'

@@ -105,7 +105,6 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    dot_hash (0.5.5)
     dotenv (0.9.0)
     erubis (2.7.0)
     excon (0.25.3)
@@ -350,7 +349,6 @@ DEPENDENCIES
   dalli
   debugger
   devise
-  dot_hash
   figaro
   fog
   foreman
