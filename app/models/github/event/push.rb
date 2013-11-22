@@ -23,6 +23,8 @@ class Github::Event::Push < Github::BaseEvent
   	
   	event.commits.each do |commit|
 
+  		Rails.logger.info commit.inspect
+
   		author = commit.author.respond_to?(:username) ? commit.author.username : commit.author.name
 
 			commit = commit.to_properties
