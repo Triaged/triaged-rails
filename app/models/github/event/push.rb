@@ -12,7 +12,7 @@ class Github::Event::Push < Github::BaseEvent
   		branch: event.ref.split("/").last,
   		external_id: event.head_commit.id,
   		html_url: event.head_commit.url,
-  		org_name: event.repository.organization,
+  		org_name: event.repository.organization || event.repository.owner.login,
   		repo_name: event.repository.name,
   		timestamp: DateTime.now
   	)
