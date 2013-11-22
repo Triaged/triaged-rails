@@ -27,7 +27,6 @@ class Github::Event::Push < Github::BaseEvent
 
   		author = commit.author.respond_to?(:username) ? commit.author.username : commit.author.name
 
-			commit = commit.to_properties
 			push.commits.build(
   			external_id: commit.id,
   			author: author,
