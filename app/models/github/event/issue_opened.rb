@@ -8,7 +8,7 @@ class Github::Event::IssueOpened < Github::BaseEvent
   field :body, type: String
   
   def self.build_from_webhook event
-  	assigned_to_name = event.issue.assignee.exists? ?  event.issue.assignee.login : nil
+  	assigned_to_name = event.issue.responds_to?(:assignee) ?  event.issue.assignee.login : nil
   	open = event.issue.state == "open" ? true : false
 
   	issue_opened_event = Github::Event::IssueOpened.new(

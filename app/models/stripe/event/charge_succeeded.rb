@@ -3,7 +3,7 @@ class Stripe::Event::ChargeSucceeded < Stripe::BaseEvent
 
 	def self.build_from_webhook data
 
-		description = data.data.object.description.nil? ? nil : data.data.object.description,
+		description = data.data.object.respond_to?(:description) ? data.data.object.description : nil 
 
   	event = Stripe::Event::ChargeSucceeded.new(
 			amount: (data.data.object.amount / 100),
