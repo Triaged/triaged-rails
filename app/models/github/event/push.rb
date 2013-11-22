@@ -22,10 +22,13 @@ class Github::Event::Push < Github::BaseEvent
   	)
   	
   	event.commits.each do |commit|
+
+  		author = commit.author.respond_to?(:username) ? commit.author.username : commit.author.name
+
 			commit = commit.to_properties
 			push.commits.build(
   			external_id: commit.id,
-  			author: commit.author.username,
+  			author: author,
   			author_email: commit.author.email,
   			timestamp: commit.timestamp,
   			message: commit.message,
