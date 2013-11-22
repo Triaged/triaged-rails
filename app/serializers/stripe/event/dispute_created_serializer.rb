@@ -2,7 +2,7 @@ class Stripe::Event::DisputeCreatedSerializer < TextItemSerializer
   #attributes :id
 
   def property
-		"@todo"
+		"Stripe"
 	end
 
 	def action

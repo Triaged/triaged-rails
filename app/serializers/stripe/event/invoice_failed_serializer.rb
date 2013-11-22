@@ -2,11 +2,11 @@ class Stripe::Event::InvoiceFailedSerializer < TextItemSerializer
   #attributes :id
 
   def property
-		"@todo"
+		"Stripe"
 	end
 
 	def action
-		"@todo"
+		"Invoice Failed"
 	end
 
 	def body
