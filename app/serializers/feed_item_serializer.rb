@@ -13,4 +13,12 @@ class FeedItemSerializer < ActiveModel::Serializer
   	object.messages.count
   end
 
+  def list_helper list
+  	return list.first.capitalize if (list.count == 1)
+  	
+  	body = list.take(5).collect {|entry| "- #{entry.capitalize}" }.join("\n")
+		body += "\nand #{list.count - 5} more" if list.count > 5
+		return body
+  end
+
 end
