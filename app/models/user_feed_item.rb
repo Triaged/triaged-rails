@@ -3,7 +3,7 @@ class UserFeedItem
   include Mongoid::Timestamps
   
   embedded_in :user
-  belongs_to :feed_item, dependent: :destroy
-
+  belongs_to :feed_item
+ 
   validates_uniqueness_of :feed_item_id
 end

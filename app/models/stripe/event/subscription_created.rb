@@ -5,8 +5,7 @@ class Stripe::Event::SubscriptionCreated < Stripe::BaseEvent
   field :interval, :type => String
   field :plan_id, :type => DateTime
 
-  def self.create_from_webhook event
-  	data = event.data.object
+  def self.create_from_webhook data
   	event = Stripe::Event::SubscriptionCreated.new(
   		amount: (data.data.object.plan.amount / 100),
   		plan_name: data.data.object.plan.name,
@@ -23,3 +22,6 @@ class Stripe::Event::SubscriptionCreated < Stripe::BaseEvent
 	end
 
 end
+
+
+

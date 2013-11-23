@@ -28,7 +28,7 @@ TYPE_LIST = Set[
     'charge.refunded', #Done
     'charge.captured',
     'charge.dispute.created', #DO
-    'charge.dispute.updated', #DO
+    'charge.dispute.updated',
     'charge.dispute.closed', #DO
     'customer.created', 
     'customer.updated',
@@ -36,17 +36,17 @@ TYPE_LIST = Set[
     'customer.card.created',
     'customer.card.updated',
     'customer.card.deleted',
-    'customer.subscription.created', #DO
+    'customer.subscription.created', #DONE
     'customer.subscription.updated',
-    'customer.subscription.deleted', #DO
-    'customer.subscription.trial_will_end', #DO
+    'customer.subscription.deleted', #DONE
+    'customer.subscription.trial_will_end',
     'customer.discount.created',
     'customer.discount.updated',
     'customer.discount.deleted',
     'invoice.created',
     'invoice.updated',
-    'invoice.payment_succeeded',
-    'invoice.payment_failed', #DO
+    'invoice.payment_succeeded', #DONE
+    'invoice.payment_failed', #DONE
     'invoiceitem.created',
     'invoiceitem.updated',
     'invoiceitem.deleted',
@@ -57,7 +57,7 @@ TYPE_LIST = Set[
     'coupon.deleted',
     'transfer.created',
     'transfer.updated',
-    'transfer.paid', #DO
-    'transfer.failed', #DO
+    'transfer.paid', #DONE
+    'transfer.failed', #DONE
     'ping'
   ].freeze

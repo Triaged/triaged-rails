@@ -7,8 +7,7 @@ class Stripe::Event::DisputeCreated < Stripe::BaseEvent
   field :evidence, :type => String
   field :charge_id, :type => String
 
-  def self.create_from_webhook event
-  	data = event.data.object
+  def self.create_from_webhook data
   	event = Stripe::Event::DisputeCreated.new(
   		amount: (data.data.object.amount / 100),
 			status: data.data.object.status,

@@ -1,4 +1,4 @@
-class Stripe::Event::SubscriptionDeletedSerializer < TextItemSerializer
+class Stripe::Event::SubscriptionCreatedSerializer < TextItemSerializer
 	#attributes :amount, :description, :customer_email, :customer_name
 
 	def property
@@ -6,7 +6,7 @@ class Stripe::Event::SubscriptionDeletedSerializer < TextItemSerializer
 	end
 
 	def action
-		"Subscription Deleted"
+		"New Subscription"
 	end
 
 	def body

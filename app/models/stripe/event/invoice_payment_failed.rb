@@ -1,10 +1,9 @@
 class Stripe::Event::InvoicePaymentFailed < Stripe::BaseEvent
   include Mongoid::Document
 
-  def self.create_from_webhook event
-  	data = event.data.object
+  def self.create_from_webhook data
   	event = Stripe::Event::InvoicePaymentFailed.new(
-  		amount: (data.data.object.total / 100),
+  		amount: (data.data.object.amount_due / 100),
 			customer_id: data.data.object.customer,
 			external_id: data.id,
 			timestamp: DateTime.strptime(data.created.to_s,'%s')
