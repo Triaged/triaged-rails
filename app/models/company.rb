@@ -6,12 +6,16 @@ class Company
   include CompanyFeedable
 
   field :name, :type => String
+  field :token, :type => String
   
 	has_many :users
 	embeds_many :connected_providers
 
 	index({ "feed_item.external_id" => 1 }, { unique: true, drop_dups: true })
   index({ "feed_item.updated_at" => 1 })
+
+  before_create :set_company_token
+  #after_create :add_default_feed_items
 
   slug do |object|
     object.name.split(".").first.to_url
@@ -37,11 +41,18 @@ class Company
 		users.first.personal
 	end
 
-	#
-	# Class Methods
-	#
+	
+	def set_company_token
+		self.token = Tokenizer.unique_token(10)
+  end
 
-	def self.create_placeholder_company
+  def add_default_feed_items
+  	add_event_to_feed Triage::DefaultChat.default_item(self)
+		add_event_to_feed Triage::DefaultGraph.default_item(self)
+		add_event_to_feed Triage::DefaultWelcome.default_item(self)
+  end
+
+  def self.create_placeholder_company
 		Company.create name: Tokenizer.unique_token
   end
 

@@ -11,6 +11,8 @@ class Messages::Message
   field :user_mentions, type: Array
   field :timestamp, type: DateTime
 
+  validates_uniqueness_of :uuid
+
   after_create :set_author_name
 
   def set_author_name

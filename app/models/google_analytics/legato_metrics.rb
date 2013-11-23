@@ -39,7 +39,7 @@ class GoogleAnalytics::LegatoMetrics
 		# Page views
 		pageviews_total_count = metrics.totals_for_all_results["pageviews"]
 		if (pageviews_total_count > 0)
-			pageviews_data_set = item.data_sets.build(label: "page views")
+			pageviews_data_set = item.data_sets.build(label: "pageviews")
 
 			metrics.collection.each_with_index do |daily_detail, index|
 				pageviews_data_set.push(details: 	{:x => daily_detail.date.to_i, 	:y => daily_detail.pageviews.to_f, :index => index})

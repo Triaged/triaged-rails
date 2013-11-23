@@ -18,7 +18,7 @@ class User
 	index({ company_id: 1 })
 
 	embeds_many :push_tokens
-  before_create :assign_to_company
+  before_create :before_creation
   after_create :send_verify_email
 
   def save_omniauth(provider, uid, access_token, refresh_token=nil)
@@ -35,7 +35,9 @@ class User
 		email.split("@").last
 	end
 
-  def assign_to_company
+  def before_creation
+  	self.name = self.name.titleize
+
   	email_address = Mail::Address.new(email)
 
 		if is_email_personal(email_address)
