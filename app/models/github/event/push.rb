@@ -18,7 +18,6 @@ class Github::Event::Push < Github::BaseEvent
   		html_url: event.head_commit.url,
   		org_name: org_name,
   		repo_name: event.repository.name,
-  		timestamp: DateTime.now
   	)
   	
   	event.commits.each do |commit|

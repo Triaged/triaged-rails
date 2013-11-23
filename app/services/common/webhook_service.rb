@@ -10,6 +10,8 @@ class Common::WebhookService
 
 		# Hack to fix dump moped id
 		payload[:company_id] = payload[:company_id].to_s
+		# Set timestamp before sending to background (protects against background failures)
+		payload[:timestamp] = DateTime.now
 		
 		AsyncWebhookService.perform_async(event_class.to_s, payload)
 	end

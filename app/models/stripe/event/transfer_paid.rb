@@ -6,7 +6,7 @@ class Stripe::Event::TransferPaid < Stripe::BaseEvent
   def self.create_from_webhook data
   	event = Stripe::Event::TransferPaid.new(
   		amount: (data.data.object.amount / 100),
-  		bank_name: data.data.object.account.bank_name
+  		bank_name: data.data.object.account.bank_name,
   		external_id: data.id,
 			timestamp: DateTime.strptime(data.created.to_s,'%s')
 		)

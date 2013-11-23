@@ -16,7 +16,6 @@ class Crashlytics::Event::Issue < FeedItem
 			impact_level: data.impact_level,
 			crashes_count: data.crashes_count,
 			impacted_devices_count: data.impacted_devices_count,
-			timestamp: DateTime.now,
 			html_url: data.url
 		)
 	end

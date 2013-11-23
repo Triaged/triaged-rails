@@ -17,8 +17,7 @@ class Heroku::Event::Deploy < FeedItem
 			html_url: data.url,
 			git_log: data.git_log.split("\n ").collect{ |git| git.gsub("*", "").strip},
 			head_long: data.head_long,
-			head: data.head,
-			timestamp: DateTime.now
+			head: data.head
 		)
 
 		event.previous_head = data.prev_head if data.prev_head

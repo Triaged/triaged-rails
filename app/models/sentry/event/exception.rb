@@ -16,7 +16,6 @@ class Sentry::Event::Exception < FeedItem
 			culprit: data.culprit,
 			logger: data.logger,
 			level: data.level,
-			timestamp: DateTime.now,
 			html_url: data.url
 		)
 	end

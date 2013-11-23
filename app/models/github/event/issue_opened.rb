@@ -20,9 +20,8 @@ class Github::Event::IssueOpened < Github::BaseEvent
   		html_url: event.issue.html_url,
   		external_id: event.number,
   		org_name: event.repository.owner.login,
-  		repo_name: event.repository.name,
-  		timestamp: DateTime.now
-  		)
+  		repo_name: event.repository.name
+  	)
   	return issue_opened_event
 	end
 

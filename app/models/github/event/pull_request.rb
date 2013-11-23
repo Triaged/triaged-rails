@@ -16,8 +16,7 @@ class Github::Event::PullRequest < Github::BaseEvent
   		external_id: "#{event.action}-#{event.number}",
   		org_name: event.repository.owner.login,
   		repo_name: event.repository.name,
-  		timestamp: DateTime.now
-  		)
+  	)
   	return issue_opened_event
 	end
 end
