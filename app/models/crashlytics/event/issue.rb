@@ -1,6 +1,9 @@
 class Crashlytics::Event::Issue < FeedItem
   include Mongoid::Document
 
+  field :app_name, :type => String
+  field :bundle_identifer, :type => String
+  feidl :platform, :type => String
   field :title, :type => String
   field :method, :type => String
   field :impact_level, :type => Integer
@@ -10,6 +13,9 @@ class Crashlytics::Event::Issue < FeedItem
   
 	def self.build_from_webhook data
 		event = Crashlytics::Event::Issue.new(
+			app_name: data.app.name,
+			bundle_identifer: data.app.bundle_identifer,
+			platform: data.app.platform,
 			external_id: data.display_id,
 			title: data.title,
 			method: data.method,
