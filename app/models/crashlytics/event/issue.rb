@@ -3,7 +3,7 @@ class Crashlytics::Event::Issue < FeedItem
 
   field :app_name, :type => String
   field :bundle_identifer, :type => String
-  feidl :platform, :type => String
+  field :platform, :type => String
   field :title, :type => String
   field :method, :type => String
   field :impact_level, :type => Integer
