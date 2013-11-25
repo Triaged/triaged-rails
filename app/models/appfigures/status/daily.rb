@@ -12,8 +12,8 @@ class Appfigures::Status::Daily < FeedItem
 
   def self.build_daily_summary start_date, end_date, data, company
   	
-  	product = company.default_appfigures_account.provider_properties.first
-  	#product = Appfigures::ProductService.new(company).find_or_create_product(review.product)
+  	#product = company.default_appfigures_account.provider_properties.first
+  	product = Appfigures::ProductService.new(company).find_or_create_product(review.product)
 
 		item = Appfigures::Status::Daily.new(
 			external_id: "#{product.external_id}#{end_date.to_i}",
