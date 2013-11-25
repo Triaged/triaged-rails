@@ -1,4 +1,5 @@
 class Appfigures::SetupService
+	include Sidekiq::Worker
 
 	def perform company_id
 		company = Company.find(company_id)
