@@ -25,10 +25,8 @@ class Appfigures::Status::Daily < FeedItem
 			end
 		end
 
-		Rails.logger.info apps.inspect
-
+		
 		feed_items = []
-
 		apps.each do |key, value|
 			feed_items << self.build_app_summary(company, end_date, key, value)
 		end
@@ -39,7 +37,6 @@ class Appfigures::Status::Daily < FeedItem
 	def self.build_app_summary company, end_date, app_id, results
 
   	product = Appfigures::ProductService.new(company).find_or_create_product(app_id)
-
 
 		item = Appfigures::Status::Daily.new(
 			external_id: "#{product.external_id}#{end_date.to_i}",
@@ -53,11 +50,7 @@ class Appfigures::Status::Daily < FeedItem
 		revenue_data_set = item.data_sets.build(label: "revenue")
 		returns_data_set = item.data_sets.build(label: "returns")
 
-
-
 		results.each_with_index do |result, index|
-			date = Date.parse(result["date"])
-			Rails.logger.info date
 			downloads_data_set.push(details: {:x => index, :y => result["downloads"], :index => index})
 			revenue_data_set.push(details: 	{:x => index, 	:y => result["revenue"].to_f, :index => index})
 			returns_data_set.push(details: 	{:x => index, 	:y => result["returns"], :index => index})

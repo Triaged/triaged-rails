@@ -5,13 +5,9 @@ class Appfigures::SalesService < Appfigures::BaseService
 		end_date = (DateTime.now - 1.day).to_date.to_s
 
 		results = RestClient.get "https://api.appfigures.com/v2/sales/dates+products?start_date=#{start_date}&end_date=#{end_date}&granularity=daily", headers
-	
 		results = JSON.parse(results)
 
-		Rails.logger.info results
-
 		items = Appfigures::Status::Daily.build_daily_summary(start_date, end_date, results, @company)
-
 		items.each do |item|
 			Common::FeedService.add_to_feed item, @company
 		end
