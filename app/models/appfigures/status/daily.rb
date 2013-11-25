@@ -11,9 +11,35 @@ class Appfigures::Status::Daily < FeedItem
 	end
 
   def self.build_daily_summary start_date, end_date, data, company
-  	
-  	#product = company.default_appfigures_account.provider_properties.first
-  	product = Appfigures::ProductService.new(company).find_or_create_product(review.product)
+  	apps = {}
+
+		data.each do |date, apps_data|
+			apps_data.keys.each do |app_id|
+				apps[app_id] = []
+			end
+		end
+	
+		data.each do |date, apps_data|
+			apps_data.each do |app_id, sales_data|
+				apps[app_id] << sales_data
+			end
+		end
+
+		Rails.logger.info apps.inspect
+
+		feed_items = []
+
+		apps.each do |key, value|
+			feed_items << self.build_app_summary(company, end_date, key, value)
+		end
+
+		return feed_items
+	end
+
+	def self.build_app_summary company, end_date, app_id, results
+
+  	product = Appfigures::ProductService.new(company).find_or_create_product(app_id)
+
 
 		item = Appfigures::Status::Daily.new(
 			external_id: "#{product.external_id}#{end_date.to_i}",
@@ -29,13 +55,12 @@ class Appfigures::Status::Daily < FeedItem
 
 
 
-		data.keys.each_with_index do |key, index|
-			result = data[key]["39771362377"]
-			Rails.logger.info key
-			downloads_data_set.push(details: {:x => key.to_i, :y => result["downloads"], :index => index})
-			revenue_data_set.push(details: 	{:x => key.to_i, 	:y => result["revenue"].to_f, :index => index})
-			returns_data_set.push(details: 	{:x => key.to_i, 	:y => result["returns"], :index => index})
-
+		results.each_with_index do |result, index|
+			date = Date.parse(result["date"])
+			Rails.logger.info date
+			downloads_data_set.push(details: {:x => index, :y => result["downloads"], :index => index})
+			revenue_data_set.push(details: 	{:x => index, 	:y => result["revenue"].to_f, :index => index})
+			returns_data_set.push(details: 	{:x => index, 	:y => result["returns"], :index => index})
 		end
 
 		downloads_data_set.total_count = downloads_data_set.details.last[:y]
@@ -45,5 +70,6 @@ class Appfigures::Status::Daily < FeedItem
 		max = downloads_data_set.total_count || revenue_data_set.total_count || returns_data_set.total_count
 			
 		return item
+
 	end
 end

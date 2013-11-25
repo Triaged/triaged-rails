@@ -10,9 +10,12 @@ class Appfigures::SalesService < Appfigures::BaseService
 
 		Rails.logger.info results
 
-		item = Appfigures::Status::Daily.build_daily_summary(start_date, end_date, results, @company)
+		items = Appfigures::Status::Daily.build_daily_summary(start_date, end_date, results, @company)
 
-		Common::FeedService.add_to_feed item, @company
+		items.each do |item|
+			Common::FeedService.add_to_feed item, @company
+		end
+		
 
 	end
 
