@@ -1,6 +1,6 @@
 class FeedItemSerializer < ActiveModel::Serializer
-	cached
-  delegate :cache_key, to: :object
+	# cached
+ #  delegate :cache_key, to: :object
 
 	
   attribute :provider_name, key: :provider

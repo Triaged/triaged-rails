@@ -29,4 +29,8 @@ class ProviderCredential
   	created_method = "#{provider.name}_credentials_created"
   	send(created_method) if self.respond_to? created_method
   end
+
+  def appfigures_credentials_created
+  	 Appfigures::SetupService.perform_async(company.id)
+  end
 end

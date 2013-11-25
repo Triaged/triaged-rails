@@ -9,6 +9,13 @@ GIT
       tzinfo (~> 0.3.37)
 
 GIT
+  remote: https://github.com/Triaged/omniauth-appfigures.git
+  revision: 94394764ca01df6c41607df5aca481ed7c564abc
+  specs:
+    omniauth-appfigures (0.0.1)
+      omniauth-oauth (~> 1.0)
+
+GIT
   remote: https://github.com/getsentry/raven-ruby.git
   revision: d6b40142bd667487e84a7738b2cd2b73b918b8d4
   specs:
@@ -203,6 +210,7 @@ GEM
     newrelic_rpm (3.6.9.171)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    oauth (0.4.7)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -218,6 +226,9 @@ GEM
     omniauth-google-oauth2 (0.2.1)
       omniauth (~> 1.0)
       omniauth-oauth2
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
@@ -369,6 +380,7 @@ DEPENDENCIES
   mongoid_slug
   newrelic_rpm (~> 3.6.9.171)
   omniauth
+  omniauth-appfigures!
   omniauth-github
   omniauth-google-oauth2
   omniauth-shopify-oauth2

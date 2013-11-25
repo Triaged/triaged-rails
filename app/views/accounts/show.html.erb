@@ -3,6 +3,7 @@
 <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
 <%= link_to "Sign in with Stripe", user_omniauth_authorize_path(:stripe_connect) %>
 <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
+<%= link_to "Sign in with AppFigures", user_omniauth_authorize_path(:appFigures) %>
 
 
 <%= image_tag @user.avatar.face.url, :width => 60 %>

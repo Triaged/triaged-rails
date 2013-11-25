@@ -13,7 +13,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to account_list_google_analytics_path
   end
 	
-
 	def github
 		params = request.env["omniauth.auth"]
 		result = current_user.save_omniauth("github", params['uid'], params['credentials']['token'])
@@ -24,6 +23,13 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	def stripe_connect
 		params = request.env["omniauth.auth"]
     result = current_user.save_omniauth("stripe", params['uid'], params['credentials']['token'])
+    redirect_to oauth_complete_path
+  end
+
+  def appFigures
+		params = request.env["omniauth.auth"]
+		Rails.logger.info params.inspect
+    result = current_user.save_omniauth("appfigures", params['uid'], params['credentials']['token'], params['credentials']['secret'])
     redirect_to oauth_complete_path
   end
 

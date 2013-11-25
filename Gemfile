@@ -56,6 +56,7 @@ gem 'omniauth-github'
 gem 'omniauth-stripe-connect'
 gem "omniauth-google-oauth2"
 gem 'omniauth-shopify-oauth2'
+gem "omniauth-appfigures", :git => "https://github.com/Triaged/omniauth-appfigures.git"
 gem "github_api"
 gem 'stripe'
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"

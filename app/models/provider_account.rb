@@ -14,7 +14,7 @@ class ProviderAccount
   delegate :account_label, :to => :provider
   delegate :property_label, :to => :provider
 
-	validates :external_id, :uniqueness => { :scope => :company }
+	validates :external_id, :uniqueness => { :scope => [:company, :provider] }
 
   def set_default_account!
 		self.update_attribute(:default, true)

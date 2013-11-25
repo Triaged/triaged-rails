@@ -13,4 +13,8 @@ module Serviceable
 		provider_accounts.where(provider: Provider.named("google_analytics"), default: true).first
 	end
 
+	def default_appfigures_account
+		provider_accounts.where(provider: Provider.named("appfigures"), default: true).first
+	end
+
 end

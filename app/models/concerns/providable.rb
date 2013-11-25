@@ -25,4 +25,8 @@ module Providable
   	provider_credentials.where(provider: Provider.named("google_analytics")).first
   end
 
+  def appfigures_provider_credentials
+  	provider_credentials.where(provider: Provider.named("appfigures")).first
+  end
+
 end
