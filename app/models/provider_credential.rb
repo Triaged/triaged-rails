@@ -31,6 +31,6 @@ class ProviderCredential
   end
 
   def appfigures_credentials_created
-  	 Appfigures::SetupService.perform_async(company.id)
+  	 Appfigures::SetupService.perform_async(company.id.to_s)
   end
 end

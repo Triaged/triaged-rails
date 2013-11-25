@@ -15,7 +15,7 @@ class Appfigures::SetupService
 
 	def build_account company, account
 		account = RecursiveOpenStruct.new(account)
-		company.provider_accounts.create(name: account.company, external_id: account.id)
+		company.provider_accounts.create(provider: Provider.named("appfigures"), name: account.company, external_id: account.id, default: true)
 	end
 
 	def headers(company)
