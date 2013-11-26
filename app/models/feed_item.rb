@@ -26,6 +26,7 @@ class FeedItem
 
 	def before_create
 		self.provider = Provider.find_by name: provider_name
+		Rails.logger.info self.provider
 		build_html_url
 	end
 
