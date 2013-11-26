@@ -12,7 +12,8 @@ class FeedItem
   field :timestamp, type: DateTime
   field :html_url, :type => String
 
-	validates :external_id, :uniqueness => { :scope => [:company, :provider] }
+  validates_uniqueness_of :external_id
+	#validates :external_id, :uniqueness => { :scope => [:company, :provider] }
 
 	before_create :before_create
 	after_save :after_save
