@@ -45,4 +45,25 @@ namespace :feed_items do
 
   end
 
+  task :clean_all_missing_user_feed_items => :environment do |t, args|
+  	Rails.logger.info "Rake Task: feed_items:clean_missing_user_feed_items to #{args[:company]} started"
+  	
+  	companies = Company.all
+  	companies.each do |company|
+	  	company.users.each do |user|
+	  		user.user_feed_items.each do |user_feed_item|
+	  			begin
+	  				company.feed_items.find(user_feed_item.feed_item_id)
+	  			rescue
+	  				Rails.logger.info "Not found: #{user_feed_item.feed_item_id}"
+	  				user_feed_item.delete
+	  			end
+	  		end
+	  	end
+	  end
+  	
+  	Rails.logger.info "Rake Task: feed_items:clean_missing_user_feed_items to #{args[:company]} complete"
+
+  end
+
 end
