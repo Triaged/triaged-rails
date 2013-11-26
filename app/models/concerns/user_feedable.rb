@@ -11,7 +11,8 @@ module UserFeedable
 		feed_items = feed_items.gt(updated_at: (Time.parse(min_updated_at) + 1)) if min_updated_at  #where(:updated_at.gt => min_updated_at) if min_updated_at
   	#feed_items = feed_items.where(:updated_at.lt => max_updated_at) if max_updated_at
 
-  	FeedItem.find(feed_items.collect {|item| item.feed_item_id }).desc(:created_at)
+  	# FeedItem.find(feed_items.collect {|item| item.feed_item_id }).desc(:created_at)
+  	company.feed_items.desc(:created_at).find(feed_items.collect {|item| item.feed_item_id })
   end
 
   def add_event_to_feed event
