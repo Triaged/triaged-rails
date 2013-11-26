@@ -2,9 +2,9 @@ module CompanyFeedable
 	extend ActiveSupport::Concern
 
 	included do 
-		#embeds_many :feed_items
-		#index "feed_items.id" => 1
-		has_many :feed_items
+		embeds_many :feed_items
+		index "feed_items.id" => 1
+		#has_many :feed_items
 	end
 
 	def add_event_to_feed event
