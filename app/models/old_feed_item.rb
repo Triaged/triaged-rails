@@ -1,9 +1,8 @@
-class FeedItem
+class OldFeedItem
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  belongs_to :company
-  belongs_to :provider
+  embedded_in :company
   embeds_many :messages, class_name: "Messages::Message", order: "id DESC"
   embeds_many :shares
 
@@ -12,7 +11,7 @@ class FeedItem
   field :timestamp, type: DateTime
   field :html_url, :type => String
 
-	validates :external_id, :uniqueness => { :scope => [:company, :provider] }
+	validates_uniqueness_of :external_id
 
 	before_create :before_create
 	after_save :after_save
@@ -25,7 +24,6 @@ class FeedItem
 	end
 
 	def before_create
-		self.provider = Provider.find_by name: provider_name
 		build_html_url
 	end
 
@@ -76,9 +74,9 @@ class FeedItem
 	# Subclass naming
 	#
 
-	# def provider
-	# 	Provider.find_by name: provider_name
-	# end
+	def provider
+		Provider.find_by name: provider_name
+	end
 
 	def provider_name
 		self.class.name.split("::").first.underscore
