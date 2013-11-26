@@ -1,0 +1,5 @@
+<% @mention.feed_item.messages.each do |message| %>
+	<%= message.author.name %>
+	<%= message.body %>
+	<hr />
+<% end %>

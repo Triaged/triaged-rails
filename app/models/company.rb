@@ -6,13 +6,13 @@ class Company
   include CompanyFeedable
 
   field :name, :type => String
-  field :token, :type => String
+  field :api_token, :type => String
   
 	has_many :users
 	embeds_many :connected_providers
 
-	index({ "feed_item.external_id" => 1 }, { unique: true, drop_dups: true })
-  index({ "feed_item.updated_at" => 1 })
+	# index({ "feed_item.external_id" => 1 }, { unique: true, drop_dups: true })
+ #  index({ "feed_item.updated_at" => 1 })
 
   before_create :set_company_token
   #after_create :add_default_feed_items
@@ -26,7 +26,7 @@ class Company
 	end
 
 	def teammates_of user
-		users.not_in(:id => user.id)
+		users.not_in(:id => user.id).where(validated_belongs_to_company: true)
 	end
 
 	def connect_provider provider
@@ -41,9 +41,8 @@ class Company
 		users.first.personal
 	end
 
-	
 	def set_company_token
-		self.token = Tokenizer.unique_token(10)
+		self.api_token = Tokenizer.unique_token(10)
   end
 
   def add_default_feed_items

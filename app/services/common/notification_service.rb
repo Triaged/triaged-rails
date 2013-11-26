@@ -31,7 +31,7 @@ module Common::NotificationService
 			  alert:             alert.truncate(253),
 			  sound: 						 'default',
 			  badge:             push_token.count,
-			  expiry:            Time.now + 60*60,     # optional; 0 is default, meaning the message is not stored
+			  expiry:            Time.now + 60*60*12,     # optional; 0 is default, meaning the message is not stored
 			  content_available: true,                  # optional; any truthy value will set 'content-available' to 1
 				custom: {
 					"external_id" => external_id.to_s

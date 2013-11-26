@@ -1,0 +1,6 @@
+<% @mentions.each do |mention| %>
+	<%= mention.feed_item.messages.last.author.name %>
+	<%= mention.feed_item.messages.last.body %>
+	<%= link_to 'More', @mention %>
+	<hr />
+<% end %>

@@ -9,6 +9,10 @@ class AccountSerializer < ActiveModel::Serializer
   	object.company.name
   end
 
+  def api_token
+  	object.company.api_token
+  end
+
   def avatar_url
   	object.avatar.face.url
   end
