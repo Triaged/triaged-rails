@@ -17,7 +17,7 @@ class AsyncWebhookService
 			event.timestamp = payload[:timestamp]
 
 			# ensure the company knows this provider is connected
-			Common::ProviderConnection.ensure_connected(company, event.provider)
+			Common::ProviderConnection.ensure_connected(company, event.provider_from_name)
 		
 			# add event to company feed
 			Common::FeedService.add_to_feed event, company
