@@ -16,6 +16,7 @@ class FeedItem
 	validates :external_id, :uniqueness => { :scope => [:company, :provider] }
 	index({ "external_id" => 1 })
  	index({ "updated_at" => 1 })
+ 	index({ company_id: 1, external_id: 1}, { unique: true })
 
 	before_create :before_create
 	after_save :after_save
