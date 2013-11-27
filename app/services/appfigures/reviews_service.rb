@@ -1,7 +1,7 @@
 class Appfigures::ReviewsService < Appfigures::BaseService
 
 	def fetch_reviews
-		result = RestClient.get "https://api.appfigures.com/v2/reviews?count=100&sort=date", headers #&start=#{Date.today}
+		result = RestClient.get "https://api.appfigures.com/v2/reviews?count=100&sort=date&start=#{Date.today}", headers #
 		result = JSON.parse(result)
 		build_reviews result["reviews"]
 	end
