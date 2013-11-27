@@ -17,7 +17,9 @@ class Company
   before_create :set_company_token
   #after_create :add_default_feed_items
 
-  slug :api_token
+  slug do |object|
+    Tokenizer.unique_token(10)
+  end
 
   def followers_of provider
 		users.select { |user| !user.ignores? provider }
@@ -40,7 +42,7 @@ class Company
 	end
 
 	def set_company_token
-		self.api_token = Tokenizer.unique_token(10)
+		self.api_token = self.slug
   end
 
   def add_default_feed_items
