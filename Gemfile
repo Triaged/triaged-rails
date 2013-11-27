@@ -82,6 +82,7 @@ gem 'twilio-ruby'
 gem 'asset_sync'
 gem "mailchimp"
 gem 'connection_pool'
+gem "braintree"
 
 group :development do
 	#gem 'heroku_san'

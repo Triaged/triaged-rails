@@ -17,9 +17,7 @@ class Company
   before_create :set_company_token
   #after_create :add_default_feed_items
 
-  slug do |object|
-    object.name.split(".").first.to_url
-  end
+  slug :api_token
 
   def followers_of provider
 		users.select { |user| !user.ignores? provider }
