@@ -9,7 +9,8 @@ class Github::Event::IssueOpened < Github::BaseEvent
   
   def self.build_from_webhook event
   	assigned_to_name = event.issue.respond_to?(:assignee) ?  event.issue.assignee.login : nil
-  	open = event.issue.state == "open" ? true : false
+		org_name = event.repository.respond_to?(:owner) ? event.repository.owner.login : event.repository.user.login
+		open = event.issue.state == "open" ? true : false
 
   	issue_opened_event = Github::Event::IssueOpened.new(
   		title: event.issue.title,
@@ -19,7 +20,7 @@ class Github::Event::IssueOpened < Github::BaseEvent
   		open: open,
   		html_url: event.issue.html_url,
   		external_id: event.number,
-  		org_name: event.repository.owner.login,
+  		org_name: org_name,
   		repo_name: event.repository.name
   	)
   	return issue_opened_event
