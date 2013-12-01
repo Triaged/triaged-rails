@@ -12,14 +12,14 @@ ActiveSupport::Notifications.subscribe "event.github.issues" do |name, start, fi
 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueClosed, payload) if payload[:event]["action"] == "closed"
 end
 
-ActiveSupport::Notifications.subscribe "event.github.issue_comment" do |name, start, finish, id, payload|
-	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueComment, payload)
-end
+# ActiveSupport::Notifications.subscribe "event.github.issue_comment" do |name, start, finish, id, payload|
+# 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::IssueComment, payload)
+# end
 
 ActiveSupport::Notifications.subscribe "event.github.pull_request" do |name, start, finish, id, payload|
 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::PullRequest, payload)
 end
 
-ActiveSupport::Notifications.subscribe "event.github.commit_comment" do |name, start, finish, id, payload|
-	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::CommitComment, payload)
-end
+# ActiveSupport::Notifications.subscribe "event.github.commit_comment" do |name, start, finish, id, payload|
+# 	Common::WebhookService.build_event_and_add_to_feeds(Github::Event::CommitComment, payload)
+# end

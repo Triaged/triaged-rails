@@ -11,6 +11,9 @@ class WelcomeController < ApplicationController
 	def faq
 	end
 
+	def terms
+	end
+
 	def capture_email
 	  Common::CaptureEmail.subscribe(params[:email_capture][:email])
 	  @response =  "Great, we will be in touch shortly!"

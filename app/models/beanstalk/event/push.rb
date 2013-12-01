@@ -17,7 +17,7 @@ class Beanstalk::Event::Push < FeedItem
   	)
   	
   	event.commits.each do |commit|
-			commit = commit.to_properties
+			commit = RecursiveOpenStruct.new(commit)
 			push.commits.build(
   			external_id: commit.id,
   			author: commit.author.name,
