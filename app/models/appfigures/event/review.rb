@@ -12,5 +12,9 @@ class Appfigures::Event::Review < FeedItem
 		company.default_appfigures_account.provider_properties.where(id: self.property_id).first
 	end
 
+	def should_push?
+		true
+	end
+
 
 end
