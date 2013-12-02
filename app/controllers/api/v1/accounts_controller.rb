@@ -25,6 +25,12 @@ class Api::V1::AccountsController < API::BaseController
   	VerifyEmail.new(@user.id).deliver!
   end
 
+  def reset_password
+  	@user = User.find_by_email(params[:email])
+		@user.send_reset_password_instructions if @user.present?
+		render :json => 'ok', :status => 200
+	end
+
   def welcome_complete
   	render :json => 'ok', :status => 200
   end

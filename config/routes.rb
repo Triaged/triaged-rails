@@ -19,6 +19,7 @@ TriageRails::Application.routes.draw do
     			post 'avatar'
     			post 'resend_verify_email'
     			post 'welcome_complete'
+    			post 'reset_password'
     		end
     		resources :push_tokens do
     			collection do
