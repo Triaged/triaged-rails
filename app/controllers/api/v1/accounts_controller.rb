@@ -23,6 +23,7 @@ class Api::V1::AccountsController < API::BaseController
 
   def resend_verify_email
   	VerifyEmail.new(@user.id).deliver!
+  	render :json => 'ok', :status => 200
   end
 
   def reset_password
