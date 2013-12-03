@@ -1,4 +1,4 @@
-class Services::CrashlyticsController < ServiceController
+class Services::CrashlyticController < ServiceController
 	respond_to :json
 
 	def webhook
