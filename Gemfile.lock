@@ -256,7 +256,6 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.1)
       rack
-    rack-ssl-enforcer (0.2.6)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0)
@@ -395,7 +394,6 @@ DEPENDENCIES
   passenger
   pusher
   quiet_assets
-  rack-ssl-enforcer
   rails (= 4.0.0)
   rails_12factor
   rb-fchange
