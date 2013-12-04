@@ -82,7 +82,6 @@ gem 'asset_sync'
 gem "mailchimp"
 gem 'connection_pool'
 gem "braintree"
-#gem 'rack-ssl-enforcer'
 
 
 group :development do
