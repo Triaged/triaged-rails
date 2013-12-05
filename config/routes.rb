@@ -1,8 +1,7 @@
 require 'sidekiq/web'
 TriageRails::Application.routes.draw do
   
-  
-	# To be removed
+  # To be removed
 	resource :account
 
 
@@ -105,6 +104,7 @@ TriageRails::Application.routes.draw do
 		end
 	end
 
+	mount Dashing::Engine, at: Dashing.config.engine_path
 	
 	#mount Resque::Server, :at => "/resque"
 	

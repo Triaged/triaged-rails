@@ -48,7 +48,7 @@ gem 'figaro'
 gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
 gem 'simple_form', '>= 3.0.0.rc'
 
-gem "passenger"
+
 gem 'pusher'
 gem 'recursive-open-struct'
 gem 'mongoid_slug'
@@ -83,6 +83,7 @@ gem "mailchimp"
 gem 'connection_pool'
 gem "braintree"
 gem "lograge"
+gem 'dashing-rails'
 
 
 group :development do
@@ -97,6 +98,7 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem 'puma'
 end
 
 group :test do
@@ -106,5 +108,6 @@ end
 
 group :production do
 	gem 'rails_12factor'
+	gem "passenger"
 end
 
