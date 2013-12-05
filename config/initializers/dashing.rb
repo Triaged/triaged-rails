@@ -5,10 +5,10 @@ Dashing.configure do |config|
 
   # Redis credentials.
   # See https://devcenter.heroku.com/articles/redistogo to configure redis for heroku.
-  uri = URI.parse(ENV["REDISTOGO_URL"])
-  config.redis_host     = uri.host
-  config.redis_port     = uri.port
-  config.redis_password = uri.password
+  # uri = URI.parse(ENV["REDISTOGO_URL"])
+  # config.redis_host     = uri.host
+  # config.redis_port     = uri.port
+  # config.redis_password = uri.password
 
   # Redis namespace when pushing new data.
   # config.redis_namespace = 'dashing_events'
