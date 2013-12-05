@@ -181,6 +181,10 @@ GEM
       json (>= 1.2.4)
       net-ssh (>= 2.0.22)
       net-ssh-gateway (>= 1.0.1)
+    lograge (0.2.2)
+      actionpack (>= 3)
+      activesupport (>= 3)
+      railties (>= 3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -376,6 +380,7 @@ DEPENDENCIES
   jquery-rails
   legato
   localtunnel
+  lograge
   mail
   mailchimp
   mandrill-api

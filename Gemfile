@@ -82,6 +82,7 @@ gem 'asset_sync'
 gem "mailchimp"
 gem 'connection_pool'
 gem "braintree"
+gem "lograge"
 
 
 group :development do

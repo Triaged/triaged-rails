@@ -18,7 +18,7 @@ class Company
   #after_create :add_default_feed_items
 
   slug do |object|
-    Tokenizer.unique_token(10)
+    Tokenizer.unique_token(6)
   end
 
   def followers_of provider

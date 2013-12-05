@@ -1,8 +1,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::Slug
-	include Deviseable
+  include Deviseable
 	include Providable
 	include UserFeedable
 	include Ignorable
@@ -13,6 +12,7 @@ class User
 	field :validated_belongs_to_company, type: Boolean, default: false
 	field :company_validation_token, type: String
 	field :personal, :type => Boolean, :default => false
+	field :name_token, :type => String
 
 	belongs_to :company
 	index({ company_id: 1 })
@@ -20,6 +20,9 @@ class User
 	embeds_many :push_tokens
   before_create :before_creation
   after_create :send_verify_email
+  include Mongoid::Slug
+
+  #slug  :name_token, :scope => :company
 
   def save_omniauth(provider, uid, access_token, refresh_token=nil)
 	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.named(provider), uid: uid)
@@ -35,10 +38,16 @@ class User
 		email.split("@").last
 	end
 
+	def first_name
+		name.split.first
+	end
+
   def before_creation
   	self.name = self.name.titleize
+	end
 
-  	email_address = Mail::Address.new(email)
+	def set_company
+		email_address = Mail::Address.new(email)
 
 		if is_email_personal(email_address)
 			self.company = Company.create_placeholder_company
@@ -66,7 +75,9 @@ class User
 		self.company.teammates_of self
 	end
 
-	slug :name, :scope => :company do |object|
+	slug :scope => :company do |object|
+		# Hack to ensure the company is set befure the slug is created
+		object.set_company
     object.name.delete(' ')
   end
 end
