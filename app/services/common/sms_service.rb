@@ -17,7 +17,7 @@ class Common::SmsService
 	end
 
 	def default_delivery_message
-		"Download the app here -"
+		"Download the Triage app here - http://bit.ly/18DNhux"
 	end
 
 end
