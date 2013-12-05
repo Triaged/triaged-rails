@@ -11,8 +11,6 @@ Provider.create(name: "github", webhooks_enabled: true, account_label: 'Organiza
 Provider.create(name: "google_analytics", webhooks_enabled: false, account_label: 'Account', property_label: 'Property')
 Provider.create(name: "new_relic", webhooks_enabled: true)
 Provider.create(name: "heroku", webhooks_enabled: true)
-#Provider.create(name: "pager_duty")
-#Provider.create(name: "shopify")
 Provider.create(name: "sentry", webhooks_enabled: true)
 Provider.create(name: "beanstalk", webhooks_enabled: true)
 Provider.create(name: "airbrake", webhooks_enabled: true)

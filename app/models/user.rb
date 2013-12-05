@@ -60,7 +60,7 @@ class User
 	end
 
 	def send_verify_email
-		VerifyEmail.perform_async(@user.id.to_s) unless self.personal
+		VerifyEmail.perform_async(self.id.to_s) unless self.personal
 	end
 
 	def is_email_personal email_address
