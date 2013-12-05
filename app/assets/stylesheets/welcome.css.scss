@@ -16,7 +16,7 @@ h3.colored {
 }
 
 #welcome-title {
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 #welcome-description {
@@ -28,19 +28,20 @@ h3.colored {
 }
 
 #welcome-cta {
-	margin-top: 80px;
+	margin-top: 100px;
 }
 
 #phone_number {
 	width: 330px;
 	border: none;
 	background-color:  #f3f3f8;
-	height: 30px;
-	font-size: 20px;
+	height: 34px;
+	font-size: 24px;
 	font-weight: lighter;
 	font-color: #ADB1BC;
 	outline: none;
-	padding-top:5px;
+	padding-top:10px;
+	margin-bottom:4px;
 }
 
 .text-btn {
@@ -57,6 +58,14 @@ h3.colored {
 #input-line {
 	padding-top: 5px;
 	vertical-align: top;
+	width: 100%;
+}
+
+
+
+#response {
+	float: left;
+	padding-top: 10px;
 }
 
 

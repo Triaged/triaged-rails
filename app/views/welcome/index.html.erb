@@ -1,34 +1,30 @@
-<div class="col-lg-12">
+<div class="col-lg-12 col-sm-12">
 	<div class="spacer"><br /><br /><br /></div>
 	<div class="row">
-		<div class="col-lg-5">
+		<div class="col-lg-5 col-sm-5">
 			<!-- Logo Row -->
 			<div class="row">
 				<h2><%= image_tag "logotriage.png" %><span id="logo">Triage</span</h2>
 			</div>
 			<!-- Title Row -->
 			<div class="row" id="welcome-title">
-				<h1>Everything that's<br /> happening at work, <br/ > in one place.</h1>
+				<h1>Everything that's happening at work, in one place.</h1>
 			</div>
 			<!-- Description Row -->
 			<div class="row" id="welcome-description">
-				<p> Triage monitors the services you already use at work,<br /> and pulls everything important into one mobile feed. </p>
+				<p style="padding-right:30px;"> Triage monitors the services you already use at work, and pulls everything important into one mobile feed. </p>
 				<%= image_tag "providers.png", :id => "providers" %>
 			</div>
 			<!-- CTA Row -->
 			<div class="row" id="welcome-cta">
-				<%= button_to 'DOWNLOAD TRIAGE', "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8", 	:class => "btn btn-custom big" %>
-	<!-- 	<%= simple_form_for :email_capture, :url => capture_email_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form', :class => 'form-inline'} do |f| %>
-					  <%= f.input_field :email, :id => "phone_number", :placeholder => 'Notify me of launch', :autocomplete => "off"%>
-  					<%= f.submit 'SEND', :class => "text-btn" %>
-				<% end %>
-				<%= image_tag("input-line.png", :id => "input-line") %>
-				<p id="response" style="visibility:hidden;">abc</p> -->
+				<%= button_to 'DOWNLOAD TRIAGE', "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8", 	:class => "btn btn-custom big visible-md visible-sm" %>
+	
+				<%= render "sms_app" %>
 			</div>
 			
 
 		</div>
-		<div class="col-lg-4 col-lg-offset-2">
+		<div class="col-lg-4 col-lg-offset-2 col-sm-4 col-sm-offset-2">
 			<%= image_tag "iphone.png", :width => "360" %>
 		</div>
 
