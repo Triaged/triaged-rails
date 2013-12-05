@@ -84,6 +84,7 @@ gem 'connection_pool'
 gem "braintree"
 gem "lograge"
 gem 'dashing-rails'
+gem 'yui-compressor'
 
 
 group :development do

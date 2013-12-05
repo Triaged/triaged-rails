@@ -104,7 +104,7 @@ TriageRails::Application.routes.draw do
 		end
 	end
 
-	#mount Dashing::Engine, at: Dashing.config.engine_path
+	mount Dashing::Engine, at: Dashing.config.engine_path
 	
 	#mount Resque::Server, :at => "/resque"
 	
