@@ -1,8 +1,9 @@
 class Welcome < MandrillClient
 	
-	def initialize(user_id)
+	def perform(user_id)
 		@user = User.find(user_id)
 		@recipient_email, @recipient_name = @user.email, @user.name
+		deliver!
 	end
 
 	def merge_vars

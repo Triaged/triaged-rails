@@ -22,7 +22,7 @@ class Api::V1::AccountsController < API::BaseController
   end
 
   def resend_verify_email
-  	VerifyEmail.new(@user.id).deliver!
+  	VerifyEmail.perform_async(@user.id.to_s)
   	render :json => 'ok', :status => 200
   end
 

@@ -1,10 +1,11 @@
 class WebhookInstructions < MandrillClient
 
 
-	def initialize(user_id, provider_id)
+	def perform(user_id, provider_id)
 		@user = User.find(user_id)
 		@provider = Provider.find(provider_id)
 		@recipient_email, @recipient_name = @user.email, @user.name
+		deliver!
 	end
 
 	def merge_vars
