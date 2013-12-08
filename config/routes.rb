@@ -91,6 +91,8 @@ TriageRails::Application.routes.draw do
 	get '/faq' => 'welcome#faq', as: 'faq'
 	get '/support' => 'welcome#support', as: 'support'
 	get '/terms' => 'welcome#terms', as: 'terms'
+	get '/press' => 'welcome#terms', as: 'terms'
+	get '/about' => 'welcome#terms', as: 'terms'
 	post '/deliver_sms' => 'welcome#deliver_sms', as: 'deliver_sms'
 	post '/capture_email' => 'welcome#capture_email', as: 'capture_email'
 	
