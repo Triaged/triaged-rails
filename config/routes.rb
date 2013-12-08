@@ -77,9 +77,7 @@ TriageRails::Application.routes.draw do
   	end
   end
 
-  
-	
-	get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
+  get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'
 	get '/services/oauth_failure/:error' => 'service#oauth_failure', as: 'oauth_failure'
 	# Verification link
@@ -91,8 +89,8 @@ TriageRails::Application.routes.draw do
 	get '/faq' => 'welcome#faq', as: 'faq'
 	get '/support' => 'welcome#support', as: 'support'
 	get '/terms' => 'welcome#terms', as: 'terms'
-	get '/press' => 'welcome#terms', as: 'press'
-	get '/about' => 'welcome#terms', as: 'about'
+	get '/press' => 'welcome#press', as: 'press'
+	get '/about' => 'welcome#about', as: 'about'
 	post '/deliver_sms' => 'welcome#deliver_sms', as: 'deliver_sms'
 	post '/capture_email' => 'welcome#capture_email', as: 'capture_email'
 	
