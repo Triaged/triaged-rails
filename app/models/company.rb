@@ -15,7 +15,7 @@ class Company
  #  index({ "feed_item.updated_at" => 1 })
 
   before_create :set_company_token
-  #after_create :add_default_feed_items
+  after_create :add_default_feed_items
 
   slug do |object|
     Tokenizer.unique_token(6)
