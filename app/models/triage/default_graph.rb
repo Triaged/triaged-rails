@@ -61,6 +61,13 @@ class Triage::DefaultGraph < FeedItem
   		body: "Some services generate a daily status update. We'll do the number crunching before you wake up, so you can check first thing in the morning."
   	)
 
+  	default_graph.messages << Messages::Message.new(
+  		uuid: "6",
+  		timestamp: DateTime.now,
+  		author: user,
+  		body: "Swipe to the right to connect your accounts."
+  	)
+
 		return default_graph
 
   end
