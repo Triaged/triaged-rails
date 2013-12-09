@@ -65,7 +65,7 @@ class Triage::DefaultGraph < FeedItem
   		uuid: "6",
   		timestamp: DateTime.now,
   		author: user,
-  		body: "Swipe to the right to connect your accounts."
+  		body: "Swipe from the left to connect your accounts."
   	)
 
 		return default_graph

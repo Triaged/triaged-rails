@@ -33,7 +33,7 @@ class Triage::DefaultChat < FeedItem
 			uuid: "3",
   		author: user,
   		timestamp: DateTime.now,
-  		body: "Swipe to the left to see your teammates."
+  		body: "Swipe from the right to see your teammates."
   	)
 		
 
