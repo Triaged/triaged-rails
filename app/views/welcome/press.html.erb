@@ -1,20 +1,72 @@
 <div class="col-lg-12">
-	<div class="spacer"></div>
+	<div class="spacer"><br /><br /><br /></div>
 	<div class="row">
-		<div class="col-lg-6 col-lg-offset-3">
+		<div class="col-lg-8 col-lg-offset-2 col-sm-8">
 			<!-- Logo Row -->
 			<div class="row">
 				<%= link_to('/') do %><h2><%= image_tag "logotriage.png" %><% end %><span id="logo">Triage</span</h2>
+			</div>
+			<!-- Entry Quote -->
+			<div class="spacer"><br /><br /><br /></div>
 
-			</div>
-			<!-- Title Row -->
+			<!-- Press Release Row -->
 			<div class="row" id="welcome-title">
-				<h1>Press</h1>
+				<h1>Press Release</h1>
 			</div>
-			<!-- Description Row -->
-			<div class="row" id="welcome-description">
-				<p> The Triage Team </p>
+			<div class="row" id="download-button">
+				<div class="col-lg-2 col-lg-offset-1">
+					<a class="btn btn-custom small" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 3.0.3']);" href="https://github.com/twbs/bootstrap/archive/v3.0.3.zip">Download Press Release</a>
+				</div>
 			</div>
+			<!-- Screenshots Row -->
+			<div class="row" id="welcome-title">
+				<h1>Screen Shots</h1>
+			</div>
+
+			<div class="row" id="press-images">
+				<div class="col-lg-2 col-lg-offset-1">
+					<%= image_tag "screenshots/1.png", :class => "press-picture" %>
+				</div>
+				<div class="col-lg-2">
+					<%= image_tag "screenshots/2.png", :class => "press-picture" %>
+				</div>
+				<div class="col-lg-2">
+					<%= image_tag "screenshots/3.png", :class => "press-picture" %>
+				</div>
+				<div class="col-lg-2">
+					<%= image_tag "screenshots/4.png", :class => "press-picture" %>
+				</div>
+				<div class="col-lg-2">
+					<%= image_tag "screenshots/5.png", :class => "press-picture" %>
+				</div>
+			</div>
+			<div class="row" id="download-button">
+				<div class="col-lg-2 col-lg-offset-1">
+					<a class="btn btn-custom small" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 3.0.3']);" href="https://github.com/twbs/bootstrap/archive/v3.0.3.zip">Download Screenshots</a>
+				</div>
+			</div>
+
+			<!-- Logos Row -->
+			<div class="row" id="welcome-title">
+				<h1>Logo</h1>
+			</div>
+
+			<div class="row" id="press-images">
+				<div class="col-lg-4 col-lg-offset-1">
+				<%= link_to('/') do %><h2><%= image_tag "logotriage.png" %><% end %><span id="logo"></span</h2>
+				</div>
+				<div class="col-lg-4">
+					<div class="row">
+				<%= link_to('/') do %><h2><%= image_tag "logotriage.png" %><% end %><span id="logo">Triage</span</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="download-button">
+				<div class="col-lg-2 col-lg-offset-1">
+					<a class="btn btn-custom small" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 3.0.3']);" href="https://github.com/twbs/bootstrap/archive/v3.0.3.zip">Download Logo's</a>
+				</div>
+			</div>
+
 
 		</div>
 	</div>
