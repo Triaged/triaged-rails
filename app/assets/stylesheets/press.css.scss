@@ -1,0 +1,29 @@
+.press-picture {
+	width: 110px;
+	display: block;
+	margin: 0 auto;
+}
+
+#about-name {
+	margin-top: 10px;
+	text-align: center;
+}
+#press-images {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+#about-title {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+#download-button {
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+#download-button .btn {
+	display: inline;
+}
+
+#download-button .btn-custom.small {
+    font-size: 16px;
+}
