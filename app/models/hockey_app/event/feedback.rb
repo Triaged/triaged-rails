@@ -8,7 +8,7 @@ class HockeyApp::Event::Feedback
   field :text, :type => String
   
 	def self.build_from_webhook data
-		event = Sentry::Event::Exception.new(
+		event = HockeyApp::Event::Feedback.new(
 			external_id: data.public_identifier,
 			title: data.title.split("for ").last,
 			timestamp: data.sent_at,

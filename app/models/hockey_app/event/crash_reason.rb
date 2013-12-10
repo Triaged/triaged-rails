@@ -9,7 +9,7 @@ class HockeyApp::Event::CrashReason  < HockeyApp::BaseEvent
   field :line, :type => String
   
 	def self.build_from_webhook data
-		event = Sentry::Event::Exception.new(
+		event = HockeyApp::Event::CrashReason.new(
 			external_id: data.public_identifier,
 			title: data.title.split("for ").last,
 			timestamp: data.sent_at,
