@@ -6,10 +6,11 @@ class Github::Event::IssueOpenedSerializer < TextItemSerializer
 	end
 
 	def action
-		"@todo"
+		object.title
 	end
 
 	def body
-		"body" #[object.title, object.body]
+		body = object.body
+		body += "\nAssigned to#{object.assigned_to_name}" if object.assigned_to_name
 	end
 end
