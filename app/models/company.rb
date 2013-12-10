@@ -24,7 +24,7 @@ class Company
   def followers_of provider
 		users.select do |user| 
 			Rails.logger.info user.email
-			Rails.logg.info !user.ignores? provider
+			Rails.logger.info !user.ignores? provider
 			!user.ignores? provider 
 		end
 	end
