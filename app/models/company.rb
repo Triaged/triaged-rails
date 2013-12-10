@@ -15,7 +15,7 @@ class Company
  #  index({ "feed_item.updated_at" => 1 })
 
   before_create :set_company_token
-  after_create :add_default_feed_items
+  
 
   slug do |object|
     Tokenizer.unique_token(6)
@@ -23,8 +23,6 @@ class Company
 
   def followers_of provider
 		users.select do |user| 
-			Rails.logger.info user.email
-			Rails.logger.info(!user.ignores?(provider))
 			!user.ignores? provider 
 		end
 	end

@@ -61,6 +61,7 @@ class User
 
 	def send_verify_email
 		VerifyEmail.perform_async(self.id.to_s) unless self.personal
+		self.company.add_default_feed_items
 	end
 
 	def is_email_personal email_address
