@@ -11,7 +11,6 @@ module CompanyFeedable
   	feed_items << event
   	Rails.logger.info "added #{event.inspect}"
   	Rails.logger.info event.errors.inspect
-  	Rails.logger.info "Persisted: #{event.persisted?}"
 		# This will fail if duplicate item exists in company feed
   	push_event_to_followers event if  event.persisted?
   	event

@@ -14,6 +14,14 @@ class Triage::DefaultWelcome < FeedItem
   		body: "We're super excited to have you onboard!\n\nOnce you connect a few services, you'll start seeing activity here. We can't wait."
   	)
 
+  	user = User.find_by email: "team@triaged.co"
+  	default_welcome.messages << Messages::Message.new(
+  		uuid: "6",
+  		timestamp: DateTime.now,
+  		author: user,
+  		body: "Swipe from the left to connect your accounts."
+  	)
+
   	return default_welcome
   end
 end
