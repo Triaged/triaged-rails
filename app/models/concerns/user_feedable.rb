@@ -16,6 +16,7 @@ module UserFeedable
   end
 
   def add_event_to_feed event
+  	logger.info "Adding event to user feed"
   	unless ignore_event(event)
 			user_feed_items.create(feed_item: event)
 	  	Common::NotificationService.push_feed_item(self, event) if should_push(event)
