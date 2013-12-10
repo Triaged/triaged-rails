@@ -19,7 +19,7 @@ module CompanyFeedable
 
   def push_event_to_followers event
   	provider = event.provider
-  	Rails.logger.info provider
+  	Rails.logger.info provider.name
   	# Push event to all employees
   	followers_of(provider).each do |follower| 
   		Rails.logger.info "Adding to #{follower.email} user feed"

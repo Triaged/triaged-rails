@@ -22,7 +22,11 @@ class Company
   end
 
   def followers_of provider
-		users.select { |user| !user.ignores? provider }
+		users.select do |user| 
+			Rails.logger.info user.email
+			Rails.logg.info !user.ignores? provider
+			!user.ignores? provider 
+		end
 	end
 
 	def teammates_of user
