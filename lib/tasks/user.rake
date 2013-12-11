@@ -18,10 +18,7 @@ namespace :user do
   	user.provider_credentials.destroy
   	user.destroy
 
-
-		Common::NotificationService.push_test user, args[:alert]
-  	
-  	Rails.logger.info "Rake Task: user:delete to #{args[:email]} complete"
+		Rails.logger.info "Rake Task: user:delete to #{args[:email]} complete"
   end
 
 end
