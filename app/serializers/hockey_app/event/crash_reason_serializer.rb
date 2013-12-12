@@ -10,7 +10,7 @@ class HockeyApp::Event::CrashReasonSerializer < TextItemSerializer
 	end
 
 	def body
-		"#{object.reason}\n\n#{object.class_name} in #{object.method} at #{object.line}"
+		"#{object.reason}\n\n#{object.class_name} in #{object.method_name} at #{object.line}"
 	end
 
 end
