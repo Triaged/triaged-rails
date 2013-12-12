@@ -47,6 +47,7 @@ module Ignorable
   # => @bonnie.follows?(@clyde)
   # => true
   def ignores?(model)
+  	return false unless model
   	0 < self.ignored_objects.where(ff_id: model.id).limit(1).count
   end
 
