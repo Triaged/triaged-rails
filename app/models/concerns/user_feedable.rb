@@ -7,7 +7,7 @@ module UserFeedable
 	end
 
 	def feed(min_updated_at = nil, max_updated_at = nil)
-		feed_items = user_feed_items.only(:feed_item_id)
+		feed_items = user_feed_items.only(:feed_item_id).desc(:feed_item_id)
 		feed_items = feed_items.gt(updated_at: (Time.parse(min_updated_at) + 1)) if min_updated_at  #where(:updated_at.gt => min_updated_at) if min_updated_at
   	#feed_items = feed_items.where(:updated_at.lt => max_updated_at) if max_updated_at
   	feed_items = feed_items.limit(100) unless min_updated_at
