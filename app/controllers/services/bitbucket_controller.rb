@@ -1,1 +1,1 @@
-class Services::BitbucketController < ServiceController end
+#class Services::BitbucketController < ServiceController end
