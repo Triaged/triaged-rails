@@ -12,6 +12,7 @@ namespace :google_analytics do
   			GoogleAnalytics::MetricsService.new(GoogleAnalytics::LegatoMetrics, company.id).daily_fetch_and_add_to_feed
   		rescue
   			Rails.logger.info "google_analytics:daily_status failed #{company.id}"
+  		end
   	end
   	Rails.logger.info "Rake Task: google_analytics:daily_status complete"
   end
