@@ -5,7 +5,7 @@ class Github::Event::IssueOpened < Github::BaseEvent
 	field :open, type: Boolean, default: true
   field :opened_by_name, type: String
   field :assigned_to_name, type: String
-  field :body, type: String
+  field :body_text, type: String
   
   def self.build_from_webhook event
   	assigned_to_name = event.issue.respond_to?(:assignee) && event.issue.assignee ?  event.issue.assignee.login : nil
@@ -16,7 +16,7 @@ class Github::Event::IssueOpened < Github::BaseEvent
   		title: event.issue.title,
   		opened_by_name: event.issue.user.login,
   		assigned_to_name: assigned_to_name,
-  		body: event.issue.body,
+  		body_text: event.issue.body,
   		open: open,
   		html_url: event.issue.html_url,
   		external_id: event.number,
