@@ -27,7 +27,7 @@ class Crashlytics::Event::Issue < FeedItem
 	end
 
 	def should_push?
-		false
+		true
 	end
 
 	def push_message
