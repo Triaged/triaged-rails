@@ -1,1 +1,1 @@
-class Bitbucket::WebhookService < Service end
+# class Bitbucket::WebhookService < Service end
