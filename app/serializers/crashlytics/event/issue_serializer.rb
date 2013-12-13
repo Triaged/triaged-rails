@@ -10,6 +10,6 @@ class Crashlytics::Event::IssueSerializer < TextItemSerializer
 	end
 
 	def body
-		"#{object.method.truncate(320)}\n\n#{object.impacted_devices_count} Impacted Devices"
+		"#{object.method_name.truncate(320)}\n\n#{object.impacted_devices_count} Impacted Devices"
 	end
 end

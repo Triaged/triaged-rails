@@ -5,7 +5,7 @@ class Crashlytics::Event::Issue < FeedItem
   field :bundle_identifer, :type => String
   field :platform, :type => String
   field :title, :type => String
-  field :method, :type => String
+  field :method_name, :type => String
   field :impact_level, :type => Integer
   field :crashes_count, :type => Integer
   field :impacted_devices_count, :type => Integer
@@ -18,7 +18,7 @@ class Crashlytics::Event::Issue < FeedItem
 			platform: data.app.platform,
 			external_id: data.display_id,
 			title: data.title,
-			method: data.method,
+			method_name: data["method"],
 			impact_level: data.impact_level,
 			crashes_count: data.crashes_count,
 			impacted_devices_count: data.impacted_devices_count,
