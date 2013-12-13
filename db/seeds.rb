@@ -8,6 +8,7 @@
 
 Provider.create(name: "stripe", webhooks_enabled: false) # This is odd, because stripe does use a webhook, but because of setup, we turn off.
 Provider.create(name: "github", webhooks_enabled: true, account_label: 'Organization', property_label: 'Repo')
+Provider.create(name: "bitbucket", webhooks_enabled: true, account_label: 'Organization', property_label: 'Repo')
 Provider.create(name: "google_analytics", webhooks_enabled: false, account_label: 'Account', property_label: 'Property')
 Provider.create(name: "new_relic", webhooks_enabled: true)
 Provider.create(name: "heroku", webhooks_enabled: true)

@@ -236,6 +236,7 @@ Devise.setup do |config|
   config.omniauth :google_oauth2, ENV['GA_CLIENT_ID'], ENV['GA_SECRET'], prompt: 'select_account consent', :scope => 'https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/userinfo.profile, https://www.googleapis.com/auth/analytics.readonly'
   config.omniauth :shopify, ENV['SHOPIFY_CLIENT_ID'], ENV['SHOPIFY_SECRET']
   config.omniauth :appFigures, ENV['APPFIGURES_CLIENT_ID'], ENV['APPFIGURES_SECRET_ID']
+  config.omniauth :bitbucket, ENV['BITBUCKET_KEY'], ENV['BITBUCKET_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

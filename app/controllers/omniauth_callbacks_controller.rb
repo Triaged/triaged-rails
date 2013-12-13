@@ -20,6 +20,12 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to org_list_github_index_path
   end
 
+  def bitbucket
+		params = request.env["omniauth.auth"]
+		result = current_user.save_omniauth("bitbucket", params['uid'], params['credentials']['token'], params['credentials']['secret'])
+		redirect_to oauth_complete_path
+  end
+
 	def stripe_connect
 		params = request.env["omniauth.auth"]
     result = current_user.save_omniauth("stripe", params['uid'], params['credentials']['token'])
@@ -28,8 +34,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def appFigures
 		params = request.env["omniauth.auth"]
-		Rails.logger.info params.inspect
-    result = current_user.save_omniauth("appfigures", params['uid'], params['credentials']['token'], params['credentials']['secret'])
+		result = current_user.save_omniauth("appfigures", params['uid'], params['credentials']['token'], params['credentials']['secret'])
     redirect_to oauth_complete_path
   end
 

@@ -1,0 +1,1 @@
+class Services::BitbucketController < ServiceController end

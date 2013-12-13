@@ -21,6 +21,10 @@ module Providable
   	provider_credentials.where(provider: Provider.named("github")).first
   end
 
+  def bitbucket_provider_credentials
+  	provider_credentials.where(provider: Provider.named("bitbucket")).first
+  end
+
   def google_analytics_provider_credentials
   	provider_credentials.where(provider: Provider.named("google_analytics")).first
   end
