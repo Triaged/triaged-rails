@@ -12,7 +12,7 @@ class Github::Event::IssueOpenedSerializer < TextItemSerializer
 	def body
 		Rails.logger.info "BODY----"
 		Rails.logger.info object.body_text.nil?
-		body = object.body_text.nil? ? "\n" : object.body_text 
+		body = object.body_text.nil? ? "---" : object.body_text 
 		Rails.logger.info body
 		body += "\n\nAssigned to #{object.assigned_to_name}" if object.assigned_to_name
 	end
