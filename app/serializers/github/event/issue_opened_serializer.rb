@@ -11,7 +11,7 @@ class Github::Event::IssueOpenedSerializer < TextItemSerializer
 
 	def body
 		body = object.body_text.nil? ? " " : object.body_text 
-		body += "\n\n" if (object.body_text && object.assigned_to_name)
+		body += "\n\n" if (!object.body_text.nil? && object.assigned_to_name)
 		body += "Assigned to #{object.assigned_to_name}" if object.assigned_to_name
 		return body
 	end
