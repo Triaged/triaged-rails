@@ -33,6 +33,8 @@ class Appfigures::ProductService < Appfigures::BaseService
 		
 		@company.default_appfigures_account.provider_properties << product
 
+		Rails.logger.info product.inspect
+
 		return product
 	end
 
