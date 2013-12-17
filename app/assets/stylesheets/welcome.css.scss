@@ -9,6 +9,7 @@ h3.colored {
 #logo {
 	vertical-align: bottom;
 	padding-left: 25px;
+	font-weight: 100;
 }
 
 #splash-img {
@@ -29,6 +30,14 @@ h3.colored {
     font-weight: 100;
 }
 
+.welcome h2 {
+	font-size: 50px;
+}
+
+.welcome p {
+	font-size: 24px;
+}
+
 #welcome-description {
 	margin-top: 20px;
 }
@@ -40,8 +49,13 @@ h3.colored {
 }
 
 #welcome-icons > p {
-	margin-top: 20px;
-	font-size: 18px;
+	margin-top: 10px;
+}
+
+#welcome-icons > p > a {
+	
+	font-size: 20px;
+	color: #ffffff;
 }
 
 #providers {
@@ -91,7 +105,7 @@ h3.colored {
 
 #footer-inner {
 	text-align:center;
-	margin: 100px 0 150px 0;
+	margin: 100px 0 50px 0;
 }
 
 #footer-list {
@@ -108,7 +122,7 @@ h3.colored {
 }
 
 #footer-list li a {
-	font-size: 16px;
+	font-size: 20px;
 	color: #ffffff;
 }
 
