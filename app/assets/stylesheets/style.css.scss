@@ -43,6 +43,10 @@ body {
   border-top: 1px solid #ffffff;
 }
 
+.margin-bottom {
+  margin-bottom: 50px;
+}
+
 h1 {
 	font-size: 72px;
 	line-height: 72px;
@@ -54,14 +58,14 @@ h1 {
 h2 {
 	font-weight: 100;
 	color: #ffffff;
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 46px;
+  line-height: 50px;
   text-align: center;
 }
 
 p {
-	font-size: 24px;
-	line-height: 40px;
+	font-size: 20px;
+	line-height: 36px;
 	color: #ffffff;
   text-align: center;
   font-weight: 300;
@@ -73,8 +77,13 @@ p {
 }
 
 .right {
-  text-align: left;
-  padding-right: 15px;
+  text-align: right;
+  padding: 0 15px 0 15px;
+}
+
+.center {
+  margin: 0 none;
+  text-align: center;
 }
 
 .btn-custom {
