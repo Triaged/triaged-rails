@@ -17,7 +17,7 @@ class Appfigures::ProductService < Appfigures::BaseService
 	def create_product result
 		new_product = RecursiveOpenStruct.new(result)
 
-		product = @company.default_appfigures_account.provider_properties << Appfigures::Product.new(
+		product = Appfigures::Product.new(
 			name: new_product.name,
 			external_id:  new_product.id,
 			developer: new_product.developer,
@@ -31,6 +31,8 @@ class Appfigures::ProductService < Appfigures::BaseService
 			type: new_product.type
 			)
 		
+		@company.default_appfigures_account.provider_properties << product
+
 		return product
 	end
 
