@@ -8,7 +8,7 @@ h3.colored {
 
 #logo {
 	vertical-align: bottom;
-	font-weight: lighter;
+	padding-left: 25px;
 }
 
 #iphone {
@@ -16,11 +16,28 @@ h3.colored {
 }
 
 #welcome-title {
-	margin-top: 20px;
+	margin-top: 84px;
+	width: 468px;
+}
+#welcome-title h1 {
+	font-size: 56px;
+    line-height: 72px;
+    font-weight: 100;
 }
 
 #welcome-description {
 	margin-top: 20px;
+}
+
+#welcome-icons {
+	width: 16.66%;
+	float: left;
+	text-align: center;
+}
+
+#welcome-icons > p {
+	margin-top: 20px;
+	font-size: 18px;
 }
 
 #providers {
@@ -34,11 +51,11 @@ h3.colored {
 #phone_number {
 	width: 330px;
 	border: none;
-	background-color:  #f3f3f8;
+	background-color: #7691CD;
 	height: 34px;
 	font-size: 24px;
 	font-weight: lighter;
-	font-color: #ADB1BC;
+	color: #ffffff;
 	outline: none;
 	padding-top:10px;
 	margin-bottom:4px;
@@ -68,9 +85,13 @@ h3.colored {
 	padding-top: 10px;
 }
 
-
+#footer-inner {
+	text-align:center;
+	margin: 100px 0 150px 0;
+}
 
 #footer-list {
+	margin: 0 auto;
 	-webkit-padding-start: 0px;
 	-moz-padding-start: 0px;
 }
@@ -84,7 +105,12 @@ h3.colored {
 
 #footer-list li a {
 	font-size: 16px;
-	color: #808695;
+	color: #ffffff;
+}
+
+#ft-img {
+	width: 200px;
+ 	margin: 0 auto;
 }
 
 @media (max-width: 767px) {

@@ -1,7 +1,7 @@
 html,
 body {
   height: 100%;
-  background-color: #f3f3f8;
+  background-color: #7691CD;
   -webkit-font-smoothing:antialiased;
 }
 
@@ -18,35 +18,71 @@ body {
 /* Set the fixed height of the footer here */
 #footer {
   height: 60px;
+  margin-top: 150px; 
+  padding-bottom: 150px;
 }
 
+/* Column spacing */
+.spacing-lg {
+    margin-top: 200px;
+}
+
+.spacing-m {
+    margin-top: 100px;
+}
+
+.spacing-sm {
+    margin-top: 50px;
+}
+
+.spacing-xsm {
+    margin-top: 25px;
+}
+
+.border-top {
+  border-top: 1px solid #ffffff;
+}
 
 h1 {
-	font-size: 32px;
-	line-height: 46px;
-	color: #40454f;
+	font-size: 72px;
+	line-height: 72px;
+	color: #ffffff;
 	font-weight: normal;
+  font-size: 100;
 }
 
 h2 {
-	font-size: 36px;
-	color: #7993D4;
+	font-weight: 100;
+	color: #ffffff;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
 }
 
 p {
-	font-size: 18px;
-	line-height: 24px;
-	color: #808695;
+	font-size: 24px;
+	line-height: 40px;
+	color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+}
+
+.left {
+  text-align: left;
+  padding: 0 15px 0 15px;
+}
+
+.right {
+  text-align: left;
+  padding-right: 15px;
 }
 
 .btn-custom {
-  background-color: #7993D4;
-  border-color: #7993D4;
+  background-color: #ffffff;
+  color: #40454F;
   width: 90%;
   font-size: 20px;
-  color: #ffffff;
   font-family: "proxima-nova";
-  font-weight: lighter;
 }
 .btn-custom.big {
 	width: 380px;
