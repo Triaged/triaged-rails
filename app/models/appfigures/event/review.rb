@@ -16,5 +16,9 @@ class Appfigures::Event::Review < FeedItem
 		true
 	end
 
+	def ignorable_objects
+		[app]
+	end
+
 
 end

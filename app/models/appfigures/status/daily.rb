@@ -65,4 +65,8 @@ class Appfigures::Status::Daily < FeedItem
 		return item
 
 	end
+
+	def ignorable_objects
+		[app]
+	end
 end
