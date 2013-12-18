@@ -7,6 +7,7 @@ h3.colored {
 }
 
 #logo {
+	vertical-align: bottom;
 	padding-left: 25px;
 	font-weight: 100;
 }
@@ -55,15 +56,10 @@ h3.colored {
 
 #welcome-icons > p {
 	margin-top: 10px;
-	line-height: 24px;
-
-
 }
-
 
 #welcome-icons > p > a {
 	font-size: 20px;
-	color: #CCD8EC;
 	line-height: 24px;;
 }
 
@@ -140,18 +136,36 @@ h3.colored {
 
 @media (max-width: 767px) {
 
-	#welcome-title  { 
-		width: 100%;
+	h1 {
+		font-size: 30px;
+		line-height: 40px;
 	}
-
-	#welcome-icons {
-		width: 50.0%;
-		float: left;
+	h2 {
 		text-align: center;
 	}
 
-	#welcome-icons > p {
-		margin-bottom: 30px;
+	#welcome-title {
+		margin-top: 30px;
+	}
+
+	#welcome-cta {
+		margin-top: 40px;
+	}
+
+	#providers {
+		margin-left: 0px;
+	}
+
+	#iphone {
+		width: 100%;
+	}
+
+	#phone_number {
+		width: 100%;
+	}
+
+	#input-line {
+		width: 100%;
 	}
 	
 
