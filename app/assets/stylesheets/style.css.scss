@@ -48,7 +48,7 @@ body {
 }
 
 h1 {
-	font-size: 72px;
+	font-size: 50px;
 	line-height: 72px;
 	color: #ffffff;
 	font-weight: normal;
@@ -59,7 +59,7 @@ h2 {
 	font-weight: 100;
 	color: #ffffff;
   font-size: 46px;
-  line-height: 50px;
+  line-height: 60px;
   text-align: center;
 }
 
@@ -85,13 +85,23 @@ p {
   margin: 0 none;
   text-align: center;
 }
-
+#hero-btn {
+  width: 70%;
+  float: left;
+  min-height: 1px;
+  padding-right: 15px;
+  position: relative;
+}
 .btn-custom {
   background-color: #ffffff;
   color: #40454F;
-  width: 90%;
+  width: 80%;
   font-size: 20px;
+  padding: 25px 10px 25px 10px;
   font-family: "proxima-nova";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 .btn-custom.big {
 	width: 380px;
@@ -100,15 +110,15 @@ p {
 
 .btn-custom.small {
 	 font-size: 20px;
+   text-transform: uppercase;
 }
 
 .btn-custom:hover,
 .btn-custom:focus,
 .btn-custom:active,
 .btn-custom.active {
-  background-color: #6683ce;
-  border-color: #5274c8;
-  color: #ffffff;
+ color: #000000;
+ text-decoration: underline;
 }
 .btn-custom.disabled:hover,
 .btn-custom.disabled:focus,
