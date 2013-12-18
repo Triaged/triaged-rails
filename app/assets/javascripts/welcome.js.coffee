@@ -7,3 +7,30 @@ $ ->
   	format: "local"
   	country: "US"
 	$("#phone_number").focus()
+
+	$("#download-cta").click ->
+		console.log "click"
+		$("html, body").css(overflow: "hidden", height: "100%")
+		$("body").addClass("make-way")
+		$("#loaded-content").addClass("loaded")
+		$("#downloading").fadeIn(800)
+
+	hide_overlay = () ->
+		console.log "click"
+		$("html, body").css(overflow: "auto", height: "auto")
+		$("body").removeClass("make-way")
+		$("#loaded-content").removeClass("loaded")
+		$("#downloading").hide()
+
+
+
+	$(document).mouseup (e) ->
+	  container = $(".download-region")
+	  console.log("click")
+	  # if the target of the click isn't the container...
+	  # ... nor a descendant of the container
+	  hide_overlay()  if not container.is(e.target) and container.has(e.target).length is 0
+
+
+	
+
