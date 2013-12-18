@@ -189,16 +189,16 @@ body.make-way #loaded-content.loaded {
 	transform-origin: top center;
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
 	opacity: .8;
-	-webkit-filter: blur(10px);
-	filter: blur(10px);
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
 	
 }
 
 #loaded-content.loaded {
-	-webkit-transition-duration: 1s,1s,1s;
-	-moz-transition-duration: 1s,1s,1s;
-	-o-transition-duration: 1s,1s,1s;
-	transition-duration: 1s,1s,1s;
+	-webkit-transition-duration: .8s,.8s,.8s;
+	-moz-transition-duration: .8s,.8s,.8s;
+	-o-transition-duration: .8s,.8s,.8s;
+	transition-duration: .8s,.8s,.8s;
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 	opacity: 1;
 	-webkit-transition: 1s ease-in-out;
@@ -229,7 +229,7 @@ body.make-way #loaded-content.loaded {
 #downloading {
 	position: absolute;
 	background: #000000 !important;
-	opacity: .8;
+	opacity: .9;
 	top: 0;
 	height:100%;
   height: auto !important;
