@@ -132,37 +132,13 @@ h3.colored {
 }
 
 @media (max-width: 767px) {
-	h1 {
-		font-size: 30px;
-		line-height: 40px;
-	}
-	h2 {
+
+	#welcome-icons {
+		width: 50.0%;
+		float: left;
 		text-align: center;
 	}
-
-	#welcome-title {
-		margin-top: 30px;
-	}
-
-	#welcome-cta {
-		margin-top: 40px;
-	}
-
-	#providers {
-		margin-left: 0px;
-	}
-
-	#iphone {
-		width: 100%;
-	}
-
-	#phone_number {
-		width: 100%;
-	}
-
-	#input-line {
-		width: 100%;
-	}
+	
 
 	#footer-list li
 {

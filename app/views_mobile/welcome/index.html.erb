@@ -1,31 +1,151 @@
-<div class="col-xs-12">
+<div class="col-lg-12 col-sm-12 welcome">
+	<div class="spacer"><br /><br /><br /></div>
+	
+	<div class="row">
+		<div class="col-lg-6">
 			<!-- Logo Row -->
-			<br /><br />
-			<div class="row center-block">
-				<%= image_tag "logo-triage-lg.png", :class => "center-block" %><h2><span id="logo" class="text-center">Triage</span</h2>
+			<div class="row">
+				<h1><%= image_tag "logo-triage-lg.png" %><span id="logo">Triage</span</h1>
 			</div>
 			<!-- Title Row -->
-			<div class="row center-block" id="welcome-title">
-				<h1 class="text-center">Everything that's<br /> happening at work, <br/ > in one place.</h1>
-			</div>
-			<!-- Description Row -->
-			<div class="row center-block" id="welcome-description">
-				<p class="text-center"> Triage monitors the services you already use at work,<br /> and pulls everything important into one mobile feed. </p> <br />
-				<%= image_tag "providers-mobile1.png", :id => "providers", :class => "center-block" %> <br />
-				<%= image_tag "providers-mobile2.png", :id => "providers", :class => "center-block" %>
+			<div class="row" id="welcome-title">
+				<h1>Unite your work tools, simplify your life.</h1>
 			</div>
 			<!-- CTA Row -->
-			<div class="row center-block" id="welcome-cta">
-				<%= button_to 'DOWNLOAD TRIAGE', "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8", 	:class => "btn btn-custom" %>
+			<div class="row" id="welcome-cta">
+				<%= button_to 'DOWNLOAD TRIAGE', "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8", 	:class => "btn btn-custom big visible-md visible-sm" %>
+			<!-- Phone Image -->
+				<%= render "sms_app" %>
 			</div>
-			
-
 		</div>
-		<div class="row center-block">
-			<br /> <br />
-			<%= image_tag "iphone1.png", :id => "iphone" %>
+		<div class="col-lg-4 col-lg-offset-2">
+			<%= image_tag "iphone1.png"%>
+		</div>
+	</div>
+
+<!-- Services Row -->
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 spacing-lg">
+			<!-- Headline Row -->
+			<div class="row">
+				<h2>Everything that's happening at work</h2>
+				<p class="spacing-xsm">Triage monitors the services you already use at work and pulls everything important into one mobile feed. Explore the tools we integrate into Triage below. </p>
+			</div>
+		</div>
+		<div class="col-lg-12 spacing-m">
+			<!-- Icons Row 1 -->
+			<div class="row center-block">
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Github-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'GitHub', 'http://github.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/GA-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Google Analytics', 'http://google.com/analytics', :target => "_blank"  %></p>
+				</div>
+			</div>
+			<div class="row center-block">
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/NewRelic-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'New Relic', 'http://newrelic.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Stripe-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Stripe', 'http://stripe.com', :target => "_blank"  %></p>
+				</div>
+			</div>
+			<div class="row center-block">
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Heroku-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Heroku', 'http://heroku.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Sentry-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Sentry', 'http://getsentry.com', :target => "_blank"  %></p>
+				</div>
+			</div>
+			<div class="row center-block">
+			<!-- Icons Row 2 -->
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/AppFigures-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'AppFigures', 'http://appfigures.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Crashlytics-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Crashlytics', 'http://crashlytics.com', :target => "_blank"  %></p>
+				</div>
+			</div>
+			<div class="row center-block">
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/HockeyApp-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'HockeyApp', 'http://hockeyapp.net', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Airbrake-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Airbrake', 'http://airbrake.io', :target => "_blank"  %></p>
+				</div>
+			</div>
+			<div class="row center-block">
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Braintree-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Braintree', 'http://braintreepayments.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Kiln-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Kiln', 'http:/www.fogcreek.com/kiln/', :target => "_blank"  %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Know Everything Row -->
+	<div class="row">
+		<div class="col-lg-6 spacing-m center">
+			<%= image_tag "detail-test.png", :width => "85%" %>
 		</div>
 
-		<br /><br />
+		<div class="col-lg-6">
+			<!-- Headline Row -->
+			<div class="row">
+				<h2>Know Everything</h2>
+				<p class="spacing-xsm">Dive deeper with a single tap. Square pricing is simple: start at one flat rate per swipe and access your funds quickly. No monthly fees, no commitments, and no surprises.</p>
+			</div>
+		</div>
+	</div>
+
+<!-- Intelligent Alerts Row -->
+	<div class="row">
+
+		<div class="col-lg-6 spacing-m center">
+			<%= image_tag "chat-test.png", :width => "85%" %>
+		</div>
+
+		<div class="col-lg-6">
+			<!-- Headline Row -->
+			<div class="row">
+				<h2>Intelligent Alerts</h2>
+				<p class="spacing-xsm">Intelligent alerts notify you when action is needed. Your Square Market storefront is for attracting neighborhood visitors too. Turn on first-visit specials, link your Twitter feed, include your store hours and location.</p>
+			</div>
+		</div>
+
+		
+	</div>
+
+<!-- Intelligent Alerts Row -->
+	<div class="row">
+		<div class="col-lg-6 spacing-m center">
+			<%= image_tag "ia.png", :width => "85%", :id => "splash-img" %>
+		</div>
+
+		<div class="col-lg-6">
+			<!-- Headline Row -->
+			<div class="row">
+				<h2>Intelligent Alerts</h2>
+				<p class="spacing-xsm">Intelligent alerts notify you when action is needed. Your Square Market storefront is for attracting neighborhood visitors too. Turn on first-visit specials, link your Twitter feed, include your store hours and location.</p>
+			</div>
+		</div>
+	</div>
+
+
 </div>
 
