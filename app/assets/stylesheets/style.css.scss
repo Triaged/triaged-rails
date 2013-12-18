@@ -3,6 +3,7 @@ body {
   height: 100%;
   background-color: #7691CD;
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Wrapper for page content to push down footer */
@@ -48,25 +49,25 @@ body {
 }
 
 h1 {
-	font-size: 50px;
-	line-height: 72px;
-	color: #ffffff;
-	font-weight: normal;
+  font-size: 50px;
+  line-height: 72px;
+  color: #ffffff;
+  font-weight: normal;
   
 }
 
 h2 {
-	font-weight: 100;
-	color: #ffffff;
+  font-weight: 100;
+  color: #ffffff;
   font-size: 46px;
   line-height: 60px;
   text-align: center;
 }
 
 p {
-	font-size: 20px;
-	line-height: 36px;
-	color: #ffffff;
+  font-size: 20px;
+  line-height: 36px;
+  color: #ffffff;
   text-align: center;
   font-weight: 300;
 }
@@ -104,14 +105,14 @@ p {
   font-weight: 500;
 }
 .btn-custom.big {
-	width: 380px;
+  width: 380px;
   height: 60px;
 }
 
 .btn-custom.small {
-	 font-size: 20px;
+   font-size: 20px;
    text-transform: uppercase;
-}
+ }
 
 .btn-custom:hover,
 .btn-custom:focus,
