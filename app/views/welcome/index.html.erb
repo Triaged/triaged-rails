@@ -1,5 +1,5 @@
 <div class="col-lg-12 col-sm-12 welcome">
-	<div class="spacer"><br /><br /><br /></div>
+	<div class="spacer"><br /><br /></div>
 	
 	<div class="row">
 		<div class="col-lg-6">
@@ -13,9 +13,12 @@
 			</div>
 			<!-- CTA Row -->
 			<div class="row" id="welcome-cta">
-				<%= button_to 'DOWNLOAD TRIAGE', "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8", 	:class => "btn btn-custom big visible-md visible-sm" %>
 			<!-- Phone Image -->
-				<%= render "sms_app" %>
+				<div id="hero-btn">
+					<button class="btn btn-custom btn-lg" type="button" id="download-cta">
+						<span class="glyphicon glyphicon-phone" style="margin-right: 20px;"></span>Get Triage For iOS
+					</button>
+				</div>
 			</div>
 		</div>
 		<div class="col-lg-4 col-lg-offset-2">
@@ -151,17 +154,28 @@
 		<div class="download-region">
   	 	<h1>Download Triage for iOS</h1>
   	 	<%= simple_form_for :sms_delivery, :url => deliver_sms_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form', :class => 'form-inline hidden-md hidden-sm'} do |f| %>
-			<div class="col-lg-6 col-sm-6">
+			<div class="col-lg-12 col-sm-12">
 				<div class="row">
-	  		<%= f.input_field :phone_number, :id => "phone_number", :placeholder => '(555) 555-5555', :autocomplete => "off"%>
-	 			<%= image_tag("input-line.png", :id => "input-line") %>
+					<br /><br />
+		  		<%= f.input_field :phone_number, :id => "phone_number", :placeholder => '(555) 555-5555', :autocomplete => "off"%>
+		  		<%= f.button :submit, "TEXT ME A LINK", :class => "btn-submit" %>
+		  		<%= image_tag("input-line.png", :id => "input-line") %>
+		  		<div class="row center-block">
+						<p id="response" class="center-block" style="visibility:hidden;text-align:center;">abc</p>
+					</div>
+		  	</div>
+		  	<div class="row">
+		  		<p>or</p>
+		  	</div>
+		  	<div class="row">
+		  		<br /><br />
+		  		<%= link_to image_tag("available.png"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>
+		  	</div>
 	 		</div>
 	</div> 
 <% end %>
 <div class="col-lg-12">
-	<div class="row">
-		<p id="response" style="visibility:hidden;">abc</p>
-	</div>
+	
 </div>
   	 </div>
 	</div>

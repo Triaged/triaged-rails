@@ -9,14 +9,12 @@ $ ->
 	$("#phone_number").focus()
 
 	$("#download-cta").click ->
-		console.log "click"
 		$("html, body").css(overflow: "hidden", height: "100%")
 		$("body").addClass("make-way")
 		$("#loaded-content").addClass("loaded")
 		$("#downloading").fadeIn(800)
 
 	hide_overlay = () ->
-		console.log "click"
 		$("html, body").css(overflow: "auto", height: "auto")
 		$("body").removeClass("make-way")
 		$("#loaded-content").removeClass("loaded")
