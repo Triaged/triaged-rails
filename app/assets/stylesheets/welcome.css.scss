@@ -50,11 +50,16 @@ h3.colored {
 
 #welcome-icons > p {
 	margin-top: 10px;
+	line-height: 24px;
+
+
 }
+
 
 #welcome-icons > p > a {
 	
 	font-size: 20px;
+	line-height: 24px;
 	color: #ffffff;
 }
 
@@ -133,10 +138,18 @@ h3.colored {
 
 @media (max-width: 767px) {
 
+	#welcome-title  { 
+		width: 100%;
+	}
+
 	#welcome-icons {
 		width: 50.0%;
 		float: left;
 		text-align: center;
+	}
+
+	#welcome-icons > p {
+		margin-bottom: 30px;
 	}
 	
 
