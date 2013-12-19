@@ -1,29 +1,30 @@
 <div class="col-lg-12">
-	<div class="spacer"></div>
+	<div class="spacer"><br /></div>
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
 			<!-- Logo Row -->
 			<div class="row">
-				<%= link_to('/') do %><h2><%= image_tag "logotriage.png" %><span id="logo">Triage</span</h2><% end %>
+				<%= link_to('/') do %><%= image_tag "logo-triage-lg.png", :class => "center-block" %><% end %>
 			</div>
 			<!-- Title Row -->
 			<div class="row" id="welcome-title">
-				<h1>Press</h1>
+				<h1 class="centered">Press</h1>
 			</div>
 			<!-- Press Release Row -->
 			<div class="row" id="welcome-title">
 				<h3 class="colored">Press Release</h3>
 			</div>
-			<div class="row" id="download-button">
-				<div class="col-lg-2 col-lg-offset-1">
-					<a class="btn btn-custom small" href="https://s3-us-west-2.amazonaws.com/triage-production/Triage-PressRelease.pdf">Download Press Release</a>
-				</div>
+			<div class="row center-block" id="download-button">
+				
+					<a class="btn btn-custom small centered" href="https://s3-us-west-2.amazonaws.com/triage-production/Triage-PressRelease.pdf">Download Press Release</a>
+				
 			</div>
 			<!-- Screenshots Row -->
 			<div class="row" id="welcome-title">
 				<h3 class="colored">Screen Shots</h3>
 			</div>
-
+		</div>
+		<div class="col-lg-12">
 			<div class="row" id="press-images">
 				<div class="col-lg-2 col-lg-offset-1">
 					<%= image_tag "screenshots/1.png", :class => "press-picture" %>
