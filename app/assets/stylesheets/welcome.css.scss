@@ -141,51 +141,6 @@ h3.colored {
  	margin: 0 auto;
 }
 
-@media (max-width: 767px) {
-
-	h1 {
-		font-size: 30px;
-		line-height: 40px;
-	}
-	h2 {
-		text-align: center;
-	}
-
-	#welcome-title {
-		margin-top: 30px;
-	}
-
-	#welcome-cta {
-		margin-top: 40px;
-	}
-
-	#providers {
-		margin-left: 0px;
-	}
-
-	#iphone {
-		width: 100%;
-	}
-
-	#phone_number {
-		width: 100%;
-	}
-
-	#input-line {
-		width: 100%;
-	}
-	
-
-	#footer-list li
-{
-	display: block;
-	list-style-type: none;
-	padding-right: 0px;
-	text-align: center;
-}
-
-}
-
 
 body.make-way #loaded-content.loaded {
 
@@ -273,5 +228,76 @@ text-align: center;
  outline: 0;
  outline-style:none;
  outline-width:0;
+}
+
+@media (max-width: 767px) {
+
+	#logo {
+		padding-left: 0;
+	}
+
+	h1 {
+		text-align: center;
+		font-size: 50px;
+  	line-height: 56px;
+	}
+
+	#welcome-title h1 {
+		text-align: center;
+		font-size: 50px;
+  	line-height: 56px;
+	}
+
+	h2 {
+		text-align: center;
+	}
+
+	#welcome-title {
+		margin-top: 30px;
+	}
+
+	#welcome-cta {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+
+	#hero-btn {
+		width: 100%;
+		padding-right: 0px;
+	}
+
+	.btn-custom {
+		width: 100%;
+	}
+
+	#welcome-icons {
+		width: 50%;
+	}
+
+	#providers {
+		margin-left: 0px;
+	}
+
+	#iphone {
+		width: 100%;
+	}
+
+	#phone_number {
+		width: 100%;
+	}
+
+	#input-line {
+		width: 100%;
+	}
+	
+
+	#footer-list li
+{
+	display: block;
+	list-style-type: none;
+	padding-right: 0px;
+	text-align: center;
+}
+
 }
 
