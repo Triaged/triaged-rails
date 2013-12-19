@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.tap.min
-//= require bootstrap
+//= require twitter/bootstrap
 //= require PhoneFormat
 //= require jquery.phonenumber
 //= require_tree .

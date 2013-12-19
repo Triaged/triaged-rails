@@ -79,8 +79,9 @@ GEM
       multi_json (~> 1.3)
       nokogiri (>= 1.5.2)
       simple_oauth
-    bootstrap-sass (3.0.2.1)
-      sass (~> 3.2)
+    bootstrap-sass-rails (3.0.3.0)
+      railties (>= 3.1.0)
+      sass-rails (>= 3.1.0)
     braintree (2.26.0)
       builder (>= 2.0.0)
     builder (3.1.4)
@@ -386,7 +387,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bitbucket_rest_api
-  bootstrap-sass (>= 3.0.0.0)
+  bootstrap-sass-rails
   braintree
   carrierwave
   carrierwave-mongoid

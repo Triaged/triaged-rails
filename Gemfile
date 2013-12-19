@@ -78,7 +78,7 @@ gem 'sinatra', '>= 1.3.0', :require => nil
 gem "dalli"
 gem "memcachier"
 gem 'autoscaler'
-gem 'bootstrap-sass', '>= 3.0.0.0'
+gem 'bootstrap-sass-rails'
 gem 'twilio-ruby'
 gem 'asset_sync'
 gem "mailchimp"
