@@ -11,73 +11,95 @@
 			
 			<!-- Title Row -->
 			<div class="row" id="welcome-title">
-				<h1 class="centered">FAQ</h1>
+				<h1 class="centered">Support</h1>
+				<p> Please email us at <%= mail_to "support@triaged.co" %> if you have any questions. </p>
+				<p> We'd love to hear from you! </p>
+				<p> The Triage Team </p>
 			</div>
-			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">What is Triage?</h3>
-				<p> Triage is your activity feed for work. Triage aggregates key metrics and activity into one simple feed to help you stay productive and efficient throughout the day. </p>
-			</div>
-			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">Why should you use Triage?</h3>
-				<p> By integrating services you already use, Triage allows you to glance into the many data sources you use. You can also use Triage to quickly communicate with colleagues and assign out tasks. </p>
+	</div>
+	</div>
 
+		<div class="row">
+			<div class="col-lg-6 spacing-m">
+				<!-- Question Row -->
+					<h3 class="left">What is Triage?</h3>
+					<p class="left"> Triage is your activity feed for work. Triage aggregates key metrics and activity into one simple feed to help you stay productive and efficient throughout the day. </p>
+			</div>
+				<!-- Question Row -->
+				<div class="col-lg-6 spacing-m">
+					<h3 class="left">Why should you use Triage?</h3>
+					<p class="left"> By integrating services you already use, Triage allows you to glance into the many data sources you use. You can also use Triage to quickly communicate with colleagues and assign out tasks. </p>
+				</div>
+		</div>
+		<div class="row">
+			<!-- Question Row -->
+			<div class="col-lg-6 spacing-m">
+				<h3 class="left">How does it work?</h3>
+				<p class="left"> Triage integrates with a growing number of 3rd party services. Triage monitors what's happening with each service and aggregates everything important to you into your Triage feed.</p>
 			</div>
 			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">How does it work?</h3>
-				<p> Triage integrates with a growing number of 3rd party services. Triage monitors what's happening with each service and aggregates everything important to you into your Triage feed.</p>
+			<div class="col-lg-6 spacing-m">
+				<h3 class="left">How much does it cost? </h3>
+				<p class="left"> Triage is a free service, and our plan is to keep it that way. In the future, Triage will charge for additional enterprise services.</p>
 			</div>
+		</div>
+		<div class="row">
 			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">How much does it cost? </h3>
-				<p> Triage is a free service, and our plan is to keep it that way. In the future, Triage will charge for additional enterprise services.</p>
-			</div>
-			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">Can my whole team use it?</h3>
-				<p>Of course, Triage is built for individuals and teams. Anyone with a valid company email address can access your company’s services. Use Triage to communicate information and collaborate on urgent issues. Keep in mind that any data shared in Triage will be available to your whole team.</p>
+			<div class="col-lg-6 spacing-m">
+				<h3 class="left">Can my whole team use it?</h3>
+				<p class="left">Of course, Triage is built for individuals and teams. Anyone with a valid company email address can access your company’s services. Use Triage to communicate information and collaborate on urgent issues. Keep in mind that any data shared in Triage will be available to your whole team.</p>
 			</div>
 		<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">What services does Triage support?</h3>
-				<p> Airbrake <br/>Appfigures <br/>Beanstalk <br/>Crashlytics <br/>Github <br/>Google Analytics <br/>Heroku <br/>Hockey App <br/>Kiln <br/>New Relic <br/>Sentry <br/>Stripe <br/><br /> And more coming shortly.</p>
+			<div class="col-lg-6 spacing-m">
+				<h3 class="left">What services does Triage support?</h3>
+				<div id="support-services"><p class="left" id="bold"> Airbrake <br/>Appfigures <br/>Beanstalk <br/>Crashlytics <br/>Github <br/>Google Analytics</p>
+				</div>
+				<div id="support-services"><p class="left" id="bold">Heroku <br/>Hockey App <br/>Kiln <br/>New Relic <br/>Sentry <br/>Stripe </p>
+				</div>
+				<p class="left">And more coming shortly.</p>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Question Row -->
+			<div class="col-lg-6 spacing-m">
+				<h3 class="left">Can I suggest another service?</h3>
+				<p class="left"> Please! Shoot us an email at <%= mail_to "team@triaged.co" %>. </p>
 			</div>
 			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">Can I suggest another service?</h3>
-				<p> Please! Shoot us an email at <%= mail_to "team@triaged.co" %>. </p>
+			<div class="col-lg-6 spacing-m">
+				<h3 class="left">What platforms does Triage support?</h3>
+				<p class="left"> Triage is available for iOS 7. <br />Tablet, Android and web versions are coming shortly.</p>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Question Row -->
+			<div class="col-lg-6 spacing-m">
+				<h3 class="left">Are my profile and data private? </h3>
+				<p class="left">Only active employees at your company with a verified email address can see your Triage data. No activity of yours is shared outside of your company with any third parties. </p>
 			</div>
 			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">What platforms does Triage support?</h3>
-				<p> Triage is available for iOS 7. <br />Tablet, Android and web versions are coming shortly.</p>
+			<div class="col-lg-6 spacing-m">
+				<h3 class="left">Is my data safe with Triage?</h3>
+				<p class="left"> All traffic is encrypted with SSL/HTTPs, both when receiving data from 3rd party services and again when communicating between the Triage mobile app and servers.</p>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Question Row -->
+			<div class="col-lg-6 spacing-m">
+				<h3 class="left">Can I cancel my account?</h3>
+				<p class="left"> Yes; email us at <%= mail_to "team@triaged.co" %>. We will delete your account and completely remove your data from our servers within 48 hours.</p>
 			</div>
 			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">Are my profile and data private? </h3>
-				<p>Only active employees at your company with a verified email address can see your Triage data. No activity of yours is shared outside of your company with any third parties. </p>
+			<div class="col-lg-6 spacing-m">
+				<h3 class="left">Who's behind Triage?</h3>
+				<p class="left"> Coming Soon.</p>
 			</div>
+		</div>
+		<div class="row">
 			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">Is my data safe with Triage?</h3>
-				<p> All traffic is encrypted with SSL/HTTPs, both when receiving data from 3rd party services and again when communicating between the Triage mobile app and servers.</p>
-			</div>
-			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">Can I cancel my account?</h3>
-				<p> Yes; email us at <%= mail_to "team@triaged.co" %>. We will delete your account and completely remove your data from our servers within 48 hours.</p>
-			</div>
-			<!-- Question Row -->
-			<div class="row" id="welcome-description">
-				<h3 class="colored">Who's behind Triage?</h3>
-				<p> Coming Soon.</p>
-			</div>
-			<!-- Question Row -->
-			<div class="row" id="welcome-description">
+			<div class="col-lg-12 spacing-m">
 				<h3 class="colored">How can I get in touch?</h3>
-				<p> Email us at <%= mail_to "team@triaged.co" %></p>
+				<p> Email us at <%= mail_to "support@triaged.co" %></p>
 			</div>
 			<br /><br /><br /><br />
 
