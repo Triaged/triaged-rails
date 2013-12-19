@@ -1,5 +1,10 @@
 h3.colored {
-	color: #8494C0;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+.centered {
+	text-align: center;
 }
 
 .spacer {
@@ -28,12 +33,12 @@ h3.colored {
 
 #welcome-title {
 	margin-top: 84px;
-	width: 468px;
+	
 }
 #welcome-title h1 {
 	font-size: 56px;
-    line-height: 72px;
-    font-weight: 100;
+  line-height: 72px;
+  font-weight: 100;
 }
 
 .welcome h2 {
@@ -47,6 +52,8 @@ h3.colored {
 #welcome-description {
 	margin-top: 20px;
 }
+
+
 
 #welcome-icons {
 	width: 16.66%;
@@ -213,13 +220,13 @@ body.make-way #loaded-content.loaded {
 	-moz-transition-property: all,opacity,-webkit-filter;
 	-o-transition-property: all,opacity,-webkit-filter;
 	transition-property: all,opacity,-webkit-filter;
-	
+	height: 100%;
 }
 
 #loaded-content {
 	position: relative;
 	width: 100%;
-	height: 100%;
+	
 	-webkit-transition-duration: 1s,0s,0s;
 	-moz-transition-duration: 1s,0s,0s;
 	-o-transition-duration: 1s,0s,0s;
