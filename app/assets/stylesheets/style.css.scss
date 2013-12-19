@@ -57,12 +57,26 @@ h1 {
   
 }
 
+.wf-loading h1 {
+	visibility: hidden;
+}
+.wf-active h1 {
+	visibility: visible;
+}
+
 h2 {
   font-weight: 100;
   color: #ffffff;
   font-size: 46px;
   line-height: 60px;
   text-align: center;
+}
+
+.wf-loading h2 {
+	visibility: hidden;
+}
+.wf-active h2 {
+	visibility: visible;
 }
 
 h3 {
