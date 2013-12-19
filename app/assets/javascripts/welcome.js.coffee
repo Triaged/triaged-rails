@@ -9,10 +9,13 @@ $ ->
 	$("#phone_number").focus()
 
 	$("#download-cta").click ->
-		$("html, body").css(overflow: "hidden", height: "100%")
-		$("body").addClass("make-way")
-		$("#loaded-content").addClass("loaded")
-		$("#downloading").fadeIn(800)
+		if($("#footer").hasClass("mobile"))
+			 window.location.href = "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8"
+		else
+			$("html, body").css(overflow: "hidden", height: "100%")
+			$("body").addClass("make-way")
+			$("#loaded-content").addClass("loaded")
+			$("#downloading").fadeIn(800)
 
 	hide_overlay = () ->
 		$("html, body").css(overflow: "auto", height: "auto")
