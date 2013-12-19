@@ -8,9 +8,6 @@ class WelcomeController < ApplicationController
 	def support
 	end
 
-	def faq
-	end
-
 	def terms
 	end
 

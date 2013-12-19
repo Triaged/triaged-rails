@@ -1,33 +1,183 @@
-<div class="col-lg-12 col-sm-12">
-	<div class="spacer"><br /><br /><br /></div>
+<div class="col-lg-12 col-sm-12 welcome">
+	<div class="spacer"><br /><br /></div>
+	
 	<div class="row">
-		<div class="col-lg-5 col-sm-5">
+		<div class="col-lg-6">
 			<!-- Logo Row -->
 			<div class="row">
-				<h2><%= image_tag "logotriage.png" %><span id="logo">Triage</span</h2>
+				<h1><%= image_tag "logo-triage-lg.png" %><span id="logo">Triage</span</h1>
 			</div>
 			<!-- Title Row -->
 			<div class="row" id="welcome-title">
 				<h1>Everything that's happening at work, in one place.</h1>
 			</div>
-			<!-- Description Row -->
-			<div class="row" id="welcome-description">
-				<p style="padding-right:30px;"> Triage monitors the services you already use at work, and pulls everything important into one mobile feed. </p>
-				<%= image_tag "providers.png", :id => "providers" %>
-			</div>
 			<!-- CTA Row -->
 			<div class="row" id="welcome-cta">
-				<%= button_to 'DOWNLOAD TRIAGE', "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8", 	:class => "btn btn-custom big visible-md visible-sm" %>
-	
-				<%= render "sms_app" %>
+			<!-- Phone Image -->
+				<div id="hero-btn">
+					<button class="btn btn-custom btn-lg" type="button" id="download-cta">
+						<span class="glyphicon glyphicon-phone" style="margin-right: 20px;"></span>Get Triage For iOS
+					</button>
+				</div>
 			</div>
-			
-
 		</div>
-		<div class="col-lg-4 col-lg-offset-2 col-sm-4 col-sm-offset-2">
-			<%= image_tag "iphone.png", :width => "360" %>
+		<div class="col-lg-4 col-lg-offset-2">
+			<%= image_tag "iphone1.png", :width => "340" %>
 		</div>
-
 	</div>
+
+<!-- Services Row -->
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3 spacing-lg">
+			<!-- Headline Row -->
+			<div class="row">
+
+				<h2>Unite your work tools, simplify your workflow.</h2>
+				<p class="spacing-xsm">Triage monitors the services you already use at work and pulls everything important into one mobile feed. Explore the tools integrated with Triage below.</p>
+
+			</div>
+		</div>
+		<div class="col-lg-12 spacing-m">
+			<!-- Icons Row 1 -->
+			<div class="row center-block">
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Github-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'GitHub', 'http://github.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/GA-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Google Analytics', 'http://google.com/analytics', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/NewRelic-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'New Relic', 'http://newrelic.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Stripe-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Stripe', 'http://stripe.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Heroku-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Heroku', 'http://heroku.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Sentry-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Sentry', 'http://getsentry.com', :target => "_blank"  %></p>
+				</div>
+			</div>
+
+			<!-- Icons Row 2 -->
+			<div class="row center-block spacing-sm">
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/AppFigures-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'AppFigures', 'http://appfigures.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Crashlytics-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Crashlytics', 'http://crashlytics.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/HockeyApp-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'HockeyApp', 'http://hockeyapp.net', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Airbrake-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Airbrake', 'http://airbrake.io', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Braintree-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Braintree', 'http://braintreepayments.com', :target => "_blank"  %></p>
+				</div>
+				<div class="container" id="welcome-icons">
+					<%= image_tag "icons/Kiln-circle-icon.png", :width => "80" %>
+					<p><%= link_to 'Kiln', 'http:/www.fogcreek.com/kiln/', :target => "_blank"  %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Know Everything Row -->
+	<div class="row">
+		<div class="col-lg-6 spacing-lg center">
+			<%= image_tag "divedeeper.png", :width => "85%" %>
+		</div>
+
+		<div class="col-lg-6 spacing-lg">
+			<!-- Headline Row -->
+			<div class="row">
+				<br /><br /><br />
+				<h2>Focus on What Matters</h2>
+				<p class="spacing-xsm left">Triage syncs important activity in real time, helping you stay alert, without overwhelming your email inbox. Need to dig deeper? Triage gives you fast access to the source of the problem.</p>
+			</div>
+		</div>
+	</div>
+
+<!-- Intelligent Alerts Row -->
+	<div class="row">
+
+		<div class="col-lg-6 spacing-lg">
+			<!-- Headline Row -->
+			<div class="row">
+				<br /><br /><br /><br /><br />
+				<h2>Talk to Your Team</h2>
+				<p class="spacing-xsm left">Chat with your teammates in real time about important events. Triage's in-app messaging allows you to quickly and easily talk to members of your team and coordinate on time sensitive issues, keeping everyone on the same page.</p>
+			</div>
+		</div>
+
+		<div class="col-lg-6 spacing-lg center">
+			<%= image_tag "team.png", :width => "85%" %>
+		</div>
+	</div>
+
+<!-- Intelligent Alerts Row -->
+	<div class="row">
+		<div class="col-lg-6 spacing-lg left">
+			<%= image_tag "intelligent-alerts.png", :width => "65%" %>
+		</div>
+
+		<div class="col-lg-6 spacing-lg">
+			<!-- Headline Row -->
+			<div class="row">
+				<br /><br /><br /><br />
+				<h2>Intelligent Alerts</h2>
+				<p class="spacing-xsm left">Ensure you're the first to know when something critical happens. Notifications inform you when action is needed and allow you to quickly identify and resolve issues.</p>
+			</div>
+		</div>
+	</div>
+
+
 </div>
+
+
+<% content_for :overlay do %>
+	<div id="downloading">
+		<div class="download-region">
+  	 	<h1>Download Triage for iOS</h1>
+  	 	<%= simple_form_for :sms_delivery, :url => deliver_sms_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form', :class => 'form-inline hidden-md hidden-sm'} do |f| %>
+			<div class="col-lg-12 col-sm-12">
+				<div class="row">
+					<br /><br />
+		  		<%= f.input_field :phone_number, :id => "phone_number", :placeholder => '(555) 555-5555', :autocomplete => "off"%>
+		  		<%= f.button :submit, "TEXT ME A LINK", :class => "btn-submit" %>
+		  		<%= image_tag("input-line.png", :id => "input-line") %>
+		  		<div class="row center-block">
+						<p id="response" class="center-block" style="visibility:hidden;text-align:center;">abc</p>
+					</div>
+		  	</div>
+		  	<div class="row">
+		  		<p>or</p>
+		  	</div>
+		  	<div class="row">
+		  		<br /><br />
+		  		<%= link_to image_tag("available.png"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>
+		  	</div>
+	 		</div>
+	</div> 
+<% end %>
+<div class="col-lg-12">
+	
+</div>
+  	 </div>
+	</div>
+<% end %>
 

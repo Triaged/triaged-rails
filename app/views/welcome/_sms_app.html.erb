@@ -1,16 +1,7 @@
-<%= simple_form_for :sms_delivery, :url => deliver_sms_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form', :class => 'form-inline hidden-md hidden-sm'} do |f| %>
-			<div class="col-lg-6 col-sm-6">
-				<div class="row">
-	  		<%= f.input_field :phone_number, :id => "phone_number", :placeholder => '(555) 555-5555', :autocomplete => "off"%>
-	 			<%= image_tag("input-line.png", :id => "input-line") %>
-	 		</div>
-	</div>
-	<div class="col-lg-6 col-sm-6">
-		<%= f.submit 'TEXT ME A LINK', :class => "btn btn-custom small", :id => "text-me" %>
-	</div>
-<% end %>
-<div class="col-lg-12">
-	<div class="row">
-		<p id="response" style="visibility:hidden;">abc</p>
-	</div>
-</div>
+
+		<div id="hero-btn">
+			<button class="btn btn-custom btn-lg" type="button" id="download-cta">
+				<span class="glyphicon glyphicon-phone" style="margin-right: 20px;"></span>Get Triage For iOS
+			</button>
+		</div>
+

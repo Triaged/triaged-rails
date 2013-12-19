@@ -1,5 +1,10 @@
 h3.colored {
-	color: #8494C0;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+.centered {
+	text-align: center;
 }
 
 .spacer {
@@ -8,19 +13,62 @@ h3.colored {
 
 #logo {
 	vertical-align: bottom;
-	font-weight: lighter;
+	padding-left: 25px;
+	font-weight: 100;
 }
-
+.glyphicon-iphone {
+	background-image: url("./images/iphone.png");	
+}
+.glyphicon-phone {
+	color: #7691CD;
+	margin-left: -20px;
+}
+#splash-img {
+	text-align: center;
+	margin: 0 none;
+}
 #iphone {
 	width: 360px;
 }
 
 #welcome-title {
-	margin-top: 20px;
+	margin-top: 84px;
+	
+}
+#welcome-title h1 {
+	font-size: 56px;
+  line-height: 72px;
+  font-weight: 100;
+}
+
+.welcome h2 {
+	font-size: 50px;
+}
+
+.welcome p {
+	font-size: 24px;
 }
 
 #welcome-description {
 	margin-top: 20px;
+}
+
+
+
+#welcome-icons {
+	width: 16.66%;
+	float: left;
+	text-align: center;
+}
+
+#welcome-icons > p {
+	margin-top: 10px;
+}
+
+#welcome-icons > p > a {
+	font-size: 20px;
+	line-height: 24px;
+	color: #ffffff;
 }
 
 #providers {
@@ -28,17 +76,17 @@ h3.colored {
 }
 
 #welcome-cta {
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 #phone_number {
 	width: 330px;
 	border: none;
-	background-color:  #f3f3f8;
+	background-color: transparent;
 	height: 34px;
 	font-size: 24px;
 	font-weight: lighter;
-	font-color: #ADB1BC;
+	color: #ffffff;
 	outline: none;
 	padding-top:10px;
 	margin-bottom:4px;
@@ -56,21 +104,22 @@ h3.colored {
 }
 
 #input-line {
-	padding-top: 5px;
+	padding-top: 10px;
 	vertical-align: top;
 	width: 100%;
 }
 
-
-
 #response {
-	float: left;
 	padding-top: 10px;
 }
 
-
+#footer-inner {
+	text-align:center;
+	margin: 100px 0 50px 0;
+}
 
 #footer-list {
+	margin: 0 auto;
 	-webkit-padding-start: 0px;
 	-moz-padding-start: 0px;
 }
@@ -83,15 +132,122 @@ h3.colored {
 }
 
 #footer-list li a {
-	font-size: 16px;
-	color: #808695;
+	font-size: 20px;
+	color: #ffffff;
+	font-weight: 300;
+}
+#ft-img {
+	width: 200px;
+ 	margin: 0 auto;
+}
+
+
+body.make-way #loaded-content.loaded {
+
+	-webkit-transform-origin: top center;
+	-moz-transform-origin: top center;
+	-ms-transform-origin: top center;
+	-o-transform-origin: top center;
+	transform-origin: top center;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+	opacity: .8;
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+	
+}
+
+#loaded-content.loaded {
+	-webkit-transition-duration: .8s,.8s,.8s;
+	-moz-transition-duration: .8s,.8s,.8s;
+	-o-transition-duration: .8s,.8s,.8s;
+	transition-duration: .8s,.8s,.8s;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+	-webkit-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+	-webkit-transform: perspective(0) translate3d(0px, 0px, 0px);
+	-moz-transform: perspective(0) translate3d(0px, 0px, 0px);
+	-ms-transform: perspective(0) translate3d(0px, 0px, 0px);
+	-o-transform: perspective(0) translate3d(0px, 0px, 0px);
+	transform: perspective(0) translate3d(0px, 0px, 0px);
+	transform: translate3d(0px, 0px, 0px);
+	-webkit-transition-property: all,opacity,-webkit-filter;
+	-moz-transition-property: all,opacity,-webkit-filter;
+	-o-transition-property: all,opacity,-webkit-filter;
+	transition-property: all,opacity,-webkit-filter;
+	height: 100%;
+}
+
+#loaded-content {
+	position: relative;
+	width: 100%;
+	
+	-webkit-transition-duration: 1s,0s,0s;
+	-moz-transition-duration: 1s,0s,0s;
+	-o-transition-duration: 1s,0s,0s;
+	transition-duration: 1s,0s,0s;
+}
+
+#downloading {
+	position: absolute;
+	background: #000000 !important;
+	opacity: .9;
+	top: 0;
+	height:100%;
+  height: auto !important;
+  min-height:100%;
+  width:100%;
+  margin:0 auto;
+	display: none;
+}
+
+.download-region {
+
+z-index: 99;
+height: 400px;
+bottom: 50%;
+margin-top: 10%;
+display: block;
+margin-left: 30%;
+margin-right: 30%;
+text-align: center;
+
+}
+
+.btn-submit {
+	background-color: transparent;
+	color: #7691CD;
+	font-size: 18px;
+}
+
+.btn-submit:hover,
+.btn-submit:focus,
+.btn-submit:active,
+.btn-submit.active {
+ color: #FFFFFF;
+ outline: 0;
+ outline-style:none;
+ outline-width:0;
 }
 
 @media (max-width: 767px) {
-	h1 {
-		font-size: 30px;
-		line-height: 40px;
+
+	#logo {
+		padding-left: 0;
 	}
+
+	h1 {
+		text-align: center;
+		font-size: 50px;
+  	line-height: 56px;
+	}
+
+	#welcome-title h1 {
+		text-align: center;
+		font-size: 50px;
+  	line-height: 56px;
+	}
+
 	h2 {
 		text-align: center;
 	}
@@ -102,6 +258,20 @@ h3.colored {
 
 	#welcome-cta {
 		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+
+	#hero-btn {
+		width: 100%;
+		padding-right: 0px;
+	}
+
+	.btn-custom {
+		width: 100%;
+	}
+
+	#welcome-icons {
+		width: 50%;
 	}
 
 	#providers {
@@ -119,6 +289,7 @@ h3.colored {
 	#input-line {
 		width: 100%;
 	}
+	
 
 	#footer-list li
 {
@@ -129,3 +300,4 @@ h3.colored {
 }
 
 }
+

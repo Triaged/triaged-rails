@@ -86,7 +86,6 @@ TriageRails::Application.routes.draw do
 
 
 	root :to => 'welcome#index'
-	get '/faq' => 'welcome#faq', as: 'faq'
 	get '/support' => 'welcome#support', as: 'support'
 	get '/terms' => 'welcome#terms', as: 'terms'
 	get '/press' => 'welcome#press', as: 'press'
