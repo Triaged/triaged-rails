@@ -16,8 +16,9 @@ class User
 
 	belongs_to :company
 	index({ company_id: 1 })
-
+	has_many :feed_items
 	embeds_many :push_tokens
+
   before_create :before_creation
   after_create :send_verify_email
   include Mongoid::Slug

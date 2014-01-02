@@ -34,6 +34,11 @@ TriageRails::Application.routes.draw do
     			get 'view'
     		end
     	end
+      resources :users do
+        member do
+          get 'feed'
+        end
+      end
     	resources :providers do
     		member do
     			post 'ignore'

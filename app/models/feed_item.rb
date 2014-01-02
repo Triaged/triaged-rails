@@ -4,6 +4,7 @@ class FeedItem
 
   belongs_to :company
   belongs_to :provider
+  belongs_to :user
   embeds_many :messages, class_name: "Messages::Message", order: "id DESC"
   embeds_many :shares
 
@@ -16,6 +17,7 @@ class FeedItem
 	validates :external_id, :uniqueness => { :scope => [:company, :provider] }
 	index({ "external_id" => 1 })
  	index({ "updated_at" => 1 })
+ 	index({ user_id: 1 })
  	index({ company_id: 1, external_id: 1}, { unique: true })
 
 	before_create :before_create
