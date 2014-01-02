@@ -39,6 +39,7 @@ TriageRails::Application.routes.draw do
     			post 'ignore'
     			post 'follow'
     			post 'email_connect_instructions'
+          get 'feed'
     		end
     	end
     	resources :provider_accounts do
