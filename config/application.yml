@@ -46,7 +46,7 @@ staging:
   GA_CLIENT_ID: 56189778933.apps.googleusercontent.com
   GA_SECRET: PQA1lyYnSiTcAd9UqFCWqZTz
 
-  FOG_DIRECTORY: triaged-staging
+  FOG_DIRECTORY: triage-staging
   NEW_RELIC: 252f970f9fe09634a6c1e99d82f37dca02756686
 
 production:
