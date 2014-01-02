@@ -1,5 +1,14 @@
 class Api::V1::ProvidersController < API::BaseController
-	before_action :set_provider
+	before_action :set_provider, :except => :index
+
+	def index
+		@providers = Provider.all
+		respond_with @providers
+	end
+
+	def feed
+		current_company.feed_items.where(provider: @provider).desc(:created_at).limit(100)
+	end
 	
 	def ignore
 		current_user.ignore @provider
