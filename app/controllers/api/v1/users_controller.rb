@@ -2,8 +2,8 @@ class Api::V1::UsersController < API::BaseController
 	before_action :set_user, :except => :index
 
 	def index
-		@providers = Provider.all
-		respond_with @providers
+		@team = current_company.users
+		respond_with @team
 	end
 
 	def feed
