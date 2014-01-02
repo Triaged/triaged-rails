@@ -7,7 +7,8 @@ class Api::V1::ProvidersController < API::BaseController
 	end
 
 	def feed
-		current_company.feed_items.where(provider: @provider).desc(:created_at).limit(100)
+		@feed_items = current_company.feed_items.where(provider: @provider).desc(:created_at).limit(100)
+		respond_with @feed_items
 	end
 	
 	def ignore
