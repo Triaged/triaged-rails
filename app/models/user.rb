@@ -12,7 +12,7 @@ class User
 	field :validated_belongs_to_company, type: Boolean, default: false
 	field :company_validation_token, type: String
 	field :personal, :type => Boolean, :default => false
-	field :name_token, :type => String
+	
 
 	belongs_to :company
 	index({ company_id: 1 })
@@ -22,9 +22,8 @@ class User
   after_create :send_verify_email
   include Mongoid::Slug
 
-  #slug  :name_token, :scope => :company
-
-  def save_omniauth(provider, uid, access_token, refresh_token=nil)
+  
+	def save_omniauth(provider, uid, access_token, refresh_token=nil)
 	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.named(provider), uid: uid)
 	  Rails.logger.info credentials.inspect
 	  credentials.access_token = access_token
