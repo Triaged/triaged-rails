@@ -1,1 +1,0 @@
-class Services::DropboxController < ServiceController end
