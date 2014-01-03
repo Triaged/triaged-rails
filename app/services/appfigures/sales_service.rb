@@ -11,8 +11,11 @@ class Appfigures::SalesService < Appfigures::BaseService
 		items.each do |item|
 			Common::FeedService.add_to_feed item, @company
 		end
-		
 
+	rescue => e
+		Rails.logger.error e.response
 	end
+
+
 
 end
