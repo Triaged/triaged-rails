@@ -1,7 +1,7 @@
 <div class="col-xs-12">
 			<!-- Logo Row -->
 			<div class="row center-block">
-				<h3 class="text-center" style="color: #8494C0;">Which organization does your company use?</h3>
+				<h3 class="text-center" style="color: white;">Which organization does your company use?</h3>
 			</div>
 			<!-- Title Row -->
 			<div class="row center-block" id="welcome-title">
@@ -18,7 +18,7 @@
 			<div class="row ">
 				<%= simple_form_for :org, :url => set_default_org_github_index_path, :method => :post do |f| %>
 					  <%= f.input :id, :as => :hidden, :class => "hidden-id" %>
-  					<%= f.button :submit, 'SELECT', :class => "btn-custom", :disabled => true %>
+  					<%= f.button :submit, 'SELECT', :class => "btn-custom  btn-lg",  :id =>"download-cta", :disabled => true %>
 				<% end %>
 			</div>
 			
