@@ -6,6 +6,8 @@ class Services::CrashlyticsController < ServiceController
 
 		if (event_type == "verification")
 			Company.find(params[:company_id])
+			head :ok
+			return
 		end
 
 		payload = {event: params[:payload], company_id: params[:company_id]}
