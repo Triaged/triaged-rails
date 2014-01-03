@@ -4,8 +4,8 @@
 # Options here can still be overridden by cmd line args.
 ---
 :verbose: false
-:concurrency: 15
+:concurrency: 6
 :queues:
-  - [often, 7]
-  - [default, 5]
-  - [seldom, 3]
+  - [often, 3]
+  - [default, 2]
+  - [seldom, 1]
