@@ -5,7 +5,7 @@ class Crashlytics::Event::Verification < FeedItem
 
   
 	def self.build_from_webhook data
-		event = Crashlytics::Event::Issue.new(
+		event = Crashlytics::Event::Verification.new(
 			external_id: "crsh-#{DateTime.now}"
 		)
 	end
