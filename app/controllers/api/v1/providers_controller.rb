@@ -2,7 +2,7 @@ class Api::V1::ProvidersController < API::BaseController
 	before_action :set_provider, :except => :index
 
 	def index
-		@providers = Provider.all
+		@providers = Provider.active
 		respond_with @providers
 	end
 

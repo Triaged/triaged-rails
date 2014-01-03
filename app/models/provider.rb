@@ -7,11 +7,25 @@ class Provider
   field :account_label, :type => String
   field :property_label, :type => String
   field :webhooks_enabled, :type => Boolean
+  field :title, :type => String
+  field :short_title, :type => String
+  field :active, :type => Boolean, :default => false
+  field :oauth, :type => Boolean, :default => false
 
   validates :name, uniqueness: true
+
+  scope :active, -> { where(active: true) }
   
   def self.named name
   	Provider.where(name: name).first
+  end
+
+  def icon
+    "#{name}.png"
+  end
+
+  def settings_icon
+    "#{name}-s.png"
   end
 
   def webhook_url_for_company company

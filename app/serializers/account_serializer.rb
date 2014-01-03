@@ -22,7 +22,7 @@ class AccountSerializer < ActiveModel::Serializer
   end
 
   def providers
-  	Provider.all
+  	Provider.active
   end
 
 end

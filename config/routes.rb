@@ -1,6 +1,9 @@
 require 'sidekiq/web'
 TriageRails::Application.routes.draw do
   
+  get "rails/g"
+  get "rails/controller"
+  get "rails/app/providers"
   # To be removed
 	resource :account
 
@@ -56,6 +59,19 @@ TriageRails::Application.routes.draw do
   			end
   		end
     end
+  end
+
+  namespace :app do
+
+    resources :providers do
+      resources :provider_accounts do 
+        collection do 
+          get 'select'
+          post 'set_account'
+        end
+      end
+    end
+
   end
 
   # Webhooks

@@ -1,0 +1,2 @@
+module App::ProviderAccountsHelper
+end

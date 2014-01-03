@@ -1,5 +1,5 @@
 class ProviderSerializer < ActiveModel::Serializer
-  attributes :id, :name, :webhook_url, :connected, :follows
+  attributes :id, :name, :webhook_url, :connected, :follows, :icon, :settings_icon, :title, :short_title
   has_one :account, serializer: ProviderAccountSerializer
 
   def account
