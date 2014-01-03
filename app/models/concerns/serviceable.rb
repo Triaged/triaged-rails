@@ -9,6 +9,10 @@ module Serviceable
 		provider_accounts.where(provider: Provider.named("github"), default: true).first
 	end
 
+	def default_bitbucket_org
+		provider_accounts.where(provider: Provider.named("bitbucket"), default: true).first
+	end
+
 	def default_google_analytics_account
 		provider_accounts.where(provider: Provider.named("google_analytics"), default: true).first
 	end

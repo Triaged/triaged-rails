@@ -23,7 +23,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def bitbucket
 		params = request.env["omniauth.auth"]
 		result = current_user.save_omniauth("bitbucket", params['uid'], params['credentials']['token'], params['credentials']['secret'])
-		redirect_to oauth_complete_path
+		redirect_to org_list_bitbucket_index_path
   end
 
 	def stripe_connect

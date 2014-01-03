@@ -1,0 +1,51 @@
+class Bitbucket::Event::Push < Bitbucket::BaseEvent
+  include Mongoid::Document
+
+  field :pusher, :type => String
+  field :branch, :type => String
+  
+  embeds_many :commits, :class_name => "Bitbucket::Event::Commit"
+
+  def self.build_from_webhook event
+  	return nil if event.deleted == true
+
+  	org_name = event.repository.respond_to?(:organization) ? event.repository.organization : event.repository.owner.name
+
+  	push = Bitbucket::Event::Push.new(
+  		pusher: event.pusher.name,
+  		branch: event.ref.split("/").last,
+  		external_id: event.head_commit.id,
+  		html_url: event.head_commit.url,
+  		org_name: org_name,
+  		repo_name: event.repository.name,
+  	)
+  	
+  	event.commits.each do |commit|
+
+  		commit = RecursiveOpenStruct.new(commit)
+
+  		author = commit.author.respond_to?(:username) ? commit.author.username : commit.author.name
+
+			push.commits.build(
+  			external_id: commit.id,
+  			author: author,
+  			author_email: commit.author.email,
+  			timestamp: commit.timestamp,
+  			message: commit.message,
+  			url: commit.url,
+  			)
+  	end
+
+  	return push
+  end
+
+  def should_push?
+		false
+	end
+
+	def push_message
+		"#{pusher} pushed to #{repo_name}"
+	end
+
+
+end
