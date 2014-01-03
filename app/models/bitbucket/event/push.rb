@@ -1,4 +1,4 @@
-class Bitbucket::Event::Push
+class Bitbucket::Event::Push < FeedItem
   include Mongoid::Document
 
   field :repo_name, :type => String
