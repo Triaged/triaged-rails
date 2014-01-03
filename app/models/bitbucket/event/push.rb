@@ -4,6 +4,7 @@ class Bitbucket::Event::Push < Bitbucket::BaseEvent
   field :repo_name, :type => String
   field :repo_url, :type => String
   field :pusher, :type => String
+  field :branch, :type => String
   
   
 
