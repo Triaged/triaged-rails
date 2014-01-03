@@ -9,6 +9,7 @@ class Bitbucket::Event::Commit
   field :message, type: String
   field :url, type: String
   field :external_id, type: Integer
+  field :branch, :type => String
 
   
 
