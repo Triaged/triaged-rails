@@ -4,13 +4,12 @@ class Services::CrashlyticsController < ServiceController
 	def webhook
 		event_type = params[:event]
 
+		# If verification, ensure company exists
 		if (event_type == "verification")
 			Company.find(params[:company_id])
-			head :ok
-			return
 		end
 
-		payload = {event: params[:payload], company_id: params[:company_id]}
+		payload = {event: params[:payload], company_id: params[:company_id], event_type: event_type}
 		Crashlytics::WebhookService.new.instrument(payload)
 		head :ok
 	# rescue StandardError
