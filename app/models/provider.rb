@@ -18,4 +18,8 @@ class Provider
   	webhook_url = "webhook_#{name}_index_url"
   	send(webhook_url, :company_id => company.slug, :protocol => "https")
   end
+
+  def delete_provider_account provider_account
+    # @TODO clean up any rements of deleting account, for example remove Github hooks
+  end
 end

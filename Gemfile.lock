@@ -131,6 +131,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     dotenv (0.9.0)
+    dropbox-sdk (1.6.3)
+      json
     erubis (2.7.0)
     excon (0.25.3)
     execjs (2.0.1)
@@ -401,6 +403,7 @@ DEPENDENCIES
   dashing-rails
   debugger
   devise
+  dropbox-sdk
   figaro
   fog
   foreman

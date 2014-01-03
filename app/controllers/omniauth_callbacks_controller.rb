@@ -32,6 +32,12 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to oauth_complete_path
   end
 
+  def dropbox_oauth2
+		params = request.env["omniauth.auth"]
+    result = current_user.save_omniauth("dropbox", params['uid'], params['credentials']['token'])
+    redirect_to oauth_complete_path
+  end
+
   def appFigures
 		params = request.env["omniauth.auth"]
 		result = current_user.save_omniauth("appfigures", params['uid'], params['credentials']['token'], params['credentials']['secret'])

@@ -237,6 +237,7 @@ Devise.setup do |config|
   config.omniauth :shopify, ENV['SHOPIFY_CLIENT_ID'], ENV['SHOPIFY_SECRET']
   config.omniauth :appFigures, ENV['APPFIGURES_CLIENT_ID'], ENV['APPFIGURES_SECRET_ID']
   config.omniauth :bitbucket, ENV['BITBUCKET_KEY'], ENV['BITBUCKET_SECRET']
+  config.omniauth :dropbox_oauth2, ENV['DROPBOX_KEY'], ENV['DROPBOX_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
