@@ -19,6 +19,8 @@ class Github::BaseEvent < FeedItem
 		[repo]
 	end
 
+	
+
 end
 
 

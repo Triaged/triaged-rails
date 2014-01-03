@@ -2,7 +2,7 @@ module Common::MessageService
 
 	def self.new_message(feed_item, message_params)
 		company = feed_item.company
-		message = feed_item.messages.build(message_params)
+		message = feed_item.messages.build(message_params, Messages::Chat)
 		self.parse_mentions(company, message)
 		
 		# ensure feed_item.updated_at is fired
@@ -12,6 +12,18 @@ module Common::MessageService
 
 		return message
 	end 
+
+	def self.toggle_thumbsup(feed_item, thumbsup_params)
+		company = feed_item.company
+		thumbsup = feed_item.messages.build(message_params, Messages::Thumbsup)
+		
+		# ensure feed_item.updated_at is fired
+		feed_item.save!
+
+		self.push_thumbsup_to_author(thumbsup, feed_item)
+
+		return message
+	end
 
 	def self.push_to_followers message, company, provider
 		Rails.logger.info "pushing to followers"
@@ -25,6 +37,10 @@ module Common::MessageService
 		User.find(message.user_mentions).each do |user|
 			Common::NotificationService.push_message user, message
 		end
+	end
+
+	def self.push_thumbsup_to_author thumbsup, feed_item
+		Common::NotificationService.push_thumbsup(thumbsup.user, feed_item) if feed_item.author
 	end
 
 	def self.parse_mentions(company, message)

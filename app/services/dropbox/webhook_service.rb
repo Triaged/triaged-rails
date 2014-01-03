@@ -1,0 +1,1 @@
+class Dropbox::WebhookService < Service end

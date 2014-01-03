@@ -20,6 +20,11 @@ class Api::V1::MessagesController < API::BaseController
     respond_with @message, :location => api_v1_feed_message_path(@feed_item, @message)
   end
 
+  def toggle_thumbsup
+    @thumbsup = Common::MessageService.toggle_thumbsup(@feed_item, thumbsup_params)
+    respond_with @thumbsup, :location => api_v1_feed_message_path(@feed_item, @thumbsup)
+  end
+
   # PATCH/PUT /api/v1/messages/1
   def update
     @message.update(message_params)
@@ -44,5 +49,10 @@ class Api::V1::MessagesController < API::BaseController
     # Only allow a trusted parameter "white list" through.
     def message_params
       params[:message].permit(:author_id, :body, :notify, :uuid, :timestamp)
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def thumbsup_params
+      params[:thumbsup].permit(:author_id, :uuid, :timestamp)
     end
 end

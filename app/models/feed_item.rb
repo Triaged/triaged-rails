@@ -5,7 +5,7 @@ class FeedItem
   belongs_to :company
   belongs_to :provider
   belongs_to :user
-  embeds_many :messages, class_name: "Messages::Message", order: "id DESC"
+  embeds_many :messages, order: "id DESC"
   embeds_many :shares
 
   
@@ -42,6 +42,10 @@ class FeedItem
 
 	def build_html_url
 		# placehold to be overridden in subclasses
+	end
+
+	def assign_author email, name=''
+		
 	end
 
 	#

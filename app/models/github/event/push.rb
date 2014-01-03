@@ -21,10 +21,8 @@ class Github::Event::Push < Github::BaseEvent
   	)
   	
   	event.commits.each do |commit|
-
-  		commit = RecursiveOpenStruct.new(commit)
-
-  		author = commit.author.respond_to?(:username) ? commit.author.username : commit.author.name
+      commit = RecursiveOpenStruct.new(commit)
+      author = commit.author.respond_to?(:username) ? commit.author.username : commit.author.name
 
 			push.commits.build(
   			external_id: commit.id,

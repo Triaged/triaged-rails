@@ -8,6 +8,7 @@ class User
 	include Providable
 
 	mount_uploader :avatar, AvatarUploader
+	field :registered, type: Boolean, default:false
 	field :push_enabled, type: Boolean, default: true
 	field :validated_belongs_to_company, type: Boolean, default: false
 	field :company_validation_token, type: String
