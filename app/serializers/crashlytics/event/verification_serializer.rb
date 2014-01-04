@@ -10,6 +10,6 @@ class Crashlytics::Event::VerificationSerializer < TextItemSerializer
 	end
 
 	def body
-		"New Crashlytic issues are now synced with Triage."
+		"Crashlytics issues are now synced with Triage."
 	end
 end
