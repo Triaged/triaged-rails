@@ -88,7 +88,7 @@ gem "braintree"
 gem "lograge"
 gem 'dashing-rails'
 gem 'yui-compressor'
-gem 'dropbox-sdk'
+gem 'dropbox-sdk', :require => 'dropbox_sdk'
 
 
 group :development do

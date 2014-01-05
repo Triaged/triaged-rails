@@ -3,6 +3,7 @@ module Serviceable
 
 	included do 
 		has_many :provider_accounts
+		embeds_one :dropbox_cursor, :class_name => "Dropbox::Cursor"
 	end
 
 	def default_github_org

@@ -33,4 +33,8 @@ module Providable
   	provider_credentials.where(provider: Provider.named("appfigures")).first
   end
 
+  def dropbox_provider_credentials
+    provider_credentials.where(provider: Provider.named("dropbox")).first
+  end
+
 end

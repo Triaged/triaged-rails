@@ -62,6 +62,8 @@ TriageRails::Application.routes.draw do
   end
 
   namespace :app do
+    resources :feed_items
+    
 
     resources :providers do
       resources :provider_accounts do 

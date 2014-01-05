@@ -33,4 +33,9 @@ class ProviderCredential
   def appfigures_credentials_created
   	 Appfigures::SetupService.perform_async(company.id.to_s)
   end
+
+  def dropbox_credentials_created
+     company.create_dropbox_cursor
+     Dropbox::DeltaService.new(company.id).fetch_delta(false)
+  end
 end
