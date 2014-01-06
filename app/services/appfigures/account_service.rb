@@ -1,4 +1,4 @@
-class Appfigures::AccountService < AppFigures::BaseService
+class Appfigures::AccountService < Appfigures::BaseService
 	
 
 	def fetch_accounts
