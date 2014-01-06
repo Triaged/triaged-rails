@@ -1,5 +1,6 @@
 class Api::V1::AccountsController < API::BaseController
-	before_action :set_user
+	skip_before_filter :authenticate_user! :only => :reset_password
+  before_action :set_user
 
 
 	def show
