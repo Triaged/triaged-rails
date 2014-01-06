@@ -15,6 +15,7 @@ class Heroku::Event::Deploy < Cards::Event
 			event.line_items.build(
         text: commit.gsub("*", "").strip,
       )
+		end
 
   	#user: data.user,
 
