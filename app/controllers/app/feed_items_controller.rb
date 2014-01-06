@@ -1,5 +1,5 @@
 class App::FeedItemsController < ApplicationController
-	before_action :authenticate_user!, :except => share
+	before_action :authenticate_user!, :except => :share
 	
 	respond_to :html
 	before_action :set_feed_item
@@ -9,7 +9,6 @@ class App::FeedItemsController < ApplicationController
 	end
 
 	def share
-		
 	end
 
 	private
