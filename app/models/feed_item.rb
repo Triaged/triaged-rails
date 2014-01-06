@@ -31,7 +31,6 @@ class FeedItem
 	end
 
 	def before_create
-		self.provider = provider_from_name
 		build_html_url
 	end
 
@@ -82,24 +81,6 @@ class FeedItem
 		"This should really be set by a subclass"
 	end
 
-	#
-	# Subclass naming
-	#
-
-	def provider_from_name
-		Provider.find_by name: provider_name
-	end
-
-	def provider_name
-		self.class.name.split("::").first.underscore
-	end
-
-	def event_name
-		self.class.name.split("::").last.underscore
-	end
-
-	def human_event_name
-		event_name.humanize
-	end
+	
 
 end

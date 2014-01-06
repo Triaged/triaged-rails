@@ -10,6 +10,4 @@ class Github::Event::Commit
   field :url, type: String
   field :external_id, type: Integer
 
-  
-
 end

@@ -1,34 +1,17 @@
-class Airbrake::Event::Exception < FeedItem
+class Airbrake::Event::Exception < Cards::Event
   include Mongoid::Document
 
-  field :project, :type => String
-  field :message, :type => String
-  field :error_class, :type => String
-  field :environment, :type => String
-  field :times_occurred, :type => Integer
-  field :line_number, :type => Integer
-
-  
-	def self.build_from_webhook data
+  def self.build_from_webhook data, company
 		event = Airbrake::Event::Exception.new(
 			external_id: data.error.id,
-			project: data.error.project.name,
-			message: data.error.error_message,
-			error_class: data.error.error_class,
-			line_number: data.error.line_number,
-			times_occurred: data.error.times_occurred,
-			environment: data.error.environment
+			property_name: data.error.project.name,
+			title: "#{data.error.error_message.capitalize} Exception",
+			body: data.error.error_message
 		)
 	end
 
 	def should_push?
 		true
 	end
-
-	def push_message
-		message
-	end
-
-
 
 end

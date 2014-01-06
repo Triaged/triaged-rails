@@ -1,4 +1,4 @@
-class Beanstalk::Event::Push < FeedItem
+class Beanstalk::Event::Push < Cards::Event
 	include Mongoid::Document
 
   field :repo_name, :type => String
@@ -9,26 +9,25 @@ class Beanstalk::Event::Push < FeedItem
   embeds_many :commits, :class_name => "Beanstalk::Event::Commit"
 
   
-  def self.build_from_webhook event
-  	push = Beanstalk::Event::Push.new(
-  		repo_name: event.repository.name,
-  		repo_url: event.repository.url,
-  		external_id: event.after
-  	)
-  	
-  	event.commits.each do |commit|
+  def self.build_from_webhook data, company
+    event = Beanstalk::Event::Push.new(
+      external_id: data.after,
+      property_name: data.repository.name,
+      title:  "Pushed to #{object.branch}",
+    )
+
+  	data.commits.each do |commit|
 			commit = RecursiveOpenStruct.new(commit)
-			push.commits.build(
-  			external_id: commit.id,
-  			author: commit.author.name,
-  			author_email: commit.author.email,
-  			timestamp: commit.timestamp,
-  			message: commit.message,
-  			url: commit.url,
-  			)
+			event.line_items.build(
+        text: commit.message,
+        url: commit.url,
+        timestamp: commit.timestamp,
+      )
+      #author: commit.author.name,
+      #author_email: commit.author.email,
   	end
 
-  	return push
+  	return event
   end
 
 

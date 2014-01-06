@@ -1,26 +1,22 @@
-class Heroku::Event::Deploy < FeedItem
+class Heroku::Event::Deploy < Cards::Event
   include Mongoid::Document
 
-  field :app, :type => String
-  field :user, :type => String
-  field :git_log, :type => Array
-  field :head_long, :type => String
-  field :previous_head, :type => String
-  field :head, :type => String
+  def self.build_from_webhook data, company
 
-
-  def self.build_from_webhook data
-		event = Heroku::Event::Deploy.new(
+  	event = Heroku::Event::Deploy.new(
 			external_id: "h-#{data.head_long}",
-			app: data.app,
-			user: data.user,
+			property_name: data.app,
+			title: "Deploy by #{data.user}",
+			body: data.error.error_message,
 			html_url: data.url,
-			git_log: data.git_log.split("\n ").collect{ |git| git.gsub("*", "").strip},
-			head_long: data.head_long,
-			head: data.head
 		)
 
-		event.previous_head = data.prev_head if data.prev_head
+		data.git_log.split("\n ").each do |commit|
+			event.line_items.build(
+        text: commit.gsub("*", "").strip,
+      )
+
+  	#user: data.user,
 
 		return event
 	end
