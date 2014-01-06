@@ -1,4 +1,4 @@
-class GoogleAnalytics::SetupService < GoogleAnalytics::BaseService
+class GoogleAnalytics::AccountService < GoogleAnalytics::BaseService
 	attr_accessor :user
 
 	def initialize company_id
@@ -6,7 +6,7 @@ class GoogleAnalytics::SetupService < GoogleAnalytics::BaseService
 		@user = Legato::User.new(access_token)
 	end
 
-	def fetch_remote_profiles
+	def fetch_accounts
 		@user.accounts.each do |account|
 			ga_account = @company.provider_accounts.find_or_create_by(
 					name: account.name,

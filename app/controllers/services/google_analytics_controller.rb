@@ -3,7 +3,7 @@ class Services::GoogleAnalyticsController < ServiceController
 	before_action :set_company
 
 	def account_list
-		@accounts = GoogleAnalytics::SetupService.new(@company.id).fetch_remote_profiles
+		@accounts = GoogleAnalytics::SetupService.new(@company.id).fetch_accounts
 		redirect_to(oauth_complete_path) if (@accounts.count == 1)
 		@skip_footer = true
 	end

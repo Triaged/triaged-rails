@@ -1,5 +1,5 @@
 class Api::V1::AccountsController < API::BaseController
-	skip_before_filter :authenticate_user! :only => :reset_password
+	skip_before_filter :authenticate_user!, :only => :reset_password
   before_action :set_user
 
 

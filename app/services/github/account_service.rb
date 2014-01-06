@@ -1,16 +1,8 @@
-class Github::AccountService
-	include Rails.application.routes.url_helpers
-
-	attr_accessor :company, :github
-
-	def initialize company_id
-		@company = Company.find(company_id)
-		@github = Github.new oauth_token: @company.github_provider_credentials.access_token
-	end
-
+class Github::AccountService < Github::BaseService
+	
 	def fetch_accounts
-		setup_personal_account
-		setup_organizations
+		fetch_personal_account
+		fetch_organizations
 
 		github_orgs = @company.provider_accounts.provided_by(Provider.named "github")
 
@@ -23,7 +15,22 @@ class Github::AccountService
 		return github_orgs
 	end
 
-	def setup_organizations
+	def fetch_properties(account)
+		# Get all repos for the org
+		res = account.personal ? @github.repos.list : @github.repos.list(org: account.name)
+		res.each_page { |page| page.each do |repo|
+			account.provider_properties << Github::Repo.new(
+				external_id: repo.id, 
+				html_url: repo.html_url, 
+				url: repo.url, 
+				name: repo.name,
+				full_name: repo.full_name,
+				owner: repo.owner.login
+			)
+		end }
+	end
+
+	def fetch_organizations
 		organizations = @github.orgs.all.to_a
 		Rails.logger.info organizations
 		
@@ -37,7 +44,7 @@ class Github::AccountService
 		end
 	end
 
-	def setup_personal_account
+	def fetch_personal_account
 		user_account = @github.users.get
 		@company.provider_accounts.find_or_create_by(
 			external_id: user_account.id, 
@@ -47,5 +54,11 @@ class Github::AccountService
 			provider: Provider.named("github")
 		)
 	end
+
+	#
+	### Properties
+	#
+
+	
 
 end
