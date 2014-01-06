@@ -1,15 +1,15 @@
-class Heroku::Event::DeploySerializer < TextItemSerializer
-	#attributes :app, :user, :git_log, :head_long, :head, :previous_head
+# class Heroku::Event::DeploySerializer < TextItemSerializer
+# 	#attributes :app, :user, :git_log, :head_long, :head, :previous_head
 
-	def property
-		object.app.capitalize
-	end
+# 	def property
+# 		object.app.capitalize
+# 	end
 
-	def action
-		"Deploy by #{object.user}"
-	end
+# 	def action
+# 		"Deploy by #{object.user}"
+# 	end
 
-	def body
-		return list_helper(object.git_log)
-	end
-end
+# 	def body
+# 		return list_helper(object.git_log)
+# 	end
+# end
