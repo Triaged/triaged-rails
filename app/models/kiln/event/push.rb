@@ -15,6 +15,7 @@ class Kiln::Event::Push < FeedItem
         url: commit.url,
         timestamp: commit.timestamp,
       )
+    end
 
 
 

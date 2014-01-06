@@ -23,6 +23,7 @@ class Beanstalk::Event::Push < Cards::Event
         url: commit.url,
         timestamp: commit.timestamp,
       )
+    end
       #author: commit.author.name,
       #author_email: commit.author.email,
   	end
