@@ -78,12 +78,15 @@ TriageRails::Application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify  
 
-    config.action_mailer.smtp_settings = {
-      :address   => "smtp.mandrillapp.com",
-      :port      => 25,
-      :user_name => ENV["MANDRILL_USERNAME"],
-      :password  => ENV["MANDRILL_API_KEY"]
-    }
+  ActionMailer::Base.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['MANDRILL_USER_NAME'],
+    :password =>       ENV['MANDRILL_API_KEY'],
+    :domain =>         'www.triaged.co',
+    :authentication => :plain
+  }
+  ActionMailer::Base.delivery_method = :smtp
 
   Rails.application.routes.default_url_options[:host] = "www.triaged.co"
    

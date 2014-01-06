@@ -92,7 +92,7 @@ TriageRails::Application.routes.draw do
   			post ':company_id' => "github#webhook", as: 'webhook'
   		end
   	end
-  	resources :stripe
+    resources :stripe
   	resources :google_analytics do
   		collection do
   			get 'account_list'

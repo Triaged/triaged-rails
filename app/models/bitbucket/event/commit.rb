@@ -1,16 +1,16 @@
-class Github::Commit
+class Bitbucket::Event::Commit
   include Mongoid::Document
 
-  belongs_to :push, class_name: "Github::Event::Push"
-  embedded_in :repo, class_name: "Github::Repo"
-
+  embedded_in :push, class_name: "Bitbucket::Event::Push"
+  
   field :author, type: String
   field :author_email, type: String
   field :timestamp, type: DateTime
   field :message, type: String
   field :url, type: String
   field :external_id, type: Integer
+  field :branch, :type => String
 
-  validates_uniqueness_of :external_id
+  
 
 end

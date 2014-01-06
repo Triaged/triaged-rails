@@ -4,7 +4,7 @@
 		<div class="col-lg-6 col-lg-offset-3 center-block">
 			<!-- Logo Row -->
 			<div class="row">
-				<%= link_to('/') do %><h2><%= image_tag "logotriage.png" %><% end %><span id="logo">Triage</span</h2>
+				<%= link_to('/') do %><h2><%= image_tag "logo-triage-lg.png" %><% end %><span id="logo">Triage</span</h2>
 
 			</div>
 			<!-- Title Row -->
@@ -13,7 +13,7 @@
 			</div>
 			<!-- Description Row -->
 			<div class="row center-block" id="welcome-description">
-			<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+			<%= minimal_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   			<%= f.error_notification %>
 
 			  <div class="form-inputs">
@@ -23,7 +23,7 @@
 			  <br />
 
 			  <div class="form-actions">
-			    <%= f.button :submit, "Send me reset instructions", :class => "btn-custom" %>
+			    <%= f.button :submit, "Send me instructions", :class => "btn-custom btn-small" %>
 			  </div>
 			<% end %>
 			</div>
