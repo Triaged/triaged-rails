@@ -9,7 +9,6 @@ class Heroku::Event::Deploy < Cards::Event
 			external_id: "h-#{data.head_long}",
 			property_name: data.app,
 			title: "Deploy by #{data.user}",
-			body: data.error.error_message,
 			html_url: data.url,
 		)
 
