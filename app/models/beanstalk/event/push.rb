@@ -26,8 +26,6 @@ class Beanstalk::Event::Push < Cards::Event
     end
       #author: commit.author.name,
       #author_email: commit.author.email,
-  	end
-
   	return event
   end
 
