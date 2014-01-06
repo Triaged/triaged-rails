@@ -5,10 +5,12 @@ class AsyncWebhookService
 		Rails.logger.info "Building event for #{event_class}"
 		
 		payload = RecursiveOpenStruct.new(payload)
-		event = event_class.constantize.build_from_webhook payload.event
+		company = Company.find(payload.company_id)
+
+		event = event_class.constantize.build_from_webhook payload.event,company
 
 		if event # event will be nil if validation failed
-			company = Company.find(payload.company_id)
+			
 			
 			# generic after init hook
 			event.after_build_hook company

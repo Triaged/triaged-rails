@@ -48,9 +48,9 @@ class Company
   end
 
   def add_default_feed_items
-  	add_event_to_feed Triage::DefaultChat.default_item(self)
-		add_event_to_feed Triage::DefaultGraph.default_item(self)
-		add_event_to_feed Triage::DefaultWelcome.default_item(self)
+  # 	add_event_to_feed Triage::DefaultChat.default_item(self)
+		# add_event_to_feed Triage::DefaultGraph.default_item(self)
+		# add_event_to_feed Triage::DefaultWelcome.default_item(self)
   end
 
   def self.create_placeholder_company

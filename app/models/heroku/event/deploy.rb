@@ -3,6 +3,8 @@ class Heroku::Event::Deploy < Cards::Event
 
   def self.build_from_webhook data, company
 
+  	Rails.logger.info "building heroku deploy"
+
   	event = Heroku::Event::Deploy.new(
 			external_id: "h-#{data.head_long}",
 			property_name: data.app,
@@ -18,6 +20,8 @@ class Heroku::Event::Deploy < Cards::Event
 		end
 
   	#user: data.user,
+
+  	Rails.logger.info event.inspect
 
 		return event
 	end
