@@ -29,7 +29,7 @@ class Github::Event::Push < Github::BaseEvent
   	# 		)
   	# end
 
-    branch = event.ref.split("/").last
+    branch = data.ref.split("/").last
 
 
     event = Github::Event::Push.new(
