@@ -1,15 +1,2 @@
-class NewRelic::Event::DeploymentSerializer < TextItemSerializer
-  #attributes :application_name, :account_name, :changelog, :description, :revision, :deployed_by
-
-  def property
-		object.application_name.capitalize
-	end
-
-	def action
-		"Deployment"
-	end
-
-	def body
-		object.description
-	end
+class NewRelic::Event::DeploymentSerializer < Cards::EventSerializer
 end

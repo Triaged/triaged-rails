@@ -1,15 +1,2 @@
-class Stripe::Event::ChargeRefundedSerializer < TextItemSerializer
-  #attributes :amount, :description
-
-  def property
-		"Stripe"
-	end
-
-	def action
-		"#{ActionView::Base.new.number_to_currency(object.amount)} Charge Refunded"
-	end
-
-	def body
-		object.description
-	end
+class Stripe::Event::ChargeRefundedSerializer < Cards::EventSerializer
 end

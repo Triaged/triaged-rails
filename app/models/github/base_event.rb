@@ -1,4 +1,4 @@
-class Github::BaseEvent < FeedItem
+class Github::BaseEvent < Cards::Event
 
 	field :org_name, :type => String
   field :repo_name, :type => String

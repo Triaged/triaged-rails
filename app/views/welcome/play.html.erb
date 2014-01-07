@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<%= render "shared/twitter_tags" %>
+  <title>Triage</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css" media="all" rel="stylesheet" />
+  <%= stylesheet_link_tag    "application", media: "all"%>
+  <script type="text/javascript" src="//use.typekit.net/dli1exz.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <%= csrf_meta_tags %>
+</head>
+<body style="background-color: #eeeeee;">
+
+	 <!-- Wrap all page content here -->
+    <div id="loaded-content">
+			<!-- Begin page content -->
+      <div class="container">
+      	<div class="col-lg-12">
+        <br /><br />
+        <%= image_tag "logotriage.png", :width => "80" %>
+        </div>
+      </div>
+    </div>
+
+    <%= yield :overlay %>
+
+</body>
+
+<%= javascript_include_tag "application" %>
+</html>
