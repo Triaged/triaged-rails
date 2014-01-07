@@ -18,6 +18,7 @@ class Cards::Base < FeedItem
 
 	def set_provider_name
 		self.provider = provider_from_name unless self.provider
+		self.provider_name = self.provider.name
 	end
 
 
