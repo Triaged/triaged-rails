@@ -3,8 +3,6 @@ class Github::BaseEvent < Cards::Event
 	field :org_name, :type => String
   field :repo_name, :type => String
 
-  belongs_to :provider_account
-
   def repo
   	provider_account.provider_properties.find_by name: repo_name
   end

@@ -3,16 +3,10 @@ class Cards::Base < FeedItem
 	belongs_to :provider
 	belongs_to :provider_account
 
-	field :external_id, type: String
-	field :html_url, :type => String
+	
 	field :provider_name, :type => String
 	field :event_name, type: String
 	field :property_name, :type => String
-
-
-	#validates_uniqueness_of :external_id
-	validates :external_id, :uniqueness => { :scope => [:company, :provider] }
-	index({ "external_id" => 1 })
 
 
 	before_create :set_provider_name

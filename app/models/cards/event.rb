@@ -1,10 +1,6 @@
 class Cards::Event < Cards::Base
   include Mongoid::Document
 
-  
-  
-  field :event_name, type: String
-  
   field :title, type: String
   field :body, type: String
   field :footer, type: String
