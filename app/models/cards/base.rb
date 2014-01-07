@@ -25,7 +25,7 @@ class Cards::Base < FeedItem
 	end
 
 	def set_event_name
-		self.event_name = self.class.name.split("::").last.underscore.humanize unless self.event_name
+		self.event_name = self.class.name.split("::").last.underscore unless self.event_name
 	end
 
 
