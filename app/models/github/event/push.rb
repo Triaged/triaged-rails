@@ -35,7 +35,7 @@ class Github::Event::Push < Github::BaseEvent
     event = Github::Event::Push.new(
       external_id: data.head_commit.id,
       property_name: data.repository.name,
-      title: "#{data.pusher.underscore.humanize.titleize} pushed to #{branch}",
+      title: "#{data.pusher.name.underscore.humanize.titleize} pushed to #{branch}",
       html_url: data.head_commit.url,
     )
 
