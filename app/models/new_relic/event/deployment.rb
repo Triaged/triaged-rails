@@ -1,7 +1,7 @@
 class NewRelic::Event::Deployment < Cards::Event
   include Mongoid::Document
 
- 	def self.build_from_webhook data
+ 	def self.build_from_webhook data, company
 
 		# event = NewRelic::Event::Deployment.new(
 		# 	external_id: data.external_id,

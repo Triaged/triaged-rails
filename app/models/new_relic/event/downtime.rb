@@ -1,4 +1,4 @@
-class NewRelic::Event::Downtime < FeedItem
+class NewRelic::Event::Downtime < Cards::Event
   include Mongoid::Document
 
   def self.build_from_webhook data, company

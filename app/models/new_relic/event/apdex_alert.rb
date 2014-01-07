@@ -1,4 +1,4 @@
-class NewRelic::Event::ApdexAlert < FeedItem
+class NewRelic::Event::ApdexAlert < Cards::Event
   include Mongoid::Document
 
  	def self.build_from_webhook data, company

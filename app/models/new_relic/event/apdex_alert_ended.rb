@@ -1,4 +1,4 @@
-class NewRelic::Event::ApdexAlertEnded < FeedItem
+class NewRelic::Event::ApdexAlertEnded < Cards::Event
   include Mongoid::Document
 
   
