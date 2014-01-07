@@ -19,15 +19,12 @@ class Dropbox::DeltaService < Dropbox::BaseService
 			for path, metadata in result['entries']
 				puts path
 				status =  (metadata != nil) ? :updated : :deleted
-				item.files << Dropbox::Event::File.new(
-					status: status,
-					path: path,
-					thumbnail: metadata['thumb_exists'],
-					root: metadata['root'],
+				item.line_items.build(
+					text: "#{path} #{status}"
+					thumbnail_url: metadata['thumb_exists'],
 					mime_type: metadata['mime_type'],
-					rev: metadata['rev'],
-					modified: metadata['modified'],
-					icon: metadata['icon']
+					icon: metadata['icon'],
+					timestamp: metadata['modified']
 				)
 			end
 

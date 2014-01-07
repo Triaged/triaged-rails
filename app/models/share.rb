@@ -1,11 +1,12 @@
 class Share
   include Mongoid::Document
 
-  embedded_in :feed_item
+  belongs_to :feed_item
+  belongs_to :user
   
   field :recipient_email, :type => String
   field :viewed, :type => Boolean
 
-  belongs_to :user
+  
 
 end

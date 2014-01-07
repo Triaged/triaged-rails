@@ -1,16 +1,16 @@
 class App::ShareController < ApplicationController
 
 	respond_to :html
-	before_action :set_feed_item
+	before_action :set_share
 
 	def show
-		respond_with @feed_item
+		respond_with @share
 	end
 
 	private
 
-	def set_feed_item
-		@feed_item = FeedItem.find(params[:id])
+	def set_share
+		@share = Share.find(params[:id])
 	end
 
 
