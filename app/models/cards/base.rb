@@ -6,7 +6,9 @@ class Cards::Base < FeedItem
 	field :external_id, type: String
 	field :html_url, :type => String
 	field :provider_name, :type => String
+	field :event_name, type: String
 	field :property_name, :type => String
+
 
 	#validates_uniqueness_of :external_id
 	validates :external_id, :uniqueness => { :scope => [:company, :provider] }
@@ -14,11 +16,16 @@ class Cards::Base < FeedItem
 
 
 	before_create :set_provider_name
+	before_create :set_event_name
 
 
 	def set_provider_name
 		self.provider = provider_from_name unless self.provider
 		self.provider_name = self.provider.name
+	end
+
+	def set_event_name
+		self.event_name = self.class.name.split("::").last.underscore.humanize unless self.event_name
 	end
 
 
@@ -30,12 +37,5 @@ class Cards::Base < FeedItem
 		Provider.find_by name: self.class.name.split("::").first.underscore
 	end
 
-	def event_name
-		self.class.name.split("::").last.underscore
-  end
-
-  def human_event_name
-		event_name.humanize
-  end
-
+	
 end
