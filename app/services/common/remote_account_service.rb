@@ -13,7 +13,7 @@ module Common::RemoteAccountService
 		# Syncronously fetch properties (to ensure they show up after account creation)
 		account_service_cls = "#{provider.name.camelize}::AccountService".constantize
 		account_service = account_service_cls.new(company.id)
-		account_service.fetch_properties if account_service.respond_to?(:fetch_properties)
+		account_service.fetch_properties(account) if account_service.respond_to?(:fetch_properties)
 
 		# Async hook for setup tasks
 		setup_service = "#{provider.name.camelize}::SetupService".constantize
