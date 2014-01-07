@@ -10,7 +10,7 @@ module Common::RemoteAccountService
 	def self.set_default_account(provider, company, account)
 		account.set_default_account!
 		cls = "#{provider.name.camelize}::SetupService".constantize
-		cls.perform_async(@company.id.to_s)
+		cls.perform_async(company.id.to_s)
 	end
 
 
