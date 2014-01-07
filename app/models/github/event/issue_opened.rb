@@ -18,7 +18,7 @@ class Github::Event::IssueOpened < Github::BaseEvent
   	# 	external_id: event.number,
   	# 	org_name: org_name,
   	# 	repo_name: event.repository.name
-  	)
+  	# )
   	event = Github::Event::IssueOpened.new(
       external_id: "#{event.action}-#{event.number}",
       property_name: data.repository.name,
@@ -30,9 +30,5 @@ class Github::Event::IssueOpened < Github::BaseEvent
 
 	def should_push?
 		true
-	end
-
-	def push_message
-		title
 	end
 end
