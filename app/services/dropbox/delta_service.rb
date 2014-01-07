@@ -20,7 +20,7 @@ class Dropbox::DeltaService < Dropbox::BaseService
 				puts path
 				status =  (metadata != nil) ? :updated : :deleted
 				item.line_items.build(
-					text: "#{path} #{status}"
+					text: "#{path} #{status}",
 					thumbnail_url: metadata['thumb_exists'],
 					mime_type: metadata['mime_type'],
 					icon: metadata['icon'],
