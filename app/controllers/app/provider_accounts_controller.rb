@@ -10,6 +10,7 @@ class App::ProviderAccountsController < ApplicationController
 	def set_account
 		@account = @company.provider_accounts.find(params[:account][:id])
 		Common::RemoteAccountService.set_default_account(@provider, @account)
+		redirect_to(oauth_complete_path)
 	end
 
 private
