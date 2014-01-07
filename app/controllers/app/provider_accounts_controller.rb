@@ -8,8 +8,8 @@ class App::ProviderAccountsController < ApplicationController
 	end
 
 	def set_account
-		account = @company.provider_accounts.find(params[:account][:id])
-		Common::RemoteAccountService.set_default_account(@provider, @company, account)
+		@account = @company.provider_accounts.find(params[:account][:id])
+		Common::RemoteAccountService.set_default_account(@provider, @account)
 	end
 
 private

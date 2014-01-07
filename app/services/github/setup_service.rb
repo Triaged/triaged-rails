@@ -6,7 +6,7 @@ class Github::SetupService
 
 	def perform account_id
 		@account = ProviderAccount.find(account_id)
-		@github = Github.new oauth_token: @company.github_provider_credentials.access_token
+		@github = Github.new oauth_token: @account.company.github_provider_credentials.access_token
 		create_hooks!
 	end
 
