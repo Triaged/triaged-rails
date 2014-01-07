@@ -63,6 +63,8 @@ TriageRails::Application.routes.draw do
 
   namespace :app do
     resources :feed_items
+
+    resources :share, :only => :show
     
 
     resources :providers do

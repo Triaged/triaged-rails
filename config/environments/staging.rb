@@ -50,7 +50,7 @@ TriageRails::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
-  config.assets.precompile += %w(dashboard.js dashboard.css edit.js edit.css home.css home.js default.css default.js)
+  config.assets.precompile += %w(welcome.css)
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

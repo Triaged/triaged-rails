@@ -1,6 +1,5 @@
-class App::FeedItemsController < ApplicationController
-	before_action :authenticate_user!
-	
+class App::ShareController < ApplicationController
+
 	respond_to :html
 	before_action :set_feed_item
 
