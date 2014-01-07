@@ -30,4 +30,12 @@ class Cards::Base < FeedItem
 		Provider.find_by name: self.class.name.split("::").first.underscore
 	end
 
+	def event_name
+		self.class.name.split("::").last.underscore
+  end
+
+  def human_event_name
+		event_name.humanize
+  end
+
 end
