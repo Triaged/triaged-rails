@@ -6,6 +6,7 @@ class Cards::LineItem
 	field :url, type: String
 	field :thumbnail_url, type: String
 	field :icon, type: String
+	field :mime_type, type: String
 
 
 	embedded_in :event, class_name: "Cards::Event"
