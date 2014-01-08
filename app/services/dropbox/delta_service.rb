@@ -29,6 +29,10 @@ class Dropbox::DeltaService < Dropbox::BaseService
 					timestamp: metadata['modified']
 				)
 			end
+		else # We're not saving
+			# We need to iterate the cursor to the current position
+			Dropbox::DeltaService.new(@company.id).fetch_delta(false) if result['has_more']
+		end
 
 			Common::FeedService.add_to_feed item, @company
 		end
