@@ -17,7 +17,7 @@ class Dropbox::DeltaService < Dropbox::BaseService
 			)
 
 			for path, metadata in result['entries']
-				puts path
+				#puts path
 				status =  (metadata != nil) ? :updated : :deleted
 				item.line_items.build(
 					text: "#{path} #{status}",
