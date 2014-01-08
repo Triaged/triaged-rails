@@ -4,6 +4,7 @@ class Company
   include Providable
   include Serviceable
   include CompanyFeedable
+  include Cursable
 
   field :name, :type => String
   field :api_token, :type => String
