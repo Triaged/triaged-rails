@@ -31,6 +31,8 @@ class Dropbox::DeltaService < Dropbox::BaseService
 			end
 		else # We're not saving
 			# We need to iterate the cursor to the current position
+			puts "Dropbox dry run"
+			puts result['has_more']
 			Dropbox::DeltaService.new(@company.id).fetch_delta(false) if result['has_more']
 		end
 
