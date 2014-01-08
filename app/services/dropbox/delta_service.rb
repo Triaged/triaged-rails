@@ -5,9 +5,13 @@ class Dropbox::DeltaService < Dropbox::BaseService
 
 		result = @dropbox_client.delta(@company.dropbox_cursor.current)
 
-		puts "New Cursor: #{ result['cursor']}"
+		
+
+		puts result['entries'].count
 
 		@company.dropbox_cursor.update_attributes(current: result['cursor'])
+
+		puts "New Cursor: #{@company.dropbox_cursor.current}"
 
 		if should_save
 
