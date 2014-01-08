@@ -35,7 +35,7 @@ class ProviderCredential
   end
 
   def dropbox_credentials_created
-     company.create_dropbox_cursor
+     company.cursors.create(provider: self.provider)
      Dropbox::DeltaService.new(company.id).fetch_delta(false)
   end
 end
