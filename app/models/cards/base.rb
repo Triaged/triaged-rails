@@ -5,6 +5,7 @@ class Cards::Base < FeedItem
 	belongs_to :provider_account
 
 	field :provider_name, :type => String
+	fiel :event_name, :type => String
 	
 	def after_build_hook company
 		super
