@@ -11,7 +11,7 @@ class AsyncWebhookService
 
 		if json_event # event will be nil if validation failed
 
-			if json_event[:type] == :event
+			if json_event[:type] == "event"
 				# create event from json
 				event = Cards::Event.new JSON.parse(json_event)
 			else
