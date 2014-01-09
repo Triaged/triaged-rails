@@ -10,6 +10,7 @@ class Heroku::Event::Deploy < BaseServiceEvent
       should_push: false
     }
 
+    event_set[:events] = []
     data.git_log.split("\n ").each do |commit|
       event_set[:events] << {
         external_id: "h-#{data.head_long}",

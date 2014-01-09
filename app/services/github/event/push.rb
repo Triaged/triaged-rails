@@ -17,6 +17,7 @@ class Github::Event::Push < BaseServiceEvent
 
     branch = data.ref.split("/").last
 
+    event_set[:events] = []
     data.commits.each do |commit|
       commit = RecursiveOpenStruct.new(commit)
       event_set[:events] << {

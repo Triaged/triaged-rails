@@ -10,6 +10,7 @@ class Bitbucket::Event::Push < BaseServiceEvent
       should_push: false
     }
 
+    event_set[:events] = []
     data.commits.each do |commit|
       commit = RecursiveOpenStruct.new(commit)
       event_set[:events] << {

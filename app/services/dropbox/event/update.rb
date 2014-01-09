@@ -11,6 +11,7 @@ class Dropbox::Event::Update < BaseServiceEvent
       should_push: false
     }
 
+    event_set[:events] = []
     for path, metadata in result['entries']
 			#puts path
 			status =  (metadata != nil) ? :updated : :deleted
