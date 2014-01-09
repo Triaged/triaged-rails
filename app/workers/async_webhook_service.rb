@@ -11,13 +11,14 @@ class AsyncWebhookService
 
 		if json_event # event will be nil if validation failed
 
-			if json_event[:type] == "event"
+			parsed_event = JSON.parse(json_event)
+
+			if parsed_event[:type] == "event"
 				# create event from json
-				event = Cards::Event.new JSON.parse(json_event)
+				event = Cards::Event.new parsed_event
 			else
-				event = Cards::EventSet.new JSON.parse(json_event)
+				event = Cards::EventSet.new parsed_event
 			end
-			
 			
 			# generic after init hook
 			event.after_build_hook company
