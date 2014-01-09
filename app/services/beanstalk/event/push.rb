@@ -8,7 +8,7 @@ class Beanstalk::Event::Push < BaseServiceEvent
       provider_name: provider_name,
       title: "Pushed to #{data.branch}",
       timestamp: DateTime.now,
-      should_push: => false
+      should_push: false
     }
 
     data.commits.each do |commit|

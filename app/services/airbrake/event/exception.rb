@@ -7,7 +7,7 @@ class Airbrake::Event::Exception < BaseServiceEvent
 			provider_name: provider_name,
 			title: "#{data.error.error_message.capitalize} Exception",
 			provider_account_name: nil,
-			should_push: => true,
+			should_push: true,
 			external_id: data.error.id,
 			property_name: data.error.project.name,
 			description: data.error.error_message,
