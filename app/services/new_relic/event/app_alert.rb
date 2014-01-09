@@ -4,7 +4,7 @@ class NewRelic::Event::AppAlert < BaseServiceEvent
 		event = {
 			type: :event,
 			company_id: company.id,
-			provider_name: provider_name,
+			provider_name: self.provider_name,
 			external_id: data.external_id,
 			title: "App Alert",
 			provider_account_name: nil,

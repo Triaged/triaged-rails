@@ -4,7 +4,7 @@ class HockeyApp::Event::Feedback < BaseServiceEvent
 		event = {
 			type: :event,
 			company_id: company.id,
-			provider_name: provider_name,
+			provider_name: self.provider_name,
 			title: 	"New Feedback",
 			provider_account_name: nil,
 			should_push: false,

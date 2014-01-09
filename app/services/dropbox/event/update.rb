@@ -5,7 +5,7 @@ class Dropbox::Event::Update < BaseServiceEvent
 		event_set = {
       type: :event_set,
       company_id: company.id,
-      provider_name: provider_name,
+      provider_name: self.provider_name,
       title: "Files Uploaded",
       timestamp: DateTime.now,
       should_push: false

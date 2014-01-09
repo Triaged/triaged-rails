@@ -4,7 +4,7 @@ class Stripe::Event::DisputeCreated < Stripe::BaseEvent
 		event = {
 			type: :event,
 			company_id: company.id,
-			provider_name: provider_name,
+			provider_name: self.provider_name,
 			title: "Dispute #{data.data.object.status.humanize}",
 			provider_account_name: nil,
 			should_push: true,
