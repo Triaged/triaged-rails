@@ -9,7 +9,7 @@ class Github::Event::IssueOpened < BaseServiceEvent
 
     event = {
       type: :event,
-      company_id: company.id,
+      company_id: company.id.to_s,
       provider_name: self.provider_name,
       title: data.issue.title,
       provider_account_name: org_name,

@@ -4,7 +4,7 @@ class Sentry::Event::Exception < BaseServiceEvent
   def self.build_from_webhook data, company
 		event = {
 			type: :event,
-			company_id: company.id,
+			company_id: company.id.to_s,
 			provider_name: self.provider_name,
 			external_id: data.id,
 			title: "#{data.level.capitalize} Exception",

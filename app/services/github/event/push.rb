@@ -8,7 +8,7 @@ class Github::Event::Push < BaseServiceEvent
 
     event_set = {
       type: :event_set,
-      company_id: company.id,
+      company_id: company.id.to_s,
       provider_name: org_name,
       title: "Pushed",
       timestamp: DateTime.now,

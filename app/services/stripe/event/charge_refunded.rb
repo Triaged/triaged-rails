@@ -4,7 +4,7 @@ class Stripe::Event::ChargeRefunded < Stripe::BaseEvent
   def self.build_from_webhook data, company
 		event = {
 			type: :event,
-			company_id: company.id,
+			company_id: company.id.to_s,
 			provider_name: self.provider_name,
 			title: "#{ActionView::Base.new.number_to_currency(data.data.object.amount_refunded  / 100)} Charge Refunded",
 			provider_account_name: nil,

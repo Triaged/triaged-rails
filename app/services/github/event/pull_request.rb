@@ -3,7 +3,7 @@ class Github::Event::PullRequest < BaseServiceEvent
   def self.build_from_webhook data, company
     event = {
       type: :event,
-      company_id: company.id,
+      company_id: company.id.to_s,
       provider_name: self.provider_name,
       title: data.pull_request.title,
       provider_account_name: data.repository.owner.login,

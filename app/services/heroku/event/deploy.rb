@@ -3,7 +3,7 @@ class Heroku::Event::Deploy < BaseServiceEvent
   def self.build_from_webhook data, company
     event_set = {
       type: :event_set,
-      company_id: company.id,
+      company_id: company.id.to_s,
       provider_name: self.provider_name,
       title: "Deployed #{data.app}",
       timestamp: DateTime.now,

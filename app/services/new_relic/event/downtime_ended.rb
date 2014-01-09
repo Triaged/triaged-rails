@@ -3,7 +3,7 @@ class NewRelic::Event::DowntimeEnded < BaseServiceEvent
   def self.build_from_webhook data, company
 		event = {
 			type: :event,
-			company_id: company.id,
+			company_id: company.id.to_s,
 			provider_name: self.provider_name,
 			external_id: data.external_id,
 			title: "Downtime Ended",
