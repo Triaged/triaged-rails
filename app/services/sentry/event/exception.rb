@@ -5,7 +5,7 @@ class Sentry::Event::Exception < BaseServiceEvent
 		event = {
 			type: :event,
 			company_id: company.id.to_s,
-			provider_name: self.provider_name,
+			provider_name: self.provider_name, event_name: self.event_name,
 			external_id: data.id,
 			title: "#{data.level.capitalize} Exception",
 			provider_account_name: nil,

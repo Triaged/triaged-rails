@@ -5,7 +5,7 @@ class Beanstalk::Event::Push < BaseServiceEvent
     event_set = {
       type: :event_set,
       company_id: company.id.to_s,
-      provider_name: self.provider_name,
+      provider_name: self.provider_name, event_name: self.event_name,
       title: "Pushed to #{data.branch}",
       timestamp: DateTime.now,
       should_push: false

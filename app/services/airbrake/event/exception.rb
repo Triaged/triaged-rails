@@ -4,7 +4,7 @@ class Airbrake::Event::Exception < BaseServiceEvent
 		event = {
 			type: :event,
 			company_id: company.id.to_s,
-			provider_name: self.provider_name,
+			provider_name: self.provider_name, event_name: self.event_name,
 			title: "#{data.error.error_message.capitalize} Exception",
 			provider_account_name: nil,
 			should_push: true,

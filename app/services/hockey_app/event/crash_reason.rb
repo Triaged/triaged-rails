@@ -5,7 +5,7 @@ class HockeyApp::Event::CrashReason < Cards::Event
 		event = {
 			type: :event,
 			company_id: company.id.to_s,
-			provider_name: self.provider_name,
+			provider_name: self.provider_name, event_name: self.event_name,
 			title: 	data.title,
 			provider_account_name: nil,
 			should_push: false,

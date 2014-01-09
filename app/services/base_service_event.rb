@@ -8,6 +8,10 @@ class BaseServiceEvent
 		self.name.split("::").first.underscore
 	end
 
+	def self.event_name
+		self.name.split("::").last.underscore
+	end
+
 	
 
 
