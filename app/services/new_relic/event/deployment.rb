@@ -8,7 +8,7 @@ class NewRelic::Event::Deployment < BaseServiceEvent
 			external_id: data.external_id,
 			title: "Deployment",
 			provider_account_name: nil,
-			should_push: false
+			should_push: false,
 			property_name: data.application_name,
 			description: data.description,
 			footer: data.severity,

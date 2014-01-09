@@ -7,7 +7,7 @@ class Cards::Event < Cards::Base
 	field :title, type: String
 	field :description, type: String
 	field :footer, type: String
-	field :timestamp, type: String
+	
 	
 	field :url, type: String
 	
