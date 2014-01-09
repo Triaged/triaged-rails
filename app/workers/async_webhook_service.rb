@@ -13,7 +13,11 @@ class AsyncWebhookService
 
 			parsed_event = JSON.parse(json_event)
 
-			if parsed_event.delete(:type) == "event"
+			puts parsed_event
+
+			if parsed_event.delete("type") == "event"
+
+				puts parsed_event
 				# create event from json
 				event = Cards::Event.new parsed_event
 			else

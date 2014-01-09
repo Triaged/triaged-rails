@@ -24,9 +24,6 @@ class Heroku::Event::Deploy < BaseServiceEvent
       email: data.user, 
     }
     
-    puts event_set.inspect
-    puts "Deploy"
-
     return event_set.to_json
   end
   
