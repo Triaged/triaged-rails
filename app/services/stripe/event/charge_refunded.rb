@@ -22,3 +22,5 @@ class Stripe::Event::ChargeRefunded < Stripe::BaseEvent
 	def build_html_url(id)
 		base_url_path + "/payments/#{id}"
 	end
+
+end
