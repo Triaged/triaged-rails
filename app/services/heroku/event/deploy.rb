@@ -11,11 +11,10 @@ class Heroku::Event::Deploy < BaseServiceEvent
     }
 
     data.git_log.split("\n ").each do |commit|
-      commit = RecursiveOpenStruct.new(commit)
       event_set[:events] << {
         external_id: "h-#{data.head_long}",
         description: commit.gsub("*", "").strip,
-        timestamp: commit.timestamp,
+        timestamp: DateTime.now,
         url: data.url,
       }
     end
