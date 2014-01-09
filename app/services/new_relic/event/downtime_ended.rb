@@ -8,7 +8,7 @@ class NewRelic::Event::DowntimeEnded < BaseServiceEvent
 			external_id: data.external_id,
 			title: "Downtime Ended",
 			provider_account_name: nil,
-			should_push: => true
+			should_push: true,
 			property_name: data.application_name,
 			description: data.long_description,
 			footer: data.severity,

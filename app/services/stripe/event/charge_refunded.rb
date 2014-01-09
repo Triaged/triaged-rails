@@ -8,7 +8,7 @@ class Stripe::Event::ChargeRefunded < Stripe::BaseEvent
 			provider_name: provider_name,
 			title: "#{ActionView::Base.new.number_to_currency(data.data.object.amount_refunded  / 100)} Charge Refunded",
 			provider_account_name: nil,
-			should_push: => true,
+			should_push: false,
 			external_id: data.id,
 			property_name: nil,
 			description: data.data.object.description,

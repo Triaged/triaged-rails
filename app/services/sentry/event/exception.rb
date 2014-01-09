@@ -12,7 +12,7 @@ class Sentry::Event::Exception < BaseServiceEvent
 			property_name: data.project,
 			description: data.message,
 			footer: "as #{data.culprit}",
-			should_push: => true
+			should_push: true,
 			timestamp: data.created_at,
 			url: nil,
 		}

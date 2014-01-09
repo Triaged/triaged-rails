@@ -7,7 +7,7 @@ class Stripe::Event::DisputeCreated < Stripe::BaseEvent
 			provider_name: provider_name,
 			title: "Dispute #{data.data.object.status.humanize}",
 			provider_account_name: nil,
-			should_push: => true,
+			should_push: true,
 			external_id: data.id,
 			property_name: nil,
 			description: data.data.object.reason,
