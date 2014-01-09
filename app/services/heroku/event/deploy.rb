@@ -24,6 +24,8 @@ class Heroku::Event::Deploy < BaseServiceEvent
       email: data.user, 
     }
     
+    Rails.logger.info event_set.inspect
+
     return event_set.to_json
   end
   
