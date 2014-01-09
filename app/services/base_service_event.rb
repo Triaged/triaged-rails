@@ -5,7 +5,7 @@ class BaseServiceEvent
 	end
 
 	def self.provider_name
-		self.class.name.split("::").first.underscore
+		self.name.split("::").first.underscore
 	end
 
 	
