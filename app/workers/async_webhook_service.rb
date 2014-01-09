@@ -7,9 +7,16 @@ class AsyncWebhookService
 		payload = RecursiveOpenStruct.new(payload)
 		company = Company.find(payload.company_id)
 
-		event = event_class.constantize.build_from_webhook payload.event,company
+		json_event = event_class.constantize.build_from_webhook payload.event,company
 
-		if event # event will be nil if validation failed
+		if json_event # event will be nil if validation failed
+
+			if json_event[:type] == :event
+				# create event from json
+				event = Cards::Event.new JSON.parse(json_event)
+			else
+				event = Cards::EventSet.new JSON.parse(json_event)
+			end
 			
 			
 			# generic after init hook

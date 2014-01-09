@@ -1,10 +1,9 @@
-class Cards::Event < Cards::Base
+class Cards::NestedEvent
 	include Mongoid::Document
- 
+
 	field :external_id, type: String
 	field :property_name, :type => String
 
-	field :title, type: String
 	field :description, type: String
 	field :footer, type: String
 	field :timestamp, type: String
@@ -15,7 +14,8 @@ class Cards::Event < Cards::Base
 	field :icon, type: String
 	field :mime_type, type: String
 
-	embeds_one :author, class_name: "Cards::Author"
 
+	embedded_in :event_set, class_name: "Cards::EventSet"
+	validates_uniqueness_of :external_id
 
 end
