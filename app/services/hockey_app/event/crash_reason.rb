@@ -8,7 +8,7 @@ class HockeyApp::Event::CrashReason < Cards::Event
 			provider_name: provider_name,
 			title: 	data.title,
 			provider_account_name: nil,
-			should_push: => false,
+			should_push: false,
 			external_id: data.public_identifier,
 			property_name: data.title.split("for ").last,
 			description: data.crash_reason.reason,

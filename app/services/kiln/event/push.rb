@@ -7,7 +7,7 @@ class Kiln::Event::Push < BaseServiceEvent
       provider_name: provider_name,
       title: "Pushed",
       timestamp: DateTime.now,
-      should_push: => false
+      should_push: false
     }
 
     data.commits.each do |commit|

@@ -7,7 +7,7 @@ class Heroku::Event::Deploy < BaseServiceEvent
       provider_name: provider_name,
       title: "Deployed #{data.app}",
       timestamp: DateTime.now,
-      should_push: => false
+      should_push: false
     }
 
     data.git_log.split("\n ").each do |commit|
