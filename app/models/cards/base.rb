@@ -5,11 +5,15 @@ class Cards::Base < FeedItem
 	belongs_to :provider_account
 
 	field :provider_name, :type => String
-	before_create :set_provider_name
 	
+	def after_build_hook
+		super
+		set_provider
 
-	def set_provider_name
-		self.provider_name = self.provider.name
 	end
 
+	def set_provider
+		self.provider = Provider.named(self.provider_name)
+	end
+	
 end
