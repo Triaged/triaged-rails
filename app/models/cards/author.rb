@@ -7,3 +7,5 @@ class Cards::Author
 
 	embedded_in :event, class_name: "Cards::Event"
 	embedded_in :nested_event, class_name: "Cards::NestedEvent"
+
+end
