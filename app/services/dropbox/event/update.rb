@@ -8,7 +8,7 @@ class Dropbox::Event::Update < BaseServiceEvent
       provider_name: provider_name,
       title: "Files Uploaded",
       timestamp: DateTime.now,
-      should_push: => false
+      should_push: false
     }
 
     for path, metadata in result['entries']

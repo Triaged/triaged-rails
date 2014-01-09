@@ -7,7 +7,7 @@ class Crashlytics::Event::Issue < BaseServiceEvent
 			provider_name: provider_name,
 			title: 	data.title,
 			provider_account_name: nil,
-			should_push: => true,
+			should_push: true,
 			external_id: data.display_id,
 			property_name:  data.app.name,
 			description: data["method"].truncate(320),

@@ -12,7 +12,7 @@ class Github::Event::Push < BaseServiceEvent
       provider_name: org_name,
       title: "Pushed",
       timestamp: DateTime.now,
-      should_push: => false
+      should_push: false
     }
 
     branch = data.ref.split("/").last

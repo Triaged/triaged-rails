@@ -13,7 +13,7 @@ class Github::Event::IssueOpened < BaseServiceEvent
       provider_name: provider_name,
       title: data.issue.title,
       provider_account_name: org_name,
-      should_push: => false,
+      should_push: false,
       external_id: data.number,
       property_name: data.repository.name,
       description: data.issue.body,
