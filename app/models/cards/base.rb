@@ -6,10 +6,9 @@ class Cards::Base < FeedItem
 
 	field :provider_name, :type => String
 	
-	def after_build_hook
+	def after_build_hook company
 		super
 		set_provider
-
 	end
 
 	def set_provider
