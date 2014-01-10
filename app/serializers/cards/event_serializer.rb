@@ -1,6 +1,8 @@
 class Cards::EventSerializer < FeedItemSerializer
- 	attributes :title, :body, :provider_name, :footer, :html_url
+ 	attributes :provider_name, :property_name, :external_id
 
- 	has_many :line_items
+ 	attributes :title, :description, :footer
+ 	attributes :html_url
+ 	
 
 end
