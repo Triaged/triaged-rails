@@ -5,7 +5,7 @@ class FeedItem
   belongs_to :company
   belongs_to :author, class_name: "User"
   embeds_many :messages, order: "id DESC"
-  embeds_many :shares
+  has_many :shares
 
   
   field :timestamp, type: DateTime
