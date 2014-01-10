@@ -110,13 +110,6 @@ GEM
     connection_pool (1.1.0)
     daemon_controller (1.1.7)
     dalli (2.6.4)
-    dashing-rails (2.2.0)
-      coffee-script (~> 2.2)
-      connection_pool (~> 1.1)
-      jquery-rails (~> 3.0)
-      rails (~> 4.0)
-      redis (~> 3.0)
-      rufus-scheduler (~> 3.0)
     debug_inspector (0.0.2)
     debugger (1.6.1)
       columnize (>= 0.3.1)
@@ -322,8 +315,6 @@ GEM
     rest-client (1.6.7)
       mime-types (>= 1.16)
     ruby-hmac (0.4.0)
-    rufus-scheduler (3.0.2)
-      tzinfo
     sass (3.2.10)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -400,7 +391,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   connection_pool
   dalli
-  dashing-rails
   debugger
   devise
   dropbox-sdk

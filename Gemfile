@@ -86,7 +86,7 @@ gem "mailchimp"
 gem 'connection_pool'
 gem "braintree"
 gem "lograge"
-gem 'dashing-rails'
+
 gem 'yui-compressor'
 gem 'dropbox-sdk', :require => 'dropbox_sdk'
 
