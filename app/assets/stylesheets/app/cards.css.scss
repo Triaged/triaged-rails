@@ -10,11 +10,11 @@
 	background: #fff;
 	padding: 25px 50px;
 	overflow: auto;
-	border: 1px solid rgba(151,151,151,0.50);
-	-moz-box-shadow:    1px 1px 3px 0px rgba(0,0,0,0.20);
-	-webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.20);
-	box-shadow:         1px 1px 3px 0px rgba(0,0,0,0.20);
-	border: 1px solid #ddd;
+	border: 1px solid #BBB;
+        -moz-box-shadow: 0 0 5px #ccc,inset 0 0 0 #000;
+        -webkit-box-shadow: 0 0 5px #ccc,inset 0 0 0 #000;
+        box-shadow: 0 0 5px #ccc,inset 0 0 0 #000;
+        border: 1px solid #ddd;
 }
 
 .row {

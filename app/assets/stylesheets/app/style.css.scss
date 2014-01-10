@@ -53,17 +53,19 @@ a:focus {
 /* nav */
 .navbar {
 	width: 100%;
-	box-shadow: 0 2px 4px -4px #000000;
+	//box-shadow: 0 2px 4px -4px #000000;
 	height: 80px;
 }
 .nav > li > a:hover, .nav > li > a:focus {
     background-color: transparent; }
 #navlogo {
+	margin-left: 100px;
 	float: left;
-	margin-top: 23px;
+	margin-top: 16px;
 }
 #navitunes {
 	margin-top: 5px;
+	margin-right: 20px;
 }
 
 .navbar-triage {
