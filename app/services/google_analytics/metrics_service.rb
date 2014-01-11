@@ -44,7 +44,7 @@ private
 	end
 
 	def legato_profiles user
-		Legato::Management::Profile.all(user).select {|profile| profile.name == "All Web Site Data"}
+		Legato::Management::Profile.all(user) #.select {|profile| profile.name == "All Web Site Data"}
 	end
 
 end
