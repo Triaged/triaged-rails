@@ -4,6 +4,7 @@ class App::ShareController < ApplicationController
 	before_action :set_share
 
 	def show
+		@feed_item = @share.feed_item
 		@skip_footer = true
 		respond_with @share
 	end
