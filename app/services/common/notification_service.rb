@@ -46,7 +46,11 @@ module Common::NotificationService
 
 			GROCER_FEEDBACK.each do |attempt|
   			puts attempt.inspect
-  			PushToken.find_by(token: attempt.device_token).destroy
+  			begin
+  				PushToken.find_by(token: attempt.device_token).destroy
+  			rescue
+  				puts "no token found"
+  			end
 			end
 		end
 	end
