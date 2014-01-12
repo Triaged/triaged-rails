@@ -10,15 +10,14 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= csrf_meta_tags %>
 </head>
+<%= render "layouts/header" %>
 <body>
-
-	<!-- Begin page content -->
-  	 <%= yield %>
-
-    
-  <%= render "layouts/footer" unless @skip_footer %>
-
+  <div class="container">
+    <!-- Begin page content -->
+  	<%= yield %>
+  </div>
 </body>
+<%= render "layouts/footer" unless @skip_footer %>
 
 <%= javascript_include_tag "application" %>
 

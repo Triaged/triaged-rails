@@ -5,7 +5,6 @@ class App::ShareController < ApplicationController
 
 	def show
 		@feed_item = @share.feed_item
-		@skip_footer = true
 		respond_with @share
 	end
 

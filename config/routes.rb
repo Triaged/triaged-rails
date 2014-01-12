@@ -1,9 +1,6 @@
 require 'sidekiq/web'
 TriageRails::Application.routes.draw do
-  
-  get "rails/g"
-  get "rails/controller"
-  get "rails/app/providers"
+ 
   # To be removed
 	resource :account
 
@@ -63,6 +60,7 @@ TriageRails::Application.routes.draw do
 
   namespace :app do
     resources :feed_items
+    resources :feed
 
     resources :share, :only => :show
     
