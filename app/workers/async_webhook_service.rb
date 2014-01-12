@@ -26,7 +26,6 @@ class AsyncWebhookService
 			event.timestamp = payload[:timestamp]
 
 			Rails.logger.info company
-			Rails.logger.info event.inspect
 			Rails.logger.info event.provider
 
 			# ensure the company knows this provider is connected

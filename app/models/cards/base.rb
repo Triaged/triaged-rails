@@ -13,6 +13,7 @@ class Cards::Base < FeedItem
 	end
 
 	def set_provider
+		Rails.logger.info "Setting Provider name"
 		self.provider = Provider.named(self.provider_name)
 	end
 	
