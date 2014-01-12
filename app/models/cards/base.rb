@@ -15,6 +15,8 @@ class Cards::Base < FeedItem
 	def set_provider
 		puts "Setting Provider name"
 		self.provider = Provider.named(self.provider_name)
+		puts self.provider_name
+		puts self.provider.id
 	end
 	
 end
