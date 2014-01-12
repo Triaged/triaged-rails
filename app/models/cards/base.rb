@@ -6,6 +6,7 @@ class Cards::Base < FeedItem
 
 	field :provider_name, :type => String
 	field :event_name, :type => String
+	field :provider_account_name, type => String
 	
 	def after_build_hook company
 		super

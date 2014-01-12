@@ -4,7 +4,8 @@ class Heroku::Event::Deploy < BaseServiceEvent
     event_set = {
       type: :event_set,
       company_id: company.id.to_s,
-      provider_name: self.provider_name, event_name: self.event_name,
+      provider_name: self.provider_name, 
+      event_name: self.event_name,
       title: "Deployed #{data.app}",
       timestamp: DateTime.now,
       should_push: false
