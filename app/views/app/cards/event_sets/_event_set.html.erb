@@ -15,7 +15,7 @@
 					</div>
 					<div class="timestamp floatright">
 						<%= image_tag "icons/Github-circle-sm.png", :width => "14", :id => "timeicon" %>
-						<p class="alt"><%= event.timestamp %></p>
+						<p class="alt"><%= event_set.timestamp %></p>
 					</div>
 				</div>
 			</div>
@@ -31,7 +31,7 @@
 				</div>
 			</div>
 			<div class="conversation">
-				<%= render event.messages %>
+				<%= render event_set.messages %>
 			</div>
 		</div>
 	</div>
