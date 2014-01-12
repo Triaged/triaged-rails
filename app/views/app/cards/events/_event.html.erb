@@ -15,7 +15,7 @@
 					</div>
 					<div class="timestamp floatright">
 						<%= image_tag "icons/Github-circle-sm.png", :width => "14", :id => "timeicon" %>
-						<p class="alt"><%= event.timestamp %></p>
+						<p class="alt"><%= time_ago_in_words event.timestamp %></p>
 					</div>
 				</div>
 			</div>
