@@ -6,7 +6,7 @@ class Crashlytics::Event::Issue < BaseServiceEvent
 			company_id: company.id.to_s,
 			provider_name: self.provider_name, event_name: self.event_name,
 			title: 	data.title,
-			provider_account_name: nil,
+			provider_name: self.provider_name, event_name: self.event_name,
 			should_push: true,
 			external_id: data.display_id,
 			property_name:  data.app.name,

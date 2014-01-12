@@ -7,7 +7,7 @@ class NewRelic::Event::ApdexAlert < BaseServiceEvent
 			provider_name: self.provider_name, event_name: self.event_name,
 			external_id: data.external_id,
 			title: "Apdex Alert",
-			provider_account_name: nil,
+			provider_name: self.provider_name, event_name: self.event_name,
 			should_push: true,
 			property_name: data.application_name,
 			description: data.long_description,

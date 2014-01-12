@@ -6,7 +6,7 @@ class Stripe::Event::ChargeSucceeded < Stripe::BaseEvent
 			company_id: company.id.to_s,
 			provider_name: self.provider_name, event_name: self.event_name,
 			title: "#{ActionView::Base.new.number_to_currency(data.data.object.amount  / 100)} Charge Succeeded",
-			provider_account_name: nil,
+			provider_name: self.provider_name, event_name: self.event_name,
 			should_push: false,
 			external_id: data.id,
 			property_name: nil,

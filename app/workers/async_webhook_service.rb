@@ -25,6 +25,10 @@ class AsyncWebhookService
 			# Set timestamp if we don't already have one
 			event.timestamp = payload[:timestamp]
 
+			Rails.logger.info company
+			Rails.logger.info event.inspect
+			Rails.logger.info event.provider
+
 			# ensure the company knows this provider is connected
 			Common::ProviderConnection.ensure_connected(company, event.provider)
 		
