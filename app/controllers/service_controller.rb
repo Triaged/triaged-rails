@@ -10,6 +10,10 @@ class ServiceController < ApplicationController
 	def show
 		redirect_to root_path
 	end
+
+	def validate
+		head :ok
+	end
 	
 
 	def authenticate_for_oauth

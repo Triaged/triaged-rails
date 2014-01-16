@@ -82,6 +82,7 @@ TriageRails::Application.routes.draw do
   		resources resource do
   			collection do
     			post ':company_id' => "#{resource}#webhook", as: 'webhook'
+          get 'validate' => "#{resource}#validate"
     		end
   		end
 		end
@@ -101,7 +102,7 @@ TriageRails::Application.routes.draw do
   	end
   end
 
-  get 'zapier/token' => 'services/zapier#token'
+
 
   get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'

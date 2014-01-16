@@ -11,10 +11,4 @@ class Services::ZapierController < ServiceController
 	# 	# head :unauthorized
 	end
 
-	def token
-		head :ok
-
-	end
-
-
 end
