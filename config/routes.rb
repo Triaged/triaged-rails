@@ -101,6 +101,8 @@ TriageRails::Application.routes.draw do
   	end
   end
 
+  get 'zapier/token' => 'services/zapier#token'
+
   get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'
 	get '/services/oauth_failure/:error' => 'service#oauth_failure', as: 'oauth_failure'
