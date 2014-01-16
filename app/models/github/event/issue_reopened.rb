@@ -1,4 +1,4 @@
-class Github::Event::IssueReopened < FeedItem
+class Github::Event::IssueReopened < Github::BaseEvent
   include Mongoid::Document
 
   field :title, type: String
