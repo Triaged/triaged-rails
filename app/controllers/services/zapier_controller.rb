@@ -1,4 +1,5 @@
-class Services::ZapierController < ApplicationController
+class Services::ZapierController < ServiceController
+	respond_to :json
 
 	def webhook
 		Rails.logger.info params.inspect
