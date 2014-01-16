@@ -5,7 +5,7 @@ class Github::Event::IssueReopened < FeedItem
 	field :open, type: Boolean, default: true
   field :opened_by_name, type: String
   field :assigned_to_name, type: String
-  field :body, type: String
+  field :body_text, type: String
   
   def self.build_from_webhook event
     assigned_to_name = event.issue.respond_to?(:assignee) && event.issue.assignee ?  event.issue.assignee.login : nil
