@@ -3,7 +3,7 @@ class FeedItem
   include Mongoid::Timestamps
 
   belongs_to :company
-  belongs_to :author, class_name: "User"
+  belongs_to :user
   embeds_many :messages, order: "id DESC"
   has_many :shares
 
