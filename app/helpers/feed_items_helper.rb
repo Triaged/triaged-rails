@@ -2,7 +2,7 @@ module FeedItemsHelper
 
 	def avatar_for user, provider
 		content_tag(:div, class: "as-image") do
-			if user && user.avatar.file.exists?
+			if user && user.avatar?
 				image_tag("team/alex.png", :width => "62") + image_tag("icons/Github-circle-sm.png", :width => "26", :id => "smicon")
 			else
 				image_tag("icons/Github-circle-sm.png", :width => "62")
@@ -13,7 +13,7 @@ module FeedItemsHelper
 	# def title_for user, title
 	# 	content_tag(:div, class: "headcontent") do
 	# 		if user
-				
+
 
 	# 		else
 	# 			content_tag(:h2, event.title, class: "title")
