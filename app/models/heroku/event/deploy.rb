@@ -10,12 +10,20 @@ class Heroku::Event::Deploy < FeedItem
 
 
   def self.build_from_webhook data
+  	changes = []
+  	if data.git_log
+  		changes = data.git_log.split("\n ").collect{ |git| git.gsub("*", "").strip}
+  	elsif data.changelog
+  		changes = data.changelog.split("\n ").collect{ |git| git.gsub("*", "").strip}
+  	end
+
+
 		event = Heroku::Event::Deploy.new(
 			external_id: "h-#{data.head_long}",
 			app: data.app,
 			user: data.user,
 			html_url: data.url,
-			git_log: data.git_log.split("\n ").collect{ |git| git.gsub("*", "").strip},
+			git_log: changes,
 			head_long: data.head_long,
 			head: data.head
 		)
