@@ -6,7 +6,7 @@ class Github::BaseEvent < FeedItem
   belongs_to :provider_account
 
   def repo
-  	provider_account.provider_properties.find_by name: repo_name
+  	provider_account.provider_properties.find__or_create_by(name: repo_name)
   end
 
 	def after_build_hook company
