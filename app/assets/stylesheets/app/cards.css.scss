@@ -10,12 +10,9 @@
 	background: #fff;
 	padding: 25px 50px;
 	overflow: auto;
-	border: 1px solid #BBB;
-        -moz-box-shadow: 0 0 5px #ccc,inset 0 0 0 #000;
-        -webkit-box-shadow: 0 0 5px #ccc,inset 0 0 0 #000;
-        box-shadow: 0 0 5px #ccc,inset 0 0 0 #000;
-        border: 1px solid #ddd;
-  margin-bottom: 40px
+border-radius: 6px;
+border: 1px solid #E1E2E4;
+
 }
 
 .row {
@@ -27,19 +24,18 @@
 /* Title */
 
 #smicon {
-	margin-left: -28px;
-	margin-top: 32px;
+	margin-left: -24px;
+	margin-top: 35px;
+	padding-top: 3px;
 }
 .as-image {
 	float: left;
 }
 .headcontent {
-	margin-left: 78px;
-	width: 85%%;
+	padding-left: 78px;
 }
 .author {
-	color: #6A7FA3;
-	margin: 5px 0 0 0;
+	margin: 0;
 }
 .title {
 	margin: 0;
@@ -48,77 +44,114 @@
 /* Title Meta */
 
 .metacontent {
-	margin-left: 78px;
-	width: 85%%;
+	padding-left: 78px;
 }
-.property {
-	width: 70%;
+.timetitle {
+	margin: 5px 0 10px;
 }
 .timestamp {
-	width: 20%;
 }
 .alt {
-	font-size: 12px;
-	color: #9F9F9F;
-	font-weight: 600;
+	font-size: 16px;
+	color: #AFAFAF;
 	letter-spacing: 0.26px;
+	display: inline;
+	margin: 0;
+	vertical-align: middle;
 }
 #timeicon {
-	float: left;
-	margin: 5px;
+	display: inline;
+	margin: 2px 5px 2px 0;
 }
 
 /* Content */
-
+.property {
+	margin: 5px 0 10px;
+}
 .content {
-	margin-left: 10px;
 	clear: both;
 	border-top: 1px #EEF1F2 solid;
-	border-bottom: 1px #EEF1F2 solid;
-    padding: 30px 0 20px 0;
+    padding: 15px 0;
     width: 98%;
 }
-
 .contentlinks {
 	clear: both;
-	padding-top: 20px;
+	padding-top: 10px;
+}
+.contentlinks p {
+	margin-bottom: 0;
 }
 
 /* Comments */
 .conversation {
+	border-top: 1px solid #EEF1F2;
 	padding-top: 20px;
-	clear: both;
-    margin-left: 10px;
-    width: 98%;
 }
 .convo-image {
 	float: left;
 }
 .convo {
-	margin-left: 25px;
-	width: 75%;
+	padding-left: 53px;
+	/*width: 100%;
+	display: inline;*/
 }
-#alerticon {
-	margin-left: -18px;
-	margin-top: 20px;
+.messanger {
+	min-height: 1px;
+    position: relative;
+    width: 80%;
+    float: left;
 }
-.action {
-	color: #000000;
-}
-.convoauthor {
-	color: #000000;
-	margin: 5px 0 0 0;
+.messangertext {
+	margin: 0;
 }
 .time {
-	font-size: 12px;
-	color: #AFAFAF;
-	margin-top: 5px;
+	min-height: 1px;
+    position: relative;
+    width: 20%;
+    float: left;
+    text-align: right;
+}
+#alerticon {
+	margin-left: -16px;
+	margin-top: 20px;
+	padding-top: 3px;
 }
 .message {
 	font-size: 18px;
 	line-height: 24px;
-	margin: 5px 0 0 0;
-}
-.message {
 	margin: 0;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+
+.card-wrapper {
+    padding: 20px ;
+}
+.content {
+	margin: 0;
+	padding: 10px;
+}
+.contentlinks {
+	padding-top: 15px;
+}
+.headcontent,
+.metacontent {
+	padding-left: 50px;
+}
+#lgicon {
+	width: 40px;
+}
+#timeicon {
+	width: 18px;
+}
+.outro {
+	padding-left: 25px;
+	padding-right: 25px; 
+}
+.btn-custom-share {
+	width: auto;
+}
 }

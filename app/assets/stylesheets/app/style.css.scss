@@ -2,15 +2,15 @@ body {
 	font-family: "proxima-nova";
 }
 h1 {
-	font-size: 24px;
+	font-size: 26px;
 	line-height: 30px;
-	color: #40454F;
+	color: #000;
 }
 
 h2 {
 	font-size: 20px;
 	line-height: 26px;
-	color: #000;
+	color: #40454F;
 }
 
 h3 {
@@ -27,7 +27,7 @@ h4 {
 
 p {
 	font-size: 20px;
-	color: #787878;
+	color: #40454F;
 	line-height: 28px;
 }
 
@@ -42,7 +42,9 @@ a:focus {
     text-decoration: none;
 }
 
-
+.alt {
+	font-weight: 300;
+}
 .floatright {
 	float: right;
 }
@@ -86,12 +88,13 @@ a:focus {
  /* Footer */
  .outro {
  	text-align: center;
+ 	padding-top: 50px;
  }
 
  #sharefooter {
  	border-top: 1px #EEF1F2 solid;
  	height: 60px;
-    margin-top: 100px;
+    margin-top: 75px;
     padding-bottom: 150px;
  }
 
@@ -104,7 +107,7 @@ a:focus {
 /* BTN */
 
 #hero-btn-share {
-	margin-top: 20px;
+	margin-top: 45px;
 }
 
 .btn-custom-share {
@@ -125,4 +128,37 @@ a:focus {
 .btn-custom-share.active {
  color: #FFFFFF;
  text-decoration: underline;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+h1 {
+    font-size: 18px;
+    line-height: 18px;
+}
+h2 {
+	font-size: 17px;
+	line-height: 19px;
+}
+.contentdescription p {
+	font-size: 17px;
+	line-height: 19px;
+}
+.navbar-header {
+    margin:0;
+    float:none;
+}
+.navbar {
+    text-align:center;
+}
+#navlogo {
+	margin-left: 0;
+	float: none;
+}
+.floatright {
+    clear: both;
+    float: left;
+}
+
 }
