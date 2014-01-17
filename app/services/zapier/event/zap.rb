@@ -1,4 +1,4 @@
-class Airbrake::Event::Exception < BaseServiceEvent
+class Zapier::Event::Zap < BaseServiceEvent
   
   def self.build_from_webhook data, company
 		event = {
@@ -6,7 +6,7 @@ class Airbrake::Event::Exception < BaseServiceEvent
 			company_id: company.id.to_s,
 			provider_name: self.provider_name, 
 			event_name: self.event_name,
-			title: "#{data.error.error_message.capitalize} Exception",
+			title: data.title,
 			should_push: true,
 			external_id: data.error.id,
 			property_name: data.error.project.name,
