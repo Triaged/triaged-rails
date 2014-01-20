@@ -11,7 +11,7 @@ class GoogleAnalytics::MetricsService < GoogleAnalytics::BaseService
 		user = Legato::User.new(access_token)
 		account = @company.default_google_analytics_account
 
-		legato_profiles(user).each do |profile|
+		get_legato_profiles(user, account).each do |profile|
 			metrics = fetch_metrics(profile, start_date, end_date)
 			add_to_feed metrics, profile
 		end
@@ -36,9 +36,9 @@ private
 		item = @metrics_class.build_daily_summary metrics, profile
 	end
 
-	def get_legato_properties user, account
+	def get_legato_profiles user, account
 		Legato::Management::Account.all(user).each do |legato_account|
-			return legato_account if (legato_account.id == account.external_id)
+			return legato_account.profiles if (legato_account.id == account.external_id)
 		end
 		return nil
 	end
