@@ -16,12 +16,8 @@ class AsyncWebhookService
 			# Remove author json from event
 			author_service = Common::AuthorService.new(parsed_event.delete("author"), company)
 
-			if parsed_event.delete("type") == "event"
-				# create event from json
-				event = Cards::Event.new parsed_event
-			else
-				event = Cards::EventSet.new parsed_event
-			end
+			event_type = parsed_event.delete("type")
+			event = Cards::Base.new(parsed_event, event_type)
 
 			# Set user if one exists
 			event.user = author_service.user if author_service.user?
@@ -40,3 +36,10 @@ class AsyncWebhookService
 		end
 	end
 end
+
+# if parsed_event.delete("type") == "event"
+# 				# create event from json
+# 				event = Cards::Event.new parsed_event
+# 			else
+# 				event = Cards::EventSet.new parsed_event
+# 			end
