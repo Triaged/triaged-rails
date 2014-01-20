@@ -35,6 +35,9 @@ module Deviseable
 	  field :confirmation_sent_at, :type => Time
 	  field :unconfirmed_email,    :type => String # Only if using reconfirmable
 
+
+	  field :registered, 					 :type => Boolean, :default => false
+
 	  ## Lockable
 	  # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
 	  # field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
@@ -56,8 +59,18 @@ module Deviseable
       self.authentication_token = generate_authentication_token
     end
   end
+
+  # Only verify password when registered
+  def valid_password?(password)
+    super if registered
+  end
  
-  private
+protected
+
+	# Overriding the method in Devise's :validatable module so password is not required on inviting
+  def password_required?
+    self.registered && super
+  end
   
   def generate_authentication_token
     loop do
