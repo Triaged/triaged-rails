@@ -10,7 +10,7 @@ class Common::AuthorService
 	end
 
 	def user?
-		@user.exists?
+		!@user.nil?
 	end
 
 	def user
