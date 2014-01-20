@@ -3,32 +3,36 @@
 			<div class="row">
 				<%= avatar_for event.user, event.provider %>
 				<div class="headcontent">
-					<h2 class="author"><%= event.user.name %></h2>
-					<h2 class="title"><%= event.title %></h2>
+					<h1 class="author"><%= event.user.name %></h1>
+					<h1 class="title"><%= event.title %></h1>
 				</div>
 				<div class="metacontent">	
-					<div class="property floatleft">
-						<p class="alt"><%= event.property_name %></p>
-					</div>
-					<div class="timestamp floatright">
-						<%= image_tag "icons/Github-circle-sm.png", :width => "14", :id => "timeicon" %>
-						<p class="alt"><%= time_ago_in_words event.timestamp %></p>
+					<div class="timetitle">
+						<%= image_tag "tm-icon@2x.png", :width => "18", :id => "timeicon" %>
+						<p class="alt">15m</p> 
+						<!-- <p class="alt"><%= time_ago_in_words event.timestamp %></p> -->
 					</div>
 				</div>
 			</div>
 			<div class="content row">
+				<div class="property">
+					<p class="alt"><%= event.property_name %></p>
+				</div>
+				<div class="contentdescription">
 				<p><%= event.description %></p>
+				</div>
 				<div class="contentlinks">
 					<div class="floatleft">
 						<p><a href="cardlink">Open in Triage app</a></p>
 					</div>
 					<div class="floatright">
-					<p><a href="cardlink">Open in Github</a></p>
+						<p><a href="cardlink">Open in Github</a></p>
 					</div>
 				</div>
 			</div>
-			<div class="conversation">
+			<div class="row">
 				<%= render event.messages %>
 			</div>
 		</div>
 	</div>
+</div>
