@@ -78,10 +78,11 @@ TriageRails::Application.routes.draw do
 
   # Webhooks
 	scope module: 'services' do
-		[:sentry, :new_relic, :kiln, :airbrake, :heroku, :hockey_app, :crashlytics, :beanstalk, :braintree, :bitbucket].each do |resource|
+		[:sentry, :new_relic, :kiln, :airbrake, :heroku, :hockey_app, :crashlytics, :beanstalk, :braintree, :bitbucket, :zapier].each do |resource|
   		resources resource do
   			collection do
     			post ':company_id' => "#{resource}#webhook", as: 'webhook'
+          get 'validate' => "#{resource}#validate"
     		end
   		end
 		end
@@ -100,6 +101,8 @@ TriageRails::Application.routes.draw do
   		end
   	end
   end
+
+
 
   get '/services/authenticate_for/:provider' => 'service#authenticate_for_oauth'
 	get '/services/oauth_complete' => 'service#oauth_complete', as: 'oauth_complete'
