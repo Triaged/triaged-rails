@@ -23,6 +23,11 @@ class User
   after_create :send_verify_email
   include Mongoid::Slug
 
+  # Overriding the method in Devise's :validatable module so password is not required on inviting
+  def password_required?
+    self.registered && super
+  end
+
   
 	def save_omniauth(provider, uid, access_token, token_secret: nil, refresh_token: nil)
 	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.named(provider), uid: uid)

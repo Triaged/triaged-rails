@@ -49,7 +49,7 @@ module Deviseable
 	  index({ email: 1 }, { unique: true, background: true })
 	  field :name, :type => String
 	  
-	  validates_presence_of :name
+	  validates_presence_of :name, :if => :registered
 	  validates_presence_of :encrypted_password
 		validates :email, :presence => true
 	end
@@ -64,13 +64,12 @@ module Deviseable
   def valid_password?(password)
     super if registered
   end
+
+
  
 protected
 
-	# Overriding the method in Devise's :validatable module so password is not required on inviting
-  def password_required?
-    self.registered && super
-  end
+	
   
   def generate_authentication_token
     loop do

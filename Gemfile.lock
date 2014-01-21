@@ -422,7 +422,7 @@ DEPENDENCIES
   memcachier
   minitest-spec-rails
   minitest-wscolor
-  mongoid (~> 4)!
+  mongoid!
   mongoid_slug
   newrelic_rpm (~> 3.6.9.171)
   omniauth
