@@ -41,7 +41,7 @@ gem 'active_model_serializers'
 # gem 'debugger', group: [:development, :test]
 
 gem 'foreman'
-gem 'devise'
+gem 'devise', "~> 3.1.0"
 gem 'omniauth'
 gem 'certified'
 gem 'figaro'

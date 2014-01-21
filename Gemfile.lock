@@ -403,7 +403,7 @@ DEPENDENCIES
   connection_pool
   dalli
   debugger
-  devise
+  devise (~> 3.1.0)
   dropbox-sdk
   figaro
   fog
