@@ -50,7 +50,7 @@ module Deviseable
 	  field :name, :type => String
 	  
 	  validates_presence_of :name, :if => :registered
-	  validates_presence_of :encrypted_password
+	  validates_presence_of :encrypted_password, :if => :registered
 		validates :email, :presence => true
 	end
 
