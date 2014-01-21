@@ -24,9 +24,10 @@ class User
   include Mongoid::Slug
 
   
-	def save_omniauth(provider, uid, access_token, refresh_token=nil)
+	def save_omniauth(provider, uid, access_token, token_secret: nil, refresh_token: nil)
 	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.named(provider), uid: uid)
 	  credentials.access_token = access_token
+	  credentials.token_secret = token_secret
 	  credentials.refresh_token = refresh_token
 	  credentials.save!
 	end

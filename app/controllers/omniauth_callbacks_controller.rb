@@ -9,7 +9,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
 		params = request.env["omniauth.auth"]
 		Rails.logger.info params
-		result = current_user.save_omniauth("google_analytics", params['uid'], params['credentials']['token'], params['credentials']['refresh_token'])
+		result = current_user.save_omniauth("google_analytics", params['uid'], params['credentials']['token'], refresh_token: params['credentials']['refresh_token'])
     redirect_to account_list_google_analytics_path
   end
 	
@@ -26,6 +26,12 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to oauth_complete_path
   end
 
+  def trello
+    params = request.env["omniauth.auth"]
+    result = current_user.save_omniauth("trello", params['uid'], params['credentials']['token'], token_secret: params['credentials']['secret'])
+    redirect_to oauth_complete_path
+  end
+
   def dropbox_oauth2
 		params = request.env["omniauth.auth"]
     result = current_user.save_omniauth("dropbox", params['uid'], params['credentials']['token'])
@@ -34,7 +40,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def appFigures
 		params = request.env["omniauth.auth"]
-		result = current_user.save_omniauth("appfigures", params['uid'], params['credentials']['token'], params['credentials']['secret'])
+		result = current_user.save_omniauth("appfigures", params['uid'], params['credentials']['token'], refresh_token: params['credentials']['secret'])
     redirect_to oauth_complete_path
   end
 

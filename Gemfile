@@ -58,7 +58,10 @@ gem "omniauth-google-oauth2"
 gem 'omniauth-shopify-oauth2'
 gem 'omniauth-dropbox-oauth2'
 gem 'omniauth-bitbucket'
+gem 'omniauth-trello'
 gem "omniauth-appfigures", :git => "https://github.com/Triaged/omniauth-appfigures.git"
+
+gem "ruby-trello", :require => 'trello'
 gem "github_api"
 gem 'stripe'
 gem "bitbucket_rest_api"

@@ -1,13 +1,15 @@
 class AsyncWebhookService
 	include Sidekiq::Worker
 
-	def perform event_class, payload
-		Rails.logger.info "Building event for #{event_class}"
+	def perform event_class_string, payload
+		Rails.logger.info "Building event for #{event_class_string}"
 		
+		event_class = event_class_string.constantize
+
 		payload = RecursiveOpenStruct.new(payload)
 		company = Company.find(payload.company_id)
-
-		json_event = event_class.constantize.build_from_webhook payload.event,company
+		
+		json_event = event_class.build_from_webhook payload.event,company
 
 		if json_event # event will be nil if validation failed
 
