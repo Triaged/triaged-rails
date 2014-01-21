@@ -26,12 +26,9 @@ class User
   
 	def save_omniauth(provider, uid, access_token, refresh_token=nil)
 	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.named(provider), uid: uid)
-	  Rails.logger.info credentials.inspect
 	  credentials.access_token = access_token
 	  credentials.refresh_token = refresh_token
 	  credentials.save!
-	  Rails.logger.info credentials.inspect
-	  Rails.logger.info credentials.errors.inspect
 	end
 
 	def email_host
