@@ -36,7 +36,7 @@ module Deviseable
 	  field :unconfirmed_email,    :type => String # Only if using reconfirmable
 
 
-	  field :is_registered, 					 :type => Boolean, :default => false
+	  field :registered, 					 :type => Boolean, :default => false
 
 	  ## Lockable
 	  # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
