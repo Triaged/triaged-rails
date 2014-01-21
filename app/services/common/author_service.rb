@@ -31,5 +31,6 @@ private
 			@user.name = @author_json.name if @author_json.name
 			@user.save 
 		end
+		
 	end
 end

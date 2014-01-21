@@ -3,14 +3,14 @@ class Api::V1::RegistrationsController < API::BaseController
 	skip_before_filter :authenticate_user!
 	
 	def create
-		user = User.find_or_initalize_by(email: registration_params[:email])
+		user = User.find_or_initialize_by(email: registration_params[:email])
 
 		# Merge params if this is a new user or an unregistered user
 		if user.new_record? || !user.registered
 			user.assign_attributes(registration_params.merge(registered: true))
 		end
 
-		# Check if this user can be saved validly.
+		# Check if this user can be saved.
 		if user.save
 			sign_in(:user, user)
 			render json: user, serializer: AccountSerializer
