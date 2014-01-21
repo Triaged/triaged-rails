@@ -19,4 +19,8 @@ class Github::Event::PullRequest < Github::BaseEvent
   	)
   	return issue_opened_event
 	end
+
+  def should_push?
+    true
+  end
 end

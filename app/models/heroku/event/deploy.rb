@@ -33,4 +33,8 @@ class Heroku::Event::Deploy < FeedItem
 		return event
 	end
 
+  def should_push?
+    true
+  end
+
 end
