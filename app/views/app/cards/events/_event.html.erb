@@ -3,7 +3,7 @@
 			<div class="row">
 				<%= avatar_for event.user, event.provider %>
 				<div class="headcontent">
-					<h1 class="author"><%= event.user.name %></h1>
+					<h1 class="author"><%= event.user.name if event.user %></h1>
 					<h1 class="title"><%= event.title %></h1>
 				</div>
 				<div class="metacontent">	

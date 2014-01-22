@@ -21,4 +21,6 @@ Provider.create(name: "crashlytics", webhooks_enabled: true, title: "Crashlytics
 Provider.create(name: "braintree", webhooks_enabled: true, title: "Braintree", short_title: "Braintree")
 Provider.create(name: "triage", webhooks_enabled: false, title: "Triage", short_title: "Triage")
 Provider.create(name: "dropbox", webhooks_enabled: false, title: "Dropbox", short_title: "Dropbox", oauth: true)
+Provider.create(name: "trello", webhooks_enabled: false, title: "Trello", short_title: "Trello", oauth: true)
 Provider.create(name: "appfigures", webhooks_enabled: false, title: "appFigures", short_title: "appFigures", account_label: 'Account', property_label: 'App', oauth: true)
+Provider.create(name: "zapier", webhooks_enabled: true, title: "Zapier", short_title: "Zapier")

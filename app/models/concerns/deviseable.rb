@@ -35,6 +35,9 @@ module Deviseable
 	  field :confirmation_sent_at, :type => Time
 	  field :unconfirmed_email,    :type => String # Only if using reconfirmable
 
+
+	  field :registered, 					 :type => Boolean, :default => false
+
 	  ## Lockable
 	  # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
 	  # field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
@@ -46,8 +49,8 @@ module Deviseable
 	  index({ email: 1 }, { unique: true, background: true })
 	  field :name, :type => String
 	  
-	  validates_presence_of :name
-	  validates_presence_of :encrypted_password
+	  validates_presence_of :name, :if => :registered
+	  validates_presence_of :encrypted_password, :if => :registered
 		validates :email, :presence => true
 	end
 
@@ -56,8 +59,17 @@ module Deviseable
       self.authentication_token = generate_authentication_token
     end
   end
+
+  # Only verify password when registered
+  def valid_password?(password)
+    super if registered
+  end
+
+
  
-  private
+protected
+
+	
   
   def generate_authentication_token
     loop do

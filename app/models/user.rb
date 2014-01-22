@@ -8,7 +8,6 @@ class User
 	include Providable
 
 	mount_uploader :avatar, AvatarUploader
-	field :registered, type: Boolean, default:false
 	field :push_enabled, type: Boolean, default: true
 	field :validated_belongs_to_company, type: Boolean, default: false
 	field :company_validation_token, type: String
@@ -22,17 +21,21 @@ class User
 
   before_create :before_creation
   after_create :send_verify_email
-  include Mongoid::Slug
+  
+  #include Mongoid::Slug
+
+  # Overriding the method in Devise's :validatable module so password is not required on inviting
+  def password_required?
+    self.registered && super
+  end
 
   
-	def save_omniauth(provider, uid, access_token, refresh_token=nil)
+	def save_omniauth(provider, uid, access_token, token_secret: nil, refresh_token: nil)
 	  credentials = self.provider_credentials.find_or_create_by(company: company, provider: Provider.named(provider), uid: uid)
-	  Rails.logger.info credentials.inspect
 	  credentials.access_token = access_token
+	  credentials.token_secret = token_secret
 	  credentials.refresh_token = refresh_token
 	  credentials.save!
-	  Rails.logger.info credentials.inspect
-	  Rails.logger.info credentials.errors.inspect
 	end
 
 	def email_host
@@ -44,7 +47,8 @@ class User
 	end
 
   def before_creation
-  	self.name = self.name.titleize
+  	set_company
+  	self.name = self.name.titleize if self.name
 	end
 
 	def set_company
@@ -77,9 +81,9 @@ class User
 		self.company.teammates_of self
 	end
 
-	slug :scope => :company do |object|
-		# Hack to ensure the company is set befure the slug is created
-		object.set_company
-    object.name.delete(' ')
-  end
+	# slug :scope => :company do |object|
+	# 	# Hack to ensure the company is set befure the slug is created
+	# 	object.set_company
+ #    object.name.delete(' ')
+ #  end
 end

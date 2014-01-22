@@ -41,11 +41,11 @@ gem 'active_model_serializers'
 # gem 'debugger', group: [:development, :test]
 
 gem 'foreman'
-gem 'devise'
+gem 'devise', "~> 3.1.0"
 gem 'omniauth'
 gem 'certified'
 gem 'figaro'
-gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
+gem 'mongoid', :github=>"mongoid/mongoid"
 gem 'simple_form', '>= 3.0.0.rc'
 
 
@@ -58,7 +58,10 @@ gem "omniauth-google-oauth2"
 gem 'omniauth-shopify-oauth2'
 gem 'omniauth-dropbox-oauth2'
 gem 'omniauth-bitbucket'
+gem 'omniauth-trello'
 gem "omniauth-appfigures", :git => "https://github.com/Triaged/omniauth-appfigures.git"
+
+gem "ruby-trello", :require => 'trello'
 gem "github_api"
 gem 'stripe'
 gem "bitbucket_rest_api"

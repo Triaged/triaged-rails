@@ -8,6 +8,7 @@ class ProviderCredential
   # Oauth Providers require credentials
   field :uid, :type => String
   field :access_token, :type => String
+  field :token_secret, :type => String
   field :refresh_token, :type => String
 
   validates :user, :uniqueness => { :scope => :provider }
