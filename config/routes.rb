@@ -78,7 +78,7 @@ TriageRails::Application.routes.draw do
 
   # Webhooks
 	scope module: 'services' do
-		[:sentry, :new_relic, :kiln, :airbrake, :heroku, :hockey_app, :crashlytics, :beanstalk, :braintree, :bitbucket, :zapier].each do |resource|
+		[:sentry, :new_relic, :kiln, :airbrake, :heroku, :hockey_app, :crashlytics, :beanstalk, :braintree, :bitbucket, :zapier, :trello].each do |resource|
   		resources resource do
   			collection do
     			post ':company_id' => "#{resource}#webhook", as: 'webhook'
