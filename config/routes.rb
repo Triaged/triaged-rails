@@ -34,7 +34,7 @@ TriageRails::Application.routes.draw do
     			get 'view'
     		end
     	end
-      resources :users do
+      resources :team do
         member do
           get 'feed'
         end
@@ -127,6 +127,7 @@ TriageRails::Application.routes.draw do
 		namespace :admin do
 			resources :welcome
 			resources :messages
+      resources :providers
 			mount Sidekiq::Web => '/sidekiq'
 		end
 	end

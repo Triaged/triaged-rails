@@ -12,6 +12,9 @@ class Provider
   field :active, :type => Boolean, :default => false
   field :oauth, :type => Boolean, :default => false
 
+  mount_uploader :large_icon, LargeProviderIconUploader
+  mount_uploader :small_icon, SmallProviderIconUploader
+
   validates :name, uniqueness: true
 
   scope :active, -> { where(active: true) }

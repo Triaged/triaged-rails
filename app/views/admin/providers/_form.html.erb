@@ -1,0 +1,16 @@
+<%= simple_form_for([:admin, @admin_provider]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<%= f.input :title %>
+  	<%= f.input :short_title %>
+  	<%= f.input :webhooks_enabled %>
+  	<%= f.input :oauth %>
+  	<%= f.input :large_icon, as: :file %>
+  	<%= f.input :small_icon, as: :file %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
