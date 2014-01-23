@@ -54,6 +54,6 @@ class Admin::ProvidersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_provider_params
-      params[:admin_provider]
+      params[:admin_provider].permit(:large_icon, :short_icon)
     end
 end
