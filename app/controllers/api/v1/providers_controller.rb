@@ -7,7 +7,7 @@ class Api::V1::ProvidersController < API::BaseController
 	end
 
 	def connected
-		@providers = current_company.connected_providers
+		@providers = current_company.connected_providers.collect {|connected| connected.provider }
 		respond_with @providers
 	end
 
