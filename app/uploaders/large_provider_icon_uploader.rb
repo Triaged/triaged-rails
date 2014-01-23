@@ -11,6 +11,12 @@ class LargeProviderIconUploader < CarrierWave::Uploader::Base
   #storage :file
   # storage :fog
 
+  version :standard do
+  end
+  
+  version :thumbnail do
+  end
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   # def store_dir
