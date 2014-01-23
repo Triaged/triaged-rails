@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class SmallProviderIconUploader < CarrierWave::Uploader::Base
+  include Cloudinary::CarrierWave
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
