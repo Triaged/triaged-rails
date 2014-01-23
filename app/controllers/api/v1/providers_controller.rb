@@ -1,5 +1,5 @@
 class Api::V1::ProvidersController < API::BaseController
-	before_action :set_provider, :except => :index
+	before_action :set_provider, :except => [:index, :connected]
 
 	def index
 		@providers = Provider.active
