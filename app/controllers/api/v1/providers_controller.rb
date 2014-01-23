@@ -6,6 +6,11 @@ class Api::V1::ProvidersController < API::BaseController
 		respond_with @providers
 	end
 
+	def connected
+		@providers = current_company.connected_providers
+		respond_with @providers
+	end
+
 	def feed
 		@feed_items = current_company.feed_items.where(provider: @provider).desc(:created_at).limit(100)
 		respond_with @feed_items

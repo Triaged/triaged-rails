@@ -40,6 +40,9 @@ TriageRails::Application.routes.draw do
         end
       end
     	resources :providers do
+        collection do
+          get 'connected'
+        end
     		member do
     			post 'ignore'
     			post 'follow'
