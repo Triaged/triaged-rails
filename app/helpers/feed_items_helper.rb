@@ -3,9 +3,9 @@ module FeedItemsHelper
 	def avatar_for user, provider
 		content_tag(:div, class: "as-image") do
 			if user && user.avatar?
-				image_tag("team/alex.png", :width => "62", :id => "lgicon") + image_tag("icons/Github-circle-sm.png", :width => "26", :id => "smicon")
+				image_tag("team/alex.png", :width => "62", :id => "lgicon") + image_tag(provider.small_icon.url, :width => "26", :id => "smicon")
 			else
-				image_tag("icons/Github-icon-lrg.png", :width => "62", :id => "lgicon")
+				image_tag(provider.large_icon.url, :width => "62", :id => "lgicon")
 			end
 		end
 	end
