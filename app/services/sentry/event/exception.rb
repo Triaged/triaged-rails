@@ -3,7 +3,6 @@ class Sentry::Event::Exception < BaseServiceEvent
 
   def self.build_from_webhook data, company
 		event = {
-			type: :event,
 			company_id: company.id.to_s,
 			provider_name: self.provider_name, 
 			event_name: self.event_name,
