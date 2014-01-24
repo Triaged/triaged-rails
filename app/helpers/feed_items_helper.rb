@@ -10,6 +10,20 @@ module FeedItemsHelper
 		end
 	end
 
+	def body_helper event
+		if event.body
+			content_tag(:p) do
+				event.body
+			end
+		else
+			content_tag(:ul) do
+				event.body_list.each do body
+					content_tag(:li, body)
+				end
+			end
+		end
+	end
+
 	# def title_for user, title
 	# 	content_tag(:div, class: "headcontent") do
 	# 		if user
