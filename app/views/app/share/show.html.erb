@@ -5,9 +5,11 @@
 		<%= image_tag(@share.user.avatar.face.url, :width => "70") if @share.user.avatar? %>
 		<h2>Charlie White is using Triage to monitor everything happening at work. </h2>
 		<div id="hero-btn-share">
-				<button class="btn btn-custom-share btn-lg grow" type="button" id="download-cta">
+				<button class="btn btn-custom-share btn-lg" type="button" id="download-cta">
 					<span class="glyphicon glyphicon-phone" style="margin-right: 20px;"></span>Get Triage For iOS
 				</button>
 		</div>
 	</div>
 </div>
+
+<%= render 'shared/overlay' %>
