@@ -11,12 +11,12 @@ module FeedItemsHelper
 	end
 
 	def body_helper event
-		if event.body
+		if event.body.exists?
 			content_tag(:p, event.body)
 		else
 			content_tag(:ul) do
-				event.body_list.each do body
-					content_tag(:li, body)
+				event.body_list.each do b
+					content_tag(:li, b)
 				end
 			end
 		end
