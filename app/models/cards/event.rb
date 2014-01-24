@@ -1,4 +1,4 @@
-class Cards::Event < Cards::FeedItem
+class Cards::Event < FeedItem
 	include Mongoid::Document
 
 	belongs_to :provider
