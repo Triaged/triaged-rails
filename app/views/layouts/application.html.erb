@@ -12,9 +12,12 @@
 </head>
 <%= render "layouts/header" %>
 <body>
-  <div class="container">
-    <!-- Begin page content -->
-  	<%= yield %>
+  <!-- Wrap all page content here -->
+  <div id="loaded-content">
+    <div class="container">
+      <!-- Begin page content -->
+    	<%= yield %>
+    </div>
   </div>
 </body>
 <%= render "layouts/footer" unless @skip_footer %>
