@@ -6,11 +6,11 @@ class Heroku::Event::Deploy < BaseServiceEvent
       provider_name: self.provider_name, 
       event_name: self.event_name,
       account_name: nil,
-      property_name: data.app
-      external_id: data.head_long
+      property_name: data.app,
+      external_id: data.head_long,
       title: "Deployed #{data.app}"
       footer: nil,
-      url: data.url
+      url: data.url,
       thumbnail_url: nil.
       image_url: nil,
       timestamp: nil,
