@@ -15,9 +15,7 @@ module FeedItemsHelper
 			content_tag(:p, event.body)
 		else
 			content_tag(:ul) do
-				event.body_list.each do b
-					content_tag(:li, b)
-				end
+				event.body_list.collect {|body| concat(content_tag(:li, body))}
 			end
 		end
 	end
