@@ -28,7 +28,7 @@ module UserFeedable
   end
 
   def should_push event
-  	event.should_push? || user_feed_items.count == 3
+  	event.push_notify? || user_feed_items.count == 3
   end
 
 
