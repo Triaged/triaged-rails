@@ -11,7 +11,7 @@ module FeedItemsHelper
 	end
 
 	def body_helper event
-		if event.body.exists?
+		unless event.body.nil?
 			content_tag(:p, event.body)
 		else
 			content_tag(:ul) do
