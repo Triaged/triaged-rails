@@ -26,11 +26,8 @@
 					<%= body_helper event %>
 				</div>
 				<div class="contentlinks">
-					<div class="floatleft">
-						<p><a href="cardlink">Open in Triage app</a></p>
-					</div>
 					<div class="floatright">
-						<p><%= link_to "Open in #{event.provider.title}", event.url %></p>
+						<p><%= link_to "Open in #{event.provider.title}", event.url, :target => "blank" %></p>
 					</div>
 				</div>
 			</div>
