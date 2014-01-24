@@ -11,7 +11,7 @@ class Heroku::Event::Deploy < BaseServiceEvent
       title: "Deployed #{data.app}",
       footer: nil,
       url: data.url,
-      thumbnail_url: nil.
+      thumbnail_url: nil,
       image_url: nil,
       timestamp: nil,
       push_notify: true,
