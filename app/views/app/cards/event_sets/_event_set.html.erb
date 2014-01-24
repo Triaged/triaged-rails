@@ -1,5 +1,6 @@
 <div class="card-wrapper col-lg-6 col-lg-offset-3">
 		<div class="card">
+			
 			<div class="row">
 				<%= avatar_for event_set.user, event_set.provider %>
 				<div class="headcontent">
@@ -27,8 +28,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="conversation">
-				<%= render event_set.messages %>
-			</div>
+
+			<% if event_set.messages %>
+				<div class="row conversation">
+					<%= render event_set.messages %>
+				</div>
+			<% end %>
+
 		</div>
 	</div>

@@ -1,11 +1,14 @@
 <div class="card-wrapper col-lg-6 col-lg-offset-3">
 		<div class="card">
+			
 			<div class="row">
 				<%= avatar_for event.user, event.provider %>
+				
 				<div class="headcontent">
 					<h1 class="author"><%= event.user.name if event.user %></h1>
 					<h1 class="title"><%= event.title %></h1>
 				</div>
+
 				<div class="metacontent">	
 					<div class="timetitle">
 						<%= image_tag "tm-icon@2x.png", :width => "18", :id => "timeicon" %>
@@ -14,6 +17,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="content row">
 				<div class="property">
 					<p class="alt"><%= event.property_name %></p>
@@ -30,9 +34,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<%= render event.messages %>
-			</div>
-		</div>
+
+			<% if event.messages %>
+				<div class="row conversation">
+					<%= render event.messages %>
+				</div>
+			<% end %>
+		
 	</div>
 </div>
