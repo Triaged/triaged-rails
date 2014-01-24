@@ -20,7 +20,7 @@ class FeedItem
 	#
 	# Lifecycle hooks
 	#
-	def after_build_hook company
+	def after_build_hook company, payload
 		# placehold to be overridden in subclasses
 	end
 

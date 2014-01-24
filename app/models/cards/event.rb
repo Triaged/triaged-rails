@@ -29,7 +29,7 @@ class Cards::Event < FeedItem
 
 
 	def after_build_hook company, payload
-		super
+		super(company, payload)
 		
 		self.provider = Provider.named(self.provider_name)
 
