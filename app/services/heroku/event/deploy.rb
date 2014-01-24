@@ -8,7 +8,7 @@ class Heroku::Event::Deploy < BaseServiceEvent
       account_name: nil,
       property_name: data.app,
       external_id: data.head_long,
-      title: "Deployed #{data.app}"
+      title: "Deployed #{data.app}",
       footer: nil,
       url: data.url,
       thumbnail_url: nil.
