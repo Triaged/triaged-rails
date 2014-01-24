@@ -2,7 +2,7 @@
 
 <div class="row">
 	<div class="outro col-lg-6 col-lg-offset-3">
-		<%= image_tag "team/charlie.png", :width => "70" %>
+		<%= image_tag(@share.user.avatar.face.url, :width => "70") if @share.user.avatar? %>
 		<h2>Charlie White is using Triage to monitor everything happening at work. </h2>
 		<div id="hero-btn-share">
 				<button class="btn btn-custom-share btn-lg grow" type="button" id="download-cta">
