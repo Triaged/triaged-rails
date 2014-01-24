@@ -28,7 +28,7 @@ class Cards::Event < FeedItem
 	embeds_one :author, class_name: "Cards::Author"
 
 
-	def after_build_hook company
+	def after_build_hook company, payload
 		super
 		
 		self.provider = Provider.named(self.provider_name)

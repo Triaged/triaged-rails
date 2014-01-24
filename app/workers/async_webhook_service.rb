@@ -25,7 +25,7 @@ class AsyncWebhookService
 			card.user = author_service.user if author_service.user?
 
 			# generic after init hook
-			card.after_build_hook company
+			card.after_build_hook company, payload
 
 			# add event to company feed
 			Common::FeedService.add_to_feed card, company
