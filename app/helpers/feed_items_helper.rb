@@ -12,9 +12,7 @@ module FeedItemsHelper
 
 	def body_helper event
 		if event.body
-			content_tag(:p) do
-				event.body
-			end
+			content_tag(:p, event.body)
 		else
 			content_tag(:ul) do
 				event.body_list.each do body
