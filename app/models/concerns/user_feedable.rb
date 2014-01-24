@@ -20,15 +20,15 @@ module UserFeedable
   	logger.info "Adding event to user feed"
   	unless ignore_event(event)
 			user_feed_items.create(feed_item: event)
-	  	Common::NotificationService.push_feed_item(self, event) if should_push(event)
+	  	Common::NotificationService.push_feed_item(self, event) if should_push?(event)
 	  	logger.info "Added #{event.provider_name}:#{event.event_name} to user feed: #{email}"
 	  else
 	  	logger.info "Ignoring event #{event.provider_name}:#{event.event_name} to user feed: #{email}"
 	  end
   end
 
-  def should_push event
-  	event.push_notify? || user_feed_items.count == 3
+  def should_push? event
+  	event.push_notify || user_feed_items.count == 3
   end
 
 
