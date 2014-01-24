@@ -22,9 +22,9 @@ class Heroku::Event::Deploy < BaseServiceEvent
       email: data.user, 
     }
 
-    event[:body] = []
+    event[:body_list] = []
     data.git_log.split("\n ").each do |commit|
-      event[:body] << commit.gsub("*", "").strip
+      event[:body_list] << commit.gsub("*", "").strip
     end
 
     return event.to_json

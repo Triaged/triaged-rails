@@ -13,7 +13,8 @@ class Cards::Event < FeedItem
 	field :external_id, type: String
 	
 	field :title, type: String
-	field :body, type: Array
+	field :body, type: String
+	field :body_list, type: Array
 	field :footer, type: String
 	field :url, type: String
 	
