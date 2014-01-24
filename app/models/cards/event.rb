@@ -33,10 +33,10 @@ class Cards::Event < FeedItem
 		self.provider = Provider.named(self.provider_name)
 
 		# Set timestamp if we don't already have one
-		card.timestamp = payload[:timestamp] unless card.timestamp
+		self.timestamp = payload[:timestamp] unless self.timestamp
 
 		# ensure the company knows this provider is connected
-		Common::ProviderConnection.ensure_connected(company, card.provider)
+		Common::ProviderConnection.ensure_connected(company, self.provider)
 
 	end
 
