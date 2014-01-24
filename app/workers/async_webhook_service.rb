@@ -26,6 +26,9 @@ class AsyncWebhookService
 			# Should we collapse from event_set to event
 			card = card.collapse_to_event if card.should_collapse?
 
+			# Set user if one exists
+			card.user = author_service.user if author_service.user?
+
 			# generic after init hook
 			card.after_build_hook company
 
