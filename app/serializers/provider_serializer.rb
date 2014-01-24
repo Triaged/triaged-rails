@@ -1,8 +1,8 @@
 class ProviderSerializer < ActiveModel::Serializer
   attributes :id, :name, :webhook_url, :connected, :follows, :icon, :settings_icon, :title, :short_title
-  has_one :account, serializer: ProviderAccountSerializer
+  has_one :provider_account, serializer: ProviderAccountSerializer
 
-  def account
+  def provider_account
   	current_user.company.provider_accounts.where(provider: object, default: true).first
   end
 
