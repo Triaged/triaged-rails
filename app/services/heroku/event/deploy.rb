@@ -1,31 +1,33 @@
 class Heroku::Event::Deploy < BaseServiceEvent
 
   def self.build_from_webhook data, company
-    event_set = {
-      type: :event_set,
+    event = {
       company_id: company.id.to_s,
       provider_name: self.provider_name, 
       event_name: self.event_name,
-      title: "Deployed #{data.app}",
-      timestamp: DateTime.now,
-      should_push: false
+      account_name: nil,
+      property_name: data.app
+      external_id: data.head_long
+      title: "Deployed #{data.app}"
+      footer: nil,
+      url: data.url
+      thumbnail_url: nil.
+      image_url: nil,
+      timestamp: nil,
+      push_notify: true,
+      group_event: false
     }
 
-    event_set[:events] = []
-    data.git_log.split("\n ").each do |commit|
-      event_set[:events] << {
-        external_id: "h-#{data.head_long}",
-        description: commit.gsub("*", "").strip,
-        timestamp: DateTime.now,
-        url: data.url,
-      }
-    end
-
-    event_set[:author] = { 
+    event[:author] = { 
       email: data.user, 
     }
-    
-    return event_set.to_json
+
+    event[:body] = []
+    data.git_log.split("\n ").each do |commit|
+      event[:body] << commit.gsub("*", "").strip
+    end
+
+    return event.to_json
   end
   
 end

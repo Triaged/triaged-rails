@@ -5,19 +5,19 @@ class Sentry::Event::Exception < BaseServiceEvent
 		event = {
 			type: :event,
 			company_id: company.id.to_s,
-			provider_name: self.provider_name, event_name: self.event_name,
+			provider_name: self.provider_name, 
+			event_name: self.event_name,
+			account_name: nil,
+			property_name: data.project,
 			external_id: data.id,
 			title: "#{data.level.capitalize} Exception",
-			provider_name: self.provider_name, event_name: self.event_name,
-			property_name: data.project,
-			description: data.message,
+			body: data.message,
 			footer: "as #{data.culprit}",
-			should_push: true,
 			timestamp: data.created_at,
-			url: nil,
+			url: data.url,
+			push_notify: true,
+			group_event: true
 		}
 		return event.to_json
 	end
-
-
 end

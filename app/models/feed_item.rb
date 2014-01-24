@@ -9,7 +9,7 @@ class FeedItem
 
   
   field :timestamp, type: DateTime
-  field :should_push, type: Boolean, default: true
+  field :push_notify, type: Boolean, default: true
   
 
   index({ "updated_at" => 1 })

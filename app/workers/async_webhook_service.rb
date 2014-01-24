@@ -18,13 +18,8 @@ class AsyncWebhookService
 			# Remove author json from event
 			author_service = Common::AuthorService.new(parsed_event.delete("author"), company)
 
-			card_type = parsed_event.delete("type")
-			card_class = "Cards::#{card_type.camelize}".constantize
-
-			card = card_class.new(parsed_event)
-
-			# Should we collapse from event_set to event
-			card = card.collapse_to_event if card.should_collapse?
+			# build card
+			card = Cards::Event.new(parsed_event)
 
 			# Set user if one exists
 			card.user = author_service.user if author_service.user?
