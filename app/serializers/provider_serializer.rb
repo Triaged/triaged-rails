@@ -1,5 +1,5 @@
 class ProviderSerializer < ActiveModel::Serializer
-  attributes :id, :name, :webhook_url, :connected, :follows, :icon, :settings_icon, :title, :short_title
+  attributes :id, :name, :webhook_url, :connected, :follows, :icon, :settings_icon, :title, :short_title, :large_icon, :small_icon
   has_one :provider_account, serializer: ProviderAccountSerializer
 
   def provider_account
@@ -16,5 +16,13 @@ class ProviderSerializer < ActiveModel::Serializer
 
   def follows
   	!current_user.ignores? object
+  end
+
+  def large_icon
+    object.large_icon.url
+  end
+
+  def small_icon
+    object.small_icon.url
   end
 end
