@@ -58,6 +58,11 @@ TriageRails::Application.routes.draw do
   				end
   			end
   		end
+      resources :notifications, :only => :index do
+        member do 
+          post 'viewed'
+        end
+      end
     end
   end
 
