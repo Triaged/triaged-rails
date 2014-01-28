@@ -27,6 +27,9 @@ class Cards::Event < FeedItem
 
 	embeds_one :author, class_name: "Cards::Author"
 
+	validates :provider, :title, :external_id
+	validates :body, :unless => :body_list
+	validates :body_list, :unless => :body
 
 	def after_build_hook company, payload
 		super
