@@ -5,27 +5,22 @@
 				<%= avatar_for event.user, event.provider %>
 				
 				<div class="headcontent">
-					<h1 class="author"><%= event.user.name if event.user %></h1>
-					<h1 class="title"><%= event.title %></h1>
-				</div>
-
-				<div class="metacontent">	
+					<h1 class="author"><%= event.user.name if event.user %> <%= event.title %></h1>
 					<div class="timetitle">
-						<%= image_tag "tm-icon@2x.png", :width => "18", :id => "timeicon" %>
-						<!-- <p class="alt">15m</p>  -->
-						<p class="alt"><%= time_ago_in_words event.timestamp %></p>
+						<p class="alt"><%= event.property_name %></p>
 					</div>
 				</div>
 			</div>
 
 			<div class="content row">
-				<div class="property">
-					<p class="alt"><%= event.property_name %></p>
-				</div>
 				<div class="contentdescription">
 					<%= body_helper event %>
 				</div>
 				<div class="contentlinks">
+					<div class="floatleft">
+						<%= image_tag "tm-icon@2x.png", :width => "18", :id => "timeicon" %>
+						<p class="alt"><%= time_ago_in_words event.timestamp %></p>
+					</div>
 					<div class="floatright">
 						<p><%= link_to "Open in #{event.provider.title}", event.url, :target => "blank" %></p>
 					</div>
