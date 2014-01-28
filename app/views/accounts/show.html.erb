@@ -12,13 +12,12 @@
 
 <%= image_tag @user.avatar.face.url, :width => 60 %>
 
-<!-- <%= simple_form_for @user, :url => account_path do |f| %>
-	<%= f.input :name %>
+<%= simple_form_for @user, :url => account_path do |f| %>
 	<%= f.input :avatar %>
 	<%= f.submit %>
 
 <br />
-Slug: <%= @user.company.slug %> -->
+Slug: <%= @user.company.slug %>
 
 <% end %>
 

@@ -1,2 +1,0 @@
-module Services::TrelloHelper
-end

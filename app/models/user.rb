@@ -18,6 +18,7 @@ class User
 	index({ company_id: 1 })
 	has_many :feed_items
 	embeds_many :push_tokens
+	embeds_many :notifications
 
   before_create :before_creation
   after_create :send_verify_email

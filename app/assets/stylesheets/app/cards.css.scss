@@ -12,7 +12,7 @@
 	overflow: auto;
 	border-radius: 6px;
 	border: 1px solid #E1E2E4;
-
+	margin-bottom: 20px;
 }
 
 .row {
@@ -61,6 +61,12 @@
     padding: 15px 0;
     width: 98%;
 }
+.body-list li{
+	font-size: 20px;
+	color: #40454F;
+	line-height: 28px;
+}
+
 .contentdescription {
 	margin: 5px 0 10px;
 }

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @admin_provider.name %></h1>
+
+<%= image_tag @admin_provider.large_icon_url %>
+<%= image_tag @admin_provider.small_icon_url %>
+
+<%= link_to 'Edit', edit_admin_provider_path(@admin_provider) %> |
+<%= link_to 'Back', admin_providers_path %>

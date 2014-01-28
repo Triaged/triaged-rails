@@ -9,7 +9,7 @@ class FeedItem
 
   
   field :timestamp, type: DateTime
-  field :should_push, type: Boolean, default: true
+  field :push_notify, type: Boolean, default: true
   
 
   index({ "updated_at" => 1 })
@@ -20,7 +20,7 @@ class FeedItem
 	#
 	# Lifecycle hooks
 	#
-	def after_build_hook company
+	def after_build_hook company, payload
 		# placehold to be overridden in subclasses
 	end
 

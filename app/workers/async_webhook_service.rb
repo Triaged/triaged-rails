@@ -18,30 +18,17 @@ class AsyncWebhookService
 			# Remove author json from event
 			author_service = Common::AuthorService.new(parsed_event.delete("author"), company)
 
-			event_type = "Cards::#{parsed_event.delete("type").camelize}"
-			event = event_type.constantize.new(parsed_event)
+			# build card
+			card = Cards::Event.new(parsed_event)
 
 			# Set user if one exists
-			event.user = author_service.user if author_service.user?
-			
+			card.user = author_service.user if author_service.user?
+
 			# generic after init hook
-			event.after_build_hook company
+			card.after_build_hook company, payload
 
-			# Set timestamp if we don't already have one
-			event.timestamp = payload[:timestamp] unless event.timestamp
-
-			# ensure the company knows this provider is connected
-			Common::ProviderConnection.ensure_connected(company, event.provider)
-		
 			# add event to company feed
-			Common::FeedService.add_to_feed event, company
+			Common::FeedService.add_to_feed card, company
 		end
 	end
 end
-
-# if parsed_event.delete("type") == "event"
-# 				# create event from json
-# 				event = Cards::Event.new parsed_event
-# 			else
-# 				event = Cards::EventSet.new parsed_event
-# 			end

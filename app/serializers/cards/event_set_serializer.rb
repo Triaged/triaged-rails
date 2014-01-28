@@ -1,9 +1,9 @@
-class Cards::EventSetSerializer < ActiveModel::Serializer
-  attributes :id, :title
+class Cards::EventSetSerializer < Cards::BaseSerializer
+  attributes :type, :title 
 
   has_many :events
 
-  	def type
+  def type
  		:event_set
  	end
 end

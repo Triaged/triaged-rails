@@ -1,8 +1,13 @@
 class Api::V1::ProvidersController < API::BaseController
-	before_action :set_provider, :except => :index
+	before_action :set_provider, :except => [:index, :connected]
 
 	def index
 		@providers = Provider.active
+		respond_with @providers
+	end
+
+	def connected
+		@providers = current_company.connected_providers.collect {|connected| connected.provider }
 		respond_with @providers
 	end
 

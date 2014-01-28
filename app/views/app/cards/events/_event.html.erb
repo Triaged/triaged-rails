@@ -1,7 +1,9 @@
 <div class="card-wrapper col-lg-6 col-lg-offset-3">
 		<div class="card">
+			
 			<div class="row">
 				<%= avatar_for event.user, event.provider %>
+				
 				<div class="headcontent">
 					<h1 class="author"><%= event.user.name if event.user %> <%= event.title %></h1>
 					<div class="timetitle">
@@ -9,9 +11,10 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="content row">
 				<div class="contentdescription">
-				<p><%= event.description %></p>
+					<%= body_helper event %>
 				</div>
 				<div class="contentlinks">
 					<div class="floatleft">
@@ -19,13 +22,16 @@
 						<p class="alt"><%= time_ago_in_words event.timestamp %></p>
 					</div>
 					<div class="floatright">
-						<p><a href="cardlink">Open in Github</a></p>
+						<p><%= link_to "Open in #{event.provider.title}", event.url, :target => "blank" %></p>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<%= render event.messages %>
-			</div>
-		</div>
+
+			<% if event.messages.exists? %>
+				<div class="row conversation">
+					<%= render event.messages %>
+				</div>
+			<% end %>
+		
 	</div>
 </div>

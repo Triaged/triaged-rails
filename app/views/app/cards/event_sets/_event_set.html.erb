@@ -1,10 +1,8 @@
 <div class="card-wrapper col-lg-6 col-lg-offset-3">
 		<div class="card">
+			
 			<div class="row">
-				<div class="as-image">
-				<%= image_tag "team/alex.png", :width => "62" %>
-				<%= image_tag "icons/Github-circle-sm.png", :width => "26", :id => "smicon" %>
-				</div>
+				<%= avatar_for event_set.user, event_set.provider %>
 				<div class="headcontent">
 					<h2 class="author">Author</h2>
 					<h2 class="title"><%= event_set.title %></h2>
@@ -30,8 +28,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="conversation">
-				<%= render event_set.messages %>
-			</div>
+
+			<% if event_set.messages %>
+				<div class="row conversation">
+					<%= render event_set.messages %>
+				</div>
+			<% end %>
+
 		</div>
 	</div>

@@ -1,0 +1,27 @@
+<h1>Providers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_providers.each do |admin_provider| %>
+      <tr>
+        <td> <%= image_tag admin_provider.small_icon.url %></td>
+        <td><%= link_to admin_provider.name, admin_provider_path(admin_provider) %></td>
+        <td><%= admin_provider.active %></td>
+
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Provider', new_admin_provider_path %>

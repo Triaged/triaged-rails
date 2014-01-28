@@ -7,6 +7,4 @@ class Share
   field :recipient_email, :type => String
   field :viewed, :type => Boolean
 
-  
-
 end

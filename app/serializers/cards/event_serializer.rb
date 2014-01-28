@@ -1,14 +1,9 @@
-class Cards::EventSerializer < FeedItemSerializer
- 	attributes :provider_name, :property_name, :external_id, :timestamp
+class Cards::EventSerializer < Cards::BaseSerializer
 
- 	attributes :title, :description, :footer
- 	attributes :html_url
-
- 	attribute :type
+	attributes :type, :external_id, :timestamp, :title, :body, :footer, :url
 
  	def type
  		:event
  	end
- 	
-
-end
+ 
+ end

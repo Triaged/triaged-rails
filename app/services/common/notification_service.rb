@@ -56,4 +56,8 @@ module Common::NotificationService
 		end
 	end
 
+	def self.add_to_notifications user, item, alert
+		User.notifications.create(body: alert)
+	end
+
 end

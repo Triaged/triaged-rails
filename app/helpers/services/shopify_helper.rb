@@ -1,2 +1,0 @@
-module Services::ShopifyHelper
-end
