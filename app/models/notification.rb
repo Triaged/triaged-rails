@@ -5,7 +5,7 @@ class Notification
   embedded_in :user
 
   field :body, type: String
-  field :viewed, type: Boolean, default :false
+  field :viewed, type: Boolean, default: false
 
   
 end
