@@ -14,7 +14,31 @@
 
 			<div class="content row">
 				<div class="contentdescription">
-					<%= body_helper event %>
+					<!-- Standard -->
+					<!-- <%= body_helper event %> -->
+
+					<!-- Lists -->
+					<!-- <p>
+						<ul class="hyphen-list">
+							<li>This is the first item</li>
+							<li>This is the second item</li>
+							<li>This is the third item</li>
+							<li>This is the fourth item</li>
+							<li>This is the fifth item</li>
+						</ul>
+					</p> -->
+
+					<!-- Image -->
+					<div class="contentimage">
+					<%= image_tag "test-image.png", :id => "image"  %>
+					</div>
+					<p class="imagedescription">This is a description for the image above.</p>
+
+					<!-- Graph -->
+					<!-- <div class="contentimage">
+					<%= image_tag "test-graph.png", :width => "100%" %>
+					</div> -->
+
 				</div>
 				<div class="contentlinks">
 					<div class="floatleft">
@@ -28,9 +52,7 @@
 			</div>
 
 			<% if event.messages.exists? %>
-				<div class="row conversation">
 					<%= render event.messages %>
-				</div>
 			<% end %>
 		
 	</div>

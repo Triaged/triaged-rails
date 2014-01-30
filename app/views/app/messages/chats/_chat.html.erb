@@ -1,15 +1,48 @@
-<div class="row conversation">
+<div class="row conversation-border">
+	<div class="row conversation">
 		<div class="convo-image">
 			<%= image_tag "team/charlie.png", :width => "36" %>
 			<%= image_tag "icons/notification-icon.png", :width => "16", :id => "alerticon" %>
 		</div>
-		<div class="convo">
+		<div class="subconvo">
 			<div class="messanger">
-				<h2 class="messangertext">Charlie W. <span>created a Github Issue for this dispute</span></h2>
+				<h2 class="message-alert">Charlie W. created a Github Issue for this dispute</h2>
 			</div>
 			<div class="time">
 				<p class="alt">15m</p>
 			</div>
 		</div>
+	</div>
+	<div class="row conversation">
+		<div class="convo-image">
+			<%= image_tag "team/charlie.png", :width => "36" %>
+			<%= image_tag "icons/notification-icon.png", :width => "16", :id => "alerticon" %>
 		</div>
+		<div class="subconvo">
+			<div class="messanger">
+				<!-- <h2 class="message-alert">Charlie W. created a Github Issue for this dispute</h2> -->
+				<h2 class="message-author">Charlie W.</h2>
+				<p>I think this look really good. Lets keep working on it.</p>
+			</div>
+			<div class="time">
+				<p class="alt">15m</p>
+			</div>
+		</div>
+	</div>
+	<div class="row conversation">
+		<div class="convo-image">
+			<%= image_tag "team/charlie.png", :width => "36" %>
+			<%= image_tag "icons/notification-icon.png", :width => "16", :id => "alerticon" %>
+		</div>
+		<div class="subconvo">
+			<div class="messanger">
+				<!-- <h2 class="message-alert">Charlie W. created a Github Issue for this dispute</h2> -->
+				<h2 class="message-author">Charlie W.</h2>
+				<p>Also, lets change the color to #ffffff</p>
+			</div>
+			<div class="time">
+				<p class="alt">15m</p>
+			</div>
+		</div>
+	</div>
 </div>
