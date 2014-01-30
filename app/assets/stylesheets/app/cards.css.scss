@@ -78,14 +78,14 @@
 }
 
 /* Lists */
- ul.hyphen-list {
+ ul.body-list {
     list-style-type: none;
     margin-left: 1.5em;
     padding-left: 1em;
     text-indent: -0.85em;
 }
 
-ul.hyphen-list li:before {
+ul.body-list li:before {
     content: "- ";
 }
 
@@ -171,7 +171,7 @@ ul.hyphen-list li:before {
 #image {
 	max-height: 200px;
 }
- ul.hyphen-list {
+ ul.body-list {
     margin-left: 0;
 }
 .contentlinks {
