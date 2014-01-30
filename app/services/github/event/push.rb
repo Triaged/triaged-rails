@@ -5,39 +5,38 @@ class Github::Event::Push < BaseServiceEvent
     return nil if data.deleted == true
 
     org_name = data.repository.respond_to?(:organization) ? data.repository.organization : data.repository.owner.name
-
-    event_set = {
-      type: :event_set,
-      company_id: company.id.to_s,
-      provider_name: self.provider_name,
-      event_name: self.event_name,
-      provider_account_name: org_name,
-      title: "Pushed",
-      timestamp: DateTime.now,
-      should_push: false
-    }
-
     branch = data.ref.split("/").last
 
-    event_set[:events] = []
-    data.commits.each do |commit|
-      commit = RecursiveOpenStruct.new(commit)
-      event_set[:events] << {
-        external_id: commit.node,
-        property_name: data.repository.name,
-        description: commit.message,
-        footer: branch,
-        timestamp: commit.timestamp,
-        url: commit.url,
-      }
-    end
+    event = {
+      company_id: company.id.to_s,
+      provider_name: self.provider_name, 
+      event_name: self.event_name,
+      account_name: nil,
+      provider_account_name: org_name,
+      property_name: data.repository.name,
+      external_id: data.head_long,
+      title: "Pushed",
+      footer: branch,
+      url: data.url,
+      push_notify: false,
+      group_event: false,
 
-    event_set[:author] = { 
+    }
+
+    event[:author] = { 
       name: data.pusher.name,
       email: data.pusher.email 
     }
-    
-    return event_set.to_json
+
+    event[:body_list] = []
+    data.commits.each do |commit|
+      commit = RecursiveOpenStruct.new(commit)
+      event[:body_list] << commit.message
+      event[:timestamp] = commit.timestamp
+      event[:external_id] = commit.id
+    end
+
+    return event.to_json
   end
 
 end
