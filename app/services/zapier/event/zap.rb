@@ -20,8 +20,8 @@ class Zapier::Event::Zap < BaseServiceEvent
 
 		event[:provider] = {
 			name: data.service.name,
-			small_icon: data.service.logos.32x32,
-			large_icon: data.service.logos.64x64
+			small_icon: data.service.logos["32x32"],
+			large_icon: data.service.logos["64x64"]
 		}
 
 		return event.to_json
