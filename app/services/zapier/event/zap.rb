@@ -8,7 +8,7 @@ class Zapier::Event::Zap < BaseServiceEvent
 			account_name: data.account_name,
 			property_name: data.property_name,
 			author: nil,
-			external_id: data.id,
+			external_id: data.external_id,
 			title: data.title,
 			body: data.body,
 			footer: data.footer,
