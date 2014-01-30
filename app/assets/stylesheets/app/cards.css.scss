@@ -26,6 +26,11 @@
 .as-image {
 	float: left;
 }
+#smicon {
+        margin-left: -24px;
+        margin-top: 35px;
+        padding-top: 3px;
+}
 .headcontent {
 	padding-left: 78px;
 }
@@ -69,8 +74,35 @@
 
 .contentdescription {
 	margin: 5px 0 10px;
+	color: #747475;
 }
 
+/* Lists */
+ ul.hyphen-list {
+    list-style-type: none;
+    margin-left: 1.5em;
+    padding-left: 1em;
+    text-indent: -0.85em;
+}
+
+ul.hyphen-list li:before {
+    content: "- ";
+}
+
+/* Image */
+
+.contentimage {
+	text-align: center;
+}
+#image {
+	max-height: 300px;
+}
+
+.imagedescription {
+	text-align: center;
+	padding-top: 20px;
+}
+/* Links */
 .contentlinks {
 	clear: both;
 	margin-bottom: 0;
@@ -80,14 +112,18 @@
 }
 
 /* Comments */
-.conversation {
+.conversation-border {
 	border-top: 1px solid #EEF1F2;
+}
+.conversation {
 	padding-top: 20px;
 }
 .convo-image {
 	float: left;
 }
 .convo {
+}
+.subconvo {
 	padding-left: 53px;
 }
 .messanger {
@@ -96,7 +132,10 @@
     width: 80%;
     float: left;
 }
-.messangertext {
+.message-alert {
+	margin: 0;
+}
+.message-author {
 	margin: 0;
 }
 .time {
@@ -128,6 +167,12 @@
 .content {
 	margin: 0;
 	padding: 10px;
+}
+#image {
+	max-height: 200px;
+}
+ ul.hyphen-list {
+    margin-left: 0;
 }
 .contentlinks {
 	padding-top: 15px;
