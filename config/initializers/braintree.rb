@@ -1,3 +1,5 @@
+Braintree::Configuration.environment = :production
+
 ActiveSupport::Notifications.subscribe "event.braintree.subscription_canceled" do |name, start, finish, id, payload|
 	Common::WebhookService.build_event_and_add_to_feeds(Braintree::Event::SubscriptionCanceled, payload)
 end# Add initialization content here
