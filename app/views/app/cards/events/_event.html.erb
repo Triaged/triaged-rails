@@ -14,25 +14,13 @@
 
 			<div class="content row">
 				<div class="contentdescription">
-					<!-- Standard -->
-					<!-- <%= body_helper event %> -->
-
-					<!-- Lists -->
-					<!-- <p>
-						<ul class="hyphen-list">
-							<li>This is the first item</li>
-							<li>This is the second item</li>
-							<li>This is the third item</li>
-							<li>This is the fourth item</li>
-							<li>This is the fifth item</li>
-						</ul>
-					</p> -->
 
 					<!-- Image -->
 					<div class="contentimage">
-					<%= image_tag "test-image.png", :id => "image"  %>
+						<%= image_tag(event.image_url, :id => "image") if event.image_url %>
 					</div>
-					<p class="imagedescription">This is a description for the image above.</p>
+
+					<%= body_helper event %>
 
 					<!-- Graph -->
 					<!-- <div class="contentimage">
