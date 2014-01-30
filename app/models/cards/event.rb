@@ -42,7 +42,7 @@ class Cards::Event < FeedItem
 		self.timestamp = payload[:timestamp] unless self.timestamp
 
 		# condense body list if only one entry exists
-		if self.body_list.exists? && self.body_list.count == 1
+		if !self.body_list.nil? && self.body_list.count == 1
 			self.body = self.body_list.first
 			self.body_list = nil
 		end
