@@ -10,6 +10,16 @@ module FeedItemsHelper
 		end
 	end
 
+	def small_avatar_for user
+		content_tag(:div, class: "convo-image") do
+			if user.avatar?
+				image_tag(user.avatar.face.url, :width => "36") #+ image_tag(provider.small_icon.url, :width => "16", :id => "alerticon")
+			else
+				#image_tag(provider.large_icon.url, :width => "36")
+			end
+		end
+	end
+
 	def body_helper event
 		unless event.body.nil?
 			content_tag(:p, event.body)

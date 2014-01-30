@@ -1,48 +1,12 @@
-<div class="row conversation-border">
-	<div class="row conversation">
-		<div class="convo-image">
-			<%= image_tag "team/charlie.png", :width => "36" %>
-			<%= image_tag "icons/notification-icon.png", :width => "16", :id => "alerticon" %>
+<div class="row conversation">
+	<%= small_avatar_for chat.author %>
+	<div class="subconvo">
+		<div class="messanger">
+			<h2 class="message-alert">chat.body</h2>
 		</div>
-		<div class="subconvo">
-			<div class="messanger">
-				<h2 class="message-alert">Charlie W. created a Github Issue for this dispute</h2>
-			</div>
-			<div class="time">
-				<p class="alt">15m</p>
-			</div>
-		</div>
-	</div>
-	<div class="row conversation">
-		<div class="convo-image">
-			<%= image_tag "team/charlie.png", :width => "36" %>
-			<%= image_tag "icons/notification-icon.png", :width => "16", :id => "alerticon" %>
-		</div>
-		<div class="subconvo">
-			<div class="messanger">
-				<!-- <h2 class="message-alert">Charlie W. created a Github Issue for this dispute</h2> -->
-				<h2 class="message-author">Charlie W.</h2>
-				<p>I think this look really good. Lets keep working on it.</p>
-			</div>
-			<div class="time">
-				<p class="alt">15m</p>
-			</div>
-		</div>
-	</div>
-	<div class="row conversation">
-		<div class="convo-image">
-			<%= image_tag "team/charlie.png", :width => "36" %>
-			<%= image_tag "icons/notification-icon.png", :width => "16", :id => "alerticon" %>
-		</div>
-		<div class="subconvo">
-			<div class="messanger">
-				<!-- <h2 class="message-alert">Charlie W. created a Github Issue for this dispute</h2> -->
-				<h2 class="message-author">Charlie W.</h2>
-				<p>Also, lets change the color to #ffffff</p>
-			</div>
-			<div class="time">
-				<p class="alt">15m</p>
-			</div>
+		<div class="time">
+			<p class="alt"><%= time_ago_in_words chat.timestamp %></p>
 		</div>
 	</div>
 </div>
+	
