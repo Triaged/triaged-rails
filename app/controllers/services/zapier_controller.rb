@@ -2,9 +2,8 @@ class Services::ZapierController < ServiceController
 	respond_to :json
 
 	def webhook
-		Rails.logger.info params.inspect
-		#event = JSON.parse(params["payload"])
-		#payload = {event: event, company_id: params[:company_id], event_type: event_type}
+		payload = {event: params[:zapier], company_id: params[:api_key]}
+		Zapier::WebhookService.new.instrument(payload)
 		
 		head :ok
 	# rescue StandardError
