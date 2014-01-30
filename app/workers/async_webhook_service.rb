@@ -46,6 +46,9 @@ class AsyncWebhookService
 		if provider.new_record?
 			provider.remote_large_icon_url = provider_dict["large_icon"]
 			provider.remote_small_icon_url = provider_dict["small_icon"]
+			provider.title = provider_dict["name"].capitalize
+			provider.short_title = provider_dict["name"].capitalize
+			provider.zapier = true
 			provider.save
 		end
 
