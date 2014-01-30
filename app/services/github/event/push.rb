@@ -14,7 +14,7 @@ class Github::Event::Push < BaseServiceEvent
       account_name: org_name,
       property_name: data.repository.name,
       external_id: data.head_long,
-      title: "Pushed to #{data.repository.name}/#{branch}",
+      title: "Pushed to #{branch}",
       footer: branch,
       url: data.url,
       push_notify: false,
