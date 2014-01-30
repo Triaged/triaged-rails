@@ -8,7 +8,7 @@ class Dropbox::Event::Update < BaseServiceEvent
       provider_name: self.provider_name, event_name: self.event_name,
       title: "Files Uploaded",
       timestamp: DateTime.now,
-      should_push: false
+      push_notify: false
     }
 
     event_set[:events] = []
@@ -18,7 +18,7 @@ class Dropbox::Event::Update < BaseServiceEvent
       event_set[:events] << {
         external_id: metadata['rev'],
         property_name: data.repository.name,
-        description: "#{path} #{status}",
+        body: "#{path} #{status}",
         footer: commit.branch,
         timestamp: metadata['modified'],
         url: commit.url,

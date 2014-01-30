@@ -8,7 +8,7 @@ class Beanstalk::Event::Push < BaseServiceEvent
       provider_name: self.provider_name, event_name: self.event_name,
       title: "Pushed to #{data.branch}",
       timestamp: DateTime.now,
-      should_push: false
+      push_notify: false
     }
 
     event_set[:events] = []
@@ -17,7 +17,7 @@ class Beanstalk::Event::Push < BaseServiceEvent
       event_set[:events] << {
         external_id: commit.id,
         property_name: data.repository.name,
-        description: commit.message,
+        body: commit.message,
         footer: data.branch,
         timestamp: commit.timestamp,
         url: commit.url,
@@ -31,6 +31,5 @@ class Beanstalk::Event::Push < BaseServiceEvent
     
     return event_set.to_json
   end
-
 
 end

@@ -27,6 +27,11 @@ class Cards::Event < FeedItem
 
 	embeds_one :author, class_name: "Cards::Author"
 
+	validates :provider, presence: true
+	validates :title, presence: true
+	validates :external_id, presence: true
+	#validates :body, presence: true, :unless => :body_list
+	#validates :body_list, presence: true, :unless => :body
 
 	def after_build_hook company, payload
 		super
@@ -37,7 +42,7 @@ class Cards::Event < FeedItem
 		self.timestamp = payload[:timestamp] unless self.timestamp
 
 		# condense body list if only one entry exists
-		if self.body_list.count == 1
+		if !self.body_list.nil? && self.body_list.count == 1
 			self.body = self.body_list.first
 			self.body_list = nil
 		end
