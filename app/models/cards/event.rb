@@ -36,8 +36,6 @@ class Cards::Event < FeedItem
 	def after_build_hook company, payload
 		super
 		
-		self.provider = Provider.named(self.provider_name)
-
 		# Set timestamp if we don't already have one
 		self.timestamp = payload[:timestamp] unless self.timestamp
 

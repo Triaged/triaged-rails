@@ -11,6 +11,7 @@ class Provider
   field :short_title, :type => String
   field :active, :type => Boolean, :default => false
   field :oauth, :type => Boolean, :default => false
+  field :zapier, :type => Boolean, :default => false
 
   mount_uploader :large_icon, LargeProviderIconUploader
   mount_uploader :small_icon, SmallProviderIconUploader
