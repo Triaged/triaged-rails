@@ -7,7 +7,7 @@ class HockeyApp::Event::Feedback < BaseServiceEvent
 			provider_name: self.provider_name, event_name: self.event_name,
 			title: 	"New Feedback",
 			provider_name: self.provider_name, event_name: self.event_name,
-			should_push: false,
+			push_notify: false,
 			external_id: data.public_identifier,
 			property_name: data.title.split("for ").last,
 			description: "#{data.feedback.messages.first.subject}\n#{data.feedback.messages.first.clean_text}",

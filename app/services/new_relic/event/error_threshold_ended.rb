@@ -8,7 +8,7 @@ class NewRelic::Event::ErrorThresholdEnded < BaseServiceEvent
 			external_id: data.external_id,
 			title: "Error Threshold Ended",
 			provider_name: self.provider_name, event_name: self.event_name,
-			should_push: true,
+			push_notify: true,
 			property_name: data.application_name,
 			description: data.long_description,
 			footer: data.severity,

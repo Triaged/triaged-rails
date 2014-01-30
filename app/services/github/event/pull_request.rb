@@ -7,7 +7,7 @@ class Github::Event::PullRequest < BaseServiceEvent
       provider_name: self.provider_name, event_name: self.event_name,
       title: data.pull_request.title,
       account_name: data.repository.owner.login,
-      should_push: false,
+      push_notify: false,
       external_id: data.number,
       property_name: data.repository.name,
       description: data.pull_request.body,

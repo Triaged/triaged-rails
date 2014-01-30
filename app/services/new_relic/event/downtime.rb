@@ -8,7 +8,7 @@ class NewRelic::Event::Downtime < BaseServiceEvent
 			event_name: self.event_name,
 			external_id: data.external_id,
 			title: "Downtime",
-			should_push: true,
+			push_notify: true,
 			property_name: data.application_name,
 			description: data.long_description,
 			footer: data.severity,

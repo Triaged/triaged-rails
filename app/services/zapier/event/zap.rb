@@ -7,7 +7,7 @@ class Zapier::Event::Zap < BaseServiceEvent
 			provider_name: self.provider_name, 
 			event_name: self.event_name,
 			title: data.title,
-			should_push: true,
+			push_notify: true,
 			external_id: data.error.id,
 			property_name: data.error.project.name,
 			description: data.error.error_message,

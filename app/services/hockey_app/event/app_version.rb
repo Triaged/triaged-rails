@@ -7,7 +7,7 @@ class HockeyApp::Event::AppVersion < BaseServiceEvent
 			provider_name: self.provider_name, event_name: self.event_name,
 			title: 	data.title,
 			provider_name: self.provider_name, event_name: self.event_name,
-			should_push: false,
+			push_notify: false,
 			external_id: data.public_identifier,
 			property_name:  data.app_version.title,
 			description: data.app_version.notes,

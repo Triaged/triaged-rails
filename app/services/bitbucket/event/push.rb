@@ -7,7 +7,7 @@ class Bitbucket::Event::Push < BaseServiceEvent
       provider_name: self.provider_name, event_name: self.event_name,
       title: "Pushed to #{data.branch}",
       timestamp: DateTime.now,
-      should_push: false
+      push_notify: false
     }
 
     event_set[:events] = []

@@ -13,7 +13,7 @@ class Cards::EventSet < Cards::Base
 			provider_name: self.provider_name, 
 			event_name: self.event_name,
 			title: self.title,
-			should_push: self.should_push,
+			push_notify: self.should_push,
 			external_id: self.events.first.external_id,
 			property_name: self.events.first.property_name,
 			description: self.events.first.description,
