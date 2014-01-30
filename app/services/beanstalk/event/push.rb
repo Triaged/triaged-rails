@@ -32,5 +32,4 @@ class Beanstalk::Event::Push < BaseServiceEvent
     return event_set.to_json
   end
 
-
 end
