@@ -11,8 +11,8 @@ class Heroku::Event::Deploy < BaseServiceEvent
       title: "Deployed #{data.app}",
       footer: nil,
       url: data.url,
-      thumbnail_url: nil,
-      image_url: nil,
+      thumbnail_url: "http://triage-staging.s3.amazonaws.com/assets/test-image-6f8dedfe4ecf4b196798c761067d64ed.png",
+      image_url: "http://triage-staging.s3.amazonaws.com/assets/test-image-6f8dedfe4ecf4b196798c761067d64ed.png",
       timestamp: nil,
       push_notify: true,
       group_event: false
