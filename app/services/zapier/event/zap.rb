@@ -18,6 +18,11 @@ class Zapier::Event::Zap < BaseServiceEvent
 			group_event: false
 		}
 
+		event[:author] = { 
+      name: data.name,
+      email: data.email
+    }
+
 		event[:provider] = {
 			name: data.service.name,
 			small_icon: data.service.logos["32x32"],
