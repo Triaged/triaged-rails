@@ -9,7 +9,7 @@ class Sentry::Event::Exception < BaseServiceEvent
 			account_name: nil,
 			property_name: data.project,
 			external_id: data.id,
-			title: "#{data.level.capitalize} Exception",
+			title: "#{data.project.capitalize} #{data.level.capitalize} Exception",
 			body: data.message,
 			footer: "as #{data.culprit}",
 			timestamp: data.created_at,

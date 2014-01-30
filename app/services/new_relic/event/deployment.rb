@@ -3,10 +3,10 @@ class NewRelic::Event::Deployment < BaseServiceEvent
 	def self.build_from_webhook data, company
 		event = {
 			company_id: company.id.to_s,
-			provider_name: self.provider_name, event_name: self.event_name,
+			provider_name: self.provider_name, 
+			event_name: self.event_name,
 			external_id: data.external_id,
-			title: "Deployment",
-			provider_name: self.provider_name, event_name: self.event_name,
+			title: "#{data.application_name.capitalize} Deployed",
 			push_notify: false,
 			property_name: data.application_name,
 			body: data.description,
