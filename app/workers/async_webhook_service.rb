@@ -41,7 +41,7 @@ class AsyncWebhookService
 
 	def build_provider provider_dict
 
-		provider = Provider.find_or_initialize_by name: provider_dict["name"]
+		provider = Provider.find_or_initialize_by name: provider_dict["name"].downcase
 
 		if provider.new_record?
 			provider.remote_large_icon_url = provider_dict["large_icon"]
