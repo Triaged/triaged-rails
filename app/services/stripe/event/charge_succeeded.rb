@@ -10,7 +10,7 @@ class Stripe::Event::ChargeSucceeded < Stripe::BaseEvent
 			push_notify: false,
 			external_id: data.id,
 			property_name: nil,
-			description: data.data.object.description,
+			body: data.data.object.description,
 			footer: nil,
 			timestamp: DateTime.strptime(data.created.to_s,'%s'),
 			url: build_html_url(data.id),

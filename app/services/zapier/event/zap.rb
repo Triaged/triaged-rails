@@ -10,7 +10,7 @@ class Zapier::Event::Zap < BaseServiceEvent
 			push_notify: true,
 			external_id: data.error.id,
 			property_name: data.error.project.name,
-			description: data.error.error_message,
+			body: data.error.error_message,
 			footer: nil,
 			timestamp: DateTime.now,
 			url: nil,

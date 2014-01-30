@@ -9,7 +9,7 @@ class NewRelic::Event::Deployment < BaseServiceEvent
 			provider_name: self.provider_name, event_name: self.event_name,
 			push_notify: false,
 			property_name: data.application_name,
-			description: data.description,
+			body: data.description,
 			footer: data.severity,
 			timestamp: data.created_at,
 			url: nil,

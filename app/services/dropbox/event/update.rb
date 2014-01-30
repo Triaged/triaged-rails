@@ -18,7 +18,7 @@ class Dropbox::Event::Update < BaseServiceEvent
       event_set[:events] << {
         external_id: metadata['rev'],
         property_name: data.repository.name,
-        description: "#{path} #{status}",
+        body: "#{path} #{status}",
         footer: commit.branch,
         timestamp: metadata['modified'],
         url: commit.url,

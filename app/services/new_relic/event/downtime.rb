@@ -10,7 +10,7 @@ class NewRelic::Event::Downtime < BaseServiceEvent
 			title: "Downtime",
 			push_notify: true,
 			property_name: data.application_name,
-			description: data.long_description,
+			body: data.long_description,
 			footer: data.severity,
 			timestamp: data.created_at,
 			url: nil,

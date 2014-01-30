@@ -10,7 +10,7 @@ class Stripe::Event::DisputeCreated < Stripe::BaseEvent
 			push_notify: true,
 			external_id: data.id,
 			property_name: nil,
-			description: data.data.object.reason,
+			body: data.data.object.reason,
 			footer: "#{ActionView::Base.new.number_to_currency(data.data.object.amount  / 100)}, Due By: #{data.data.object.evidence_due_by}",
 			timestamp: DateTime.strptime(data.created.to_s,'%s'),
 			url: build_html_url(data.id),

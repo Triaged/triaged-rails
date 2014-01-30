@@ -16,7 +16,7 @@ class Github::Event::IssueOpened < BaseServiceEvent
       push_notify: false,
       external_id: data.number,
       property_name: data.repository.name,
-      description: data.issue.body,
+      body: data.issue.body,
       timestamp: DateTime.now,
       url: data.issue.html_url,
     }

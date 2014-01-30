@@ -8,7 +8,7 @@ class Crashlytics::Event::Verification < BaseServiceEvent
 			title: 	"Crashlytics Verified",
 			push_notify: true,
 			external_id: "crsh-#{DateTime.now}",
-			description: "Crashlytics issues are now synced with Triage.",
+			body: "Crashlytics issues are now synced with Triage.",
 			timestamp: DateTime.now,
 		}
 		return event.to_json

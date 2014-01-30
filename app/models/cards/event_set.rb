@@ -16,7 +16,7 @@ class Cards::EventSet < Cards::Base
 			push_notify: self.should_push,
 			external_id: self.events.first.external_id,
 			property_name: self.events.first.property_name,
-			description: self.events.first.description,
+			body: self.events.first.description,
 			footer: self.events.first.footer,
 			timestamp: self.events.first.timestamp,
 			url: self.events.first.url

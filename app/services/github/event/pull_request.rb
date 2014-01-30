@@ -10,7 +10,7 @@ class Github::Event::PullRequest < BaseServiceEvent
       push_notify: false,
       external_id: data.number,
       property_name: data.repository.name,
-      description: data.pull_request.body,
+      body: data.pull_request.body,
       footer: nil,
       timestamp: DateTime.now,
       url: data.pull_request.html_url,

@@ -10,7 +10,7 @@ class HockeyApp::Event::AppVersion < BaseServiceEvent
 			push_notify: false,
 			external_id: data.public_identifier,
 			property_name:  data.app_version.title,
-			description: data.app_version.notes,
+			body: data.app_version.notes,
 			footer:  nil,
 			timestamp: data.sent_at,
 			url: data.url,

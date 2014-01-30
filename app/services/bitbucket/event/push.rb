@@ -16,7 +16,7 @@ class Bitbucket::Event::Push < BaseServiceEvent
       event_set[:events] << {
         external_id: commit.node,
         property_name: data.repository.name,
-        description: commit.message,
+        body: commit.message,
         footer: commit.branch,
         timestamp: commit.timestamp,
         url: commit.url,

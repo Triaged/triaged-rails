@@ -10,7 +10,7 @@ class HockeyApp::Event::Feedback < BaseServiceEvent
 			push_notify: false,
 			external_id: data.public_identifier,
 			property_name: data.title.split("for ").last,
-			description: "#{data.feedback.messages.first.subject}\n#{data.feedback.messages.first.clean_text}",
+			body: "#{data.feedback.messages.first.subject}\n#{data.feedback.messages.first.clean_text}",
 			footer:  "from #{data.feedback.name}",
 			timestamp: data.sent_at,
 			url: data.url,

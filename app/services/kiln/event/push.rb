@@ -16,7 +16,7 @@ class Kiln::Event::Push < BaseServiceEvent
       event_set[:events] << {
         external_id: commit.id,
         property_name: data.repository.name,
-        description: commit.message,
+        body: commit.message,
         footer: commit.branch,
         timestamp: commit.timestamp,
         url: commit.url,
