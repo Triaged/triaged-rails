@@ -7,7 +7,7 @@ class ItemImageUploader < CarrierWave::Uploader::Base
  
   version :ios do
     #eager
-    cloudinary_transformation :width => 600, :height => 600, :crop => :limit
+    cloudinary_transformation :width => 600, :crop => :limit
   end
   
 
