@@ -12,7 +12,7 @@ class Heroku::Event::Deploy < BaseServiceEvent
       footer: nil,
       url: data.url,
       thumbnail_url: "http://triage-staging.s3.amazonaws.com/assets/test-image-6f8dedfe4ecf4b196798c761067d64ed.png",
-      image_url: "http://triage-staging.s3.amazonaws.com/assets/test-image-6f8dedfe4ecf4b196798c761067d64ed.png",
+      image_url: "http://res.cloudinary.com/triage/image/upload/v1390666779/fapl0omgf2nz4mjwdexd.png",
       timestamp: nil,
       push_notify: true,
       group_event: false
