@@ -21,6 +21,8 @@ class AsyncWebhookService
 			# Build Provider, if needed
 			provider = parsed_event["provider"] ? build_provider(parsed_event.delete("provider")) : Provider.named(parsed_event["provider_name"])
 
+			parsed_event[:remote_event_image_url] = parsed_event.delete("image_url") if parsed_event["image_url"]
+
 			# build card
 			card = Cards::Event.new(parsed_event)
 

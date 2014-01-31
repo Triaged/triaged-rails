@@ -26,6 +26,7 @@ class Cards::Event < FeedItem
 	field :group_event, type: Boolean, default: false
 
 	embeds_one :author, class_name: "Cards::Author"
+	mount_uploader :event_image, ItemImageUploader
 
 	validates :provider, presence: true
 	validates :title, presence: true

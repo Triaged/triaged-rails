@@ -9,5 +9,9 @@ class Cards::EventSerializer < Cards::BaseSerializer
  	def body
  		object.body || object.body_list.collect {|entry| "- #{entry}" }.join("\n")
  	end
+
+ 	def image_url
+ 		object.event_image.ios.url
+ 	end
  
  end

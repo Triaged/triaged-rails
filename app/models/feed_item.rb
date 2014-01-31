@@ -10,7 +10,6 @@ class FeedItem
   
   field :timestamp, type: DateTime
   field :push_notify, type: Boolean, default: true
-  
 
   index({ "updated_at" => 1 })
  	index({ author_id: 1 })
