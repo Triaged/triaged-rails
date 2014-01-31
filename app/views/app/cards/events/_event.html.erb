@@ -17,7 +17,7 @@
 
 					<!-- Image -->
 					<div class="contentimage">
-						<%= image_tag(event.event_image.ios.url, :id => "image") if event.event_image? %>
+						<%= image_tag(event.event_image.web.url, :id => "image") if event.event_image? %>
 					</div>
 
 					<%= body_helper event %>
