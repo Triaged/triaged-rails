@@ -1,6 +1,6 @@
 class ProviderSettingsSerializer < ProviderSerializer
 
-	attributes :follows, :webhook_url, :connected,
+	attributes :follows, :webhook_url, :connected
 
 
 	has_one :provider_account, serializer: ProviderAccountSerializer
