@@ -3,7 +3,8 @@ class AccountSerializer < ActiveModel::Serializer
   attributes :push_enabled, :company_name, :validated_belongs_to_company, :authentication_token, :company_validation_token, :api_token
   attribute :personal_account
 	has_many :teammates
-  has_many :providers
+  
+  has_many :providers, serializer: ProviderSettingsSerializer
 
   def company_name
   	object.company.name
