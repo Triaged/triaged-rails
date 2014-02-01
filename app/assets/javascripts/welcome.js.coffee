@@ -3,9 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-	$("#phone_number").phoneNumber
-  	format: "local"
-  	country: "US"
+	#$("#phone_number").phoneNumber
+  #	format: "local"
+  #	country: "US"
 	$("#phone_number").focus()
 
 	$("#download-cta").click ->
