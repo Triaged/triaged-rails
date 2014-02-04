@@ -3,7 +3,7 @@ class Crashlytics::Event::Issue < BaseServiceEvent
   def self.build_from_webhook data, company
 		event = {
 			company_id: company.id.to_s,
-			provider_name: self.provider_name,
+			provider: {name: self.provider_name },
 			event_name: self.event_name,
 			account_name: nil,
 			property_name: data.app.name,

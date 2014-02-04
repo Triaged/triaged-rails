@@ -9,7 +9,7 @@ class Github::Event::Push < BaseServiceEvent
 
     event = {
       company_id: company.id.to_s,
-      provider_name: self.provider_name, 
+      provider: {name: self.provider_name }, 
       event_name: self.event_name,
       account_name: org_name,
       property_name: data.repository.name,

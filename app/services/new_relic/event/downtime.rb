@@ -4,7 +4,7 @@ class NewRelic::Event::Downtime < BaseServiceEvent
 		event = {
 			type: :event,
 			company_id: company.id.to_s,
-			provider_name: self.provider_name, 
+			provider: {name: self.provider_name }, 
 			event_name: self.event_name,
 			external_id: data.external_id,
 			title: "Downtime",

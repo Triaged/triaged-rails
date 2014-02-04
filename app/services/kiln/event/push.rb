@@ -4,7 +4,7 @@ class Kiln::Event::Push < BaseServiceEvent
     event_set = {
       type: :event_set,
       company_id: company.id.to_s,
-      provider_name: self.provider_name, event_name: self.event_name,
+      provider: {name: self.provider_name }, event_name: self.event_name,
       title: "Pushed",
       timestamp: DateTime.now,
       push_notify: false

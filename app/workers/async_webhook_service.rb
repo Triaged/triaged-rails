@@ -13,24 +13,14 @@ class AsyncWebhookService
 
 		if json_event # event will be nil if validation failed
 
-			parsed_event = JSON.parse(json_event)
+			event_hash = JSON.parse(json_event)
 
-			# Remove author json from event
-			author_service = Common::AuthorService.new(parsed_event.delete("author"), company)
-
-			# Build Provider, if needed
-			provider = parsed_event["provider"] ? build_provider(parsed_event.delete("provider")) : Provider.named(parsed_event["provider_name"])
-
-			parsed_event[:remote_event_image_url] = parsed_event.delete("image_url") if parsed_event["image_url"]
+			event_hash = set_provider_from_hash(event_hash) # Set Provider
+			event_hash = set_author_from_hash(event_hash) # Set Author
+			event_hash = set_images_from_hash(event_hash) # Set Images
 
 			# build card
-			card = Cards::Event.new(parsed_event)
-
-			# Set provider
-			card.provider = provider
-
-			# Set user if one exists
-			card.user = author_service.user if author_service.user?
+			card = Cards::Event.new(event_hash)
 
 			# generic after init hook
 			card.after_build_hook company, payload
@@ -41,7 +31,8 @@ class AsyncWebhookService
 	end
 
 
-	def build_provider provider_dict
+	def set_provider_from_hash event_hash
+		provider_dict = event_hash.delete("provider")
 
 		provider = Provider.find_or_initialize_by name: provider_dict["name"].downcase
 
@@ -54,7 +45,20 @@ class AsyncWebhookService
 			provider.save
 		end
 
-		provider
+		event_hash[:provider] = provider
+
+		return event_hash
+	end
+
+	def set_author_from_hash event_hash
+		author_service = Common::AuthorService.new(event_hash.delete("author"), company)
+		event_hash[:user] = author_service.user if author_service.user?
+		return event_hash
+	end
+
+	def set_images_from_hash event_hash
+		event_hash[:remote_event_image_url] = event_hash.delete("image_url") if event_hash["image_url"]
+		return event_hash
 	end
 
 end

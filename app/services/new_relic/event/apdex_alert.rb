@@ -4,10 +4,10 @@ class NewRelic::Event::ApdexAlert < BaseServiceEvent
 		event = {
 			type: :event,
 			company_id: company.id.to_s,
-			provider_name: self.provider_name, event_name: self.event_name,
+			provider: {name: self.provider_name }, event_name: self.event_name,
 			external_id: data.external_id,
 			title: "Apdex Alert",
-			provider_name: self.provider_name, event_name: self.event_name,
+			provider: {name: self.provider_name }, event_name: self.event_name,
 			push_notify: true,
 			property_name: data.application_name,
 			body: data.long_description,

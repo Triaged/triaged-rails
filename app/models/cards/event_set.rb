@@ -10,7 +10,7 @@ class Cards::EventSet < Cards::Base
 	def collapse_to_event
 		Cards::Event.new(
 			company_id: self.company_id,
-			provider_name: self.provider_name, 
+			provider: {name: self.provider_name }, 
 			event_name: self.event_name,
 			title: self.title,
 			push_notify: self.should_push,

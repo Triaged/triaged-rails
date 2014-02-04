@@ -3,11 +3,10 @@ class HockeyApp::Event::CrashReason < Cards::Event
 
   def self.build_from_webhook data, company
 		event = {
-			type: :event,
 			company_id: company.id.to_s,
-			provider_name: self.provider_name, event_name: self.event_name,
+			provider: {name: self.provider_name }, event_name: self.event_name,
 			title: 	data.title,
-			provider_name: self.provider_name, event_name: self.event_name,
+			provider: {name: self.provider_name }, event_name: self.event_name,
 			push_notify: false,
 			external_id: data.public_identifier,
 			property_name: data.title.split("for ").last,
