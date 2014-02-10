@@ -4,7 +4,7 @@ class AccountSerializer < ActiveModel::Serializer
   attribute :personal_account
 	has_many :teammates
   
-  has_many :providers, serializer: ProviderSettingsSerializer
+  has_many :providers, serializer: ProviderSettingSerializer
 
   def company_name
   	object.company.name
