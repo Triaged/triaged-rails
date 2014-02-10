@@ -8,7 +8,7 @@ class Api::V1::ProvidersController < API::BaseController
 
 	def connected
 		@providers = current_company.connected_providers.collect {|connected| connected.provider }
-		respond_with @providers
+		render json: @providers, serializer: ProviderSettingSerializer
 	end
 
 	def feed
