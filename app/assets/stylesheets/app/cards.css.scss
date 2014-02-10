@@ -23,6 +23,12 @@
 
 /* Title */
 
+.head {
+	padding-bottom: 10px;
+}
+
+/* Title */
+
 .as-image {
 	float: left;
 }
@@ -31,11 +37,8 @@
         margin-top: 35px;
         padding-top: 3px;
 }
-.headcontent {
-	padding-left: 78px;
-}
-.author {
-	margin: 0;
+.head-content {
+	padding: 5px 0 0 78px;
 }
 .title {
 	margin: 0;
@@ -43,8 +46,8 @@
 
 /* Title Meta */
 
-.timetitle {
-	margin: 5px 0 10px;
+.property {
+	margin-top: 5px;
 }
 .alt {
 	font-size: 16px;
@@ -72,7 +75,7 @@
 	line-height: 28px;
 }
 
-.contentdescription {
+.event-content {
 	margin: 5px 0 10px;
 	color: #747475;
 }
@@ -91,7 +94,7 @@ ul.body-list li:before {
 
 /* Image */
 
-.contentimage {
+.event-image {
 	text-align: center;
 }
 #image {
@@ -103,11 +106,11 @@ ul.body-list li:before {
 	padding-top: 20px;
 }
 /* Links */
-.contentlinks {
+.content-links {
 	clear: both;
 	margin-bottom: 0;
 }
-.contentlinks p {
+.content-links p {
 	margin-bottom: 0;
 }
 
@@ -177,8 +180,7 @@ ul.body-list li:before {
 .contentlinks {
 	padding-top: 15px;
 }
-.headcontent,
-.metacontent {
+.head-content {
 	padding-left: 50px;
 }
 #lgicon {
