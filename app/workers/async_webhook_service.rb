@@ -42,6 +42,7 @@ class AsyncWebhookService
 			provider.title = provider_dict["name"].capitalize
 			provider.short_title = provider_dict["name"].capitalize
 			provider.zapier = true
+			provider.active = true
 			provider.save
 		end
 
