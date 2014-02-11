@@ -3,12 +3,12 @@ class Api::V1::ProvidersController < API::BaseController
 
 	def index
 		@providers = Provider.active
-		respond_with @providers
+		respond_with @providers, each_serializer: ProviderSettingSerializer
 	end
 
 	def connected
 		@providers = current_company.connected_providers.collect {|connected| connected.provider }
-		render json: @providers, serializer: ProviderSettingSerializer
+		render json: @providers, each_serializer: ProviderSettingSerializer
 	end
 
 	def feed
