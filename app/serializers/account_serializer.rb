@@ -6,10 +6,6 @@ class AccountSerializer < ActiveModel::Serializer
   has_one :current_user, serializer: UserSerializer
   has_many :providers, serializer: ProviderSettingSerializer
 
-  def current_user
-    current_user
-  end
-
   def company_name
   	object.company.name
   end
