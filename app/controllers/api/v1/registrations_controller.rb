@@ -13,7 +13,7 @@ class Api::V1::RegistrationsController < API::BaseController
 		# Check if this user can be saved.
 		if user.save
 			sign_in(:user, user)
-			render json: user, serializer: AccountSerializer
+			render json: {authentication_token: user.authentication_token}
 			return
 		else
 			warden.custom_failure!
