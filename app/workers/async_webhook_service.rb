@@ -15,9 +15,9 @@ class AsyncWebhookService
 
 			event_hash = JSON.parse(json_event)
 
-			event_hash = set_provider_from_hash(event_hash) # Set Provider
-			event_hash = set_author_from_hash(event_hash) # Set Author
-			event_hash = set_images_from_hash(event_hash) # Set Images
+			event_hash = set_provider_from_hash(event_hash, company) # Set Provider
+			event_hash = set_author_from_hash(event_hash, company) # Set Author
+			event_hash = set_images_from_hash(event_hash, company) # Set Images
 
 			# build card
 			card = Cards::Event.new(event_hash)
@@ -31,7 +31,7 @@ class AsyncWebhookService
 	end
 
 
-	def set_provider_from_hash event_hash
+	def set_provider_from_hash event_hash, company
 		provider_dict = event_hash.delete("provider")
 
 		provider = Provider.find_or_initialize_by name: provider_dict["name"].downcase
@@ -51,13 +51,13 @@ class AsyncWebhookService
 		return event_hash
 	end
 
-	def set_author_from_hash event_hash
+	def set_author_from_hash event_hash, company
 		author_service = Common::AuthorService.new(event_hash.delete("author"), company)
 		event_hash[:user] = author_service.user if author_service.user?
 		return event_hash
 	end
 
-	def set_images_from_hash event_hash
+	def set_images_from_hash event_hash, company
 		event_hash[:remote_event_image_url] = event_hash.delete("image_url") if event_hash["image_url"]
 		return event_hash
 	end
