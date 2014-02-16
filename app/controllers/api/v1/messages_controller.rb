@@ -16,12 +16,12 @@ class Api::V1::MessagesController < API::BaseController
   
   # POST /api/v1/messages
   def create
-    @message = Common::MessageService.new_message(@feed_item, message_params.merge(author: current_user))
+    @message = Common::MessageService.new_message(@feed_item, message_params.merge(author_id: current_user.id))
     respond_with @message, :location => api_v1_feed_message_path(@feed_item, @message)
   end
 
   def toggle_thumbsup
-    @thumbsup = Common::MessageService.toggle_thumbsup(@feed_item, thumbsup_params.merge(author: current_user))
+    @thumbsup = Common::MessageService.toggle_thumbsup(@feed_item, thumbsup_params.merge(author_id: current_user.id))
     respond_with @thumbsup, :location => api_v1_feed_message_path(@feed_item, @thumbsup)
   end
 
