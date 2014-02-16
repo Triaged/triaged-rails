@@ -48,11 +48,11 @@ class Api::V1::MessagesController < API::BaseController
 
     # Only allow a trusted parameter "white list" through.
     def message_params
-      params[:message].require(:author_id).require(:body).require(:notify).require(:uuid).require(:timestamp)
+      params[:message].require(:body).require(:uuid).require(:timestamp).merge(author: current_user)
     end
 
     # Only allow a trusted parameter "white list" through.
     def thumbsup_params
-      params[:thumbsup].permit(:author_id, :uuid, :timestamp)
+      params[:thumbsup].permit(:uuid, :timestamp).merge(author: current_user)
     end
 end
