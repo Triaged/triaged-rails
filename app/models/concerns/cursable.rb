@@ -2,7 +2,7 @@ module Cursable
 	extend ActiveSupport::Concern
 
 	included do 
-		embeds_many :cursors
+		has_many :cursors
 	end
 
 	def dropbox_cursor

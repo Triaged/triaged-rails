@@ -1,8 +1,4 @@
-class Ignore
-  include Mongoid::Document
-
-  field :ff_type
-  field :ff_id
+class Ignore < ActiveRecord::Base
 
   belongs_to :ignorer, :polymorphic => true
   #belongs_to :ignoree, :polymorphic => true

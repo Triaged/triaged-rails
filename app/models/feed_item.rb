@@ -1,20 +1,11 @@
-class FeedItem
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class FeedItem < ActiveRecord::Base
 
   belongs_to :company
   belongs_to :user
-  embeds_many :messages, order: "id DESC"
+  has_many :messages, order: "id DESC"
   has_many :shares
 
-  
-  field :timestamp, type: DateTime
-  field :push_notify, type: Boolean, default: true
-
-  index({ "updated_at" => 1 })
- 	index({ author_id: 1 })
- 	
-	after_save :after_save
+  after_save :after_save
 
 	#
 	# Lifecycle hooks

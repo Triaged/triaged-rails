@@ -1,6 +1,5 @@
 class Cards::Event < FeedItem
-	include Mongoid::Document
-
+	
 	belongs_to :provider
 	belongs_to :provider_account
 

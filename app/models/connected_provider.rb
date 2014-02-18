@@ -1,7 +1,6 @@
-class ConnectedProvider
-  include Mongoid::Document
+class ConnectedProvider < ActiveRecord::Base
 
-  embedded_in :company
+  belongs_to :company
   belongs_to :provider
 
   validates :provider, uniqueness: true

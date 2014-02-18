@@ -45,13 +45,11 @@ gem 'devise', "~> 3.1.0"
 gem 'omniauth'
 gem 'certified'
 gem 'figaro'
-gem 'mongoid', :github=>"mongoid/mongoid"
 gem 'simple_form', '>= 3.0.0.rc'
-
+gem 'pg'
 
 gem 'pusher'
 gem 'recursive-open-struct'
-gem 'mongoid_slug'
 gem 'omniauth-github'
 gem 'omniauth-stripe-connect'
 gem "omniauth-google-oauth2"
@@ -72,7 +70,6 @@ gem 'rest-client'
 gem 'grocer'
 gem 'newrelic_rpm', "~> 3.6.9.171"
 gem 'carrierwave'
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'fog'
 gem 'mail'
 gem 'cloudinary'

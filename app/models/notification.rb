@@ -1,11 +1,5 @@
-class Notification
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Notification < ActiveRecord::Base
 
-  embedded_in :user
+  belongs_to :user
 
-  field :body, type: String
-  field :viewed, type: Boolean, default: false
-
-  
 end

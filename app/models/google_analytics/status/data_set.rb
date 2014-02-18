@@ -1,5 +1,4 @@
 class GoogleAnalytics::Status::DataSet
-	include Mongoid::Document
 
 	field :label, type: String
   field :total_count, type: Integer

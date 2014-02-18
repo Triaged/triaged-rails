@@ -1,6 +1,4 @@
-class Company
-  include Mongoid::Document
-  include Mongoid::Slug
+class Company < ActiveRecord::Base
   include Providable
   include Serviceable
   include CompanyFeedable
@@ -10,7 +8,7 @@ class Company
   field :api_token, :type => String
   
 	has_many :users
-	embeds_many :connected_providers
+	has_many :connected_providers
 
 	# index({ "feed_item.external_id" => 1 }, { unique: true, drop_dups: true })
  #  index({ "feed_item.updated_at" => 1 })

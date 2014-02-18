@@ -1,5 +1,4 @@
 class Appfigures::Product < ProviderProperty
-  include Mongoid::Document
 
   field :developer, :type => String
   field :icon, :type => String

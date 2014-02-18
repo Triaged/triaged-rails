@@ -1,5 +1,4 @@
-class Admin::MentionMessage
-  include Mongoid::Document
+class Admin::MentionMessage < ActiveRecord::Base
 
   belongs_to :feed_item
 

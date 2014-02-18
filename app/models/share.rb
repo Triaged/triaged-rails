@@ -1,10 +1,6 @@
-class Share
-  include Mongoid::Document
+class Share < ActiveRecord::Base
 
   belongs_to :feed_item
   belongs_to :user
   
-  field :recipient_email, :type => String
-  field :viewed, :type => Boolean
-
 end

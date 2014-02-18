@@ -1,5 +1,4 @@
 class Appfigures::Event::Review < FeedItem
-  include Mongoid::Document
 
   field :author, :type => String
   field :title, :type => String

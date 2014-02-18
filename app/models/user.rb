@@ -1,6 +1,6 @@
-class User
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
   include Deviseable
 	include Providable
 	include UserFeedable
@@ -8,14 +8,8 @@ class User
 	include Providable
 
 	mount_uploader :avatar, AvatarUploader
-	field :push_enabled, type: Boolean, default: true
-	field :validated_belongs_to_company, type: Boolean, default: false
-	field :company_validation_token, type: String
-	field :personal, :type => Boolean, :default => false
-	
 
 	belongs_to :company
-	index({ company_id: 1 })
 	has_many :feed_items
 	embeds_many :push_tokens
 	embeds_many :notifications

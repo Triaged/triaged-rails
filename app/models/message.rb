@@ -1,13 +1,7 @@
-class Message
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Message < ActiveRecord::Base
 
-  embedded_in :feed_item
+  belongs_to :feed_item
   belongs_to :author, class_name: "User"
-
-  field :uuid, type: String
-	field :author_name, type: String
-	field :timestamp, type: DateTime
 
 	validates_uniqueness_of :uuid
 

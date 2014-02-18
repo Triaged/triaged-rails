@@ -2,7 +2,7 @@ module UserFeedable
 	extend ActiveSupport::Concern
 
 	included do 
-		embeds_many :user_feed_items
+		has_many :user_feed_items
 		#index({ "user_feed_items.feed_item_id" => 1 }, { unique: true, drop_dups: true })
 	end
 

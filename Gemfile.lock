@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/mongoid/mongoid.git
-  revision: 7087ec96de927f347f754e1907ca64527df6b4ea
-  specs:
-    mongoid (4.0.0)
-      activemodel (~> 4.0.0)
-      moped (~> 1.5)
-      origin (~> 1.0)
-      tzinfo (~> 0.3.37)
-
-GIT
   remote: https://github.com/Triaged/omniauth-appfigures.git
   revision: 94394764ca01df6c41607df5aca481ed7c564abc
   specs:
@@ -89,9 +79,6 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
-    carrierwave-mongoid (0.1.0)
-      carrierwave
-      mongoid
     celluloid (0.15.2)
       timers (~> 1.1.0)
     certified (0.1.1)
@@ -214,10 +201,6 @@ GEM
       rails (<= 4.0)
     minitest-wscolor (0.0.3)
       minitest (>= 2.3.1)
-    mongoid_slug (3.1.2)
-      mongoid (> 3.0)
-      stringex (~> 1.4)
-    moped (1.5.1)
     multi_json (1.8.0)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
@@ -267,12 +250,12 @@ GEM
       oauth (~> 0.4)
       omniauth (~> 1.0)
       omniauth-oauth (~> 1.0)
-    origin (1.1.0)
     orm_adapter (0.4.0)
     passenger (4.0.24)
       daemon_controller (>= 1.1.0)
       rack
       rake (>= 0.8.1)
+    pg (0.17.1)
     polyglot (0.3.3)
     puma (2.6.0)
       rack (>= 1.1, < 2.0)
@@ -355,7 +338,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    stringex (1.5.1)
     stripe (1.8.6)
       multi_json (>= 1.0.4, < 2)
       rest-client (~> 1.4)
@@ -396,7 +378,6 @@ DEPENDENCIES
   bootstrap-sass-rails
   braintree
   carrierwave
-  carrierwave-mongoid
   certified
   cloudinary
   coffee-rails (~> 4.0.0)
@@ -422,8 +403,6 @@ DEPENDENCIES
   memcachier
   minitest-spec-rails
   minitest-wscolor
-  mongoid!
-  mongoid_slug
   newrelic_rpm (~> 3.6.9.171)
   omniauth
   omniauth-appfigures!
@@ -435,6 +414,7 @@ DEPENDENCIES
   omniauth-stripe-connect
   omniauth-trello
   passenger
+  pg
   puma
   pusher
   quiet_assets

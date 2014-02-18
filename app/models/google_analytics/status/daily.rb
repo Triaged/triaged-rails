@@ -1,5 +1,4 @@
 class GoogleAnalytics::Status::Daily < FeedItem
-  include Mongoid::Document
 
   field :date, type: Date
   field :property_external_id, type: String

@@ -1,13 +1,10 @@
-class Cursor
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Cursor < ActiveRecord::Base
 
   field :current, :type => String
   
-  embedded_in :company
+  belongs_to :company
   belongs_to :provider
 
-
-  validates_uniqueness_of :provider
+	#validates_uniqueness_of [:provider, :company]
 
 end

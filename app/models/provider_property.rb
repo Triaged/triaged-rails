@@ -1,10 +1,6 @@
-class ProviderProperty
-  include Mongoid::Document
+class ProviderProperty < ActiveRecord::Base
 
-  embedded_in :provider_account
-
-  field :external_id, type: String
-  field :name, type: String
+  belongs_to :provider_account
 
   validates_uniqueness_of :external_id
 

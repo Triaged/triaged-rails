@@ -1,15 +1,8 @@
-class ProviderAccount
-  include Mongoid::Document
+class ProviderAccount < ActiveRecord::Base
 
   belongs_to :provider
   belongs_to :company
-  embeds_many :provider_properties
-
-  field :external_id, type: String
-  field :name, type: String
-  field :url, type: String
-  field :default, type: Boolean, default: false
-  field :personal, type: Boolean, default: false
+  has_many :provider_properties
 
   delegate :account_label, :to => :provider
   delegate :property_label, :to => :provider

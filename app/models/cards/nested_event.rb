@@ -1,6 +1,5 @@
 class Cards::NestedEvent
-	include Mongoid::Document
-
+	
 	field :external_id, type: String
 	field :property_name, :type => String
 

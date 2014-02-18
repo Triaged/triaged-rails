@@ -1,6 +1,5 @@
 class GoogleAnalytics::Profile
-  include Mongoid::Document
-
+  
   belongs_to :company, :class_name => "Company", :inverse_of => :google_analytics_profiles
   
   belongs_to :user
