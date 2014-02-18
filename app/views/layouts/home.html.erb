@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= render "shared/twitter_tags" %>
+ <title>Triage</title>
+ <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css" media="all" rel="stylesheet" />
+ <%= stylesheet_link_tag    "welcome", media: "all"%>
+ <script type="text/javascript" src="//use.typekit.net/dli1exz.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+ <%= csrf_meta_tags %>
+</head>
+<body>
+
+     <!-- Wrap all page content here -->
+   <div id="loaded-content">
+            <!-- Begin page content -->
+     <div class="container">
+         <%= yield %>
+     </div>
+   </div>
+
+   <%= yield :overlay %>
+
+    <%= render "layouts/welcome_footer" unless @skip_footer %>
+
+</body>
+
+<%= javascript_include_tag "application" %>
+
+
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-45309305-2', 'triaged.co');
+ ga('send', 'pageview');
+
+</script>
+
+</html>

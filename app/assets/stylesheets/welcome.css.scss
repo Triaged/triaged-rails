@@ -1,86 +1,68 @@
-h3.colored {
-	color: #FFFFFF;
-	text-align: center;
+/* Hero */
+
+#border {
+    top: 0; right: 0; bottom: 0; left: 0;
+    border: 15px solid #E0E5EE;
+    height: 100%;
+}
+.welcome {
+	padding: 50px 0 0;
+	height: 100%;
 }
 
-.centered {
-	text-align: center;
+/* Navbar */
+.nav {
+    position: relative;
 }
 
-.spacer {
-	padding-top:0px;
+#navbar-inner {
+	text-align:center;
 }
 
-#logo {
-	vertical-align: bottom;
-	padding-left: 25px;
+#navbarlist {
+	margin: 0 auto;
+	-webkit-padding-start: 0px;
+	-moz-padding-start: 0px;
+}
+
+#navbar-list li
+{
+	display: inline;
+	list-style-type: none;
+	padding-right: 100px;
+}
+
+#navbar-list li a {
+	color: #9B9B9B;
 	font-weight: 100;
 }
+
+/* Welcome-content */
+
+.welcome-hero {
+	padding-top: 50px;
+}
+
+/* Hero-Phone */
+
+/* Welcome Message */
+#welcome-title {
+		margin-top: 50px;
+	}
+#tagline {
+		margin-top: 30px;
+	}
+/* Button */
 .glyphicon-iphone {
 	background-image: url("./images/iphone.png");	
 }
 .glyphicon-phone {
-	color: #7691CD;
-	margin-left: -20px;
-}
-#splash-img {
-	text-align: center;
-	margin: 0 none;
-}
-#iphone {
-	width: 360px;
-}
-
-.welcome {
-	height: 100%;
-}
-
-#welcome-title {
-	margin-top: 84px;
-	
-}
-#welcome-title h1 {
-	font-size: 56px;
-  line-height: 72px;
-  font-weight: 100;
-}
-
-.welcome h2 {
-	font-size: 50px;
-}
-
-.welcome p {
-	font-size: 24px;
-}
-
-#welcome-description {
-	margin-top: 20px;
-}
-
-
-
-#welcome-icons {
-	width: 16.66%;
-	float: left;
-	text-align: center;
-}
-
-#welcome-icons > p {
-	margin-top: 10px;
-}
-
-#welcome-icons > p > a {
-	font-size: 20px;
-	line-height: 24px;
 	color: #ffffff;
-}
-
-#providers {
-	margin-top: 10px;
+	margin-left: -20px;
 }
 
 #welcome-cta {
-	margin-top: 50px;
+	margin-top: 100px;
 }
 
 #phone_number {
@@ -110,6 +92,20 @@ h3.colored {
 .text-btn:focus, .text-btn:active {
   border:0 none;
 }
+
+.redbox {
+	height: 100px;
+	width: 100px;
+	background-color: red;
+}
+
+/* Hero-Breadcrumb */
+#hero-breadcrumb {
+    bottom: 0;
+    padding-bottom: 15px;
+    position: absolute;
+}
+
 
 #input-line {
 	padding-top: 10px;

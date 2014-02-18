@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-
+	layout "home"
 	before_filter :check_for_mobile
 
 	def index
