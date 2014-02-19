@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:Triaged/acts_as_relation.git
+  remote: https://github.com/Triaged/acts_as_relation.git
   revision: de2fd3c318ec11a4c088fd205bdc0cacc75864fb
   specs:
     acts_as_relation (1.0.0)
