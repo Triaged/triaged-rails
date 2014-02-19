@@ -31,7 +31,13 @@ namespace :deploy do
   end
  
   task :after_deploy, :env, :branch do |t, args|
-    Rake::Task['db:migrate'].invoke(env, current_branch)
+    ENVIRONMENTS.keys.each do |env|
+      desc "Deploy to #{env}"
+      task env do
+        current_branch = `git branch | grep ^* | awk '{ print $2 }'`.strip
+        Rake::Task['db:migrate'].invoke(env, current_branch)
+      end
+    end
     puts "Deployment Complete"
   end
  
