@@ -4,7 +4,7 @@ class Triage::DefaultGraph < FeedItem
   # field :body, :type => String
   # field :date, :type => Date
 
-  has_many :data_sets, :class_name => "Triage::DefaultGraphDataset", cascade_callbacks: true
+  #has_many :data_sets, :class_name => "Triage::DefaultGraphDataset", cascade_callbacks: true
   
   def self.default_item company
 

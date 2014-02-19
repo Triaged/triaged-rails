@@ -3,7 +3,7 @@ class Appfigures::Status::Daily < FeedItem
   # field :date, type: Date
   # field :property_id, type: String
 
-  has_many :data_sets, :class_name => "Appfigures::Status::DataSet", cascade_callbacks: true
+  #has_many :data_sets, :class_name => "Appfigures::Status::DataSet", cascade_callbacks: true
 
   def app
 		company.default_appfigures_account.provider_properties.where(id: self.property_id).first

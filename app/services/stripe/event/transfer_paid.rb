@@ -1,6 +1,6 @@
 class Stripe::Event::TransferPaid < Stripe::BaseEvent
 
-  field :bank_name, :type => String
+  #field :bank_name, :type => String
 
   def self.create_from_webhook data
   	event = Stripe::Event::TransferPaid.new(
