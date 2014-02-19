@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 	include UserFeedable
 	include Ignorable
 	include Providable
+	extend FriendlyId
+	friendly_id :name, use: [:slugged, :finders, :scoped], :scope => [:company]
 
 	mount_uploader :avatar, AvatarUploader
 
