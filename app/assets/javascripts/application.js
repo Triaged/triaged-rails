@@ -17,4 +17,5 @@
 //= require PhoneFormat
 //= require jquery.phonenumber
 //= require_tree .
+//= skrollr.min
 
