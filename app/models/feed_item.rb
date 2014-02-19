@@ -1,10 +1,17 @@
 class FeedItem < ActiveRecord::Base
-	acts_as_superclass
 
   belongs_to :company
   belongs_to :user
   has_many :messages, order: "id DESC"
   has_many :shares
+  belongs_to :provider
+	belongs_to :provider_account
+
+	validates :provider, presence: true
+	validates :title, presence: true
+	validates :external_id, presence: true
+
+	mount_uploader :event_image, ItemImageUploader
 
   after_save :after_save
 

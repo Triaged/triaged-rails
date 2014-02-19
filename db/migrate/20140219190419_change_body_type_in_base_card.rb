@@ -1,7 +1,7 @@
 class ChangeBodyTypeInBaseCard < ActiveRecord::Migration
   def change
-  	change_column :base_cards, :title, :text
-  	change_column :base_cards, :body, :text
-  	change_column :base_cards, :footer, :text
+  	change_column :feed_items, :title, :text
+  	change_column :feed_items, :body, :text
+  	change_column :feed_items, :footer, :text
   end
 end

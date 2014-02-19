@@ -1,4 +1,4 @@
-class Cards::Event < BaseCard
+class Cards::Event < FeedItem
 	
 	
 	#validates :body, presence: true, :unless => :body_list
