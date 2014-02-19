@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Admin::MentionMessageTest < ActiveSupport::TestCase
+class BaseCardTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

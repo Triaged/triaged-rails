@@ -1,5 +1,6 @@
-class Messages::Thumbsup < Message
+class Messages::Activity < ActiveRecord::Base
+	acts_as :message
 
-  field :body, type: String
+  # field :body, type: String
   
 end

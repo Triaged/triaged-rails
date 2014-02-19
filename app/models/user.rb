@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
 
 	belongs_to :company
 	has_many :feed_items
-	embeds_many :push_tokens
-	embeds_many :notifications
+	has_many :push_tokens
+	has_many :notifications
 
   before_create :before_creation
   after_create :send_verify_email
@@ -37,13 +37,12 @@ class User < ActiveRecord::Base
 		email.split("@").last
 	end
 
-	def first_name
-		name.split.first
-	end
+	
 
   def before_creation
   	set_company
-  	self.name = self.name.titleize if self.name
+  	self.first_name = self.first_name.titleize if self.first_name
+  	self.last_name = self.last_name.titleize if self.last_name
 	end
 
 	def set_company

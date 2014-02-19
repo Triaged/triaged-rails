@@ -47,7 +47,7 @@ gem 'certified'
 gem 'figaro'
 gem 'simple_form', '>= 3.0.0.rc'
 gem 'pg'
-
+gem 'acts_as_relation', '~> 1.0'
 gem 'pusher'
 gem 'recursive-open-struct'
 gem 'omniauth-github'
@@ -58,7 +58,7 @@ gem 'omniauth-dropbox-oauth2'
 gem 'omniauth-bitbucket'
 gem 'omniauth-trello'
 gem "omniauth-appfigures", :git => "https://github.com/Triaged/omniauth-appfigures.git"
-
+gem 'friendly_id', '~> 5.0.0'
 gem "ruby-trello", :require => 'trello'
 gem "github_api"
 gem 'stripe'

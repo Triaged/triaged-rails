@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = '81a01ee4d42cf9d35f88d2ce2fbc40d8d74a3568a54188ae6f41291ad6b94e4339e760f14b88dfdb11c859bab8b22d13febfd47fde75ba7e6ea10e533de5fb2b'
+  config.secret_key = 'f6a1a887b3d2d48a7745acd8435cc6a08b4aea1171824614052d22c873ed76d0b136d19c017091b98a22869c8dd446b7fb3a691f9bb9aa244781d1261e3722fd'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -19,7 +19,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  # require 'devise/orm/mongoid'
+  require 'devise/orm/active_record'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -98,7 +98,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = 'a023b6428e480612ac33c6763945c686697ab838fb628f1f5bb932df9201b53685a6f4f06202fcb1ea203b8e26f0cc046032ff5459bfd44e8ae4c512b961bd40'
+  # config.pepper = '884a6ec95856742bc5a1b050d8eda7a046581c81687dcc32bd2c6741aa60ee250e16c697d7deed98cf04b7d383a55ec09605e9df805c5ebfad4016e9cfd6785b'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -231,6 +231,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
+  # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :github, ENV['GITHUB_CLIENT_ID'], ENV['GITHUB_SECRET'], scope: "user,repo"
   config.omniauth :stripe_connect, ENV['STRIPE_CONNECT_CLIENT_ID'], ENV['STRIPE_API_KEY'], :scope => 'read_only', :stripe_landing => 'login'
   config.omniauth :google_oauth2, ENV['GA_CLIENT_ID'], ENV['GA_SECRET'], prompt: 'select_account consent', :scope => 'https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/userinfo.profile, https://www.googleapis.com/auth/analytics.readonly'

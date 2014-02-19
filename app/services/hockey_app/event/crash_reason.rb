@@ -1,5 +1,4 @@
-class HockeyApp::Event::CrashReason < Cards::Event
-  include Mongoid::Document
+class HockeyApp::Event::CrashReason < BaseServiceEvent
 
   def self.build_from_webhook data, company
 		event = {

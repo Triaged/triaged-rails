@@ -1,5 +1,5 @@
 # class Stripe::Event::SubscriptionCreated < Stripe::BaseEvent
-#   include Mongoid::Document
+
 
 #   field :plan_name, :type => String
 #   field :interval, :type => String

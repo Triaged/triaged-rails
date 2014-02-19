@@ -1,10 +1,10 @@
 class GoogleAnalytics::Status::Daily < FeedItem
 
-  field :date, type: Date
-  field :property_external_id, type: String
+  # field :date, type: Date
+  # field :property_external_id, type: String
 
 	#embeds_many :daily_details, :class_name => "GoogleAnalytics::Status::DailyDetail"
-  embeds_many :data_sets, :class_name => "GoogleAnalytics::Status::DataSet", cascade_callbacks: true
+  #embeds_many :data_sets, :class_name => "GoogleAnalytics::Status::DataSet", cascade_callbacks: true
 
   def provider_name
   	"google_analytics"

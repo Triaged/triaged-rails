@@ -1,5 +1,5 @@
 class Stripe::Event::InvoicePaymentFailed < Stripe::BaseEvent
-  include Mongoid::Document
+
 
   def self.create_from_webhook data
   	event = Stripe::Event::InvoicePaymentFailed.new(

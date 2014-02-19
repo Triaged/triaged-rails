@@ -1,5 +1,4 @@
 class Stripe::Event::TransferPaid < Stripe::BaseEvent
-  include Mongoid::Document
 
   field :bank_name, :type => String
 

@@ -2,8 +2,8 @@ class CreateCursor < ActiveRecord::Migration
   def change
     create_table :cursors do |t|
       t.string :current
-      t.reference :company
-      t.reference :provider
+      t.references :company
+      t.references :provider
     end
   end
 end

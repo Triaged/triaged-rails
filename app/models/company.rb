@@ -3,11 +3,10 @@ class Company < ActiveRecord::Base
   include Serviceable
   include CompanyFeedable
   include Cursable
-
-  field :name, :type => String
-  field :api_token, :type => String
+  extend FriendlyId
+  friendly_id :random_token, use: [:slugged, :finders]
   
-	has_many :users
+  has_many :users
 	has_many :connected_providers
 
 	# index({ "feed_item.external_id" => 1 }, { unique: true, drop_dups: true })
@@ -16,7 +15,7 @@ class Company < ActiveRecord::Base
   before_create :set_company_token
   
 
-  slug do |object|
+  def random_token
     Tokenizer.unique_token(6)
   end
 

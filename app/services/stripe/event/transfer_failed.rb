@@ -1,5 +1,4 @@
 class Stripe::Event::TransferFailed < Stripe::BaseEvent
-  include Mongoid::Document
 
   def self.create_from_webhook data
   	event = Stripe::Event::TransferPaid.new(

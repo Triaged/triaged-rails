@@ -1,8 +1,8 @@
 class Braintree::Event::TransactionDisbursed < FeedItem
-  include Mongoid::Document
 
-  field :amount, :type => String
-  field :plan_id, :type => String
+
+  # field :amount, :type => String
+  # field :plan_id, :type => String
 
 
 	def self.build_from_webhook data

@@ -1,35 +1,6 @@
-class Cards::Event < FeedItem
+class Cards::Event < BaseCard
 	
-	belongs_to :provider
-	belongs_to :provider_account
-
-	field :provider_name, :type => String
-	field :event_name, :type => String
-
-	field :account_name, :type => String
- 	field :property_name, :type => String
-
-	field :external_id, type: String
 	
-	field :title, type: String
-	field :body, type: String
-	field :body_list, type: Array
-	field :footer, type: String
-	field :url, type: String
-	
-	field :thumbnail_url, type: String
-	field :image_url, type: String
-	field :icon, type: String
-	field :mime_type, type: String
-
-	field :group_event, type: Boolean, default: false
-
-	embeds_one :author, class_name: "Cards::Author"
-	mount_uploader :event_image, ItemImageUploader
-
-	validates :provider, presence: true
-	validates :title, presence: true
-	validates :external_id, presence: true
 	#validates :body, presence: true, :unless => :body_list
 	#validates :body_list, presence: true, :unless => :body
 

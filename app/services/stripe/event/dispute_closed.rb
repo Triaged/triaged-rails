@@ -1,5 +1,5 @@
 # class Stripe::Event::DisputeClosed < Stripe::BaseEvent
-#   include Mongoid::Document
+
 
 #   field :status, :type => String
 #   field :reason, :type => String

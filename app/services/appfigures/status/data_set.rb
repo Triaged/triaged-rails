@@ -1,10 +1,10 @@
 class Appfigures::Status::DataSet
-	include Mongoid::Document
 
-	field :label, type: String
-  field :total_count, type: Integer
-  field :details, type: Array
-  field :max_y_count, type: Integer
+
+	# field :label, type: String
+ #  field :total_count, type: Integer
+ #  field :details, type: Array
+ #  field :max_y_count, type: Integer
 
   before_create :calculate_max_y_count
 

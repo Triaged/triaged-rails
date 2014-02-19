@@ -1,9 +1,9 @@
 class CreateProviderCredential < ActiveRecord::Migration
   def change
     create_table :provider_credentials do |t|
-      t.reference :user
-      t.reference :provider
-      t.reference :company
+      t.references :user
+      t.references :provider
+      t.references :company
       t.string :uid
       t.string :access_token
       t.string :token_secret

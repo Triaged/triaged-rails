@@ -49,13 +49,10 @@ module Common::MessageService
 		words.select {|word| word.starts_with? "@"}.each do |word|
 			begin
 				slug = word[1..-1]
-				if(slug == "triage")
-					 Admin::MentionMessage.create(feed_item: message.feed_item)
-				else
-					user = company.users.find(slug)
-					message.push(user_mentions: user.id)
-				end
-			rescue  Mongoid::Errors::DocumentNotFound
+				user = company.users.find(slug)
+				message.push(user_mentions: user.id)
+				
+			rescue ActiveRecord::RecordNotFound => e
 				next
 			end
 		end

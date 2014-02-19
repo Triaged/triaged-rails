@@ -1,4 +1,5 @@
 class FeedItem < ActiveRecord::Base
+	acts_as_superclass
 
   belongs_to :company
   belongs_to :user
