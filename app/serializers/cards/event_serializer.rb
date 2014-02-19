@@ -1,4 +1,4 @@
-class Cards::EventSerializer < Cards::BaseSerializer
+class Cards::EventSerializer < BaseCardSerializer
 
 	attributes :type, :external_id, :timestamp, :title, :body, :footer, :url, :property_name, :image_url, :thumbnail_url
 
