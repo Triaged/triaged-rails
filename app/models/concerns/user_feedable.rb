@@ -3,16 +3,19 @@ module UserFeedable
 
 	included do 
 		has_many :user_feed_items
+    has_many :feed_items, through: :user_feed_items
 		#index({ "user_feed_items.feed_item_id" => 1 }, { unique: true, drop_dups: true })
 	end
 
 	def feed(min_updated_at = nil, max_updated_at = nil)
-		feed_items = user_feed_items.only(:feed_item_id).desc(:feed_item_id)
-		feed_items = feed_items.gt(updated_at: (Time.parse(min_updated_at) + 1)) if min_updated_at  #where(:updated_at.gt => min_updated_at) if min_updated_at
-  	#feed_items = feed_items.where(:updated_at.lt => max_updated_at) if max_updated_at
-  	feed_items = feed_items.limit(100) unless min_updated_at
+		# feed_items = user_feed_items.only(:feed_item_id).desc(:feed_item_id)
+		# feed_items = feed_items.gt(updated_at: (Time.parse(min_updated_at) + 1)) if min_updated_at  #where(:updated_at.gt => min_updated_at) if min_updated_at
+  # 	#feed_items = feed_items.where(:updated_at.lt => max_updated_at) if max_updated_at
+  # 	feed_items = feed_items.limit(100) unless min_updated_at
 
-  	FeedItem.desc(:created_at).find(feed_items.collect {|item| item.feed_item_id })
+  # 	FeedItem.desc(:created_at).find(feed_items.collect {|item| item.feed_item_id })
+
+    feed_items.limit(100).order(:desc)
   	#company.feed_items.desc(:created_at).find(feed_items.collect {|item| item.feed_item_id })
   end
 
