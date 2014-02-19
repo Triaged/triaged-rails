@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219194018) do
+ActiveRecord::Schema.define(version: 20140219195927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,24 +33,26 @@ ActiveRecord::Schema.define(version: 20140219194018) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "base_cards", force: true do |t|
-    t.integer "provider_id"
-    t.integer "provider_account_id"
-    t.string  "provider_name"
-    t.string  "event_name"
-    t.string  "account_name"
-    t.string  "property_name"
-    t.string  "external_id"
-    t.text    "title"
-    t.text    "body"
-    t.string  "body_list",           default: [],    array: true
-    t.text    "footer"
-    t.string  "url"
-    t.string  "thumbnail_url"
-    t.string  "image_url"
-    t.string  "icon"
-    t.string  "mime_type"
-    t.boolean "group_event",         default: false
-    t.string  "event_image"
+    t.integer  "provider_id"
+    t.integer  "provider_account_id"
+    t.string   "provider_name"
+    t.string   "event_name"
+    t.string   "account_name"
+    t.string   "property_name"
+    t.string   "external_id"
+    t.text     "title"
+    t.text     "body"
+    t.string   "body_list",           default: [],    array: true
+    t.text     "footer"
+    t.string   "url"
+    t.string   "thumbnail_url"
+    t.string   "image_url"
+    t.string   "icon"
+    t.string   "mime_type"
+    t.boolean  "group_event",         default: false
+    t.string   "event_image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "companies", force: true do |t|
