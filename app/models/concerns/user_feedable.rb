@@ -15,7 +15,7 @@ module UserFeedable
 
   # 	FeedItem.desc(:created_at).find(feed_items.collect {|item| item.feed_item_id })
 
-    feed_items.limit(100).order(:desc)
+  feed_items.limit(100).order(created_at: :desc)
   	#company.feed_items.desc(:created_at).find(feed_items.collect {|item| item.feed_item_id })
   end
 
