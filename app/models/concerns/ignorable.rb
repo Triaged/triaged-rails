@@ -11,7 +11,7 @@ module Ignorable
     	return false unless model.before_ignored(self) if model.respond_to?('before_ignored')
      	return false unless self.before_ignore(model) if self.respond_to?('before_ignore')
        
-      self.ignored_objects.create!(:ff_type => model.class.name, :ff_id => model.id)
+      self.ignored_objects.create!(:ignorer_type => model.class.name, :ignorer_id => model.id)
       self.after_ignore(model) if self.respond_to?('after_ignore')
 
       return true
@@ -25,7 +25,7 @@ module Ignorable
     	#return false unless model.before_unfollowed(self) if model.respond_to?('before_unfollowed')
      	#return false unless self.before_unfollow(model) if self.respond_to?('before_unfollow')
        
-      self.ignored_objects.where(:ff_type => model.class.name, :ff_id => model.id).destroy 
+      self.ignored_objects.where(:ignorer_type => model.class.name, :ignorer_id => model.id).destroy 
       #self.after_unfollow(model) if self.respond_to?('after_unfollow')
 
       return true
@@ -48,7 +48,7 @@ module Ignorable
   # => true
   def ignores?(model)
   	return false unless model
-  	0 < self.ignored_objects.where(ff_id: model.id).limit(1).count
+  	0 < self.ignored_objects.where(ignorer_id: model.id).limit(1).count
   end
 
   def ignored_provider_count

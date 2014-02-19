@@ -1,4 +1,11 @@
 GIT
+  remote: git@github.com:Triaged/acts_as_relation.git
+  revision: de2fd3c318ec11a4c088fd205bdc0cacc75864fb
+  specs:
+    acts_as_relation (1.0.0)
+      activerecord
+
+GIT
   remote: https://github.com/Triaged/omniauth-appfigures.git
   revision: 94394764ca01df6c41607df5aca481ed7c564abc
   specs:
@@ -13,13 +20,6 @@ GIT
       faraday (>= 0.7.6)
       hashie (>= 1.1.0)
       uuidtools
-
-GIT
-  remote: https://github.com/mariopeixoto/acts_as_relation.git
-  revision: c16011c4cd5e6ecf3285b2bbad944dda681aa8ba
-  specs:
-    acts_as_relation (1.0.0)
-      activerecord
 
 GEM
   remote: https://rubygems.org/
@@ -378,7 +378,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
-  acts_as_relation (~> 1.0)!
+  acts_as_relation!
   airbrake
   asset_sync
   autoscaler
