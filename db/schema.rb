@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 20140219194018) do
   end
 
   create_table "feed_items", force: true do |t|
-    t.integer  "as_feed_item_id"
-    t.string   "as_feed_item_type"
     t.integer  "company_id"
     t.integer  "user_id"
     t.boolean  "push_notify"
