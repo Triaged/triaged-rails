@@ -31,6 +31,7 @@ namespace :deploy do
   end
  
   task :after_deploy, :env, :branch do |t, args|
+    Rake::Task['db:migrate'].invoke(env, current_branch)
     puts "Deployment Complete"
   end
  
