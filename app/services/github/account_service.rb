@@ -20,7 +20,7 @@ class Github::AccountService < Github::BaseService
 		res = account.personal ? @github.repos.list : @github.repos.list(org: account.name)
 		res.each_page { |page| page.each do |repo|
 			account.provider_properties << Github::Repo.new(
-				external_id: repo.id, 
+				external_id: repo.id.to_s, 
 				html_url: repo.html_url, 
 				url: repo.url, 
 				name: repo.name,
@@ -36,7 +36,7 @@ class Github::AccountService < Github::BaseService
 		
 		organizations.each do |org|
 			@company.provider_accounts.find_or_create_by(
-				external_id: org.id, 
+				external_id: org.id.to_s, 
 				name: org.login, 
 				url: org.url,
 				provider: Provider.named("github")
@@ -47,7 +47,7 @@ class Github::AccountService < Github::BaseService
 	def fetch_personal_account
 		user_account = @github.users.get
 		@company.provider_accounts.find_or_create_by(
-			external_id: user_account.id, 
+			external_id: user_account.id.to_s, 
 			name: user_account.login, 
 			url: user_account.html_url,
 			personal: true,

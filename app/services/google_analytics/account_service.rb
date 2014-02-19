@@ -10,14 +10,14 @@ class GoogleAnalytics::AccountService < GoogleAnalytics::BaseService
 		@user.accounts.each do |account|
 			ga_account = @company.provider_accounts.find_or_create_by(
 					name: account.name,
-					external_id: account.id,
+					external_id: account.id.to_s,
 					provider: Provider.named("google_analytics")
 				)
 
 			account.web_properties.each do |property|
 				ga_account.provider_properties << GoogleAnalytics::Property.find_or_initialize_by(
 					name: property.name,
-					external_id: property.id,
+					external_id: property.id.to_s,
 				)
 			end
 		end

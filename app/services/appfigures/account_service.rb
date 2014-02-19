@@ -27,7 +27,7 @@ class Appfigures::AccountService < Appfigures::BaseService
 
 		product = Appfigures::Product.new(
 			name: new_product.name,
-			external_id:  new_product.id,
+			external_id:  new_product.id.to_s,
 			developer: new_product.developer,
 			icon: new_product.icon,
 			vendor_identifier: new_product.vendor_identifier,
