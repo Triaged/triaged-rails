@@ -39,6 +39,15 @@ class User < ActiveRecord::Base
 		email.split("@").last
 	end
 
+	def name
+		"#{first_name} #{last_name}"
+	end
+
+	def full_name(name)
+		self.first_name = name.split.first
+		self.last_name = name.split.last
+	end
+
 	
 
   def before_creation

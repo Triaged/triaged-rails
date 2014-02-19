@@ -28,7 +28,7 @@ private
 		
 		if @user.new_record?
 			@user.company = @company
-			@user.name = @author_json.name if @author_json.name
+			@user.full_name(@author_json.name) if @author_json.name
 			@user.save 
 		end
 		
