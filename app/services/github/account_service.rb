@@ -21,8 +21,7 @@ class Github::AccountService < Github::BaseService
 		res.each_page { |page| page.each do |repo|
 			account.provider_properties << Github::Repo.new(
 				external_id: repo.id.to_s, 
-				html_url: repo.html_url, 
-				url: repo.url, 
+				url: repo.html_url, 
 				name: repo.name,
 				full_name: repo.full_name,
 				owner: repo.owner.login
