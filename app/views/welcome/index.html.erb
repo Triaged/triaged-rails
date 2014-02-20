@@ -71,25 +71,25 @@
 				<!-- Icons -->
 				<div class="row col-lg-6 center valign-middle">
 
-					<div class="row">
-						<%= link_to image_tag("icons/github-icon-landing.png", :id => "i1", :class => "service-icon"), ""  %>
-						<%= link_to image_tag("icons/sentry-icon-landing.png", :id => "i2", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/heroku-icon-landing.png", :id => "i3", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/dropbox-icon-landing.png", :id => "i4", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/ga-icon-landing.png", :id => "i5", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/crash-icon-landing.png", :id => "i6", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/braintree-icon-landing.png", :id => "i7", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/stripe-icon-landing.png", :id => "i8", :class => "service-icon"), "" %>
+					<div class="row service-icon">
+						<%= link_to image_tag("icons/github-icon-landing.png", :id => "i1") %>
+						<%= link_to image_tag("icons/sentry-icon-landing.png", :id => "i2") %>
+						<%= link_to image_tag("icons/heroku-icon-landing.png", :id => "i3") %>
+						<%= link_to image_tag("icons/dropbox-icon-landing.png", :id => "i4") %>
+						<%= link_to image_tag("icons/ga-icon-landing.png", :id => "i5") %>
+						<%= link_to image_tag("icons/crash-icon-landing.png", :id => "i6") %>
+						<%= link_to image_tag("icons/braintree-icon-landing.png", :id => "i7") %>
+						<%= link_to image_tag("icons/stripe-icon-landing.png", :id => "i8") %>
 					</div>
-					<div class="row padding-top-sm">
-						<%= link_to image_tag("icons/bitbucket-icon-landing.png", :id => "i9", :class => "service-icon"), ""  %>
-						<%= link_to image_tag("icons/newrelic-icon-landing.png", :id => "i10", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/kiln-icon-landing.png", :id => "i11", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/shopify-icon-landing.png", :id => "i12", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/hockeyapp-icon-landing.png", :id => "i13", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/beanstalk-icon-landing.png", :id => "i14", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/appfigures-icon-landing.png", :id => "i15", :class => "service-icon"), "" %>
-						<%= link_to image_tag("icons/airbrake-icon-landing.png", :id => "i16", :class => "service-icon"), "" %>
+					<div class="row padding-top-sm service-icon">
+						<%= link_to image_tag("icons/bitbucket-icon-landing.png", :id => "i9")  %>
+						<%= link_to image_tag("icons/newrelic-icon-landing.png", :id => "i10") %>
+						<%= link_to image_tag("icons/kiln-icon-landing.png", :id => "i11") %>
+						<%= link_to image_tag("icons/shopify-icon-landing.png", :id => "i12") %>
+						<%= link_to image_tag("icons/hockeyapp-icon-landing.png", :id => "i13") %>
+						<%= link_to image_tag("icons/beanstalk-icon-landing.png", :id => "i14") %>
+						<%= link_to image_tag("icons/appfigures-icon-landing.png", :id => "i15") %>
+						<%= link_to image_tag("icons/airbrake-icon-landing.png", :id => "i16") %>
 
 					</div>
 					<div class="row padding-top-sm">
@@ -99,8 +99,9 @@
 
 				<!-- Card -->
 
-				<div class="row col-lg-6 center valign-middle">
-					<%= image_tag "integrationcards/integrationcard.png", :id => "i1", :class => "service-card" %>
+				<div class="row col-lg-6 center valign-middle service-card">
+					<%= image_tag "integrationcards/integrationcard.png", :id => "ci1" %>
+					<%= image_tag "integrationcards/integrationcard2.png", :id => "ci2", :class => "hidden-card" %>
 				</div>
 
 			</div>
@@ -117,12 +118,12 @@
 				<div class="row col-lg-4 center">
 					<%= image_tag "feature-icons/team-icon.png", :class => "featureicon" %>
 					<p class="bold">Invite Your Team</p>
-					<p class="padded-p">Triage is better when your team uses it. We made it easy to send invitations.</p>
+					<p class="padded-p">Triage is better when your team uses it. We make it easy to send invitations.</p>
 				</div>
 				<div class="row col-lg-4 center">
 					<%= image_tag "feature-icons/personlize-icon.png", :class => "featureicon" %>
 					<p class="bold">Personalize Services</p>
-					<p class="padded-p">Signal, not noise. Personalize, filter or mute your services. Your feed looks the way you want it.</p>
+					<p class="padded-p">Personalize, filter or mute your services. Your feed looks the way you want it.</p>
 				</div>
 
 			</div>

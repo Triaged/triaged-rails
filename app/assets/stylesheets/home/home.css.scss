@@ -136,8 +136,13 @@ body.make-way #loaded-content.loaded {
 }
 	
 	/* Integrations */
-	.integration-icon > a {
+	.service-icon > a {
 		padding-left: 5px;
+	}
+	.service-icon > a {
+	}
+	.hidden-card {
+		display: none;
 	}
 	.featureicon {
 		padding-bottom: 10px;

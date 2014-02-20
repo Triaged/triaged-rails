@@ -25,7 +25,7 @@ $ ->
 
 	$(".service-icon").click ->
 		$(".service-card").fadeOut()
-		$(".service-card##{this.id}").fadeIn()
+		$(".service-card#c#{this.id}").fadeIn()
 		return false
 
 
