@@ -26,7 +26,7 @@ class Company < ActiveRecord::Base
 	end
 
 	def teammates_of user
-		users.not_in(:id => user.id).where(validated_belongs_to_company: true)
+		users.where.not(id: user.id).where(validated_belongs_to_company: true)
 	end
 
 	def connect_provider provider
