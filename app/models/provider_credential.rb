@@ -4,8 +4,9 @@ class ProviderCredential < ActiveRecord::Base
   belongs_to :provider
   belongs_to :company
 
-  validates :user, :uniqueness => { :scope => :provider }
-  
+  validates :user_id, uniqueness: { scope: :provider_id, message: "This service is already connected" }
+
+
   before_create :before_create
   after_create :provider_created
 
