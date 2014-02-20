@@ -23,16 +23,23 @@ $ ->
 		$("#loaded-content").removeClass("loaded")
 		$("#downloading").hide()
 
-	$(".service-icon").click ->
-		$(".service-card").fadeOut()
-		$(".service-card#c#{this.id}").fadeIn()
+	$(".service-icon a img").click ->
+		
+		if $(".active-card").first().attr('id') == "c#{this.id}"
+			return false
+
+		$(".service-card img").hide()
+		$(".service-card img").removeClass("active-card")
+		$("#c#{this.id}").removeClass("hidden-card")
+		$("#c#{this.id}").addClass("active-card")
+		$("#c#{this.id}").fadeIn()
+		
 		return false
 
 
 
 	$(document).mouseup (e) ->
 	  container = $(".download-region")
-	  console.log("click")
 	  # if the target of the click isn't the container...
 	  # ... nor a descendant of the container
 	  hide_overlay()  if not container.is(e.target) and container.has(e.target).length is 0
