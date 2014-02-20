@@ -23,6 +23,11 @@ $ ->
 		$("#loaded-content").removeClass("loaded")
 		$("#downloading").hide()
 
+	$(".service-icon").click ->
+		$(".service-card").fadeOut()
+		$(".service-card##{this.id}").fadeIn()
+		return false
+
 
 
 	$(document).mouseup (e) ->
