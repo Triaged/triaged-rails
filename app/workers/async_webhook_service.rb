@@ -11,23 +11,24 @@ class AsyncWebhookService
 		
 		json_event = event_class.build_from_webhook payload.event,company
 
-		if json_event # event will be nil if validation failed
+		build_event_card(json_event, company) if json_event # event will be nil if validation failed
+	end
 
-			event_hash = JSON.parse(json_event)
+	def build_event_card(json_event, company)
+		event_hash = JSON.parse(json_event)
 
-			event_hash = set_provider_from_hash(event_hash, company) # Set Provider
-			event_hash = set_author_from_hash(event_hash, company) # Set Author
-			event_hash = set_images_from_hash(event_hash, company) # Set Images
+		event_hash = set_provider_from_hash(event_hash, company) # Set Provider
+		event_hash = set_author_from_hash(event_hash, company) # Set Author
+		event_hash = set_images_from_hash(event_hash, company) # Set Images
 
-			# build card
-			card = Cards::Event.new(event_hash)
+		# build card
+		card = Cards::Event.new(event_hash)
 
-			# generic after init hook
-			card.after_build_hook company, payload
+		# generic after init hook
+		card.after_build_hook company
 
-			# add event to company feed
-			Common::FeedService.add_to_feed card, company
-		end
+		# add event to company feed
+		Common::FeedService.add_to_feed card, company
 	end
 
 
