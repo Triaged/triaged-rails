@@ -67,12 +67,6 @@ body.make-way #loaded-content.loaded {
 		text-align:center;
 	}
 
-	#navbarlist {
-		margin: 0 auto;
-		-webkit-padding-start: 0px;
-		-moz-padding-start: 0px;
-	}
-
 	#navbar-list li
 	{
 		display: inline;
@@ -92,9 +86,6 @@ body.make-way #loaded-content.loaded {
 			margin-top: 30px;
 		}
 	/* Button */
-	.glyphicon-iphone {
-		background-image: url("./images/iphone.png");	
-	}
 	.glyphicon-phone {
 		color: #ffffff;
 		margin-left: -20px;
@@ -121,23 +112,6 @@ body.make-way #loaded-content.loaded {
 	    outline:none;
 	}
 
-	.text-btn {
-		background: #f3f3f8;
-		font-size: 16px;
-		color: #8494C0;
-		border:0 none;
-	}
-
-	.text-btn:focus, .text-btn:active {
-	  border:0 none;
-	}
-
-	.redbox {
-		height: 100px;
-		width: 100px;
-		background-color: red;
-	}
-
 	/* Hero-Breadcrumb */
 	#hero-breadcrumb {
 	    bottom: 0;
@@ -146,8 +120,8 @@ body.make-way #loaded-content.loaded {
 	    clear: both;
 	}
 
-/* Page Content */
-#page-border {
+/* Integration Content */
+#integrations-border {
 	top: 0; right: 0; bottom: 0; left: 0;
     border: 15px solid #F2F2F2;
 }
@@ -176,18 +150,34 @@ body.make-way #loaded-content.loaded {
 	/* Clock*/
 
 
-/* cta */
-.cta {
-	background-color: #E0E5EE;
-	height: 100%;
-}
-#cta-btn {
-    min-height: 1px;
-    position: relative;
-    width: 70%;
-    margin: 0 auto;
+/* Footer */
+
+	/* cta */
+	#cta {
+		background-color: #E0E5EE;
+	}
+	#cta-btn {
+	    min-height: 1px;
+	    position: relative;
+	    width: 70%;
+	    margin: 0 auto;
+		}
+
+	/* Footer */
+	#footer-list {
+	margin: 0 auto;
+	-webkit-padding-start: 0px;
+	-moz-padding-start: 0px;
 	}
 
+	#footer-list li
+	{
+		display: inline;
+		list-style-type: none;
+		padding-right: 30px;
+	}
+
+/* Old Css */
 #input-line {
 	padding-top: 10px;
 	vertical-align: top;
@@ -196,19 +186,6 @@ body.make-way #loaded-content.loaded {
 
 #response {
 	padding-top: 10px;
-}
-
-#footer-list {
-	margin: 0 auto;
-	-webkit-padding-start: 0px;
-	-moz-padding-start: 0px;
-}
-
-#footer-list li
-{
-	display: inline;
-	list-style-type: none;
-	padding-right: 30px;
 }
 
 #downloading {

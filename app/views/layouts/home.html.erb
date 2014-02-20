@@ -16,11 +16,12 @@
    <div id="loaded-content">
             <!-- Begin page content -->
          <%= yield %>
-   </div>
 
    <%= yield :overlay %>
 
     <%= render "layouts/welcome_footer" unless @skip_footer %>
+
+   </div>
 
 </body>
 

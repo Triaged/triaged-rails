@@ -1,1 +1,44 @@
+<!-- Footer Background -->
+<div id="cta">
+    <div class="container">
+        <!-- Footer -->
+        <div class="col-lg-12 col-sm-12">
 
+            <!-- CTA Content -->
+            <div class="container">
+                <!-- CTA -->
+                <div class="col-lg-6 col-lg-offset-3 center padding-top">
+                    <%= image_tag "triage-logo.png" %>
+                    <p class="bold padding-top-xsm">Try Triage</p>
+                    <div class="padding-top-sm" id="cta-btn">
+                        <button class="btn btn-custom btn-lg" type="button" id="download-cta">
+                            <span class="glyphicon glyphicon-phone" style="margin-right: 20px;"></span>Text Me A Link
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AppStore -->
+                <div class="col-lg-12 col-sm-12 padding-top center">
+                    <%= link_to image_tag("available.png", :class => "center-block"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>
+                    <p class="padding-top-xsm">Triage on the AppStore</p>
+                </div>
+            </div>
+
+            <!-- Footer Content -->
+            <div class="container">
+                <!-- Links -->
+                <div class="row center padding-top padding-bottom">
+                    <ul id="footer-list">
+                        <li> <%= link_to 'Home', root_path %> </li>
+                        <li> <%= link_to 'Support', support_path %> </li>
+                        <li> <%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %> </li>
+                        <li> <%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %> </li>
+                        <li> <%= link_to 'About', about_path %> </li>
+                        <li> <%= link_to 'Press', press_path %> </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

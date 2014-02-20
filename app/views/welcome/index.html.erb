@@ -2,13 +2,13 @@
 <div class="hero-border">
 	<div class="container fullheight">
 		<!-- Welcome -->	
-		<div class="col-lg-12 col-sm-12 welcome">
+		<div class="col-lg-12 col-sm-12 fullheight">
 
 			<!-- Navbar-->	
-			<div class="nav">
+			<div class="nav padding-top-sm">
 				<div id="navbar-inner">
 				  	<ul id="navbar-list">
-				  	<li> <%= link_to 'Home', root_path %> </li>
+				  		<li> <%= link_to 'Home', root_path %> </li>
 						<li> <%= link_to 'Integrations', support_path %> </li>
 						<li> <%= link_to 'Features', "https://twitter.com/TriagedCo", :target => '_blank' %> </li>
 						<li> <%= link_to 'FAQ', "http://blog.triaged.co", :target => '_blank' %> </li>
@@ -21,9 +21,7 @@
 			<div class="row padding-top">
 				<div class="col-lg-6">
 					<!-- Logo Row -->
-					<div class="row">
 						<%= image_tag "triage-logo.png" %>
-					</div>
 					<!-- Title Row -->
 					<div class="row" id="welcome-title">
 						<h1>Introducing Triage</h1>
@@ -56,13 +54,13 @@
 
 
 <!-- Integrations Border -->
-<div id="page-border">
+<div id="integrations-border">
 	<div class="container fullheight">
 		<!-- Welcome -->	
-		<div class="col-lg-12 col-sm-12 welcome padding-bottom">
+		<div class="col-lg-12 col-sm-12 fullheight padding-bottom">
 
 			<!-- Headline -->	
-			<div class="container">
+			<div class="container padding-top-sm">
 				<div class="col-lg-6 col-lg-offset-3 center">
 					<h2>Integrations</h2>
 					<p>Triage monitors your favorite developer worktools you already use at work and pulls everything important into one mobile feed.</p>
@@ -73,7 +71,7 @@
 				
 				<!-- Icons -->
 				<div class="row col-lg-6 center valign-middle">
-					<div class="row" id="integration-icon">
+					<div class="row">
 						<%= link_to image_tag("icons/github-icon-landing.png"), ""  %>
 						<%= link_to image_tag("icons/sentry-icon-landing.png", :id => "integration-icon"), "" %>
 						<%= link_to image_tag("icons/heroku-icon-landing.png", :id => "integration-icon"), "" %>
@@ -132,7 +130,6 @@
 </div>
 
 
-
 <!-- Day Border -->
 <div id="day-border">
 	<div class="container">
@@ -140,22 +137,22 @@
 		<div class="col-lg-12 col-sm-12 welcome">
 
 			<!-- Headline -->	
-			<div class="container">
+			<div class="container padding-top-sm">
 				<div class="col-lg-6 col-lg-offset-3 center">
 					<%= image_tag "triage-logo-sm.png" %>
 					<h3>A Day With Triage</h3>
-					<p>Scroll down to see what a day with Triage looks like</p>
+					<p class="light">Scroll down to see what a day with Triage looks like</p>
 				</div>
 			</div>
 
-			<div class="container padding-top fullheight">
-				
-
-				<!-- Time line -->
+			<!-- Time line -->
 				<!-- <div class="verticalLine"></div> -->
 
+			<!-- Day Content -->
+			<div class="container padding-top fullheight">
+				
 				<!-- Wake Up -->
-				<div class="row padding-top-sm padding-bottom">
+				<div class="row padding-bottom">
 					<div class="row col-lg-6 center valign-middle">
 							<h4 class="blue">6:15 AM</h4>
 							<h2>Wake Up, Informed</h2>
@@ -220,44 +217,8 @@
 				</div>
 
 			</div>
-		</div>	
+
+		</div>
 	</div>
 </div>
-
-<div class="cta">
-        <!-- Headline -->   
-        <div class="container">
-            <div class="col-lg-6 col-lg-offset-3 center padding-top">
-                <%= image_tag "triage-logo.png" %>
-                <p class="bold padding-top-xsm">Try Triage</p>
-                <div class="padding-top-sm" id="cta-btn">
-                    <button class="btn btn-custom btn-lg" type="button" id="download-cta">
-                        <span class="glyphicon glyphicon-phone" style="margin-right: 20px;"></span>Text Me A Link
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="row padding-top">
-            <div class="col-lg-12 col-sm-12 welcome center">
-                <%= link_to image_tag("available.png", :class => "center-block"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>
-                <p class="padding-top-xsm">Get Triage on the AppStore</p>
-            </div>
-        </div>
-
-        <div class="row center padding-top-sm padding-bottom">
-	        <ul id="footer-list">
-	        	<li> <%= link_to 'Home', root_path %> </li>
-	            <li> <%= link_to 'Support', support_path %> </li>
-	            <li> <%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %> </li>
-	            <li> <%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %> </li>
-	            <li> <%= link_to 'About', about_path %> </li>
-	            <li> <%= link_to 'Press', press_path %> </li>
-	        </ul>
-    	</div>
-
-
-    </div>
-</div>
-
 
