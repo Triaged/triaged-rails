@@ -12,8 +12,10 @@ class Dropbox::DeltaService < Dropbox::BaseService
 		puts "New Cursor: #{@company.dropbox_cursor.current}"
 
 		if should_save && (result['entries'].count > 0)
-			event_set =  Dropbox::Event::Update.build_from_delta result
-			Common::FeedService.add_to_feed event_set, @company
+			for path, metadata in result['entries']
+				event =  Dropbox::Event::Update.build_from_delta path, metadata, company	
+				AsyncWebhookService.new.build_event_card event, @company
+			end
 		else # We're not saving
 			# We need to iterate the cursor to the current position
 			Dropbox::DeltaService.new(@company.id).fetch_delta(false) if result['has_more']
