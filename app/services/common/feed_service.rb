@@ -1,6 +1,7 @@
 module Common::FeedService
 
 	def self.add_to_feed(event, company)
+		puts "adding..."
 		Rails.logger.info event
 		if event
 			Rails.logger.info "Adding event #{event.provider_name}:#{event.event_name} to company feed: #{company.name}"
@@ -18,18 +19,19 @@ module Common::FeedService
 		
 		event_hash = JSON.parse(json_event)
 
-		event_hash = set_provider_from_hash(event_hash, company) # Set Provider
-		event_hash = set_author_from_hash(event_hash, company) # Set Author
-		event_hash = set_images_from_hash(event_hash, company) # Set Images
+		event_hash = self.set_provider_from_hash(event_hash, company) # Set Provider
+		event_hash = self.set_author_from_hash(event_hash, company) # Set Author
+		event_hash = self.set_images_from_hash(event_hash, company) # Set Images
 
 		# build card
 		card = Cards::Event.new(event_hash)
+		puts "card: #{card.inspect}"
 
 		# generic after init hook
 		card.after_build_hook company
 
 		# add event to company feed
-		Common::FeedService.add_to_feed card, company
+		self.add_to_feed card, company
 		puts "Added event card: #{json_event}"
 	end
 
