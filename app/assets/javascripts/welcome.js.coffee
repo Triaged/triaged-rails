@@ -38,11 +38,11 @@ $ ->
 
 
 
-	$(document).mouseup (e) ->
-	  container = $(".download-region")
-	  # if the target of the click isn't the container...
-	  # ... nor a descendant of the container
-	  hide_overlay()  if not container.is(e.target) and container.has(e.target).length is 0
+	# $(document).mouseup (e) ->
+	#   container = $(".download-region")
+	#   # if the target of the click isn't the container...
+	#   # ... nor a descendant of the container
+	#   hide_overlay()  if not container.is(e.target) and container.has(e.target).length is 0
 
 
 	
