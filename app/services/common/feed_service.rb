@@ -14,7 +14,7 @@ module Common::FeedService
 	def self.build_event_card(json_event, company)
 		puts "building event card: #{json_event}"
 
-		return unless json_event # event will be nil if validation failed
+		return if json_event.nil? # event will be nil if validation failed
 		
 		event_hash = JSON.parse(json_event)
 
@@ -30,6 +30,7 @@ module Common::FeedService
 
 		# add event to company feed
 		Common::FeedService.add_to_feed card, company
+		puts "Added event card: #{json_event}"
 	end
 
 
