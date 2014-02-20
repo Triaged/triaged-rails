@@ -2,6 +2,8 @@ class Dropbox::Event::Update < BaseServiceEvent
   
   def self.build_from_delta path, metadata, company
     #puts path
+    return unless metadata['rev']
+
     status =  (metadata != nil) ? :updated : :deleted
 
     access_token = company.dropbox_provider_credentials.access_token
