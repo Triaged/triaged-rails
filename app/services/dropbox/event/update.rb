@@ -2,7 +2,7 @@ class Dropbox::Event::Update < BaseServiceEvent
   
   def self.build_from_delta path, metadata, company
     #puts path
-    return unless metadata['rev']
+    return unless metadata
 
     status =  (metadata != nil) ? :updated : :deleted
 
