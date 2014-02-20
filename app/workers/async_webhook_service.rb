@@ -11,11 +11,13 @@ class AsyncWebhookService
 		
 		json_event = event_class.build_from_webhook payload.event,company
 
-		build_event_card(json_event, company) if json_event # event will be nil if validation failed
+		build_event_card(json_event, company) 
 	end
 
 	def build_event_card(json_event, company)
 		Rails.logger.info "building event card"
+
+		return unless json_event # event will be nil if validation failed
 		
 		event_hash = JSON.parse(json_event)
 
