@@ -12,7 +12,7 @@ module Common::FeedService
 	end
 
 	def self.build_event_card(json_event, company)
-		Puts "building event card: #{json_event}"
+		puts "building event card: #{json_event}"
 
 		return unless json_event # event will be nil if validation failed
 		
