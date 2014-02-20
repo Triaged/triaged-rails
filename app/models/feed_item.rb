@@ -18,7 +18,7 @@ class FeedItem < ActiveRecord::Base
 	#
 	# Lifecycle hooks
 	#
-	def after_build_hook company, payload
+	def after_build_hook company
 		# placehold to be overridden in subclasses
 	end
 
