@@ -4,7 +4,7 @@ module Common::FeedService
 		Rails.logger.info event
 		if event
 			Rails.logger.info "Adding event #{event.provider_name}:#{event.event_name} to company feed: #{company.name}"
-			event = company.add_event_to_feed event 
+			company.add_event_to_feed event 
 			return true
 		else
 			return false
@@ -12,7 +12,7 @@ module Common::FeedService
 	end
 
 	def self.build_event_card(json_event, company)
-		Rails.logger.info "building event card"
+		Puts "building event card: #{json_event}"
 
 		return unless json_event # event will be nil if validation failed
 		

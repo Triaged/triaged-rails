@@ -8,7 +8,8 @@ module CompanyFeedable
 	end
 
 	def add_event_to_feed event
-  	feed_items << event
+  	Rails.logger.info "adding #{event.inspect}"
+    feed_items << event
   	Rails.logger.info "added #{event.inspect}"
   	Rails.logger.info event.errors.inspect
 		# This will fail if duplicate item exists in company feed

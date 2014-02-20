@@ -13,6 +13,7 @@ class Dropbox::DeltaService < Dropbox::BaseService
 
 		if should_save && (result['entries'].count > 0)
 			for path, metadata in result['entries']
+				puts "Path: #{path}"
 				event =  Dropbox::Event::Update.build_from_delta path, metadata, company	
 				Common::FeedService.build_event_card event, @company
 			end
