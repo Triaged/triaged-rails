@@ -4,6 +4,8 @@ class Provider < ActiveRecord::Base
   mount_uploader :large_icon, LargeProviderIconUploader
   mount_uploader :small_icon, SmallProviderIconUploader
 
+  has_many :feed_items
+
   validates :name, uniqueness: true
 
   scope :active, -> { where(active: true) }
