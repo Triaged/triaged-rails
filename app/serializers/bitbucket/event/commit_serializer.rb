@@ -1,3 +1,3 @@
-class Bitbucket::Event::CommitSerializer < ActiveModel::Serializer
+class Bitbucket::Event::CommitSerializer < ApplicationSerializer
   attributes :id, :author, :branch, :timestamp, :message, :url
 end

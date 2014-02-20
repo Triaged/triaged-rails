@@ -1,4 +1,4 @@
-class ProviderAccountSerializer < ActiveModel::Serializer
+class ProviderAccountSerializer < ApplicationSerializer
   attributes :id, :external_id, :name, :url, :default, :account_label, :property_label
 
   has_many :provider_properties, serializer: ProviderPropertySerializer

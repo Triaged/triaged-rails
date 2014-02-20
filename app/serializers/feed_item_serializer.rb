@@ -1,4 +1,4 @@
-class FeedItemSerializer < ActiveModel::Serializer
+class FeedItemSerializer < ApplicationSerializer
 	# cached
  #  delegate :cache_key, to: :object
  

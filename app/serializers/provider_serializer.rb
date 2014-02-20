@@ -1,4 +1,4 @@
-class ProviderSerializer < ActiveModel::Serializer
+class ProviderSerializer < ApplicationSerializer
   attributes :id, :name, :icon, :settings_icon, :title, :short_title, :large_icon, :small_icon
 
   def large_icon

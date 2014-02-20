@@ -1,4 +1,4 @@
-class ProviderPropertySerializer < ActiveModel::Serializer
+class ProviderPropertySerializer < ApplicationSerializer
   attributes :id, :name, :external_id, :follows
 
   def follows

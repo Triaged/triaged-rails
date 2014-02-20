@@ -1,3 +1,3 @@
-class CompanySerializer < ActiveModel::Serializer
+class CompanySerializer < ApplicationSerializer
   attributes :id
 end
