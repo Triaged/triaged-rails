@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219194018) do
+ActiveRecord::Schema.define(version: 20140220194423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20140219194018) do
   end
 
   create_table "feed_items", force: true do |t|
+    t.integer  "as_feed_item_id"
+    t.string   "as_feed_item_type"
     t.integer  "company_id"
     t.integer  "user_id"
     t.boolean  "push_notify"
@@ -144,6 +146,8 @@ ActiveRecord::Schema.define(version: 20140219194018) do
     t.boolean "webhooks_enabled", default: false
     t.string  "account_label"
     t.string  "property_label"
+    t.string  "large_icon"
+    t.string  "small_icon"
   end
 
   create_table "push_tokens", force: true do |t|
