@@ -1,4 +1,4 @@
-class ApplicationSerializer < ApplicationSerializer
+class ApplicationSerializer < ActiveModel::Serializer
 
 	def id
 		object.id.to_s
