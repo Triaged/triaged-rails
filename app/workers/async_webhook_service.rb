@@ -15,6 +15,8 @@ class AsyncWebhookService
 	end
 
 	def build_event_card(json_event, company)
+		Rails.logger.info "building event card"
+		
 		event_hash = JSON.parse(json_event)
 
 		event_hash = set_provider_from_hash(event_hash, company) # Set Provider
