@@ -9,7 +9,6 @@
 				<div id="navbar-inner">
 				  	<ul id="navbar-list">
 				  		<li> <%= link_to 'Home', root_path %> </li>
-						<li> <%= link_to 'Integrations', support_path %> </li>
 						<li> <%= link_to 'Features', "https://twitter.com/TriagedCo", :target => '_blank' %> </li>
 						<li> <%= link_to 'FAQ', "http://blog.triaged.co", :target => '_blank' %> </li>
 						<li> <%= link_to 'Contact', about_path %> </li>
@@ -62,8 +61,8 @@
 			<!-- Headline -->	
 			<div class="container padding-top-sm">
 				<div class="col-lg-6 col-lg-offset-3 center">
-					<h2>Integrations</h2>
-					<p>Triage monitors your favorite developer worktools you already use at work and pulls everything important into one mobile feed.</p>
+					<h2>Your Tools</h2>
+					<p>Triage monitors your favorite developer tools you use at work and pulls everything important into one mobile feed.</p>
 				</div>
 			</div>
 			<!-- Integrations -->
@@ -71,25 +70,25 @@
 				
 				<!-- Icons -->
 				<div class="row col-lg-6 center valign-middle">
-					<div class="row">
+					<div class="row integration-icon">
 						<%= link_to image_tag("icons/github-icon-landing.png"), ""  %>
-						<%= link_to image_tag("icons/sentry-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/heroku-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/dropbox-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/ga-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/crash-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/braintree-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/stripe-icon-landing.png", :id => "integration-icon"), "" %>
+						<%= link_to image_tag("icons/sentry-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/heroku-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/dropbox-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/ga-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/crash-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/braintree-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/stripe-icon-landing.png"), "" %>
 					</div>
-					<div class="row padding-top-sm">
+					<div class="row integration-icon padding-top-sm">
 						<%= link_to image_tag("icons/bitbucket-icon-landing.png"), ""  %>
-						<%= link_to image_tag("icons/newrelic-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/kiln-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/shopify-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/hockeyapp-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/beanstalk-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/appfigures-icon-landing.png", :id => "integration-icon"), "" %>
-						<%= link_to image_tag("icons/airbrake-icon-landing.png", :id => "integration-icon"), "" %>
+						<%= link_to image_tag("icons/newrelic-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/kiln-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/shopify-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/hockeyapp-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/beanstalk-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/appfigures-icon-landing.png"), "" %>
+						<%= link_to image_tag("icons/airbrake-icon-landing.png"), "" %>
 					</div>
 					<div class="row padding-top-sm">
 					<%= link_to 'Explore Our Integrations', support_path %><%= image_tag "carrot.png", :class => "linkicon" %>
@@ -97,7 +96,7 @@
 				</div>
 
 				<!-- Card -->
-				<div class="row col-lg-6 center valign-middle">
+				<div class="row col-lg-6 center valign-middle padding-bottom">
 					<%= image_tag "integrationcards/integrationcard.png" %>
 				</div>
 
@@ -108,19 +107,19 @@
 
 				<!-- Onboarding -->
 				<div class="row col-lg-4 center">
-					<%= link_to image_tag "feature-icons/onboarding-icon.png", :class => "featureicon" %>
+					<%= image_tag "feature-icons/onboarding-icon.png", :class => "featureicon" %>
 					<p class="bold">Simple Onboarding</p>
 					<p>It's easy to add new services into Triage with our mobile onboarding process.</p>
 				</div>
 				<div class="row col-lg-4 center">
-					<%= link_to image_tag "feature-icons/team-icon.png", :class => "featureicon" %>
+					<%= image_tag "feature-icons/team-icon.png", :class => "featureicon" %>
 					<p class="bold">Invite Your Team</p>
-					<p>Triage is better when your team uses it. We made it easy to send invitations.</p>
+					<p>Triage is better when your team uses it. We make it easy to send invitations.</p>
 				</div>
 				<div class="row col-lg-4 center">
-					<%= link_to image_tag "feature-icons/personlize-icon.png", :class => "featureicon" %>
+					<%= image_tag "feature-icons/personlize-icon.png", :class => "featureicon" %>
 					<p class="bold">Personalize Services</p>
-					<p>Signal, not noise. Personalize, filter or mute your services. Your feed looks the way you want it.</p>
+					<p>Personalize, filter or mute your services. Your feed looks the way you want it.</p>
 				</div>
 
 			</div>
@@ -146,7 +145,7 @@
 			</div>
 
 			<!-- Time line -->
-				<!-- <div class="verticalLine"></div> -->
+				<div class="verticalLine"></div>
 
 			<!-- Day Content -->
 			<div class="container padding-top fullheight">
