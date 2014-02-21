@@ -16,7 +16,6 @@
 //= require twitter/bootstrap
 //= require PhoneFormat
 //= require jquery.phonenumber
-//= require scrollReveal
 //= require_tree .
 
 
