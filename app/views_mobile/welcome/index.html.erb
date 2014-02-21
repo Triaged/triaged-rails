@@ -1,154 +1,45 @@
-<div class="col-lg-12 col-sm-12 welcome">
-	<div class="spacer"><br /><br /><br /></div>
-	
-	<div class="row">
-		<div class="col-lg-6">
-			<!-- Logo Row -->
-			<div class="row center-block">
-				<%= image_tag "logo-triage-lg.png", :class => "center-block" %>
-				<h1><span id="logo" class="center-block">Triage</span</h1>
-			</div>
-			<!-- Title Row -->
-			<div class="row" id="welcome-title">
-				<h1>Everything that's happening at work, in one place.</h1>
-			</div>
-			<!-- CTA Row -->
-			<div class="row" id="welcome-cta">
-				
-			<!-- Phone Image -->
-				<%= render "sms_app" %>
+<!-- Welcome Content -->
+<div class="fullheight">
 
+	<div class="navbar" role="navigation">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar-custom"></span>
+	        <span class="icon-bar-custom"></span>
+	        <span class="icon-bar-custom"></span>
+	      </button>
+	      <a class="navbar-brand" href="#"><%= image_tag "mobile/triage-logo-m@2x.png", :width => "29" %></a>
+	    </div>
+	    <div class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="#">Home</a></li>
+	        <li><a href="#about">About</a></li>
+	        <li><a href="#contact">Contact</a></li>
+	      </ul>
+	    </div><!-- /.nav-collapse -->
+	  </div><!-- /.container -->
+	</div><!-- /.navbar -->
+
+	<div class="col-sm-12 center fullheight">	
+		<!-- Title Row -->
+		<h1 class="hero-title">Introducing Triage</h1>
+		<h3 class="hero-title">Your developer tools, <br> on your phone.</h3>
+
+		<!-- CTA Row -->
+		<div class="row" id="welcome-cta">
+			<div id="hero-btn">
+				<button class="btn btn-custom btn-sm" type="button" id="download-cta">
+					Text Me A Link
+				</button>
 			</div>
 		</div>
-		<div class="col-lg-4 col-lg-offset-2">
-			<br /><br />
-			<%= image_tag "iphone1.png", :width => "100%"%>
-		</div>
-	</div>
-
-<!-- Services Row -->
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 spacing-m">
-			<!-- Headline Row -->
-			<div class="row">
-				<h2>Unite your work tools, simplify your workflow.</h2>
-				<p class="spacing-xsm">Triage monitors the services you already use at work and pulls everything important into one mobile feed. Explore the tools integrated with Triage below.</p>
-			</div>
-		</div>
-		<div class="col-lg-12 spacing-m">
-			<!-- Icons Row 1 -->
-			<div class="row center-block">
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/Github-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'GitHub', 'http://github.com', :target => "_blank"  %></p>
-				</div>
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/GA-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'Google Analytics', 'http://google.com/analytics', :target => "_blank"  %></p>
-				</div>
-			</div>
-			<div class="row center-block">
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/NewRelic-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'New Relic', 'http://newrelic.com', :target => "_blank"  %></p>
-				</div>
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/Stripe-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'Stripe', 'http://stripe.com', :target => "_blank"  %></p>
-				</div>
-			</div>
-			<div class="row center-block">
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/Heroku-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'Heroku', 'http://heroku.com', :target => "_blank"  %></p>
-				</div>
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/Sentry-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'Sentry', 'http://getsentry.com', :target => "_blank"  %></p>
-				</div>
-			</div>
-			<div class="row center-block">
-			<!-- Icons Row 2 -->
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/AppFigures-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'AppFigures', 'http://appfigures.com', :target => "_blank"  %></p>
-				</div>
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/Crashlytics-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'Crashlytics', 'http://crashlytics.com', :target => "_blank"  %></p>
-				</div>
-			</div>
-			<div class="row center-block">
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/HockeyApp-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'HockeyApp', 'http://hockeyapp.net', :target => "_blank"  %></p>
-				</div>
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/Airbrake-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'Airbrake', 'http://airbrake.io', :target => "_blank"  %></p>
-				</div>
-			</div>
-			<div class="row center-block">
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/Braintree-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'Braintree', 'http://braintreepayments.com', :target => "_blank"  %></p>
-				</div>
-				<div class="container" id="welcome-icons">
-					<%= image_tag "icons/Kiln-circle-icon.png", :width => "80" %>
-					<p><%= link_to 'Kiln', 'http:/www.fogcreek.com/kiln/', :target => "_blank"  %></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-<!-- Know Everything Row -->
-	<div class="row">
-		<div class="col-lg-6 spacing-m center">
-			<%= image_tag "divedeeper-mobile.png", :width => "85%" %>
-		</div>
-
-		<div class="col-lg-6">
-			<!-- Headline Row -->
-			<div class="row">
-				<h2>Focus on What Matters</h2>
-				<p class="spacing-xsm">Triage syncs important activity in real time, helping you stay alert, without overwhelming your email inbox. Need to dig deeper? Triage gives you fast access to the source of the problem.</p>
-			</div>
-		</div>
-	</div>
-
-<!-- Intelligent Alerts Row -->
-	<div class="row">
-
-		<div class="col-lg-6 spacing-m center">
-			<%= image_tag "team-mobile.png", :width => "85%" %>
-		</div>
-
-		<div class="col-lg-6">
-			<!-- Headline Row -->
-			<div class="row">
-				<h2>Talk to Your Team</h2>
-				<p class="spacing-xsm">Chat with your teammates in real time about important events. Triage's in-app messaging allows you to quickly and easily talk to members of your team and coordinate on time sensitive issues, keeping everyone on the same page.</p>
-			</div>
-		</div>
-
 		
-	</div>
-
-<!-- Intelligent Alerts Row -->
-	<div class="row">
-		<div class="col-lg-6 spacing-m center">
-			<%= image_tag "intelligent-alerts-mobile.png", :width => "85%", :id => "splash-img" %>
+		<!-- Phone Image -->
+		<div class="col-lg-4 col-lg-offset-2 fullheight">
+			<%= image_tag "mobile/hero-image.png", :width => "225", :class => "mobile-hero"  %>
 		</div>
-
-		<div class="col-lg-6">
-			<!-- Headline Row -->
-			<div class="row">
-				<h2>Intelligent Alerts</h2>
-				<p class="spacing-xsm">Ensure you're the first to know when something critical happens. Notifications inform you when action is needed and allow you to quickly identify and resolve issues.</p>
-			</div>
-		</div>
+		<!-- Welcome Breadcrumb -->
 	</div>
-
-
 </div>
-
