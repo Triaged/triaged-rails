@@ -7,11 +7,11 @@
 			<!-- Navbar-->	
 			<div class="nav padding-top-sm">
 				<div id="navbar-inner">
-				  	<ul id="navbar-list">
-				  		<li> <%= link_to 'Home', root_path %> </li>
-						<li> <%= link_to 'Features', "https://twitter.com/TriagedCo", :target => '_blank' %> </li>
-						<li> <%= link_to 'FAQ', "http://blog.triaged.co", :target => '_blank' %> </li>
-						<li> <%= link_to 'Contact', about_path %> </li>
+				  	<nav id="navbar-list">
+				  		<%= link_to 'Home', root_path %>
+						<%= link_to 'Features', "https://twitter.com/TriagedCo", :target => '_blank' %>
+						<%= link_to 'FAQ', "http://blog.triaged.co", :target => '_blank' %>
+						<%= link_to 'Contact', about_path %>
 					</ul>
 				</div>
 			</div>
@@ -69,7 +69,7 @@
 			<div class="container padding-top">
 				
 				<!-- Icons -->
-				<div class="row col-lg-6 center valign-middle">
+				<div class="row col-lg-6 center valign-middle" data-scrollReveal>
 
 					<div class="row service-icon">
 						<%= link_to image_tag("icons/github-icon-landing.png", :id => "i1") %>
@@ -99,7 +99,7 @@
 
 				<!-- Card -->
 
-				<div class="row col-lg-6 center valign-middle service-card">
+				<div class="row col-lg-6 center valign-middle service-card" data-scrollReveal>
 					<%= image_tag "integrationcards/integrationcard.png", :id => "ci1", :class => "active-card" %>
 					<%= image_tag "integrationcards/integrationcard2.png", :id => "ci2", :class => "hidden-card" %>
 				</div>
@@ -149,73 +149,76 @@
 			</div>
 
 			<!-- Time line -->
-				<div class="verticalLine"></div>
+				<!-- <div class="verticalLine"></div> -->
 
 			<!-- Day Content -->
 			<div class="container padding-top fullheight">
 				
 				<!-- Wake Up -->
 				<div class="row padding-bottom">
-					<div class="row col-lg-6 center valign-middle">
+					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter left">
 							<h4 class="blue">6:15 AM</h4>
 							<h2>Wake Up, Informed</h2>
 							<p>Triage monitors the services you already use at work and pulls everything important into one mobile feed.  It's the first app you'll open when you wake up.</p>
 					</div>
 
 					<div class="row col-lg-6 center valign-middle">
-						<%= image_tag "iphone1.png", :class => "right"  %>
+						<%= image_tag "iphone1.png" %>
 					</div>
 				</div>
 
 				<!-- Productivity -->
 				<div class="row padding-top padding-bottom">
+
 					<div class="row col-lg-6 center valign-middle">
+						<%= image_tag "iphone1.png" %>
+					</div>
+
+					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter right">
 							<h4 class="blue">8:00 AM</h4>
 							<h2>Productivity, On The Subway</h2>
 							<p>Assign issues, dig into events, share important info. Triage's touch workflows simplify common tasks allowing you to be productive before you make it to the office.</p>
-					</div>
-
-					<div class="row col-lg-6 center valign-middle">
-						<%= image_tag "iphone1.png", :class => "right"  %>
 					</div>
 				</div>
 
 				<!-- Status -->
 				<div class="row padding-top padding-bottom">
-					<div class="row col-lg-6 center valign-middle">
+					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter left">
 							<h4 class="blue">10:00 AM</h4>
 							<h2>Automated Stand-up Meetings</h2>
 							<p>See what your team is up to. Triage creates automated status reports so you know who is working on what without bothering them.</p>
 					</div>
 
 					<div class="row col-lg-6 center valign-middle">
-						<%= image_tag "iphone1.png", :class => "right"  %>
+						<%= image_tag "iphone1.png" %>
 					</div>
 				</div>
 
 				<!-- Discussions -->
 				<div class="row padding-top padding-bottom">
+
 					<div class="row col-lg-6 center valign-middle">
+						<%= image_tag "iphone1.png" %>
+					</div>
+
+					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter right">
 							<h4 class="blue">2:00 PM</h4>
 							<h2>Focused Discussions</h2>
 							<p>Aimless conversations are unproductive. Commenting in Triage is focused, in-line and easy.</p>
 					</div>
 
-					<div class="row col-lg-6 center valign-middle">
-						<%= image_tag "iphone1.png", :class => "right"  %>
-					</div>
 				</div>
 
 				<!-- Snack -->
 				<div class="row padding-top padding-bottom">
-					<div class="row col-lg-6 center valign-middle">
+					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter left">
 							<h4 class="blue">5:00 PM</h4>
 							<h2>Snack On Your Day</h2>
 							<p>Your Triage feed allows you to quickly consume the day's activity, so you have a greater sense of what happened.</p>
 					</div>
 
 					<div class="row col-lg-6 center valign-middle">
-						<%= image_tag "iphone1.png", :class => "right"  %>
+						<%= image_tag "iphone1.png" %>
 					</div>
 				</div>
 
