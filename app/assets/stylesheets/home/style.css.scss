@@ -406,16 +406,39 @@ a:hover:after, .cl-effect-3 a:focus:after {
 }
 /* Mobile Navbar */
 
+.navbar-nav {
+  text-align: center;
+}
+
+.navbar-nav li {
+  background-color: #E0E5EE;
+}
+
+#mobile-footer-tagline {
+  padding-top: 15px;
+  font-size: .75em;
+}
+
+#mobile-phone-video {
+  width: 622px;
+  height: 1109px;
+}
+
 /* Mobile Footer */
 
 @media (max-width: 767px) {
 
-  #footer-list li
+  #footer-list
   {
-    list-style-type: none;
-    padding-right: 8px;
     text-align: center;
-    font-size: .8em;
+  }
+
+  #footer-list a {
+    font-size: .75em;
+  }
+
+  #footer-list a:not(:last-child) {
+    margin-right: 7px;
   }
 
   .navbar-toggle .icon-bar-custom {
@@ -433,7 +456,7 @@ a:hover:after, .cl-effect-3 a:focus:after {
     padding: 10px 15px;
   }
   .navbar-toggle {
-    margin-top: 0;
+    margin-top: 4px;
     border-radius: 2px; 
   }
   .navbar {

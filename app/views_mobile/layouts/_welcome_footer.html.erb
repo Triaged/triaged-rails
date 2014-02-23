@@ -1,21 +1,35 @@
-<div id="footer" class="mobile">
-		<div class="container">
-			<div class="row center-block">
-				<div class="col-xs-12 center-block">
-				
-				<%= link_to image_tag("available.png", :class => "center-block"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>  <br /><br />
+<!-- Footer Background -->
+<div id="cta">
+    <div class="container">
+        <!-- Footer -->
+        <div class="col-lg-12 col-sm-12">
 
-				 <div id="footer-inner">
-				  	<ul id="footer-list">
-				  		<li> <%= link_to 'Home', root_path %> </li>
-						<li> <%= link_to 'Support', support_path %> </li>
-						<li> <%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %> </li>
-						<li> <%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %> </li>
-						<li> <%= link_to 'About', about_path %> </li>
-						<li> <%= link_to 'Press', press_path %> </li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		</div>
-	</div>
+            <!-- CTA Content -->
+            <div class="container">
+                <!-- CTA -->
+                <div class="col-lg-6 col-lg-offset-3 center padding-top-sm">
+                    <%= link_to image_tag("available.png", :class => "center-block padding-top-sm"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>
+                    <p id="mobile-footer-tagline">Get Triage on the AppStore</p>
+                </div>
+            </div>
+
+                <!-- AppStore -->
+
+            <!-- Footer Content -->
+            <div class="container">
+                <!-- Links -->
+                <div class="row center padding-top-sm padding-bottom">
+                    <nav id="footer-list">
+                        <%= link_to 'Home', root_path %> 
+                        <%= link_to 'Support', support_path %>
+                        <%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %>
+                        <%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %>
+                        <%= link_to 'About', about_path %>
+                        <%= link_to 'Press', press_path %>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
