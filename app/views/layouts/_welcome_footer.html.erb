@@ -24,15 +24,18 @@
             <!-- Footer Content -->
             <div class="row">
                 <!-- Links -->
-                <div class="row center padding-top-lg padding-bottom">
-                    <nav id="footer-list">
-                        <%= link_to 'Home', root_path %> 
-                        <%= link_to 'FAQ', support_path %>
-                        <%= link_to 'Contact', about_path %>
-                        <%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %>
-                        <%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %>
-                        <%= link_to 'Press', press_path %>
-                    </ul>
+                <div class="col-lg-12 center padding-top-lg padding-bottom">     
+                    <nav class="footer-list">
+                        <ul class="footer">
+                            <li class="active"><%= link_to 'Home', root_path %></li>
+                            <li><%= link_to 'FAQ', support_path %></li>
+                            <li><%= link_to 'Contact', about_path %></li>
+                            <li><%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %></li>
+                            <li><%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %></li>
+                            <li><%= link_to 'Press', press_path %></li>
+                        </ul>
+                    </nav>
+                    </div>
                 </div>
             </div>
 

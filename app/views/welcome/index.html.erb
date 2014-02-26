@@ -5,16 +5,24 @@
 		<div class="col-lg-12 col-sm-12 fullheight">
 
 			<!-- Navbar-->	
-			<div class="nav padding-top-sm">
-				<div id="navbar-inner">
-				  	<nav id="navbar-list">
-				  		<%= link_to 'Home', root_path %>
-						<%= link_to 'FAQ', support_path %>
-						<%= link_to 'Contact', about_path %>
-						<%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %>
-					</nav>
-				</div>
-			</div>
+			<div class="navbar" role="navigation">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar-custom"></span>
+			        <span class="icon-bar-custom"></span>
+			        <span class="icon-bar-custom"></span>
+			      </button>
+			    </div>
+			    <div class="collapse navbar-collapse">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><%= link_to 'Home', root_path %></li>
+			        <li><%= link_to 'FAQ', support_path %></li>
+			        <li><%= link_to 'Contact', about_path %></li>
+			        <li><%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %></li>
+			      </ul>
+			    </div><!-- /.nav-collapse -->
+			</div><!-- /.container -->
 
 			<!-- Welcome Content -->
 			<div class="row">
@@ -28,11 +36,9 @@
 					</div>
 					<!-- CTA Row -->
 					<div class="row" id="welcome-cta">
-						<div id="hero-btn">
-							<button class="btn btn-custom btn-lg" type="button" id="download-cta">
-								<span class="glyphicon glyphicon-phone" style="margin-right: 20px;"></span>Text Me A Link
-							</button>
-						</div>
+						<button class="btn btn-custom btn-lg" type="button" id="download-cta">
+							<span class="glyphicon glyphicon-phone" style="margin-right: 20px;"></span>Text Me A Link
+						</button>
 					</div>
 				</div>
 				<!-- Phone Image -->
@@ -60,7 +66,7 @@
 
 			<!-- Headline -->	
 			<div class="row padding-top-sm">
-				<div class="col-lg-6 col-lg-offset-3 center">
+				<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 center">
 					<h2>Integrations With Your Tools</h2>
 					<p>Triage monitors your favorite developer tools and pulls everything important into one mobile feed. Use Triage for services that don't have a dedicated mobile app, such as Github, Google Analytics or Stripe.</p>
 				</div>
@@ -100,7 +106,7 @@
 
 				<!-- Card -->
 
-				<div class="row col-lg-6 center service-card" data-scrollReveal>
+				<div class="row col-lg-6 center service-card padding-top-sm" data-scrollReveal>
 					<%= image_tag "integrationcards/integrationcard.png", :id => "ci1", :class => "active-card" %>
 					
 					
