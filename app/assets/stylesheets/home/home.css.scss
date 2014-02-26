@@ -88,6 +88,23 @@
 	.service-card {
 		height: 250px;
 	}
+	.grow {
+	  display: inline-block;
+	  -webkit-transition-duration: 0.3s;
+	  transition-duration: 0.3s;
+	  -webkit-transition-property: -webkit-transform;
+	  transition-property: transform;
+	  -webkit-transform: translateZ(0);
+	  -ms-transform: translateZ(0);
+	  transform: translateZ(0);
+	  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	}
+
+	.grow:hover {
+	  -webkit-transform: scale(1.1);
+	  -ms-transform: scale(1.1);
+	  transform: scale(1.1);
+	}
 
 /* Day Content */
 
@@ -176,13 +193,36 @@ text-align: center;
 
 /* Mobile */
 
-.mobile-hero {
-	bottom: 0;
+.mobile-hero-image {
+	padding-bottom: 25px;
+}
+#mobile-hero {
+	padding-top: 15px;
 }
 .hero-title {
 	margin-top: 0;
 	font-weight: 300;
 }
+
+/* iPad */
+@media (min-width: 768px) and (max-device-width : 1024px) {
+
+  /* Hero */
+  #hero-breadcrumb {
+    display: none;
+  }
+  #padding-top-hero {
+    text-align: center;
+  }
+  #hero-btn {
+  	text-align: center;
+  }
+  #download-cta {
+  	margin: 0;
+  }						
+}
+
+/* iPhone */
 @media (max-width: 767px) {
 
 	#logo {

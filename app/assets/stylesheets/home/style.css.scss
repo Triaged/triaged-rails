@@ -324,7 +324,7 @@ fieldset[disabled] .btn-custom.active {
   border-color: #8393bf;
 }
 
-#download-cta {
+#footer-cta {
   margin-right: 30px;
 }
 
@@ -464,6 +464,7 @@ a:hover:after, .cl-effect-3 a:focus:after {
 
 /* Mobile Footer */
 
+
 @media (max-width: 767px) {
 
   #footer-list
@@ -515,5 +516,8 @@ a:hover:after, .cl-effect-3 a:focus:after {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500; 
+  }
+  #download-cta {
+    margin: 0;
   }
 }

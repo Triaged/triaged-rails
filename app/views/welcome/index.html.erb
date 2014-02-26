@@ -17,8 +17,8 @@
 			</div>
 
 			<!-- Welcome Content -->
-			<div class="row" id="padding-top-hero">
-				<div class="col-lg-6">
+			<div class="row">
+				<div class="col-lg-6" id="padding-top-hero">
 					<!-- Logo Row -->
 						<%= image_tag "triage-logo.png" %>
 					<!-- Title Row -->
@@ -36,9 +36,8 @@
 					</div>
 				</div>
 				<!-- Phone Image -->
-				<div class="col-lg-4 col-lg-offset-2">
-					<%= image_tag "screenshots/Feed.png", :class => "right" %>
-					<%= video_tag ["test.ogv", "test.mp4"], :autoplay => true, :size => "239x427", :id => "hero-video", :class => "right", :loop => true %>
+				<div class="col-lg-3 col-lg-offset-3" id="padding-top-hero">
+					<%= image_tag "screenshots/Feed.png" %>
 				</div>
 			</div>
 
@@ -62,8 +61,8 @@
 			<!-- Headline -->	
 			<div class="row padding-top-sm">
 				<div class="col-lg-6 col-lg-offset-3 center">
-					<h2>Your Tools</h2>
-					<p>Triage monitors your favorite developer tools and pulls everything important into one mobile feed.</p>
+					<h2>Integrations With Your Tools</h2>
+					<p>Triage monitors your favorite developer tools and pulls everything important into one mobile feed. Use Triage for services that don't have a dedicated mobile app, such as Github, Google Analytics or Stripe.</p>
 				</div>
 			</div>
 			<!-- Integrations -->
@@ -73,22 +72,22 @@
 				<div class="row col-lg-6 center" id="services" data-scrollReveal>
 
 					<div class="row service-icon">
-						<%= link_to image_tag("icons/github-icon-landing.png", :id => "i1") %>
-						<%= link_to image_tag("icons/sentry-icon-landing.png", :id => "i2") %>
-						<%= link_to image_tag("icons/heroku-icon-landing.png", :id => "i3") %>
-						<%= link_to image_tag("icons/dropbox-icon-landing.png", :id => "i4") %>
-						<%= link_to image_tag("icons/ga-icon-landing.png", :id => "i5") %>
-						<%= link_to image_tag("icons/crash-icon-landing.png", :id => "i6") %>
-						<%= link_to image_tag("icons/stripe-icon-landing.png", :id => "i8") %>
+						<%= link_to image_tag("icons/github-icon-landing.png", :id => "i1", :class => "grow") %>
+						<%= link_to image_tag("icons/sentry-icon-landing.png", :id => "i2", :class => "grow") %>
+						<%= link_to image_tag("icons/heroku-icon-landing.png", :id => "i3", :class => "grow") %>
+						<%= link_to image_tag("icons/dropbox-icon-landing.png", :id => "i4", :class => "grow") %>
+						<%= link_to image_tag("icons/ga-icon-landing.png", :id => "i5", :class => "grow") %>
+						<%= link_to image_tag("icons/crash-icon-landing.png", :id => "i6", :class => "grow") %>
+						<%= link_to image_tag("icons/stripe-icon-landing.png", :id => "i7", :class => "grow") %>
 					</div>
 					<div class="row padding-top-sm service-icon">
-						<%= link_to image_tag("icons/bitbucket-icon-landing.png", :id => "i9")  %>
-						<%= link_to image_tag("icons/newrelic-icon-landing.png", :id => "i10") %>
-						<%= link_to image_tag("icons/kiln-icon-landing.png", :id => "i11") %>
-						<%= link_to image_tag("icons/hockeyapp-icon-landing.png", :id => "i13") %>
-						<%= link_to image_tag("icons/beanstalk-icon-landing.png", :id => "i14") %>
-						<%= link_to image_tag("icons/appfigures-icon-landing.png", :id => "i15") %>
-						<%= link_to image_tag("icons/airbrake-icon-landing.png", :id => "i16") %>
+						<%= link_to image_tag("icons/bitbucket-icon-landing.png", :id => "i8", :class => "grow")  %>
+						<%= link_to image_tag("icons/newrelic-icon-landing.png", :id => "i9", :class => "grow") %>
+						<%= link_to image_tag("icons/kiln-icon-landing.png", :id => "i10", :class => "grow") %>
+						<%= link_to image_tag("icons/hockeyapp-icon-landing.png", :id => "i11", :class => "grow") %>
+						<%= link_to image_tag("icons/beanstalk-icon-landing.png", :id => "i12", :class => "grow") %>
+						<%= link_to image_tag("icons/appfigures-icon-landing.png", :id => "i13", :class => "grow") %>
+						<%= link_to image_tag("icons/airbrake-icon-landing.png", :id => "i14", :class => "grow") %>
 
 					</div>
 					<div class="row padding-top-sm">
@@ -101,7 +100,7 @@
 
 				<!-- Card -->
 
-				<div class="row col-lg-6 center valign-middle service-card" data-scrollReveal>
+				<div class="row col-lg-6 center service-card" data-scrollReveal>
 					<%= image_tag "integrationcards/integrationcard.png", :id => "ci1", :class => "active-card" %>
 					
 					
@@ -119,8 +118,6 @@
 					<%= image_tag "cards/heroku.png", :id => "ci12", :class => "hidden-card" %>
 					<%= image_tag "cards/heroku.png", :id => "ci13", :class => "hidden-card" %>
 					<%= image_tag "cards/heroku.png", :id => "ci14", :class => "hidden-card" %>
-					<%= image_tag "cards/heroku.png", :id => "ci15", :class => "hidden-card" %>
-					<%= image_tag "cards/heroku.png", :id => "ci16", :class => "hidden-card" %>
 				</div>
 
 			</div>
@@ -129,17 +126,17 @@
 			<div class="row padding-top-lg">
 
 				<!-- Onboarding -->
-				<div class="row col-lg-4 center">
+				<div class="col-lg-4 col-sm-4 center">
 					<%= image_tag "feature-icons/onboarding-icon.png", :class => "featureicon" %>
 					<p class="bold">Simple Onboarding</p>
 					<p class="padded-p">It's easy to add new services into Triage with our mobile onboarding process.</p>
 				</div>
-				<div class="row col-lg-4 center">
+				<div class="col-lg-4 col-sm-4 center">
 					<%= image_tag "feature-icons/team-icon.png", :class => "featureicon" %>
 					<p class="bold">Invite Your Team</p>
 					<p class="padded-p">Triage is better when your team uses it. We make it easy to send invitations.</p>
 				</div>
-				<div class="row col-lg-4 center">
+				<div class="col-lg-4 col-sm-4 center">
 					<%= image_tag "feature-icons/personlize-icon.png", :class => "featureicon" %>
 					<p class="bold">Personalize Services</p>
 					<p class="padded-p">Personalize, filter or mute your services. Your feed looks the way you want it.</p>
@@ -175,7 +172,7 @@
 				
 				<!-- Wake Up -->
 				<div class="row padding-bottom">
-					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter left">
+					<div class="row col-lg-6 col-sm-6 center valign-middle" data-scrollReveal="enter left">
 							<div class="row">
 							<%= image_tag "clock/clock6am.png", :class => "phoneicon" %><h3 class="blue">6:15 AM</h4>
 							</div>
@@ -183,7 +180,7 @@
 							<p>Triage monitors the services you already use at work and pulls everything important into one mobile feed.  It's the first app you'll open when you wake up.</p>
 					</div>
 
-					<div class="row col-lg-6 center valign-middle">
+					<div class="row col-lg-6 col-sm-6 center valign-middle">
 						<%= image_tag "screenshots/Summary.png" %>
 					</div>
 				</div>
@@ -191,22 +188,22 @@
 				<!-- Productivity -->
 				<div class="row padding-top padding-bottom">
 
-					<div class="row col-lg-6 center valign-middle">
+					<div class="row col-lg-6 col-sm-6 center valign-middle">
 						<%= image_tag "screenshots/Assign.png" %>
 					</div>
 
-					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter right">
+					<div class="row col-lg-6 col-sm-6 center valign-middle" data-scrollReveal="enter right">
 							<div class="row">
 							<%= image_tag "clock/clock8am.png", :class => "phoneicon" %><h3 class="blue">8:00 AM</h4>
 							</div>
 							<h2>Productivity, On The Subway</h2>
-							<p>Assign issues, dig into events, share important info. Triage's touch workflows simplify common tasks allowing you to be productive before you make it to the office.</p>
+							<p>Assign issues, dig into events, share important info. Triage's touch workflows simplify common tasks allowing you to be productive even before you make it to the office.</p>
 					</div>
 				</div>
 
 				<!-- Status -->
 				<div class="row padding-top padding-bottom">
-					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter left">
+					<div class="row col-lg-6 col-sm-6 center valign-middle" data-scrollReveal="enter left">
 							<div class="row">
 							<%= image_tag "clock/clock10am.png", :class => "phoneicon" %><h3 class="blue">10:30 AM</h4>
 							</div>
@@ -214,7 +211,7 @@
 							<p>See what your team is up to. Triage creates automated status reports so you know who is working on what without bothering them.</p>
 					</div>
 
-					<div class="row col-lg-6 center valign-middle">
+					<div class="row col-lg-6 col-sm-6 center valign-middle">
 						<%= image_tag "screenshots/Team.png" %>
 					</div>
 				</div>
@@ -222,11 +219,11 @@
 				<!-- Discussions -->
 				<div class="row padding-top padding-bottom">
 
-					<div class="row col-lg-6 center valign-middle">
+					<div class="row col-lg-6 col-sm-6 center valign-middle">
 						<%= image_tag "screenshots/Discussions.png" %>
 					</div>
 
-					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter right">
+					<div class="row col-lg-6 col-sm-6 center valign-middle" data-scrollReveal="enter right">
 							<div class="row">
 							<%= image_tag "clock/clock2pm.png", :class => "phoneicon" %><h3 class="blue">2:45 PM</h4>
 							</div>
@@ -238,7 +235,7 @@
 
 				<!-- Snack -->
 				<div class="row padding-top padding-bottom">
-					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter left">
+					<div class="row col-lg-6 col-sm-6 center valign-middle" data-scrollReveal="enter left">
 							<div class="row">
 							<%= image_tag "clock/clock5pm.png", :class => "phoneicon" %><h3 class="blue">5:00 PM</h4>
 							</div>
@@ -246,7 +243,7 @@
 							<p>Your Triage feed allows you to quickly consume the day's activity, so you have a greater sense of what happened.</p>
 					</div>
 
-					<div class="row col-lg-6 center valign-middle">
+					<div class="row col-lg-6 col-sm-6 center valign-middle">
 						<%= image_tag "screenshots/Feed.png" %>
 					</div>
 				</div>
