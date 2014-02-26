@@ -1,38 +1,43 @@
-<div class="col-lg-12">
-	<div class="spacer"><br /></div>
-	<div class="row">
-		<div class="col-lg-6 col-lg-offset-3">
-			<!-- Logo Row -->
-			<div class="row">
-				<%= link_to('/') do %><%= image_tag "logo-triage-lg.png", :class => "center-block" %><% end %>
+<div class="border">
+	<div class="container">
+		<div class="col-lg-12 col-sm-12 fullheight">
+			
+			<!-- Navbar-->	
+			<div class="nav padding-top-sm">
+				<div id="navbar-inner">
+				  	<nav id="navbar-list">
+				  		<%= link_to 'Home', root_path %>
+						<%= link_to 'FAQ', support_path %>
+						<%= link_to 'Contact', about_path %>
+						<%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %>
+					</nav>
+				</div>
 			</div>
-			<!-- Title Row -->
-			<div class="row" id="welcome-title">
-				<h1 class="centered">About</h1>
+			
+			<!-- Contact -->	
+			<div class="col-lg-6 col-lg-offset-3 center padding-top">
+				<%= link_to('/') do %><%= image_tag "triage-logo.png", :class => "center-block" %><% end %>
+				<h2>Contact</h2>
+				<p> Please email us at <%= mail_to "support@triaged.co" %> if you have any questions. </p>
+				<p> We'd love to hear from you! </p>
+				<p> The Triage Team </p>
 			</div>
-			<div class="row" id="welcome-title">
-				<p><b>The Triage team is one engineer and two designers.</b> <br />We work remotely, living in San Francisco, Boston, and Prague.<br /> We use Triage to build Triage.
-				</p>
-			</div>
-			<!-- Title Row -->
-			<div class="spacer"><br /><br /><br /></div>
-			<!-- Description Row -->
-			<div class="row center-block" id="about-images">
-				<div class="col-lg-4">
-					<%= image_tag "team/charlie.png", :class => "profile-picture" %>
-					<div class="row" id="about-name">
+			<div class="col-lg-6 col-lg-offset-3 padding-top-lg padding-bottom">
+				<div class="col-lg-4 center">
+					<%= image_tag "team/charlie.png", :width => "60" %>
+					<div class="row">
 						<p>Charlie White</p>
 					</div>
 				</div>
-				<div class="col-lg-4">
-					<%= image_tag "team/alex.png", :class => "profile-picture" %>
-					<div class="row" id="about-name">
+				<div class="col-lg-4 center">
+					<%= image_tag "team/alex.png", :width => "60" %>
+					<div class="row">
 						<p>Alex Brinza</p>
 					</div>
 				</div>
-				<div class="col-lg-4">
-					<%= image_tag "team/jt.png", :class => "profile-picture" %>
-					<div class="row" id="about-name">
+				<div class="col-lg-4 center">
+					<%= image_tag "team/jt.png", :width => "60" %>
+					<div class="row">
 						<p>JT White</p>
 					</div>
 				</div>

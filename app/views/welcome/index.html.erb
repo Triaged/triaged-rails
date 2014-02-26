@@ -9,22 +9,22 @@
 				<div id="navbar-inner">
 				  	<nav id="navbar-list">
 				  		<%= link_to 'Home', root_path %>
-						<%= link_to 'Features', "https://twitter.com/TriagedCo", :target => '_blank' %>
-						<%= link_to 'FAQ', "http://blog.triaged.co", :target => '_blank' %>
+						<%= link_to 'FAQ', support_path %>
 						<%= link_to 'Contact', about_path %>
-					</ul>
+						<%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %>
+					</nav>
 				</div>
 			</div>
 
 			<!-- Welcome Content -->
-			<div class="row padding-top-lg">
+			<div class="row" id="padding-top-hero">
 				<div class="col-lg-6">
 					<!-- Logo Row -->
 						<%= image_tag "triage-logo.png" %>
 					<!-- Title Row -->
 					<div class="row" id="welcome-title">
 						<h1>Introducing Triage</h1>
-						<h3 id="tagline">Your developer tools, on your phone.</h3>
+						<h3 id="tagline">Unite your developer tools, on your phone.</h3>
 					</div>
 					<!-- CTA Row -->
 					<div class="row" id="welcome-cta">
@@ -37,8 +37,8 @@
 				</div>
 				<!-- Phone Image -->
 				<div class="col-lg-4 col-lg-offset-2">
-					<%= image_tag "iphone1.png", :class => "right" %>
-					<%= video_tag ["test.ogv", "test.mp4"], :autoplay => true, :size => "219x390", :id => "hero-video", :class => "right", :loop => true %>
+					<%= image_tag "screenshots/Feed.png", :class => "right" %>
+					<%= video_tag ["test.ogv", "test.mp4"], :autoplay => true, :size => "239x427", :id => "hero-video", :class => "right", :loop => true %>
 				</div>
 			</div>
 
@@ -60,17 +60,17 @@
 		<div class="col-lg-12 col-sm-12 fullheight padding-bottom">
 
 			<!-- Headline -->	
-			<div class="container padding-top-sm">
+			<div class="row padding-top-sm">
 				<div class="col-lg-6 col-lg-offset-3 center">
 					<h2>Your Tools</h2>
-					<p>Triage monitors your favorite developer tools you use at work and pulls everything important into one mobile feed.</p>
+					<p>Triage monitors your favorite developer tools and pulls everything important into one mobile feed.</p>
 				</div>
 			</div>
 			<!-- Integrations -->
-			<div class="container padding-top">
+			<div class="row padding-top">
 				
 				<!-- Icons -->
-				<div class="row col-lg-6 center valign-middle" data-scrollReveal>
+				<div class="row col-lg-6 center" id="services" data-scrollReveal>
 
 					<div class="row service-icon">
 						<%= link_to image_tag("icons/github-icon-landing.png", :id => "i1") %>
@@ -79,14 +79,12 @@
 						<%= link_to image_tag("icons/dropbox-icon-landing.png", :id => "i4") %>
 						<%= link_to image_tag("icons/ga-icon-landing.png", :id => "i5") %>
 						<%= link_to image_tag("icons/crash-icon-landing.png", :id => "i6") %>
-						<%= link_to image_tag("icons/braintree-icon-landing.png", :id => "i7") %>
 						<%= link_to image_tag("icons/stripe-icon-landing.png", :id => "i8") %>
 					</div>
 					<div class="row padding-top-sm service-icon">
 						<%= link_to image_tag("icons/bitbucket-icon-landing.png", :id => "i9")  %>
 						<%= link_to image_tag("icons/newrelic-icon-landing.png", :id => "i10") %>
 						<%= link_to image_tag("icons/kiln-icon-landing.png", :id => "i11") %>
-						<%= link_to image_tag("icons/shopify-icon-landing.png", :id => "i12") %>
 						<%= link_to image_tag("icons/hockeyapp-icon-landing.png", :id => "i13") %>
 						<%= link_to image_tag("icons/beanstalk-icon-landing.png", :id => "i14") %>
 						<%= link_to image_tag("icons/appfigures-icon-landing.png", :id => "i15") %>
@@ -94,21 +92,41 @@
 
 					</div>
 					<div class="row padding-top-sm">
-					<%= link_to 'Explore Our Integrations', support_path %><%= image_tag "carrot.png", :class => "linkicon" %>
+					<p class="light">Click to see example of service card.</p>
 					</div>
+					<!-- <div class="row padding-top-sm">
+					<%= link_to 'Explore Our Integrations', support_path %><%= image_tag "carrot.png", :class => "linkicon" %>
+					</div> -->
 				</div>
 
 				<!-- Card -->
 
 				<div class="row col-lg-6 center valign-middle service-card" data-scrollReveal>
 					<%= image_tag "integrationcards/integrationcard.png", :id => "ci1", :class => "active-card" %>
-					<%= image_tag "integrationcards/integrationcard2.png", :id => "ci2", :class => "hidden-card" %>
+					
+					
+					
+					<%= image_tag "cards/heroku@2x.png", :width => "435", :id => "ci2", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci3", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci4", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci5", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci6", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci7", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci8", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci9", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci10", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci11", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci12", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci13", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci14", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci15", :class => "hidden-card" %>
+					<%= image_tag "cards/heroku.png", :id => "ci16", :class => "hidden-card" %>
 				</div>
 
 			</div>
 
 			<!-- Additional Features -->
-			<div class="container padding-top-lg">
+			<div class="row padding-top-lg">
 
 				<!-- Onboarding -->
 				<div class="row col-lg-4 center">
@@ -135,13 +153,13 @@
 
 
 <!-- Day Border -->
-<div id="day-border">
+<div class="border" id="day">
 	<div class="container">
 		<!-- Day -->	
 		<div class="col-lg-12 col-sm-12 welcome">
 
 			<!-- Headline -->	
-			<div class="container padding-top-sm">
+			<div class="row padding-top-sm">
 				<div class="col-lg-6 col-lg-offset-3 center">
 					<%= image_tag "triage-logo-sm.png" %>
 					<h3>A Day With Triage</h3>
@@ -153,18 +171,20 @@
 				<!-- <div class="verticalLine"></div> -->
 
 			<!-- Day Content -->
-			<div class="container padding-top fullheight">
+			<div class="row padding-top fullheight">
 				
 				<!-- Wake Up -->
 				<div class="row padding-bottom">
 					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter left">
-							<h4 class="blue">6:15 AM</h4>
+							<div class="row">
+							<%= image_tag "clock/clock6am.png", :class => "phoneicon" %><h3 class="blue">6:15 AM</h4>
+							</div>
 							<h2>Wake Up, Informed</h2>
 							<p>Triage monitors the services you already use at work and pulls everything important into one mobile feed.  It's the first app you'll open when you wake up.</p>
 					</div>
 
 					<div class="row col-lg-6 center valign-middle">
-						<%= image_tag "iphone1.png" %>
+						<%= image_tag "screenshots/Summary.png" %>
 					</div>
 				</div>
 
@@ -172,11 +192,13 @@
 				<div class="row padding-top padding-bottom">
 
 					<div class="row col-lg-6 center valign-middle">
-						<%= image_tag "iphone1.png" %>
+						<%= image_tag "screenshots/Assign.png" %>
 					</div>
 
 					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter right">
-							<h4 class="blue">8:00 AM</h4>
+							<div class="row">
+							<%= image_tag "clock/clock8am.png", :class => "phoneicon" %><h3 class="blue">8:00 AM</h4>
+							</div>
 							<h2>Productivity, On The Subway</h2>
 							<p>Assign issues, dig into events, share important info. Triage's touch workflows simplify common tasks allowing you to be productive before you make it to the office.</p>
 					</div>
@@ -185,13 +207,15 @@
 				<!-- Status -->
 				<div class="row padding-top padding-bottom">
 					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter left">
-							<h4 class="blue">10:00 AM</h4>
+							<div class="row">
+							<%= image_tag "clock/clock10am.png", :class => "phoneicon" %><h3 class="blue">10:30 AM</h4>
+							</div>
 							<h2>Automated Stand-up Meetings</h2>
 							<p>See what your team is up to. Triage creates automated status reports so you know who is working on what without bothering them.</p>
 					</div>
 
 					<div class="row col-lg-6 center valign-middle">
-						<%= image_tag "iphone1.png" %>
+						<%= image_tag "screenshots/Team.png" %>
 					</div>
 				</div>
 
@@ -199,13 +223,15 @@
 				<div class="row padding-top padding-bottom">
 
 					<div class="row col-lg-6 center valign-middle">
-						<%= image_tag "iphone1.png" %>
+						<%= image_tag "screenshots/Discussions.png" %>
 					</div>
 
 					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter right">
-							<h4 class="blue">2:00 PM</h4>
+							<div class="row">
+							<%= image_tag "clock/clock2pm.png", :class => "phoneicon" %><h3 class="blue">2:45 PM</h4>
+							</div>
 							<h2>Focused Discussions</h2>
-							<p>Aimless conversations are unproductive. Commenting in Triage is focused, in-line and easy.</p>
+							<p>Chat with your teammates in real time about important events. Triage's in-app messaging allows you to quickly and easily talk to members of your team and coordinate on time sensitive issues.</p>
 					</div>
 
 				</div>
@@ -213,13 +239,15 @@
 				<!-- Snack -->
 				<div class="row padding-top padding-bottom">
 					<div class="row col-lg-6 center valign-middle" data-scrollReveal="enter left">
-							<h4 class="blue">5:00 PM</h4>
+							<div class="row">
+							<%= image_tag "clock/clock5pm.png", :class => "phoneicon" %><h3 class="blue">5:00 PM</h4>
+							</div>
 							<h2>Snack On Your Day</h2>
 							<p>Your Triage feed allows you to quickly consume the day's activity, so you have a greater sense of what happened.</p>
 					</div>
 
 					<div class="row col-lg-6 center valign-middle">
-						<%= image_tag "iphone1.png" %>
+						<%= image_tag "screenshots/Feed.png" %>
 					</div>
 				</div>
 

@@ -1,3 +1,45 @@
-<div id="mobile-phone-movie">
-	<%= video_tag "test6.mp4", :type => "video/mp4", :codecs => "avc1.42E01E,mp4a.40.2"  %>
+<!-- Welcome Content -->
+<div class="fullheight">
+
+	<div class="navbar" role="navigation">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar-custom"></span>
+	        <span class="icon-bar-custom"></span>
+	        <span class="icon-bar-custom"></span>
+	      </button>
+	      <a class="navbar-brand" href="#"><%= image_tag "mobile/triage-logo-m@2x.png", :width => "29" %></a>
+	    </div>
+	    <div class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><%= link_to 'FAQ', support_path %></li>
+	        <li><%= link_to 'Contact', about_path %></li>
+	        <li><%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %></li>
+	      </ul>
+	    </div><!-- /.nav-collapse -->
+	  </div><!-- /.container -->
+	</div><!-- /.navbar -->
+
+	<div class="col-sm-12 center fullheight">	
+		<!-- Title Row -->
+		<h1 class="hero-title">Introducing Triage</h1>
+		<h3 class="hero-title">Your developer tools, <br> on your phone.</h3>
+
+		<!-- CTA Row -->
+		<div class="row" id="welcome-cta">
+			<div id="hero-btn">
+				<button class="btn btn-custom btn-sm" type="button" id="download-cta">
+					Text Me A Link
+				</button>
+			</div>
+		</div>
+		
+		<!-- Phone Image -->
+		<div class="col-lg-4 col-lg-offset-2 fullheight">
+			<%= image_tag "mobile/Feed@2x.png", :width => "225", :class => "mobile-hero"  %>
+		</div>
+		<!-- Welcome Breadcrumb -->
+	</div>
 </div>

@@ -1,37 +1,36 @@
 <!-- Footer Background -->
-<div id="cta">
+<div class="cta">
     <div class="container">
         <!-- Footer -->
         <div class="col-lg-12 col-sm-12">
 
             <!-- CTA Content -->
-            <div class="container">
+            <div class="row">
                 <!-- CTA -->
                 <div class="col-lg-6 col-lg-offset-3 center padding-top-sm">
                     <%= image_tag "triage-logo-sm.png" %>
                     <p class="bold">Try Triage</p>
-                    <div class="padding-top-sm"id="cta-btn">
+                    <div class="padding-top" id="cta-btn">
                         <button class="btn btn-footer btn-sm" type="button" id="download-cta">
                             Text Me A Link
                         </button>
+                        <%= link_to image_tag("available.png", :width => "170"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>
                     </div>
-
-                    <%= link_to image_tag("available.png", :class => "center-block padding-top-sm"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>
                 </div>
             </div>
 
                 <!-- AppStore -->
 
             <!-- Footer Content -->
-            <div class="container">
+            <div class="row">
                 <!-- Links -->
-                <div class="row center padding-top padding-bottom">
+                <div class="row center padding-top-lg padding-bottom">
                     <nav id="footer-list">
                         <%= link_to 'Home', root_path %> 
-                        <%= link_to 'Support', support_path %>
+                        <%= link_to 'FAQ', support_path %>
+                        <%= link_to 'Contact', about_path %>
                         <%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %>
                         <%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %>
-                        <%= link_to 'About', about_path %>
                         <%= link_to 'Press', press_path %>
                     </ul>
                 </div>

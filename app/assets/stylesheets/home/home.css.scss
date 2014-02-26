@@ -10,6 +10,9 @@
 	height: 100%;
 }
 
+#padding-top-hero {
+	padding-top: 55px;
+}
 	/* Welcome-content */
 
 
@@ -49,14 +52,13 @@
 
 	/* Hero-Breadcrumb */
 	#hero-video {
-		top: 80px;
-		left: 120px;
+		top: 86px;
+		left: 100px;
 		position: absolute;
 	}
 	/* Hero-Breadcrumb */
 	#hero-breadcrumb {
 	    bottom: 0;
-	    padding-bottom: 15px;
 	    position: absolute;
 	    clear: both;
 	}
@@ -69,6 +71,9 @@
 }
 	
 	/* Integrations */
+	#services {
+		padding-top: 40px;
+	}
 	.service-icon > a {
 		padding-left: 5px;
 	}
@@ -80,10 +85,14 @@
 	.featureicon {
 		padding-bottom: 10px;
 	}
+	.service-card {
+		height: 250px;
+	}
+
 /* Day Content */
-#day-border {
-	top: 0; right: 0; bottom: 0; left: 0;
-    border: 15px solid #E0E5EE;
+
+#day p {
+	margin: 0 30px 10px;
 }
 	
 	/* Timeline */
@@ -95,33 +104,19 @@
 	}
 
 	/* Clock*/
-
-
-/* Footer */
-
-	/* cta */
-	#cta {
-		background-color: #E0E5EE;
-	}
-	#cta-btn {
-	    min-height: 1px;
-	    position: relative;
-	    width: 70%;
-	    margin: 0 auto;
-		}
-
-	/* Footer */
-	#footer-list {
-	margin: 0 auto;
-	-webkit-padding-start: 0px;
-	-moz-padding-start: 0px;
-	}
-
-	#footer-list li
-	{
+	.time {
 		display: inline;
-		list-style-type: none;
-		padding-right: 30px;
+	}
+	.phoneicon {
+		position: relative;
+		width: 20px;
+		padding-bottom: 8px;
+	}
+	.blue {
+	  color: #90A9EB;
+	  font-size: 1.5em;
+	  display: inline;
+	  padding: 5px 10px;
 	}
 
 /* Old Css */
