@@ -5,11 +5,6 @@
     border: 15px solid #E0E5EE;
     min-height: 100%;
 }
-.welcome {
-	padding: 25px 0 0;
-	height: 100%;
-}
-
 #padding-top-hero {
 	padding-top: 55px;
 }
@@ -101,11 +96,14 @@
 	  transform: translateZ(0);
 	  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 	}
-
 	.grow:hover {
 	  -webkit-transform: scale(1.1);
 	  -ms-transform: scale(1.1);
 	  transform: scale(1.1);
+	}
+	.padded-p {
+	  padding-left: 10px;
+	  padding-right: 10px;
 	}
 
 /* Day Content */
@@ -113,19 +111,7 @@
 #day p {
 	margin: 0 30px 10px;
 }
-	
-	/* Timeline */
-	.verticalLine {
-    border-left: dashed rgba(18,39,92,1);
-    height: 100%;
-    position: absolute;
-    right: 159px;
-	}
-
 	/* Clock*/
-	.time {
-		display: inline;
-	}
 	.phoneicon {
 		position: relative;
 		width: 20px;
@@ -191,45 +177,33 @@ text-align: center;
  outline-width:0;
 }
 
-/* Animations */
-
 /* Mobile */
-
-.mobile-hero-image {
-	padding-bottom: 25px;
-}
-#mobile-hero {
-	padding-top: 15px;
-}
-.hero-title {
-	margin-top: 0;
-	font-weight: 300;
-}
 
 /* iPad */
 @media (min-width: 768px) and (max-device-width : 1024px) {
 
-  /* Hero */
-  #hero-breadcrumb {
-    display: none;
-  }
-  #padding-top-hero {
-    text-align: center;
-    padding-bottom: 25px;
-  }
-  #hero-btn {
-  	text-align: center;
-  }
-  #download-cta {
-  	margin: 0;
-  	width: 40%;
-  }	
-  #services {
-	height: 580px;
-	padding-top: 0;
+	/* Hero */
+	#hero-breadcrumb {
+	  	display: none;
 	}
-   #services-row {
-	padding-top: 20px;
+	#padding-top-hero {
+	  	text-align: center;
+	  	padding-bottom: 25px;
+	}
+	#hero-btn {
+		text-align: center;
+	}
+	#download-cta {
+		margin: 0;
+	  	width: 40%;
+	}	
+	/* Integrations */
+	#services {
+		height: 580px;
+		padding-top: 0;
+	}
+	#services-row {
+		padding-top: 20px;
 	}
 
 }
@@ -237,35 +211,27 @@ text-align: center;
 /* iPhone */
 @media (max-width: 767px) {
 
+	/* Hero */
 	#logo {
 		padding-left: 0;
 	}
-
-	h1 {
-		text-align: center;
-		font-size: 50px;
-  	line-height: 56px;
-	}
-
 	#welcome-title h1 {
 		text-align: center;
 		font-size: 50px;
-  	line-height: 56px;
+  		line-height: 56px;
 	}
-
-	h2 {
-		text-align: center;
+	#mobile-hero {
+		padding-top: 15px;
 	}
-
-	#welcome-title {
-		margin-top: 30px;
+	.hero-title {
+		margin-top: 0;
+		font-weight: 300;
 	}
-
 	#welcome-cta {
 		margin-top: 20px;
 		margin-bottom: 40px;
 	}
-
+	/* Hero BTN */
 	#hero-btn {
 		width: 100%;
 		padding-right: 0px;
@@ -273,18 +239,19 @@ text-align: center;
 	#providers {
 		margin-left: 0px;
 	}
-
 	#iphone {
 		width: 100%;
 	}
-
 	#phone_number {
 		width: 100%;
 	}
-
 	#input-line {
 		width: 100%;
 	}
-
+	/* Hero Image */
+	.mobile-hero-image {
+	padding-bottom: 25px;
+	}
+	
 }
 

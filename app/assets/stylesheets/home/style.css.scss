@@ -54,11 +54,6 @@ body.make-way #loaded-content.loaded {
   transition-duration: 1s,0s,0s;
 }
 
-.padded-p {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
@@ -203,14 +198,8 @@ blockquote {
 .wf-active h2 {
 	visibility: visible;
 }
-
 .bold {
   font-weight: 700;
-}
-
-.big {
-  font-size: 1.5em;
-  line-height: 1.45833333;
 }
 
 /* Color */
@@ -224,17 +213,11 @@ blockquote {
 .center {
   text-align: center;
 }
-
-.right {
-  float: right;
-}
-.left {
-  float: left;
-}
-
 .fullheight {
   min-height: 100%;
 }
+
+/* Padding */
 
 .padding-top {
   padding-top: 75px;
@@ -245,14 +228,9 @@ blockquote {
 .padding-top-sm {
   padding-top: 30px;
 }
-.padding-top-xsm {
-  padding-top: 10px;
-}
-
 .padding-bottom {
   padding-bottom: 75px;
 }
-
 .valign-middle {
   float:none;
   display:inline-block;
@@ -326,51 +304,36 @@ fieldset[disabled] .btn-custom.active {
 
 /* links */
 
-.linkicon {
-  padding-left: 5px;
-}
-
 a {
   color: #223978;
   font-weight: 700;
-}
-
-
-a {
+  outline: none;
   text-decoration: none;
 }
-
 a:active, a:hover {
     outline: 0 none;
     text-decoration: none;
 }
 
-/* Animations */
-
 /* Navbar */
 
+.navbar-nav {
+    float: none;
+    text-align: center;
+}
 .navbar-nav li {
     background-color: transparent;
-}
-.navbar-nav > li {
     float: none;
     display: inline-block;
 }
 .navbar-nav > li:not(:first-child) {
     padding-left: 150px;
 }
-
 .navbar-nav a {
   padding: 8px 0;
   color: #9B9B9B;
   font-weight: 400;
 }
-
-.navbar-nav {
-    float: none;
-    text-align: center;
-}
-
 .navbar-nav a::after {
   position: absolute;
   top: 100%;
@@ -387,7 +350,6 @@ a:active, a:hover {
   -moz-transform: translateY(10px);
   transform: translateY(10px);
 }
-
 .navbar-nav a:hover::after,
 .navbar-nav a:focus::after {
   opacity: 1;
@@ -395,7 +357,6 @@ a:active, a:hover {
   -moz-transform: translateY(0px);
   transform: translateY(0px);
 }
-
 .nav > li > a:hover, .nav > li > a:focus {
     background-color: #fff;
     text-decoration: none;
@@ -427,50 +388,56 @@ a:active, a:hover {
 
   /* Footer */
 
-.cta {
-  background-color: #E0E5EE;
-}
+  .footer > li {
+      float: none;
+      display: inline-block;
+  }
+  .footer > li:not(:first-child) {
+      padding-left: 75px;
+  }
 
-.footer > li {
-    float: none;
-    display: inline-block;
-}
-.footer > li:not(:first-child) {
-    padding-left: 75px;
-}
-
-/* Mobile Navbar */
-
-#mobile-footer-tagline {
-  padding-top: 15px;
-  font-size: .75em;
-}
-
-#mobile-phone-video {
-  width: 622px;
-  height: 1109px;
-}
-
-/* Mobile Footer */
+/* Mobile */
 
 /* iPad */
 @media (min-width: 768px) and (max-device-width : 1024px) {
+  
+  /* Navbar */
   .navbar-nav > li:not(:first-child) {
     padding-left: 100px;
   }
+
+  /* Footer */
+
   .footer > li:not(:first-child) {
     padding-left: 50px;
   }
+
 }
 
 /* iPhone */
 @media (max-width: 767px) {
 
+  /* Typography */
+
+  h1 {
+    text-align: center;
+    font-size: 50px;
+    line-height: 56px;
+  }
+
+  /* Page */
+
   .border {
     border: none; 
   }
+
+  /* Navbar */
+
+  .navbar {
+    margin-bottom: 0;
+  }
   .navbar-nav {
-  text-align: center;
+    text-align: center;
   }
   .navbar-nav li {
     background-color: #E0E5EE;
@@ -493,40 +460,36 @@ a:active, a:hover {
   .navbar-nav > li > a {
     padding-bottom: 10px;
     padding-top: 10px;
-}
-  #footer-list
-  {
-    text-align: center;
   }
-
-  #footer-list a {
-    font-size: .75em;
-  }
-
-  #footer-list a:not(:last-child) {
-    margin-right: 7px;
-  }
-
   .navbar-toggle .icon-bar-custom {
-  display: block;
-  width: 22px;
-  height: 2px;
-  border-radius: 1px;
-  background-color: #90AAEB;
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #90AAEB;
   }
-
+  .navbar-toggle {
+    margin-top: 4px;
+    border-radius: 2px; 
+  }
   .navbar-toggle .icon-bar-custom + .icon-bar-custom {
     margin-top: 4px;
   }
   .navbar-brand {
     padding: 10px 15px;
   }
-  .navbar-toggle {
-    margin-top: 4px;
-    border-radius: 2px; 
+
+  /* Footer */
+
+  #footer-list
+  {
+    text-align: center;
   }
-  .navbar {
-    margin-bottom: 0;
+  #footer-list a {
+    font-size: .75em;
+  }
+  #footer-list a:not(:last-child) {
+    margin-right: 7px;
   }
   #hero-btn {
   width: 100%;
