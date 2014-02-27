@@ -72,21 +72,23 @@
 	
 	/* Integrations */
 	#services {
+		height: 400px;
+		padding-top: 30px;
+	}
+	#services-row {
 		padding-top: 40px;
+	}
+	.service-card {
+		height: 100%;
 	}
 	.service-icon > a {
 		padding-left: 5px;
-	}
-	.service-icon > a {
 	}
 	.hidden-card {
 		display: none;
 	}
 	.featureicon {
 		padding-bottom: 10px;
-	}
-	.service-card {
-		height: 290px;
 	}
 	.grow {
 	  display: inline-block;
@@ -221,7 +223,15 @@ text-align: center;
   #download-cta {
   	margin: 0;
   	width: 40%;
-  }					
+  }	
+  #services {
+	height: 580px;
+	padding-top: 0;
+	}
+   #services-row {
+	padding-top: 20px;
+	}
+
 }
 
 /* iPhone */
