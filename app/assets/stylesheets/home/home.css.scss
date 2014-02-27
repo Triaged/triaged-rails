@@ -85,6 +85,14 @@
 	.featureicon {
 		padding-bottom: 10px;
 	}
+	.animated {
+		-webkit-animation-duration: 3s;
+		-webkit-animation-iteration-count: infinite;
+		-ms-animation-duration: 3s;
+		-ms-animation-iteration-count: infinite;
+		-moz-animation-duration: 3s;
+		-moz-animation-iteration-count: infinite;
+	}
 	.grow {
 	  display: inline-block;
 	  -webkit-transition-duration: 0.3s;
