@@ -5,8 +5,10 @@
     <%= render "shared/twitter_tags" %>
  <title>Triage</title>
  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css" media="all" rel="stylesheet" />
+ <%= javascript_include_tag "jquery.animation" %>
  <%= stylesheet_link_tag    "home", media: "all"%>
  <%= stylesheet_link_tag    "animate.min", media: "all"%>
+ <%= stylesheet_link_tag    "cheat-sheet-animation", media: "all"%>
  <script type="text/javascript" src="//use.typekit.net/dli1exz.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
  <%= csrf_meta_tags %>
@@ -30,6 +32,18 @@
   window.scrollReveal = new scrollReveal();
 </script>
 
+<script>
+  $(window).scroll(function() {
+    $('#i1').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+      if (imagePos < topOfWindow+400) {
+        $(this).addClass("slideUp");
+      }
+    });
+  });
+</script>
 
 </body>
 
