@@ -46,13 +46,12 @@
 					<%= image_tag "screenshots/Feed.png" %>
 				</div>
 			</div>
-
-			<!-- Welcome Breadcrumb -->
-			<div class="col-lg-12 center" id="hero-breadcrumb">
-				<p class="light">Learn More</p>
-				<%= image_tag "hero-carrot.png" %>
-			</div>
 		</div>
+	</div>
+	<!-- Welcome Breadcrumb -->
+	<div class="col-lg-12 center" id="hero-breadcrumb">
+		<p class="light">Learn More</p>
+		<%= image_tag "hero-carrot.png" %>
 	</div>
 </div>
 
@@ -78,7 +77,7 @@
 				<div class="row col-lg-6 center" id="services-row" data-scrollReveal>
 
 					<div class="row padding-top-sm service-icon">
-						<%= link_to image_tag("icons/github-icon.png", :id => "i1", :class => "animated bounce") %>
+						<%= link_to image_tag("icons/github-icon.png", :id => "i1", :class => "grow") %>
 						<%= link_to image_tag("icons/sentry-icon.png", :id => "i2", :class => "grow") %>
 						<%= link_to image_tag("icons/heroku-icon.png", :id => "i3", :class => "grow") %>
 						<%= link_to image_tag("icons/dropbox-icon.png", :id => "i4", :class => "grow") %>
@@ -255,5 +254,5 @@
 	</div>
 </div>
 
-<%= render "shared/download_overlay" %>
+
 

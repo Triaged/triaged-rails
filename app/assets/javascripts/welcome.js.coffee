@@ -8,6 +8,10 @@ $ ->
   #	country: "US"
 	$("#phone_number").focus()
 
+	$(window).scroll ->
+		if($('#i2').visible())
+			$('#i2').addClass("animated bounce grow")
+
 	$("#download-cta").click ->
 		if($("#footer").hasClass("mobile"))
 			 window.location.href = "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8"

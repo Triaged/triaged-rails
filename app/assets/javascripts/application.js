@@ -16,6 +16,7 @@
 //= require twitter/bootstrap
 //= require PhoneFormat
 //= require jquery.phonenumber
+//= require jquery.visible.min
 //= require_tree .
 
 
