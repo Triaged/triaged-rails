@@ -1,26 +1,25 @@
-<% content_for :overlay do %>
 	<div id="downloading">
 		<div class="download-region">
-  	 	<h1>Get Notified When Triage is Available</h1>
-  	 	<%= simple_form_for :sms_delivery, :url => deliver_sms_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form', :class => 'form-inline hidden-md hidden-sm'} do |f| %>
+  	 	<h1 style="color:#ffffff;">Triage Is Coming Soon</h1>
+  	 	<%= simple_form_for :email_capture, :url => capture_email_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form', :class => 'form-inline hidden-md hidden-sm'} do |f| %>
 			<div class="col-lg-12 col-sm-12">
 				<div class="row">
 					<br /><br />
-		  		<%= f.input_field :phone_number, :id => "phone_number", :placeholder => '(555) 555-5555', :autocomplete => "off"%>
-		  		<%= f.button :submit, "TEXT ME A LINK", :class => "btn-submit" %>
+		  		<%= f.input_field :email, :id => "phone_number", :placeholder => 'me@email.com', :autocomplete => "off"%>
+		  		<%= f.button :submit, "NOTIFY ME", :class => "btn-submit" %>
 		  		<%= image_tag("input-line.png", :id => "input-line") %>
 		  		<div class="row center-block">
 						<p id="response" class="center-block" style="visibility:hidden;text-align:center;">abc</p>
 					</div>
 		  	</div>
-		  	<div class="row">
+		  	<!-- <div class="row">
 		  		<p>or</p>
 		  	</div>
 		  	<div class="row">
 		  		<br /><br />
 		  		<%= link_to image_tag("available.png"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>
 		  	</div>
-	 		</div>
+	 		</div> -->
 	</div> 
 <% end %>
 <div class="col-lg-12">
@@ -28,4 +27,3 @@
 </div>
   	 </div>
 	</div>
-<% end %>
