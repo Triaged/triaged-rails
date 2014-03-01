@@ -41,8 +41,11 @@
 		margin-bottom:4px;
 	}
 
-	#phone_number:focus{
+	#phone_number:focus,
+	#phone_number.focus{
 	    outline:none;
+	    box-shadow: none;
+	    webkit-box-shadow: none;
 	}
 
 	/* Hero-Breadcrumb */
@@ -163,7 +166,7 @@
 .download-region {
 
 z-index: 99;
-height: 400px;
+height: 600px;
 bottom: 50%;
 margin-top: 10%;
 display: block;
