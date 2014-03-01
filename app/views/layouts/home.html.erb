@@ -16,35 +16,13 @@
 <body>
 
      <!-- Wrap all page content here -->
-   <div id="loaded-content">
+  <div id="loaded-content">
             <!-- Begin page content -->
-         <%= yield %>
+    <%= yield %>
 
-   <%= yield :overlay %>
-
+    <%= yield :overlay %>
     <%= render "layouts/welcome_footer" unless @skip_footer %>
-
-   </div>
-
-
-<%= javascript_include_tag "scrollReveal" %>
-<script>
-  window.scrollReveal = new scrollReveal();
-</script>
-
-
-<script>
-  $(window).scroll(function() {
-    $('#i1').each(function(){
-    var imagePos = $(this).offset().top;
-
-    var topOfWindow = $(window).scrollTop();
-      if (imagePos < topOfWindow+400) {
-        $(this).addClass("slideUp");
-      }
-    });
-  });
-</script>
+  </div>
 </body>
 
 

@@ -9,8 +9,8 @@ $ ->
 	$("#phone_number").focus()
 
 	$(window).scroll ->
-		if($('#i2').visible())
-			$('#i2').addClass("animated bounce grow")
+		if($('#i1').visible())
+			$('#i1').addClass("slideUp")
 
 	$("#download-cta").click ->
 		if($("#footer").hasClass("mobile"))
@@ -32,10 +32,15 @@ $ ->
 		if $(".active-card").first().attr('id') == "c#{this.id}"
 			return false
 
-		$(".service-card img").hide()
-		$(".service-card img").removeClass("active-card")
+		$(".service-cards img").hide()
+		$(".service-cards img").removeClass("active-card")
 		$("#c#{this.id}").removeClass("hidden-card")
 		$("#c#{this.id}").addClass("active-card")
+		parentHeight = $('.service-cards').height()
+		childHeight = $("#c#{this.id}").height()
+		console.log parentHeight
+		console.log childHeight
+		$("#c#{this.id}").css('margin-top', (parentHeight - childHeight) / 2)
 		$("#c#{this.id}").fadeIn()
 		
 		return false

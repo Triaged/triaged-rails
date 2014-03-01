@@ -66,8 +66,8 @@
 			<!-- Headline -->	
 			<div class="row padding-top-sm">
 				<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 center">
-					<h2>Integrations With Your Tools</h2>
-					<p>Triage monitors your favorite developer tools and pulls everything important into one mobile feed. Use Triage for services that don't have a dedicated mobile app, such as Github, Google Analytics or Stripe.</p>
+					<h2>The Tools You Use</h2>
+					<p>Triage monitors your favorite developer tools and pulls everything important into one mobile feed. <!-- Use Triage for services that don't have a dedicated mobile app, such as Github, Google Analytics or Stripe. --></p>
 				</div>
 			</div>
 			<!-- Integrations -->
@@ -105,28 +105,27 @@
 
 				<!-- Card -->
 
-				<div class="row col-lg-6 center service-card padding-top-sm" data-scrollReveal>
-					<%= image_tag "cards/github@2x.png", :id => "ci1", :class => "active-card", :width => "435" %>
-					<%= image_tag "cards/sentry@2x.png", :id => "ci2", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/heroku@2x.png", :id => "ci3", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/dropbox@2x.png", :id => "ci4", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/ga@2x.png", :id => "ci5", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/crashlytics@2x.png", :id => "ci6", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/stripe@2x.png", :id => "ci7", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/bitbucket@2x.png", :id => "ci8", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/newrelic@2x.png", :id => "ci9", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/kiln@2x.png", :id => "ci10", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/hockeyapp@2x.png", :id => "ci11", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/beanstalk@2x.png", :id => "ci12", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/appfigures@2x.png", :id => "ci13", :class => "hidden-card", :width => "435" %>
-					<%= image_tag "cards/airbrake@2x.png", :id => "ci14", :class => "hidden-card", :width => "435" %>
+				<div class="row col-lg-6 center service-cards padding-top-sm" data-scrollReveal>
+					<%= image_tag "cards/github@2x.png", :id => "ci1", :class => "service-card active-card", :width => "435" %>
+					<%= image_tag "cards/sentry@2x.png", :id => "ci2", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/heroku@2x.png", :id => "ci3", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/dropbox@2x.png", :id => "ci4", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/ga@2x.png", :id => "ci5", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/crashlytics@2x.png", :id => "ci6", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/stripe@2x.png", :id => "ci7", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/bitbucket@2x.png", :id => "ci8", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/newrelic@2x.png", :id => "ci9", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/kiln@2x.png", :id => "ci10", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/hockeyapp@2x.png", :id => "ci11", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/beanstalk@2x.png", :id => "ci12", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/appfigures@2x.png", :id => "ci13", :class => "service-card hidden-card", :width => "435" %>
+					<%= image_tag "cards/airbrake@2x.png", :id => "ci14", :class => "service-card hidden-card", :width => "435" %>
 				</div>
 
 			</div>
 
 			<!-- Additional Features -->
 			<div class="row padding-top-lg">
-
 				<!-- Onboarding -->
 				<div class="col-lg-4 col-sm-4 center">
 					<%= image_tag "feature-icons/onboarding-icon.png", :class => "featureicon" %>
@@ -253,6 +252,11 @@
 		</div>
 	</div>
 </div>
+
+<%= javascript_include_tag "scrollReveal" %>
+<script>
+  window.scrollReveal = new scrollReveal();
+</script>
 
 
 
