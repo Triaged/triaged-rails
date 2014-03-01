@@ -6,6 +6,10 @@ $ ->
 	#$("#phone_number").phoneNumber
   #	format: "local"
   #	country: "US"
+  parentHeight = $('.hero-border').height()
+	childHeight = $("#hero-feed-image").height()
+	$("#hero-feed-image").css('margin-top', (parentHeight - childHeight) / 2)
+
 	$("#phone_number").focus()
 
 	$(window).scroll ->
@@ -38,8 +42,6 @@ $ ->
 		$("#c#{this.id}").addClass("active-card")
 		parentHeight = $('.service-cards').height()
 		childHeight = $("#c#{this.id}").height()
-		console.log parentHeight
-		console.log childHeight
 		$("#c#{this.id}").css('margin-top', (parentHeight - childHeight) / 2)
 		$("#c#{this.id}").fadeIn()
 		
