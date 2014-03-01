@@ -85,13 +85,11 @@
 	.featureicon {
 		padding-bottom: 10px;
 	}
-	.animated {
-		-webkit-animation-duration: 3s;
-		-webkit-animation-iteration-count: 3;
-		-ms-animation-duration: 3s;
-		-ms-animation-iteration-count: 3;
-		-moz-animation-duration: 3s;
-		-moz-animation-iteration-count: 3;
+
+
+
+	#i1 {
+		visibility: hidden
 	}
 	.grow {
 	  display: inline-block;
