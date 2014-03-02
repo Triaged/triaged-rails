@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.animation
 //= require jquery.tap.min
 //= require twitter/bootstrap
 //= require PhoneFormat
