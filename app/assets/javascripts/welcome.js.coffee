@@ -12,7 +12,8 @@ $ ->
 		if($('#i1').visible())
 			$('#i1').addClass("slideUp")
 
-	$("#download-cta").click ->
+	$(".download-cta").click ->
+		console.log("click")
 		if($("#footer").hasClass("mobile"))
 			 window.location.href = "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8"
 		else
