@@ -2,7 +2,7 @@ class Api::V1::TeamController < API::BaseController
 	before_action :set_user, :except => :index
 
 	def index
-		@team = current_company.teammates_of current_user
+		@team = current_company.users
 		respond_with @team
 	end
 
