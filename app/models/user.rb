@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
 	mount_uploader :avatar, AvatarUploader
 
 	belongs_to :company
-	has_many :feed_items
+	
+	has_many :authored_feed_items, class_name: "FeedItem", inverse_of: :author
 	has_many :push_tokens
 	has_many :notifications
 
