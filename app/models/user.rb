@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
 	belongs_to :company
 	
-	has_many :authored_feed_items, class_name: "FeedItem", inverse_of: :author
+	has_many :authored_feed_items, class_name: "FeedItem", foreign_key: "author_id", inverse_of: :author
 	has_many :push_tokens
 	has_many :notifications
 

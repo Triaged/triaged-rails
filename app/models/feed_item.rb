@@ -1,7 +1,7 @@
 class FeedItem < ActiveRecord::Base
 
   belongs_to :company
-  belongs_to :author, class_name: "User", foreign_key: "author_id", inverse_of: :authored_feed_items
+  belongs_to :author, class_name: "User", inverse_of: :authored_feed_items
   belongs_to :provider
 	belongs_to :provider_account
 	belongs_to :user_feed_item
