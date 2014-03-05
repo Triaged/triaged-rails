@@ -2,7 +2,7 @@ class Api::V1::ProvidersController < API::BaseController
 	before_action :set_provider, :except => [:index, :connected]
 
 	def index
-		@providers = Provider.active.includes(:provider_accounts)
+		@providers = Provider.active.includes(:provider_account)
 		respond_with @providers, each_serializer: ProviderSettingSerializer
 	end
 
