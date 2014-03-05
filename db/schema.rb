@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220194423) do
+ActiveRecord::Schema.define(version: 20140305174751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140220194423) do
   end
 
   create_table "cursors", force: true do |t|
-    t.string  "current"
+    t.text    "current"
     t.integer "company_id"
     t.integer "provider_id"
   end
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20140220194423) do
     t.integer  "as_feed_item_id"
     t.string   "as_feed_item_type"
     t.integer  "company_id"
-    t.integer  "user_id"
+    t.integer  "author_id"
     t.boolean  "push_notify"
     t.datetime "timestamp"
     t.integer  "provider_id"

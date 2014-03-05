@@ -5,6 +5,7 @@ class FeedItemSerializer < ApplicationSerializer
   attributes :id, :timestamp, :updated_at
   has_many :messages
   has_one :provider
+  has_one :author, key: :user
   attributes :event_name
   attributes :type, :external_id, :timestamp, :title, :body, :footer, :url, :property_name, :image_url, :thumbnail_url
 

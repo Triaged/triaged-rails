@@ -58,7 +58,7 @@ module Common::FeedService
 
 	def self.set_author_from_hash event_hash, company
 		author_service = Common::AuthorService.new(event_hash.delete("author"), company)
-		event_hash[:user] = author_service.user if author_service.user?
+		event_hash[:author] = author_service.user if author_service.user?
 		return event_hash
 	end
 

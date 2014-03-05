@@ -1,11 +1,15 @@
 class FeedItem < ActiveRecord::Base
 
   belongs_to :company
-  belongs_to :user
-  has_many :messages, order: "id DESC"
-  has_many :shares
+  belongs_to :author, class_name: "User"
   belongs_to :provider
 	belongs_to :provider_account
+
+	belongs_to :user_feed_item
+	
+
+	has_many :messages, order: "id DESC"
+  has_many :shares
 
 	validates :provider, presence: true
 	validates :title, presence: true
