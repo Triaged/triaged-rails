@@ -206,6 +206,7 @@ blockquote {
 
 .light {
   color: #9B9B9B;
+  padding-top: 10px;
 }
 
 /* Spacing */
@@ -345,7 +346,7 @@ img {
   left: 0;
   width: 100%;
   height: 3px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.05);
   content: '';
   opacity: 0;
   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -374,14 +375,14 @@ img {
 /* Border */
 
 .border {
-  border: 15px solid #E0E5EE;
+  border: 15px solid #DEE3F1;
 }
 
 /* Footer */
 
   /* cta */
   .cta {
-    background-color: #E0E5EE;
+    background-color: #DEE3F1;
     width: 100%;
   }
   #cta-btn {

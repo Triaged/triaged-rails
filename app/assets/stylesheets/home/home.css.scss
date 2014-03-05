@@ -2,7 +2,7 @@
 
 .hero-border {
     top: 0; right: 0; bottom: 0; left: 0;
-    border: 15px solid #E0E5EE;
+    border: 15px solid #DEE3F1;
     min-height: 100%;
 }
 #padding-top-hero {
@@ -65,7 +65,7 @@
 /* Integration Content */
 #integrations-border {
 	top: 0; right: 0; bottom: 0; left: 0;
-    border: 15px solid #F2F2F2;
+    border: 15px solid #f6f6f6;
 }
 	
 	/* Integrations */
@@ -83,8 +83,7 @@
 	.service-card {
 		margin-top: auto;
 		margin-bottom: auto;
-		 
-		vertical-align:middle;
+		vertical-align: middle;	
 	}
 	.service-card-spacer {
     display: inline-block;
@@ -98,7 +97,12 @@
 		display: none;
 	}
 	.featureicon {
-		padding-bottom: 10px;
+		padding: 0 0 20px 5px;
+		border-bottom: 3px solid #F2F2F2;
+		width: 50%;
+	}
+	.featurecopy {
+		padding-top: 20px;
 	}
 	.grow {
 	  display: inline-block;
@@ -117,8 +121,7 @@
 	  transform: scale(1.1);
 	}
 	.padded-p {
-	  padding-left: 10px;
-	  padding-right: 10px;
+		width: 85%;
 	}
 
 /* Day Content */
