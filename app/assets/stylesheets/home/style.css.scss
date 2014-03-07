@@ -1,7 +1,7 @@
 html,
 body {
   height: 100%;
-  font-size: 16px;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -165,6 +165,7 @@ h4 {
 
 @media (min-width: 43.75em) {
   h4 {
+    font-size: 1.25em;
     line-height: 1.22222222;
     /* (22px / 18px */
   }
