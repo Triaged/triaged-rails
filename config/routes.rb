@@ -92,6 +92,7 @@ TriageRails::Application.routes.draw do
 	get '/about' => 'welcome#about', as: 'about'
 	post '/deliver_sms' => 'welcome#deliver_sms', as: 'deliver_sms'
 	post '/capture_email' => 'welcome#capture_email', as: 'capture_email'
+  resource :pilot
 	
 
 	devise_for :admins, :controllers => { :registrations => "admin_registrations" }
