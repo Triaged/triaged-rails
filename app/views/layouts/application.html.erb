@@ -12,17 +12,12 @@
 </head>
 <body>
 
-	 <!-- Wrap all page content here -->
-    <div id="loaded-content">
-			<!-- Begin page content -->
-      <div class="container" id="page">
-      	<%= yield %>
-      </div>
-    </div>
+     <!-- Wrap all page content here -->
+  <div id="loaded-content">
+            <!-- Begin page content -->
+    <%= yield %>
 
-    <%= yield :overlay %>
-
-	<%= render "layouts/footer" unless @skip_footer %>
+  </div>
 </body>
 
 <%= javascript_include_tag "application" %>

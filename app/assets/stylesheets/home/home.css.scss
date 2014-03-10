@@ -1,10 +1,5 @@
 /* Hero */
 
-.hero-border {
-    top: 0; right: 0; bottom: 0; left: 0;
-    border: 15px solid #DEE3F1;
-    min-height: 100%;
-}
 #padding-top-hero {
 	padding-top: 55px;
 }
@@ -120,8 +115,16 @@
 	  -ms-transform: scale(1.1);
 	  transform: scale(1.1);
 	}
-	.padded-p {
-		width: 85%;
+	.col-lg-custom {
+		width: 30%;
+		float: left;
+		position: relative;
+		min-height: 1px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.col-lg-offset-custom {
+		margin-left: 4.333333%;
 	}
 
 /* Day Content */
@@ -134,12 +137,6 @@
 		position: relative;
 		width: 20px;
 		padding-bottom: 8px;
-	}
-	.blue {
-	  color: #90A9EB;
-	  font-size: 1.5em;
-	  display: inline;
-	  padding: 5px 10px;
 	}
 
 /* Old Css */

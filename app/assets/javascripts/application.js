@@ -18,5 +18,7 @@
 //= require jquery.phonenumber
 //= require jquery.visible.min
 //= require_tree .
+//= require jquery.ba-cond.min
+//= require jquery.slitslider
 
 
