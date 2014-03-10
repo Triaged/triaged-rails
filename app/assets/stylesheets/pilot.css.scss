@@ -48,3 +48,42 @@
 	height: 1px;
 	background: #C1CFF3;
 }
+
+.checkbox-container:first-child {
+	margin-left: 0px;
+}
+.checkbox-container {
+	width:145px;
+	margin-left: 20px;
+	float: left;
+}
+
+.checkbox-custom {
+    border-radius: 21px;
+    border: 1px solid #979797;
+    overflow:auto;
+}
+
+.checkbox-custom:hover {
+    background:red;
+}
+
+.checkbox-custom label {
+    width:140px;
+}
+
+.checkbox-custom label span {
+    text-align:center;
+    padding:3px 0px;
+    display:block;
+}
+
+.checkbox-custom label input {
+    position:absolute;
+    display: none;
+}
+
+.checkbox-custom input:checked + span {
+    background-color:#911;
+    color:#fff;
+}
