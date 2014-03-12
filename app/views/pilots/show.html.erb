@@ -1,42 +1,44 @@
-<!-- Hero Border -->
+<!-- First Screen -->
 <div class="hero-border">
 	<div class="container fullheight">
 		<!-- Welcome -->	
-		<div class="col-lg-12 col-sm-12 fullheight">
 
-			<!-- Welcome Content -->
-			<div class="row center">
-				<div class="padding-top">
-					<%= image_tag "triage-logo.png" %>
-				</div>
-				<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
-					<h1>Just A Few Questions</h1>
-					<p class="padding-top-sm light bold">We're trying to find the right people to test out our pilot. We'd appreciate if you would answer some questions so that we can see if you're a good fit to try out Triage.</p>	
-				</div>
+		<!-- Welcome Content -->
+		<div class="row center">
+			<div class="padding-top-sm">
+				<%= image_tag "triage-logo.png" %>
 			</div>
 			<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
+				<h1>Just A Few Questions</h1>
+				<p class="padding-top-sm light bold">We're trying to find the right people to test out our pilot. We'd appreciate if you would answer some questions so that we can see if you're a good fit to try out Triage.</p>	
+			</div>
+		</div>
+		<div class="row padding-top-sm">
+			<div class="col-lg-6 col-lg-offset-3">
 				<form role="form">
 				  <div class="form-group">
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Full Name">
+				    <input type="email" class="form-control-custom" id="exampleInputEmail1" placeholder="Full Name">
 				  </div>
 				  <div class="form-group">
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+				    <input type="email" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
 				  </div>
 				  <div class="form-group">
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Company">
+				    <input type="email" class="form-control-custom" id="exampleInputEmail1" placeholder="Company">
 				  </div>
 				</form>
 			</div>
-			<div class="col-lg-6 col-lg-offset-3 padding-top-sm center">
+		</div>
+	</div>
+
+	<div class="center navbar-fixed-bottom">
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4 center">
 				<button class="btn btn-custom-2 btn-lg" type="button">
 					NEXT
 				</button>
 			</div>
-
-			</div>
 		</div>
-
-		<div class="center navbar-fixed-bottom">
+		<div class="row padding-top-sm">
 			<ul class="pagination-custom">
 			  <li class="active"><a href="#">1</a></li>
 			  <hr class="pagination-line">
@@ -49,100 +51,348 @@
 			  <li><a href="#">5</a></li>
 			</ul>
 		</div>
+	</div>
+</div>
+
+<!-- Second Screen -->
+<div class="hero-border">
+	<div class="container fullheight">
+		<!-- Welcome -->	
+
+		<div class="row center">
+			<div class="padding-top-sm">
+				<%= image_tag "triage-logo.png" %>
+			</div>
+			<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
+				<h3>What team do you work on?</h3>
+			</div>
+		</div>
+		
+		<div class="row padding-top-sm center">
+			<div class="col-lg-12">	
+				<div class="checkbox-fixed">
+					<label>
+						<%= render "pilots/svg/design" %>
+						<input type="radio" name="team" value="">
+						<span>Design</span>
+					</label>
+
+					<label>
+						<%= render "pilots/svg/engineering" %>
+						<input type="radio" name="team" value="">
+						<span>Engineering</span>
+					</label>
+
+					<label>
+						<%= render "pilots/svg/operations" %>
+						<input type="radio" name="team" value="">
+						<span>Operations</span>
+					</label>
+
+					<label>
+						<%= render "pilots/svg/sales" %>
+						<input type="radio" name="team" value="">
+						<span>Sales</span>
+					</label>
+
+					<label>
+						<%= render "pilots/svg/support" %>
+						<input type="radio" name="team" value="">
+						<span>Support</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row padding-top-xsm center">
+			<div class="col-lg-12">	
+				<div class="checkbox-fixed">
+					<label>
+						<input type="radio" name="team" value="">
+						<span>Other</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row padding-top-sm center">
+			<div class="col-lg-4 col-lg-offset-4">
+				<form role="form">
+				  <div class="form-group">
+				    <input type="email" class="form-control-custom" id="exampleInputEmail1" placeholder="Team">
+				  </div>
+				</form>
+			</div>
+		</div>
 
 	</div>
 </div>
 
-<!-- Hero Border -->
+<!-- Third Screen -->
 <div class="hero-border">
 	<div class="container fullheight">
-		<!-- Welcome -->	
-		<div class="col-lg-12 col-sm-12 fullheight">
 
-			<!-- Welcome Content -->
-			<div class="row center">
-				<div class="padding-top">
-					<%= image_tag "triage-logo.png" %>
-				</div>
-				<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
-					<h2>What team do you work on?</h2>
+		<div class="row center">
+			<div class="padding-top-sm">
+				<%= image_tag "triage-logo.png" %>
+			</div>
+			<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
+				<h3>How many people are on your team?</h3>
+			</div>
+		</div>
+		
+		<div class="row padding-top-sm center">	
+			<div class="checkbox-fixed">
+				<label>
+					<%= render "pilots/svg/teamsm" %>
+					<input type="radio" name="teamsize" value="">
+					<span>1-10</span>
+				</label>
+
+				<label>
+					<%= render "pilots/svg/teamm" %>
+					<input type="radio" name="teamsize" value="">
+					<span>11-50</span>
+				</label>
+
+				<label>
+					<%= render "pilots/svg/teamlg" %>
+					<input type="radio" name="teamsize" value="">
+					<span>51+</span>
+				</label>
+			</div>
+		</div>
+
+		<div class="row padding-top-xsm center">	
+			<div class="checkbox-fixed">
+				<label>
+					<input type="radio" name="teamsize" value="">
+					<span>Other</span>
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 padding-top-sm center">
+				<h4>Do you want to invite your teammates?</h4>
+				<p class="light bold">Companies with multiple teammates participating will get first access to the pilot. We will never spam these emails, and will only contact them if you’re accepted. </p>
+			</div>
+		</div>
+		<div class="row padding-top-xsm">
+			<div class="col-lg-2 col-lg-offset-2">
+				<form role="form">
+				  <div class="form-group">
+				    <input type="email" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+				  </div>
+				</form>
+			</div>
+			<div class="col-lg-2">
+				<form role="form">
+				  <div class="form-group">
+				    <input type="email" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+				  </div>
+				</form>
+			</div>
+			<div class="col-lg-2">
+				<form role="form">
+				  <div class="form-group">
+				    <input type="email" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+				  </div>
+				</form>
+			</div>
+			<div class="col-lg-2">
+				<form role="form">
+				  <div class="form-group">
+				    <input type="email" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+				  </div>
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+<!-- Fourth Screen -->
+<div class="hero-border">
+	<div class="container fullheight">	
+
+	<!-- Welcome Content -->
+		<div class="row center">
+			<div class="padding-top-sm">
+				<%= image_tag "triage-logo.png" %>
+			</div>
+			<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
+				<h3>What SaaS services do you use at work?</h3>
+			</div>
+		</div>
+
+		<div class="row padding-top-sm center">
+			<div class="col-lg-12">	
+				<div class="checkbox-fitted">
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/airbrake-icon.png", :width => "23" %>Airbrake</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/appfigures-icon.png", :width => "23" %>Appfigures</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/beanstalk-icon.png", :width => "23" %>Beanstalk</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/bitbucket-icon.png", :width => "23" %>Bitbucket</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/crashlytics-icon.png", :width => "23" %>Crashlytics</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/dropbox-icon.png", :width => "23" %>Dropbox</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/ga-icon.png", :width => "23" %>Google Analytics</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/github-icon.png", :width => "23" %>Github</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/heroku-icon.png", :width => "23" %>Heroku</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/hockeyapp-icon.png", :width => "23" %>HockeyApp</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/kiln-icon.png", :width => "23" %>Kiln</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/newrelic-icon.png", :width => "23" %>New Relic</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/sentry-icon.png", :width => "23" %>Sentry</span>
+					</label>
+					<label>
+						<input type="checkbox" name="saas" value="">
+						<span><%= image_tag "icons/stripe-icon.png", :width => "23" %>Stripe</span>
+					</label>
 				</div>
 			</div>
-			
-			<div class="row padding-top center">
-				<div class="checkbox-container">	
-					<%= render "pilots/svg/engineering" %>
-					<div class="checkbox-custom">
-						<label>
-							<input type="checkbox" value="">
-							<span>Design</span>
-						</label>
-					</div>
-				</div>
-				<div class="checkbox-container">
-					<%= image_tag "icons/github-icon.png" %>
-					<div class="checkbox-custom">
-						<label>
-							<input type="checkbox" value="">
-							<span>Engineering</span>
-						</label>
-					</div>
-				</div>
-				<div class="checkbox-container">
-					<%= image_tag "icons/github-icon.png" %>
-					<div class="checkbox-custom">
-						<label>
-							<input type="checkbox" value="">
-							<span>Finance</span>
-						</label>
-					</div>
-				</div>
-				<div class="checkbox-container">
-					<%= image_tag "icons/github-icon.png" %>
-					<div class="checkbox-custom">
-						<label>
-							<input type="checkbox" value="">
-							<span>Legal</span>
-						</label>
-					</div>
-				</div>
-				<div class="checkbox-container">
-					<%= image_tag "icons/github-icon.png" %>
-					<div class="checkbox-custom">
-						<label>
-							<input type="checkbox" value="">
-							<span>Operations</span>
-						</label>
-					</div>
-				</div>
-				<div class="checkbox-container">
-					<%= image_tag "icons/github-icon.png" %>
-					<div class="checkbox-custom">
-						<label>
-							<input type="checkbox" value="">
-							<span>Sales</span>
-						</label>
-					</div>
-				</div>
-				<div class="checkbox-container">
-					<%= image_tag "icons/github-icon.png" %>
-					<div class="checkbox-custom">
-						<label>
-							<input type="checkbox" value="">
-							<span>Support</span>
-						</label>
-					</div>
-				</div>
+		</div>
+
+		<div class="col-lg-12 padding-top-sm center">	
+			<div class="checkbox-fixed">
+				<label>
+					<input type="checkbox" name="saas" value="">
+					<span>Other</span>
+				</label>
 			</div>
-				
+		</div>
+		<div class="col-lg-4 col-lg-offset-4 padding-top-sm center">
+			<form role="form">
+			  <div class="form-group">
+			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="SaaS Service(s)">
+			  </div>
+			</form>
+			<p>List additional services separated by comma's</p>
+		</div>
+
+	</div>
+</div>
+
+<!-- Fifth Screen -->
+<div class="hero-border">
+	<div class="container fullheight">	
+
+		<!-- Welcome Content -->
+		<div class="row center">
+			<div class="padding-top-sm">
+				<%= image_tag "triage-logo.png" %>
 			</div>
-			<div class="col-lg-6 col-lg-offset-3 padding-top-sm center">
-				<button class="btn btn-custom-2 btn-lg" type="button">
-					NEXT
+			<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
+				<h3>Last question. What phone OS do you use?</h3>
+			</div>
+		</div>
+		
+		<div class="row padding-top center">	
+			<div class="checkbox-fixed">
+				<label>
+					<%= render "pilots/svg/apple" %>
+					<input type="radio" name="os" value="">
+					<span>iOS</span>
+				</label>
+
+				<label>
+					<%= render "pilots/svg/android" %>
+					<input type="radio" name="os" value="">
+					<span>Android</span>
+				</label>
+
+				<label>
+					<%= render "pilots/svg/windows" %>
+					<input type="radio" name="os" value="">
+					<span>Windows</span>
+				</label>
+
+				<label>
+					<%= render "pilots/svg/blackberry" %>
+					<input type="radio" name="os" value="">
+					<span>Blackberry</span>
+				</label>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- Sixth Screen -->
+<div class="hero-border">
+	<div class="container fullheight">
+
+		<!-- Welcome Content -->
+		<div class="row center">
+			<div class="padding-top-sm">
+				<%= image_tag "triage-logo.png" %>
+			</div>
+			<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
+				<h2>Thanks so much!</h2>
+				<h4>We'll email you if you are chosen for the pilot program.</h4>
+				<br>
+				<h4 class="padding-top-sm light">Having your teammates fill out our questionnaire increases your chances to be chosen to pilot Triage.<br> Try sharing our pilot questionnaire.</h4>
+			</div>
+		</div>
+		
+		<div class="row padding-top-sm center">	
+			<div class="col-lg-3 col-lg-offset-3">
+				<div class="row">
+					<%= render "pilots/svg/twitter" %>
+				</div>
+				<button class="btn btn-custom-small btn-lg" type="button">
+					TWITTER
 				</button>
 			</div>
-
+			<div class="col-lg-3">
+				<div class="row">
+					<%= render "pilots/svg/twitter" %>
+				</div>
+				<button class="btn btn-custom-small btn-lg" type="button">
+					LINKEDIN
+				</button>
 			</div>
+		</div>
+
+		<div class="col-lg-6 col-lg-offset-3 padding-top center">
+			<p class="light">If you're not chosen for the pilot, don't worry, Triage will be availible for everyone soon.</p>
 		</div>
 
 	</div>
