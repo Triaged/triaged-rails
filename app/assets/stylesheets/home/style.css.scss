@@ -268,17 +268,6 @@ blockquote {
   letter-spacing: 1px;
   font-weight: 500;
 }
-.btn-custom-2 {
-  background-color: #fff;
-  border: 1px solid #979797;
-  border-radius: 4px;
-  color: #222;
-  width: 40%;
-  padding: 15px 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 500;
-}
 .btn-footer {
   background-color: #7691CD;
   color: #ffffff;
@@ -294,19 +283,6 @@ blockquote {
   height: 60px;
 }
 
-.btn-custom-small {
-  background-color: #fff;
-  text-align:center;
-  padding:10px 0px;
-  border-radius: 21px;
-  border: 1px solid #979797;
-  font-weight: 500;
-  margin-top: 10px;
-  width: 150px;
-  text-transform: uppercase;
-  font-size: 14px;
- }
-
 .btn-custom:hover,
 .btn-custom:focus,
 .btn-custom:active,
@@ -315,16 +291,6 @@ blockquote {
  text-decoration: underline;
 }
 
-.btn-custom-2:hover,
-.btn-custom-2:focus,
-.btn-custom-2:active,
-.btn-custom-2.active,
-.btn-custom-small:hover,
-.btn-custom-small:focus,
-.btn-custom-small:active,
-.btn-custom-small.active {
- text-decoration: underline;
-}
 
 .btn-custom.disabled:hover,
 .btn-custom.disabled:focus,
