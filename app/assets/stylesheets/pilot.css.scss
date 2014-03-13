@@ -1,5 +1,37 @@
 /* General */
 
+/* Carosel */
+
+
+.carousel,.item,.active {
+	height:100%;
+}
+.carousel-inner {
+	height:100%;
+}
+.fill {
+	width:100%;
+	height:100%;
+	background-position:center;
+	background-size:cover;
+}
+
+/* faster sliding speed */
+.carousel-inner > .item {
+    -webkit-transition: 0.3s ease-in-out left;
+    -moz-transition: 0.3s ease-in-out left;
+    -o-transition: 0.3s ease-in-out left;
+    transition: 0.3s ease-in-out left;
+}
+
+/* keep full widget on smaller screens */
+@media (max-width: 767px) { 
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 /* Checkbox & Radio */
 
 .checkbox-fitted,
@@ -185,16 +217,27 @@ text-align: center;
  }
 
 .btn-custom-2:hover,
-.btn-custom-2:focus,
-.btn-custom-2:active,
-.btn-custom-2.active,
-.btn-custom-small:hover,
-.btn-custom-small:focus,
-.btn-custom-small:active,
-.btn-custom-small.active {
- text-decoration: underline;
+.btn-custom-small:hover {
+	text-decoration: underline;
 }
 
+.btn-custom-2:active,
+.btn-custom-2.active,
+.btn-custom-small:active,
+.btn-custom-small.active {
+ 	text-decoration: underline;
+ 	outline: 0;
+ 	background-image: none;
+ 	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+ 	box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+}
+
+.btn-custom-2:focus,
+.btn-custom-small:focus {
+	outline: none;
+	outline: none;
+	outline-offset: none;
+}
 /* iPad */
 @media (min-width: 768px) and (max-device-width : 1024px) {
 
