@@ -1,5 +1,28 @@
 /* General */
 
+/* Background */
+
+#background {
+	background: url('background/fore.png') 5% 5%,
+                url('background/mids.png') 20% 20%,
+                url('background/smalls.png') 90% 110%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+        -webkit-transition: left 1000s linear;
+        -moz-transition: left 1000s linear;
+}
+
+#experiment:target #background {
+        left: -5000px;
+}
+
+#experiment:hover #background {
+        left: -9999px;
+}
+
 /* Carosel */
 
 
@@ -22,6 +45,10 @@
     -moz-transition: 0.3s ease-in-out left;
     -o-transition: 0.3s ease-in-out left;
     transition: 0.3s ease-in-out left;
+}
+
+.item {
+	background-color: #fff;
 }
 
 /* keep full widget on smaller screens */
@@ -59,7 +86,7 @@
 
 .checkbox-fitted label span {
     text-align:center;
-    padding:8px 20px 6px;
+    padding:8px 18px 6px;
     display:block;
     border-radius: 21px;
     border: 1px solid #979797;
@@ -110,7 +137,7 @@ font-size: 14px;
 line-height: 1.428571429;
 color: #666;
 vertical-align: middle;
-background-color: #F6F6F6;
+background-color: #EFEFEF;
 background-image: none;
 border: 0px solid #cccccc;
 border-radius: 4px;
