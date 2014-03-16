@@ -1,28 +1,5 @@
 /* General */
 
-/* Background */
-
-#background {
-	background: url('background/fore.png') 5% 5%,
-                url('background/mids.png') 20% 20%,
-                url('background/smalls.png') 90% 110%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        position: fixed;
-        -webkit-transition: left 1000s linear;
-        -moz-transition: left 1000s linear;
-}
-
-#experiment:target #background {
-        left: -5000px;
-}
-
-#experiment:hover #background {
-        left: -9999px;
-}
-
 /* Carosel */
 
 

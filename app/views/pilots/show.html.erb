@@ -1,365 +1,363 @@
 <!-- First Screen -->
-<div id="experiment">
-	<div id="background">
+
+<div class="container fullheight">
+	<div class="row center padding-top-sm">
+		<%= image_tag "triage-logo.png" %>
 	</div>
-	<div class="container fullheight">
-		<div class="row center padding-top-sm">
-			<%= image_tag "triage-logo.png" %>
-		</div>
-		
-		<!-- Carousel -->	
-		<div class="container fill">
-			<div id="myCarousel" class="carousel slide">
-        		<div class="carousel-inner">
+	
+	<!-- Carousel -->	
+	<div class="container fill">
+		<div id="myCarousel" class="carousel slide">
+    		<div class="carousel-inner">
 
-					<!-- First Slide -->
-					<div class="active item">
-						<div class="row center">
-							<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
-								<h2>Just A Few Questions</h2>
-								<p class="padding-top-sm bold">We're working really hard on v.1 of Triage, trying to make it as useful and enjoyable as possible. Currently we are looking for some awesome people to test it out, but want to make sure that we find the right people. We'd really appreciate if you would answer some questions so that we can see if you're a good fit to try out Triage. If you are the right fit, we'll send you an awesome Triage goodie pack.</p>	
-							</div>
-						</div>
-						<div class="row padding-top-sm">
-							<div class="col-lg-6 col-lg-offset-3 col-sm-4 col-sm-offset-4">
-								<form role="form">
-								  <div class="form-group">
-								    <input type="text" name="name" class="form-control-custom" id="exampleInputEmail1" placeholder="Full Name">
-								  </div>
-								  <div class="form-group">
-								    <input type="email" name="email" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
-								  </div>
-								  <div class="form-group">
-								    <input type="text" name="company" class="form-control-custom" id="exampleInputEmail1" placeholder="Company">
-								  </div>
-								</form>
-							</div>
+				<!-- First Slide -->
+				<div class="active item">
+					<div class="row center">
+						<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
+							<h2>Just A Few Questions</h2>
+							<p class="padding-top-sm bold">We're working really hard on V.1 of Triage, trying to make it as useful and enjoyable as possible. Currently we are looking for some awesome people to test it out, but want to make sure that we find the right people. We'd really appreciate if you would answer some questions so that we can see if you're a good fit to try out Triage. If you are the right fit, we'll send you an awesome Triage goodie pack.</p>	
 						</div>
 					</div>
-					<!-- End First Slide -->
-
-					<!-- Second Slide -->
-					<div class="item">
-						<div class="row center">
-							<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
-								<h3>What team do you work on?</h3>
-							</div>
-						</div>
-						
-						<div class="row padding-top-sm center">
-							<div class="col-lg-12 col-lg-offset-0 col-sm-10 col-sm-offset-1">	
-								<div class="checkbox-fixed">
-									<label>
-										<%= render "pilots/svg/design" %>
-										<input type="radio" name="team" value="">
-										<span>Design</span>
-									</label>
-
-									<label>
-										<%= render "pilots/svg/engineering" %>
-										<input type="radio" name="team" value="">
-										<span>Engineering</span>
-									</label>
-
-									<label>
-										<%= render "pilots/svg/operations" %>
-										<input type="radio" name="team" value="">
-										<span>Operations</span>
-									</label>
-
-									<label>
-										<%= render "pilots/svg/sales" %>
-										<input type="radio" name="team" value="">
-										<span>Sales</span>
-									</label>
-
-									<label>
-										<%= render "pilots/svg/support" %>
-										<input type="radio" name="team" value="">
-										<span>Support</span>
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="row padding-top-xsm center">
-							<div class="col-lg-12">	
-								<div class="checkbox-fixed">
-									<label>
-										<input type="radio" name="team" value="">
-										<span>Other</span>
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="row padding-top-sm center">
-							<div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
-								<form role="form">
-								  <div class="form-group">
-								    <input type="text" name="team-other" class="form-control-custom" id="exampleInputEmail1" placeholder="Team">
-								  </div>
-								</form>
-							</div>
+					<div class="row padding-top-sm">
+						<div class="col-lg-6 col-lg-offset-3 col-sm-4 col-sm-offset-4">
+							<form role="form">
+							  <div class="form-group">
+							    <input type="text" name="name" class="form-control-custom" id="exampleInputEmail1" placeholder="Full Name">
+							  </div>
+							  <div class="form-group">
+							    <input type="email" name="email" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+							  </div>
+							  <div class="form-group">
+							    <input type="text" name="company" class="form-control-custom" id="exampleInputEmail1" placeholder="Company">
+							  </div>
+							</form>
 						</div>
 					</div>
-					<!-- End Second Slide -->
+				</div>
+				<!-- End First Slide -->
 
-					<!-- Third Slide -->
-					<div class="item">
-						<div class="row center">
-							<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
-								<h3>How many people are on your team?</h3>
-							</div>
+				<!-- Second Slide -->
+				<div class="item">
+					<div class="row center">
+						<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
+							<h3>What team do you work on?</h3>
 						</div>
-						
-						<div class="row padding-top-sm center">	
+					</div>
+					
+					<div class="row padding-top-sm center">
+						<div class="col-lg-12 col-lg-offset-0 col-sm-10 col-sm-offset-1">	
 							<div class="checkbox-fixed">
 								<label>
-									<%= render "pilots/svg/teamsm" %>
-									<input type="radio" name="teamsize" value="">
-									<span>1-10</span>
+									<%= render "pilots/svg/design" %>
+									<input type="radio" name="team" value="">
+									<span>Design</span>
 								</label>
 
 								<label>
-									<%= render "pilots/svg/teamm" %>
-									<input type="radio" name="teamsize" value="">
-									<span>11-50</span>
+									<%= render "pilots/svg/engineering" %>
+									<input type="radio" name="team" value="">
+									<span>Engineering</span>
 								</label>
 
 								<label>
-									<%= render "pilots/svg/teamlg" %>
-									<input type="radio" name="teamsize" value="">
-									<span>51+</span>
+									<%= render "pilots/svg/operations" %>
+									<input type="radio" name="team" value="">
+									<span>Operations</span>
 								</label>
-							</div>
-						</div>
 
-						<div class="row">
-							<div class="col-lg-8 col-lg-offset-2 padding-top-sm center">
-								<h4>Do you want to invite your teammates?</h4>
-								<p class="light bold">Companies with multiple teammates participating will get first access to the pilot. We will never spam these emails, and will only contact them if you’re accepted.</p>
-							</div>
-						</div>
-						<div class="row padding-top-xsm">
-							<div class="col-lg-8 col-lg-offset-2 col-sm-6 col-sm-offset-3">		
-								<div class="row">
-									<div class="col-lg-3">
-										<form role="form">
-										  <div class="form-group">
-										    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
-										  </div>
-										</form>
-									</div>
-									<div class="col-lg-3">
-										<form role="form">
-										  <div class="form-group">
-										    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
-										  </div>
-										</form>
-									</div>
-									<div class="col-lg-3">
-										<form role="form">
-										  <div class="form-group">
-										    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
-										  </div>
-										</form>
-									</div>
-									<div class="col-lg-3">
-										<form role="form">
-										  <div class="form-group">
-										    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
-										  </div>
-										</form>
-									</div>
-								</div>
+								<label>
+									<%= render "pilots/svg/sales" %>
+									<input type="radio" name="team" value="">
+									<span>Sales</span>
+								</label>
+
+								<label>
+									<%= render "pilots/svg/support" %>
+									<input type="radio" name="team" value="">
+									<span>Support</span>
+								</label>
 							</div>
 						</div>
 					</div>
-					<!-- End Third Slide -->
 
-					<!-- Fourth Slide -->
-					<div class="item">
-						<div class="row center">
-							<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
-								<h3>What SaaS services do you use at work?</h3>
-							</div>
-						</div>
-
-						<div class="row padding-top-sm center">
-							<div class="col-lg-12 col-sm-12">	
-								<div class="checkbox-fitted">
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/airbrake-icon.png", :width => "23" %>Airbrake</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/appfigures-icon.png", :width => "23" %>Appfigures</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/beanstalk-icon.png", :width => "23" %>Beanstalk</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/bitbucket-icon.png", :width => "23" %>Bitbucket</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/crashlytics-icon.png", :width => "23" %>Crashlytics</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/dropbox-icon.png", :width => "23" %>Dropbox</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/ga-icon.png", :width => "23" %>Google Analytics</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/github-icon.png", :width => "23" %>Github</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/heroku-icon.png", :width => "23" %>Heroku</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/hockeyapp-icon.png", :width => "23" %>HockeyApp</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/kiln-icon.png", :width => "23" %>Kiln</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/newrelic-icon.png", :width => "23" %>New Relic</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/sentry-icon.png", :width => "23" %>Sentry</span>
-									</label>
-									<label>
-										<input type="checkbox" name="saas" value="">
-										<span><%= image_tag "icons/stripe-icon.png", :width => "23" %>Stripe</span>
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-12 padding-top-sm center">	
+					<div class="row padding-top-xsm center">
+						<div class="col-lg-12">	
 							<div class="checkbox-fixed">
 								<label>
-									<input type="checkbox" name="saas" value="">
+									<input type="radio" name="team" value="">
 									<span>Other</span>
 								</label>
 							</div>
 						</div>
-						<div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 padding-top-sm center">
+					</div>
+
+					<div class="row padding-top-sm center">
+						<div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
 							<form role="form">
 							  <div class="form-group">
-							    <input type="text" name="saas-other" class="form-control-custom" id="exampleInputEmail1" placeholder="SaaS Service(s)">
+							    <input type="text" name="team-other" class="form-control-custom" id="exampleInputEmail1" placeholder="Team">
 							  </div>
 							</form>
-							<p class="light">List additional services separated by comma's</p>
-						</div>
-
-					</div>
-					<!-- End Fourth Slide -->
-
-					<!-- Fifth Slide -->
-					<div class="item">
-						<div class="row center">
-							<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
-								<h3>Last question. What phone OS do you use?</h3>
-							</div>
-						</div>
-						
-						<div class="row padding-top center">	
-							<div class="checkbox-fixed">
-								<label>
-									<%= render "pilots/svg/apple" %>
-									<input type="radio" name="os" value="">
-									<span>iOS</span>
-								</label>
-
-								<label>
-									<%= render "pilots/svg/android" %>
-									<input type="radio" name="os" value="">
-									<span>Android</span>
-								</label>
-
-								<label>
-									<%= render "pilots/svg/windows" %>
-									<input type="radio" name="os" value="">
-									<span>Windows</span>
-								</label>
-
-								<label>
-									<%= render "pilots/svg/blackberry" %>
-									<input type="radio" name="os" value="">
-									<span>Blackberry</span>
-								</label>
-							</div>
 						</div>
 					</div>
-					<!-- End Fifth Slide -->
+				</div>
+				<!-- End Second Slide -->
 
-					<!-- Sixth Slide -->
-					<div class="item">
-						<div class="row center">
-							<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
-								<h2>Thanks so much!</h2>
-								<h4>We'll email you if you are chosen for the pilot program.</h4>
-								<br>
-								<h4 class="padding-top-sm light">Having your teammates fill out our questionnaire increases your chances to be chosen to pilot Triage. Share our pilot questionnaire, we'll keep track of companies that fill it out.</h4>
-							</div>
+				<!-- Third Slide -->
+				<div class="item">
+					<div class="row center">
+						<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
+							<h3>How many people are on your team?</h3>
 						</div>
-						
-						<div class="row padding-top-sm center">	
-								<div class="row">
-									<%= render "pilots/svg/twitter" %>
+					</div>
+					
+					<div class="row padding-top-sm center">	
+						<div class="checkbox-fixed">
+							<label>
+								<%= render "pilots/svg/teamsm" %>
+								<input type="radio" name="teamsize" value="">
+								<span>1-10</span>
+							</label>
+
+							<label>
+								<%= render "pilots/svg/teamm" %>
+								<input type="radio" name="teamsize" value="">
+								<span>11-50</span>
+							</label>
+
+							<label>
+								<%= render "pilots/svg/teamlg" %>
+								<input type="radio" name="teamsize" value="">
+								<span>51+</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 padding-top-sm center">
+							<h4>Do you want to invite your teammates?</h4>
+							<p class="light bold">Companies with multiple teammates participating will get first access to the pilot. We will never spam these emails, and will only contact them if you’re accepted.</p>
+						</div>
+					</div>
+					<div class="row padding-top-xsm">
+						<div class="col-lg-8 col-lg-offset-2 col-sm-6 col-sm-offset-3">		
+							<div class="row">
+								<div class="col-lg-3">
+									<form role="form">
+									  <div class="form-group">
+									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+									  </div>
+									</form>
 								</div>
-								<button class="btn btn-custom-small" type="button">
-									TWITTER
-								</button>
-						</div>
-
-						<div class="col-lg-6 col-lg-offset-3 padding-top center">
-							<p class="light">If you're not chosen for the pilot, don't worry, Triage will be availible for everyone soon.</p>
+								<div class="col-lg-3">
+									<form role="form">
+									  <div class="form-group">
+									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+									  </div>
+									</form>
+								</div>
+								<div class="col-lg-3">
+									<form role="form">
+									  <div class="form-group">
+									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+									  </div>
+									</form>
+								</div>
+								<div class="col-lg-3">
+									<form role="form">
+									  <div class="form-group">
+									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+									  </div>
+									</form>
+								</div>
+							</div>
 						</div>
 					</div>
-					<!-- End Sixth Slide -->
+				</div>
+				<!-- End Third Slide -->
+
+				<!-- Fourth Slide -->
+				<div class="item">
+					<div class="row center">
+						<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
+							<h3>What SaaS services do you use at work?</h3>
+						</div>
+					</div>
+
+					<div class="row padding-top-sm center">
+						<div class="col-lg-12 col-sm-12">	
+							<div class="checkbox-fitted">
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/airbrake-icon.png", :width => "23" %>Airbrake</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/appfigures-icon.png", :width => "23" %>Appfigures</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/beanstalk-icon.png", :width => "23" %>Beanstalk</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/bitbucket-icon.png", :width => "23" %>Bitbucket</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/crashlytics-icon.png", :width => "23" %>Crashlytics</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/dropbox-icon.png", :width => "23" %>Dropbox</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/ga-icon.png", :width => "23" %>Google Analytics</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/github-icon.png", :width => "23" %>Github</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/heroku-icon.png", :width => "23" %>Heroku</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/hockeyapp-icon.png", :width => "23" %>HockeyApp</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/kiln-icon.png", :width => "23" %>Kiln</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/newrelic-icon.png", :width => "23" %>New Relic</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/sentry-icon.png", :width => "23" %>Sentry</span>
+								</label>
+								<label>
+									<input type="checkbox" name="saas" value="">
+									<span><%= image_tag "icons/stripe-icon.png", :width => "23" %>Stripe</span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-12 padding-top-sm center">	
+						<div class="checkbox-fixed">
+							<label>
+								<input type="checkbox" name="saas" value="">
+								<span>Other</span>
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 padding-top-sm center">
+						<form role="form">
+						  <div class="form-group">
+						    <input type="text" name="saas-other" class="form-control-custom" id="exampleInputEmail1" placeholder="SaaS Service(s)">
+						  </div>
+						</form>
+						<p class="light">List additional services separated by comma's</p>
+					</div>
 
 				</div>
-			</div>
-		</div>
+				<!-- End Fourth Slide -->
 
-		<!-- Pagination -->
-		<div class="center navbar-fixed-bottom">
-			<div class="row">
-				<div class="col-lg-4 col-lg-offset-4 center">
-					<button class="btn-custom-2" type="button" href="#myCarousel" data-slide="next">
-						NEXT
-					</button>
+				<!-- Fifth Slide -->
+				<div class="item">
+					<div class="row center">
+						<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
+							<h3>Last question. What phone OS do you use?</h3>
+						</div>
+					</div>
+					
+					<div class="row padding-top center">	
+						<div class="checkbox-fixed">
+							<label>
+								<%= render "pilots/svg/apple" %>
+								<input type="radio" name="os" value="">
+								<span>iOS</span>
+							</label>
+
+							<label>
+								<%= render "pilots/svg/android" %>
+								<input type="radio" name="os" value="">
+								<span>Android</span>
+							</label>
+
+							<label>
+								<%= render "pilots/svg/windows" %>
+								<input type="radio" name="os" value="">
+								<span>Windows</span>
+							</label>
+
+							<label>
+								<%= render "pilots/svg/blackberry" %>
+								<input type="radio" name="os" value="">
+								<span>Blackberry</span>
+							</label>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="row padding-top-sm">
-				<ul class="pagination-custom">
-				  <li class="active"><a href="#1">1</a></li>
-				  <hr class="pagination-line">
-				  <li><a href="#2">2</a></li>
-				  <hr class="pagination-line">
-				  <li><a href="#3">3</a></li>
-				  <hr class="pagination-line">
-				  <li><a href="#4">4</a></li>
-				  <hr class="pagination-line">
-				  <li><a href="#5">5</a></li>
-				</ul>
+				<!-- End Fifth Slide -->
+
+				<!-- Sixth Slide -->
+				<div class="item">
+					<div class="row center">
+						<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
+							<h2>Thanks so much!</h2>
+							<h4>We'll email you if you are chosen for the pilot program.</h4>
+							<br>
+							<h4 class="padding-top-sm light">Having your teammates fill out our questionnaire increases your chances to be chosen to pilot Triage. Share our pilot questionnaire, we'll keep track of companies that fill it out.</h4>
+						</div>
+					</div>
+					
+					<div class="row padding-top-sm center">	
+							<div class="row">
+								<%= render "pilots/svg/twitter" %>
+							</div>
+							<button class="btn btn-custom-small" type="button">
+								TWITTER
+							</button>
+					</div>
+
+					<div class="col-lg-6 col-lg-offset-3 padding-top center">
+						<p class="light">If you're not chosen for the pilot, don't worry, Triage will be availible for everyone soon.</p>
+					</div>
+				</div>
+				<!-- End Sixth Slide -->
+
 			</div>
 		</div>
-
 	</div>
+
+	<!-- Pagination -->
+	<div class="center navbar-fixed-bottom">
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4 center">
+				<button class="btn-custom-2" type="button" href="#myCarousel" data-slide="next">
+					NEXT
+				</button>
+			</div>
+		</div>
+		<div class="row padding-top-sm">
+			<ul class="pagination-custom">
+			  <li class="active"><a href="#1">1</a></li>
+			  <hr class="pagination-line">
+			  <li><a href="#2">2</a></li>
+			  <hr class="pagination-line">
+			  <li><a href="#3">3</a></li>
+			  <hr class="pagination-line">
+			  <li><a href="#4">4</a></li>
+			  <hr class="pagination-line">
+			  <li><a href="#5">5</a></li>
+			</ul>
+		</div>
+	</div>
+
 </div>
+
