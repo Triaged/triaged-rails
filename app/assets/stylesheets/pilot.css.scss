@@ -103,7 +103,14 @@
     background-color:#7691CD;
     border: 1px solid #7691CD;
     fill: #7691CD;
+    color: white;
 }
+
+.checkbox-fitted label span:hover,
+.checkbox-fixed label span:hover {
+	cursor: pointer; cursor: hand;
+}
+
 
 /* Forms */
 
@@ -182,6 +189,7 @@ text-align: center;
 	z-index: 2;
 	background: #7691CD;
 	border: 2px solid #7691CD;
+	color: white;
 	cursor: default;
 }
 .pagination-line {
