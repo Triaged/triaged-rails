@@ -159,8 +159,6 @@ text-align: center;
 }
 .pagination-custom > li:first-child > a, .pagination-custom > li:first-child > span {
 	margin-left: 0;
-	background: #7691CD;
-	border: 2px solid #7691CD;
 }
 .pagination-custom > li > a, .pagination-custom > li > span {
 	position: relative;
@@ -180,9 +178,8 @@ text-align: center;
 }
 .pagination-custom > .active > a, .pagination-custom > .active > a:hover, .pagination-custom > .active > a:focus, .pagination-custom > .active > span, .pagination-custom > .active > span:hover, .pagination-custom > .active > span:focus {
 	z-index: 2;
-	color: white;
-	color: #ffffff;
-	border-color: #428bca;
+	background: #7691CD;
+	border: 2px solid #7691CD;
 	cursor: default;
 }
 .pagination-line {
