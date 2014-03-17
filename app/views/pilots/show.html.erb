@@ -41,6 +41,85 @@
 				<!-- Second Slide -->
 				<div class="item">
 					<div class="row center">
+						<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
+							<h3>How large is your company?</h3>
+						</div>
+					</div>
+					
+					<div class="row padding-top-sm center">	
+						<div class="checkbox-fixed">
+							<label>
+								<%= render "pilots/svg/teamsm" %>
+								<input type="radio" name="teamsize" value="">
+								<span>1-20</span>
+							</label>
+
+							<label>
+								<%= render "pilots/svg/teamm" %>
+								<input type="radio" name="teamsize" value="">
+								<span>21-50</span>
+							</label>
+
+							<label>
+								<%= render "pilots/svg/teamlg" %>
+								<input type="radio" name="teamsize" value="">
+								<span>51-100</span>
+							</label>
+
+							<label>
+								<%= render "pilots/svg/teamlg" %>
+								<input type="radio" name="teamsize" value="">
+								<span>100+</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 padding-top-sm center">
+							<h4>Do you want to invite your teammates?</h4>
+							<p>Companies with multiple teammates participating will get first access to the pilot. We will never spam these emails, and will only contact them if you’re accepted.</p>
+						</div>
+					</div>
+					<div class="row padding-top-xsm">
+						<div class="col-lg-8 col-lg-offset-2 col-sm-6 col-sm-offset-3">		
+							<div class="row">
+								<div class="col-lg-3">
+									<form role="form">
+									  <div class="form-group">
+									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+									  </div>
+									</form>
+								</div>
+								<div class="col-lg-3">
+									<form role="form">
+									  <div class="form-group">
+									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+									  </div>
+									</form>
+								</div>
+								<div class="col-lg-3">
+									<form role="form">
+									  <div class="form-group">
+									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+									  </div>
+									</form>
+								</div>
+								<div class="col-lg-3">
+									<form role="form">
+									  <div class="form-group">
+									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
+									  </div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Second Slide -->
+
+				<!-- Third Slide -->
+				<div class="item">
+					<div class="row center">
 						<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
 							<h3>What team do you work on?</h3>
 						</div>
@@ -105,78 +184,6 @@
 				</div>
 				<!-- End Second Slide -->
 
-				<!-- Third Slide -->
-				<div class="item">
-					<div class="row center">
-						<div class="col-lg-8 col-lg-offset-2 padding-top-sm">
-							<h3>How many people are on your team?</h3>
-						</div>
-					</div>
-					
-					<div class="row padding-top-sm center">	
-						<div class="checkbox-fixed">
-							<label>
-								<%= render "pilots/svg/teamsm" %>
-								<input type="radio" name="teamsize" value="">
-								<span>1-10</span>
-							</label>
-
-							<label>
-								<%= render "pilots/svg/teamm" %>
-								<input type="radio" name="teamsize" value="">
-								<span>11-50</span>
-							</label>
-
-							<label>
-								<%= render "pilots/svg/teamlg" %>
-								<input type="radio" name="teamsize" value="">
-								<span>51+</span>
-							</label>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2 padding-top-sm center">
-							<h4>Do you want to invite your teammates?</h4>
-							<p>Companies with multiple teammates participating will get first access to the pilot. We will never spam these emails, and will only contact them if you’re accepted.</p>
-						</div>
-					</div>
-					<div class="row padding-top-xsm">
-						<div class="col-lg-8 col-lg-offset-2 col-sm-6 col-sm-offset-3">		
-							<div class="row">
-								<div class="col-lg-3">
-									<form role="form">
-									  <div class="form-group">
-									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
-									  </div>
-									</form>
-								</div>
-								<div class="col-lg-3">
-									<form role="form">
-									  <div class="form-group">
-									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
-									  </div>
-									</form>
-								</div>
-								<div class="col-lg-3">
-									<form role="form">
-									  <div class="form-group">
-									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
-									  </div>
-									</form>
-								</div>
-								<div class="col-lg-3">
-									<form role="form">
-									  <div class="form-group">
-									    <input type="email" name="teammate" class="form-control-custom" id="exampleInputEmail1" placeholder="Email">
-									  </div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Third Slide -->
 
 				<!-- Fourth Slide -->
 				<div class="item">
@@ -317,7 +324,7 @@
 		<div class="row">
 			<div class="col-lg-4 col-lg-offset-4 center">
 				<button class="btn-custom-2" type="button" id="slideButton" href="#myCarousel" data-slide="next">
-					NEXT
+					Next
 				</button>
 			</div>
 		</div>
