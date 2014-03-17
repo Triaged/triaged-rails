@@ -48,8 +48,15 @@ $ ->
 	$("#slideButton").click ->
 		idx = $("#myCarousel .item.active").index()
 		return if idx != 4
-		
 		$("#pilot_form").submit()
+
+	$("#other-team").click ->
+			$("#other-team").hide()
+			$("#other-team-input").show()
+
+	$("#other-services").click ->
+			$("#other-services").hide()
+			$("#other-services-input").show()
 		
              
 
