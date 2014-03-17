@@ -40,10 +40,10 @@ $ ->
 	buttonToFinish = () ->
 		idx = $("#myCarousel .item.active").index()
 		if idx != 4
-			$("#slideButton").text("NEXT")
+			$("#slideButton").text("Next")
 			return 
 
-		$("#slideButton").text("FINISH")
+		$("#slideButton").text("Finish")
 
 	$("#slideButton").click ->
 		idx = $("#myCarousel .item.active").index()
