@@ -4,10 +4,12 @@
 	<div class="row center padding-top-sm">
 		<%= image_tag "triage-logo.png" %>
 	</div>
+
+	<%= simple_form_for :pilot_complete, :url => complete_pilot_path, :method => :post, :html => {:id => 'pilot_form' } do |f| %>
 	
 	<!-- Carousel -->	
 	<div class="container fill">
-		<div id="myCarousel" class="carousel slide">
+		<div id="myCarousel" class="carousel slide" data-interval="false" data-wrap="false">
     		<div class="carousel-inner">
 
 				<!-- First Slide -->
@@ -304,42 +306,17 @@
 					</div>
 				</div>
 				<!-- End Fifth Slide -->
-
-				<!-- Sixth Slide -->
-				<div class="item">
-					<div class="row center">
-						<div class="col-lg-6 col-lg-offset-3 padding-top-sm">
-							<h2>Thanks so much!</h2>
-							<h4>We'll email you if you are chosen for the pilot program.</h4>
-							<br>
-							<h4 class="padding-top-sm light">Having your teammates fill out our questionnaire increases your chances to be chosen to pilot Triage. Share our pilot questionnaire, we'll keep track of companies that fill it out.</h4>
-						</div>
-					</div>
-					
-					<div class="row padding-top-sm center">	
-							<div class="row">
-								<%= render "pilots/svg/twitter" %>
-							</div>
-							<button class="btn btn-custom-small" type="button">
-								TWITTER
-							</button>
-					</div>
-
-					<div class="col-lg-6 col-lg-offset-3 padding-top center">
-						<p class="light">If you're not chosen for the pilot, don't worry, Triage will be availible for everyone soon.</p>
-					</div>
-				</div>
-				<!-- End Sixth Slide -->
-
 			</div>
 		</div>
 	</div>
+
+	<% end %>
 
 	<!-- Pagination -->
 	<div class="center navbar-fixed-bottom">
 		<div class="row">
 			<div class="col-lg-4 col-lg-offset-4 center">
-				<button class="btn-custom-2" type="button" href="#myCarousel" data-slide="next">
+				<button class="btn-custom-2" type="button" id="slideButton" href="#myCarousel" data-slide="next">
 					NEXT
 				</button>
 			</div>
