@@ -115,17 +115,12 @@
 /* Forms */
 
 .form-control-custom {
-display: block;
-width: 100%;
-height: 34px;
 padding: 20px 20px;
-font-size: 14px;
-line-height: 1.428571429;
-vertical-align: middle;
-background-color: #FFF;
 border: 1px solid #DFE0E8;
 border-radius: 3px;
 font-weight: 300;
+-webkit-box-shadow: none;
+box-shadow: none;
 }
 
 input.form-control-custom::-webkit-input-placeholder {color: #DFE0E8;}
@@ -142,6 +137,18 @@ input.form-control-custom:focus:-ms-input-placeholder {color: #868B9E;}
 	border-color: #868B9E;
 	box-shadow: none;
 	outline: none;
+}
+
+.has-success-custom .form-control {
+border-color: #b1D875;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+.has-error-custom .form-control {
+border-color: #CC592F;
+-webkit-box-shadow: none;
+box-shadow: none;
 }
 
 /* SVG */
