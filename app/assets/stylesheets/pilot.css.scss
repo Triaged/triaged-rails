@@ -49,7 +49,7 @@
 }
 
 .checkbox-fitted label {
-    padding: 0 5px;
+    padding: 0 6px;
 }
 
 /* iPad */
@@ -151,6 +151,11 @@ border-color: #CC592F;
 box-shadow: none;
 }
 
+.control-label-custom {
+	font-weight: 300;
+	text-transform: none;
+	margin-top: 15px;
+}
 /* SVG */
 
 .style0 {
