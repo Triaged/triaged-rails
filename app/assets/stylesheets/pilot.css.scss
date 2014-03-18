@@ -118,22 +118,30 @@
 display: block;
 width: 100%;
 height: 34px;
-padding: 6px 12px;
+padding: 20px 20px;
 font-size: 14px;
 line-height: 1.428571429;
-color: #666;
 vertical-align: middle;
-background-color: #EFEFEF;
-background-image: none;
-border: 0px solid #cccccc;
-border-radius: 4px;
-text-align: center;
+background-color: #FFF;
+border: 1px solid #DFE0E8;
+border-radius: 3px;
+font-weight: 300;
 }
 
+input.form-control-custom::-webkit-input-placeholder {color: #DFE0E8;}
+input.form-control-custom:-moz-placeholder {color: #DFE0E8;}
+input.form-control-custom::-moz-placeholder {color: #DFE0E8;}
+input.form-control-custom:-ms-input-placeholder {color: #DFE0E8;}
+
+input.form-control-custom:focus::-webkit-input-placeholder {color: #868B9E;}
+input.form-control-custom:focus:-moz-placeholder {color: #868B9E;}
+input.form-control-custom:focus::-moz-placeholder {color: #868B9E;}
+input.form-control-custom:focus:-ms-input-placeholder {color: #868B9E;}
+
 .form-control-custom:focus {
-	border-color: #66AFE9;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 1);
-	outline: 0 none;
+	border-color: #868B9E;
+	box-shadow: none;
+	outline: none;
 }
 
 /* SVG */
@@ -187,8 +195,8 @@ text-align: center;
 }
 .pagination-custom > .active > a, .pagination-custom > .active > a:hover, .pagination-custom > .active > a:focus, .pagination-custom > .active > span, .pagination-custom > .active > span:hover, .pagination-custom > .active > span:focus {
 	z-index: 2;
-	background: #7691CD;
-	border: 2px solid #7691CD;
+	background: #839DEE;
+	border: 2px solid #839DEE;
 	color: white;
 	cursor: default;
 }
@@ -206,7 +214,7 @@ text-align: center;
 .btn-custom-2 {
   background-color: #839DEE;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   color: #fff;
   width: 30%;
   padding: 10px 5px;
@@ -230,18 +238,14 @@ text-align: center;
 
 .btn-custom-2:hover,
 .btn-custom-small:hover {
-	text-decoration: underline;
+	background-color: #8DA9FF;
 }
 
 .btn-custom-2:active,
 .btn-custom-2.active,
 .btn-custom-small:active,
 .btn-custom-small.active {
- 	text-decoration: underline;
- 	outline: 0;
- 	background-image: none;
- 	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
- 	box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+	background-color: #6477B4;
 }
 
 .btn-custom-2:focus,
