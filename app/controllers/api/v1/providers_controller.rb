@@ -12,7 +12,7 @@ class Api::V1::ProvidersController < API::BaseController
 	end
 
 	def feed
-		@feed_items = @provider.feed_items.includes(:messages).limit(100).order(created_at: :desc)
+		@feed_items = @provider.feed_items.includes(:messages, :user, :provider).limit(100).order(created_at: :desc)
 		respond_with @feed_items
 	end
 	
