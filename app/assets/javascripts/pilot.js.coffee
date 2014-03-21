@@ -3,6 +3,25 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+	# $("#pilot_form").bootstrapValidator({
+ #        message: 'This value is not valid',
+ #        submitButtons: 'button[type="submit"]',
+ #        submitHandler: null,
+ #        live: 'enabled',
+ #        fields: 
+ #        	username: {
+ #        		message: '',
+ #        		enabled: true,
+ #        		validators: {
+ #        			notEmpty: {
+ #                        message: 'The username is required and can\'t be empty'
+ #                    }
+ #        		}
+ #        	}
+ #    })
+
+
+
 	$(".pagination-custom > li > a").click ->
 	  
 	  # grab href, remove pound sign, convert to number

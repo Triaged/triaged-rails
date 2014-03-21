@@ -20,5 +20,5 @@
 //= require_tree .
 //= require jquery.ba-cond.min
 //= require jquery.slitslider
-
+//= require bootstrapValidator
 
