@@ -51,12 +51,12 @@ $ ->
 		$("#pilot_form").submit()
 
 	$("#other-team").click ->
-			$("#other-team").hide()
-			$("#other-team-input").show()
+		$("#other-team").hide()
+		$("#other-team-input").show()
 
 	$("#other-services").click ->
-			$("#other-services").hide()
-			$("#other-services-input").show()
+		$("#other-services").hide()
+		$("#other-services-input").show()
 		
              
 
