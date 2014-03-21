@@ -61,69 +61,116 @@
 
 <!-- Integrations Border -->
 <div id="integrations-border">
-	<div class="container fullheight">
+	<div class="container">
 		<!-- Welcome -->	
-		<div class="col-lg-12 col-sm-12 fullheight padding-bottom">
+		<div class="col-lg-12 col-sm-12 fullheight padding-bottom-sm">
 
 			<!-- Headline -->	
 			<div class="row padding-top-sm">
-				<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 center">
-					<h2>The Tools You Use</h2>
-					<p class="altbody">Triage monitors your favorite developer tools and pulls everything important into one mobile feed.</p>
+				<div class="col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2 center">
+					<h2 class="dblue">Triage integrates with the SaaS tools you use everyday.</h2>
 				</div>
 			</div>
 			<!-- Integrations -->
-			<div class="row" id="services">
+			<div class="row padding-top-lg" id="services">
+
+				<!-- Card -->
+
+				<div class="col-lg-6 center" data-scrollReveal>
+					<%= image_tag "cards/card-iphone.png" %>
+					<div id="cardpostion service-cards">
+						<%= image_tag "cards/card-test.png", :id => "ci1", :class => "service-card active-card", :width => "260" %>
+						<%= image_tag "cards/card-test-2.png", :id => "ci2", :class => "service-card hidden-card", :width => "260" %>
+						<%= image_tag "cards/heroku@2x.png", :id => "ci3", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/dropbox@2x.png", :id => "ci4", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/ga@2x.png", :id => "ci5", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/crashlytics@2x.png", :id => "ci6", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/stripe@2x.png", :id => "ci7", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/bitbucket@2x.png", :id => "ci8", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/newrelic@2x.png", :id => "ci9", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/kiln@2x.png", :id => "ci10", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/hockeyapp@2x.png", :id => "ci11", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/beanstalk@2x.png", :id => "ci12", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/appfigures@2x.png", :id => "ci13", :class => "service-card hidden-card", :width => "435" %>
+						<%= image_tag "cards/airbrake@2x.png", :id => "ci14", :class => "service-card hidden-card", :width => "435" %>
+					</div>
+				</div>
 				
 				<!-- Icons -->
-				<div class="row col-lg-6 center" id="services-row" data-scrollReveal>
-
-					<div class="row padding-top-sm service-icon">
-						<%= link_to image_tag("icons/github-icon.png", :id => "i1", :class => "grow") %>
-						<%= link_to image_tag("icons/sentry-icon.png", :id => "i2", :class => "grow") %>
-						<%= link_to image_tag("icons/heroku-icon.png", :id => "i3", :class => "grow") %>
-						<%= link_to image_tag("icons/dropbox-icon.png", :id => "i4", :class => "grow") %>
-						<%= link_to image_tag("icons/ga-icon.png", :id => "i5", :class => "grow") %>
-						<%= link_to image_tag("icons/crashlytics-icon.png", :id => "i6", :class => "grow") %>
-						<%= link_to image_tag("icons/stripe-icon.png", :id => "i7", :class => "grow") %>
+				<div class="col-lg-6" id="services-row" data-scrollReveal>
+					<div class="row center">
+						<h3>Explore Our Integrations</h3>
+						<p>Triage monitors your favorite developer worktools you already use at work and pulls everything into one mobile feed.</p>
 					</div>
-					<div class="row padding-top-sm service-icon">
-						<%= link_to image_tag("icons/bitbucket-icon.png", :id => "i8", :class => "grow")  %>
-						<%= link_to image_tag("icons/newrelic-icon.png", :id => "i9", :class => "grow") %>
-						<%= link_to image_tag("icons/kiln-icon.png", :id => "i10", :class => "grow") %>
-						<%= link_to image_tag("icons/hockeyapp-icon.png", :id => "i11", :class => "grow") %>
-						<%= link_to image_tag("icons/beanstalk-icon.png", :id => "i12", :class => "grow") %>
-						<%= link_to image_tag("icons/appfigures-icon.png", :id => "i13", :class => "grow") %>
-						<%= link_to image_tag("icons/airbrake-icon.png", :id => "i14", :class => "grow") %>
-
+					<div class="row">
+						<div class="col-lg-6 padding-top-sm service-icon">
+							<div class="icon-row">
+								<%= link_to image_tag("icons/github-icon.png", :id => "i1", :class => "grow") %>
+								<%= link_to 'Github' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/sentry-icon.png", :id => "i2", :class => "grow") %>
+								<%= link_to 'Sentry' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/heroku-icon.png", :id => "i3", :class => "grow") %>
+								<%= link_to 'Heroku' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/dropbox-icon.png", :id => "i4", :class => "grow") %>
+								<%= link_to 'Dropbox' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/ga-icon.png", :id => "i5", :class => "grow") %>
+								<%= link_to 'Google Analytics' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/crashlytics-icon.png", :id => "i6", :class => "grow") %>
+								<%= link_to 'Crashlytics' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/stripe-icon.png", :id => "i7", :class => "grow") %>
+								<%= link_to 'Stripe' %>
+							</div>
+						</div>
+						<div class="col-lg-6 padding-top-sm service-icon">
+							<div class="icon-row">
+								<%= link_to image_tag("icons/bitbucket-icon.png", :id => "i8", :class => "grow")  %>
+								<%= link_to 'Bitbucket' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/newrelic-icon.png", :id => "i9", :class => "grow") %>
+								<%= link_to 'New Relic' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/kiln-icon.png", :id => "i10", :class => "grow") %>
+								<%= link_to 'Kiln' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/hockeyapp-icon.png", :id => "i11", :class => "grow") %>
+								<%= link_to 'HockeyApp' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/beanstalk-icon.png", :id => "i12", :class => "grow") %>
+								<%= link_to 'Beanstalk' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/appfigures-icon.png", :id => "i13", :class => "grow") %>
+								<%= link_to 'Appfigures' %>
+							</div>
+							<div class="icon-row">
+								<%= link_to image_tag("icons/airbrake-icon.png", :id => "i14", :class => "grow") %>
+								<%= link_to 'Airbrake' %>
+							</div>
+						</div>
 					</div>
-					<div class="row padding-top-sm">
-					<p class="light">Click to see examples of service card.</p>
+					<div class="row padding-top-xsm center">
+						<p class="light">Click to see examples of service card.</p>
 					</div>
 					<!-- <div class="row padding-top-sm">
 					<%= link_to 'Explore Our Integrations', support_path %><%= image_tag "carrot.png", :class => "linkicon" %>
 					</div> -->
 				</div>
-
-				<!-- Card -->
-
-				<div class="row col-lg-6 center service-cards padding-top-sm" data-scrollReveal>
-					<%= image_tag "cards/github@2x.png", :id => "ci1", :class => "service-card active-card", :width => "435" %>
-					<%= image_tag "cards/sentry@2x.png", :id => "ci2", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/heroku@2x.png", :id => "ci3", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/dropbox@2x.png", :id => "ci4", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/ga@2x.png", :id => "ci5", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/crashlytics@2x.png", :id => "ci6", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/stripe@2x.png", :id => "ci7", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/bitbucket@2x.png", :id => "ci8", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/newrelic@2x.png", :id => "ci9", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/kiln@2x.png", :id => "ci10", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/hockeyapp@2x.png", :id => "ci11", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/beanstalk@2x.png", :id => "ci12", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/appfigures@2x.png", :id => "ci13", :class => "service-card hidden-card", :width => "435" %>
-					<%= image_tag "cards/airbrake@2x.png", :id => "ci14", :class => "service-card hidden-card", :width => "435" %>
-				</div>
-
 			</div>
 
 			<!-- Additional Features -->
