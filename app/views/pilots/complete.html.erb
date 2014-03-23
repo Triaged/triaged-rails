@@ -12,7 +12,7 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 padding-top-sm center">
-			<h3>Want to increase your odd's of being chosen?</h3>
+			<h3>Want to increase your odd's of being chosen? <br> Invite your co-workers.</h3>
 			<p>Companies with multiple teammates who fill out the questionnnaire will increase your chances to be chosen for the pilot. We will never spam these emails, and will only contact them if you’re accepted.</p>
 		</div>
 	</div>
@@ -51,17 +51,17 @@
 		</div>
 	</div>
 	
-	<div class="row padding-top-sm center">	
-			<div class="row">
-				<%= render "pilots/svg/twitter" %>
-			</div>
-			<button class="btn btn-custom-small" type="button">
-				TWITTER
-			</button>
-			<p class="padding-top-xsm">Share our pilot questionnaire</p>
+	<div class="row padding-top-sm center">		
+		<div class="col-lg-6 col-lg-offset-3 center">
+			<a class="btn-custom-3" type="button" href="http://twitter.com/home?status=I%20just%20answered%20%40triagedco%20questions.%20goo.gl%2FW0roSN">
+				<span><%= render "pilots/svg/twitter" %>
+					Tweet
+				</span>
+			</a>
+		</div>
 	</div>
 
 	<div class="col-lg-6 col-lg-offset-3 padding-top center">
-		<p class="light">If you're not chosen for the pilot, don't worry, Triage will be availible for everyone soon.</p>
+		<%= link_to 'Return to Triage Homepage', root_path %>
 	</div>
 </div>

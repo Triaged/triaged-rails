@@ -163,13 +163,21 @@ box-shadow: none;
 	fill: #7691CD;
 	width: 40px;
 }
+.style1 {
+	clip-path: url(#SVGID_2_);
+	fill: #7691CD;
+	width: 23px;
+}
 #Group_2_ {
 	width: 40px;
 }
 .btn-svg {
 	clear: both;
 }
-
+.btn-svg-1 {
+	top: 9px;
+	position: relative;
+}
 .btn-svg:before,
 .btn-svg:after {
 	content: " ";
@@ -235,28 +243,34 @@ box-shadow: none;
   font-weight: 500;
   font-size: 16px;
 }
-.btn-custom-small {
+.btn-custom-3 {
   background-color: #fff;
-  text-align:center;
-  padding:10px 0px;
-  border-radius: 21px;
-  border: 1px solid #979797;
-  font-weight: 500;
-  margin-top: 10px;
-  width: 150px;
-  text-transform: uppercase;
-  font-size: 14px;
+  border: 1px solid #7691CD;
+  border-radius: 3px;
+  color: #7691CD;
+  padding: 13px 35px 13px 30px;
+  text-transform: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 16px;
+ }
+ .btn-custom-small a {
+ 	color:#fff;
  }
 
 .btn-custom-2:hover,
-.btn-custom-small:hover {
+.btn-custom-3:hover {
 	background-color: #8DA9FF;
+	color: #fff;
 }
 
+.btn-custom-3:hover .style1 {
+	fill: #fff;
+}
 .btn-custom-2:active,
 .btn-custom-2.active,
-.btn-custom-small:active,
-.btn-custom-small.active {
+.btn-custom-3:active,
+.btn-custom-3.active {
 	background-color: #6477B4;
 }
 
