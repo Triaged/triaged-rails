@@ -51,35 +51,37 @@
 	    bottom: 0px;
 	    margin: 0 auto;
 	    clear: both;
-	    position: relative;
+	    position: absolute;
 	}
 
 
 /* Integration Content */
-#integrations-border {
-	top: 0; right: 0; bottom: 0; left: 0;
-    border: 15px solid #f6f6f6;
-}
 	
 	/* Integrations */
-	#services-row {
-		padding-top: 50px;
+	#services {
+		height: 420px;
+		padding-top: 30px;
 	}
+	#services-row {
+		padding-top: 90px;
+	}
+	.service-cards {
+		height: 100%;
+	}
+
 	.service-card {
 		margin-top: auto;
 		margin-bottom: auto;
 		vertical-align: middle;	
-	/*	height: 100%;*/
-		top: 95px;
-		left: 152px;
-		position: absolute;
-
 	}
 	.service-card-spacer {
     display: inline-block;
     vertical-align: middle;
     height:100%;
-}
+	}
+	.service-icon > a {
+		padding-left: 5px;
+	}
 	.hidden-card {
 		display: none;
 	}

@@ -17,7 +17,7 @@
 			    <div class="collapse navbar-collapse">
 			      <ul class="nav navbar-nav">
 			        <li class="active"><%= link_to 'Home', root_path %></li>
-			        <li><%= link_to 'FAQ', support_path %></li>
+			        <li><%= link_to 'FAQ', support_path %></li> 
 			        <li><%= link_to 'Contact', about_path %></li>
 			        <li><%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %></li>
 			      </ul>
@@ -32,7 +32,8 @@
 					<!-- Title Row -->
 					<div class="row padding-top-lg">
 						<h1>Introducing Triage</h1>
-						<h4>Work, on your phone.</h4>
+						<h4>Triage monitors your work tools. <br>
+						Know more, do more.</h4>
 					</div>
 					<!-- CTA Row -->
 					<div class="row padding-top-sm">
@@ -60,21 +61,26 @@
 
 
 <!-- Integrations Border -->
-<div id="integrations-border">
+<div class="border">
 	<div class="container">
 		<!-- Welcome -->	
 		<div class="col-lg-12 col-sm-12 fullheight padding-top-sm">
 
 			<!-- Integrations -->
 			<div class="row" id="services">
+				<!-- Headline -->	
+					<div class="col-lg-8 col-lg-offset-2 center">
+						<h2>Triage integrates the SaaS tools you use everyday.</h2>
+						<p class="altbody">Triage monitors your favorite developer worktools you already use at work and pulls everything into one mobile feed.</p>
+					</div>
 
 				<!-- Card -->
 
-				<div class="col-lg-6 center" data-scrollReveal>
-					<%= image_tag "cards/card-iphone.png" %>
-					<!-- <div id="cardpostion service-cards">
-						<%= image_tag "cards/card-test.png", :id => "ci1", :class => "service-card active-card", :width => "260" %>
-						<%= image_tag "cards/card-test-2.png", :id => "ci2", :class => "service-card hidden-card", :width => "260" %>
+				<div class="row col-lg-6 center service-cards padding-top-sm" data-scrollReveal>
+
+					<div id="cardpostion service-cards">
+						<%= image_tag "cards/github@2x.png", :id => "ci1", :class => "service-card active-card", :width => "435" %>
+						<%= image_tag "cards/sentry@2x.png", :id => "ci2", :class => "service-card hidden-card", :width => "435" %>
 						<%= image_tag "cards/heroku@2x.png", :id => "ci3", :class => "service-card hidden-card", :width => "435" %>
 						<%= image_tag "cards/dropbox@2x.png", :id => "ci4", :class => "service-card hidden-card", :width => "435" %>
 						<%= image_tag "cards/ga@2x.png", :id => "ci5", :class => "service-card hidden-card", :width => "435" %>
@@ -87,18 +93,13 @@
 						<%= image_tag "cards/beanstalk@2x.png", :id => "ci12", :class => "service-card hidden-card", :width => "435" %>
 						<%= image_tag "cards/appfigures@2x.png", :id => "ci13", :class => "service-card hidden-card", :width => "435" %>
 						<%= image_tag "cards/airbrake@2x.png", :id => "ci14", :class => "service-card hidden-card", :width => "435" %>
-					</div> -->
+					</div>
 				</div>
 				
 				<!-- Icons -->
 				<div class="col-lg-6 padding-top-sm" data-scrollReveal>
-					<!-- Headline -->	
-					<div class="row center">
-						<h2>Triage integrates the SaaS tools you use everyday.</h2>
-						<p class="altbody">Triage monitors your favorite developer worktools you already use at work and pulls everything into one mobile feed.</p>
-						<p class="blue bold padding-top-sm">Click to see examples of service card.</p>
-					</div>
 					<div class="row">
+						<p class="blue bold center">Click to see examples of service card.</p>
 						<div class="col-lg-6 padding-top-sm service-icon">
 							<div class="icon-row">
 								<%= link_to image_tag("icons/github-icon.png", :id => "i1", :class => "grow") %>
@@ -167,7 +168,7 @@
 			</div>
 
 			<!-- Additional Features -->
-			<!-- <div class="row padding-top-lg">
+			<div class="row padding-top-lg">
 
 				<div class="col-lg-custom col-sm-4 center">
 						<p class="blue bold">Simple Onboarding</p>
@@ -182,7 +183,7 @@
 						<p>Personalize, filter or mute your services. Your feed looks the way you want it.</p>
 				</div>
 
-			</div> -->
+			</div>
 
 		</div>
 	</div>
