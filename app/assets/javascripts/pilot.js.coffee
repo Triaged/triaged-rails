@@ -3,22 +3,21 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-	# $("#pilot_form").bootstrapValidator({
- #        message: 'This value is not valid',
- #        submitButtons: 'button[type="submit"]',
- #        submitHandler: null,
- #        live: 'enabled',
- #        fields: 
- #        	username: {
- #        		message: '',
- #        		enabled: true,
- #        		validators: {
- #        			notEmpty: {
- #                        message: 'The username is required and can\'t be empty'
- #                    }
- #        		}
- #        	}
- #    })
+	$("#pilotForm").bootstrapValidator({
+        message: 'This value is not valid',
+        live: 'enabled',
+        fields: {
+        	'pilot[name]': {
+                message: 'The username is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required and can\'t be empty'
+                    }
+                    
+                }
+            }
+        }
+    })
 
 
 
@@ -69,7 +68,7 @@ $ ->
 	$("#slideButton").click ->
 		idx = $("#myCarousel .item.active").index()
 		return if idx != 4
-		$("#pilot_form").submit()
+		$("#pilotForm").submit()
 
 	$("#other-team").click ->
 		$("#other-team").hide()
