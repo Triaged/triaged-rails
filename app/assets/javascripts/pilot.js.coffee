@@ -43,6 +43,8 @@ $ ->
 
 	# bind 'slid' function
 	$("#myCarousel").bind "slid.bs.carousel", ->
+		# Scroll to top
+	  $('html, body').animate({ scrollTop: 0 }, 'slow')
 		
 	  # remove active class
 	  $(".pagination-custom .active").removeClass "active"

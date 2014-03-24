@@ -8,9 +8,10 @@ $ ->
   #	country: "US"
   $("#phone_number").focus()
 
-	$(window).scroll ->
-		if($('#i1').visible())
-			$('#i1').addClass("slideUp")
+  
+  $(window).scroll ->
+	  if($('#i1').visible())
+		  $('#i1').addClass("slideUp")
 
 	$(".download-cta").click ->
 		window.location.href = "/pilot"
