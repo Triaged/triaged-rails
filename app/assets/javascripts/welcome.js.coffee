@@ -13,14 +13,14 @@ $ ->
 			$('#i1').addClass("slideUp")
 
 	$(".download-cta").click ->
-		console.log("click")
-		if($("#footer").hasClass("mobile"))
-			 window.location.href = "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8"
-		else
-			$("body").css(overflow: "hidden")
-			$("body").addClass("make-way")
-			$("#loaded-content").addClass("loaded")
-			$("#downloading").fadeIn(800)
+		window.location.href = "/pilot"
+		# if($("#footer").hasClass("mobile"))
+		# 	 window.location.href = "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8"
+		# else
+		# 	$("body").css(overflow: "hidden")
+		# 	$("body").addClass("make-way")
+		# 	$("#loaded-content").addClass("loaded")
+		# 	$("#downloading").fadeIn(800)
 
 	hide_overlay = () ->
 		$("body").css(overflow: "auto")
