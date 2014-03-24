@@ -264,9 +264,6 @@ box-shadow: none;
 	color: #fff;
 }
 
-.btn-custom-3:hover .style1 {
-	fill: #fff;
-}
 .btn-custom-2:active,
 .btn-custom-2.active,
 .btn-custom-3:active,
@@ -279,6 +276,9 @@ box-shadow: none;
 	outline: none;
 	outline: none;
 	outline-offset: none;
+}
+.btn-custom-3:hover .style1 {
+	fill: #fff;
 }
 
 button .glyphicon {

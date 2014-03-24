@@ -48,9 +48,10 @@
 	}
 	/* Hero-Breadcrumb */
 	#hero-breadcrumb {
-	    bottom: 30px;
+	    bottom: 0px;
 	    margin: 0 auto;
 	    clear: both;
+	    position: relative;
 	}
 
 
@@ -118,12 +119,11 @@
 		margin-left: 4.333333%;
 	}
 	.icon-row {
-		padding-bottom: 20px;
+		padding-bottom: 15px;
 	}
 	.icon-row a {
 		display: inline;
 		padding-left: 20px;
-		font-weight: 600;
 		color: #9B9B9B;
 	}
 	.icon-row a:hover {
