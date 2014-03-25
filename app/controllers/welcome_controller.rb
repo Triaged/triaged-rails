@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
 	def index
 	end
 
-	def support
+	def faq
 	end
 
 	def terms
