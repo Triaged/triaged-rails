@@ -1,0 +1,4 @@
+<% @pilots.each do |pilot| %>
+	<%= pilot.name %> <%= pilot.email %> <%= pilot.company %> <%= pilot.teamsize %> <%= pilot.team %> <%= pilot.team_other if pilot.team_other %> <%= pilot.saas %> <%= pilot.saas_other if pilot.saas_other %> <%= pilot.os %>
+	<br />
+<% end %>

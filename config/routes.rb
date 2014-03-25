@@ -105,6 +105,7 @@ TriageRails::Application.routes.draw do
 		namespace :admin do
 			resources :welcome
 			resources :messages
+      resources :pilots
 			mount Sidekiq::Web => '/sidekiq'
 		end
 	end
