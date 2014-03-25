@@ -3,6 +3,9 @@
 .label-padding {
 	padding-top: 75px;
 }
+#complete-bottom {
+	margin-bottom: 100px;
+}
 
 /* Carosel */
 
@@ -40,127 +43,6 @@
 	}
 }
 
-/* Checkbox & Radio */
-
-.checkbox-fitted,
-.checkbox-fixed {
-	text-transform: uppercase;
-	font-size: 14px;
-}
-
-.checkbox-fixed label {
-    padding: 0 10px;
-}
-
-.checkbox-fitted label {
-    padding: 0 6px;
-}
-
-/* iPad */
-@media (min-width: 768px) and (max-device-width : 1024px) {
-
-	.checkbox-fixed label,
-	.checkbox-fitted label {
-		padding-top: 15px;
-	}
-}
-
-.checkbox-fitted label span {
-    text-align:center;
-    padding:8px 18px 6px;
-    display:block;
-    border-radius: 21px;
-    border: 1px solid #DFE0E8;
-    overflow:auto;
-    font-weight: 500;
-    margin-top: 10px;
-    color: #222222;
-}
-
-.checkbox-fixed label span {
-    text-align:center;
-    padding:10px 0px;
-    display:block;
-    border-radius: 21px;
-    border: 1px solid #DFE0E8;
-    overflow:auto;
-    font-weight: 500;
-    margin-top: 10px;
-    width: 150px;
-    color: #222222;
-}
-
-.checkbox-fitted label input,
-.checkbox-fixed label input {
-    position:absolute;
-    display: none;
-}
-
-.checkbox-fitted label span img {
-	position: relative;
-	top: -1px;
-	left: -5px;
-}
-
-.checkbox-fitted input:checked + span,
-.checkbox-fixed input:checked + span, {
-    background-color:#7691CD;
-    border: 1px solid #7691CD;
-    fill: #7691CD;
-    color: white;
-}
-
-.checkbox-fitted label span:hover,
-.checkbox-fixed label span:hover {
-	border: 1px solid #7691CD;
-}
-
-
-/* Forms */
-
-.form-control-custom {
-padding: 30px 30px;
-border: 1px solid #DFE0E8;
-border-radius: 3px;
-font-weight: 300;
--webkit-box-shadow: none;
-box-shadow: none;
-font-size: 18px;
-}
-
-input.form-control-custom::-webkit-input-placeholder {color: #999999;}
-input.form-control-custom:-moz-placeholder {color: #999999;}
-input.form-control-custom::-moz-placeholder {color: #999999;}
-input.form-control-custom:-ms-input-placeholder {color: #999999;}
-
-input.form-control-custom:focus::-webkit-input-placeholder {color: #868B9E;}
-input.form-control-custom:focus:-moz-placeholder {color: #868B9E;}
-input.form-control-custom:focus::-moz-placeholder {color: #868B9E;}
-input.form-control-custom:focus:-ms-input-placeholder {color: #868B9E;}
-
-.form-control-custom:focus {
-	border-color: #868B9E;
-	box-shadow: none;
-	outline: none;
-}
-
-.has-success-custom .form-control {
-border-color: #b1D875;
--webkit-box-shadow: none;
-box-shadow: none;
-}
-
-.has-error-custom .form-control {
-border-color: #CC592F;
--webkit-box-shadow: none;
-box-shadow: none;
-}
-
-.control-label-custom {
-	font-weight: 300;
-	text-transform: none;
-	margin-top: 15px;
-}
 /* SVG */
 
 .style0 {
@@ -257,14 +139,9 @@ box-shadow: none;
   padding:16px 40px;
   text-transform: none;
   letter-spacing: 1px;
-  font-weight: 600;
-  font-size: 16px;
   text-align:center;
   overflow:auto;
   margin-top: 10px;
- }
- .btn-custom-small a {
- 	color:#fff;
  }
 
 .btn-custom-2:hover {
