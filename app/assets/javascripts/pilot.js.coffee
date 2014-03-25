@@ -3,34 +3,34 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-	$("#pilotForm").bootstrapValidator({
-        message: 'This value is not valid',
-        #live: 'enabled',
-        submitHandler: (validator, form, submitButton) -> {
-          #form.find('.alert').html('Thanks for signing up. Now you can sign in as ' + validator.getFieldElements('username').val()).show();
+	# $("#pilotForm").bootstrapValidator({
+ #        message: 'This value is not valid',
+ #        #live: 'enabled',
+ #        submitHandler: (validator, form, submitButton) -> {
+ #          #form.find('.alert').html('Thanks for signing up. Now you can sign in as ' + validator.getFieldElements('username').val()).show();
           
-        },
-        fields: {
-        	'pilot[name]': {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Your name is required and can\'t be empty'
-                    }
+ #        },
+ #        fields: {
+ #        	'pilot[name]': {
+ #                message: 'The username is not valid',
+ #                validators: {
+ #                    notEmpty: {
+ #                        message: 'Your name is required and can\'t be empty'
+ #                    }
                     
-                }
-            },
-           'pilot[email]': {
-                message: 'The email is not valid',
-                validators: {
-                    emailAddress: {
-                        message: 'The input is not a valid email address'
-                    }
+ #                }
+ #            },
+ #           'pilot[email]': {
+ #                message: 'The email is not valid',
+ #                validators: {
+ #                    emailAddress: {
+ #                        message: 'The input is not a valid email address'
+ #                    }
                     
-                }
-            }
-        }
-    })
+ #                }
+ #            }
+ #        }
+ #    })
 
 
 

@@ -106,7 +106,7 @@
 	background: #7691CD;
 	border: 1px solid #7691CD;
 	color: white;
-	cursor: default;
+	cursor: pointer;
 }
 .pagination-line {
 	width: 30px;
@@ -147,10 +147,12 @@
 .btn-custom-2:hover {
 	background-color: #8DA9FF;
 	color: #fff;
+	cursor: pointer;
 }
 .btn-custom-3:hover {
 	border: 1px solid #7691CD;
 	color: #222222;
+	cursor: pointer;
 }
 
 .btn-custom-2:active,
