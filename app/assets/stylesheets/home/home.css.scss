@@ -1,3 +1,21 @@
+/* Borders */
+
+#hero-border {
+    top: 0; right: 0; bottom: 0; left: 0;
+    border: 15px solid #f6f6f6;
+    max-height: 100% !important;
+}
+#service-border {
+    border-right: 15px solid #f6f6f6;
+    border-bottom: 15px solid #f6f6f6;
+    border-left: 15px solid #f6f6f6;
+}
+#day-border {
+    border-right: 15px solid #f6f6f6;
+    border-bottom: 15px solid #f6f6f6;
+    border-left: 15px solid #f6f6f6;
+}
+
 /* Hero */
 
 #padding-top-hero {
@@ -5,7 +23,12 @@
 }
 	/* Welcome-content */
 
-
+	#logotype {
+		font-size: 26px;
+		font-weight: 300;
+		color: #7691CD;
+		padding-left: 20px;
+	}
 	/* Welcome Message */
 	#welcome-title {
 			margin-top: 50px;
@@ -40,7 +63,17 @@
 	    webkit-box-shadow: none;
 	}
 
-	/* Hero-Breadcrumb */
+	/* Hero-video */
+	#hero-frame {
+		max-height: 100%;
+		overflow: hidden;
+	}
+	#hero-img {
+		position: relative;
+		width: 540px;
+		height: 967px;
+	}
+	/* Hero-video */
 	#hero-video {
 		top: 86px;
 		left: 100px;
@@ -51,6 +84,7 @@
 	    bottom: 30px;
 	    margin: 0 auto;
 	    clear: both;
+	    position: relative;
 	   }
 
 
