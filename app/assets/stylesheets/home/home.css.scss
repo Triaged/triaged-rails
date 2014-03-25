@@ -48,20 +48,16 @@
 	}
 	/* Hero-Breadcrumb */
 	#hero-breadcrumb {
-	    bottom: 0px;
+	    bottom: 30px;
 	    margin: 0 auto;
 	    clear: both;
-	    position: absolute;
-	}
+	   }
 
 
 /* Integration Content */
 	
 	/* Integrations */
-	#services {
-		height: 420px;
-		padding-top: 30px;
-	}
+
 	#services-row {
 		padding-top: 90px;
 	}
@@ -93,50 +89,44 @@
 	.featurecopy {
 		padding-top: 20px;
 	}
-	.grow {
-	  display: inline-block;
-	  -webkit-transition-duration: 0.3s;
-	  transition-duration: 0.3s;
-	  -webkit-transition-property: -webkit-transform;
-	  transition-property: transform;
-	  -webkit-transform: translateZ(0);
-	  -ms-transform: translateZ(0);
-	  transform: translateZ(0);
-	  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+	#service-icons {
+		padding-top: 5px;
 	}
-	.grow:hover {
-	  -webkit-transform: scale(1.1);
-	  -ms-transform: scale(1.1);
-	  transform: scale(1.1);
+	.services-row {
+		padding-bottom: 30px;
 	}
-	.col-lg-custom {
-		width: 30%;
-		float: left;
-		position: relative;
-		min-height: 1px;
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-	.col-lg-offset-custom {
-		margin-left: 4.333333%;
-	}
-	.icon-row {
-		padding-bottom: 15px;
-	}
-	.icon-row a {
+	.service {
+		padding: 13px 40px;
+		color: #222222;
 		display: inline;
-		padding-left: 20px;
-		color: #9B9B9B;
+		border: 1px solid #ffffff;
 	}
-	.icon-row a:hover {
-		color: #2a6496;
+	.service a:first-child {
+		padding-right: 20px;
+	}
+	.service a {
+    	color: #222222;
+    	font-size: 16px;
+	}
+	.service a:hover {
+    	color: #222222;
+	}
+	.service img {
+		position: relative;
+		bottom: 2px;
+	}
+	.service:hover {
+	    border-radius: 26px;
+	    border: 1px solid #919395;
+	}
+	.service:active {
+	    border-radius: 26px;
+	    border: 1px solid #919395;
 	}
 
 /* Day Content */
 
-#day p {
-	margin: 0 30px 10px;
-}
 	/* Clock*/
 	.phoneicon {
 		position: relative;
