@@ -115,18 +115,19 @@
 /* Forms */
 
 .form-control-custom {
-padding: 20px 20px;
+padding: 30px 30px;
 border: 1px solid #DFE0E8;
 border-radius: 3px;
 font-weight: 300;
 -webkit-box-shadow: none;
 box-shadow: none;
+font-size: 18px;
 }
 
-input.form-control-custom::-webkit-input-placeholder {color: #DFE0E8;}
-input.form-control-custom:-moz-placeholder {color: #DFE0E8;}
-input.form-control-custom::-moz-placeholder {color: #DFE0E8;}
-input.form-control-custom:-ms-input-placeholder {color: #DFE0E8;}
+input.form-control-custom::-webkit-input-placeholder {color: #999999;}
+input.form-control-custom:-moz-placeholder {color: #999999;}
+input.form-control-custom::-moz-placeholder {color: #999999;}
+input.form-control-custom:-ms-input-placeholder {color: #999999;}
 
 input.form-control-custom:focus::-webkit-input-placeholder {color: #868B9E;}
 input.form-control-custom:focus:-moz-placeholder {color: #868B9E;}
