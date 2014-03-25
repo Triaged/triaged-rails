@@ -1,67 +1,36 @@
 <div class="container fullheight">
-	<div class="row center padding-top-sm">
-		<%= image_tag "triage-logo-sm.png" %>
-	</div>
+	<div class="col-lg-12 col-sm-12">
+		<div class="row center padding-top-sm">
+			<%= image_tag "triage-logo-sm.png" %>
+		</div>
 
-	<div class="row center">
-		<div class="col-lg-8 col-lg-offset-2 padding-top-xsm">
-			<h2>Thanks so much!</h2>
-			<p class="altbody">We'll email you if you are chosen for the pilot program.</p>
-			<br>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 padding-top-sm center">
-			<h3>Want to increase your odd's of being chosen? <br> Invite your co-workers.</h3>
-			<p>Companies with multiple teammates who fill out the questionnnaire will increase your chances to be chosen for the pilot. We will never spam these emails, and will only contact them if you’re accepted.</p>
-		</div>
-	</div>
-	<div class="row padding-top-xsm">
-		<div class="col-lg-8 col-lg-offset-2 col-sm-6 col-sm-offset-3">		
-			<div class="row">
-				<div class="col-lg-3">
-					<form role="form">
-					  <div class="form-group">
-					    <input type="email" name="teammate" class="form-control form-control-custom" placeholder="Email">
-					  </div>
-					</form>
-				</div>
-				<div class="col-lg-3">
-					<form role="form">
-					  <div class="form-group">
-					    <input type="email" name="teammate" class="form-control form-control-custom" placeholder="Email">
-					  </div>
-					</form>
-				</div>
-				<div class="col-lg-3">
-					<form role="form">
-					  <div class="form-group">
-					    <input type="email" name="teammate" class="form-control form-control-custom" placeholder="Email">
-					  </div>
-					</form>
-				</div>
-				<div class="col-lg-3">
-					<form role="form">
-					  <div class="form-group">
-					    <input type="email" name="teammate" class="form-control form-control-custom" placeholder="Email">
-					  </div>
-					</form>
-				</div>
+		<div class="row center">
+			<div class="col-lg-8 col-lg-offset-2 padding-top-xsm">
+				<h2>Thanks so much!</h2>
+				<p class="altbody">We'll email you if you are chosen for the pilot program.</p>
+				<br>
 			</div>
 		</div>
-	</div>
-	
-	<div class="row padding-top-sm center">		
-		<div class="col-lg-6 col-lg-offset-3 center">
-			<a class="btn-custom-3" type="button" href="http://twitter.com/home?status=I%20just%20signed%20up%20for%20%40triagedco%20pilot.%20goo.gl%2FW0roSN">
-				<span><%= render "pilots/svg/twitter" %>
-					Tweet
-				</span>
-			</a>
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3 padding-top-sm center">
+				<h3>Want to increase your odd's of being chosen? <br> Let your friends know about Triage.</h3>
+				<p>Companies with multiple teammates who fill out the questionnnaire will increase your chances to be chosen for the pilot.</p>
+			</div>
 		</div>
-	</div>
+		<div class="row padding-top-sm center">		
+			<div class="col-lg-6 col-lg-offset-3 center">
+				<a class="btn-custom-3" href="http://twitter.com/home?status=I%20just%20signed%20up%20for%20%40triagedco%20pilot.%20goo.gl%2FW0roSN">
+					<span><%= render "pilots/svg/twitter" %>
+						Tweet
+					</span>
+				</a>
+			</div>
+		</div>
 
-	<div class="col-lg-6 col-lg-offset-3 padding-top center">
-		<%= link_to 'Return to Triage Homepage', root_path %>
+		<div class="row padding-top">
+			<div class="col-lg-6 col-lg-offset-3 center">
+				<%= link_to 'Return To Homepage', root_path, :class => "btn btn-lg btn-custom", :type => "button" %>
+			</div>
+		</div>
 	</div>
 </div>
