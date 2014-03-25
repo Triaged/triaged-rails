@@ -5,13 +5,26 @@
 $ ->
 	$("#pilotForm").bootstrapValidator({
         message: 'This value is not valid',
-        live: 'enabled',
+        #live: 'enabled',
+        submitHandler: (validator, form, submitButton) -> {
+          #form.find('.alert').html('Thanks for signing up. Now you can sign in as ' + validator.getFieldElements('username').val()).show();
+          
+        },
         fields: {
         	'pilot[name]': {
                 message: 'The username is not valid',
                 validators: {
                     notEmpty: {
-                        message: 'The username is required and can\'t be empty'
+                        message: 'Your name is required and can\'t be empty'
+                    }
+                    
+                }
+            },
+           'pilot[email]': {
+                message: 'The email is not valid',
+                validators: {
+                    emailAddress: {
+                        message: 'The input is not a valid email address'
                     }
                     
                 }
@@ -39,6 +52,10 @@ $ ->
 	  
 	  # don't follow the link
 	  false
+
+	$("#myCarousel").bind "slide.bs.carousel", ->
+		#$('#pilotForm').bootstrapValidator('validate')
+		return
 
 	# bind 'slid' function
 	$("#myCarousel").bind "slid.bs.carousel", ->

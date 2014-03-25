@@ -32,7 +32,7 @@
 					<!-- Title Row -->
 					<div class="row padding-top-lg">
 						<h1>Introducing Triage</h1>
-						<h4>Triage monitors your work tools. <br>
+						<h4>Everything Important at Work. <br>
 						Know more, do more.</h4>
 					</div>
 					<!-- CTA Row -->
@@ -53,7 +53,7 @@
 	<div class="col-lg-12 center">
 		<div id="hero-breadcrumb">
 			<p class="light">Learn More</p>
-			<%= image_tag "hero-carrot.png" %>
+			<%= image_tag "hero-carrot.png", :id => "learn-more-carrot" %>
 		</div>
 	</div>
 </div>
@@ -71,7 +71,7 @@
 				<!-- Headline -->	
 				<div class="col-lg-6 col-lg-offset-3 center">
 					<h2>Triage integrates the SaaS tools you use everyday.</h2>
-					<p class="altbody">Triage monitors your favorite developer worktools you use at work and pulls everything into one mobile feed.</p>
+					<p class="altbody">Quickly connect your services, Triage syncs everything important into one mobile feed.</p>
 				</div>
 			</div>
 
@@ -101,44 +101,44 @@
 						<div class="col-lg-6">
 							
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/airbrake-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i1" >
+									<%= link_to image_tag("icons/airbrake-icon.png", :width => "30") %>
 									<%= link_to 'Airbrake' %>
 								</div>
 							</div>
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/appfigures-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i2">
+									<%= link_to image_tag("icons/appfigures-icon.png", :width => "30") %>
 									<%= link_to 'Appfigures' %>
 								</div>
 							</div>
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/beanstalk-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i3">
+									<%= link_to image_tag("icons/beanstalk-icon.png", :width => "30") %>
 									<%= link_to 'Beanstalk' %>
 								</div>
 							</div>
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/bitbucket-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i4">
+									<%= link_to image_tag("icons/bitbucket-icon.png", :width => "30") %>
 									<%= link_to 'Bitbucket' %>
 								</div>
 							</div>
-							<div class="services-row">
+							<div class="services-row" id="i5">
 								<div class="service">
-									<%= link_to image_tag("icons/crashlytics-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to image_tag("icons/crashlytics-icon.png", :width => "30") %>
 									<%= link_to 'Crashlytics' %>
 								</div>
 							</div>
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/dropbox-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i6">
+									<%= link_to image_tag("icons/dropbox-icon.png", :width => "30") %>
 									<%= link_to 'Dropbox' %>
 								</div>
 							</div>
-							<div class="services-row">
+							<div class="services-row" id="i7">
 								<div class="service">
-									<%= link_to image_tag("icons/ga-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to image_tag("icons/ga-icon.png", :width => "30") %>
 									<%= link_to 'Google Analytics' %>
 								</div>
 							</div>
@@ -148,44 +148,44 @@
 						<div class="col-lg-6">
 							
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/github-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i8">
+									<%= link_to image_tag("icons/github-icon.png", :width => "30") %>
 									<%= link_to 'Github' %>
 								</div>
 							</div>
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/heroku-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i9">
+									<%= link_to image_tag("icons/heroku-icon.png",  :width => "30") %>
 									<%= link_to 'Heroku' %>
 								</div>
 							</div>
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/hockeyapp-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i10">
+									<%= link_to image_tag("icons/hockeyapp-icon.png", :width => "30") %>
 									<%= link_to 'Hockey App' %>
 								</div>
 							</div>
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/kiln-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i11">
+									<%= link_to image_tag("icons/kiln-icon.png", :width => "30") %>
 									<%= link_to 'Kiln' %>
 								</div>
 							</div>
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/newrelic-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i12">
+									<%= link_to image_tag("icons/newrelic-icon.png", :width => "30") %>
 									<%= link_to 'New Relic' %>
 								</div>
 							</div>
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/sentry-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i3">
+									<%= link_to image_tag("icons/sentry-icon.png", :width => "30") %>
 									<%= link_to 'Sentry' %>
 								</div>
 							</div>
 							<div class="services-row">
-								<div class="service">
-									<%= link_to image_tag("icons/stripe-icon.png", :id => "i1", :width => "30") %>
+								<div class="service" id="i4">
+									<%= link_to image_tag("icons/stripe-icon.png", :width => "30") %>
 									<%= link_to 'Stripe' %>
 								</div>
 							</div>
@@ -194,6 +194,8 @@
 					</div>
 				</div>
 			</div>
+
+
 
 			<!-- Additional Features -->
 			<div class="row padding-top-sm">
@@ -207,7 +209,7 @@
 						<p>Triage is better when your team uses it. We make it easy to send invitations.</p>
 				</div>
 				<div class="col-lg-custom col-lg-offset-custom col-sm-4 center">
-						<p class="blue bold">Personalize Services</p>
+						<p class="blue bold">Personalize Your Feed</p>
 						<p>Personalize, filter or mute your services. Your feed looks the way you want it.</p>
 				</div>
 
@@ -228,7 +230,7 @@
 			<div class="row padding-top-sm">
 				<div class="col-lg-6 col-lg-offset-3 center">
 					<h2>A Day With Triage</h2>
-					<p class="altbody">Scroll down to see what a day with Triage looks like</p>
+					<!-- <p class="altbody">Scroll down to see what a day with Triage looks like</p> -->
 				</div>
 			</div>
 
