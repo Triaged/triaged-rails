@@ -1,5 +1,5 @@
 <!-- Hero Border -->
-<div class="hero-border">
+<div id="hero-border">
 	<div class="container fullheight">
 		<!-- Welcome -->	
 		<div class="col-lg-12 col-sm-12 fullheight">
@@ -61,10 +61,10 @@
 
 
 <!-- Integrations Border -->
-<div class="border">
+<div id="service-border">
 	<div class="container">
 		<!-- Welcome -->	
-		<div class="col-lg-12 col-sm-12 fullheight padding-top-sm padding-bottom">
+		<div class="col-lg-12 col-sm-12 fullheight padding-top-sm padding-bottom-sm">
 
 			<!-- Integrations -->
 			<div class="row">
@@ -96,74 +96,107 @@
 				
 				<!-- Icons -->
 				<div class="col-lg-6" data-scrollReveal>
-					<div class="row">
-						<div class="col-lg-6 padding-top-sm service-icon">
-							<div class="icon-row">
-								<%= link_to image_tag("icons/github-icon.png", :id => "i1", :class => "grow") %>
-								<%= link_to 'Github' %>
+					<div class="row service-icon">
+						
+						<div class="col-lg-6">
+							
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/airbrake-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Airbrake' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/sentry-icon.png", :id => "i2", :class => "grow") %>
-								<%= link_to 'Sentry' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/appfigures-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Appfigures' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/heroku-icon.png", :id => "i3", :class => "grow") %>
-								<%= link_to 'Heroku' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/beanstalk-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Beanstalk' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/dropbox-icon.png", :id => "i4", :class => "grow") %>
-								<%= link_to 'Dropbox' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/bitbucket-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Bitbucket' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/ga-icon.png", :id => "i5", :class => "grow") %>
-								<%= link_to 'Google Analytics' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/crashlytics-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Crashlytics' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/crashlytics-icon.png", :id => "i6", :class => "grow") %>
-								<%= link_to 'Crashlytics' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/dropbox-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Dropbox' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/stripe-icon.png", :id => "i7", :class => "grow") %>
-								<%= link_to 'Stripe' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/ga-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Google Analytics' %>
+								</div>
 							</div>
+
 						</div>
-						<div class="col-lg-6 padding-top-sm service-icon">
-							<div class="icon-row">
-								<%= link_to image_tag("icons/bitbucket-icon.png", :id => "i8", :class => "grow")  %>
-								<%= link_to 'Bitbucket' %>
+
+						<div class="col-lg-6">
+							
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/github-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Github' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/newrelic-icon.png", :id => "i9", :class => "grow") %>
-								<%= link_to 'New Relic' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/heroku-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Heroku' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/kiln-icon.png", :id => "i10", :class => "grow") %>
-								<%= link_to 'Kiln' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/hockeyapp-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Hockey App' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/hockeyapp-icon.png", :id => "i11", :class => "grow") %>
-								<%= link_to 'HockeyApp' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/kiln-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Kiln' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/beanstalk-icon.png", :id => "i12", :class => "grow") %>
-								<%= link_to 'Beanstalk' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/newrelic-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'New Relic' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/appfigures-icon.png", :id => "i13", :class => "grow") %>
-								<%= link_to 'Appfigures' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/sentry-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Sentry' %>
+								</div>
 							</div>
-							<div class="icon-row">
-								<%= link_to image_tag("icons/airbrake-icon.png", :id => "i14", :class => "grow") %>
-								<%= link_to 'Airbrake' %>
+							<div class="services-row">
+								<div class="service">
+									<%= link_to image_tag("icons/stripe-icon.png", :id => "i1", :width => "30") %>
+									<%= link_to 'Stripe' %>
+								</div>
 							</div>
+							
 						</div>
 					</div>
-					<p class="bold center padding-top-sm">Click to see examples of service card.</p>
 				</div>
 			</div>
 
 			<!-- Additional Features -->
-			<div class="row padding-top-sm">
+			<div class="row padding-top">
 
 				<div class="col-lg-custom col-sm-4 center">
 						<p class="blue bold">Simple Onboarding</p>
@@ -186,7 +219,7 @@
 
 
 <!-- Day Border -->
-<div class="border" id="day">
+<div id="day-border">
 	<div class="container">
 		<!-- Day -->	
 		<div class="col-lg-12 col-sm-12 fullheight">

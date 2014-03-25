@@ -429,14 +429,22 @@ box-shadow: none;
 /* Border */
 
 .border {
+    border: 15px solid #f6f6f6;
+}
+#hero-border {
+    top: 0; right: 0; bottom: 0; left: 0;
+    border: 15px solid #f6f6f6;
+    min-height: 100%;
+}
+#service-border {
     border-right: 15px solid #f6f6f6;
     border-bottom: 15px solid #f6f6f6;
     border-left: 15px solid #f6f6f6;
 }
-.hero-border {
-    top: 0; right: 0; bottom: 0; left: 0;
-    border: 15px solid #f6f6f6;
-    min-height: 100%;
+#day-border {
+    border-right: 15px solid #f6f6f6;
+    border-bottom: 15px solid #f6f6f6;
+    border-left: 15px solid #f6f6f6;
 }
 
 /* Footer */
