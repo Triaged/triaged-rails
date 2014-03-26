@@ -1,4 +1,4 @@
-class Messages::Thumbsup #< ActiveRecord::Base
-  #acts_as :message
+class Messages::Thumbsup < Message
+  
 
 end
