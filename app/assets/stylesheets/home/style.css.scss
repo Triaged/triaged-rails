@@ -331,7 +331,8 @@ img {
 /* Forms */
 
 .form-control-custom {
-padding: 30px 30px;
+height: 60px;
+padding-left: 30px; 
 border: 1px solid #DFE0E8;
 border-radius: 3px;
 font-weight: 300;
@@ -346,8 +347,8 @@ input.form-control-custom::-moz-placeholder {color: #999999;}
 input.form-control-custom:-ms-input-placeholder {color: #999999;}
 
 input.form-control-custom:focus::-webkit-input-placeholder {color: #868B9E;}
-input.form-control-custom:focus:-moz-placeholder {color: #868B9E;}
-input.form-control-custom:focus::-moz-placeholder {color: #868B9E;}
+input.form-control-custom:focus:-moz-placeholder {color: #868B9E; opacity: 1;}
+input.form-control-custom:focus::-moz-placeholder {color: #868B9E; opacity: 1;}
 input.form-control-custom:focus:-ms-input-placeholder {color: #868B9E;}
 
 .form-control-custom:focus {
