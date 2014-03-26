@@ -4,7 +4,7 @@ module Common::MessageService
 		company = feed_item.company
 		message = Messages::Chat.new(message_params)
 		feed_item.messages << message
-		Rails.logger.inspect message
+		Rails.logger message.inspect
 		#self.parse_mentions(company, message)
 		
 		# ensure feed_item.updated_at is fired
