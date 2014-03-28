@@ -6,7 +6,7 @@ class FeedItemSerializer < ApplicationSerializer
   has_many :messages
   has_one :provider
   has_one :author, key: :user
-  attributes :event_name
+  attributes :event_name, :messages_count
   attributes :type, :external_id, :timestamp, :title, :body, :footer, :url, :property_name, :image_url, :thumbnail_url
 
   def messages_count

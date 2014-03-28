@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326185050) do
+ActiveRecord::Schema.define(version: 20140328202245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20140326185050) do
     t.string   "event_image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "messages_count",      default: 0
   end
 
   create_table "friendly_id_slugs", force: true do |t|
