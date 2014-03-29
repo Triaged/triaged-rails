@@ -17,7 +17,7 @@ module Common::MessageService
 
 	def self.toggle_thumbsup(feed_item, thumbsup_params)
 		company = feed_item.company
-		thumbsup =  Thumbsup.new(message_params)
+		thumbsup =  Thumbsup.new(thumbsup_params)
 		feed_item.thumbsups << thumbsup
 		
 		# ensure feed_item.updated_at is fired
