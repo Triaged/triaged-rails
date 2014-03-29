@@ -10,7 +10,7 @@ class FeedItemSerializer < ApplicationSerializer
   attributes :type, :external_id, :timestamp, :title, :body, :footer, :url, :property_name, :image_url, :thumbnail_url
 
   def messages_count
-  	object.messages.count
+  	object.messages_count
   end
 
 
