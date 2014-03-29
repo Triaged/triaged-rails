@@ -8,7 +8,7 @@ class FeedItem < ActiveRecord::Base
 	
 	has_many :messages, order: "id DESC"
   has_many :shares
-  has_many :thumbsup
+  has_many :thumbsups
 
 	validates :provider, presence: true
 	validates :title, presence: true
