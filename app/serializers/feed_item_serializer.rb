@@ -3,7 +3,7 @@ class FeedItemSerializer < ApplicationSerializer
  #  delegate :cache_key, to: :object
  
   attributes :id, :timestamp, :updated_at
-  has_many :messages
+  has_many :messages, :thumbsups
   has_one :provider
   has_one :author, key: :user
   attributes :event_name, :messages_count

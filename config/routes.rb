@@ -30,6 +30,13 @@
 	    	resources :feed do
 	    		resources :share
 	    		resources :messages
+	    		
+	    		resources :thumbsup do
+	    			collection do
+	    				post 'toggle'
+	    			end
+	    		end
+
 	    		collection do 
 	    			get 'mock'
 	    			get 'view'
