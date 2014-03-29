@@ -21,6 +21,6 @@ class Api::V1::ThumbsupController < API::BaseController
 
     # Only allow a trusted parameter "white list" through.
     def thumbsup_params
-      params[:thumbsup]
+      params[:thumbsup].permit!
     end
 end
