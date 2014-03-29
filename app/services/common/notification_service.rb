@@ -14,9 +14,9 @@ module Common::NotificationService
 		Common::NotificationService.push(user, item.id, alert)
 	end
 
-	def self.push_thumbsup thumber, feed_item
+	def self.push_thumbsup thumber, item
 		alert = "#{thumber.name.humanize} gave you a thumbs up!"
-		Common::NotificationService.push(feed_item.author, item.id, alert)
+		Common::NotificationService.push(item.author, item.id, alert)
 	end
 
 	def self.push_test user, alert
