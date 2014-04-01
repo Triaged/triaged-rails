@@ -267,15 +267,6 @@ img {
     padding: 0 6px;
 }
 
-/* iPad */
-@media (min-width: 768px) and (max-device-width : 1024px) {
-
-  .checkbox-fixed label,
-  .checkbox-fitted label {
-    padding-top: 15px;
-  }
-}
-
 .checkbox-fitted label span {
     text-align:center;
     padding:8px 18px 6px;
@@ -452,6 +443,13 @@ box-shadow: none;
     padding-left: 100px;
   }
 
+  /* Checkbox & Radio */
+
+  .checkbox-fixed label,
+  .checkbox-fitted label {
+    padding-top: 15px;
+  }
+
   /* Footer */
 
   .footer > li:not(:first-child) {
@@ -525,6 +523,13 @@ box-shadow: none;
     padding: 10px 15px;
   }
 
+  /* Checkbox & Radio */
+
+  .checkbox-fixed label,
+  .checkbox-fitted label {
+    padding-top: 15px;
+  }
+
   /* Footer */
 
   #footer-list
@@ -546,9 +551,11 @@ box-shadow: none;
   .btn-custom {
   font-size: 16px;
   padding: 10px 10px;
+  width: 70%;
   }
   #download-cta {
     margin: 0;
     width: 60%;
   }
+
 }
