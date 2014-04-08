@@ -89,6 +89,8 @@ TriageRails::Application.configure do
   ActionMailer::Base.delivery_method = :smtp
 
   Rails.application.routes.default_url_options[:host] = "www.triaged.co"
+
+  GA.tracker = "UA-45309305-2"
    
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
