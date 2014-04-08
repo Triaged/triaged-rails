@@ -239,7 +239,7 @@ h4 {
 
 a {
   color: #7691CD;
-  font-weight: 500;
+  font-weight: 700;
   outline: none;
   text-decoration: none;
 }
@@ -348,23 +348,24 @@ input.form-control-custom:focus:-ms-input-placeholder {color: #868B9E;}
   outline: none;
 }
 
-.has-success-custom .form-control {
-border-color: #90d55c;
--webkit-box-shadow: none;
-box-shadow: none;
-}
-
-.has-error-custom .form-control {
+.error {
 border-color: #e2421f;
 -webkit-box-shadow: none;
 box-shadow: none;
 }
 
-.control-label-custom {
+label.error {
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-top: 5px;
+  color: #999999;
   font-weight: 300;
-  text-transform: none;
-  margin-top: 15px;
 }
+
+input.error::-webkit-input-placeholder {color: #ea5735;}
+input.error:-moz-placeholder {color: #ea5735;}
+input.error::-moz-placeholder {color: #ea5735;}
+input.error:-ms-input-placeholder {color: #ea5735;}
 
 /* IMG */
 
