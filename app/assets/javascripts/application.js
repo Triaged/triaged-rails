@@ -21,4 +21,6 @@
 //= require jquery.ba-cond.min
 //= require jquery.slitslider
 //= require bootstrapValidator
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 

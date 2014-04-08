@@ -53,9 +53,6 @@ $ ->
 	  # don't follow the link
 	  false
 
-	$("#myCarousel").bind "slide.bs.carousel", ->
-		#$('#pilotForm').bootstrapValidator('validate')
-		return
 
 	# bind 'slid' function
 	$("#myCarousel").bind "slid.bs.carousel", ->
@@ -83,6 +80,10 @@ $ ->
 		$("#slideButton").text("Finish")
 
 	$("#slideButton").click ->
+		$("#pilotForm").validate()
+		return false unless $("#pilotForm").valid()
+
+
 		idx = $("#myCarousel .item.active").index()
 		return if idx != 4
 		$("#pilotForm").submit()

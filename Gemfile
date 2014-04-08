@@ -48,7 +48,7 @@ gem 'figaro'
 gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
 gem 'simple_form', '>= 3.0.0.rc'
 gem 'google-analytics-rails'
-
+gem 'jquery-validation-rails'
 gem 'pusher'
 gem 'recursive-open-struct'
 gem 'mongoid_slug'
