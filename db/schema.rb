@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409214835) do
+ActiveRecord::Schema.define(version: 20140409220630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,10 +86,10 @@ ActiveRecord::Schema.define(version: 20140409214835) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "messages_count",      default: 0
-    t.integer  "event_id"
+    t.integer  "event_type_id"
   end
 
-  add_index "feed_items", ["event_id"], name: "index_feed_items_on_event_id", using: :btree
+  add_index "feed_items", ["event_type_id"], name: "index_feed_items_on_event_type_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
