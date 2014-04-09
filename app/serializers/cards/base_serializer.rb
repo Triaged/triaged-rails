@@ -4,4 +4,8 @@ class Cards::BaseSerializer < FeedItemSerializer
  	
  	attributes :event_name
 
+ 	def event_name
+ 		object.event_type.name
+ 	end
+
 end

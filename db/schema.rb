@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409212602) do
+ActiveRecord::Schema.define(version: 20140409214835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,14 +49,14 @@ ActiveRecord::Schema.define(version: 20140409212602) do
     t.integer "provider_id"
   end
 
-  create_table "events", force: true do |t|
+  create_table "event_types", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "provider_id"
   end
 
-  add_index "events", ["provider_id"], name: "index_events_on_provider_id", using: :btree
+  add_index "event_types", ["provider_id"], name: "index_event_types_on_provider_id", using: :btree
 
   create_table "feed_items", force: true do |t|
     t.integer  "as_feed_item_id"

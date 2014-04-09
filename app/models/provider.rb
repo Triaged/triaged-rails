@@ -5,7 +5,7 @@ class Provider < ActiveRecord::Base
   mount_uploader :small_icon, SmallProviderIconUploader
 
   has_many :feed_items
-  has_many :events
+  has_many :event_types
   has_one :provider_account
 
   validates :name, uniqueness: true

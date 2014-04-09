@@ -13,6 +13,10 @@ class FeedItemSerializer < ApplicationSerializer
   	object.messages_count
   end
 
+  def event_name
+    object.event_type.name
+  end
+
 
 
   def type

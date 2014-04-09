@@ -24,9 +24,9 @@ module UserFeedable
   	unless ignore_event(event)
 			user_feed_items.create(feed_item: event)
 	  	Common::NotificationService.push_feed_item(self, event) if should_push?(event)
-	  	logger.info "Added #{event.provider.name}:#{event.event_name} to user feed: #{email}"
+	  	logger.info "Added #{event.provider.name}:#{event.event_type.name} to user feed: #{email}"
 	  else
-	  	logger.info "Ignoring event #{event.provider_name}:#{event.event_name} to user feed: #{email}"
+	  	logger.info "Ignoring event #{event.provider_name}:#{event.event_type.name} to user feed: #{email}"
 	  end
   end
 
