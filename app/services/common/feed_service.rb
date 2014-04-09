@@ -20,6 +20,7 @@ module Common::FeedService
 		event_hash = JSON.parse(json_event)
 
 		event_hash = self.set_provider_from_hash(event_hash, company) # Set Provider
+		event_hash = self.set_event_from_hash(event_hash, provider, company)
 		event_hash = self.set_author_from_hash(event_hash, company) # Set Author
 		event_hash = self.set_images_from_hash(event_hash, company) # Set Images
 
@@ -52,6 +53,15 @@ module Common::FeedService
 		end
 
 		event_hash[:provider] = provider
+
+		return event_hash
+	end
+
+	def self.set_event_from_hash event_hash, provider, company
+		
+		event_name = event_hash.delete("event_name")
+		event = Event.find_or_create provider: provider, name: event_name
+		event_hash[:event] = event
 
 		return event_hash
 	end

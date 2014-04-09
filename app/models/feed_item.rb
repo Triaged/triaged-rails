@@ -5,6 +5,7 @@ class FeedItem < ActiveRecord::Base
   belongs_to :provider
 	belongs_to :provider_account
 	belongs_to :user_feed_item
+	belongs_to :event
 	
 	has_many :messages, order: "id DESC"
   has_many :shares
