@@ -60,7 +60,7 @@ module Common::FeedService
 	def self.set_event_from_hash event_hash, provider, company
 		
 		event_name = event_hash.delete("event_name")
-		event = Event.find_or_create provider: provider, name: event_name
+		event = Event.find_or_create_by provider: provider, name: event_name
 		event_hash[:event] = event
 
 		return event_hash
