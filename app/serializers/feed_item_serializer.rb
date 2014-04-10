@@ -14,7 +14,7 @@ class FeedItemSerializer < ApplicationSerializer
   end
 
   def event_name
-    object.event_type.name || object.event_name
+    object.event_type.name
   end
 
 
