@@ -139,14 +139,16 @@
 		
 
 		devise_for :admins, :controllers => { :registrations => "admin_registrations" }
-		authenticated :admin do
-			namespace :admin do
-				resources :welcome
-				resources :messages
-	      resources :providers
-				mount Sidekiq::Web => '/sidekiq'
-			end
+		
+		resource :admin do
+			resources :users , :controller => 'admin/users'
+			resources :companies , :controller => 'admin/companies'
+			resources :feed_items , :controller => 'admin/feed_items'
+			resources :messages , :controller => 'admin/messages'
+      resources :providers, :controller => 'admin/providers'
+			mount Sidekiq::Web => '/sidekiq'
 		end
+		
 
 		#mount Dashing::Engine, at: Dashing.config.engine_path
 		

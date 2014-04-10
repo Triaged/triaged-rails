@@ -1,6 +1,6 @@
-class Admin::WelcomeController < ApplicationController
-	before_action :authenticate_admin!
-	before_action :set_admin
+class Admin::WelcomeController < AdminsController
+	
+	
 
 	def index
 		@user_count = User.count
@@ -9,13 +9,9 @@ class Admin::WelcomeController < ApplicationController
 		@feed_item_count = Company.all.sum {|company| company.feed_items.count}
 		@connected_count = Company.all.sum {|company| company.connected_providers.count}
 		@providers = provider_items
-
-
 	end
 
-	def set_admin
-		@admin = current_admin
-	end
+
 
 	def connected_providers
 	results = Company.collection.aggregate({ '$unwind' => "$connected_providers" },{ '$group' => { '_id' => "$connected_providers.provider_id" , 'number' => { '$sum' => 1 } } })

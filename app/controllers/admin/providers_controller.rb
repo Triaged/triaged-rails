@@ -1,5 +1,4 @@
-class Admin::ProvidersController < ApplicationController
-  before_action :authenticate_admin!
+class Admin::ProvidersController < AdminsController
   before_action :set_admin_provider, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/providers

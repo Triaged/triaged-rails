@@ -1,0 +1,10 @@
+<span class="pull-right"><%= @admin.email %> <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>  </span><br />
+
+<br /><br /><br />
+
+<h2> <%= link_to 'Providers', admin_providers_path %> : <%= @providers_count %> </h2>
+<h2> <%= link_to 'Users', admin_users_path %> : <%= @user_count %> </h2>
+<h2> <%= link_to 'Companies', admin_companies_path %>: <%= @company_count %> </h2>
+<h2> <%= link_to 'Feed Items', admin_feed_items_path %>: <%= @feed_items_count %> </h2>
+<h2> Connected Providers: <%= @connected_provider_count %> </h2>
+<hr />
