@@ -32,7 +32,10 @@ private
 			@user.save 
 		end
 
-		@user = User.find_by(name: @author_json.name) unless @user
+		unless @user
+			Rails.logger.info ("looking for user: @author_json.name")
+			@user = User.find_by(name: @author_json.name) 
+		end
 		
 	end
 end
