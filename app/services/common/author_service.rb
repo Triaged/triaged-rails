@@ -3,6 +3,7 @@ class Common::AuthorService
 	attr_accessor :user, :author_json, :company
 	
 	def initialize(author_json, company)
+		Rails.logger.info("init Author Service")
 		@author_json = RecursiveOpenStruct.new(author_json)
 		@company = company
 
