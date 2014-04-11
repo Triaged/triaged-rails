@@ -2,7 +2,7 @@
 		<div class="card">
 			
 			<div class="row head">
-				<%= avatar_for feed_item.user, feed_item.provider %>
+				<%= avatar_for feed_item.author, feed_item.provider %>
 				
 				<div class="head-content">
 					<h1 class="title"><%= feed_item.author.name if feed_item.author %> <%= feed_item.title %></h1>
