@@ -20,6 +20,7 @@ class Common::AuthorService
 private
 	
 	def build_user
+		Rails.logger.info("build user")
 		user_from_json if @author_json
 	end
 
