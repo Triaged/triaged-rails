@@ -1,0 +1,48 @@
+<div class="card-wrapper col-lg-6 col-lg-offset-3">
+		<div class="card">
+			
+			<div class="row head">
+				<%= avatar_for event.user, event.provider %>
+				
+				<div class="head-content">
+					<h1 class="title"><%= event.user.name if event.user %> <%= event.title %></h1>
+					<div class="property">
+						<p class="alt"><%= event.property_name %></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="content row">
+				<div class="event-content">
+
+					<!-- Image -->
+
+					<div class="event-image">
+						<%= image_tag(event.event_image.web.url, :id => "image") if event.event_image? %>
+						<%= body_helper event %>
+
+					<!-- Graph -->
+					<!-- <div class="event-image">
+					<%= image_tag "test-graph.png", :width => "100%" %>
+					</div> -->
+
+				</div>
+				<div class="row">
+					<div class="floatleft">
+						<%= image_tag "tm-icon@2x.png", :width => "18", :id => "timeicon" %>
+						<p class="alt"><%= time_ago_in_words event.timestamp %></p>
+					</div>
+					<div class="floatright">
+						<p><%= link_to "Open in #{event.provider.title}", event.url, :target => "blank" %></p>
+					</div>
+				</div>
+			</div>
+
+			<% if event.messages.exists? %>
+				<div class="row conversation-border">
+					<%= render event.messages %>
+				</div>
+			<% end %>
+		
+	</div>
+</div>
