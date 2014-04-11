@@ -19,8 +19,8 @@ class Zapier::Event::Zap < BaseServiceEvent
 		}
 
 		event[:author] = { 
-      name: data.name,
-      email: data.email
+      name: data.author_name,
+      email: data.author_email
     }
 
 		event[:provider] = {
