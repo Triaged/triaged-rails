@@ -20,7 +20,7 @@ class Common::AuthorService
 private
 	
 	def build_user
-		user_from_json if @author_json.email
+		user_from_json if @author_json
 	end
 
 	def user_from_json
