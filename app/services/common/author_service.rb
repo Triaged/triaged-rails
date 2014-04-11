@@ -24,18 +24,15 @@ private
 	end
 
 	def user_from_json
-		@user = User.find_or_initialize_by(email: @author_json.email)
+		Rails.logger.info ("looking for user: #{@author_json.name}")
+		@user = User.find_by(name: @author_json.name) if @author_json.name
+
+		@user = User.find_or_initialize_by(email: @author_json.email) unless @user
 		
 		if @user.new_record?
 			@user.company = @company
 			@user.full_name(@author_json.name) if @author_json.name
 			@user.save 
 		end
-
-		unless @user
-			Rails.logger.info ("looking for user: @author_json.name")
-			@user = User.find_by(name: @author_json.name) 
-		end
-		
 	end
 end
