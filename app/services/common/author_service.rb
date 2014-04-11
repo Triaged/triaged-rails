@@ -31,6 +31,8 @@ private
 			@user.full_name(@author_json.name) if @author_json.name
 			@user.save 
 		end
+
+		@user = User.find_by(name: @author_json.name) unless @user
 		
 	end
 end
