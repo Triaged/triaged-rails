@@ -5,7 +5,7 @@
 				<%= avatar_for feed_item.user, feed_item.provider %>
 				
 				<div class="head-content">
-					<h1 class="title"><%= feed_item.user.name if feed_item.user %> <%= feed_item.title %></h1>
+					<h1 class="title"><%= feed_item.author.name if feed_item.author %> <%= feed_item.title %></h1>
 					<div class="property">
 						<p class="alt"><%= feed_item.property_name %></p>
 					</div>
