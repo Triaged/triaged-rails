@@ -26,7 +26,8 @@ private
 
 	def user_from_json
 		puts("looking for user: #{@author_json.name}")
-		@user = User.find_by(first_name: @author_json.name.split.first, last_name: @author_json.name.split.last) if @author_json.name
+		#@user = User.find_by(first_name: @author_json.name.split.first, last_name: @author_json.name.split.last) if @author_json.name
+		@user = User.find_by_fuzzy_name(@author_json.name, :limit => 1).first if @author_json.name
 
 		@user = User.find_or_initialize_by(email: @author_json.email) unless @user
 		

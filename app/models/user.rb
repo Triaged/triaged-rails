@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	include Providable
 	extend FriendlyId
 	friendly_id :name, use: [:slugged, :finders, :scoped], :scope => [:company]
-
+	fuzzily_searchable :name
 	mount_uploader :avatar, AvatarUploader
 
 	belongs_to :company
@@ -43,6 +43,10 @@ class User < ActiveRecord::Base
 	def name
 		"#{self.first_name} #{self.last_name}"
 	end
+
+	def name_changed?
+    first_name_changed? || last_name_changed?
+  end
 
 	def full_name(name)
 		self.first_name = name.split.first

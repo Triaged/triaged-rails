@@ -147,6 +147,8 @@ GEM
     formatador (0.2.4)
     friendly_id (5.0.3)
       activerecord (>= 4.0.0)
+    fuzzily (0.3.2)
+      activerecord (>= 2.3.17)
     github_api (0.10.2)
       addressable
       faraday (~> 0.8.7)
@@ -400,6 +402,7 @@ DEPENDENCIES
   fog
   foreman
   friendly_id (~> 5.0.0)
+  fuzzily
   github_api
   grocer
   guard-bundler
