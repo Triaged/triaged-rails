@@ -14,7 +14,7 @@ class StatusReportsController < ApplicationController
   # GET /status_reports/new
   def new
     @status_report = StatusReport.find_or_create_by(status_date: Date.today, user_id: current_user.id)
-    @feed_items = FeedItem.where(author: current_user).where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight)
+    @feed_items = FeedItem.where(author: current_user)#.where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight)
   end
 
   # GET /status_reports/1/edit
