@@ -5,12 +5,7 @@
 	  # To be removed
 		resource :account
 
-		resources :status_reports do
-			member do 
-				post 'publish'
-			end
-			resources :status_entries
-		end
+		
 
 
 		devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
@@ -84,6 +79,12 @@
 	  namespace :app do
 	    resources :feed_items
 	    resources :feed
+	    resources :status_reports do
+				member do 
+					post 'publish'
+				end
+				resources :status_entries
+			end
 
 	    resources :share, :only => :show
 	    

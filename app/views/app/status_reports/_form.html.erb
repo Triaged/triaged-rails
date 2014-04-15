@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-lg-4 col-lg-offset-4">
-		<%= simple_form_for([@status_report, StatusEntry.new], :html => {:class => "form-horizontal" }, :remote => true) do |f| %>
+		<%= simple_form_for([:app, @status_report, StatusEntry.new], :html => {:class => "form-horizontal" }, :remote => true) do |f| %>
   		<%= f.error_notification %>
 
 		  <div class="form-inputs">

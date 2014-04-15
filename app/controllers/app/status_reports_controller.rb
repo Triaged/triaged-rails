@@ -1,4 +1,4 @@
-class StatusReportsController < ApplicationController
+class App::StatusReportsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_status_report, only: [:show, :edit, :update, :destroy, :publish]
 

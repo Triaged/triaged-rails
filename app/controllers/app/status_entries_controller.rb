@@ -1,4 +1,4 @@
-class StatusEntriesController < ApplicationController
+class App::StatusEntriesController < ApplicationController
   respond_to :html, :js
 
   before_action :set_status_report
