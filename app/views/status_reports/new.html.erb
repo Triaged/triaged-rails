@@ -12,6 +12,10 @@
 	</div>
 </div>
 
+
+
 <%= button_to 'Publish', publish_status_report_path(@status_report), :class => "btn btn-success" %>
 
 <%= link_to 'Back', status_reports_path %>
+
+<%= render @feed_items %>
