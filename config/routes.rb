@@ -5,6 +5,13 @@
 	  # To be removed
 		resource :account
 
+		resources :status_reports do
+			member do 
+				post 'publish'
+			end
+			resources :status_entries
+		end
+
 
 		devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
 	                   controllers: {omniauth_callbacks: "omniauth_callbacks"}

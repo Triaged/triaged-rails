@@ -89,7 +89,7 @@ gem "lograge"
 gem 'fuzzily'
 gem 'yui-compressor'
 gem 'dropbox-sdk', :require => 'dropbox_sdk'
-
+gem 'workflow'
 
 group :development do
 	#gem 'heroku_san'

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  status_date: 2014-04-15
+  user_id: 
+  workflow_state: MyString
+
+two:
+  status_date: 2014-04-15
+  user_id: 
+  workflow_state: MyString

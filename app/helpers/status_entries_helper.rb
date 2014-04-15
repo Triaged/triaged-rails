@@ -1,0 +1,2 @@
+module StatusEntriesHelper
+end
