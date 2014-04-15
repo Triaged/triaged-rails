@@ -325,8 +325,6 @@ GEM
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    searchlogic (2.4.28)
-      activerecord (>= 2.0.0)
     sidekiq (2.15.2)
       celluloid (>= 0.15.2)
       connection_pool (>= 1.0.0)
@@ -444,7 +442,6 @@ DEPENDENCIES
   rest-client
   ruby-trello
   sass-rails (~> 4.0.0)
-  searchlogic
   sentry-raven!
   sidekiq
   simple_form (>= 3.0.0.rc)
