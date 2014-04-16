@@ -9,13 +9,13 @@ class App::StatusReportsController < ApplicationController
 
   # GET /status_reports/1
   def show
-    @feed_items = FeedItem.where(author: current_user).where(timestamp: (@status_report.status_date.now.midnight - 1.day)..@status_report.status_date.now.midnight)
+    @feed_items = FeedItem.where(author: current_user).where(timestamp: (@status_report.status_date.midnight - 1.day)..@status_report.status_date.midnight)
   end
 
   # GET /status_reports/new
   def new
     @status_report = StatusReport.find_or_create_by(status_date: Date.today, user_id: current_user.id)
-    @feed_items = FeedItem.where(author: current_user).where(timestamp: (@status_report.status_date.now.midnight - 1.day)..@status_report.status_date.now.midnight)
+    @feed_items = FeedItem.where(author: current_user).where(timestamp: (@status_report.status_date.midnight - 1.day)..@status_report.status_date.midnight)
   end
 
   # GET /status_reports/1/edit
