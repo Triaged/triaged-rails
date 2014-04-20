@@ -1,13 +1,11 @@
 class WelcomeController < ApplicationController
-
-	layout "welcome"
-
+	layout "home"
 	before_filter :check_for_mobile
 
 	def index
 	end
 
-	def support
+	def faq
 	end
 
 	def terms
@@ -19,8 +17,7 @@ class WelcomeController < ApplicationController
 	def about
 	end
 
-	def play
-		render layout: false
+	def jobs
 	end
 
 	def capture_email

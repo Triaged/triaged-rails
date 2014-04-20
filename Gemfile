@@ -90,6 +90,7 @@ gem 'fuzzily'
 gem 'yui-compressor'
 gem 'dropbox-sdk', :require => 'dropbox_sdk'
 gem 'workflow'
+gem 'jquery-validation-rails'
 
 group :development do
 	#gem 'heroku_san'

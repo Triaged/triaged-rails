@@ -1,0 +1,224 @@
+/* General */
+
+.label-padding {
+	padding-top: 75px;
+}
+#complete-bottom {
+	margin-bottom: 100px;
+}
+
+/* Carosel */
+
+
+.carousel,.item,.active {
+	height:100%;
+}
+.carousel-inner {
+	height:100%;
+}
+.fill {
+	width:100%;
+	height:100%;
+	background-position:center;
+	background-size:cover;
+}
+
+/* faster sliding speed */
+.carousel-inner > .item {
+    -webkit-transition: 0.3s ease-in-out left;
+    -moz-transition: 0.3s ease-in-out left;
+    -o-transition: 0.3s ease-in-out left;
+    transition: 0.3s ease-in-out left;
+}
+
+.item {
+	background-color: #fff;
+}
+
+/* keep full widget on smaller screens */
+@media (max-width: 767px) { 
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/* SVG */
+
+.style0 {
+	clip-path: url(#SVGID_2_);
+	fill: #7691CD;
+	width: 40px;
+}
+.style1 {
+	clip-path: url(#SVGID_2_);
+	fill: #7691CD;
+	width: 23px;
+}
+#Group_2_ {
+	width: 40px;
+}
+.btn-svg {
+	clear: both;
+}
+.btn-svg-1 {
+	top: 9px;
+	position: relative;
+}
+.btn-svg:before,
+.btn-svg:after {
+	content: " ";
+    display: table;
+}
+
+/* Pagination */
+
+.pagination-custom {
+	display: inline-block;
+	padding-left: 0;
+	margin: 20px 0;
+}
+.pagination-custom > li {
+	display: inline;
+}
+.pagination-custom > li:first-child > a, .pagination-custom > li:first-child > span {
+	margin-left: 0;
+}
+.pagination-custom > li > a, .pagination-custom > li > span {
+	position: relative;
+	float: left;
+	line-height: 2;
+	text-decoration: none;
+	width: 25px;
+	height: 25px;
+	-moz-border-radius: 25px / 25px;
+	-webkit-border-radius: 25px / 25px;
+	border-radius: 25px / 25px;
+	border: 1px solid #7691CD;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-weight: 600;
+	font-size: 12px;
+	color: #7691CD;
+}
+.pagination-custom > .active > a, .pagination-custom > .active > a:hover, .pagination-custom > .active > a:focus, .pagination-custom > .active > span, .pagination-custom > .active > span:hover, .pagination-custom > .active > span:focus {
+	z-index: 2;
+	background: #7691CD;
+	border: 1px solid #7691CD;
+	color: white;
+	cursor: pointer;
+}
+.pagination-line {
+	width: 30px;
+	float: left;
+	margin-top: 12px;
+	border: 0;
+	height: 1px;
+	background: #7691CD;
+}
+
+/* BTN */
+
+.btn-custom-2 {
+  background-color: #7691CD;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  width: 30%;
+  padding: 10px 5px;
+  text-transform: none;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.btn-custom-3 {
+  background-color: #fff;
+  border: 1px solid #DFE0E8;
+  border-radius: 26px;
+  color: #222222;
+  padding:16px 40px;
+  text-transform: none;
+  letter-spacing: 1px;
+  text-align:center;
+  overflow:auto;
+  margin-top: 10px;
+ }
+
+.btn-custom-2:hover {
+	background-color: #8DA9FF;
+	color: #fff;
+	cursor: pointer;
+}
+.btn-custom-3:hover {
+	border: 1px solid #7691CD;
+	color: #222222;
+	cursor: pointer;
+}
+
+.btn-custom-2:active,
+.btn-custom-2.active {
+	background-color: #6477B4;
+	color: #ffffff;
+}
+
+.btn-custom-3:active,
+.btn-custom-3.active {
+	background-color: #7691CD;
+	color: #ffffff;
+}
+
+.btn-custom-3:active .style1 {
+	fill: #fff;
+}
+
+.btn-custom-2:focus,
+.btn-custom-small:focus {
+	outline: none;
+	outline: none;
+	outline-offset: none;
+}
+
+
+button .glyphicon {
+	font-size: .75em;
+}
+/* iPad */
+@media (min-width: 768px) and (max-device-width : 1024px) {
+
+	#checkbox-btn {
+		margin-top: 20px;
+	}
+}
+
+/* iPhone */
+@media (max-width: 767px) {
+
+	.navbar-fixed-bottom {
+		position: relative;
+		padding-top: 25px;
+	}
+	.pagination-custom > li > a, .pagination-custom > li > span {
+	margin-left: 7px;
+	margin-right: 7px;
+	}
+	.checkbox-fixed label {
+    padding: 20px 10px;
+	}
+	.label-padding {
+	padding-top: 30px;
+	}
+}
+
+/* First Slide */
+
+/* Second Slide */
+
+/* Third Slide */
+
+/* Fourth Slide */
+
+/* Fifth Slide */
+
+/* Sixth Slide */
+
+

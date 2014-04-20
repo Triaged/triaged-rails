@@ -16,4 +16,11 @@
 //= require twitter/bootstrap
 //= require PhoneFormat
 //= require jquery.phonenumber
+//= require jquery.visible.min
 //= require_tree .
+//= require jquery.ba-cond.min
+//= require jquery.slitslider
+//= require bootstrapValidator
+//= require jquery.validate
+//= require jquery.validate.additional-methods
+

@@ -2,7 +2,7 @@ html,
 body {
   height: 100%;
   min-height: 100%;
-  text-rendering: optimizelegibility;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,29 +24,125 @@ body {
   padding-bottom: 150px;
 }
 
-/* Column spacing */
-.spacing-lg {
-    margin-top: 200px;
+/* Typography */
+
+body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
+  font-size-adjust: 0.5;
 }
 
-.spacing-m {
-    margin-top: 100px;
+#page {
+  font-size: 1em;
+  /* equivalent to 16px */
+  line-height: 1.25;
+  /* equivalent to 20px */
 }
 
-.spacing-sm {
-    margin-top: 50px;
+@media (min-width: 43.75em) {
+  #page {
+    font-size: 1em;
+    /* equivalent to 16px */
+    line-height: 1.375;
+    /* equivalent to 22px */
+  }
 }
 
-.spacing-xsm {
-    margin-top: 25px;
+h1 {
+  font-size: 2em;
+  /* 2x body copy size = 32px */
+  line-height: 1.25;
+  /* 45px / 36px */
 }
 
-.border-top {
-  border-top: 1px solid #ffffff;
+@media (min-width: 43.75em) {
+  h1 {
+    font-size: 2.5em;
+    /* 2.5x body copy size = 40px */
+    line-height: 1.125;
+  }
 }
 
-.margin-bottom {
-  margin-bottom: 50px;
+@media (min-width: 56.25em) {
+  h1 {
+    font-size: 3em;
+    /* 3x body copy size = 48px */
+    line-height: 1.05;
+    /* keep to a multiple of the 20px line height and something more appropriate for display headings */
+  }
+}
+
+h2 {
+  font-size: 1.625em;
+  /* 1.625x body copy size = 26px */
+  line-height: 1.15384615;
+  /* 30px / 26px */
+}
+
+@media (min-width: 43.75em) {
+  h2 {
+    font-size: 2em;
+    /* 2x body copy size = 32px */
+    line-height: 1.25;
+  }
+}
+
+@media (min-width: 56.25em) {
+  h2 {
+    font-size: 2.25em;
+    /* 2.25x body copy size = 36px */
+    line-height: 1.25;
+  }
+}
+
+h3 {
+  font-size: 1.375em;
+  /* 1.375x body copy size = 22px */
+  line-height: 1.13636364;
+  /* 25px / 22px */
+}
+
+@media (min-width: 43.75em) {
+  h3 {
+    font-size: 1.5em;
+    /* 1.5x body copy size = 24px */
+    line-height: 1.25;
+  }
+}
+
+@media (min-width: 56.25em) {
+  h3 {
+    font-size: 1.75em;
+    /* 1.75x body copy size = 28px */
+    line-height: 1.25;
+  }
+}
+
+h4 {
+  font-size: 1.125em;
+  /* 1.125x body copy size = 18px */
+  line-height: 1.11111111;
+}
+
+@media (min-width: 43.75em) {
+  h4 {
+    line-height: 1.22222222;
+    /* (22px / 18px */
+  }
+}
+
+blockquote {
+  font-size: 1.25em;
+  /* 20px / 16px */
+  line-height: 1.25;
+  /* 25px / 20px */
+}
+
+@media (min-width: 43.75em) {
+  blockquote {
+    font-size: 1.5em;
+    /* 24px / 16px = */
+    line-height: 1.45833333;
+    /* 35px / 24px */
+  }
 }
 
 .wf-loading h1 {
@@ -55,7 +151,6 @@ body {
 .wf-active h1 {
 	visibility: visible;
 }
-
 .wf-loading h2 {
 	visibility: hidden;
 }
@@ -63,29 +158,35 @@ body {
 	visibility: visible;
 }
 
-.left {
-  text-align: left;
-  padding: 0 15px 0 15px;
+a {
 }
 
-.right {
-  text-align: right;
-  padding: 0 15px 0 15px;
+/* Color */
+
+.light {
+  color: #9B9B9B;
 }
+
+/* Spacing */
 
 .center {
-  margin: 0 none;
   text-align: center;
 }
 
+/* Buttons */
 
+#hero-btn {
+  width: 70%;
+  float: left;
+  min-height: 1px;
+  position: relative;
+}
 .btn-custom {
-  background-color: #ffffff;
-  color: #40454F;
-  width: 80%;
+  background-color: #7691CD;
+  color: #ffffff;
+  width: 65%;
   font-size: 20px;
-  padding: 25px 10px 25px 10px;
-  font-family: "proxima-nova";
+  padding: 20px 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
@@ -104,7 +205,7 @@ body {
 .btn-custom:focus,
 .btn-custom:active,
 .btn-custom.active {
- color: #000000;
+ color: #ffffff;
  text-decoration: underline;
 }
 .btn-custom.disabled:hover,
@@ -121,112 +222,4 @@ fieldset[disabled] .btn-custom:active,
 fieldset[disabled] .btn-custom.active {
   background-color: #8393bf;
   border-color: #8393bf;
-}
-
-#footer-inner {
-  text-align:center;
-  margin: 50px 0 50px 0;
-}
-
-#footer-list {
-  margin: 0 auto;
-  -webkit-padding-start: 0px;
-  -moz-padding-start: 0px;
-}
-
-#footer-list li
-{
-  display: inline;
-  list-style-type: none;
-  padding-right: 30px;
-}
-
-#footer-list li a {
-  font-size: 20px;
-  color: #ffffff;
-  font-weight: 300;
-}
-
-body.make-way #loaded-content.loaded {
-
-  -webkit-transform-origin: top center;
-  -moz-transform-origin: top center;
-  -ms-transform-origin: top center;
-  -o-transform-origin: top center;
-  transform-origin: top center;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
-  opacity: .8;
-  -webkit-filter: blur(2px);
-  filter: blur(2px);
-  
-}
-
-#loaded-content.loaded {
-  -webkit-transition-duration: .8s,.8s,.8s;
-  -moz-transition-duration: .8s,.8s,.8s;
-  -o-transition-duration: .8s,.8s,.8s;
-  transition-duration: .8s,.8s,.8s;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
-  -webkit-transform: perspective(0) translate3d(0px, 0px, 0px);
-  -moz-transform: perspective(0) translate3d(0px, 0px, 0px);
-  -ms-transform: perspective(0) translate3d(0px, 0px, 0px);
-  -o-transform: perspective(0) translate3d(0px, 0px, 0px);
-  transform: perspective(0) translate3d(0px, 0px, 0px);
-  transform: translate3d(0px, 0px, 0px);
-  -webkit-transition-property: all,opacity,-webkit-filter;
-  -moz-transition-property: all,opacity,-webkit-filter;
-  -o-transition-property: all,opacity,-webkit-filter;
-  transition-property: all,opacity,-webkit-filter;
-  height: 100%;
-}
-
-#loaded-content {
-  position: relative;
-  width: 100%;
-  
-  -webkit-transition-duration: 1s,0s,0s;
-  -moz-transition-duration: 1s,0s,0s;
-  -o-transition-duration: 1s,0s,0s;
-  transition-duration: 1s,0s,0s;
-}
-
-#downloading {
-  position: absolute;
-  background: #000000 !important;
-  opacity: .9;
-  top: 0;
-  height:100%;
-  height: auto !important;
-  min-height:100%;
-  width:100%;
-  margin:0 auto;
-  display: none;
-}
-
-.download-region {
-
-z-index: 99;
-height: 400px;
-bottom: 50%;
-margin-top: 10%;
-display: block;
-margin-left: 30%;
-margin-right: 30%;
-text-align: center;
-
-}
-
-@media (max-width: 767px) {
-
-  #footer-list li
-  {
-    display: block;
-    list-style-type: none;
-    padding-right: 0px;
-    text-align: center;
-  }
-
 }

@@ -1,20 +1,45 @@
-<div id="footer" class="welcome">
-		<div class="col-lg-6 col-lg-offset-3 border-top">
-			<div class="spacing-xsm">
-				<p class="margin-bottom">Free for iPhone</p>
-					<div id="ft-img">
-					<%= link_to image_tag("available.png", :class => "center-block"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>
-					</div>
-			</div>
-			<div id="footer-inner">
-			  	<ul id="footer-list">
-			  	<li> <%= link_to 'Home', root_path %> </li>
-					<li> <%= link_to 'Support', support_path %> </li>
-					<li> <%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %> </li>
-					<li> <%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %> </li>
-					<li> <%= link_to 'About', about_path %> </li>
-					<li> <%= link_to 'Press', press_path %> </li>
-				</ul>
-			</div>
-		</div>
+<!-- Footer Background -->
+<div class="cta">
+    <div class="container">
+        <!-- Footer -->
+
+        <div class="col-lg-12 center padding-top-sm">
+            <%= image_tag "triage-logo.png", :width => "50" %>
+            <h3>Try Triage</h3>
+            <div class="row padding-top-sm">
+                <div class="col-lg-6 col-lg-offset-3 col-sm-6">
+                    <button class="btn btn-custom btn-lg download-cta" type="button">
+                        Get Early Access
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="row padding-top">
+                <%=image_tag("available.png", :width => "130")%>
+                <p class="padding-top-sm">Triage will be availible on the AppStore soon!</p>
+            </div> -->
+        </div>
+
+                <!-- AppStore -->
+
+            <!-- Footer Content -->
+            <div class="row">
+                <!-- Links -->
+                <div class="col-lg-12 center padding-top padding-bottom">     
+                    <nav class="footer-list">
+                        <ul class="footer">
+                            <li class="active"><%= link_to 'Home', root_path %></li>
+                            <li><%= link_to 'FAQ', faq_path %></li>
+                            <li><%= link_to 'Contact', about_path %></li>
+                            <li><%= link_to "Jobs", "https://jobs.lever.co/triage" %></li>
+                            <li><%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %></li>
+                            <li><%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %></li>
+                            <!-- <li><%= link_to 'Press', press_path %></li> -->
+                        </ul>
+                    </nav>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>

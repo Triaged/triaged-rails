@@ -139,13 +139,19 @@
 
 
 		root :to => 'welcome#index'
-		get '/support' => 'welcome#support', as: 'support'
-	  get 'play' => 'welcome#play'
+		get '/faq' => 'welcome#faq', as: 'faq'
 		get '/terms' => 'welcome#terms', as: 'terms'
 		get '/press' => 'welcome#press', as: 'press'
 		get '/about' => 'welcome#about', as: 'about'
+	  get '/jobs' => 'welcome#jobs', as: 'jobs'
 		post '/deliver_sms' => 'welcome#deliver_sms', as: 'deliver_sms'
 		post '/capture_email' => 'welcome#capture_email', as: 'capture_email'
+	  
+	  resource :pilot do
+	    member do
+	      post 'complete'
+	    end
+	  end
 		
 
 		devise_for :admins, :controllers => { :registrations => "admin_registrations" }

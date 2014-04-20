@@ -1,17 +1,20 @@
-<div class="container">
-	<div class="col-lg-6 col-lg-offset-3">
-		<div id="sharefooter" class="welcome">	
+<div id="footer" class="welcome">
+		<div class="col-lg-6 col-lg-offset-3 border-top">
+			<!-- <div class="spacing-xsm">
+				<p class="margin-bottom">Free for iPhone</p>
+					<div id="ft-img">
+					<%= link_to image_tag("available.png", :class => "center-block"), "https://itunes.apple.com/us/app/triage-everything-thats-happening/id744662903?ls=1&mt=8" %>
+					</div>
+			</div> -->
 			<div id="footer-inner">
-				  	<ul id="footer-list">
-				  	<li> <%= link_to 'Home', root_path %> </li>
-						<li> <%= link_to 'Support', support_path %> </li>
-						<li> <%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %> </li>
-						<li> <%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %> </li>
-						<li> <%= link_to 'About', about_path %> </li>
-						<li> <%= link_to 'Press', press_path %> </li>
-					</ul>
-				</div>
+			  	<ul id="footer-list">
+			  	<li> <%= link_to 'Home', root_path %> </li>
+					<li> <%= link_to 'Support', faq_path %> </li>
+					<li> <%= link_to 'Twitter', "https://twitter.com/TriagedCo", :target => '_blank' %> </li>
+					<li> <%= link_to 'Blog', "http://blog.triaged.co", :target => '_blank' %> </li>
+					<li> <%= link_to 'About', about_path %> </li>
+					<!-- <li> <%= link_to 'Press', press_path %> </li> -->
+				</ul>
 			</div>
 		</div>
-	</div>
 </div>

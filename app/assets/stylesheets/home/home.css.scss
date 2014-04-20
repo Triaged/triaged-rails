@@ -1,0 +1,308 @@
+/* Borders */
+
+#hero-border {
+    top: 0; right: 0; bottom: 0; left: 0;
+    border: 15px solid #f6f6f6;
+    max-height: 100% !important;
+    overflow: hidden;
+}
+#service-border {
+    border-right: 15px solid #f6f6f6;
+    border-bottom: 15px solid #f6f6f6;
+    border-left: 15px solid #f6f6f6;
+}
+#day-border {
+    border-right: 15px solid #f6f6f6;
+    border-bottom: 15px solid #f6f6f6;
+    border-left: 15px solid #f6f6f6;
+}
+
+/* Hero */
+
+#padding-top-hero {
+	padding-top: 55px;
+}
+	/* Welcome-content */
+
+	#logotype {
+		font-size: 26px;
+		font-weight: 300;
+		color: #7691CD;
+		padding-left: 20px;
+	}
+	/* Welcome Message */
+	#welcome-title {
+			margin-top: 50px;
+		}
+	/* Button */
+	.glyphicon-phone {
+		color: #ffffff;
+		margin-left: -20px;
+	}
+
+	#welcome-cta {
+		margin-top: 100px;
+	}
+
+	#phone_number {
+		width: 330px;
+		border: none;
+		background-color: transparent;
+		height: 34px;
+		font-size: 24px;
+		font-weight: lighter;
+		color: #ffffff;
+		outline: none;
+		padding-top:10px;
+		margin-bottom:4px;
+	}
+
+	#phone_number:focus,
+	#phone_number.focus{
+	    outline:none;
+	    box-shadow: none;
+	    webkit-box-shadow: none;
+	}
+
+	/* Hero-video */
+	#hero-frame {
+		max-height: 1061px;
+		overflow: hidden;
+	}
+	#hero-img {
+		display: block;
+		max-width: 100%;
+		height: auto !important;
+	}
+	/* Hero-video */
+	#hero-video {
+		top: 86px;
+		left: 100px;
+		position: absolute;
+	}
+	/* Hero-Breadcrumb */
+	#hero-breadcrumb {
+	    bottom: 30px;
+	    margin: 0 auto;
+	    clear: both;
+	    position: relative;
+	   }
+
+
+/* Integration Content */
+	
+	/* Integrations */
+
+	#services-row {
+		padding-top: 90px;
+	}
+	.service-cards {
+		height: 100%;
+	}
+
+	.service-card {
+		margin-top: auto;
+		margin-bottom: auto;
+		vertical-align: middle;	
+	}
+	.service-card-spacer {
+    display: inline-block;
+    vertical-align: middle;
+    height:100%;
+	}
+	.service-icon > a {
+		padding-left: 5px;
+	}
+	.hidden-card {
+		display: none;
+	}
+	.featureicon {
+		padding: 0 0 20px 5px;
+		border-bottom: 3px solid #F2F2F2;
+		width: 50%;
+	}
+	.featurecopy {
+		padding-top: 20px;
+	}
+
+	#service-icons {
+		padding-top: 5px;
+	}
+	.services-row {
+		padding-bottom: 30px;
+	}
+	.service {
+		padding: 13px 33px;
+		color: #222222;
+		display: inline;
+		border: 1px solid #ffffff;
+	}
+	.service a:first-child {
+		padding-right: 20px;
+	}
+	.service a {
+    	color: #222222;
+    	font-size: 16px;
+	}
+	.service a:hover {
+    	color: #222222;
+	}
+	.service img {
+		position: relative;
+		bottom: 2px;
+	}
+	.service:hover {
+	    border-radius: 26px;
+	    border: 1px solid #919395;
+	}
+	.service:active {
+	    border-radius: 26px;
+	    border: 1px solid #919395;
+	}
+
+/* Day Content */
+
+	/* Clock*/
+	.phoneicon {
+		position: relative;
+		width: 15px;
+		padding-bottom: 8px;
+	}
+
+/* Old Css */
+#input-line {
+	padding-top: 10px;
+	vertical-align: top;
+	width: 100%;
+}
+
+#response {
+	padding-top: 10px;
+}
+
+#downloading {
+	position: absolute;
+	background: #000000 !important;
+	opacity: .9;
+	top: 0;
+	height:100%;
+  height: auto !important;
+  min-height:100%;
+  width:100%;
+  margin:0 auto;
+	display: none;
+}
+
+.download-region {
+
+z-index: 99;
+height: 600px;
+bottom: 50%;
+margin-top: 10%;
+display: block;
+margin-left: 30%;
+margin-right: 30%;
+text-align: center;
+
+}
+
+.btn-submit {
+	background-color: transparent;
+	color: #7691CD;
+	font-size: 18px;
+}
+
+.btn-submit:hover,
+.btn-submit:focus,
+.btn-submit:active,
+.btn-submit.active {
+ color: #FFFFFF;
+ outline: 0;
+ outline-style:none;
+ outline-width:0;
+}
+
+/* Mobile */
+
+/* iPad */
+@media (min-width: 768px) and (max-device-width : 1024px) {
+
+	/* Hero */
+	#hero-breadcrumb {
+	  	display: none;
+	}
+	#welcome-cta { 
+		margin-top: 20px;
+	}
+	#hero-feed-image {
+		padding: 30px 0 15px;
+	}
+	#padding-top-hero {
+	  	text-align: center;
+	  	padding-bottom: 25px;
+	}
+	#hero-btn {
+		text-align: center;
+	}
+	#download-cta {
+		margin: 0;
+	  	width: 40%;
+	}	
+	/* Integrations */
+	#services {
+		height: 580px;
+		padding-top: 0;
+	}
+	#services-row {
+		padding-top: 20px;
+	}
+
+}
+
+/* iPhone */
+@media (max-width: 767px) {
+
+	/* Hero */
+	#logo {
+		padding-left: 0;
+	}
+	#welcome-title h1 {
+		text-align: center;
+		font-size: 50px;
+  		line-height: 56px;
+	}
+	#mobile-hero {
+		padding-top: 15px;
+	}
+	.hero-title {
+		margin-top: 0;
+		font-weight: 300;
+	}
+	#welcome-cta {
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+	/* Hero BTN */
+	#hero-btn {
+		width: 100%;
+		padding-right: 0px;
+	}
+	#providers {
+		margin-left: 0px;
+	}
+	#iphone {
+		width: 100%;
+	}
+	#phone_number {
+		width: 100%;
+	}
+	#input-line {
+		width: 100%;
+	}
+	/* Hero Image */
+	.mobile-hero-image {
+	padding-bottom: 25px;
+	}
+
+}
+
