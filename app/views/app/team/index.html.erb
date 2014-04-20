@@ -1,0 +1,4 @@
+<% @users.each do |user| %>
+	<%= image_tag user.avatar.url %> <%= user.name %>
+	<hr />
+<% end %>
