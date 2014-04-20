@@ -14,10 +14,11 @@
 
 <%= simple_form_for @user, :url => account_path do |f| %>
 	<%= f.input :avatar %>
+	<%= f.input :status_report_prompt_time, as: :time %>
 	<%= f.submit %>
 
 <br />
-Slug: <%= @user.company.slug %>
+
 
 <% end %>
 
