@@ -1,0 +1,2 @@
+module App::TeamHelper
+end

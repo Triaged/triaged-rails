@@ -1,4 +1,10 @@
 class App::ProvidersController < ApplicationController
+	before_filter :authenticate_user!, :except => [:authenticate_for_oauth]
+
+
+	def index
+		@providers = Provider.active
+	end
 
 
 	def authenticate_for_oauth
