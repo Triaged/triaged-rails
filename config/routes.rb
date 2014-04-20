@@ -80,6 +80,7 @@
 	  	resources :providers
 	    resources :feed_items
 	    resources :feed
+	    resources :teammates
 	    resources :status_reports do
 				member do 
 					post 'publish'
