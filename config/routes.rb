@@ -92,6 +92,11 @@
 	    
 
 	    resources :providers do
+	    	member do 
+	    		get 'webhook_settings'
+	    		get 'settings'
+	    	end
+
 	      resources :provider_accounts do 
 	        collection do 
 	          get 'select'

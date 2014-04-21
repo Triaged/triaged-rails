@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417173257) do
+ActiveRecord::Schema.define(version: 20140421232145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -166,6 +166,7 @@ ActiveRecord::Schema.define(version: 20140417173257) do
     t.string  "property_label"
     t.string  "large_icon"
     t.string  "small_icon"
+    t.string  "oauth_path"
   end
 
   create_table "push_tokens", force: true do |t|
