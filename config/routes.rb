@@ -77,6 +77,7 @@
 	  end
 
 	  namespace :app do
+	  	resource :download
 	  	resources :providers
 	    resources :feed_items
 	    resources :feed
