@@ -23,7 +23,7 @@ class Github::AccountService < Github::BaseService
 				external_id: repo.id.to_s, 
 				url: repo.html_url, 
 				name: repo.name,
-				owner: repo.owner.login
+				#owner: repo.owner.login
 			)
 		end }
 	end
