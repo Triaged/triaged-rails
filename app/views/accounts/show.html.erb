@@ -18,7 +18,19 @@
 	<%= f.submit %>
 
 <br />
-
-
 <% end %>
+
+
+Reports To:
+
+
+	<%= @user.manager.name if @user.manager %>
+
+
+Reports:
+
+<% @user.subordinates.each do |report| %>
+	<%= report.name %>
+<% end %>
+
 

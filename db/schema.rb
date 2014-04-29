@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421232145) do
+ActiveRecord::Schema.define(version: 20140429172113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -176,6 +176,13 @@ ActiveRecord::Schema.define(version: 20140421232145) do
     t.string  "count"
   end
 
+  create_table "reports_tos", force: true do |t|
+    t.integer  "boss_id"
+    t.integer  "report_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "shares", force: true do |t|
     t.integer "feed_item_id"
     t.integer "user_id"
@@ -250,10 +257,12 @@ ActiveRecord::Schema.define(version: 20140421232145) do
     t.string   "avatar"
     t.string   "slug"
     t.datetime "status_report_prompt_time"
+    t.integer  "manager_id"
   end
 
   add_index "users", ["company_id"], name: "index_users_on_company_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["manager_id"], name: "index_users_on_manager_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
