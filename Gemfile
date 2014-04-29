@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 ruby '2.0.0'
-gem 'rails', '4.0.0'
+gem 'rails', '4.1.0'
 
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.3'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -45,7 +45,7 @@ gem 'devise', "~> 3.1.0"
 gem 'omniauth'
 gem 'certified'
 gem 'figaro'
-gem 'simple_form', '>= 3.0.0.rc'
+gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'pg'
 gem 'acts_as_relation', :git => "https://github.com/Triaged/acts_as_relation.git"
 gem 'pusher'
@@ -93,6 +93,7 @@ gem 'workflow'
 gem 'jquery-validation-rails'
 
 group :development do
+  gem 'spring'
 	#gem 'heroku_san'
 	gem 'debugger'
 	gem 'localtunnel'
@@ -108,7 +109,8 @@ group :development do
 end
 
 group :test do
-  gem 'minitest-spec-rails'
+  
+  #gem 'minitest-spec-rails'
   gem 'minitest-wscolor'
 end
 

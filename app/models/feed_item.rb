@@ -7,7 +7,7 @@ class FeedItem < ActiveRecord::Base
 	belongs_to :user_feed_item
 	belongs_to :event_type
 	
-	has_many :messages, order: "id DESC"
+	has_many :messages#, order: "id DESC"
   has_many :shares
   has_many :thumbsups
 

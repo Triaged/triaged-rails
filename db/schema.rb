@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429222629) do
+ActiveRecord::Schema.define(version: 20140429233440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -236,6 +236,17 @@ ActiveRecord::Schema.define(version: 20140429222629) do
 
   add_index "trigrams", ["owner_id", "owner_type", "fuzzy_field", "trigram", "score"], name: "index_for_match", using: :btree
   add_index "trigrams", ["owner_id", "owner_type"], name: "index_by_owner", using: :btree
+
+  create_table "user_event_types", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_type_id"
+    t.integer  "status",        default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_event_types", ["event_type_id"], name: "index_user_event_types_on_event_type_id", using: :btree
+  add_index "user_event_types", ["user_id"], name: "index_user_event_types_on_user_id", using: :btree
 
   create_table "user_feed_items", force: true do |t|
     t.integer  "user_id"
