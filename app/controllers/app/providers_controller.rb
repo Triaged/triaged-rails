@@ -9,6 +9,7 @@ class App::ProvidersController < ApplicationController
 	end
 
 	def show
+		@provider_account = current_user.company.provider_accounts.default_provider_account_for(Provider.named "github")
 	end
 
 	def settings

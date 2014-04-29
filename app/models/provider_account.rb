@@ -21,6 +21,10 @@ class ProviderAccount < ActiveRecord::Base
   	ProviderAccount.where(provider: provider)
   end
 
+  def self.default_provider_account_for provider
+    ProviderAccount.provided_by(provider).where(default: true).first
+  end
+
 
 
 end

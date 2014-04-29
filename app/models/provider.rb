@@ -7,6 +7,7 @@ class Provider < ActiveRecord::Base
   has_many :feed_items
   has_many :event_types
   has_one :provider_account
+  belongs_to :provider_section
 
   validates :name, uniqueness: true
 

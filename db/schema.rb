@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421232145) do
+ActiveRecord::Schema.define(version: 20140429222629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,6 +152,13 @@ ActiveRecord::Schema.define(version: 20140421232145) do
     t.integer "provider_account_id"
     t.string  "external_id"
     t.string  "name"
+    t.string  "url"
+  end
+
+  create_table "provider_sections", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "providers", force: true do |t|
@@ -159,21 +166,31 @@ ActiveRecord::Schema.define(version: 20140421232145) do
     t.string  "title"
     t.string  "short_title"
     t.boolean "active"
-    t.boolean "oauth",            default: false
-    t.boolean "zapier",           default: false
-    t.boolean "webhooks_enabled", default: false
+    t.boolean "oauth",               default: false
+    t.boolean "zapier",              default: false
+    t.boolean "webhooks_enabled",    default: false
     t.string  "account_label"
     t.string  "property_label"
     t.string  "large_icon"
     t.string  "small_icon"
     t.string  "oauth_path"
+    t.integer "provider_section_id"
   end
+
+  add_index "providers", ["provider_section_id"], name: "index_providers_on_provider_section_id", using: :btree
 
   create_table "push_tokens", force: true do |t|
     t.integer "user_id"
     t.string  "service"
     t.string  "token"
     t.string  "count"
+  end
+
+  create_table "reports_tos", force: true do |t|
+    t.integer  "boss_id"
+    t.integer  "report_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "shares", force: true do |t|
@@ -250,10 +267,12 @@ ActiveRecord::Schema.define(version: 20140421232145) do
     t.string   "avatar"
     t.string   "slug"
     t.datetime "status_report_prompt_time"
+    t.integer  "manager_id"
   end
 
   add_index "users", ["company_id"], name: "index_users_on_company_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["manager_id"], name: "index_users_on_manager_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
