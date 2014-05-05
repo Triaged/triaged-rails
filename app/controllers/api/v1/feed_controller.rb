@@ -2,7 +2,7 @@ class Api::V1::FeedController < API::BaseController
 	include NewRelic::Agent::Instrumentation::ControllerInstrumentation
 
 	def index
-		@feed = current_user.feed(params[:min_updated_at], params[:max_updated_at])
+		@feed = current_user.feed(params[:page], params[:min_updated_at], params[:max_updated_at])
 		respond_with @feed
 	end
 	add_transaction_tracer :index

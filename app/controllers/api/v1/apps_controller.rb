@@ -1,5 +1,5 @@
 class Api::V1::AppsController < API::BaseController
-	before_action :set_app, only: [:show, :edit, :update, :destroy, :feed]
+	before_action :set_app, only: [:show, :edit, :update, :destroy, :feed, :ignore, :follow]
 
   # GET /api/v1/apps
   def index
@@ -15,6 +15,16 @@ class Api::V1::AppsController < API::BaseController
   def feed
     @feed_items = @app.feed(params[:min_updated_at], params[:max_updated_at])
     respond_with @feed_items
+  end
+
+  def ignore
+    current_user.ignore @app
+    respond_with @app
+  end
+
+  def follow
+    current_user.stop_ignoring @app
+    respdon_with @app
   end
 
   # GET /api/v1/apps/new

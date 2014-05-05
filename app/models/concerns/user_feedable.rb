@@ -7,7 +7,7 @@ module UserFeedable
 		#index({ "user_feed_items.feed_item_id" => 1 }, { unique: true, drop_dups: true })
 	end
 
-	def feed(min_updated_at = nil, max_updated_at = nil)
+	def feed(page = nil, min_updated_at = nil, max_updated_at = nil)
 		# feed_items = user_feed_items.only(:feed_item_id).desc(:feed_item_id)
 		# feed_items = feed_items.gt(updated_at: (Time.parse(min_updated_at) + 1)) if min_updated_at  #where(:updated_at.gt => min_updated_at) if min_updated_at
   # 	#feed_items = feed_items.where(:updated_at.lt => max_updated_at) if max_updated_at
@@ -15,7 +15,7 @@ module UserFeedable
 
   # 	FeedItem.desc(:created_at).find(feed_items.collect {|item| item.feed_item_id })
 
-  feed_items.includes(:messages, :author, :provider, :thumbsups).limit(100).order(created_at: :desc)
+  feed_items.includes(:messages, :author, :provider, :thumbsups).order(created_at: :desc).page(page).per(100)
   	#company.feed_items.desc(:created_at).find(feed_items.collect {|item| item.feed_item_id })
   end
 

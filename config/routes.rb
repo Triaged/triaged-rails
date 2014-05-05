@@ -32,6 +32,8 @@
 	    	resources :apps do
 	    		member do
 	          get 'feed'
+	          post 'ignore'
+		    		post 'follow'
 	        end
 	        resources :providers do
 		        collection do
