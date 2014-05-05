@@ -13,7 +13,7 @@ class Api::V1::AppsController < API::BaseController
   end
 
   def feed
-    @feed_items = @app.feed(params[:min_updated_at], params[:max_updated_at])
+    @feed_items = @app.feed(params[:page], params[:min_updated_at], params[:max_updated_at])
     respond_with @feed_items
   end
 
