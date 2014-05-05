@@ -1,4 +1,5 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  before_filter :set_app_from_session
 	
 	def all
 		user = current_user.save_omniauth(request.env["omniauth.auth"])
@@ -17,7 +18,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 		params = request.env["omniauth.auth"]
 		result = current_user.save_omniauth("github", params['uid'], params['credentials']['token'])
 		#redirect_to oauth_complete_path
-    redirect_to select_app_provider_provider_accounts_path(Provider.named("github"))
+    redirect_to select_app_provider_accounts_path(@app, Provider.named("github"))
   end
 
   def stripe_connect
@@ -42,6 +43,12 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 		params = request.env["omniauth.auth"]
 		result = current_user.save_omniauth("appfigures", params['uid'], params['credentials']['token'], refresh_token: params['credentials']['secret'])
     redirect_to oauth_complete_path
+  end
+
+private
+
+  def set_app_from_session
+    @app = CompanyApp.find(session[:app_id])
   end
 
 end

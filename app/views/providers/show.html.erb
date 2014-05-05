@@ -1,0 +1,11 @@
+<%= image_tag @provider.large_icon.url %> <%= @provider.name %> - <%= @provider.connected? current_user.company %>
+
+<br />
+<%= @provider_account.name %>
+<br />
+
+Properties (<%= @provider_account.property_label %> ):
+
+<% @provider_account.provider_properties.each do |property| %>
+	<%= property.name %> - <%= property.connected_to_app?(@app) %> <hr />
+<% end %>

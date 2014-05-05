@@ -1,0 +1,3 @@
+<% @properties.each do |property| %>
+	<%= property.name %> - <%= property.connected_to_app?(@app) %> <hr />
+<% end %>

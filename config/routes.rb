@@ -29,6 +29,32 @@
 	    			end
 	    		end
 	    	end
+	    	resources :apps do
+	    		member do
+	          get 'feed'
+	        end
+	        resources :providers do
+		        collection do
+		          get 'connected'
+		        end
+		    		
+		    		member do
+		    			post 'ignore'
+		    			post 'follow'
+		    			post 'email_connect_instructions'
+		          get 'feed'
+		    		end
+						
+						resources :accounts, controller: :provider_accounts
+		    		resources :properties, controller: :provider_properties do
+		  				member do
+		  					post 'ignore'
+		  					post 'follow'
+		  				end
+	  				end
+
+		    	end
+				end
 	    	resources :feed do
 	    		resources :share
 	    		resources :messages
@@ -49,17 +75,7 @@
 	          get 'feed'
 	        end
 	      end
-	    	resources :providers do
-	        collection do
-	          get 'connected'
-	        end
-	    		member do
-	    			post 'ignore'
-	    			post 'follow'
-	    			post 'email_connect_instructions'
-	          get 'feed'
-	    		end
-	    	end
+	    	
 	    	resources :provider_accounts do
 	  			resources :provider_properties do
 	  				member do
@@ -76,34 +92,30 @@
 	    end
 	  end
 
-	  namespace :app do
-	  	resource :download
-	  	resources :providers
+	  resource :download
+	  resources :share, :only => :show
+	  resource  :team
+	  
+	  resources :apps do
+	  	
 	    resources :feed_items
 	    resources :feed
 	    resources :teammates
-	    resources :status_reports do
-				member do 
-					post 'publish'
-				end
-				resources :status_entries
-			end
-
-	    resources :share, :only => :show
 	    
-
 	    resources :providers do
 	    	member do 
 	    		get 'webhook_settings'
 	    		get 'settings'
 	    	end
 
-	      resources :provider_accounts do 
+	      resources :accounts, controller: :provider_accounts do 
 	        collection do 
 	          get 'select'
 	          post 'set_account'
 	        end
 	      end
+
+	      resources :properties, controller: :provider_properties
 	    end
 
 	  end

@@ -4,6 +4,7 @@ class FeedItem < ActiveRecord::Base
   belongs_to :author, class_name: "User", inverse_of: :authored_feed_items
   belongs_to :provider
 	belongs_to :provider_account
+	belongs_to :provider_property
 	belongs_to :user_feed_item
 	belongs_to :event_type
 	

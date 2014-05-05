@@ -1,0 +1,29 @@
+<div class="col-xs-12">
+			<!-- Logo Row -->
+			<div class="row center-block">
+				<h3 class="text-center" style="color: white;">Which organization does your company use?</h3>
+			</div>
+			<!-- Title Row -->
+			<div class="row center-block" id="welcome-title">
+				<% @accounts.each do |account| %>
+
+						<div class="provider-account" id="<%= account.id %>">
+							<h3 class="text-center"><%= account.name %></h3>
+						</div>
+
+				<% end %>
+				<br /><br />
+			</div>
+
+			<div class="row ">
+				<%= simple_form_for :account, :url => set_account_app_provider_accounts_path, :method => :post do |f| %>
+					  <%= f.input :id, :as => :hidden, :class => "hidden-id" %>
+  					<%= f.button :submit, 'SELECT', :class => "btn-custom  btn-lg",  :id =>"download-cta", :disabled => true %>
+				<% end %>
+			</div>
+			
+
+		<br /><br />
+</div>
+
+

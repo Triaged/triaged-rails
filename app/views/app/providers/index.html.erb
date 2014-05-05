@@ -1,4 +1,0 @@
-<% @providers.each do |provider| %>
-	<%= image_tag provider.large_icon.url %> <%= link_to provider.name, app_provider_path(provider) %> - <%= provider.connected? current_user.company %>
-	<hr />
-<% end %>

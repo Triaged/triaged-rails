@@ -1,5 +1,5 @@
-class AccountsController < ApplicationController
-	before_action :authenticate_user!
+class AccountsController < WebController
+	
 	before_action :set_user, only: [:show, :update, :destroy]
 
 	def show

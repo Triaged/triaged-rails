@@ -13,8 +13,16 @@ module CompanyFeedable
   	puts "added #{event.inspect}"
   	puts event.errors.inspect
 		# This will fail if duplicate item exists in company feed
-  	push_event_to_followers event if  event.persisted?
+  	# push_event_to_followers event if  event.persisted?
+    push_event_to_apps event if  event.persisted?
   	event
+  end
+
+  def push_event_to_apps event
+    connected_properties = ConnectedProviderProperty.where(company: self, provider_property: event.provider_property)
+    connected_properties.each do |property|
+      property.add_event_to_feed(event) if property.connected?
+    end
   end
 
   def push_event_to_followers event

@@ -1,0 +1,2 @@
+module ProviderPropertiesHelper
+end

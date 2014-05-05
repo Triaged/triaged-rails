@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429233440) do
+ActiveRecord::Schema.define(version: 20140505214639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,11 +32,56 @@ ActiveRecord::Schema.define(version: 20140429233440) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "app_feed_items", force: true do |t|
+    t.integer  "company_app_id"
+    t.integer  "feed_item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "app_feed_items", ["company_app_id"], name: "index_app_feed_items_on_company_app_id", using: :btree
+  add_index "app_feed_items", ["feed_item_id"], name: "index_app_feed_items_on_feed_item_id", using: :btree
+
   create_table "companies", force: true do |t|
     t.string "name"
     t.string "api_token"
     t.string "slug"
   end
+
+  create_table "company_apps", force: true do |t|
+    t.string   "name"
+    t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "app_type",   default: 0
+  end
+
+  add_index "company_apps", ["company_id"], name: "index_company_apps_on_company_id", using: :btree
+
+  create_table "connected_provider_accounts", force: true do |t|
+    t.integer  "company_id"
+    t.integer  "company_app_id"
+    t.integer  "provider_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "connected_provider_accounts", ["company_app_id"], name: "index_connected_provider_accounts_on_company_app_id", using: :btree
+  add_index "connected_provider_accounts", ["company_id"], name: "index_connected_provider_accounts_on_company_id", using: :btree
+  add_index "connected_provider_accounts", ["provider_account_id"], name: "index_connected_provider_accounts_on_provider_account_id", using: :btree
+
+  create_table "connected_provider_properties", force: true do |t|
+    t.integer  "company_app_id"
+    t.integer  "provider_property_id"
+    t.integer  "status",               default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "company_id"
+  end
+
+  add_index "connected_provider_properties", ["company_app_id"], name: "index_connected_provider_properties_on_company_app_id", using: :btree
+  add_index "connected_provider_properties", ["company_id"], name: "index_connected_provider_properties_on_company_id", using: :btree
+  add_index "connected_provider_properties", ["provider_property_id"], name: "index_connected_provider_properties_on_provider_property_id", using: :btree
 
   create_table "connected_providers", force: true do |t|
     t.integer "company_id"

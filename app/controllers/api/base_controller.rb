@@ -4,6 +4,7 @@ class API::BaseController < ApplicationController
   before_filter :authenticate_user_from_token!, :except => [:page_not_found]
   before_filter :authenticate_user!
   before_filter :current_company
+  before_filter :set_app
   # rescue_from Brainstem::SearchUnavailableError, :with => :search_unavailable
   # rescue_from ActiveRecord::RecordNotFound,
   #             ActionController::RoutingError,
@@ -13,6 +14,10 @@ class API::BaseController < ApplicationController
 
   def current_company
   	current_user.company if current_user
+  end
+
+  def set_app
+    @app = current_company.company_apps.find(params[:app_id]) if params[:app_id]
   end
 
   def page_not_found

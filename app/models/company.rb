@@ -8,6 +8,7 @@ class Company < ActiveRecord::Base
   
   has_many :users
 	has_many :connected_providers
+	has_many :company_apps
 
 	# index({ "feed_item.external_id" => 1 }, { unique: true, drop_dups: true })
  #  index({ "feed_item.updated_at" => 1 })
