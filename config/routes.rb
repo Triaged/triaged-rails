@@ -182,6 +182,7 @@
 			resources :feed_items , :controller => 'admin/feed_items'
 			resources :messages , :controller => 'admin/messages'
       resources :providers, :controller => 'admin/providers'
+      resources :provider_sections, :controller => 'admin/provider_sections'
 			mount Sidekiq::Web => '/sidekiq'
 		end
 		

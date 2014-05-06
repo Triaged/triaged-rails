@@ -260,25 +260,6 @@ ActiveRecord::Schema.define(version: 20140506181155) do
     t.boolean "viewed"
   end
 
-  create_table "status_entries", force: true do |t|
-    t.integer  "status_report_id"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "status_entries", ["status_report_id"], name: "index_status_entries_on_status_report_id", using: :btree
-
-  create_table "status_reports", force: true do |t|
-    t.date     "status_date"
-    t.integer  "user_id"
-    t.string   "workflow_state"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "status_reports", ["user_id"], name: "index_status_reports_on_user_id", using: :btree
-
   create_table "thumbsups", force: true do |t|
     t.integer  "feed_item_id"
     t.integer  "user_id"
@@ -337,7 +318,6 @@ ActiveRecord::Schema.define(version: 20140506181155) do
     t.integer  "company_id"
     t.string   "avatar"
     t.string   "slug"
-    t.datetime "status_report_prompt_time"
     t.integer  "manager_id"
   end
 

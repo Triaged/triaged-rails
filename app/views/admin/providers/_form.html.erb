@@ -2,12 +2,17 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :active %>
   	<%= f.input :title %>
   	<%= f.input :short_title %>
+    <%= f.input :large_icon, as: :file %>
+    <%= f.input :small_icon, as: :file %>
   	<%= f.input :webhooks_enabled %>
   	<%= f.input :oauth %>
-  	<%= f.input :large_icon, as: :file %>
-  	<%= f.input :small_icon, as: :file %>
+    <%= f.input :oauth_path %>
+    <%= f.input :account_label %>
+    <%= f.input :property_label %>
+  	<%= f.association :provider_section %> 
   </div>
 
   <div class="form-actions">

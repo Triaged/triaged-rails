@@ -3,7 +3,18 @@
 <h1><%= @admin_provider.name %></h1>
 
 <%= image_tag @admin_provider.large_icon_url %>
-<%= image_tag @admin_provider.small_icon_url %>
+<%= image_tag @admin_provider.small_icon_url %> <br />
+
+Active: <%= @admin_provider.active %> <br />
+title: <%= @admin_provider.title %> <br />
+short title: <%= @admin_provider.short_title %> <br />
+webhooks enabled: <%= @admin_provider.webhooks_enabled %><br />
+oauth enabled: <%= @admin_provider.oauth %><br />
+oauth path: <%= @admin_provider.oauth_path %><br />
+account label: <%= @admin_provider.account_label %><br />
+property_label: <%= @admin_provider.property_label %><br />
+provider_section: <%= @admin_provider.provider_section.name if @admin_provider.provider_section %><br />
+
 
 <%= link_to 'Edit', edit_admin_provider_path(@admin_provider) %> |
 <%= link_to 'Back', admin_providers_path %>
