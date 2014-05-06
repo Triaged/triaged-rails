@@ -3,9 +3,9 @@ class Company < ActiveRecord::Base
   include Serviceable
   include CompanyFeedable
   include Cursable
-  extend FriendlyId
-  friendly_id :random_token, use: [:slugged, :finders]
+
   
+  has_one :api_token, as: :tokenable
   has_many :users
 	has_many :connected_providers
 	has_many :company_apps
@@ -16,9 +16,7 @@ class Company < ActiveRecord::Base
   before_create :set_company_token
   
 
-  def random_token
-    Tokenizer.unique_token(6)
-  end
+  
 
   def followers_of provider
 		users.select do |user| 
@@ -43,7 +41,7 @@ class Company < ActiveRecord::Base
 	end
 
 	def set_company_token
-		self.api_token = self.slug
+		self.api_token = ApiToken.create!
   end
 
   def add_default_feed_items

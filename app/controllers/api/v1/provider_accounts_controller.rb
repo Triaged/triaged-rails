@@ -8,8 +8,13 @@ class Api::V1::ProviderAccountsController < API::BaseController
 	end
 
 	def create
-		@account = current_company.provider_accounts.find(params[:account][:id])
-		ConnectedProviderAccount.create(company: current_company, company_app: @app, provider_account: @account)
+		ProviderAccount.create(
+			company: @company, 
+			company_app: @app, 
+			provider: @provider,
+			external_id: params[:account][:id],
+			name: params[:account][:name]
+		)
 
 		#Common::RemoteAccountService.set_default_account(@provider, @company, @account)
 		redirect_to app_provider_properties_path(@app, @provider)

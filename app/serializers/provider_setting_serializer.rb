@@ -8,7 +8,7 @@ class ProviderSettingSerializer < ProviderSerializer
   end
 
   def webhook_url
-  	object.webhook_url_for_company(current_user.company) if object.webhooks_enabled
+  	object.webhook_url_for_company_and_app(current_user.company) if object.webhooks_enabled
   end
 
   def connected

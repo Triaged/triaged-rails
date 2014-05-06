@@ -25,7 +25,7 @@ private
 	end
 	
 	def check_connected
-		return if @provider.connected?(current_user.company)
+		return if @app.connected_to_provider? @provider
 
 		if @provider.oauth
 			session[:app_id] = @app.id

@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+
+	$(".provider-account").on "tap", ->
+		console.log("tap")
+		$(".provider-account").removeClass("active")
+		$(this).addClass("active")
+		$("#account_id").val(this.id)
+		$("#account_name").val( $(this).data("name") )
+		$("#account_personal").val( $(this).data("personal") )
+		$(".btn-custom").prop('disabled', false)

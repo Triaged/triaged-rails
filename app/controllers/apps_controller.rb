@@ -24,7 +24,7 @@ class AppsController < WebController
   	@app = @company.company_apps.build(app_params)
 
     if @app.save
-      redirect_to app_application_path(@app), notice: 'Application was successfully created.'
+      redirect_to app_path(@app), notice: 'Application was successfully created.'
     else
       render :new
     end
@@ -33,7 +33,7 @@ class AppsController < WebController
   # PATCH/PUT /app/applications/1
   def update
     if @app.update(app_params)
-      redirect_to app_application_path(@app), notice: 'Application was successfully updated.'
+      redirect_to app_path(@app), notice: 'Application was successfully updated.'
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class AppsController < WebController
   # DELETE /app/applications/1
   def destroy
     @app.destroy
-    redirect_to app_applications_url, notice: 'Application was successfully destroyed.'
+    redirect_to app_url, notice: 'Application was successfully destroyed.'
   end
 
   private

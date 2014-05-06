@@ -7,7 +7,10 @@ class AsyncWebhookService
 		event_class = event_class_string.constantize
 
 		payload = RecursiveOpenStruct.new(payload)
-		company = Company.find(payload.company_id)
+
+		api_token = ApiToken.find(payload.company_id)
+		company = api_token.company
+		app = api_token.app
 		
 		json_event = event_class.build_from_webhook payload.event,company
 

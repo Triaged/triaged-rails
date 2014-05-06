@@ -2,7 +2,7 @@ class ProviderPropertiesController < WebController
 	before_action :set_provider
 
 	def index
-		@properties = @app.connected_provider_account.provider_properties
+		@properties = @app.provider_account_for(@provider).provider_properties
 	end
 
 private

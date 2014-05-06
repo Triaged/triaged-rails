@@ -7,8 +7,8 @@
 			<div class="row center-block" id="welcome-title">
 				<% @accounts.each do |account| %>
 
-						<div class="provider-account" id="<%= account.id %>">
-							<h3 class="text-center"><%= account.name %></h3>
+						<div class="provider-account" id="<%= account[:external_id] %>" data-name="<%= account[:name] %>" data-personal="<%= account[:personal] %>">
+							<h3 class="text-center"><%= account[:name] %></h3>
 						</div>
 
 				<% end %>
@@ -18,6 +18,8 @@
 			<div class="row ">
 				<%= simple_form_for :account, :url => set_account_app_provider_accounts_path, :method => :post do |f| %>
 					  <%= f.input :id, :as => :hidden, :class => "hidden-id" %>
+					  <%= f.input :name, :as => :hidden, :class => "hidden-name" %>
+					  <%= f.input :personal, :as => :hidden, :class => "hidden-personal" %>
   					<%= f.button :submit, 'SELECT', :class => "btn-custom  btn-lg",  :id =>"download-cta", :disabled => true %>
 				<% end %>
 			</div>

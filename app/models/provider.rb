@@ -29,9 +29,15 @@ class Provider < ActiveRecord::Base
     company.provider_connected? self
   end
 
-  def webhook_url_for_company company
-  	webhook_url = "webhook_#{name}_index_url"
-  	send(webhook_url, :company_id => company.slug, :protocol => "https")
+  # def app_connected? app
+  #   company.provider_connected? self
+  #   Is there a ConnectedProviderAccount with company_app + 
+  # end
+
+  def webhook_url_for_company_and_app company, app = nil
+  	api_token = app.exists? ? app.api_token.slug : company.api_token.slug
+    webhook_url = "webhook_#{name}_index_url"
+    send(webhook_url, :company_id => api_token, :protocol => "https")
   end
 
   def delete_provider_account provider_account
