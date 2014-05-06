@@ -1,7 +1,7 @@
 <%= image_tag @provider.large_icon.url %> <%= @provider.name %>
 
 <br />
-<%= @provider_account.name %>, 
+<%= @provider_account.name %>, connected by: <%= @provider_account.provider_credential.user.name %>
 <br />
 
 <hr />

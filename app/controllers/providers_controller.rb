@@ -8,7 +8,7 @@ class ProvidersController < WebController
 	end
 
 	def show
-		@provider_account = current_user.company.provider_accounts.default_provider_account_for(Provider.named "github")
+		@provider_account = @app.provider_account_for @provider
 	end
 
 	def settings
