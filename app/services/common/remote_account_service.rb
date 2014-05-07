@@ -9,10 +9,9 @@ module Common::RemoteAccountService
 		return accounts
 	end
 
-	def self.set_default_account(current_user, provider, company, app, account_params)
+	def self.set_account(current_user, provider, company, app, account_params)
 		credentials = Common::RemoteAccountService.find_provider_credentials(current_user, provider)
 		
-		Rails.logger.info account_params.inspect
 		account = ProviderAccount.create(
 			company: company, 
 			company_app: app, 

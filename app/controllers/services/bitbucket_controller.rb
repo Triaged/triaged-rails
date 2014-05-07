@@ -20,7 +20,7 @@ class Services::BitbucketController < ServiceController
 
 	def set_default_org
 		org = @company.provider_accounts.find(params[:org][:id])
-		org.set_default_account!
+		org.set_account!
 		
 		Bitbucket::CreateHooks.perform_async(@company.id.to_s)
 		

@@ -9,19 +9,6 @@ class Github::AccountService < Github::BaseService
 		return accounts
 	end
 
-	def fetch_properties(account)
-		# Get all repos for the org
-		res = account.personal ? @github.repos.list : @github.repos.list(org: account.name)
-		res.each_page { |page| page.each do |repo|
-			account.provider_properties << Github::Repo.new(
-				external_id: repo.id.to_s, 
-				url: repo.html_url, 
-				name: repo.name,
-				#owner: repo.owner.login
-			)
-		end }
-	end
-
 	def fetch_organizations
 		organizations = @github.orgs.all.to_a
 		organizations.collect { |org| {external_id: org.id.to_s, name: org.login, personal: false} }
@@ -35,6 +22,18 @@ class Github::AccountService < Github::BaseService
 	#
 	### Properties
 	#
+	def fetch_properties(account)
+		# Get all repos for the org
+		res = account.personal ? @github.repos.list : @github.repos.list(org: account.name)
+		res.each_page { |page| page.each do |repo|
+			account.provider_properties << Github::Repo.new(
+				external_id: repo.id.to_s, 
+				url: repo.html_url, 
+				name: repo.name,
+				#owner: repo.owner.login
+			)
+		end }
+	end
 
 	
 

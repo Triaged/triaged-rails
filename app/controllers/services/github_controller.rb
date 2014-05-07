@@ -21,7 +21,7 @@ class Services::GithubController < ServiceController
 
 	def set_default_org
 		org = @company.provider_accounts.find(params[:org][:id])
-		org.set_default_account!
+		org.set_account!
 		
 		Github::CreateHooks.perform_async(@company.id.to_s)
 		

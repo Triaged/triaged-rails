@@ -143,7 +143,7 @@
 	  	resources :google_analytics do
 	  		collection do
 	  			get 'account_list'
-	  			post 'set_default_account'
+	  			post 'set_account'
 	  		end
 	  	end
 	  end

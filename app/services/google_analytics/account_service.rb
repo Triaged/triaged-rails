@@ -24,7 +24,7 @@ class GoogleAnalytics::AccountService < GoogleAnalytics::BaseService
 
 		# Set account to default if only 1 exists
 		ga_accounts = @company.provider_accounts.provided_by(Provider.named "google_analytics")
-		ga_accounts.first.set_default_account! if (ga_accounts.count == 1)
+		ga_accounts.first.set_account! if (ga_accounts.count == 1)
 
 		return ga_accounts
 	end

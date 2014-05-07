@@ -16,7 +16,7 @@
 			</div>
 
 			<div class="row">
-				<%= simple_form_for :account, :url => set_default_account_google_analytics_path, :method => :post do |f| %>
+				<%= simple_form_for :account, :url => set_account_google_analytics_path, :method => :post do |f| %>
 					  <%= f.input :id, :as => :hidden, :class => "hidden-id" %>
   					<%= f.button :submit, 'SELECT', :class => "btn-custom  btn-lg",  :id =>"download-cta", :disabled => true %>
 				<% end %>

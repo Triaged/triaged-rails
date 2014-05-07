@@ -8,9 +8,9 @@ class Services::GoogleAnalyticsController < ServiceController
 		@skip_footer = true
 	end
 
-	def set_default_account
+	def set_account
 		account = @company.provider_accounts.find(params[:account][:id])
-		account.set_default_account!
+		account.set_account!
 		
 		redirect_to(oauth_complete_path)
 	end

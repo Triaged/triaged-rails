@@ -6,7 +6,7 @@ class ProviderAccountsController < WebController
 	end
 
 	def set_account
-		Common::RemoteAccountService.set_default_account(current_user, @provider, @company, @app, params[:account])
+		Common::RemoteAccountService.set_account(current_user, @provider, @company, @app, params[:account])
 		redirect_to app_provider_properties_path(@app, @provider)
 	end
 
