@@ -18,5 +18,6 @@ class ProviderSettingSerializer < ProviderSerializer
   def follows
   	!current_user.ignores? object
   end
- 
+
+  
 end
