@@ -59,6 +59,7 @@ gem 'omniauth-shopify-oauth2'
 gem 'omniauth-dropbox-oauth2'
 gem 'omniauth-bitbucket'
 gem 'omniauth-trello'
+gem 'omniauth-heroku'
 gem "omniauth-appfigures", :git => "https://github.com/Triaged/omniauth-appfigures.git"
 gem 'friendly_id', '~> 5.0.0'
 gem "ruby-trello", :require => 'trello'
@@ -93,6 +94,7 @@ gem 'yui-compressor'
 gem 'dropbox-sdk', :require => 'dropbox_sdk'
 gem 'workflow'
 gem 'jquery-validation-rails'
+gem 'platform-api'
 
 group :development do
   gem 'spring'

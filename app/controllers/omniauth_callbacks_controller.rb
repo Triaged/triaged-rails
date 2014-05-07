@@ -45,6 +45,13 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to oauth_complete_path
   end
 
+  def heroku
+    params = request.env["omniauth.auth"]
+    result = current_user.save_omniauth("heroku", params['uid'], params['credentials']['token'], refresh_token: params['credentials']['secret'])
+    redirect_to oauth_complete_path
+
+  end
+
 private
 
   def set_app_from_session

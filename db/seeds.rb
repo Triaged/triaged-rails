@@ -11,7 +11,7 @@ Provider.create(name: "github", webhooks_enabled: true, title: "GitHub", short_t
 Provider.create(name: "bitbucket", webhooks_enabled: true, title: "Bitbucket", short_title: "Bitbucket", account_label: 'Organization', property_label: 'Repo', oauth: true, active: true)
 Provider.create(name: "google_analytics", webhooks_enabled: false, title: "Google Analytics", short_title: "Google", account_label: 'Account', property_label: 'Property', oauth: true, active: true, oauth_path: "google_oauth2")
 Provider.create(name: "new_relic", webhooks_enabled: true, title: "New Relic", short_title: "New Relic", active: true)
-Provider.create(name: "heroku", webhooks_enabled: true, title: "Heroku", short_title: "Heroku", active: true)
+Provider.create(name: "heroku", webhooks_enabled: true, title: "Heroku", short_title: "Heroku", active: true, oauth: true,  oauth_path: "heroku")
 Provider.create(name: "sentry", webhooks_enabled: true, title: "Sentry", short_title: "Sentry", active: true)
 Provider.create(name: "beanstalk", webhooks_enabled: true, title: "Beanstalk", short_title: "Beanstalk", active: true)
 Provider.create(name: "airbrake", webhooks_enabled: true, title: "Airbrake", short_title: "Airbrake", active: true)

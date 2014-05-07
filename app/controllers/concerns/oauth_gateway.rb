@@ -10,7 +10,7 @@ module OauthGateway
 
 		respond_to do |format|
     	format.html  { redirect_to user_omniauth_authorize_path(@provider.oauth_path) }
-    	format.json  { render :json => { oauth_url: user_omniauth_authorize_url(@provider.oauth_path) } }
+    	format.json  { render :json => { error: "oauthentication required", oauth_url: user_omniauth_authorize_url(@provider.oauth_path) } }
   	end
 		
 	end

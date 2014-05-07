@@ -25,7 +25,7 @@ module Common::FeedService
 		event_hash = self.set_images_from_hash(event_hash, company) # Set Images
 
 		# build card
-		card = Cards::Event.new(event_hash)
+		card = FeedItem.new(event_hash)
 		puts "card: #{card.inspect}"
 
 		# generic after init hook

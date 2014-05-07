@@ -175,6 +175,12 @@ GEM
     guard-rails (0.4.7)
       guard (>= 0.2.2)
     hashie (2.0.5)
+    heroics (0.0.8)
+      erubis (~> 2.7.0)
+      excon
+      moneta
+      multi_json (>= 1.9.2)
+      netrc
     heroku-api (0.3.15)
       excon (~> 0.25.1)
     hike (1.2.3)
@@ -224,6 +230,7 @@ GEM
     minitest (5.3.3)
     minitest-wscolor (0.0.3)
       minitest (>= 2.3.1)
+    moneta (0.7.20)
     multi_json (1.9.3)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
@@ -232,6 +239,7 @@ GEM
     net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    netrc (0.7.7)
     newrelic_rpm (3.6.9.171)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
@@ -257,6 +265,9 @@ GEM
     omniauth-google-oauth2 (0.2.1)
       omniauth (~> 1.0)
       omniauth-oauth2
+    omniauth-heroku (0.1.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -279,6 +290,8 @@ GEM
       rack
       rake (>= 0.8.1)
     pg (0.17.1)
+    platform-api (0.0.9)
+      heroics (~> 0.0.8)
     polyglot (0.3.4)
     puma (2.6.0)
       rack (>= 1.1, < 2.0)
@@ -439,11 +452,13 @@ DEPENDENCIES
   omniauth-dropbox-oauth2
   omniauth-github
   omniauth-google-oauth2
+  omniauth-heroku
   omniauth-shopify-oauth2
   omniauth-stripe-connect
   omniauth-trello
   passenger
   pg
+  platform-api
   puma
   pusher
   quiet_assets

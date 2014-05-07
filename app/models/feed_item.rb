@@ -24,7 +24,23 @@ class FeedItem < ActiveRecord::Base
 	# Lifecycle hooks
 	#
 	def after_build_hook company
-		# placehold to be overridden in subclasses
+		super
+		
+		# Set timestamp if we don't already have one
+		self.timestamp = DateTime.now unless self.timestamp
+
+		# Set Provider name
+		self.provider_name = self.provider.name
+
+		# condense body list if only one entry exists
+		if !self.body_list.nil? && self.body_list.count == 1
+			self.body = self.body_list.first
+			self.body_list = nil
+		end
+
+		# ensure the company knows this provider is connected
+		Common::ProviderConnection.ensure_connected(company, self.provider)
+
 	end
 
 	

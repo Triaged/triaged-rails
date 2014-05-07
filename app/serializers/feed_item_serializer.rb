@@ -9,6 +9,7 @@ class FeedItemSerializer < ApplicationSerializer
   attributes :event_name, :messages_count
   attributes :type, :external_id, :timestamp, :title, :body, :footer, :url, :property_name, :image_url, :thumbnail_url
 
+
   def messages_count
   	object.messages_count
   end
@@ -16,8 +17,6 @@ class FeedItemSerializer < ApplicationSerializer
   def event_name
     object.event_type.name
   end
-
-
 
   def type
     :event

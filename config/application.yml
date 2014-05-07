@@ -35,6 +35,8 @@ development:
   GA_CLIENT_ID: 56189778933.apps.googleusercontent.com
   GA_SECRET: PQA1lyYnSiTcAd9UqFCWqZTz
   FOG_DIRECTORY: triaged-staging
+  HEROKU_OAUTH_ID: 9f1f34b2-bc84-4dc8-9d40-ca25d7286c1c
+  HEROKU_OAUTH_SECRET: 424296c8-47eb-4554-9711-951667d9d338
 
 staging:
   STRIPE_API_KEY: sk_test_RiXtxB4SVHpeixXl7OFsbafe
@@ -45,6 +47,8 @@ staging:
   GA_SECRET: PQA1lyYnSiTcAd9UqFCWqZTz
   FOG_DIRECTORY: triage-staging
   NEW_RELIC: 252f970f9fe09634a6c1e99d82f37dca02756686
+  HEROKU_OAUTH_ID: b07b67d1-b166-4e62-9296-5cd8e9daeb7e
+  HEROKU_OAUTH_SECRET: cd98310d-98b8-4c39-bf23-fc07159bae21
 
 production:
   STRIPE_API_KEY: sk_live_9mnrTPayeyPXHnd8kIPjuTue

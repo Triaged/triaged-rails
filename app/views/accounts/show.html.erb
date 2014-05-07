@@ -7,6 +7,7 @@
 <%= link_to "Sign in with Bitbucket", user_omniauth_authorize_path(:bitbucket) %>
 <%= link_to "Sign in with Trello", user_omniauth_authorize_path(:trello) %>
 <%= link_to "Sign in with Dropbox", user_omniauth_authorize_path(:dropbox_oauth2) %>
+<%= link_to "Sign in with Heroku", user_omniauth_authorize_path(:heroku) %>
 <%= link_to "Change your password", edit_user_registration_path %>
 
 
@@ -14,7 +15,6 @@
 
 <%= simple_form_for @user, :url => account_path do |f| %>
 	<%= f.input :avatar %>
-	<%= f.input :status_report_prompt_time, as: :time %>
 	<%= f.submit %>
 
 <br />
