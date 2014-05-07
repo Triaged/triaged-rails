@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 	has_many :push_tokens
 	has_many :notifications
 
+
   before_create :before_creation
   after_create :send_verify_email
   
@@ -89,6 +90,10 @@ class User < ActiveRecord::Base
 
 	def teammates
 		self.company.teammates_of self
+	end
+
+	def has_authenticated? provider
+		0 < self.provider_credentials.where(provider: provider).count
 	end
 
 	# slug :scope => :company do |object|

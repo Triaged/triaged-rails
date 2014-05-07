@@ -1,22 +1,17 @@
 class Api::V1::ProviderAccountsController < API::BaseController
+	include OauthGateway
+
 	before_action :set_provider
+	before_filter :validate_oauth, :only => :index
 
 
 	def index
-		@accounts = Common::RemoteAccountService.fetch_accounts(@provider, current_company)
+		@accounts = Common::RemoteAccountService.fetch_accounts(current_user, @provider, current_company)
 		respond_with @accounts
 	end
 
 	def create
-		ProviderAccount.create(
-			company: @company, 
-			company_app: @app, 
-			provider: @provider,
-			external_id: params[:account][:id],
-			name: params[:account][:name]
-		)
-
-		#Common::RemoteAccountService.set_default_account(@provider, @company, @account)
+		Common::RemoteAccountService.set_default_account(current_user, @provider, @company, @app, params[:account])
 		redirect_to app_provider_properties_path(@app, @provider)
 	end
 

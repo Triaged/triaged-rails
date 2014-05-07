@@ -6,8 +6,6 @@ class ProviderAccountsController < WebController
 	end
 
 	def set_account
-		logger.info params[:account].inspect
-		logger.info params.inspect
 		Common::RemoteAccountService.set_default_account(current_user, @provider, @company, @app, params[:account])
 		redirect_to app_provider_properties_path(@app, @provider)
 	end

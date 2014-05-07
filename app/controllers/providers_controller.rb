@@ -1,5 +1,8 @@
 class ProvidersController < WebController
+	include OauthGateway
+
 	before_filter :set_provider, :except => [:index]
+	before_filter :validate_oauth, :only => :show
 	before_filter :check_connected, :only => [:show]
 
 
@@ -26,12 +29,6 @@ private
 	
 	def check_connected
 		return if @app.connected_to_provider? @provider
-
-		if @provider.oauth
-			session[:app_id] = @app.id
-			redirect_to user_omniauth_authorize_path(@provider.oauth_path)
-		else
-			redirect_to webhook_settings_app_provider_path
-		end
+		redirect_to webhook_settings_app_provider_path
 	end
 end

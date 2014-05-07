@@ -35,7 +35,7 @@ class Provider < ActiveRecord::Base
   # end
 
   def webhook_url_for_company_and_app company, app = nil
-  	api_token = app.exists? ? app.api_token.slug : company.api_token.slug
+  	api_token = app ? app.api_token.slug : company.api_token.slug
     webhook_url = "webhook_#{name}_index_url"
     send(webhook_url, :company_id => api_token, :protocol => "https")
   end
