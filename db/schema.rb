@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507171222) do
+ActiveRecord::Schema.define(version: 20140507182904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(version: 20140507171222) do
 
   add_index "app_feed_items", ["company_app_id"], name: "index_app_feed_items_on_company_app_id", using: :btree
   add_index "app_feed_items", ["feed_item_id"], name: "index_app_feed_items_on_feed_item_id", using: :btree
+
+  create_table "app_workflows", force: true do |t|
+    t.integer  "company_app_id"
+    t.integer  "provider_workflow_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "app_workflows", ["company_app_id"], name: "index_app_workflows_on_company_app_id", using: :btree
+  add_index "app_workflows", ["provider_workflow_id"], name: "index_app_workflows_on_provider_workflow_id", using: :btree
 
   create_table "companies", force: true do |t|
     t.string "name"
@@ -112,6 +122,16 @@ ActiveRecord::Schema.define(version: 20140507171222) do
   end
 
   add_index "event_types", ["provider_id"], name: "index_event_types_on_provider_id", using: :btree
+
+  create_table "feed_item_workflows", force: true do |t|
+    t.integer  "feed_item_id"
+    t.integer  "provider_workflow_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feed_item_workflows", ["feed_item_id"], name: "index_feed_item_workflows_on_feed_item_id", using: :btree
+  add_index "feed_item_workflows", ["provider_workflow_id"], name: "index_feed_item_workflows_on_provider_workflow_id", using: :btree
 
   create_table "feed_items", force: true do |t|
     t.integer  "as_feed_item_id"

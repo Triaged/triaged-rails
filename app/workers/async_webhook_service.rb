@@ -14,7 +14,7 @@ class AsyncWebhookService
 		
 		json_event = event_class.build_from_webhook payload.event,company
 
-		Common::FeedService.build_event_card(json_event, company) 
+		Common::FeedService.build_event_card(json_event, company, app) 
 	end
 
 

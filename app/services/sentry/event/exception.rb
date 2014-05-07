@@ -15,7 +15,12 @@ class Sentry::Event::Exception < BaseServiceEvent
 			timestamp: data.created_at,
 			url: data.url,
 			push_notify: true,
-			group_event: true
+			group_event: true,
+			workflows: [ 
+				{ name: "assign", provider: "all" },
+				{ name: "share", provider: "all" },
+				{ name: "explore", provider: "all" },
+			] 
 		}
 		return event.to_json
 	end

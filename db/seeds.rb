@@ -24,3 +24,9 @@ Provider.create(name: "dropbox", webhooks_enabled: false, title: "Dropbox", shor
 Provider.create(name: "trello", webhooks_enabled: false, title: "Trello", short_title: "Trello", oauth: true, active: true, oauth_path: "trello")
 Provider.create(name: "appfigures", webhooks_enabled: false, title: "appFigures", short_title: "appFigures", account_label: 'Account', property_label: 'App', oauth: true, active: true, oauth_path: "appFigures")
 Provider.create(name: "zapier", webhooks_enabled: true, title: "Zapier", short_title: "Zapier", active: true)
+
+
+
+ProviderWorkflow.create(name: "share", workflow_type: :content, active: true, title: "Share")
+ProviderWorkflow.create(name: "explore", workflow_type: :content, active: true, title: "Explore")
+ProviderWorkflow.create(name: "assign", provider: Provider.named("github"), workflow_type: :content, active: true, title: "Assign")

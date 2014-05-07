@@ -1,5 +1,30 @@
 module Common::FeedService
 
+	def self.build_event_card(json_event, company, app)
+		puts "building event card: #{json_event}"
+
+		return if json_event.nil? # event will be nil if validation failed
+		
+		event_hash = JSON.parse(json_event)
+
+		event_hash = self.set_provider_from_hash(event_hash, company) # Set Provider
+		event_hash = self.set_event_type_from_hash(event_hash, event_hash[:provider], company) # Set EventType
+		event_hash = self.set_author_from_hash(event_hash, company) # Set Author
+		event_hash = self.set_images_from_hash(event_hash, company) # Set Images
+		event_hash = self.set_workflows_from_hash(event_hash, company, app) # Set Workflows
+
+		# build card
+		card = FeedItem.new(event_hash)
+		puts "card: #{card.inspect}"
+
+		# generic after init hook
+		card.after_build_hook company
+
+		# add event to company feed
+		self.add_to_feed card, company
+		puts "Added event card: #{json_event}"
+	end
+
 	def self.add_to_feed(event, company)
 		puts "adding..."
 		Rails.logger.info event
@@ -12,28 +37,25 @@ module Common::FeedService
 		end
 	end
 
-	def self.build_event_card(json_event, company)
-		puts "building event card: #{json_event}"
+	def self.set_workflows_from_hash event_hash, company, app
+		workflows_array = event_hash[:workflows]
 
-		return if json_event.nil? # event will be nil if validation failed
-		
-		event_hash = JSON.parse(json_event)
+		workflows_array.each do |workflow|
+			workflow_name = workflow[:name]
+			provider_name = workflow[:provider]
+			
+			begin
+				provider = Provider.named(provider_name)
+			rescue ActiveRecord::RecordNotFound
+				provider = nil
+			end
 
-		event_hash = self.set_provider_from_hash(event_hash, company) # Set Provider
-		event_hash = self.set_event_from_hash(event_hash, event_hash[:provider], company)
-		event_hash = self.set_author_from_hash(event_hash, company) # Set Author
-		event_hash = self.set_images_from_hash(event_hash, company) # Set Images
-
-		# build card
-		card = FeedItem.new(event_hash)
-		puts "card: #{card.inspect}"
-
-		# generic after init hook
-		card.after_build_hook company
-
-		# add event to company feed
-		self.add_to_feed card, company
-		puts "Added event card: #{json_event}"
+			provider_workflows = ProviderWorkflow.where(name: workflow_name, provider: provider)
+			
+			provider_workflows.each do |provider_workflow|
+				event_hash[:feed_item_workflows] << FeedItemWorkflow.create(provider_workflow: provider_workflow)
+			end
+		end
 	end
 
 
@@ -57,7 +79,7 @@ module Common::FeedService
 		return event_hash
 	end
 
-	def self.set_event_from_hash event_hash, provider, company
+	def self.set_event_type_from_hash event_hash, provider, company
 		
 		event_name = event_hash.delete("event_name")
 		event_type = EventType.find_or_create_by provider: provider, name: event_name

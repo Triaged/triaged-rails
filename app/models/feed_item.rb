@@ -11,6 +11,7 @@ class FeedItem < ActiveRecord::Base
 	has_many :messages#, order: "id DESC"
   has_many :shares
   has_many :thumbsups
+  has_many :feed_item_workflows
 
 	validates :provider, presence: true
 	validates :title, presence: true
