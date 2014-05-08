@@ -1,13 +1,22 @@
-<%= image_tag @provider.large_icon.url %> <%= @provider.name %>
+<!-- <div class="modal fade">
+  	<div class="modal-dialog">
+   		<div class="modal-content">
+   			<div class="modal-header-custom"> -->
+				<%= image_tag @provider.large_icon.url %> 
+				<%= @provider.name %>
 
-<br />
-<%= @provider_account.name %>, connected by: <%= @provider_account.provider_credential.user.name %>
-<br />
+				<br />
+				<%= @provider_account.name %>, connected by: <%= @provider_account.provider_credential.user.name %>
+				<br />
 
-<hr />
+				<hr />
 
-Properties (<%= @provider_account.property_label %> ):
+				Properties (<%= @provider_account.property_label %> ):
 
-<% @provider_account.provider_properties.each do |property| %>
-	<%= property.name %> - <%= property.connected_to_app?(@app) %> <hr />
-<% end %>
+				<% @provider_account.provider_properties.each do |property| %>
+					<%= property.name %> - <%= property.connected_to_app?(@app) %> <hr />
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
