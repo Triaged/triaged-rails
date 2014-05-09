@@ -1,4 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<%= @app.name %> <br />
+
+<% @providers.each do |provider| %>
+	<%= image_tag provider.large_icon.url %> <%= link_to provider.name, app_provider_path(@app, provider) %> - <%= @app.connected_to_provider? provider %>
+	<hr />
+<% end %>
+
+
+<td><%= link_to 'Edit', edit_app_path(@app) %></td>
+<td><%= link_to 'Destroy', app_path(@app), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
 
 <%= link_to 'Back', app_path %>

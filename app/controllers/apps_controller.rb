@@ -8,6 +8,7 @@ class AppsController < WebController
 
   # GET /app/applications/1
   def show
+    @providers = Provider.active.all
   end
 
   # GET /app/applications/new
