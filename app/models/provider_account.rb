@@ -5,6 +5,7 @@ class ProviderAccount < ActiveRecord::Base
   belongs_to :company_app
   belongs_to :provider_credential
   has_many :provider_properties
+  accepts_nested_attributes_for :provider_properties
 
   delegate :account_label, :to => :provider
   delegate :property_label, :to => :provider

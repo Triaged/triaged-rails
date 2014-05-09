@@ -9,5 +9,5 @@
 Properties (<%= @provider_account.property_label %> ):
 
 <% @provider_account.provider_properties.each do |property| %>
-	<%= property.name %> - <%= property.connected_to_app?(@app) %> <hr />
+	<%= property.name %> - <%= property.active %> <hr />
 <% end %>

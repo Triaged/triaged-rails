@@ -9,6 +9,8 @@ class Provider < ActiveRecord::Base
   has_one :provider_account
   belongs_to :provider_section
 
+  accepts_nested_attributes_for :provider_account
+
   validates :name, uniqueness: true
 
   scope :active, -> { where(active: true) }
@@ -34,8 +36,8 @@ class Provider < ActiveRecord::Base
   #   Is there a ConnectedProviderAccount with company_app + 
   # end
 
-  def webhook_url_for_company_and_app company, app = nil
-  	api_token = app ? app.api_token.slug : company.api_token.slug
+  def webhook_url_for_company company
+  	api_token = company.api_token.slug
     webhook_url = "webhook_#{name}_index_url"
     send(webhook_url, :company_id => api_token, :protocol => "https")
   end

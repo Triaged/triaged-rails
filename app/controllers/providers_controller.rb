@@ -15,7 +15,17 @@ class ProvidersController < WebController
 	end
 
 	def settings
+		@provider_account = @app.provider_account_for @provider
 	end
+
+	# PATCH/PUT /app/applications/1
+  def update
+  	if @provider.update(provider_params)
+      redirect_to app_provider_path(@app, @provider), notice: 'Provider was successfully updated.'
+    else
+      render :edit
+    end
+  end
 
 	def webhook_settings
 
@@ -31,4 +41,14 @@ private
 		return if @app.connected_to_provider? @provider
 		redirect_to webhook_settings_app_provider_path
 	end
+
+	# Only allow a trusted parameter "white list" through.
+    def provider_params
+    	logger.info params[:provider]
+    	p = params[:provider].permit(:provider_account_attributes => [:id, :provider_properties_attributes => [:active, :id]])
+    	logger.info p
+    	return p
+
+    end
+
 end

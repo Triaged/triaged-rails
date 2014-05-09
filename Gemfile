@@ -95,6 +95,7 @@ gem 'dropbox-sdk', :require => 'dropbox_sdk'
 gem 'workflow'
 gem 'jquery-validation-rails'
 gem 'platform-api'
+gem 'retriable'
 
 group :development do
   gem 'spring'

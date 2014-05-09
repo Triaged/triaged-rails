@@ -340,6 +340,7 @@ GEM
       redis (~> 3.0.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    retriable (1.4.1)
     ruby-hmac (0.4.0)
     ruby-trello (1.0.4)
       activemodel
@@ -469,6 +470,7 @@ DEPENDENCIES
   rb-inotify
   recursive-open-struct
   rest-client
+  retriable
   ruby-trello
   sass-rails (~> 4.0.3)
   sentry-raven!
