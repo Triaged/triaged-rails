@@ -38,7 +38,8 @@ module Common::FeedService
 	end
 
 	def self.set_workflows_from_hash event_hash, company, app
-		workflows_array = event_hash[:workflows]
+		workflows_array = event_hash[:workflows] || []
+		Rails.logger.info "Workflows: #{workflows_array.inspect}"
 
 		workflows_array.each do |workflow|
 			workflow_name = workflow[:name]
