@@ -39,7 +39,12 @@ private
 	
 	def check_connected
 		return if @app.connected_to_provider? @provider
-		redirect_to webhook_settings_app_provider_path
+
+		if @provider.oauth
+			redirect_to select_app_provider_accounts_path(@provider)
+		else
+			redirect_to webhook_settings_app_provider_path
+		end
 	end
 
 	# Only allow a trusted parameter "white list" through.
