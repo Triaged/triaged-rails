@@ -1,4 +1,65 @@
-<% @users.each do |user| %>
-	<%= image_tag user.avatar.url %> <%= user.name %>
-	<hr />
-<% end %>
+<div class="container">
+	<header>
+		<nav class="navbar padding-top-sm">
+			<div class="navbar-header">
+				<%= link_to (image_tag 'triage-logo-sm.png'), apps_path %>
+				<%= link_to 'Triage', apps_path, :id => "logotype" %>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><%= link_to 'Applications', apps_path %></li>
+				<li><%= link_to 'Team', team_path %></li>
+			</ul>
+			<div class="nav navbar-nav navbar-right">
+				<%= link_to 'Profile', account_path %>
+			</div>
+		</nav>
+	</header>
+	<main>
+	<div class="content">
+		<div class="col-lg-6 col-lg-offset-3">
+			<div class="section-header">
+				<h4>Triage’s Team</h4>
+				<p>See who is on your team and invite more below. </p>
+			</div>
+			<div class="section-content">
+				<div class="section-headline">
+					<h3>Teammates</h3>
+				</div>
+				<div class="section">
+					<div class="teammate-row">
+						<div class="teammate">
+							<% @users.each do |user| %>
+							<div class="avatar">
+								<%= image_tag user.avatar.url %>
+							</div>
+							<h4>[teammate 1]<%= user.name %></h4>
+							<% end %>
+						</div>
+						<div class="teammate">
+							<% @users.each do |user| %>
+							<div class="avatar">
+								<%= image_tag user.avatar.url %>
+							</div>
+							<h4>[teammate 2]<%= user.name %></h4>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="section-headline">
+					<h3>Invite Teammates</h3>
+					<p>Triage becomes 10x better when your teammates use it.</p>
+					<div class="section">
+						<form role="form">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Email address</label>
+								<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+							</div>
+						</form>
+					</div>
+					<button type="button" class="btn btn-default">Send</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+</div>
