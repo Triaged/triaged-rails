@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507182904) do
+ActiveRecord::Schema.define(version: 20140508210835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -236,6 +236,7 @@ ActiveRecord::Schema.define(version: 20140507182904) do
     t.string  "external_id"
     t.string  "name"
     t.string  "url"
+    t.boolean "active"
   end
 
   create_table "provider_sections", force: true do |t|
@@ -252,6 +253,7 @@ ActiveRecord::Schema.define(version: 20140507182904) do
     t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "title"
   end
 
   add_index "provider_workflows", ["provider_id"], name: "index_provider_workflows_on_provider_id", using: :btree

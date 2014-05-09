@@ -17,9 +17,9 @@
 
 			<div class="row ">
 				<%= simple_form_for :account, :url => set_account_app_provider_accounts_path, :method => :post do |f| %>
-					  <%= f.input :id, :as => :hidden, :class => "hidden-id" %>
-					  <%= f.input :name, :as => :hidden, :class => "hidden-name" %>
-					  <%= f.input :personal, :as => :hidden, :class => "hidden-personal" %>
+					  <%= f.input :external_id, :as => :hidden %>
+					  <%= f.input :name, :as => :hidden %>
+					  <%= f.input :personal, :as => :hidden %>
   					<%= f.button :submit, 'SELECT', :class => "btn-custom  btn-lg",  :id =>"download-cta", :disabled => true %>
 				<% end %>
 			</div>

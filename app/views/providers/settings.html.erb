@@ -1,1 +1,20 @@
 Settings for <%= @provider.name %>
+
+
+<%= simple_form_for [@app, @provider], url: app_provider_path do |f| %>
+
+	<%= f.simple_fields_for :provider_account do |a| %>
+
+			<%= a.object.name %>
+			<%= a.input :id, as: :hidden %>
+			<%= a.simple_fields_for :provider_properties do |p| %>
+			<%= p.input :active, as: :boolean, label: p.object.name %>
+			<% end %>
+		<% end %>
+
+		<%= f.submit %>
+
+<% end %>
+
+
+

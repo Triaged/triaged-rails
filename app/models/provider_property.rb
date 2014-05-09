@@ -1,13 +1,21 @@
 class ProviderProperty < ActiveRecord::Base
+	
 
   belongs_to :provider_account
-  has_many :connected_provider_properties
+  delegate :provider, :to => :provider_account
 
-  validates_uniqueness_of :external_id
+  validates :external_id, :uniqueness => { :scope => :provider_account }
 
-  def connected_to_app? company_app
-  	0 < ConnectedProviderProperty.where(provider_property: self, company_app: company_app) \
-  															 .where("status <> ?", ConnectedProviderProperty.statuses[:connected]).count
-  end
+  # after_create :setup_property
+
+  # def setup_property
+  # 	Common::RemoteAccountService.setup_property(
+  # 		provider_property.provider_account.provider_credential.user, 
+  # 		provider_property.provider_account.provider, 
+  # 		company, 
+  # 		company_app, 
+  # 		self
+  # 	)
+  # end
 
 end

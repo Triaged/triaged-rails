@@ -1,80 +1,25 @@
-<div class="container">
-	<header>
-		<nav class="navbar padding-top-sm">
-			<div class="navbar-header">
-				<%= link_to (image_tag 'triage-logo-sm.png'), apps_path %>
-				<%= link_to 'Triage', apps_path, :id => "logotype" %>
-			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><%= link_to 'Applications', apps_path %></li>
-				<li><%= link_to 'Team', team_path %></li>
-			</ul>
-			<div class="nav navbar-nav navbar-right">
-				<%= link_to 'Profile', account_path %>
-			</div>
-		</nav>
-	</header>
-	<main>
-	<div class="content">
-		<div class="col-lg-6 col-lg-offset-3">
-			<div class="section-header">
-				<div class="app-logo">
-					<%= image_tag @provider.large_icon.url, :width => 60 %>
-				</div>
-				<h4><%= @provider.name %></h4>
-				<p>Github is a repository for all your code.</p>
-			</div>
-			<div class="section-content">
-				<div class="section-headline">
-					<h3>Repositories (<%= @provider_account.property_label %> ):</h3>
-					<button type="button" class="btn btn-default">Refresh</button>
-				</div>
-				<div class="section">
-					<h4>Repo 1</h4>
-					<div class="btn-group" data-toggle="buttons">
-						<label class="btn btn-primary">
-							<input type="checkbox"> On
-						</label>
-						<label class="btn btn-primary">
-							<input type="checkbox"> Off
-						</label>
-					</div>
-				</div>
-				<div class="section">
-					<h4>Repo 2</h4>
-					<div class="btn-group" data-toggle="buttons">
-						<label class="btn btn-primary">
-							<input type="checkbox"> On
-						</label>
-						<label class="btn btn-primary">
-							<input type="checkbox"> Off
-						</label>
-					</div>
-				</div>
-				<div class="section">
-					<h4>Repo 3</h4>
-					<div class="btn-group" data-toggle="buttons">
-						<label class="btn btn-primary">
-							<input type="checkbox"> On
-						</label>
-						<label class="btn btn-primary">
-							<input type="checkbox"> Off
-						</label>
-					</div>
-				</div>
-				<div class="section-headline">
-					<h3>Account</h3>
-					<button type="button" class="btn btn-default">Disconnect</button>
-					<p>
-					<%= @provider_account.name %>, </br>
-					connected by: <%= @provider_account.provider_credential.user.name %>
-					</p>
-				</div>
+<!-- <div class="modal fade">
+  	<div class="modal-dialog">
+   		<div class="modal-content">
+   			<div class="modal-header-custom"> -->
+				<%= image_tag @provider.large_icon.url %> 
+				<%= @provider.name %>
+
+				<br />
+				<%= @provider_account.name %>, connected by: <%= @provider_account.provider_credential.user.name %>
+				<br />
+
+				<hr />
+
+				Properties (<%= @provider_account.property_label %> ):
+
+
+				<% @provider_account.provider_properties.each do |property| %>
+					<%= property.name %> - <%= property.active %> <hr />
+				<% end %>
+
 			</div>
 		</div>
 	</div>
-	</main>
 </div>
-<% @provider_account.provider_properties.each do |property| %>
-<%= property.name %> - <%= property.connected_to_app?(@app) %> <hr />
-<% end %>
+

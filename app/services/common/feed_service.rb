@@ -38,7 +38,8 @@ module Common::FeedService
 	end
 
 	def self.set_workflows_from_hash event_hash, company, app
-		workflows_array = event_hash[:workflows]
+		workflows_array = event_hash[:workflows] || []
+		Rails.logger.info "Workflows: #{workflows_array.inspect}"
 
 		workflows_array.each do |workflow|
 			workflow_name = workflow[:name]
@@ -78,6 +79,19 @@ module Common::FeedService
 
 		return event_hash
 	end
+
+	# def self.set_provider_property_from_hash event_hash, provider, company
+	# 	property_name = event_hash.delete("property_name")
+
+	# 	provider_account = ProviderAccount.find_by provider: provider, company: company
+		
+	# 	if provider_account
+	# 		property = provider_account.provider_properties.find_by name: property_name
+	# 		event_hash[:provider_property] = property
+	# 	end
+
+	# 	return event_hash
+	# end
 
 	def self.set_event_type_from_hash event_hash, provider, company
 		

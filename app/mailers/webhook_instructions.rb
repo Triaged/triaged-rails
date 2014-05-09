@@ -11,7 +11,7 @@ class WebhookInstructions < MandrillClient
 	def merge_vars
 		[{
 			:name => 'WEBHOOK',
-			:content => @provider.webhook_url_for_company_and_app(@user.company)
+			:content => @provider.webhook_url_for_company(@user.company)
 		}]
 	end
 
