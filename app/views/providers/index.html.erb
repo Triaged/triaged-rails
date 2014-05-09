@@ -1,4 +1,208 @@
-<% @providers.each do |provider| %>
-	<%= image_tag provider.large_icon.url %> <%= link_to provider.name, app_provider_path(@app, provider) %> - <%= @app.connected_to_provider? provider %>
-	<hr />
-<% end %>
+<div class="container">
+  <header>
+    <nav class="navbar padding-top-sm">
+      <div class="navbar-header">
+        <%= link_to (image_tag 'triage-logo-sm.png'), root_path %>
+        <%= link_to 'Triage', root_path, :id => "logotype" %>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to 'Applications', faq_path %></li>
+        <li><%= link_to 'Team', about_path %></li>
+      </ul>
+      <div class="nav navbar-nav navbar-right">
+        <%= link_to 'Profile', about_path %>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="content">
+      <div class="col-lg-6 col-lg-offset-3">
+
+        <div class="section-header">
+        	<h4>Triage - iOS</h4>
+          	<p>
+          	Connect your application's services and edit their settings from this list.
+          	</p>
+        </div>
+
+        <div class="apps-list">
+
+          <div class="app-type">
+            <h4>Where do you host your code?</h4>
+            
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Github</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Bitbucket</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Kiln</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+          </div>
+
+          <div class="app-type">
+            <h4>How do you manage your files?</h4>
+            
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Dropbox</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+          </div>
+
+          <div class="app-type">
+            <h4>How do you track errors?</h4>
+            
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Sentry</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Airbrake</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Crashlytics</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Hockey App</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+          </div>
+
+          <div class="app-type">
+            <h4>How do you deploy your apps?</h4>
+            
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Beanstalk</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Heroku</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+          </div>
+
+          <div class="app-type">
+            <h4>How do you analyze your data?</h4>
+            
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Google Analytics</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>New Relic</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>AppFigures</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+            <div class="app">
+              <div class="app-logo">
+              </div>
+              <h4>Hockey App</h4>
+              <div class="app-status">
+              <p><%= link_to 'Settings', about_path %></p>
+              </div>
+              <button class="btn follow-btn">Connect</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="section">
+          	<p>
+          	Finish with your integrations? 
+          	</p>
+          	<button class="btn btn-big">Continue</button>
+        </div>
+
+		<% @providers.each do |provider| %>
+			<%= image_tag provider.large_icon.url %> <%= link_to provider.name, app_provider_path(@app, provider) %> - <%= @app.connected_to_provider? provider %>
+			<hr />
+		<% end %>

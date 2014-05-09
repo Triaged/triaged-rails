@@ -1,5 +1,6 @@
 Settings for <%= @provider.name %>
 
+
 <%= simple_form_for [@app, @provider], url: app_provider_path do |f| %>
 
 	<%= f.simple_fields_for :provider_account do |a| %>
@@ -14,5 +15,6 @@ Settings for <%= @provider.name %>
 		<%= f.submit %>
 
 <% end %>
+
 
 
