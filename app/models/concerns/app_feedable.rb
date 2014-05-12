@@ -21,14 +21,10 @@ module AppFeedable
 
   def add_event_to_feed event
   	logger.info "Adding event to app feed"
-  	unless ignore_event(event)
-			app_feed_items.create(feed_item: event)
-	  	#Common::NotificationService.push_feed_item(self, event) if should_push?(event)
-	  	logger.info "Added #{event.provider.name}:#{event.event_type.name} to user feed: #{email}"
-	  else
-	  	logger.info "Ignoring event #{event.provider_name}:#{event.event_type.name} to user feed: #{email}"
-	  end
-  end
+  	app_feed_items.create(feed_item: event)
+	  #Common::NotificationService.push_feed_item(self, event) if should_push?(event)
+	  logger.info "Added #{event.provider.name}:#{event.event_type.name} to user feed: #{email}"
+	end
 
   # def should_push? event
   # 	event.push_notify || user_feed_items.count == 3
