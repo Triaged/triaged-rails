@@ -23,7 +23,7 @@ module AppFeedable
   	logger.info "Adding event to app feed"
   	app_feed_items.create(feed_item: event)
 	  #Common::NotificationService.push_feed_item(self, event) if should_push?(event)
-	  logger.info "Added #{event.provider.name}:#{event.event_type.name} to user feed: #{email}"
+	  logger.info "Added #{event.provider.name}:#{event.event_type.name} to app feed: #{self.name}"
 	end
 
   # def should_push? event
