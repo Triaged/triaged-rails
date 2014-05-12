@@ -1,208 +1,230 @@
 <div class="container">
-  <header>
-    <nav class="navbar padding-top-sm">
-      <div class="navbar-header">
-        <%= link_to (image_tag 'triage-logo-sm.png'), root_path %>
-        <%= link_to 'Triage', root_path, :id => "logotype" %>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><%= link_to 'Applications', faq_path %></li>
-        <li><%= link_to 'Team', about_path %></li>
-      </ul>
-      <div class="nav navbar-nav navbar-right">
-        <%= link_to 'Profile', about_path %>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <div class="content">
-      <div class="col-lg-6 col-lg-offset-3">
-
-        <div class="section-header">
-        	<h4>Triage - iOS</h4>
-          	<p>
-          	Connect your application's services and edit their settings from this list.
-          	</p>
-        </div>
-
-        <div class="apps-list">
-
-          <div class="app-type">
-            <h4>Where do you host your code?</h4>
-            
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Github</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Bitbucket</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Kiln</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-          </div>
-
-          <div class="app-type">
-            <h4>How do you manage your files?</h4>
-            
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Dropbox</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-          </div>
-
-          <div class="app-type">
-            <h4>How do you track errors?</h4>
-            
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Sentry</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Airbrake</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Crashlytics</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Hockey App</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-          </div>
-
-          <div class="app-type">
-            <h4>How do you deploy your apps?</h4>
-            
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Beanstalk</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Heroku</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-          </div>
-
-          <div class="app-type">
-            <h4>How do you analyze your data?</h4>
-            
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Google Analytics</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>New Relic</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>AppFigures</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4>Hockey App</h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', about_path %></p>
-              </div>
-              <button class="btn follow-btn">Connect</button>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="section">
-          	<p>
-          	Finish with your integrations? 
-          	</p>
-          	<button class="btn btn-big">Continue</button>
-        </div>
-
-		<% @providers.each do |provider| %>
-			<%= image_tag provider.large_icon.url %> <%= link_to provider.name, app_provider_path(@app, provider) %> - <%= @app.connected_to_provider? provider %>
-			<hr />
-		<% end %>
+	<header>
+		<nav class="navbar padding-top-sm">
+			<div class="navbar-header">
+				<%= link_to (image_tag 'triage-logo-sm.png'), apps_path %>
+				<%= link_to 'Triage', apps_path, :id => "logotype" %>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><%= link_to 'Applications', apps_path %></li>
+				<li><%= link_to 'Team', team_path %></li>
+			</ul>
+			<div class="nav navbar-nav navbar-right">
+				<%= link_to 'Profile', account_path %>
+			</div>
+		</nav>
+	</header>
+	<main>
+	<div class="content">
+		<div class="col-lg-6 col-lg-offset-3">
+			<div class="section-header">
+				<% @apps.each do |app| %>
+				<h4><%= app.name %> </h4>
+				<p><%= app.app_type %></p>
+				<p>Connect your application's services and edit their settings from this list.</p>
+				<%= link_to 'Edit', edit_app_path(app) %>
+				<%= link_to 'Destroy', app_path(app), method: :delete, data: { confirm: 'Are you sure?' } %>
+		         <% end %>
+			</div>
+			<div class="section-content">
+				<div class="section-headline">
+					<h3>Where do you host your code?</h3>
+				</div>		
+				<div class="section">
+					<div class="app-logo">
+					</div>
+					<h4>Github</h4>
+					<div class="app-status">
+						<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+					</div>
+					<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#oAuthModal">Connect</a>
+				</div>
+				<div class="section">
+					<div class="app-logo">
+					</div>
+					<h4>Bitbucket</h4>
+					<div class="app-status">
+						<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+					</div>
+					<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#organizationModal">Connect</a>
+				</div>
+				<div class="section">
+					<div class="app-logo">
+					</div>
+					<h4>Kiln</h4>
+					<div class="app-status">
+						<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+					</div>
+					<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#settingModal">Connect</a>
+				</div>
+				<div class="app-type">
+					<h3>How do you manage your files?</h3>
+					
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>Dropbox</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+				</div>
+				<div class="app-type">
+					<h3>How do you track errors?</h3>
+					
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>Sentry</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>Airbrake</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>Crashlytics</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>Hockey App</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+				</div>
+				<div class="app-type">
+					<h3>How do you deploy your apps?</h3>
+					
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>Beanstalk</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>Heroku</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+				</div>
+				<div class="app-type">
+					<h3>How do you analyze your data?</h3>
+					
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>Google Analytics</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>New Relic</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>AppFigures</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+					<div class="section">
+						<div class="app-logo">
+						</div>
+						<h4>Hockey App</h4>
+						<div class="app-status">
+							<a href="#" data-toggle="modal" data-target="#settingModal">Settings</a>
+						</div>
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Connect</a>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<p>
+				Finish with your integrations?
+				</p>
+				<button class="btn btn-big">Continue</button>
+			</div>
+		</div>
+		<div class="modal fade" id="oAuthModal" tabindex="-1" role="dialog" aria-labelledby="oAuthModal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h3>oAuth</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="organizationModal" tabindex="-1" role="dialog" aria-labelledby="organizationModal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="app-logo">
+						</div>
+						<h3 class="modal-title">Github</h3>
+						<p>Github is a repository for all your code.</p>
+					</div>
+					<div class="modal-body">
+						<h3>Please choose an organization:</h3>
+						<label class="checkbox-inline">
+							<input type="checkbox" id="inlineCheckbox1" value="option1"> Jtwhite14
+						</label>
+						<label class="checkbox-inline">
+							<input type="checkbox" id="inlineCheckbox2" value="option2"> Triage
+						</label>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">Continue</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+</div>
+	<% @providers.each do |provider| %>
+	<%= image_tag provider.large_icon.url %> <%= link_to provider.name, app_provider_path(@app, provider) %> - <%= @app.connected_to_provider? provider %>
+	<hr />
+	<% end %>
+	<%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+	<%= link_to "Sign in with Stripe", user_omniauth_authorize_path(:stripe_connect) %>
+	<%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
+	<%= link_to "Sign in with AppFigures", user_omniauth_authorize_path(:appFigures) %>
+	<%= link_to "Sign in with Bitbucket", user_omniauth_authorize_path(:bitbucket) %>
+	<%= link_to "Sign in with Trello", user_omniauth_authorize_path(:trello) %>
+	<%= link_to "Sign in with Dropbox", user_omniauth_authorize_path(:dropbox_oauth2) %>
+	<%= link_to "Sign in with Heroku", user_omniauth_authorize_path(:heroku) %>

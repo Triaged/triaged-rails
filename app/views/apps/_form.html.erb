@@ -1,14 +1,27 @@
 <%= simple_form_for(@app, :url => apps_path) do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
+<div class="form-inputs">
+	<%= f.input :name %>
 
-  <div class="form-inputs">
-
-  <%= f.input :name %>
-  <%= f.input :app_type, :as => :string %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit "Create App" %>
-    <button><%= link_to 'Cancel', apps_path %></button>
-  </div>
+	<!-- rails helper - needs to be connected -->
+	<% if false %>
+	<%= f.input :app_type, :as => :string %>
+	<% end %>
+	<!-- end -->
+	
+	<form role="form">
+	  <div class="form-group">
+	    <label for="exampleInputEmail1">Application Type</label>
+			<select class="form-control">
+				<option>Web Application</option>
+				<option>Mobile Application</option>
+				<option>Service Application</option>
+			</select>
+		</div>
+	</form>
+</div>
+<div class="form-actions">
+	<%= f.submit "Create App" %>
+	<button><%= link_to 'Cancel', apps_path %></button>
+</div>
 <% end %>

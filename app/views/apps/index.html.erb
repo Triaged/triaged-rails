@@ -1,94 +1,69 @@
 <div class="container">
-  <header>
-    <nav class="navbar padding-top-sm">
-      <div class="navbar-header">
-        <%= link_to (image_tag 'triage-logo-sm.png'), root_path %>
-        <%= link_to 'Triage', root_path, :id => "logotype" %>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><%= link_to 'Applications', faq_path %></li>
-        <li><%= link_to 'Team', about_path %></li>
-      </ul>
-      <div class="nav navbar-nav navbar-right">
-        <%= link_to 'Profile', about_path %>
-      </div>
-    </nav>
-  </header>
-  
-  <main>
-    <div class="content">
+   <header>
+      <nav class="navbar padding-top-sm">
+         <div class="navbar-header">
+            <%= link_to (image_tag 'triage-logo-sm.png'), apps_path %>
+            <%= link_to 'Triage', apps_path, :id => "logotype" %>
+         </div>
+         <ul class="nav navbar-nav">
+            <li class="active"><%= link_to 'Applications', apps_path %></li>
+            <li><%= link_to 'Team', team_path %></li>
+         </ul>
+         <div class="nav navbar-nav navbar-right">
+            <%= link_to 'Profile', account_path %>
+         </div>
+      </nav>
+   </header>
+   <main>
+   <div class="content">
       <div class="col-lg-6 col-lg-offset-3">
-
-        <div class="section-header">
-          <h1>[Company]'s Apps</h1>
-          <p>
-          Follow one of your company’s apps or create your own.</br>
-          Click on the app’s name to configure settings.
-          </p>
-        </div>
-
-        <div class="apps-list">
-        <% @apps.each do |app| %>
-
-          <div class="app-type">
-            <h4><%= app.app_type %></h3>
-            
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4><%= app.name %></h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', app_providers_path(app) %></p>
-              </div>
-              <button class="btn follow-btn">Follow</button>
+         <div class="section-header">
+            <h1>[Company]'s Apps</h1>
+            <p>
+            Follow one of your company’s apps or create your own.</br>
+            Click on the app’s name to configure settings.
+            </p>
+         </div>
+         <div class="section-content">
+            <div class="section-headline">
+               <% @apps.each do |app| %>
             </div>
-
-            <div class="app">
-              <div class="app-logo">
-              </div>
-              <h4><%= app.name %></h4>
-              <div class="app-status">
-              <p><%= link_to 'Settings', app_providers_path(app) %></p>
-              </div>
-              <button class="btn follow-btn">Follow</button>
+            <div class="section">
+               <h3><%= app.app_type %></h3>        
+               <div class="app">
+                  <div class="app-logo">
+                  </div>
+                  <h4><%= app.name %></h4>
+                  <div class="settings-icon">
+                     <%= link_to (image_tag 'application/settings-2.svg'), app_providers_path(app) %>
+                  </div>
+               </div>
+               <div class="app">
+                  <div class="app-logo">
+                  </div>
+                  <h4><%= app.name %></h4>
+                  <div class="settings-icon">
+                     <%= link_to (image_tag 'application/settings-2.svg'), app_providers_path(app) %>
+                  </div>
+               </div>
             </div>
-
-          </div>
-
-        <% end %>  
-        </div>
-
-        <div class="add-app">
-        <h3>Add Application</h3>
-        <p>Connect all your apps to become a work jedi.</p>
-        <button class="btn add-btn"><%= link_to 'New Application', new_app_path %></button>
-        </div>
-
-      </div>
-    </div>
-  </main>
-  <footer>
-
-  </footer>
-
-
-
-
-
-
-
-  <table>
-          <tbody>
-            <% @apps.each do |app| %>
-              <tr>
-                <td><%= app.name %> </td>
-                <td><%= app.app_type %> </td>
-                <td><%= link_to 'Show', app_providers_path(app) %></td>
-                <td><%= link_to 'Edit', edit_app_path(app) %></td>
-                <td><%= link_to 'Destroy', app_path(app), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
             <% end %>
-          </tbody>
-        </table>
+         </div>
+         <div class="add-app">
+            <h3>Add Application</h3>
+            <p>Connect all your apps to become a work jedi.</p>
+            <button class="btn add-btn"><%= link_to 'New Application', new_app_path %></button>
+         </div>
+      </div>
+   </div>
+   </main>
+   <footer>
+   </footer>
 
-        <br>
+         <% @apps.each do |app| %>
+            <td><%= app.name %> </td>
+            <td><%= app.app_type %> </td>
+            <td><%= link_to 'Show', app_providers_path(app) %></td>
+            <td><%= link_to 'Edit', edit_app_path(app) %></td>
+            <td><%= link_to 'Destroy', app_path(app), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% end %>
