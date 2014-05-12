@@ -25,7 +25,6 @@ class FeedItem < ActiveRecord::Base
 	# Lifecycle hooks
 	#
 	def after_build_hook company
-		super
 		
 		# Set timestamp if we don't already have one
 		self.timestamp = DateTime.now unless self.timestamp
@@ -41,7 +40,6 @@ class FeedItem < ActiveRecord::Base
 
 		# ensure the company knows this provider is connected
 		Common::ProviderConnection.ensure_connected(company, self.provider)
-
 	end
 
 	
