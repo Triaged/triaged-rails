@@ -24,7 +24,7 @@ module CompanyFeedable
     accounts.each do |account|
       properties = account.provider_properties.where(name: event.property_name)
       properties.each do |property|
-        account.company_app.add_event_to_feed(event) if property.connected?
+        account.company_app.add_event_to_feed(event) if property.active
       end
     end
   end
