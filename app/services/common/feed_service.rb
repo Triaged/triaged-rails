@@ -58,6 +58,8 @@ module Common::FeedService
 				event_hash[:feed_item_workflows] << FeedItemWorkflow.create(provider_workflow: provider_workflow)
 			end
 		end
+
+		return event_hash
 	end
 
 
