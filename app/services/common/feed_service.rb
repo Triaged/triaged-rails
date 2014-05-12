@@ -13,6 +13,7 @@ module Common::FeedService
 		event_hash = self.set_images_from_hash(event_hash, company) # Set Images
 		event_hash = self.set_workflows_from_hash(event_hash, company, app) # Set Workflows
 
+		puts "event_hash: #{event_hash.inspect}"
 		# build card
 		card = FeedItem.new(event_hash)
 		puts "card: #{card.inspect}"
