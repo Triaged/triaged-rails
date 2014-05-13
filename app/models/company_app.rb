@@ -5,7 +5,7 @@ class CompanyApp < ActiveRecord::Base
 
   belongs_to :company
   has_one :api_token, as: :tokenable
-  has_many :provider_accounts
+  has_many :connected_provider_accounts
   has_many :connected_provider_properties
 
   validates :name, :uniqueness => { :scope => :company_id }
@@ -13,7 +13,7 @@ class CompanyApp < ActiveRecord::Base
   before_create :set_company_app_token
 
   def provider_account_for provider
-  	self.provider_accounts.where(provider: provider).first
+  	self.connected_provider_accounts.where(provider: provider).first
 	end
 
 	def connected_to_provider? provider

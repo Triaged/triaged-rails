@@ -41,7 +41,7 @@ private
 		return if @app.connected_to_provider? @provider
 
 		if @provider.oauth
-			redirect_to select_app_provider_accounts_path(@provider)
+			redirect_to select_app_provider_accounts_path(@app, @provider)
 		else
 			redirect_to webhook_settings_app_provider_path
 		end

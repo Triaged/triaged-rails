@@ -19,14 +19,12 @@ module CompanyFeedable
   end
 
   def push_event_to_apps event
-    accounts = ProviderAccount.where(company: self, provider: event.provider)
+    accounts = event.provider_property.connected_provider_properties.collect {|property| property.connected_provider_account if property.active }
     
     accounts.each do |account|
-      properties = account.provider_properties.where(name: event.property_name)
-      properties.each do |property|
-        account.company_app.add_event_to_feed(event) if property.active
-      end
+      account.company_app.add_event_to_feed(event)
     end
+    
   end
 
   def push_event_to_followers event

@@ -3,7 +3,7 @@ class ProviderPropertiesController < WebController
 
 	def index
 		@provider_account = @app.provider_account_for(@provider)
-		@properties = @provider_account.provider_properties
+		@properties = @provider_account.available_properties
 	end
 
 private

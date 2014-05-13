@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140508210835) do
+ActiveRecord::Schema.define(version: 20140512192422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,31 +76,46 @@ ActiveRecord::Schema.define(version: 20140508210835) do
 
   add_index "company_apps", ["company_id"], name: "index_company_apps_on_company_id", using: :btree
 
-  create_table "connected_provider_accounts", force: true do |t|
-    t.integer  "company_id"
-    t.integer  "company_app_id"
-    t.integer  "provider_account_id"
+  create_table "connected_account_provider_properties", force: true do |t|
+    t.integer  "connected_provider_account_id"
+    t.integer  "provider_property_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "provider_id"
+  end
+
+  add_index "connected_account_provider_properties", ["connected_provider_account_id"], name: "cpa_on_capp", using: :btree
+  add_index "connected_account_provider_properties", ["provider_property_id"], name: "pp_on_capp", using: :btree
+
+  create_table "connected_provider_accounts", force: true do |t|
+    t.integer "provider_id"
+    t.integer "company_id"
+    t.string  "external_id"
+    t.string  "name"
+    t.string  "url"
+    t.boolean "default",                default: false
+    t.boolean "personal",               default: false
+    t.integer "company_app_id"
+    t.integer "provider_credential_id"
+    t.integer "status"
   end
 
   add_index "connected_provider_accounts", ["company_app_id"], name: "index_connected_provider_accounts_on_company_app_id", using: :btree
-  add_index "connected_provider_accounts", ["company_id"], name: "index_connected_provider_accounts_on_company_id", using: :btree
-  add_index "connected_provider_accounts", ["provider_account_id"], name: "index_connected_provider_accounts_on_provider_account_id", using: :btree
-  add_index "connected_provider_accounts", ["provider_id"], name: "index_connected_provider_accounts_on_provider_id", using: :btree
+  add_index "connected_provider_accounts", ["provider_credential_id"], name: "index_connected_provider_accounts_on_provider_credential_id", using: :btree
 
   create_table "connected_provider_properties", force: true do |t|
     t.integer  "company_app_id"
     t.integer  "provider_property_id"
-    t.integer  "status",               default: 0
+    t.integer  "status",                        default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "company_id"
+    t.boolean  "active"
+    t.integer  "connected_provider_account_id"
   end
 
   add_index "connected_provider_properties", ["company_app_id"], name: "index_connected_provider_properties_on_company_app_id", using: :btree
   add_index "connected_provider_properties", ["company_id"], name: "index_connected_provider_properties_on_company_id", using: :btree
+  add_index "connected_provider_properties", ["connected_provider_account_id"], name: "connected_p_account_index_on_connected_pp", using: :btree
   add_index "connected_provider_properties", ["provider_property_id"], name: "index_connected_provider_properties_on_provider_property_id", using: :btree
 
   create_table "connected_providers", force: true do |t|
@@ -206,21 +221,6 @@ ActiveRecord::Schema.define(version: 20140508210835) do
 
   add_index "notifications", ["feed_item_id"], name: "index_notifications_on_feed_item_id", using: :btree
 
-  create_table "provider_accounts", force: true do |t|
-    t.integer "provider_id"
-    t.integer "company_id"
-    t.string  "external_id"
-    t.string  "name"
-    t.string  "url"
-    t.boolean "default",                default: false
-    t.boolean "personal",               default: false
-    t.integer "company_app_id"
-    t.integer "provider_credential_id"
-  end
-
-  add_index "provider_accounts", ["company_app_id"], name: "index_provider_accounts_on_company_app_id", using: :btree
-  add_index "provider_accounts", ["provider_credential_id"], name: "index_provider_accounts_on_provider_credential_id", using: :btree
-
   create_table "provider_credentials", force: true do |t|
     t.integer "user_id"
     t.integer "provider_id"
@@ -232,11 +232,12 @@ ActiveRecord::Schema.define(version: 20140508210835) do
   end
 
   create_table "provider_properties", force: true do |t|
-    t.integer "provider_account_id"
     t.string  "external_id"
     t.string  "name"
     t.string  "url"
     t.boolean "active"
+    t.integer "provider_id"
+    t.integer "company_id"
   end
 
   create_table "provider_sections", force: true do |t|

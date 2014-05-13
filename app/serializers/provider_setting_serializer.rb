@@ -1,7 +1,7 @@
 class ProviderSettingSerializer < ProviderSerializer
 
 	attributes :follows, :webhook_url, :connected, :oauth_path
-	has_one :provider_account, serializer: ProviderAccountSerializer
+	has_one :provider_account, serializer: ConnectedProviderAccountSerializer
 
 	def provider_account
   	current_user.company.provider_accounts.where(provider: object, default: true).first

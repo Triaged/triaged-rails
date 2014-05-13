@@ -1,4 +1,6 @@
+<%= @provider_account.name %>
+
 <% @properties.each do |property| %>
-	<%= property.name %> - <%= property.connected? %> <hr />
+	<%= property.name %> - <%= property.active %> <hr />
 <% end %>
 

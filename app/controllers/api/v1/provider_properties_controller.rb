@@ -23,7 +23,7 @@ private
 	end
 
   def set_provider_property
-  	@provider_account = ProviderAccount.find(params[:provider_account_id])
+  	@provider_account = ConnectedProviderAccount.find(params[:provider_account_id])
   	@provider_property = @provider_account.provider_properties.find(params[:id])
   end
 

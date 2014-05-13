@@ -34,7 +34,7 @@ class Api::V1::ProviderAccountsController < API::BaseController
 	end
 
   def set_provider_account
-  	@provider_account = current_company.provider_accounts.find(params[:id])
+  	@provider_account = current_company.connected_provider_accounts.find(params[:id])
   end
 
 

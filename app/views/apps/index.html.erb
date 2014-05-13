@@ -35,7 +35,7 @@
                   </div>
                   <h4><%= app.name %></h4>
                   <div class="settings-icon">
-                     <%= link_to (image_tag 'application/settings-2.svg'), app_providers_path(app) %>
+                     <%= link_to (image_tag 'application/settings-2.svg'), app_path(app) %>
                   </div>
                </div>
                <div class="app">
@@ -43,7 +43,7 @@
                   </div>
                   <h4><%= app.name %></h4>
                   <div class="settings-icon">
-                     <%= link_to (image_tag 'application/settings-2.svg'), app_providers_path(app) %>
+                     <%= link_to (image_tag 'application/settings-2.svg'), app_path(app) %>
                   </div>
                </div>
             </div>
@@ -63,7 +63,7 @@
          <% @apps.each do |app| %>
             <td><%= app.name %> </td>
             <td><%= app.app_type %> </td>
-            <td><%= link_to 'Show', app_providers_path(app) %></td>
+            <td><%= link_to 'Show', app_path(app) %></td>
             <td><%= link_to 'Edit', edit_app_path(app) %></td>
             <td><%= link_to 'Destroy', app_path(app), method: :delete, data: { confirm: 'Are you sure?' } %></td>
          <% end %>

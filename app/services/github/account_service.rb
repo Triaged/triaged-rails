@@ -23,16 +23,18 @@ class Github::AccountService < Github::BaseService
 	### Properties
 	#
 	def fetch_properties(account)
+		properties = []
 		# Get all repos for the org
 		res = account.personal ? @github.repos.list : @github.repos.list(org: account.name)
 		res.each_page { |page| page.each do |repo|
-			account.provider_properties << ProviderProperty.new(
+			properties << {
 				external_id: repo.id.to_s, 
 				url: repo.html_url, 
 				name: repo.name,
 				#owner: repo.owner.login
-			)
+			}
 		end }
+		return properties
 	end
 
 	

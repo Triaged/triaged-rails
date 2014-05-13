@@ -13,13 +13,9 @@ module Common::FeedService
 		event_hash = self.set_images_from_hash(event_hash, company) # Set Images
 		event_hash = self.set_workflows_from_hash(event_hash, company, app) # Set Workflows
 
-		puts "event_hash: #{event_hash.inspect}"
 		# build card
 		card = FeedItem.new(event_hash)
-		puts "card: #{card.inspect}"
-
-		# generic after init hook
-		card.after_build_hook company
+		card.after_build_hook company, app
 
 		# add event to company feed
 		self.add_to_feed card, company
@@ -27,7 +23,6 @@ module Common::FeedService
 	end
 
 	def self.add_to_feed(event, company)
-		puts "adding..."
 		Rails.logger.info event
 		if event
 			Rails.logger.info "Adding event #{event.provider_name}:#{event.event_name} to company feed: #{company.name}"
@@ -84,18 +79,15 @@ module Common::FeedService
 		return event_hash
 	end
 
-	# def self.set_provider_property_from_hash event_hash, provider, company
-	# 	property_name = event_hash.delete("property_name")
+	def self.set_provider_property_from_hash event_hash, provider, company
+		property_name = event_hash.delete("property_name")
+		property_name = "default" if property_name.nil?
 
-	# 	provider_account = ProviderAccount.find_by provider: provider, company: company
+		provider_property = ProviderProperty.find_or_create_by name: property_name, company: company, provider: provider
+		event_hash[:provider_property] = property
 		
-	# 	if provider_account
-	# 		property = provider_account.provider_properties.find_by name: property_name
-	# 		event_hash[:provider_property] = property
-	# 	end
-
-	# 	return event_hash
-	# end
+		return event_hash
+	end
 
 	def self.set_event_type_from_hash event_hash, provider, company
 		
