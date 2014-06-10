@@ -31,7 +31,6 @@ class Github::Event::Push < BaseServiceEvent
     data.commits.each do |commit|
       commit = RecursiveOpenStruct.new(commit)
       event[:body_list] << commit.message
-      event[:timestamp] = commit.timestamp
       event[:external_id] = commit.id
     end
 
